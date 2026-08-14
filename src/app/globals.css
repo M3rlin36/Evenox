@@ -1,0 +1,147 @@
+:root {
+  --bg: #0b1020;
+  --panel: #151b32;
+  --accent: #6d8bff;
+  --accent-strong: #4f6bff;
+  --text: #e8ecff;
+  --muted: #9aa4c7;
+  --border: #263050;
+  --done: #4ade80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 20% -10%, #1b2547 0%, var(--bg) 55%);
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.brand h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.brand .tag {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 8px 0 32px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+form.add {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #0f1530;
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent);
+}
+
+button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent-strong);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+ul.tasks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li.task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #0f1530;
+}
+
+li.task .title {
+  flex: 1;
+}
+
+li.task.done .title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+li.task .check {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--done);
+  cursor: pointer;
+}
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 0;
+}
+
+.error {
+  color: #ff8f8f;
+  margin: 0 0 16px;
+  font-size: 14px;
+}
