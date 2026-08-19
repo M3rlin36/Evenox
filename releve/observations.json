@@ -1,0 +1,1133 @@
+[
+ {
+  "url": "https://evenox.ca/product/chaise-chiavari/",
+  "slug": "chaise-chiavari",
+  "texte": "Ajouter au panier",
+  "ident": "e6563821-81b1-4e9c-a53c-419053e2ef4f",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "product_groups",
+  "res_nom": "Chaises Chiavari",
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   null
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/chaise-emmanuelle/",
+  "slug": "chaise-emmanuelle",
+  "texte": "Ajouter au panier",
+  "ident": "8edaee87-62a7-4079-8218-b450650c4aa5",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "product_groups",
+  "res_nom": "Chaise Emmanuelle",
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   5
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/chaise-martha/",
+  "slug": "chaise-martha",
+  "texte": "Ajouter au panier",
+  "ident": "c4450e55-ea58-4bcb-ae8b-00f6f89e192c",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "product_groups",
+  "res_nom": "Chaise Martha",
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   3
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/chaise-pliante/",
+  "slug": "chaise-pliante",
+  "texte": "Ajouter au panier",
+  "ident": "chaise-pliante",
+  "conteneur": "embed herite (div.booqable-product-button)",
+  "ident_uuid": false,
+  "res_statut": 404,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   1
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification) + reprise isolee",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/chaise-pliante/",
+  "slug": "chaise-pliante",
+  "texte": "Ajouter au panier",
+  "ident": "fd2aceec-7b25-4039-b6fa-6c5e11565e30",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "product_groups",
+  "res_nom": "Chaise Pliante",
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   1
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification) + reprise isolee",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 1
+ },
+ {
+  "url": "https://evenox.ca/product/demande-en-mariage-lultime/",
+  "slug": "demande-en-mariage-lultime",
+  "texte": null,
+  "ident": null,
+  "conteneur": null,
+  "res_statut": null,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "AUCUN BOUTON",
+  "erreur": null,
+  "absence": {
+   "source_contient_embed": 0,
+   "source_contient_composant": 0,
+   "elements_bq": [
+    "bq-date-picker-modal"
+   ],
+   "elements_uuid": [
+    "p name",
+    "p adresse_courriel",
+    "p numéro_de_téléphone",
+    "p date_de_l'événement",
+    "p field_5",
+    "p message"
+   ],
+   "formulaire_woocommerce": 0,
+   "texte_panier_visible": [
+    "Voir le panier"
+   ],
+   "classes_booqable": [
+    "booqable-component",
+    "booqable-component"
+   ]
+  },
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 0
+ },
+ {
+  "url": "https://evenox.ca/product/distributeur-de-boisson/",
+  "slug": "distributeur-de-boisson",
+  "texte": "Ajouter au panier",
+  "ident": "cef25930-d5a2-44db-b225-05e9881cc498",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Distributeur de boisson",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/cef25930-d5a2-44db-b225-05e9881cc498/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/dunk-tank/",
+  "slug": "dunk-tank",
+  "texte": "Ajouter au panier",
+  "ident": "2b8597bf-a35c-46c9-ac35-6a784659d86a",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Dunk Tank",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/2b8597bf-a35c-46c9-ac35-6a784659d86a/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/extension-electrique-10-pieds/",
+  "slug": "extension-electrique-10-pieds",
+  "texte": "Ajouter au panier",
+  "ident": "extension-electrique-10-pieds",
+  "conteneur": "embed herite (div.booqable-product-button)",
+  "ident_uuid": false,
+  "res_statut": 404,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   4
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/fontaine-de-chocolat/",
+  "slug": "fontaine-de-chocolat",
+  "texte": "Ajouter au panier",
+  "ident": "9d4f0c35-e0a0-4729-866e-1c5f99408294",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Fontaine de Chocolat - 4 Étages (3-4kg chocolat au lait)",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/84677368-a46d-459d-81a9-72176ca6ae9b/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/fontaine-de-chocolat/",
+  "slug": "fontaine-de-chocolat",
+  "texte": "Ajouter au panier",
+  "ident": "84677368-a46d-459d-81a9-72176ca6ae9b",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Fontaine de Chocolat - 7 Étages (6-7kg chocolat au lait)",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/84677368-a46d-459d-81a9-72176ca6ae9b/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 1
+ },
+ {
+  "url": "https://evenox.ca/product/fourchette-a-souper-2/",
+  "slug": "fourchette-a-souper-2",
+  "texte": "Ajouter au panier",
+  "ident": "fourchette-a-souper-6c404985-c795-4a47-87f1-2c558f7252c8",
+  "conteneur": "embed herite (div.booqable-product-button)",
+  "ident_uuid": false,
+  "res_statut": 404,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   1
+  ],
+  "variantes": 5,
+  "variante_choisie": {
+   "texte": "Or",
+   "valeur": "7f85631b-e1f2-452f-9058-eeaacbb9254c"
+  },
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/generatrice-a-essence-location/",
+  "slug": "generatrice-a-essence-location",
+  "texte": "Ajouter au panier",
+  "ident": "11f45f8c-443a-40e1-8b4d-5f53fc5ca9ad",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Génératrice à Essence - 1200 watts",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/0ce22dc8-f439-4ebc-81cc-da9584be93b1/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/generatrice-a-essence-location/",
+  "slug": "generatrice-a-essence-location",
+  "texte": "Ajouter au panier",
+  "ident": "0ce22dc8-f439-4ebc-81cc-da9584be93b1",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Génératrice à Essence - 3650 watts",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/0ce22dc8-f439-4ebc-81cc-da9584be93b1/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 1
+ },
+ {
+  "url": "https://evenox.ca/product/guess-who-geant/",
+  "slug": "guess-who-geant",
+  "texte": "Ajouter au panier",
+  "ident": "8191d780-0094-4fe3-9693-60717645db25",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Guess Who Géant - Régulier",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/66977f82-8734-41d6-8e8b-d393feba07fc/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/guess-who-geant/",
+  "slug": "guess-who-geant",
+  "texte": "Ajouter au panier",
+  "ident": "66977f82-8734-41d6-8e8b-d393feba07fc",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Guess Who Géant - Personnalisation Complète",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/66977f82-8734-41d6-8e8b-d393feba07fc/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 1
+ },
+ {
+  "url": "https://evenox.ca/product/haut-parleur-speaker/",
+  "slug": "haut-parleur-speaker",
+  "texte": "Ajouter au panier",
+  "ident": "a9bfe70c-c564-45fd-bc9f-6f0c0fb47917",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Haut Parleur / Speaker - 100W, ION Audio Total PA Apex",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/a9bfe70c-c564-45fd-bc9f-6f0c0fb47917/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/haut-parleur-speaker/",
+  "slug": "haut-parleur-speaker",
+  "texte": "Ajouter au panier",
+  "ident": "7da35377-d009-4b6e-8256-3b3a565f8b13",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Haut Parleur / Speaker - 2500W, ALTO TS415",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/a9bfe70c-c564-45fd-bc9f-6f0c0fb47917/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 1
+ },
+ {
+  "url": "https://evenox.ca/product/jeu-gonflable-minions/",
+  "slug": "jeu-gonflable-minions",
+  "texte": "Ajouter au panier",
+  "ident": "be8819bb-4087-4c42-8ff1-f1cc6193af85",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "product_groups",
+  "res_nom": "Jeu Gonflable Minions",
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   8
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/jeux-gonflable-forteresse/",
+  "slug": "jeux-gonflable-forteresse",
+  "texte": "Ajouter au panier",
+  "ident": "258b205a-1760-4927-ba78-c2545555903d",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "product_groups",
+  "res_nom": "Jeux Gonflable Forteresse",
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   6
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/jeux-gonflable-moyen-bouncer/",
+  "slug": "jeux-gonflable-moyen-bouncer",
+  "texte": "Ajouter au panier",
+  "ident": "jeux-gonflable-moyen-bouncer",
+  "conteneur": "embed herite (div.booqable-product-button)",
+  "ident_uuid": false,
+  "res_statut": 404,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   11
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/lettre-illuminee-marquee-letter/",
+  "slug": "lettre-illuminee-marquee-letter",
+  "texte": "Ajouter au panier",
+  "ident": "marquee-letter",
+  "conteneur": "embed herite (div.booqable-product-button)",
+  "ident_uuid": false,
+  "res_statut": null,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   null
+  ],
+  "variantes": 28,
+  "variante_choisie": {
+   "texte": "A",
+   "valeur": "6670f91a-b70b-4cba-b38b-90b36933afe2"
+  },
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/location-table-de-baby-foot/",
+  "slug": "location-table-de-baby-foot",
+  "texte": "Ajouter au panier",
+  "ident": "table-de-baby-foot",
+  "conteneur": "embed herite (div.booqable-product-button)",
+  "ident_uuid": false,
+  "res_statut": 404,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   9
+  ],
+  "variantes": 3,
+  "variante_choisie": {
+   "texte": "Résidentiel",
+   "valeur": "59034fc5-ae09-46dd-ae68-cfc0259e28af"
+  },
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/lumiere-led/",
+  "slug": "lumiere-led",
+  "texte": "Ajouter au panier",
+  "ident": "619538e1-b3df-4313-b0d3-1951c218ca94",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Lumière LED multi-couleur",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/619538e1-b3df-4313-b0d3-1951c218ca94/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/machine-a-creme-glacee-molle/",
+  "slug": "machine-a-creme-glacee-molle",
+  "texte": "Ajouter au panier",
+  "ident": "130274cc-bb61-4dba-a3e7-1cc7d77b6040",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Machine à Crème Glacée Molle",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/130274cc-bb61-4dba-a3e7-1cc7d77b6040/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/machine-hot-dog/",
+  "slug": "machine-hot-dog",
+  "texte": "Ajouter au panier",
+  "ident": "c995e4bd-95a2-40e1-9d1b-31b6d4767012",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Machine Hot-Dog",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/c995e4bd-95a2-40e1-9d1b-31b6d4767012/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/mur-a-champagne/",
+  "slug": "mur-a-champagne",
+  "texte": "Ajouter au panier",
+  "ident": "57646cd8-b00d-4c56-abc5-b7a2afc9194c",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Mur à Champagne - Mur à Champagne Demi Cercle Blanc",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/57646cd8-b00d-4c56-abc5-b7a2afc9194c/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 7,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/mur-a-champagne/",
+  "slug": "mur-a-champagne",
+  "texte": "Ajouter au panier",
+  "ident": "85f8c5db-e3a7-4b8d-a374-6a47e9b8619f",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Mur à Champagne - Mur à Champagne Demi Cercle Crème",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/57646cd8-b00d-4c56-abc5-b7a2afc9194c/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 7,
+  "index": 1
+ },
+ {
+  "url": "https://evenox.ca/product/mur-a-champagne/",
+  "slug": "mur-a-champagne",
+  "texte": "Ajouter au panier",
+  "ident": "ea0cadb0-6c23-4f31-99ec-a6571c469fa3",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Mur à Champagne - Mur à Champagne Demi Cercle Noire",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/57646cd8-b00d-4c56-abc5-b7a2afc9194c/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 7,
+  "index": 2
+ },
+ {
+  "url": "https://evenox.ca/product/mur-a-champagne/",
+  "slug": "mur-a-champagne",
+  "texte": "Ajouter au panier",
+  "ident": "13762af1-8cad-4179-9c77-0dcd9123e3d4",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Mur à Champagne - Mur à Champagne Demi Cercle Brun",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/57646cd8-b00d-4c56-abc5-b7a2afc9194c/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 7,
+  "index": 3
+ },
+ {
+  "url": "https://evenox.ca/product/mur-a-champagne/",
+  "slug": "mur-a-champagne",
+  "texte": "Ajouter au panier",
+  "ident": "b7a76863-b821-46e2-9cdb-2f65130f733d",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Mur à Champagne - Mur à Champagne Carré Blanc",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/57646cd8-b00d-4c56-abc5-b7a2afc9194c/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 7,
+  "index": 4
+ },
+ {
+  "url": "https://evenox.ca/product/mur-a-champagne/",
+  "slug": "mur-a-champagne",
+  "texte": "Ajouter au panier",
+  "ident": "fafe7f95-c718-4031-b8c0-f01a49607428",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Mur à Champagne - Mur à Champagne Carré Crème",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/57646cd8-b00d-4c56-abc5-b7a2afc9194c/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 7,
+  "index": 5
+ },
+ {
+  "url": "https://evenox.ca/product/mur-a-champagne/",
+  "slug": "mur-a-champagne",
+  "texte": "Ajouter au panier",
+  "ident": "40933909-a32a-44c0-886c-e1a4662ebe5a",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Mur à Champagne - Mur à Champagne Carré Noire",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/57646cd8-b00d-4c56-abc5-b7a2afc9194c/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 7,
+  "index": 6
+ },
+ {
+  "url": "https://evenox.ca/product/neon-marry-me/",
+  "slug": "neon-marry-me",
+  "texte": null,
+  "ident": null,
+  "conteneur": null,
+  "res_statut": null,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "AUCUN BOUTON",
+  "erreur": null,
+  "absence": {
+   "source_contient_embed": 0,
+   "source_contient_composant": 0,
+   "elements_bq": [
+    "bq-date-picker-modal"
+   ],
+   "elements_uuid": [
+    "div neon-marry-me"
+   ],
+   "formulaire_woocommerce": 0,
+   "texte_panier_visible": [
+    "Voir le panier"
+   ],
+   "classes_booqable": [
+    "booqable-datepicker",
+    "booqable-product",
+    "booqable-component",
+    "booqable-product-wrapper",
+    "booqable-product-inner",
+    "booqable-component",
+    "booqable-component"
+   ]
+  },
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 0
+ },
+ {
+  "url": "https://evenox.ca/product/plan-de-table-mariage-personalisable/",
+  "slug": "plan-de-table-mariage-personalisable",
+  "texte": null,
+  "ident": null,
+  "conteneur": null,
+  "res_statut": null,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "AUCUN BOUTON",
+  "erreur": null,
+  "absence": {
+   "source_contient_embed": 0,
+   "source_contient_composant": 0,
+   "elements_bq": [
+    "bq-date-picker-modal"
+   ],
+   "elements_uuid": [
+    "p name",
+    "p email",
+    "p message"
+   ],
+   "formulaire_woocommerce": 0,
+   "texte_panier_visible": [
+    "Voir le panier"
+   ],
+   "classes_booqable": [
+    "booqable-component",
+    "booqable-component"
+   ]
+  },
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 0
+ },
+ {
+  "url": "https://evenox.ca/product/poids-de-support-pour-chapiteau-lot-de-4/",
+  "slug": "poids-de-support-pour-chapiteau-lot-de-4",
+  "texte": "Ajouter au panier",
+  "ident": "2ee03bc8-380f-4e67-b848-47db2f87100d",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "product_groups",
+  "res_nom": "Poids de Support Chapiteau",
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   2
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/rechaud/",
+  "slug": "rechaud",
+  "texte": "Ajouter au panier",
+  "ident": "32e70679-0de6-44b1-a0a6-84e021579fa4",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Réchaud",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/32e70679-0de6-44b1-a0a6-84e021579fa4/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/soccer-bulle/",
+  "slug": "soccer-bulle",
+  "texte": "Ajouter au panier",
+  "ident": "1455fa9c-b7ae-4137-ac07-5a89a00ec12e",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Soccer Bulle - Bulle Unitaire (Format Enfant)",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/fcffc889-2d25-40dc-bc22-580b517fc1d8/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/soccer-bulle/",
+  "slug": "soccer-bulle",
+  "texte": "Ajouter au panier",
+  "ident": "fcffc889-2d25-40dc-bc22-580b517fc1d8",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Soccer Bulle - Bulle Unitaire (Format Adolescent et Adulte)",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/fcffc889-2d25-40dc-bc22-580b517fc1d8/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 2,
+  "index": 1
+ },
+ {
+  "url": "https://evenox.ca/product/table-air-hockey-en-location/",
+  "slug": "table-air-hockey-en-location",
+  "texte": "Ajouter au panier",
+  "ident": "table-air-hockey",
+  "conteneur": "embed herite (div.booqable-product-button)",
+  "ident_uuid": false,
+  "res_statut": 404,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   10
+  ],
+  "variantes": 3,
+  "variante_choisie": {
+   "texte": "7 pieds (résidentiel)",
+   "valeur": "91535c0b-c9c0-451f-9702-24b8a1a09c62"
+  },
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/tabouret-de-bar-noire-en-metal/",
+  "slug": "tabouret-de-bar-noire-en-metal",
+  "texte": "Ajouter au panier",
+  "ident": "ac62383f-6afa-448a-8759-a6f94a0a7ea9",
+  "conteneur": "composant bq-product-button",
+  "ident_uuid": true,
+  "res_statut": 200,
+  "res_type": "products",
+  "res_nom": "Tabouret de Bar Noire en Métal",
+  "verdict": "ERREUR",
+  "erreur": [
+   "HTTP 404 sur /api/boomerang/product_groups/ac62383f-6afa-448a-8759-a6f94a0a7ea9/recommendations?include[]=ph — reponse : {\"errors\":[{\"code\":\"resources_not_found\",\"status\":\"404\",\"title\":\"Resource(s) not found\"}]}",
+   "console (erreur JavaScript non rattrapee) : TypeError: Cannot read properties of undefined (reading 'id')"
+  ],
+  "temoin_reception": "clic enregistre sur le declencheur",
+  "panier": [
+   0,
+   0
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage + 2e passage (verification)",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ },
+ {
+  "url": "https://evenox.ca/product/tic-tac-toe-geant/",
+  "slug": "tic-tac-toe-geant",
+  "texte": "Ajouter au panier",
+  "ident": "tic-tac-toe-geant",
+  "conteneur": "embed herite (div.booqable-product-button)",
+  "ident_uuid": false,
+  "res_statut": 404,
+  "res_type": null,
+  "res_nom": null,
+  "verdict": "FONCTIONNE",
+  "erreur": [],
+  "temoin_reception": "non instrumente a ce passage (la preuve tient au POST observe)",
+  "panier": [
+   null,
+   7
+  ],
+  "variantes": 0,
+  "variante_choisie": null,
+  "source": "1er passage",
+  "statut_doc": 200,
+  "nb_boutons": 1,
+  "index": 0
+ }
+]
