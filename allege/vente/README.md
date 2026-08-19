@@ -7,10 +7,10 @@ l'intéresse.
 | Page | Avant | Après | Retiré | Fichier |
 |---|---|---|---|---|
 | https://evenox.ca/location-chaises/ | 1 225 mots | 441 mots | 64 % | [`location-chaises.md`](location-chaises.md) |
-| https://evenox.ca/decoration-ballon/ | 1 394 mots | 479 mots | 66 % | [`decoration-ballon.md`](decoration-ballon.md) |
+| https://evenox.ca/decoration-ballon/ | 1 394 mots | 472 mots | 66 % | [`decoration-ballon.md`](decoration-ballon.md) |
 | https://evenox.ca/party-noel-corporatif/ | 1 425 mots | 577 mots | 60 % | [`party-noel-corporatif.md`](party-noel-corporatif.md) |
 
-Total : 4 044 mots avant, 1 497 après. **63 % retiré.**
+Total : 4 044 mots avant, 1 490 après. **63 % retiré.**
 
 Rien n'a été modifié sur evenox.ca. Les pages ont été lues en lecture seule le 19 août 2026.
 
@@ -90,6 +90,16 @@ HTML et adresses des liens. Les doublons de texte exact ne sont comptés qu'une 
 
 Le chiffre de 1 393 mots annoncé pour `/location-chaises/` et celui de 1 338 obtenu ici décrivent
 la même page ; l'écart vient de la méthode de comptage.
+
+## Vérification
+
+Les trois textes allégés passent un contrôle automatique
+([`allege/outils/verifier.py`](../outils/README.md)) : **226 phrases sur 226 se retrouvent mot pour
+mot dans la page d'origine**, et les trois longueurs annoncées correspondent au comptage. Le
+contrôle accepte qu'une phrase soit le recollage de fragments voisins de la page — un titre que le
+constructeur de pages coupe en trois éléments, un prix séparé de son unité — mais refuse toute
+réécriture, tout changement d'ordre et tout mot ajouté. Éprouvé en modifiant volontairement un
+prix, un pourcentage de dépôt et en ajoutant une phrase inventée : les trois ont été détectés.
 
 ## Les règles appliquées, dans l'ordre de priorité
 

@@ -112,16 +112,14 @@ engagement requis.
 
 Conditions complètes : [conditions de location](https://evenox.ca/conditions-de-location-evenox/)
 
-[Nos forfaits mariage et événements tout inclus →](https://evenox.ca/forfaits-mariage/)
-
 <!-- FIN TEXTE ALLEGE -->
 
 ---
 
 ## 3. Longueur après
 
-- Longueur après : **479 mots**
-- Retiré : **915 mots, soit 66 %** de la zone éditoriale.
+- Longueur après : **472 mots**
+- Retiré : **922 mots, soit 66 %** de la zone éditoriale.
 - Le seul prix de la page (« à partir de 250 $ ») est passé de la FAQ, en bas, au deuxième bloc.
   Le tarif de livraison est dans le premier écran, comme sur la page d'origine.
 
@@ -179,8 +177,8 @@ l'extérieur). Un lien vers les conditions de location remplace leur absence. Vo
 
 ## 5. Ce qui a été coupé, par motif
 
-935 mots retirés de la page d'origine ; 20 mots d'intertitres et le lien vers les conditions de
-location ajoutés — net de 915. Les totaux ci-dessous sont arrondis à la dizaine.
+942 mots retirés de la page d'origine ; 20 mots d'intertitres et le lien vers les conditions de
+location ajoutés — net de 922. Les totaux ci-dessous sont arrondis à la dizaine.
 
 **Bloc « Pourquoi louer vos décorations en ballons plutôt que le faire vous-même ? » : 148 mots,
 supprimé en entier.** Quatre arguments de vente (« Gagnez du temps », « Résultat professionnel »,
@@ -225,9 +223,13 @@ Corporatif. Gardé la première, la plus complète.
 **Promesses d'inclusion en double : 40 mots.** Voir 6a et 6b : cinq formulations sur six sont des
 répétitions de « Installation et démontage compris dans chaque location », qui reste.
 
-**Intitulés de section et phrases d'introduction décoratifs : environ 30 mots.** « Nos services de décoration en ballons »
-devient « Ce qui se loue ». « Prêt à transformer votre événement ? » devient « Demander une
-soumission ». « Complétez votre événement » gardé, réduit à quatre liens.
+**Intitulés de section et phrases d'introduction décoratifs : environ 30 mots.** « Nos services de
+décoration en ballons » devient « Ce qui se loue ». « Prêt à transformer votre événement ? »
+devient « Demander une soumission ». « Complétez votre événement » gardé, réduit à quatre liens.
+
+**Lien de bas de page : 7 mots.** « Nos forfaits mariage et événements tout inclus → ». Retiré pour
+deux raisons : il envoie vers une autre page de vente au lieu d'une fiche produit, et son libellé
+promet « tout inclus » sur une page où la livraison est facturée en sus.
 
 ---
 
@@ -238,7 +240,10 @@ conservée.** Alexandre n'a pas tranché si c'est vrai. Je n'en ai reformulé au
 
 - Conservée mot pour mot, dans le bloc « Arche de ballons » où elle se trouvait :
   « Installation et démontage compris dans chaque location. » C'est la plus large des six
-  (« chaque location ») : la garder évite de rétrécir la promesse.
+  (« chaque location ») : la garder évite de rétrécir la promesse. À noter : cette formulation est
+  à un mot de « montage compris », qui figure sur la liste des formulations à ne jamais écrire.
+  Je l'ai gardée parce qu'elle était là et qu'un fait non tranché ne se coupe pas — mais si la
+  réponse est non, c'est cette ligne-là, et elle seule, qui doit partir.
 - Conservée mot pour mot dans le premier écran : « Service clé en main pour vos événements sur la
   Rive-Nord de Montréal. »
 - Conservée mot pour mot : « Consultation couleur et thématique incluse » (forfait Mariage & Gala).
