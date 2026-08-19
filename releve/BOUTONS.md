@@ -313,6 +313,8 @@ transforme pas en tarifs.
 - `releve/observations.json` — le relevé brut, bouton par bouton : identifiant, ce qu'il
   désigne au catalogue, témoin de réception du clic, requêtes observées, état du panier avant
   et après.
+- `releve/reprise-en-images.json` — ce qui a été mesuré pendant la reprise finale des deux
+  fiches mises en regard : état du panier avant et après, requêtes parties au clic, erreurs.
 - `releve/outils/audit.js` — le script d'observation exécuté, avec sa file d'attente à une
   requête pour `evenox.ca`, ses témoins de clic et son test d'impact traversant le shadow DOM.
   Il est là pour que le relevé soit refaisable à l'identique, y compris sur les 216 fiches
