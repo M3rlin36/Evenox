@@ -20,8 +20,8 @@ ordinateur (1440 px) et sur téléphone (375 px), avant et après.
 
 **1. La durée.** Aucune des quatre pages n'écrit la durée d'un seul prix, à une exception près :
 l'accueil dit « Tarif : fixe jusqu'à 48 h (1–2 jours, même prix) » à propos de la réservation en
-ligne, sans qu'on sache si cela s'applique aux prix affichés. Vingt-cinq prix lus au total, une
-seule durée. C'est le problème de fond, et il ne se règle pas en coupant.
+ligne, sans qu'on sache si cela s'applique aux prix affichés. Une trentaine de prix affichés sur les
+quatre pages, une seule durée. C'est le problème de fond, et il ne se règle pas en coupant.
 
 **2. Ce qui est compris dans les forfaits.** Les pages /nos-forfaits-tout-inclus/ et
 /forfaits-fete-enfants/ annoncent la livraison, l'installation et le démontage comme compris dans le
@@ -49,7 +49,8 @@ strict. Ce sont des éléments pour la décision, pas la décision.
 
 Les pages publiques ont été lues, jamais modifiées. Aucun compte, aucune commande, aucune
 coordonnée, aucun moyen de paiement. Les requêtes ont été faites une à la fois, espacées d'au moins
-une seconde : neuf requêtes au total, toutes en HTTP 200, aucun 403.
+une seconde : dix requêtes au total (quatre pages, trois feuilles de style et trois images),
+toutes en HTTP 200, aucun 403.
 
 Le comptage des mots couvre le texte éditorial de chaque page dans l'ordre de lecture, sans les
 libellés du menu de navigation ni les listes de liens du pied de page, mais avec la ligne d'adresse
