@@ -217,7 +217,11 @@ Mirabel sur la page, ni avant ni après.
 | Gratuit • Sans engagement (soumission) | oui, Demande de soumission |
 
 Le dépôt de 20 %, le solde au ramassage et la mention « taxes en sus » **ne figurent pas sur la
-page d'accueil**. Voir section 6, points 3 et 4.
+page d'accueil**. Voir section 6, points 3 et 4. Pour information : le dépôt de 20 % est bien écrit
+ailleurs sur le site, sur la page /forfait/ (« Ce dépôt représente 20 % de la valeur de la location.
+Il n'est pas remboursable en argent, mais il vous est crédité pendant 12 mois si vous annulez. »),
+et c'est aussi la seule page qui donne l'adresse de ramassage dans sa forme complète. Je n'ai pas
+importé ces phrases sur l'accueil : déplacer un fait d'une page à l'autre, ce n'est plus alléger.
 
 ### Conditions et disponibilité
 
