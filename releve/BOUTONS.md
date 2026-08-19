@@ -145,7 +145,7 @@ cohabitent sur les fiches :
 - le **composant** `<bq-product-button product-id="UUID" data-evx-uuid="UUID">`, qui rend son
   bouton dans un shadow DOM ouvert.
 
-Trois précautions expliquent pourquoi je donne ces verdicts comme des faits et non comme des
+Quatre précautions expliquent pourquoi je donne ces verdicts comme des faits et non comme des
 impressions.
 
 **1. J'ai cliqué pour de vrai, et j'ai vérifié que le clic arrivait.** Le clic est un clic de
@@ -160,12 +160,28 @@ bien le bouton : ils ne sont pas morts parce que j'aurais cliqué à côté.
 interrogé le panier du marchand
 (`GET evenox.booqableshop.com/api/1/cart?...`) et compté ses lignes. Un bouton n'est déclaré
 `FONCTIONNE` que si deux choses sont vraies en même temps : un `POST /api/boomerang/cart_bookings`
-revenu en HTTP 200, et une ligne de plus dans le panier.
+revenu en HTTP 200, **et** une ligne de plus dans le panier. Exception à signaler : pour les
+deux premières fiches observées, `/product/lettre-illuminee-marquee-letter/` et
+`/product/chaise-chiavari/`, ma sonde de panier échouait encore ; la preuve tient alors au
+panier que la réponse du `POST` renvoie elle-même, dont le total est passé de zéro à un montant
+non nul pour la première et a augmenté pour la seconde. Le tableau le dit ligne par ligne
+plutôt que de lisser la différence.
 
 **3. Deux passages indépendants.** Le premier passage a relevé et cliqué ; le deuxième a
 refait, avec les témoins de réception, les 13 fiches en défaut et les 3 fiches sans bouton.
 Les deux passages donnent les mêmes résultats, y compris la même erreur de console au même
 endroit.
+
+**4. Une reprise finale, côte à côte, en images.** Pour montrer la différence telle qu'un
+visiteur la vivrait, j'ai refait une dernière fois deux fiches déjà visitées, cette fois sans
+bloquer les images : `/product/mur-a-champagne/` (bouton mort) et `/product/chaise-chiavari/`
+(bouton fonctionnel). Sur la première, le panier reste à 0 ligne et 0 au total avant comme
+après le clic, la seule requête partie est une relecture du panier, et la console porte
+`TypeError: Cannot read properties of undefined (reading 'id')`. Sur la seconde, le clic
+déclenche `POST /api/boomerang/cart_bookings` en HTTP 200, le total du panier passe de 0 à un
+montant non nul, le panier « MA COMMANDE » s'ouvre avec l'article dedans, et Booqable enchaîne
+en demandant le mode de récupération et les dates. **Je me suis arrêté là** : aucune date
+renseignée, aucun passage en caisse.
 
 Un détail de méthode qui a son importance. Le navigateur utilisé est Chrome 148 en mode
 « headless », mais il annonce un agent utilisateur de Chrome ordinaire, et ce n'est pas un
@@ -195,15 +211,16 @@ d'écart**, jamais en parallèle. Images, polices et vidéos ont été bloquées
 demander. Les requêtes vers les CDN tiers (`booqable.com`, `booqableshop.com`, Google) ne
 passent pas par cette file : elles ne sont pas servies par l'hébergeur d'evenox.ca.
 
-Total vers `evenox.ca` : **1 741 requêtes par le navigateur** (80 + 1 024 + 596 + 41 selon les
-journaux des quatre passages) et une dizaine en ligne de commande. **Aucun 403 n'a été
-rencontré.** La page d'accueil a été vérifiée en HTTP 200 au début du relevé, en cours de
-route et à la fin.
+Total vers `evenox.ca` : **1 829 requêtes par le navigateur** (80 + 1 024 + 596 + 41 selon les
+journaux des quatre passages d'observation, plus 88 pour la reprise en images) et une dizaine
+en ligne de commande. **Aucun 403 n'a été rencontré.** La page d'accueil a été vérifiée en
+HTTP 200 au début du relevé, en cours de route et à la fin.
 
 ### Traces laissées, puisqu'il y en a
 
-Cliquer « Ajouter au panier » a une conséquence : **16 ajouts ont réussi**, répartis sur
-**4 paniers temporaires anonymes** de Booqable, créés par le navigateur au fil des passages.
+Cliquer « Ajouter au panier » a une conséquence : **17 ajouts ont réussi** (16 pendant les
+passages d'observation, 1 pendant la reprise en images), répartis sur **5 paniers temporaires
+anonymes** de Booqable, créés par le navigateur au fil des passages.
 Ce sont des paniers de session, pas des réservations : aucune commande n'a été créée, aucun
 compte utilisé, aucune coordonnée ni donnée de paiement saisie, et je n'ai jamais atteint la
 caisse.

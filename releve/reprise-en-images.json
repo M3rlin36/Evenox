@@ -1,0 +1,40 @@
+[
+ {
+  "url": "https://evenox.ca/product/mur-a-champagne/",
+  "panier_avant": {
+   "lignes": 0,
+   "total": 0
+  },
+  "panier_apres": {
+   "lignes": 0,
+   "total": 0
+  },
+  "reseau_pendant_le_clic": [
+   "GET 200 /api/1/cart?source=store&provider=wordpress&id=b7455d78-b507-4e55-bde4-8b9399847"
+  ],
+  "erreurs_js": [
+   "TypeError: Cannot read properties of undefined (reading 'id')"
+  ]
+ },
+ {
+  "url": "https://evenox.ca/product/chaise-chiavari/",
+  "panier_avant": {
+   "lignes": 0,
+   "total": 0
+  },
+  "panier_apres": {
+   "lignes": 0,
+   "total": 800
+  },
+  "reseau_pendant_le_clic": [
+   "OPTIONS 200 /api/boomerang/cart_bookings",
+   "POST 200 /api/boomerang/cart_bookings",
+   "OPTIONS 200 /api/1/product_groups/services",
+   "POST 200 /api/3/product_groups",
+   "POST 201 /api/1/product_groups/services",
+   "POST 201 /api/1/product_groups/services",
+   "GET 200 /api/1/cart?source=store&provider=wordpress&id=b7455d78-b507-4e55-bde4-8b9399847"
+  ],
+  "erreurs_js": []
+ }
+]
