@@ -5,7 +5,7 @@
 - Adresse : https://evenox.ca/decoration-ballon/
 - Longueur avant : **1 394 mots** dans la zone éditoriale (menu du site, 72 mots, et pied de page,
   41 mots, exclus). 1 507 mots pour la page entière.
-- C'est la plus longue des quinze pages « décoration… » du sitemap. Le classement complet est dans
+- C'est la plus longue des quatorze pages « décoration… » du sitemap. Le classement complet est dans
   `allege/vente/README.md`.
 - Page lue le 19 août 2026.
 
@@ -192,8 +192,10 @@ bloc sont des promesses d'inclusion : voir 6a.
 supprimé en entier.** Trois paragraphes qui reprennent, en gras, les mots-clés déjà présents dans
 le titre, les titres de section et la section « Zone de livraison » : « location de décoration en
 ballons », « arche de ballons », « balloon garland », « ballons hélium », « décoration ballon
-anniversaire », et la liste des villes. Aucun fait nouveau. Le référencement ne perd rien : tous
-ces mots restent sur la page allégée.
+anniversaire », et la liste des villes. Aucun fait nouveau. Le référencement perd une seule
+formulation exacte : « location de décoration en ballons », avec le « en ». « Location de
+Décoration Ballon » reste dans le titre, et « décorations en ballons » reste deux fois dans la
+section « Zone de livraison ». Tous les autres mots-clés et toutes les villes restent.
 
 **Phrases d'ambiance à l'intérieur des blocs conservés : environ 240 mots.** Supprimées
 entièrement, pas raccourcies. « Que ce soit pour un mariage, un anniversaire, un événement

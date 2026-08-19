@@ -5,7 +5,7 @@
 - Adresse : https://evenox.ca/party-noel-corporatif/
 - Longueur avant : **1 425 mots** dans la zone éditoriale (menu du site, 72 mots, et pied de page,
   41 mots, exclus). 1 538 mots pour la page entière.
-- C'est la plus longue des dix-neuf pages d'occasion du sitemap (mariage, graduation, party de
+- C'est la plus longue des dix-huit pages d'occasion du sitemap (mariage, graduation, party de
   Noël corporatif). Le classement complet est dans `allege/vente/README.md`.
 - Page lue le 19 août 2026.
 

@@ -216,10 +216,12 @@ tables » : gardé le lien seulement.
 cérémonie, conférence, fête », « Combinable avec tables banquet », « Idéal anniversaire, baby
 shower, fiançailles », plus les deux répétitions du tarif de livraison.
 
-**Pastilles « Pourquoi Évenox » : 87 mots.** Quatre pastilles numérotées 01 à 04. « Réservation
-instantanée », « Chaises nettoyées », « Volume disponible », « 4 ans · 1 000+ événements » : les
-trois premières redisent la FAQ ou les pastilles du bas de page, la quatrième est reprise ailleurs
-sous « 4.8/5 sur Google ».
+**Pastilles « Pourquoi Évenox » : 87 mots.** Quatre pastilles numérotées 01 à 04. Les trois
+premières redisent la FAQ ou les pastilles du bas de page : « Réservation instantanée » redit le
+paiement en ligne, « Chaises nettoyées » redit la pastille de propreté, « Volume disponible » redit
+la question de stock. La quatrième, « 4 ans · 1 000+ événements / Marie, Jean, France et 997 autres
+clients ont fait le bon choix », part aussi : c'est de la preuve sociale, et il en reste une,
+« 4.8/5 sur Google ».
 
 **Bas de page : 59 mots.** « Réserve tes chaises maintenant / Disponibilités à jour, paiement
 sécurisé, confirmation instantanée. Aucun appel nécessaire — réserve directement en ligne. » puis
@@ -246,9 +248,10 @@ sans avoir à stresser sur la qualité du mobilier », « Tes photos en sortiron
 
 **a) Promesses d'installation ou de montage — laissées telles quelles.**
 
-- Conservée mot pour mot, sous le forfait Mariage Chiavari où elle se trouvait :
-  « Empilable — installation rapide par ton équipe ou la nôtre. » Ne dit pas si l'installation
-  est incluse ni facturée.
+- Conservée mot pour mot : « Empilable — installation rapide par ton équipe ou la nôtre. » Elle se
+  trouvait dans le bloc « Le Chiavari transparent », qui est supprimé ; je l'ai remise sous le
+  forfait Mariage Chiavari, pour qu'elle continue de parler des mêmes chaises. Elle ne dit pas si
+  l'installation est incluse ni facturée.
 - Conservée mot pour mot dans le bloc livraison : « Pour les gros volumes (Chiavari, pliantes
   50+), livraison + installation + ramassage sont fortement recommandés. » Recommandation, pas
   inclusion : à trancher.
