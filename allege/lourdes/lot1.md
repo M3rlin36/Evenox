@@ -30,6 +30,9 @@ simplifier — mais faut pas trop en faire non plus. »
   pas été ajouté : on n'ajoute rien. Il est signalé par fiche, à décider.
 - **Rythme.** Une requête à la fois, deux secondes entre deux. Aucun 403 : les trois fiches
   et la fiche de référence ont répondu 200.
+- **Refaire les mesures.** Les outils sont dans `tools/` : la liste des coupes de chaque fiche
+  (`ops_*.json`), le compte de mots (`compter.py`), le rendu et la mesure à 375 px
+  (`apres.py`), et la vérification au mot (`verifier.py`).
 
 ## Les trois fiches d'un coup d'œil
 
