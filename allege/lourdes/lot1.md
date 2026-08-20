@@ -81,7 +81,7 @@ Prix pour ramassage à notre entrepôt de Sainte-Thérèse. **Le montage n'est p
 
 [sélecteur de dates]
 
-[bouton : 2 Jours · 50,00 $ · Ajouter au panier]
+[bouton : Ajouter au panier]
 
 **Réservez avec 20 % du total.** Le solde au ramassage.
 
@@ -316,7 +316,7 @@ Prix pour ramassage à notre entrepôt de Sainte-Thérèse. **Le montage n'est p
 
 [sélecteur de modèle : 7 pieds (résidentiel) · 7 pieds (commerciale)]
 
-[bouton : 2 Jours · 120,00 $ · Ajouter au panier]
+[bouton : Ajouter au panier]
 
 **Réservez avec 20 % du total.** Le solde au ramassage.
 
@@ -570,7 +570,7 @@ format résidentiel, le moins cher des deux. **Le montage n'est pas compris.**
 
 [sélecteur de format : Résidentiel · Commerciale]
 
-[bouton : 1 jour · 120,00 $ · Ajouter au panier]
+[bouton : Ajouter au panier]
 
 **Réservez avec 20 % du total.** Le solde au ramassage.
 
