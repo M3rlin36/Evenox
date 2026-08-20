@@ -1,7 +1,7 @@
 # Allègement — page de catégorie « Photobooth »
 
-Page lue le 20 août 2026, en lecture seule. Rien n'a été modifié sur evenox.ca. Six
-chargements de la page en tout, espacés : un en `curl` pour le texte, cinq au navigateur pour
+Page lue le 20 août 2026, en lecture seule. Rien n'a été modifié sur evenox.ca. Sept
+chargements de la page en tout, espacés : un en `curl` pour le texte, six au navigateur pour
 les mesures d'écran — dont un interrompu par une erreur de mon propre script. Plus un appel à
 la page des conditions de location, pour vérifier que le lien répond. Tous en HTTP 200 : aucun
 403.
@@ -389,7 +389,7 @@ combiner les deux ». À remettre si l'une compte.
 
 ### b) L'apparence mal alignée
 
-Trois défauts mesurés à 375 px, tous vérifiés au navigateur, pas déduits du code.
+Quatre défauts mesurés à 375 px, tous vérifiés au navigateur, pas déduits du code.
 
 **Le bandeau déborde de sa propre boîte, en haut et en bas.** `.pb-hero-left` est en
 `display:flex; flex-direction:column; justify-content:center; overflow:hidden` avec une hauteur
@@ -424,6 +424,14 @@ défilement : le bouton flottant « Vérifier la disponibilité → » occupe 75
 591→643 px en hauteur, il recouvre le titre de la section `pb-services` — « Nos services », que
 l'on voit dépasser derrière lui — et pendant ce temps le bouton du bandeau, avec exactement le
 même libellé, est encore à l'écran, à 95→144 px. Deux fois le même bouton sur le même écran.
+
+**Les trois pastilles flottantes forment un bandeau qui barre le bas de l'écran.** Mesurées
+au même endroit, elles se suivent sans interruption : la bulle de clavardage occupe x 16→80, le
+bouton flottant x 75→300, le lanceur de panier x 300→360. La bulle et le bouton se chevauchent
+sur 5 px ; le panier commence exactement là où le bouton finit. À elles trois, elles couvrent
+344 px des 375 de large, sur une bande de 60 px de haut, et masquent ce qui passe dessous — la
+capture des forfaits montre « Overlay brandé à vos couleurs » dont le mot « couleurs »
+disparaît derrière le bouton.
 
 Détail de typographie, au passage : le titre est écrit `Tout est inclus.Zéro stress.` dans le
 code, sans espace après le point.
@@ -471,10 +479,11 @@ Mesuré à 375 × 667 px, dans un vrai navigateur.
 | 166→373 px | le H1 sur 5 lignes, sommet de la 1ʳᵉ ligne rogné |
 | 395→607 px | le paragraphe du bandeau, 7 lignes, 212 px, dont 4 lignes de tarif de livraison |
 | 645→694 px | le bouton « Vérifier la disponibilité → » : **22 px sur 49 au-dessus du pli** |
-| par-dessus | la bulle de clavardage et le bouton panier, qui mordent sur le texte |
+| 585→652 px | par-dessus tout : la bulle de clavardage (x 16→80) et le lanceur de panier (x 300→360), qui mordent sur la dernière ligne du paragraphe et sur le bouton |
 
-**Aucun prix.** Le premier prix de la page est à 2 414 px, soit **3,6 écrans plus bas**. Le
-premier forfait est à 9 762 px, soit 14,6 écrans. Le bouton téléphone du bandeau est à 708 px :
+**Aucun prix de produit.** Les seuls montants du premier écran sont ceux de la livraison,
+« 100,00 $ » et « 7,00 $ », au milieu du paragraphe. Le premier prix de produit est à 2 414 px,
+soit **3,6 écrans plus bas**. Le premier forfait est à 9 762 px, soit 14,6 écrans. Le bouton téléphone du bandeau est à 708 px :
 sous le pli. Les trois chiffres de réassurance sont coupés (7b). La page entière fait 14 590 px,
 21,9 écrans.
 
@@ -517,7 +526,7 @@ recommandations, je n'ai rien modifié.
 
 ## 8. Méthode
 
-- Quatre visites de la page, espacées, toutes en HTTP 200. Aucun 403. Aucune écriture sur
+- Sept chargements de la page, espacés, tous en HTTP 200. Aucun 403. Aucune écriture sur
   evenox.ca.
 - Comptage des mots : `allege/outils/lire_pages.py`, sur les nœuds de texte visibles du corps,
   commentaires HTML exclus.
