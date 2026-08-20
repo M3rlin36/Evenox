@@ -23,9 +23,9 @@ sont des mesures, pas des estimations.
 
 | Fiche | Avant | Après | Retiré |
 |---|---|---|---|
-| Serpent et échelle géant | 3 048 mots | 507 mots | −83 % |
+| Serpent et échelle géant | 3 048 mots | 522 mots | −83 % |
 | Table de Missisipi | 2 952 mots | 586 mots | −80 % |
-| Tic-Tac-Toe Géant | — | — | — |
+| Tic-Tac-TOE géant | 2 969 mots | 608 mots | −80 % |
 
 ---
 
@@ -97,7 +97,8 @@ Caractéristique — Ce qui est vérifié
 Tarif                     25,00 $ pour 48 h · aucun rabais de quantité
 Ramassage                 Entrepôt de Sainte-Thérèse — 215, boulevard René-A.-Robert
 Montage                   Non compris — le tarif ci-dessus ne comprend aucun montage
-Le nombre de cases        Non établi — personne ne les a comptées chez nous. Appelez le
+Le nombre de cases        Non établi — personne ne les a comptées chez nous, et nous ne les
+                          compterons pas sur une photo qui n'a pas été prise ici. Appelez le
                           514-559-1893 : on déroule le tapis et on compte.
 La surface au sol         Non établie — aucune dimension n'a été mesurée à l'entrepôt.
 Les dimensions et la      Longueur, largeur, tissu ou vinyle, épaisseur : rien n'est relevé
@@ -134,8 +135,8 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 
 ### 3. Mots APRÈS et pourcentage retiré
 
-- **507 mots** (avant : 3 048) → **−83 %**, soit 2 541 mots de moins.
-- C'est 35 % plus court que la fiche de référence (783 mots), et ce n'est pas un excès de zèle :
+- **522 mots** (avant : 3 048) → **−83 %**, soit 2 526 mots de moins.
+- C'est 33 % plus court que la fiche de référence (783 mots), et ce n'est pas un excès de zèle :
   cette page-ci a moins de faits à écrire que la chaise pliante, parce que presque rien n'y est
   mesuré. Retirer une phrase de plus enlèverait un fait — j'ai essayé sur trois d'entre elles
   (« Le montage n'est pas compris », « Le jeu n'a pas été pesé », « aucun rabais de quantité ») :
@@ -181,7 +182,9 @@ Supprimé : la légende « La photo de notre fiche, 1280 x 1280 px. Rien ne dit 
 chez nous », les six vignettes « À produire » (tapis déroulé, cases, dés, pions, lestage,
 rangement) et le paragraphe de 672 px qui décrit comment les photographier (cadrage 1:1, 1200 px
 minimum, fond blanc, ruban à mesurer). C'est une commande de travail interne ; aucun client n'y
-lit un fait sur le jeu. Ce que ce bloc annonçait — cases, surface, dés, pions « à relever » — est
+lit un fait sur le jeu. Le seul fait de la légende — rien ne dit que la photo a été prise chez
+Évenox — reste dans la ligne « Le nombre de cases » du tableau, où il sert à quelque chose :
+c'est la raison pour laquelle on ne compte pas les cases à l'écran. Ce que ce bloc annonçait — cases, surface, dés, pions « à relever » — est
 déjà dans le tableau.
 
 **c) Le bloc « Ce qui encadre l'usage » : simplifié** (de 6 points commentés à 5 lignes,
@@ -436,7 +439,7 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 ### 3. Mots APRÈS et pourcentage retiré
 
 - **586 mots** (avant : 2 952) → **−80 %**, soit 2 366 mots de moins.
-- Un peu plus long que la fiche 1 (507), pour une raison simple : ici la photo a été prise à
+- Un peu plus long que la fiche 1 (522), pour une raison simple : ici la photo a été prise à
   l'entrepôt, alors il y a quelque chose à décrire — le caisson, les rails, les chevilles, les
   bacs de retour — et une interdiction de plus à écrire (« Ne modifiez rien »).
 
@@ -607,6 +610,294 @@ Comme sur la fiche 1, les coupes seules ne suffisent pas : les 242 px d'en-tête
 
 ---
 
-## Fiche 3 — Tic-Tac-Toe Géant
+## Fiche 3 — Tic-Tac-TOE géant
 
-_En cours._
+### 1. Adresse et mots AVANT
+
+- `https://evenox.ca/product/tic-tac-toe-geant/`
+- **2 969 mots**. Hauteur de page à 375 px : **23 654 px**, soit 35 écrans de téléphone — la plus
+  longue des trois.
+
+### 2. Le texte allégé complet, prêt à relire
+
+<!-- TEXTE-ALLEGE:START fiche3 -->
+```text
+Tic-Tac-TOE géant
+
+Une grille de cordes à poser au sol et des coussins X et O à lancer.
+
+[ photo ]
+Photo de catalogue de fabricant, sur fond blanc. Elle n’a pas été prise à notre entrepôt.
+
+VUE D’ENSEMBLE
+
+20,00 $ / jeu · 48 h
+
+Prix pour ramassage à notre entrepôt de Sainte-Thérèse. Le montage n’est pas compris.
+
+Vos dates — on affiche ce qui est libre
+[ calendrier ]
+
+Le total exact s’affiche au panier, avant tout engagement.
+
+Combien de jeux ?
+[ Ajouter au panier ]
+
+Réservez avec 20 % du total. Le solde au ramassage.
+Dollars canadiens, taxes en sus. Paiement par carte de crédit seulement, en ligne.
+Politique et conditions de location   ← lien
+
+Le tarif selon la durée
+2 jours — tarif de base · 3 jours — × 1,5 · 1 semaine — × 2 · 4 semaines — × 4
+
+AVANT DE RÉSERVER
+
+Ce qui encadre l’usage
+
+« Un adulte surveille en tout temps les jeux, les structures et les machines ».
+
+« Respectez les limites d’âge, de poids et de nombre indiquées ». Pour cet article, aucune
+limite d’âge et aucun nombre de joueurs ne sont écrits nulle part dans notre catalogue. Nous
+n’en inventerons pas : demandez-les-nous au 514-559-1893.
+
+À l’intérieur ou à l’extérieur, notre catalogue ne tranche pas, et nous non plus.
+
+« Retournez les jeux secs. Un jeu rangé humide moisit ».
+
+« Un bris ou une pièce manquante : coût de réparation, ou valeur de remplacement si l’article
+n’est pas réparable ». « L’usure normale ne se facture jamais. »
+
+La protection bris accidentel coûte 8 % du montant de la location. Ce qu’elle ne couvre pas :
+« la négligence, le vol, la perte, les pièces non retournées, les frais de retard ».
+
+LA FICHE
+
+Caractéristique — Ce qui est vérifié
+
+Tarif                    20,00 $ pour 48 h · aucun rabais de quantité
+Ramassage                Entrepôt de Sainte-Thérèse — 215, boulevard René-A.-Robert, local 100.
+                         La livraison est offerte en supplément : 100,00 $ jusqu’à 10 km, puis
+                         7,00 $ du kilomètre jusqu’à 40 km ; au-delà, sur soumission.
+Montage                  Non compris — le tarif ci-dessus ne comprend aucun montage
+Le nombre de pièces      Non établi — personne ne les a comptées chez nous, et nos deux textes
+                         de catalogue se contredisent sur le contenu comme sur les couleurs.
+                         Appelez le 514-559-1893, on va compter le jeu
+Les dimensions de la     Non établies — aucune dimension n’a été prise à l’entrepôt
+grille
+La taille d’un coussin   Largeur et épaisseur : rien n’est mesuré à l’entrepôt
+Le poids                 Le jeu n’a pas été pesé
+L’empreinte au sol et    La surface à prévoir n’est pas celle de la grille seule. Ni l’une ni
+la distance de lancer    l’autre n’est relevée
+Le montage et le         Non établi — un texte de catalogue décrit des cordes fixées au sol par
+démontage                des piquets, la photo ne montre aucun piquet mais des cubes de bois
+                         enfilés sur les cordes. Les deux ne décrivent pas le même montage, et
+                         aucun temps de montage n’a été relevé
+Ce qui part dans le sac  Non établi — la photo montre un sac de transport souple ; un de nos
+                         textes annonce plutôt une boîte de rangement. Le contenu exact n’est
+                         écrit nulle part
+
+À AJOUTER
+
+Souvent loué avec
+Un seul ramassage, un seul dépôt.
+
+Lancer de hache            40,00 $   48 h    Voir et réserver
+Serpent et échelle géant   25,00 $   48 h    Voir et réserver
+Machine à hot-dog          50,00 $   48 h    Voir et réserver
+Jeu Putterball             50,00 $   48 h    Voir et réserver
+
+Une question avant de réserver ?
+
+Deux champs obligatoires, deux facultatifs. Pour réserver, tout se passe en haut de page.
+
+Votre nom (obligatoire)
+Votre téléphone (obligatoire)
+Votre courriel (facultatif)
+Date de votre événement (AAAA-MM-JJ) (obligatoire)
+Où le jeu sera installé, et vos questions
+[ Envoyer ma question ]
+
+Pour tout ce qui n’est pas écrit ici, il y a le téléphone. 514-559-1893
+```
+<!-- TEXTE-ALLEGE:END -->
+
+### 3. Mots APRÈS et pourcentage retiré
+
+- **608 mots** (avant : 2 969) → **−80 %**, soit 2 361 mots de moins. C'est la plus longue des
+  trois fiches allégées, et la seule qui reste un peu au-dessus de la moitié de la référence.
+- C'est la fiche où il reste le plus de lignes « non établi », parce que c'est celle où les deux
+  textes internes se contredisent le plus. Chacune de ces lignes est un fait : elle dit au client
+  ce qu'il ne saura pas avant d'avoir appelé.
+
+### 4. La liste des faits conservés
+
+| Fait | Ce que dit la fiche allégée |
+|---|---|
+| Prix | 20,00 $ / jeu |
+| Sa durée réelle | 48 h ; 3 jours × 1,5, 1 semaine × 2, 4 semaines × 4 |
+| Rabais | aucun rabais de quantité |
+| Ce qui n'est pas fourni | le montage n'est pas compris |
+| Contenu non établi | nombre de pièces ; ce qui part dans le sac (sac souple ou boîte) |
+| Dimensions | grille non mesurée ; taille d'un coussin non mesurée ; empreinte au sol et recul de lancer non relevés |
+| Poids | le jeu n'a pas été pesé |
+| Montage | non établi — piquets dans un texte, cubes de bois sur la photo ; aucun temps relevé |
+| Sécurité — surveillance | un adulte surveille en tout temps |
+| Sécurité — âge, poids, nombre | les limites s'appliquent ; aucune n'est écrite pour cet article ; téléphone donné |
+| Sécurité — surface | intérieur ou extérieur : le catalogue ne tranche pas |
+| Frais possibles | bris ou pièce manquante : réparation ou valeur de remplacement ; l'usure normale ne se facture jamais ; frais de retard cités dans les exclusions |
+| Protection facultative | 8 % du montant, ne couvre pas négligence, vol, perte, pièces non retournées, frais de retard |
+| Retour | le jeu revient sec |
+| Ramassage | 215, boulevard René-A.-Robert, **local 100**, Sainte-Thérèse |
+| **Livraison** | **100,00 $ jusqu'à 10 km, puis 7,00 $ du kilomètre jusqu'à 40 km ; au-delà, sur soumission** — en supplément |
+| Dépôt | 20 % du total, solde au ramassage, taxes en sus, carte de crédit seulement, en ligne |
+| Conditions | un lien, une fois |
+| Provenance de la photo | photo de catalogue de fabricant, pas prise à l'entrepôt |
+
+C'est la seule des trois fiches qui chiffre la livraison, et les chiffres sont exactement ceux
+d'Alexandre : 100 $ pour les 10 premiers km, 7 $/km jusqu'à 40 km, soumission au-delà. Ils sont
+gardés une fois, sur la ligne du ramassage, avec l'adresse complète — local 100 compris.
+Nulle part la page ne dit « Mirabel », et rien de tel n'a été ajouté. Sur les fiches 1 et 2, la
+livraison n'est pas chiffrée : je n'y ai rien mis, puisqu'on n'ajoute rien.
+
+### 5. Ce qui a été coupé, par motif
+
+**a) Le texte sous le titre : de 3 phrases à 1** (−32 mots)
+Supprimé : « 20,00 $ pour 48 h, ramassage à Sainte-Thérèse. » (redit dans la carte) et « Combien
+de pièces, quelles dimensions, comment ça se monte : nos propres textes ne s'accordent pas, et
+c'est écrit plus bas, sans détour. » — le tableau le dit, ligne par ligne.
+Gardé : « Une grille de cordes à poser au sol et des coussins X et O à lancer. »
+
+**b) Le brief photo** (−320 mots)
+Supprimé : les six vignettes « À produire » (le compte, une pièce, la grille déroulée, le
+montage, l'empreinte au sol, le sac) et le paragraphe qui explique comment les photographier.
+Gardée, parce que c'est un avertissement et non une consigne de travail : « Photo de catalogue de
+fabricant, sur fond blanc. Elle n'a pas été prise à notre entrepôt. »
+
+**c) Le bloc « Ce qui encadre l'usage » : simplifié** (de 6 points commentés à 6 lignes,
+−290 mots)
+Gardé : surveillance, limites d'âge et de nombre, intérieur/extérieur, retour sec, frais de bris,
+exclusions de la protection.
+Supprimé : la phrase d'attaque sur l'origine des six points (« et sur cette page-ci, vous allez
+voir pourquoi ») ; les commentaires (« Un jeu qui se joue en lançant quelque chose se
+surveille », « Des coussins de tissu et des cordes remisés mouillés dans un sac fermé », « Un
+coussin oublié dans le gazon reste une pièce manquante », « Un coussin perdu reste donc à votre
+charge », « Nos conditions l'écrivent deux fois ») ; le point « On compte le jeu devant vous, au
+départ et au retour » en entier — c'est le retour, il est dans les conditions.
+
+**d) Le bloc « Sources » et son petit texte** (−240 mots)
+Supprimé : le paragraphe d'agrandissement (le logo SWOOC GAMES lu sur le sac, la mention « every
+game plants a tree ») et la ligne de tableau « Marquage lisible » qui répète la même chose. La
+page dit elle-même que ce logo « n'établit pas que l'exemplaire que vous ramasserez porte cette
+marque » : une marque non prouvée n'est pas un fait à afficher. Également supprimé : « On n'écrit
+ici que ce qui a été constaté : relevé dans notre système de réservation, ou écrit dans nos
+conditions. »
+
+**e) Dans le tableau** (−300 mots)
+Supprimé : « Constance du tarif » (30 lignes de juin 2024 à juin 2026) et l'encadré « Les deux
+artefacts d'historique » (les huit lignes de 24 h de juin 2024, la ligne au montant négatif d'une
+facture corrigée) — comptabilité interne, et voir le point 6.
+Supprimé : « Article » (« un seul article au catalogue, indivisible ») et « Variantes »
+(« Aucune — un seul modèle, un seul prix ») : pas de variante, donc la ligne part.
+Supprimé dans « Le nombre de pièces » : « Nous ne les compterons pas sur une photo de
+fabricant » et le paragraphe de la recherche faite dans les deux sens.
+Supprimé dans « Ce qui part dans le sac » : « et il est compté devant vous au ramassage » — le
+retour et le décompte sont dans les conditions.
+Supprimé dans « Les dimensions de la grille » : la description du gabarit resté à remplir
+(« crochets et “ex.” compris : elle ne dit rien »). Ce qui compte pour le client est déjà écrit —
+aucune dimension n'a été prise à l'entrepôt ; l'état du gabarit est un problème interne, signalé
+au point 6.
+
+**f) « Ce qui n'est pas relevé » : fondu dans le tableau** (−780 mots)
+Les huit points (nombre de pièces, dimensions de la grille, montage et démontage, taille d'un
+coussin, empreinte au sol et distance de lancer, intérieur ou extérieur, poids et rangement,
+nombre de joueurs) répétaient les lignes du tableau et du bloc de sécurité. Chaque fait reste une
+fois. L'encadré final — les deux textes qui « ne racontent pas la même histoire », les cordes de
+nylon blanc, les piquets, les dix coussins dont cinq rouges, la boîte, contre les cordes tressées
+beiges, les cubes de bois, les coussins blancs et noirs et le sac souple — part de la fiche et
+passe au point 6 : c'est un problème de catalogue, pas un texte de vente.
+
+**g) « Souvent loué avec » : 6 articles → 4** (−230 mots)
+Gardés, dans l'ordre de la page : Lancer de hache, Serpent et échelle géant, Machine à hot-dog,
+Jeu Putterball. Retirés : Basket Pong et Jenga géant.
+Supprimé : le paragraphe de méthode (30 lignes qui ne font pas 30 clients, 7 commandes distinctes,
+deux qui n'existent que par leurs documents, le départage du jenga par la date).
+
+**h) Les quatre questions « Ce qu'il faut demander »** (−690 mots)
+Supprimées en entier. Leur seul fait qui n'était pas déjà ailleurs — le tarif de livraison — est
+gardé sur la ligne « Ramassage » du tableau. Supprimé avec elles : le renvoi à une autre fiche
+(« comme on l'a fait ailleurs pour le grain de la machine à maïs soufflé ») et les « À demander
+partout : … ».
+
+**i) Livraison, ramassage, dépôt : une seule fois** (−60 mots)
+Le tarif de livraison était écrit deux fois mot pour mot (ligne « Ramassage » du tableau et
+question « Qu'est-ce que le prix comprend ? »), l'adresse deux fois, le dépôt de 20 % deux fois.
+Une ligne chacun, et le lien vers les conditions.
+
+**j) L'intro du formulaire** (−38 mots)
+
+### 6. Ce qui paraît faux ou douteux — signalé, pas corrigé
+
+1. **Un des deux textes de catalogue est faux, et la page le démontre elle-même.** Le premier
+   annonce « des cordes de nylon blanc, des piquets à ficher dans le sol, dix coussins dont cinq
+   rouges, et une boîte de rangement » ; la photo montre « des cordes tressées beiges, des cubes
+   de bois enfilés dessus, aucun piquet, des coussins blancs et noirs sans le moindre rouge, et un
+   sac souple ». La page conclut : « Sur le seul point qu'on peut vérifier d'un coup d'œil — la
+   couleur des pièces — le premier texte se trompe. » Ce texte est toujours publié quelque part
+   dans le catalogue. Je ne le corrige pas, je le signale : c'est la première chose à régler sur
+   cet article.
+2. **Une ligne de dimensions est restée à l'état de gabarit**, « crochets et “ex.” compris », et
+   elle est en ligne. Elle propose deux formats en exemple au lieu d'en donner un.
+3. **Le titre s'écrit « Tic-Tac-TOE géant »** ici, « Tic-Tac-TOE Géant » dans le tableau, et
+   « Tic-Tac-Toe Géant » sur la fiche du serpent et échelle. Trois graphies pour un article.
+4. **« 30 lignes relevées, toutes au même tarif de base de 20,00 $ »**, puis, deux paragraphes
+   plus loin : huit de ces lignes étaient des locations de 24 h. Même montant, moitié moins de
+   temps — ce n'est donc pas le même tarif de base. La ligne part de toute façon.
+5. **« Sans frais cachés »** sur la seule des trois fiches qui facture la livraison 100 $ jusqu'à
+   10 km, plus une protection facultative à 8 % et des frais de retard. Formule d'avantage sans
+   fait : retirée.
+6. **La protection est décrite deux fois différemment sur le site** : ici « coûte 8 % du montant
+   de la location », sur les fiches 1 et 2 « coûte 8 % du montant de la location **et s'ajoute
+   avant le ramassage** ». J'ai gardé sur chaque fiche exactement ce qui y était écrit.
+7. **« Deux champs obligatoires, deux facultatifs »** : trois champs sont obligatoires. Même
+   erreur sur les trois fiches et sur la référence.
+8. **La photo est une planche de catalogue de fabricant**, marquée SWOOC GAMES, et la page admet
+   qu'elle n'établit rien sur l'exemplaire loué. Comme pour la table de Missisipi, l'image
+   principale montre peut-être autre chose que ce que le client recevra.
+9. **« 2 Jours » sur le bouton, « 48 h » partout ailleurs.**
+
+### 7. Ce qui tient dans le premier écran à 375 px
+
+**Avant** (mesuré) :
+
+| Élément | Haut de l'élément | Dans le premier écran ? |
+|---|---|---|
+| Barre de contact | 18 px | oui |
+| Titre « Tic-Tac-TOE géant » | 256 px | oui |
+| La phrase sous le titre, 3 phrases, 229 px de haut | 298 px | oui |
+| Photo | 543 px | le haut seulement |
+| **Prix (20,00 $ / jeu)** | **827 px** | **non — 160 px sous la ligne de flottaison** |
+| **Bouton « Ajouter au panier »** | **1 367 px** | **non** |
+| Lien vers les conditions | 1 763 px | non |
+
+Ce qui tient : le titre et un paragraphe dont la dernière ligne visible est « nos propres textes
+ne s'accordent pas ».
+
+**Après** (mesuré sur la page réelle, blocs coupés retirés dans le navigateur) :
+
+| Élément | Haut de l'élément | Dans le premier écran ? |
+|---|---|---|
+| Titre | 256 px | oui |
+| La phrase sous le titre, une ligne | 298 px | oui |
+| Photo, entière | 390 → 646 px | oui |
+| **Prix** | **674 px** | **non — il manque 7 px** |
+| Bouton « Ajouter au panier » | 1 214 px | non |
+
+| Changement d'ordre (aucun mot ne bouge) | Prix | Bouton |
+|---|---|---|
+| Coupes seules | 674 px (dehors, à 7 px près) | 1 214 px (dehors) |
+| + la carte de prix avant la photo | **408 px (dedans)** | 948 px (dehors) |
+| + les notes de la carte sous le bouton | **408 px (dedans)** | **662 px — le bouton commence dans l'écran** |
+
+Sept pixels. Sur les trois fiches, les coupes amènent le prix à la ligne de flottaison sans la
+franchir, parce que ce qui reste au-dessus n'est plus du texte : c'est l'en-tête du site (242 px)
+et la photo (256 px).
