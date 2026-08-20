@@ -174,6 +174,61 @@ C'est la fiche la plus longue relevée jusqu'ici — et elle ne contient aucun
 prix. Le texte est visiblement écrit pour le référencement local : la formule
 « location de chaises pliantes blanches à Laval » y revient à cinq reprises.
 
+### 3.3 Jeux AéroFun — `jeuxaerofun.com`
+
+1503, boulevard Michèle-Bohec, bureau 106, Blainville — entrepôt accessible sur
+rendez-vous seulement. Spécialiste du jeu gonflable, avec deux filières
+distinctes : location résidentielle (prix affichés, réservation en ligne) et
+location commerciale (soumission). C'est le concurrent le plus transparent
+relevé jusqu'ici sur les conditions.
+
+**Les trois articles de référence**
+
+| Article | Prix annoncé | Durée annoncée |
+| --- | --- | --- |
+| Chaise pliante | **non établi** — aucune chaise au catalogue relevé ; l'inventaire est composé de jeux gonflables, jeux de kermesse et machines à gourmandises | — |
+| Table 6 pieds | **non établi** — aucune table de banquet au catalogue relevé (une « table interactive » de jeu existe, ce n'est pas le même article) | — |
+| Jeu gonflable résidentiel « Princesse » | 125 $ | **par jour**, plus taxes |
+| Jeu gonflable « Château Fête » | 115 $ | par jour |
+| Jeu gonflable « Château magique » | 225 $ | par jour |
+| Ensemble popcorn résidentiel | 75 $ | par jour, plus taxes, 30 portions incluses |
+| Ensemble barbe à papa résidentiel | 70 $ | par jour |
+
+**Le point à retenir sur la durée.** Le prix est annoncé « par jour », mais les
+heures de comptoir publiées racontent autre chose : pour une location du samedi,
+le départ se fait le vendredi entre 17 h et 19 h **ou** le samedi entre 9 h et
+10 h, et le retour le dimanche entre 9 h et 10 h. Le « jour » facturé couvre donc
+en pratique jusqu'à une quarantaine d'heures. C'est l'inverse d'une fausse
+aubaine : le tarif affiché est plus généreux que ce que le mot « jour » laisse
+croire. À retenir pour la comparaison — un 125 $ « par jour » chez AéroFun n'est
+pas comparable à un 125 $ pour 24 heures strictes ailleurs.
+
+**Conditions**
+
+| Élément | Ce qui est écrit |
+| --- | --- |
+| Livraison | disponible, mais **tarif non établi** — aucun montant ni grille kilométrique publiés ; la cueillette à Blainville est le mode par défaut |
+| Seuil de gratuité | aucun seuil publié |
+| Zone desservie | Blainville, Laval, Saint-Jérôme et « partout sur la Rive-Nord » ; aucun rayon en kilomètres |
+| Dépôt de réservation | **aucun** — c'est écrit noir sur blanc : « aucun paiement ni dépôt n'est nécessaire pour faire votre réservation » |
+| Dépôt de sécurité | **aucun** ; à la prise de possession, le client laisse en garantie les informations d'une carte de crédit avec une autorisation signée de prélèvement en cas de bris ou de vol |
+| Mode de paiement | carte de crédit laissée en garantie au comptoir ; paiement non exigé à la réservation |
+| Annulation | **sans frais** en cas de prévision de pluie, sur simple appel ; l'ensemble est présenté sous le nom de « politique à 0 $ » (aucun dépôt de réservation, aucun frais d'annulation, aucun dépôt de sécurité) |
+| Taxes | en sus, mention sur les fiches |
+| Réservation en ligne | **oui**, 24 h sur 24, avec calendrier de disponibilité par produit ; le téléphone reste offert |
+
+**Longueur d'une fiche produit**
+
+- Fiche jeu gonflable « Princesse » : **185 mots**, organisés en trois blocs
+  (description, sécurité et dimensions, particularités), avec des chiffres
+  vérifiables : dimensions, âge recommandé de 2 à 6 ans, maximum de 5
+  utilisateurs, 100 lb par utilisateur et 500 lb au total, sac de balles inclus
+  et sac supplémentaire à 5 $.
+
+C'est le seul concurrent relevé jusqu'ici qui publie à la fois un prix, une
+durée, une politique d'annulation et un calendrier de disponibilité sur la même
+page produit.
+
 ---
 
 ## 4. Tableau comparatif
