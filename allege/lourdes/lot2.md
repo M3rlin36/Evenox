@@ -27,8 +27,9 @@ dans la source).
 **Comptage des mots** : texte visible de la page, en-tête de site et pied de page exclus,
 lignes répétées par le carrousel comptées une fois. Les « après » comptent aussi les repères de
 gabarit entre crochets (`[ photo ]`, `[ Ajouter au panier ]`), une dizaine de mots qui ne seront
-pas sur la page : le gain réel est donc légèrement supérieur à celui annoncé. Étalonnage sur la fiche de référence
-`https://evenox.ca/product/chaise-pliante/` : la même méthode donne **783 mots** là où la
+pas sur la page : le gain réel est donc légèrement supérieur à celui annoncé. Étalonnage sur la
+fiche de référence `https://evenox.ca/product/chaise-pliante/` : la même méthode donne
+**783 mots** là où la
 consigne en annonce 796 — l'écart vient de la façon de compter un numéro de téléphone. Les
 « avant » et les « après » ci-dessous sont donc comparables entre eux et à la référence.
 
@@ -120,6 +121,7 @@ Le nombre de dés          Non établi — notre catalogue de location ne décri
                           cet article.
 Le nombre de pions        Non établi — aucun pion ne figure au catalogue, ni séparément ni dans
                           un forfait.
+
 À AJOUTER
 
 Souvent loué avec
@@ -194,12 +196,12 @@ Supprimé : la légende « La photo de notre fiche, 1280 x 1280 px. Rien ne dit 
 chez nous », les six vignettes « À produire » (tapis déroulé, cases, dés, pions, lestage,
 rangement) et le paragraphe de 672 px qui décrit comment les photographier (cadrage 1:1, 1200 px
 minimum, fond blanc, ruban à mesurer). C'est une commande de travail interne ; aucun client n'y
-lit un fait sur le jeu. Le seul fait de la légende — rien ne dit que la photo a été prise chez
-Évenox — reste dans la ligne « Le nombre de cases » du tableau, où il sert à quelque chose :
-c'est la raison pour laquelle on ne compte pas les cases à l'écran. Ce que ce bloc annonçait — cases, surface, dés, pions « à relever » — est
-déjà dans le tableau.
+lit un fait sur le jeu. Ce que ce bloc annonçait — cases, surface, dés, pions « à relever » — est
+déjà dans le tableau. Le seul fait de la légende — rien ne dit que la photo a été prise chez
+Évenox — reste dans la ligne « Le nombre de cases », où il sert à quelque chose : c'est la raison
+pour laquelle on ne compte pas les cases à l'écran.
 
-**c) Le bloc « Ce qui encadre l'usage » : simplifié** (de 6 points commentés à 5 lignes,
+**c) Le bloc « Ce qui encadre l'usage » : simplifié** (de 6 points commentés à 6 lignes,
 −320 mots)
 Gardé : ce qui protège — surveillance, limites d'âge/poids/nombre, sol et lestage, retour sec,
 frais de bris, exclusions de la protection.
@@ -285,11 +287,17 @@ avant de vous répondre. » Gardé : les deux phrases de la référence.
    et une valeur de remplacement. Ce n'est pas contradictoire — ces frais sont écrits — mais la
    formule est une affirmation d'avantage ; elle a été retirée de la ligne de paiement, où elle
    ne portait aucun fait.
-6. **« La photo montre le jeu sur du gazon »**, et la page reconnaît que rien ne dit qu'elle a
+6. **L'adresse de ramassage est incomplète** : la fiche écrit « 215, boulevard René-A.-Robert »
+   sans le local. La fiche du tic-tac-toe écrit « local 100 », et le pied de page du site aussi
+   (« 215 Boulevard René-A.-Robert, Sainte-Thérèse QC J7E 4L1 (Local 100) »). Un client qui arrive
+   sans le numéro de local cherche. Je ne l'ai pas ajouté : il n'est pas sur cette page.
+7. **« La photo montre le jeu sur du gazon »**, et la page reconnaît que rien ne dit qu'elle a
    été prise chez Évenox. Une fiche dont la seule image ne montre peut-être pas l'article loué
    est un problème réel ; il ne se règle pas en coupant du texte.
 
 ### 7. Ce qui tient dans le premier écran à 375 px
+
+![Premier écran à 375 px — avant, après les coupes, après le changement d'ordre](premier-ecran/serpent-echelle-geant.png)
 
 **Avant** (mesuré, viewport 375 × 667) :
 
@@ -589,8 +597,13 @@ conditions. La page ne chiffre pas la livraison ; rien n'a été ajouté.
    dollars américains (relevé à 375 px, après chargement du composant de réservation).
 7. **La photo montre la table dehors, sous un chapiteau, sur de l'asphalte**, et la page précise
    que cela n'autorise pas cet usage. L'image dit donc l'inverse du texte. Signalé.
+8. **L'adresse de ramassage est incomplète** ici aussi : « 215, boulevard René-A.-Robert », sans
+   le local 100 qu'écrivent la fiche du tic-tac-toe et le pied de page du site. Non ajouté,
+   puisqu'il n'est pas sur cette page.
 
 ### 7. Ce qui tient dans le premier écran à 375 px
+
+![Premier écran à 375 px — avant, après les coupes, après le changement d'ordre](premier-ecran/table-de-missisipi.png)
 
 **Avant** (mesuré) :
 
@@ -888,6 +901,8 @@ Une ligne chacun, et le lien vers les conditions.
 
 ### 7. Ce qui tient dans le premier écran à 375 px
 
+![Premier écran à 375 px — avant, après les coupes, après le changement d'ordre](premier-ecran/tic-tac-toe-geant.png)
+
 **Avant** (mesuré) :
 
 | Élément | Haut de l'élément | Dans le premier écran ? |
@@ -922,3 +937,53 @@ ne s'accordent pas ».
 Sept pixels. Sur les trois fiches, les coupes amènent le prix à la ligne de flottaison sans la
 franchir, parce que ce qui reste au-dessus n'est plus du texte : c'est l'en-tête du site (242 px)
 et la photo (256 px).
+
+---
+
+## Ce qui revient sur les trois fiches
+
+**Le poids vient de six blocs, toujours les mêmes.** Les trois pages font 8 969 mots ensemble,
+les trois propositions en font 1 714. Et sur ces 8 969 mots, **5 845 — 65 % — sont dans six blocs
+qui n'apprennent rien à un client**, mesurés bloc par bloc dans le code de chaque page :
+
+| Bloc | Fiche 1 | Fiche 2 | Fiche 3 |
+|---|---|---|---|
+| Le brief photo (« À produire », six vues, cadrage 1:1, 1200 px) | 234 | 226 | 245 |
+| Les encadrés (agrandissement de la photo, anomalies de tarif, « pourquoi cette liste est longue ») | 407 | 293 | 389 |
+| Les intros de section (« Les six points ci-dessous viennent tous du même endroit… ») | 129 | 129 | 133 |
+| « Ce qui n'est pas relevé », huit points qui redisent le tableau | 459 | 496 | 430 |
+| Les quatre questions « Ce qu'il faut demander » | 563 | 617 | 569 |
+| La méthode du classement des compléments | 239 | 119 | 168 |
+| **Total** | **2 031** | **1 880** | **1 934** |
+
+Les retirer suffit à ramener les trois fiches sous 610 mots. Il n'a jamais fallu couper un fait
+pour y arriver.
+
+**Le tableau et les paragraphes disaient deux fois la même chose.** Chaque fiche portait un
+tableau « Ce qui est vérifié » puis une section « Ce qui n'est pas relevé » de huit points, qui
+reprenait le tableau en paragraphes. Un seul endroit par fait, et la fiche perd la moitié de sa
+hauteur.
+
+**Cinq problèmes sont communs aux trois pages** (détaillés au point 6 de chaque fiche, aucun
+corrigé) :
+
+- « Deux champs obligatoires, deux facultatifs » — il y en a trois d'obligatoires. Aussi sur la
+  fiche de référence, donc probablement partout.
+- « 2 Jours » sur le bouton, « 48 h » dans tout le texte.
+- Le montant s'affiche en format américain dans le composant de réservation (« $25.00 »,
+  « $120.00 »), en français dans la carte — sauf sur la table de Missisipi, où la carte aussi
+  écrit « $120.00 », et sur le tic-tac-toe, où le bouton n'affiche aucun montant.
+- « Sans frais cachés » sur des pages qui facturent une protection à 8 %, des frais de retard, une
+  valeur de remplacement et, pour le tic-tac-toe, 100 $ de livraison.
+- L'image principale ne montre peut-être pas l'article loué : photo dont l'origine est inconnue
+  (serpent et échelle), planche de vente montrant une autre table (Missisipi, où la légende écrit
+  « Ce n'est pas la table de la fiche en ligne »), planche de catalogue de fabricant
+  (tic-tac-toe).
+
+**Le premier écran ne se gagne pas au texte seul.** Mesuré sur les trois : après les coupes, le
+prix arrive à 679, 736 et 674 px, pour une ligne de flottaison à 667. Ce qui reste au-dessus n'est
+plus du texte — 242 px d'en-tête de site et 256 px de photo. Deux changements d'ordre, sans
+toucher un mot, mettent le prix à 383-413 px et amènent le bouton au bas de l'écran : mettre la
+carte de prix avant la photo (`.evx-hero-txt{order:2}` sur téléphone), et descendre les trois
+notes de la carte sous le bouton. Pour que le bouton soit entièrement visible, il faudrait aussi
+réduire l'en-tête, et cela dépasse ce qu'on peut faire en coupant.
