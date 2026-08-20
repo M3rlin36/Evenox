@@ -49,13 +49,32 @@ réserver en ligne, et longueur d'une fiche produit en nombre de mots.
 
 ### Journal des recherches
 
-_(à compléter au fur et à mesure)_
+| # | Requête | Entreprises ressorties (hors Evenox) |
+| --- | --- | --- |
+| 1 | location de chaises Laval | Eventuum, Les Ballounes |
+| 2 | location jeu gonflable Rive-Nord Montréal | Les Ballounes, GVL Rive-Nord, Chez Fun Fou, Popup Amusements, Jeux AéroFun |
+| 3 | location table et chaise Montréal | Happening, La Nouvelle Tablée, Cité-Fêtes, Atelier Location Turbo |
+| 4 | location machine à popcorn Laval Montréal prix | JS Party, Jeux AéroFun, Sonolum, Les Ballounes |
+
+Constat de fréquence : **Les Ballounes** ressort dans 3 requêtes sur 4,
+**Jeux AéroFun** dans 2. Evenox ressort lui-même dans les 4 requêtes, ce qui est
+un fait notable en soi (voir conclusions).
+
+### Liste retenue (à relever une par une)
+
+1. Les Ballounes — Blainville / Laval / Sainte-Thérèse
+2. Eventuum — Laval
+3. Jeux AéroFun
+4. Sonolum
+5. JS Party — Laval
+6. Chez Fun Fou — Saint-Jérôme
+7. Location Turbo / Happening / La Nouvelle Tablée — à départager (Montréal)
 
 ---
 
 ## 3. Entreprises relevées
 
-_(à compléter au fur et à mesure — une section par entreprise)_
+_(une section par entreprise ; complété au fur et à mesure)_
 
 ---
 
