@@ -743,7 +743,27 @@ même façon : entrepôt de Sainte-Thérèse, 215, boulevard René-A.-Robert.
 **Le dépôt, les taxes et le lien** sont présents sur les trois : 20 % du total, solde au
 ramassage, taxes en sus, et le lien vers la politique et les conditions de location.
 
-# Deux points à trancher, qui dépassent les trois fiches
+# Votre liste, ligne par ligne
+
+Vous avez dicté les coupes une par une. Voici ce que chacune a donné sur ces trois fiches —
+y compris celles qui n'avaient rien à couper ici.
+
+| Ce que vous avez dit de retirer | Ce que j'ai trouvé sur ces trois fiches |
+|---|---|
+| Le texte sous le titre : UNE phrase | Fait. De 6, 11 et 8 lignes à 3, 2 et 1 ligne. Sur les fiches 2 et 3, la phrase gardée contient le mot « géant » : signalé en 2.4-1 et 3.4-1 |
+| « Ce qui encadre l'usage » : garder ce qui protège | Fait. De 6 points bavards à 6 lignes courtes : surveillance, âge et nombre, retour sec, décompte signé, pièce manquante, protection à 8 % et ses exclusions. Coupé : l'introduction, les 6 « Source : … », les « Nos conditions disent : », et le paragraphe sur l'étiquette |
+| « Sources · relevé le 17 août » et le petit texte dessous | Ces fiches portent la même chose sous une autre forme : six lignes « Source : Conditions de location d'Évenox, relues le 18 août 2026 ». Toutes retirées ; il reste le lien |
+| Tableau : « Durées et multiplicateurs » | N'existe pas comme ligne de tableau ici. Les multiplicateurs étaient à deux endroits : la bande sous la carte et les questions. Les questions partent, la bande reste : une seule fois |
+| Tableau : « Unités en inventaire » | N'existe sur aucune des trois |
+| Tableau : « Photos au dossier » | N'existe pas comme ligne de tableau. L'équivalent était le bloc de production photo du haut de page : retiré (255, 227 et 190 mots) |
+| Tableau : « Pliage », « Roulettes » | N'existent sur aucune des trois — ce sont des lignes de mobilier |
+| Tableau : « Surveillance » | N'est pas une ligne de tableau ici : c'est le premier point du bloc sécurité. Il **reste**, comme vous l'avez demandé par ailleurs (« garder ce qui protège ») |
+| Tableau : « Retour » | N'est pas une ligne de tableau ici. Il reste une ligne de quatre mots dans le bloc sécurité, « Le jeu revient sec », parce qu'un jeu rangé humide devient un frais. Le reste est dans les conditions, au bout du lien |
+| « Variantes » : retirer s'il n'y en a pas | Aucune des trois n'a de variante. La ligne disparaît des trois, et avec elle la phrase « ce montant ne dépend d'aucun choix de variante » qui la répétait dans les questions |
+| « Souvent loué avec » : quatre au maximum | Fait. De 6 à 4 sur les trois. Le paragraphe qui expliquait le classement part aussi (159, 161 et 125 mots) — voir le signalement 2.4-4 |
+| Livraison, ramassage, dépôt : une ligne et un lien | Le dépôt : une ligne (« Réservez avec 20 % du total. Le solde au ramassage. »). La livraison : aucune mention nulle part, et je n'en ai pas ajouté — voir le point 1 ci-dessous. Le ramassage : **deux mentions**, et c'est délibéré — voir le point 3 |
+
+# Trois points à trancher, qui dépassent les trois fiches
 
 **1. La livraison : je n'ai rien ajouté, et c'est délibéré.** Votre consigne donne les faits
 (100 $ pour les 10 premiers km, puis 7 $/km jusqu'à 40 km, au-delà soumission). **Aucune des
@@ -760,6 +780,16 @@ de la photo. Mesuré : c'est vrai pour le pong (bouton à 607 px au lieu de 809)
 basket (522 px au lieu de 788). Le prix, lui, entre dans les deux dispositions. La fiche 1 n'a pas
 de photo, donc elle n'a pas ce problème. Je propose la carte en premier, mais la photo se retrouve
 alors après toute la carte, et ce choix-là est le vôtre.
+
+**3. Le ramassage est écrit deux fois, et je n'ai pas su le réduire à une.** Il est dans la carte
+(« Prix pour ramassage à notre entrepôt de Sainte-Thérèse »), parce que c'est ce qui explique le
+prix et que ça doit se lire dans le premier écran. Et il est au tableau (« Entrepôt de
+Sainte-Thérèse — 215, boulevard René-A.-Robert »), parce que c'est le seul endroit où figure
+l'adresse, que vous protégez. Sur les fiches d'origine, la même information revenait six fois ;
+il en reste deux. Pour n'en avoir qu'une, il faut soit renoncer à l'adresse sur la fiche, soit
+faire entrer l'adresse dans la ligne de la carte — et ça, c'est réécrire une phrase, donc je ne
+l'ai pas fait. Note : la fiche écrit « 215, boulevard René-A.-Robert » sans « local 100 », qui
+figure dans votre consigne et dans le pied de page du site. Je ne l'ai pas ajouté.
 
 # Ce qui reste identique sur les trois fiches, et volontairement
 
