@@ -10,7 +10,7 @@ Propositions seulement. **Rien n'a été modifié sur evenox.ca** : les trois fi
 
 | Fiche | Avant | Après | Retiré |
 |---|---|---|---|
-| [Jeu de Tétris Géant](https://evenox.ca/product/jeu-de-tetris-geant/) | 2 924 mots | 639 mots | **78 %** |
+| [Jeu de Tétris Géant](https://evenox.ca/product/jeu-de-tetris-geant/) | 2 924 mots | 628 mots | **79 %** |
 | [Jeu pong géant](https://evenox.ca/product/jeu-pong-geant/) | 2 791 mots | — | — |
 | [Basket Pong](https://evenox.ca/product/basket-pong/) | 2 675 mots | — | — |
 | _Référence : [chaise pliante](https://evenox.ca/product/chaise-pliante/)_ | _759 mots_ | — | — |
@@ -28,16 +28,23 @@ Propositions seulement. **Rien n'a été modifié sur evenox.ca** : les trois fi
 - **Rien d'ajouté.** Aucun chiffre, aucune mesure, aucune mention de livraison n'a été
   introduite. Voir la note sur la livraison au bas du document.
 - **Premier écran.** Mesuré dans Chrome à 375 × 667 px (iPhone SE), en position réelle sur la
-  page, en-tête Divi comprise. L'« après » est mesuré sur une reconstruction locale de la fiche
-  qui utilise la feuille de style du site : le widget de dates et le bouton d'ajout au panier y
-  sont remplacés par des blocs de la **hauteur mesurée sur la fiche en ligne** (72 px et 52 px).
+  page, en-tête Divi comprise. L'« avant » et l'« après » sont mesurés avec le même outil, sur
+  la page réelle et sur sa reconstruction locale — vérifié : la copie locale donne les mêmes
+  positions au pixel que la page en ligne. Les deux widgets Booqable, qui ne s'exécutent pas
+  hors du site, sont remplacés par des blocs de la **hauteur mesurée en ligne** : 72 px pour le
+  sélecteur de dates, 150 px pour le bloc d'ajout au panier, dont les 52 px du bas sont le
+  bouton lui-même. Leur texte n'est pas compté dans les mots.
+- **Une contrainte déjà écrite dans le code du site.** La feuille de style des fiches porte
+  cette note : « MOBILE (< 700 px) LA GALERIE PASSE SOUS LA CARTE DE RÉSERVATION. Contrainte de
+  référence jamais négociée : à 375 px le prix doit rester dans les 700 PREMIERS PIXELS. » Les
+  trois fiches la violent aujourd'hui (prix à 895, 964 et 905 px).
 
 ---
 
 # 1. Jeu de Tétris Géant
 
 **Adresse.** https://evenox.ca/product/jeu-de-tetris-geant/
-**Avant : 2 924 mots.** → **Après : 639 mots. 78 % retiré.**
+**Avant : 2 924 mots.** → **Après : 628 mots. 79 % retiré.**
 
 C'est la fiche la plus lourde des trois, et c'est aussi celle où presque rien n'est établi :
 ni la taille, ni le poids, ni le nombre de pièces, ni même si le jeu est géant. L'essentiel du
@@ -54,9 +61,7 @@ volume était consacré à répéter cette absence, sur cinq blocs différents. 
 > ---
 > **$50.00** / jeu · 2 Jours
 >
-> Combien de jeux ?
->
-> `[ Ajouter au panier ]`
+> `[ compteur de quantité + Ajouter au panier — widget Booqable ]`
 >
 > **Prix pour ramassage à notre entrepôt de Sainte-Thérèse.** Le montage n'est pas compris.
 >
@@ -180,6 +185,12 @@ Connect 4 Géant (60,00 $).
 **Une formulation avantageuse.** « Sans frais cachés. », dans la carte. La fiche liste juste en
 dessous des frais possibles (pièce manquante, retard, protection à 8 %). Coupé, pas corrigé.
 
+**Un libellé rendu inutile par son propre widget.** « Combien de jeux ? », posé au-dessus du
+bouton. Le compteur de quantité est à l'intérieur du composant Booqable — c'est le code de la
+fiche de référence qui l'écrit : « Le compteur de quantité est encastré dans ce composant : il
+ne s'ajoute pas à côté, sous peine de doublon. » Sur la chaise pliante, ce libellé est d'ailleurs
+resté seul au-dessus d'un bloc vide.
+
 ## 1.4 Ce qui est faux ou douteux — signalé, pas corrigé
 
 1. **Le titre contredit le catalogue.** La fiche s'appelle « Jeu de Tétris Géant », le catalogue
@@ -209,34 +220,42 @@ dessous des frais possibles (pièce manquante, retard, protection à 8 %). Coup�
 
 Mesuré dans Chrome à 375 × 667 px. La ligne de pli est à **667 px**.
 
-**Avant** — le prix est à plus d'un écran, le bouton à plus de deux.
+**Avant** — dans le premier écran, il n'y a que le titre et le paragraphe sous le titre. Le prix
+est à un écran et demi, le bouton à plus de deux écrans.
 
 | Élément | Position | Dans le premier écran ? |
 |---|---|---|
-| Titre « Jeu de Tétris Géant » | 256 px | oui |
+| Titre « Jeu de Tétris Géant » | 256 → 296 px | oui |
 | Le paragraphe sous le titre (6 lignes) | 298 → 451 px | oui |
-| Encadré « Aucune photo de ce jeu » | 489 px | commence, coupé par le bas |
+| Encadré « Aucune photo de ce jeu » | 467 → 741 px | commence, coupé par le bas |
+| Légende du fichier écarté | 759 → 867 px | non |
 | **Le prix** | **895 px** | **non** |
 | Sélecteur de dates | 1 143 px | non |
-| **Bouton « Ajouter au panier »** | **1 533 px** | **non** |
+| **Bouton « Ajouter au panier »** | **1 533 → 1 585 px** | **non** |
 | Lien vers les conditions | 1 839 px | non |
 | Le tarif selon la durée | 1 942 px | non |
+| Les 6 vignettes « À produire » | 2 240 px | non |
+| La consigne de tournage | 2 426 → 3 098 px | non |
 
-**Après** — le prix, sa durée et le bouton tiennent, et il reste de la place.
+**Après** — le prix, sa durée et le bouton tiennent tous les trois, et il reste de la place.
 
 | Élément | Position | Dans le premier écran ? |
 |---|---|---|
-| Titre « Jeu de Tétris Géant » | 256 px | oui |
+| Titre « Jeu de Tétris Géant » | 256 → 296 px | oui |
 | La phrase sous le titre (3 lignes) | 298 → 400 px | oui |
-| **Le prix « $50.00 / jeu · 2 Jours »** | **434 px** | **oui** |
-| « Combien de jeux ? » | 476 px | oui |
-| **Bouton « Ajouter au panier »** | **525 → 577 px** | **oui** |
-| « Prix pour ramassage… Le montage n'est pas compris. » | 595 px | oui |
-| Sélecteur de dates | 801 px | non |
-| Lien vers les conditions | 1 102 px | non |
+| **Le prix « $50.00 / jeu · 2 Jours »** | **434 → 468 px** | **oui** |
+| **Bouton « Ajouter au panier »** | **573 → 625 px** | **oui** |
+| « Prix pour ramassage… Le montage n'est pas compris. » | 644 px | oui, commence |
+| Sélecteur de dates | 850 px | non |
+| Lien vers les conditions | 1 151 px | non |
+| Le tarif selon la durée | 1 254 px | non |
 
-À titre de comparaison, la fiche de référence (chaise pliante) met le prix à **628 px** et le
-bouton à **729 px** : le prix arrive tout juste sur le pli et le bouton tombe en dessous. Deux
-choses expliquent l'écart. Sur la chaise, la photo occupe la place entre la phrase et la carte ;
-ici il n'y a pas de photo. Et le bouton a été remonté juste sous le prix, comme sur la
-référence, au lieu d'être placé après le sélecteur de dates.
+Le prix passe de 895 à 434 px, donc largement sous les 700 px que la feuille de style du site
+s'impose à elle-même. Deux choses l'expliquent, et une seule est du texte. Le texte : la phrase
+sous le titre passe de 6 lignes à 3, et les 382 px d'encadré « aucune photo » et de légende
+disparaissent. La mise en page : le bouton a été remonté juste sous le prix, comme sur la fiche
+de référence, au lieu d'être placé après le sélecteur de dates.
+
+Pour comparaison, la fiche de référence (chaise pliante) met son prix à **628 px** et son bouton
+à **729 px** : le prix arrive tout juste sur le pli, le bouton tombe en dessous. La photo, entre
+la phrase et la carte, y prend la place. Ici il n'y a pas de photo à placer.
