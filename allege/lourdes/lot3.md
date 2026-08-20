@@ -11,7 +11,7 @@ Propositions seulement. **Rien n'a été modifié sur evenox.ca** : les trois fi
 | Fiche | Avant | Après | Retiré |
 |---|---|---|---|
 | [Jeu de Tétris Géant](https://evenox.ca/product/jeu-de-tetris-geant/) | 2 924 mots | 628 mots | **79 %** |
-| [Jeu pong géant](https://evenox.ca/product/jeu-pong-geant/) | 2 791 mots | — | — |
+| [Jeu pong géant](https://evenox.ca/product/jeu-pong-geant/) | 2 791 mots | 708 mots | **75 %** |
 | [Basket Pong](https://evenox.ca/product/basket-pong/) | 2 675 mots | — | — |
 | _Référence : [chaise pliante](https://evenox.ca/product/chaise-pliante/)_ | _759 mots_ | — | — |
 
@@ -259,3 +259,231 @@ de référence, au lieu d'être placé après le sélecteur de dates.
 Pour comparaison, la fiche de référence (chaise pliante) met son prix à **628 px** et son bouton
 à **729 px** : le prix arrive tout juste sur le pli, le bouton tombe en dessous. La photo, entre
 la phrase et la carte, y prend la place. Ici il n'y a pas de photo à placer.
+
+---
+
+# 2. Jeu pong géant
+
+**Adresse.** https://evenox.ca/product/jeu-pong-geant/
+**Avant : 2 791 mots.** → **Après : 708 mots. 75 % retiré.**
+
+Cette fiche a une vraie photo prise chez nous, et c'est la seule chose qui y est établie. Le
+reste — combien de gobelets, avec quoi on lance, quelle surface — n'est nulle part, et la fiche
+le disait quatre fois : dans la phrase sous le titre, dans le tableau, dans la liste « Ce qui
+n'est pas relevé », puis dans les questions. Une fois suffit.
+
+## 2.1 Le texte allégé, prêt à relire
+
+> ### Jeu pong géant
+>
+> Le pong sorti de la table et posé par terre : deux camps de gobelets géants qui se font face.
+>
+> _(voir le signalement 2.4-1 sur le mot « géants »)_
+>
+> ---
+> **$150.00** / jeu · 2 Jours
+>
+> `[ compteur de quantité + Ajouter au panier — widget Booqable ]`
+>
+> **Prix pour ramassage à notre entrepôt de Sainte-Thérèse.** Le montage n'est pas compris.
+>
+> Vos dates — on affiche ce qui est libre
+>
+> `[ sélecteur de dates ]`
+>
+> **Réservez avec 20 % du total.** Le solde au ramassage.
+>
+> Dollars canadiens, taxes en sus. Paiement par carte de crédit seulement, en ligne.
+>
+> [Politique et conditions de location](https://evenox.ca/conditions-de-location-evenox/)
+>
+> Le tarif selon la durée — 2 jours : tarif de base · 3 jours : × 1,5 · 1 semaine : × 2 ·
+> 4 semaines : × 4
+> ---
+>
+> _(la photo du jeu, sans légende)_
+>
+> ### Ce qui encadre l'usage
+>
+> - **Un adulte surveille, en tout temps**
+> - **Les limites d'âge et de nombre s'appliquent** — Pour cet article, **aucune limite d'âge
+>   et aucun nombre de joueurs ne sont écrits nulle part dans notre catalogue**. Nous n'en
+>   inventerons pas : demandez-les-nous au 514-559-1893.
+> - **Le jeu revient sec**
+> - **On compte le jeu devant vous, au départ et au retour** — Vous signez le décompte.
+> - **Une pièce manquante se facture** — « Un bris ou une pièce manquante : coût de réparation,
+>   ou valeur de remplacement si l'article n'est pas réparable ». « L'usure normale ne se
+>   facture jamais. »
+> - **La protection facultative ne couvre pas les pièces non retournées** — La protection bris
+>   accidentel coûte 8 % du montant de la location et s'ajoute avant le ramassage. Nos
+>   conditions listent ce qu'elle ne couvre pas : « la négligence, le vol, la perte, les pièces
+>   non retournées, les frais de retard ».
+>
+> ### Ce qui est vérifié
+>
+> | Caractéristique | Ce qui est vérifié |
+> |---|---|
+> | Article | Jeu Pong Géant — un seul article au catalogue, sans variante |
+> | Le nombre de gobelets fournis | **Non établi** — **notre catalogue ne décrit pas le contenu de cet article**. Aucun gobelet n'existe séparément dans tout le catalogue, et aucun forfait n'en ajoute. Appelez le 514-559-1893, on va sortir le jeu et compter. |
+> | La balle | **Non établie** — **aucune balle n'apparaît sur notre photo**, et rien chez nous ne dit s'il en part une avec le jeu, ni laquelle. Le catalogue ne connaît qu'une balle de golf, des balles colorées de piscine et un ballon de soccer : **aucun de ces articles n'est rattaché à ce jeu**, et aucun forfait ne les y ajoute. |
+> | Les dimensions et l'espace de jeu | **Non établies** — hauteur et diamètre d'un gobelet, distance entre les deux camps, surface totale : **rien n'est mesuré à l'entrepôt**. |
+> | Gobelets visibles sur notre photo | Douze — deux groupes de six, en triangle, se faisant face. C'est ce qu'on voit sur une photo, pas un inventaire certifié : le décompte signé au ramassage fait foi. |
+> | Étuis visibles sur notre photo | Trois — un long étui posé au sol entre les deux camps, deux étuis dressés. |
+> | Le lestage | Sur notre photo, les gobelets sont en plastique rigide et posés vides sur la neige : ce ne sont pas des structures gonflables. Mais **rien chez nous n'établit s'il faut les lester**, ni avec quoi, ni combien. |
+> | L'usage à l'extérieur et le vent | Notre photo a été prise dehors, dans un parc, sur la neige. **Cela montre un usage, cela ne l'autorise pas** : notre catalogue ne tranche ni le vent, ni la pluie, ni le type de sol pour cet article. |
+> | Ce qu'il y a dans les étuis | **Ils n'ont pas été ouverts ni inventoriés pour cette page**, et notre catalogue n'en fait aucune mention. |
+> | Marque lisible | Volley Pong — lue à l'agrandissement sur les trois étuis. Les gobelets ne portent aucun marquage. Aucun nom de fabricant, aucun numéro de modèle, aucune dimension. |
+> | Tarif | 150,00 $ pour 48 h · aucun rabais de quantité |
+> | Ramassage | Entrepôt de Sainte-Thérèse — 215, boulevard René-A.-Robert |
+>
+> ### Souvent loué avec
+>
+> Un seul ramassage, un seul dépôt.
+>
+> Table de Baby Foot — à partir de 120,00 $ · 24 h · résidentiel ; format commercial 160,00 $ —
+> Table Air Hockey 120,00 $ · 48 h · 7 pieds, commercial ou résidentiel — Table de Ping Pong
+> 50,00 $ · 48 h — Cornhole 40,00 $ · 48 h · jeu de poches
+>
+> ### Une question avant de réserver ?
+>
+> Deux champs obligatoires, deux facultatifs. Pour réserver, tout se passe en haut de page.
+>
+> _(formulaire : nom, téléphone, courriel, date de l'événement, message)_
+>
+> Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
+
+## 2.2 Les faits conservés
+
+| | |
+|---|---|
+| **Prix** | 150,00 $ / jeu, affiché dans la carte et redit une fois au tableau |
+| **Durée réelle** | 48 h (« 2 Jours » au sélecteur). Au-delà : 3 jours × 1,5 · 1 semaine × 2 · 4 semaines × 4 |
+| **Dépôt** | 20 % du total, solde au ramassage, taxes en sus, carte de crédit seulement, en ligne |
+| **Ramassage** | Entrepôt de Sainte-Thérèse — 215, boulevard René-A.-Robert |
+| **Sécurité** | Adulte en tout temps · limites d'âge, de poids et de nombre à respecter, **et aucune n'est écrite pour cet article** · lestage non établi · le catalogue ne tranche ni le vent, ni la pluie, ni le sol |
+| **Ce qui n'est PAS fourni** | Le montage. La balle : rien ne dit qu'il en part une. Aucun gobelet et aucune balle ne s'ajoutent à la commande |
+| **Frais possibles** | Pièce manquante ou bris : réparation ou valeur de remplacement · l'usure normale ne se facture jamais · protection bris 8 %, qui ne couvre ni la négligence, ni le vol, ni la perte, ni les pièces non retournées, ni les frais de retard |
+| **Retour** | Le jeu revient sec · décompte signé au départ et au retour |
+| **Dimensions / poids** | **Non établis** : hauteur et diamètre d'un gobelet, distance entre les camps, surface totale. Les seuls nombres conservés sont ceux qu'on voit sur la photo — **douze gobelets, trois étuis** — avec la réserve d'origine (« pas un inventaire certifié ») |
+| **Lien** | Politique et conditions de location |
+| **Compléments** | 4 (Baby Foot, Air Hockey, Ping Pong, Cornhole) |
+
+## 2.3 Ce qui est coupé, par motif
+
+**Dit deux fois ou plus (954 mots).**
+- La liste « Ce qui n'est pas relevé » (497 mots, 8 points) : cinq de ses huit points reprenaient
+  une ligne du tableau. Les trois faits qui n'étaient qu'ici — le lestage, l'usage à l'extérieur
+  et le vent, ce qu'il y a dans les étuis — sont devenus trois lignes du tableau, texte intact.
+- La section « Quatre questions / Ce qu'il faut demander » (457 mots) : les quatre réponses
+  reprenaient le tableau et la carte.
+- Dans la carte : « Le total exact s'affiche au panier, avant tout engagement. »
+- La légende de la photo (« Notre photo, prise dehors, en hiver. Douze gobelets, deux groupes de
+  six. Trois étuis marine marqués Volley Pong. Aucune balle dans le cadre. ») : ses quatre
+  chiffres et son absence de balle sont déjà quatre lignes du tableau.
+
+**Les sur-titres.** « Avant de réserver », « La fiche », « Ce qui n'est pas relevé »,
+« À ajouter ».
+
+**L'attribution des conditions.** Les six lignes « Source : Conditions de location d'Évenox,
+relues le 18 août 2026 », l'introduction du bloc sécurité, et les « Nos conditions disent : »
+devant chaque citation. Le lien vers les conditions reste dans la carte.
+
+**Le matériel de production photo (216 mots).** Les six vignettes « À produire » et la consigne
+de tournage. La photo, elle, reste : c'est la seule preuve du produit sur cette fiche.
+
+**La méthode interne (161 + 74 mots).** Le paragraphe qui explique le classement des compléments
+(47 lignes, 16 commandes distinctes) et la ligne « Constance du tarif ».
+
+**Le jargon d'outil.** « sa fiche Booqable n'a aucune description, aucun extrait, aucune note ».
+Le nom du logiciel de réservation n'apprend rien au client, et la ligne dit déjà « notre
+catalogue ne décrit pas le contenu de cet article ».
+
+**Les lignes de tableau nommées par Alexandre.** « Variantes » (aucune), « Montage » (déjà dans
+la carte).
+
+**Deux compléments au-delà de quatre.** Dunk Tank (100,00 $) et Connect 4 Géant (60,00 $).
+
+**Une formulation avantageuse.** « Sans frais cachés. »
+
+**Un libellé rendu inutile par son widget.** « Combien de jeux ? » — voir 1.3.
+
+**Une queue de phrase devenue fausse par la coupe.** La ligne « Étuis visibles sur notre photo »
+finissait par « c'est l'une des six vues à produire » ; les six vues n'existent plus sur la
+fiche, donc la queue part. Ce qu'elle disait est repris par la ligne « Ce qu'il y a dans les
+étuis ».
+
+## 2.4 Ce qui est faux ou douteux — signalé, pas corrigé
+
+1. **« Gobelets géants », dans la seule phrase que je garde.** Cette phrase est la seule de toute
+   la fiche qui dise ce qu'est le produit, donc je la garde. Mais elle affirme une taille, et le
+   tableau écrit trois lignes plus bas que la hauteur et le diamètre d'un gobelet ne sont mesurés
+   nulle part. Le titre de la fiche porte le même mot. Je ne l'ai pas touché. **Si vous préférez
+   le silence à la formulation avantageuse, c'est cette phrase qu'il faut retirer** — et il n'y
+   aura alors plus de phrase sous le titre.
+2. **Le prix s'affiche deux fois, et en format anglophone.** Le composant Booqable rend
+   **`$150.00`** — pas « 150,00 $ » comme l'écrit la prose de la fiche juste au-dessus, qui
+   précise « Dollars canadiens ». Et le montant apparaît deux fois dans la carte, à 70 px
+   d'écart : une fois sur la ligne de prix de la fiche, une fois à l'intérieur du bloc d'ajout au
+   panier, qui affiche « 2 Jours $150.00 Ajouter au panier ».
+3. **« 44 locations sur 44 … aucun écart » et « les trois seules lignes à un autre montant ».**
+   La même ligne de tableau annonce une constance parfaite sur 44 locations, puis décrit trois
+   lignes facturées autrement sur les 47 du dossier. C'est expliqué (une bascule tarifaire datée
+   du 3 juillet 2024), mais les deux affirmations se lisent mal ensemble. La ligne part de toute
+   façon.
+4. **Le premier des compléments est caché.** Le paragraphe de méthode dit : « Un article plus
+   haut placé ne figure pas ici : il n'a aucune page sur ce site. » La liste est donc présentée
+   comme un classement de commandes réelles, alors que son premier de classe est retiré. En
+   coupant le paragraphe, on efface aussi l'aveu. Je le signale plutôt que de le réécrire.
+5. **Un tableau intitulé « Ce qui est vérifié » dont la moitié des lignes dit « Non établi ».**
+   Le titre n'a pas été touché. Même remarque que sur la fiche 1.
+6. **La date des conditions.** Même flottement que sur la fiche 1 : les six lignes « Source »
+   disent « relues le 18 août 2026 ».
+
+## 2.5 Le premier écran à 375 px
+
+**Avant** — le premier écran ne contient que le titre et le paragraphe sous le titre, qui fait
+onze lignes à lui seul. Le prix est à un écran et demi.
+
+| Élément | Position | Dans le premier écran ? |
+|---|---|---|
+| Titre « Jeu pong géant » | 256 → 296 px | oui |
+| Le paragraphe sous le titre (11 lignes) | 298 → 578 px | oui, et il le remplit |
+| La photo du jeu | 594 → 786 px | non |
+| Légende de la photo | 804 → 936 px | non |
+| **Le prix** | **964 px** | **non** |
+| Sélecteur de dates | 1 246 px | non |
+| **Bouton « Ajouter au panier »** | **1 636 → 1 688 px** | **non** |
+| Lien vers les conditions | 1 942 px | non |
+| Le tarif selon la durée | 2 045 px | non |
+
+**Après.** Ici il y a un arbitrage à rendre, parce que la fiche a une photo et que la photo prend
+de la place. Deux dispositions, mesurées toutes les deux.
+
+**A — on ne touche pas à la mise en page** (le texte seul est allégé) :
+
+| Élément | Position | Dans le premier écran ? |
+|---|---|---|
+| Titre | 256 → 296 px | oui |
+| La phrase sous le titre (2 lignes) | 298 → 400 px | oui |
+| La photo du jeu | 416 → 608 px | oui, entière |
+| **Le prix** | **636 → 704 px** | **oui, il commence à 636** |
+| **Bouton « Ajouter au panier »** | **809 → 861 px** | **non — 142 px sous le pli** |
+
+**B — la carte de réservation passe au-dessus de la photo sur mobile** (mise en page seulement,
+aucun texte touché) :
+
+| Élément | Position | Dans le premier écran ? |
+|---|---|---|
+| Titre | 256 → 296 px | oui |
+| La phrase sous le titre (2 lignes) | 298 → 400 px | oui |
+| **Le prix « $150.00 / jeu · 2 Jours »** | **434 → 502 px** | **oui** |
+| **Bouton « Ajouter au panier »** | **607 → 659 px** | **oui** |
+| « Prix pour ramassage… Le montage n'est pas compris. » | 678 px | non, de 11 px |
+| La photo du jeu | 1 576 px | non |
+
+**Ce que ça coûte, dit franchement.** En A, le bouton reste sous le pli quoi qu'on coupe : à
+375 px, l'en-tête du site (256 px), le titre, une phrase et la photo (192 px) occupent déjà
+598 px. Aucune coupe de texte ne peut ramener le bouton au-dessus de 667 px tant que la photo est
+avant la carte. En B, le prix et le bouton entrent tous les deux, mais la photo tombe après toute
+la carte, à 1 576 px : le client voit le prix avant de voir le jeu. **B respecte la consigne, A
+respecte la photo.** C'est l'arbitrage à rendre, et je ne le rends pas à votre place.
