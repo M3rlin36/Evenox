@@ -437,6 +437,18 @@ Le prix passe de 2 414 px à **522 px** : il entre dans le premier écran, avec 
 juste en dessous, sans qu'une seule ligne de CSS soit modifiée. Le geste est le lien téléphone
 de la barre du site, présent avant comme après.
 
+Les trois prix de forfait suivent le même mouvement :
+
+| | Avant | Après |
+|---|---|---|
+| 599 $ (Essentiel) | 9 762 px | 522 px |
+| 799 $ (Signature) | 10 558 px | 1 033 px |
+| 999 $ (Prestige) | 11 371 px | 1 584 px |
+
+Le bloc entier — titre, trois forfaits, ligne commune, boutons, ligne de livraison — fait
+2 541 px, soit 3,8 écrans. Les trois mêmes prix demandaient auparavant de descendre de 14,6 à
+17 écrans.
+
 Ce que la coupe de texte ne peut pas faire seule : les 184 px d'en-tête et les 100 px de marge
 haute de la section (`.pb-forfaits { padding: 100px 0 }`) occupent à eux deux 284 px, soit 43 %
 du premier écran. En ramenant cette marge à 40 px — une ligne de CSS, mesurée elle aussi — le
