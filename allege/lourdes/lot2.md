@@ -277,11 +277,15 @@ avant de vous répondre. » Gardé : les deux phrases de la référence.
    Même durée, deux écritures, et la page consacre un paragraphe entier à expliquer que cette
    différence est un artefact d'affichage. Un seul mot serait plus simple, mais c'est un
    changement de gabarit, pas une coupe.
-4. **« Sans frais cachés »** cohabite avec une protection facultative à 8 %, des frais de retard
+4. **Le prix est écrit dans deux formats sur le même écran** : « 25,00 $ » dans la carte, et
+   « $25.00 » sur le bouton d'ajout au panier (relevé dans le composant de réservation, à 375 px,
+   après chargement). Le second est un format américain sur un site québécois. Il vient du widget
+   de réservation, pas du texte de la fiche : aucune coupe ne le règle.
+5. **« Sans frais cachés »** cohabite avec une protection facultative à 8 %, des frais de retard
    et une valeur de remplacement. Ce n'est pas contradictoire — ces frais sont écrits — mais la
    formule est une affirmation d'avantage ; elle a été retirée de la ligne de paiement, où elle
    ne portait aucun fait.
-5. **« La photo montre le jeu sur du gazon »**, et la page reconnaît que rien ne dit qu'elle a
+6. **« La photo montre le jeu sur du gazon »**, et la page reconnaît que rien ne dit qu'elle a
    été prise chez Évenox. Une fiche dont la seule image ne montre peut-être pas l'article loué
    est un problème réel ; il ne se règle pas en coupant du texte.
 
@@ -579,6 +583,10 @@ conditions. La page ne chiffre pas la livraison ; rien n'a été ajouté.
 5. **« Deux champs obligatoires, deux facultatifs »** : le formulaire en compte trois
    obligatoires. Même erreur que sur la fiche 1 et sur la fiche de référence.
 6. **« 2 Jours » sur le bouton, « 48 h » partout ailleurs** — même durée, deux écritures.
+   Et le prix, ici, est affiché « $120.00 » — en format américain — dans la carte comme sur le
+   bouton, alors que le texte de la page écrit « 120,00 $ ». Sur les deux autres fiches, la carte
+   écrit bien « 25,00 $ » et « 20,00 $ » : cette page-ci est la seule où même la carte bascule en
+   dollars américains (relevé à 375 px, après chargement du composant de réservation).
 7. **La photo montre la table dehors, sous un chapiteau, sur de l'asphalte**, et la page précise
    que cela n'autorise pas cet usage. L'image dit donc l'inverse du texte. Signalé.
 
@@ -872,7 +880,11 @@ Une ligne chacun, et le lien vers les conditions.
 8. **La photo est une planche de catalogue de fabricant**, marquée SWOOC GAMES, et la page admet
    qu'elle n'établit rien sur l'exemplaire loué. Comme pour la table de Missisipi, l'image
    principale montre peut-être autre chose que ce que le client recevra.
-9. **« 2 Jours » sur le bouton, « 48 h » partout ailleurs.**
+9. **« 2 Jours » sur le bouton, « 48 h » partout ailleurs.** Et sur cette fiche, le bouton
+   d'ajout au panier n'affiche **aucun montant** : il écrit « 2 Jours — Ajouter au panier », là où
+   les deux autres fiches affichent « $25.00 » et « $120.00 » (relevé à 375 px, après chargement).
+   Le prix ne vit donc que dans la carte. C'est le composant de réservation, pas le texte : à
+   vérifier avant de déplacer quoi que ce soit dans le premier écran.
 
 ### 7. Ce qui tient dans le premier écran à 375 px
 
