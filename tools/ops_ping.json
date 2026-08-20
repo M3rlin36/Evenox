@@ -1,0 +1,30 @@
+{
+ "coupes": [
+  {"op": "garder_debut", "sel": "p.evx-sous", "jusqua": "marque Penn."},
+  {"op": "remove", "sel": "div.evx-galerie"},
+  {"op": "remove", "sel": "p.evx-tournage"},
+  {"op": "remove", "sel": "p.evx-label"},
+  {"op": "remove", "sel": "p.evx-source"},
+  {"op": "retirer_phrase", "sel": "p.evx-micro", "phrase": "Sans frais cachés."},
+  {"op": "remove", "sel": "p.evx-q-intro"},
+  {"op": "remove", "sel": "p.evx-avert"},
+  {"op": "remove", "sel": "div.evx-pt i"},
+  {"op": "remove", "sel": "div.evx-pt", "contient": "vous signez le décompte"},
+  {"op": "remove", "sel": "div.evx-pt span", "contient": "Surveillance adulte en tout temps"},
+  {"op": "retirer_phrase", "sel": "div.evx-pt span", "phrase": "Nos conditions disent : « Respectez les limites d'âge, de poids et de nombre indiquées »."},
+  {"op": "retirer_phrase", "sel": "div.evx-pt span", "phrase": "Une table rentrée mouillée, plateau refermé sur lui-même, c'est exactement le cas visé."},
+  {"op": "retirer_phrase", "sel": "div.evx-pt span", "phrase": "Une balle et une raquette sont des pièces."},
+  {"op": "retirer_phrase", "sel": "div.evx-pt span", "phrase": "Une raquette perdue reste donc à votre charge, protection ou non."},
+  {"op": "garder_lignes_tableau", "sel": "table.evx-fiche", "libelles": ["Ce qui est fourni", "Ramassage"]},
+  {"op": "retirer_phrase", "sel": "table.evx-fiche td", "phrase": "Notre catalogue de location ne décrit pas le contenu de cet article : aucun forfait n'y ajoute d'accessoire, et aucune raquette, aucune balle de ping-pong et aucun filet n'existe séparément dans tout le catalogue."},
+  {"op": "remove", "sel": "div.evx-nrl span"},
+  {"op": "garder_n_enfants", "sel": "div.evx-cpl", "n": 4},
+  {"op": "remove", "sel": "p.evx-forfait-note"},
+  {"op": "retirer_phrase", "sel": "div.evx-cpl-tete", "phrase": "Classé par ce que nos clients ajoutent vraiment à cet article."},
+  {"op": "remove", "sel": "section.evx-sect", "contient": "Ce qu'il faut demander"},
+  {"op": "retirer_phrase", "sel": "p.evx-sous-sect", "phrase": "Si votre question porte sur les raquettes, les balles ou le filet, écrivez-le : c'est celle qu'on nous pose le plus, et on ira regarder avant de vous répondre."}
+ ],
+ "variante": [
+  {"op": "style", "sel": "div.evx-hero-img", "propriete": "order", "valeur": "4"}
+ ]
+}
