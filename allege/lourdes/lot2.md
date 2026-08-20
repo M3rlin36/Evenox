@@ -9,11 +9,25 @@ Propositions seulement. **Rien n'a été modifié sur evenox.ca** : les trois pa
 **Règle appliquée** : on coupe, on ne réécrit pas, on n'ajoute rien. Chaque phrase conservée
 ci-dessous est celle de la page, au mot près ; quand une phrase est raccourcie, c'est par
 suppression seulement (par exemple « Nos conditions disent : “Respectez les limites…” » devient
-« “Respectez les limites…” »). Aucun fait n'a été corrigé : ce qui paraît faux est signalé au
-point 6 de chaque fiche, tel quel.
+« “Respectez les limites…” »). Aux points de coupe, la seule chose qui a pu changer est une
+majuscule ou un deux-points. Aucun mot n'a été ajouté, aucun intertitre non plus : le titre
+« Vue d'ensemble » de la fiche de référence n'existe pas sur ces trois pages, il n'a donc pas été
+repris. Aucun fait n'a été corrigé : ce qui paraît faux est signalé au point 6 de chaque fiche,
+tel quel.
+
+**Vérification** : un script relit chaque proposition mot à mot et vérifie qu'elle est une
+concaténation de fragments présents tels quels dans la page d'origine. Il a trouvé deux erreurs
+de ma part, corrigées : un intertitre emprunté à la fiche de référence, et une phrase de la
+fiche 2 écrite dans la formulation des fiches 1 et 3 (« Respectez les limites… » au lieu de
+« Nos conditions demandent de respecter “les limites…” »). Il ne reste aucun mot qui ne vienne
+pas de la page elle-même : les trois propositions sont des concaténations de fragments de la page
+(35 points de coupe sur la fiche 1, 45 sur la fiche 2, 42 sur la fiche 3, et zéro mot introuvable
+dans la source).
 
 **Comptage des mots** : texte visible de la page, en-tête de site et pied de page exclus,
-lignes répétées par le carrousel comptées une fois. Étalonnage sur la fiche de référence
+lignes répétées par le carrousel comptées une fois. Les « après » comptent aussi les repères de
+gabarit entre crochets (`[ photo ]`, `[ Ajouter au panier ]`), une dizaine de mots qui ne seront
+pas sur la page : le gain réel est donc légèrement supérieur à celui annoncé. Étalonnage sur la fiche de référence
 `https://evenox.ca/product/chaise-pliante/` : la même méthode donne **783 mots** là où la
 consigne en annonce 796 — l'écart vient de la façon de compter un numéro de téléphone. Les
 « avant » et les « après » ci-dessous sont donc comparables entre eux et à la référence.
@@ -23,9 +37,9 @@ sont des mesures, pas des estimations.
 
 | Fiche | Avant | Après | Retiré |
 |---|---|---|---|
-| Serpent et échelle géant | 3 048 mots | 522 mots | −83 % |
-| Table de Missisipi | 2 952 mots | 586 mots | −80 % |
-| Tic-Tac-TOE géant | 2 969 mots | 608 mots | −80 % |
+| Serpent et échelle géant | 3 048 mots | 520 mots | −83 % |
+| Table de Missisipi | 2 952 mots | 588 mots | −80 % |
+| Tic-Tac-TOE géant | 2 969 mots | 606 mots | −80 % |
 
 ---
 
@@ -46,8 +60,6 @@ Serpent et échelle géant
 Le jeu de plateau grandeur nature, à dérouler au sol.
 
 [ photo de la fiche ]
-
-VUE D'ENSEMBLE
 
 25,00 $ / jeu · 48 h
 
@@ -135,7 +147,7 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 
 ### 3. Mots APRÈS et pourcentage retiré
 
-- **522 mots** (avant : 3 048) → **−83 %**, soit 2 526 mots de moins.
+- **520 mots** (avant : 3 048) → **−83 %**, soit 2 528 mots de moins.
 - C'est 33 % plus court que la fiche de référence (783 mots), et ce n'est pas un excès de zèle :
   cette page-ci a moins de faits à écrire que la chaise pliante, parce que presque rien n'y est
   mesuré. Retirer une phrase de plus enlèverait un fait — j'ai essayé sur trois d'entre elles
@@ -344,8 +356,6 @@ La longue table de bois et ses palets qui glissent.
 [ photo ]
 Notre photo, prise à l'entrepôt. Palets de bois numérotés à la main.
 
-VUE D'ENSEMBLE
-
 120,00 $ / table · 48 h
 
 Prix pour ramassage à notre entrepôt de Sainte-Thérèse. Le montage n'est pas compris.
@@ -371,8 +381,9 @@ Ce qui encadre l'usage
 
 « Un adulte surveille en tout temps les jeux, les structures et les machines ».
 
-« Respectez les limites d'âge, de poids et de nombre indiquées ». Pour cet article, aucune
-limite n'est indiquée nulle part dans notre catalogue. Nous n'en inventerons pas une.
+Nos conditions demandent de respecter « les limites d'âge, de poids et de nombre indiquées ».
+Pour cet article, aucune limite n'est indiquée nulle part dans notre catalogue. Nous n'en
+inventerons pas une.
 
 « Ne modifiez rien : pas de peinture, pas de vis, pas de ruban adhésif. » N'ajoutez rien non
 plus sur le plateau : nous ne documentons aucun produit de glisse pour cette table.
@@ -438,8 +449,8 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 
 ### 3. Mots APRÈS et pourcentage retiré
 
-- **586 mots** (avant : 2 952) → **−80 %**, soit 2 366 mots de moins.
-- Un peu plus long que la fiche 1 (522), pour une raison simple : ici la photo a été prise à
+- **588 mots** (avant : 2 952) → **−80 %**, soit 2 364 mots de moins.
+- Un peu plus long que la fiche 1 (520), pour une raison simple : ici la photo a été prise à
   l'entrepôt, alors il y a quelque chose à décrire — le caisson, les rails, les chevilles, les
   bacs de retour — et une interdiction de plus à écrire (« Ne modifiez rien »).
 
@@ -629,8 +640,6 @@ Une grille de cordes à poser au sol et des coussins X et O à lancer.
 [ photo ]
 Photo de catalogue de fabricant, sur fond blanc. Elle n’a pas été prise à notre entrepôt.
 
-VUE D’ENSEMBLE
-
 20,00 $ / jeu · 48 h
 
 Prix pour ramassage à notre entrepôt de Sainte-Thérèse. Le montage n’est pas compris.
@@ -660,7 +669,7 @@ Ce qui encadre l’usage
 limite d’âge et aucun nombre de joueurs ne sont écrits nulle part dans notre catalogue. Nous
 n’en inventerons pas : demandez-les-nous au 514-559-1893.
 
-À l’intérieur ou à l’extérieur, notre catalogue ne tranche pas, et nous non plus.
+À l’intérieur ou à l’extérieur : notre catalogue ne tranche pas, et nous non plus.
 
 « Retournez les jeux secs. Un jeu rangé humide moisit ».
 
@@ -723,7 +732,7 @@ Pour tout ce qui n’est pas écrit ici, il y a le téléphone. 514-559-1893
 
 ### 3. Mots APRÈS et pourcentage retiré
 
-- **608 mots** (avant : 2 969) → **−80 %**, soit 2 361 mots de moins. C'est la plus longue des
+- **606 mots** (avant : 2 969) → **−80 %**, soit 2 363 mots de moins. C'est la plus longue des
   trois fiches allégées, et la seule qui reste un peu au-dessus de la moitié de la référence.
 - C'est la fiche où il reste le plus de lignes « non établi », parce que c'est celle où les deux
   textes internes se contredisent le plus. Chacune de ces lignes est un fait : elle dit au client
