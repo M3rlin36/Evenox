@@ -16,20 +16,43 @@
 
 ## 1. Faits établis chez Evenox (référence de comparaison)
 
-Fournis par le mandant, à vérifier sur le site public quand c'est possible.
+**Accès au site : normal.** `evenox.ca` a répondu sans erreur à toutes les
+consultations. Aucun 403 n'a été rencontré, le relevé a donc pu se poursuivre.
 
-| Élément | Fait établi |
-| --- | --- |
-| Chaise pliante noire | 4,00 $ / 48 h |
-| Chaise pliante blanche | 3,00 $ (durée à confirmer) |
-| Chaise Chiavari | 10,50 $ |
-| Table 6 pieds | non établi (à relever) |
-| Jeu gonflable | non établi (à relever) |
-| Livraison | 100 $ pour les 10 premiers km, puis 7 $/km jusqu'à 40 km ; au-delà, soumission |
-| Ramassage | Sainte-Thérèse |
-| Dépôt | 20 % à la réservation, solde au ramassage |
-| Taxes | en sus |
-| Réservation | en ligne, par carte de crédit |
+| Élément | Fait fourni par le mandant | Ce que publie evenox.ca |
+| --- | --- | --- |
+| Chaise pliante noire | 4,00 $ / 48 h | **4,00 $ / 48 h** — concorde |
+| Chaise pliante blanche | 3,00 $ | **3,00 $ / 48 h** — concorde, la durée est bien publiée |
+| Chaise Chiavari | 10,50 $ | **8,00 $ / 24 h** — **écart à trancher** (voir ci-dessous) |
+| Chaise pliante brune | — | 2,00 $ / 48 h |
+| Chaise Martha | — | 5,00 $ / 24 h |
+| Table 6 pieds | non fourni | **table en bois 6 pi : 10,00 $ / 48 h** |
+| Table ronde / table à cocktail | — | 15,00 $ et 10,00 $ / 48 h |
+| Nappe 6 pi | — | noire 8,00 $, blanche 10,00 $ / 48 h |
+| Jeu gonflable | non fourni | **non établi** — aucun prix de jeu gonflable n'a été trouvé sur les pages publiques |
+| Livraison | 100 $ pour les 10 premiers km, puis 7 $/km jusqu'à 40 km ; au-delà, soumission | **écart** : le site publie plutôt un ajustement de secteur de −100 $, +100 $ ou +200 $ sur les forfaits livrés, la livraison étant incluse dans la zone 0–20 km. La grille au kilomètre n'a pas été trouvée publiquement. |
+| Ramassage | Sainte-Thérèse | **215, boulevard René-A.-Robert, local 100, Sainte-Thérèse** ; heures publiées : lundi au vendredi 12 h à 18 h, samedi et dimanche 9 h à 13 h |
+| Dépôt | 20 % à la réservation, solde au ramassage | **20 % du total, solde au ramassage** — concorde, et c'est écrit sur la fiche produit |
+| Taxes | en sus | **en sus** — concorde |
+| Réservation | en ligne, par carte de crédit | **carte de crédit seulement, en ligne** — concorde |
+| Paliers de durée | non fourni | 48 h = tarif de base ; 3 jours × 1,5 ; 1 semaine × 2 ; 4 semaines × 4 |
+| Forfaits ramassage | non fourni | 12 places 75 $, 24 places 150 $, 48 places 300 $ — **6,25 $ la place**, 48 h |
+| Forfaits livrés | non fourni | Essentiel 449 $, Réception 649 $, Grande Salle 849 $, Événement 1 049 $ (livraison, placement, nappes et ramassage inclus) |
+| Politique d'annulation | non fourni | **non établi** — aucune politique d'annulation ou de météo n'a été trouvée sur les pages relevées ; seule exception, l'offre « Express 72 h » porte la mention « paiement 100 % à la réservation, non remboursable » |
+
+### Trois écarts internes à signaler avant de refaire les 178 fiches
+
+1. **La Chiavari.** Le mandant l'établit à 10,50 $ ; la fiche publique affiche
+   8,00 $ pour 24 h, et la page guide 2026 répète 8 $. Deux chiffres circulent.
+   Il faut trancher lequel fait foi avant de le recopier sur les fiches.
+2. **Les durées ne sont pas uniformes.** Les chaises pliantes sont à 48 h, mais
+   la Martha et la Chiavari sont à **24 h**. Sur une même page, quatre modèles
+   se suivent avec deux durées différentes. Un client qui compare quatre
+   chaises comparera deux choses.
+3. **Deux modèles de livraison coexistent.** La grille au kilomètre (100 $ +
+   7 $/km) fournie par le mandant et l'ajustement de secteur (−100 $ à +200 $)
+   publié sur les pages de forfaits ne décrivent pas la même chose. Le client
+   qui lit les deux pages ne saura pas ce qu'il paiera.
 
 ---
 
