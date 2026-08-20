@@ -18,6 +18,10 @@ simplifier — mais faut pas trop en faire non plus. »
   ne garder que les N premières cartes, ne garder que certaines lignes d'un tableau. Quand
   une coupe supplémentaire aurait cassé la phrase restante (majuscule, sujet), la coupe
   s'arrête là.
+- **Vérifié à la machine.** Chaque phrase de plus de trois mots du texte allégé a été
+  recherchée, au mot, dans le texte de la page d'origine : 48 phrases sur la fiche 1,
+  56 sur la fiche 2, 52 sur la fiche 3. Toutes présentes, à deux exceptions près, qui sont
+  des coupes à l'intérieur d'une phrase, détaillées au point 5 de la fiche 2.
 - **Premier écran.** Chaque fiche a été ouverte à 375 × 667 px (Chrome, iPhone SE), puis
   la version allégée a été rendue dans le vrai gabarit — les blocs coupés retirés du DOM —
   et remesurée. Les positions verticales sont donc mesurées, pas estimées.
@@ -26,6 +30,24 @@ simplifier — mais faut pas trop en faire non plus. »
   pas été ajouté : on n'ajoute rien. Il est signalé par fiche, à décider.
 - **Rythme.** Une requête à la fois, deux secondes entre deux. Aucun 403 : les trois fiches
   et la fiche de référence ont répondu 200.
+
+## Les trois fiches d'un coup d'œil
+
+| Fiche | Mots avant | Mots après | Retiré | Hauteur de page à 375 px | Prix dans le 1er écran | Bouton dans le 1er écran |
+| --- | --- | --- | --- | --- | --- | --- |
+| Table de ping-pong | 2 418 | **475** | −80 % | 18 129 → 7 495 px | 745 → **643 : oui** | 1 387 → 1 010 : non |
+| Table d'air hockey | 2 680 | **563** | −79 % | 20 421 → 8 702 px | 745 → **643 : oui** | 1 533 → 1 058 : non |
+| Table de baby-foot | 2 809 | **508** | −82 % | 20 808 → 7 711 px | 770 → **643 : oui** | 2 673 → 1 342 : non |
+| *Référence : chaise pliante* | *853* | — | — | — | — | — |
+
+Total : **7 907 mots → 1 546**, soit 6 361 mots retirés. Les trois fiches passent sous la
+fiche de référence, parce que trois de ses blocs n'existent pas ici (forfaits, autres modèles,
+et un bloc de questions que je propose de retirer — voir l'arbitrage de la fiche 1).
+
+**Le prix entre dans le premier écran sur les trois fiches. Le bouton, non**, sur aucune des
+trois : après coupe, il ne reste plus de texte à retirer au-dessus de lui. Ce qui l'empêche,
+c'est 242 px d'en-tête de site et 250 px de photo. Le détail est mesuré au point 7 de chaque
+fiche.
 
 ---
 
@@ -131,7 +153,7 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 
 - **Mots APRÈS : 475**
 - **Retiré : 1 943 mots, soit 80 %**
-- Hauteur de la page à 375 px : 18 129 px → **7 448 px** (−59 %)
+- Hauteur de la page à 375 px : 18 129 px → **7 495 px** (−59 %)
 
 ## 4. La liste des faits conservés
 
@@ -417,6 +439,18 @@ Même arbitrage que sur la fiche 1 : si tu veux garder une question, c'est « Qu
 vient avec la table ? ». La deuxième candidate ici serait « Quelle différence entre le modèle
 commercial et le résidentiel ? », mais son contenu est déjà dans la ligne de tableau « Ce qui
 distingue les deux modèles ».
+
+### Les deux seules coupes faites à l'intérieur d'une phrase, sur les trois fiches
+
+Elles sont ici, et les voici en entier pour que tu puisses les refuser :
+
+| Avant | Après |
+| --- | --- |
+| « Non établi — **et ce n'est pas une formule de prudence :** dans notre catalogue, les deux modèles ne diffèrent que par leur nom. » | « Non établi — dans notre catalogue, les deux modèles ne diffèrent que par leur nom. » |
+| « Ni la tension, ni la puissance, ni la longueur du cordon ne sont relevées chez nous**, et la plaque signalétique n'est pas lisible sur la photo**. » | « Ni la tension, ni la puissance, ni la longueur du cordon ne sont relevées chez nous. » |
+
+Aucun mot n'a été ajouté ni déplacé : dans les deux cas, un segment a été retiré et la
+ponctuation qui restait était déjà là.
 
 ## 6. Faux ou douteux — signalé, pas corrigé
 
