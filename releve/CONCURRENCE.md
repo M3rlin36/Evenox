@@ -374,6 +374,66 @@ le 3,50 $ incomparable en l'état.
 - Fiche mobilier : **environ 20 mots** par article (désignation, dimensions,
   prix et condition d'obtention).
 
+### 3.7 Chez Fun Fou — `chezfunfou.com`
+
+611, boulevard Roland-Godard, Saint-Jérôme. Jeux gonflables, machines à
+friandises, consommables, animation et spectacles. Boutique en ligne avec panier
+et calendrier, mais le panier débouche sur une **demande de soumission**, pas
+sur un achat.
+
+**Les trois articles de référence**
+
+| Article | Prix annoncé | Durée annoncée |
+| --- | --- | --- |
+| Chaise pliante | **non établi** — aucune chaise au catalogue relevé |
+| Table 6 pieds | **non établi** — aucune table de banquet au catalogue relevé |
+| Jeu gonflable « Parc Zoo » | 154 $ | 1 journée (voir grille ci-dessous) |
+| Jeu gonflable « Fun fou » | 175 $ | 1 journée |
+| Jeu gonflable « Île aux Pirates » | 198 $ | 1 journée |
+| Jeu gonflable « Maxi Fun » | 330 $ | 1 journée |
+| Machine à barbe à papa | 66 $ | 1 journée |
+
+**La grille de durée, publiée telle quelle**
+
+| Formule | Ce qui est facturé |
+| --- | --- |
+| 1re journée | 100 % du tarif |
+| 2e, 3e et 4e journée | 50 % chacune |
+| Location le dimanche seulement | 100 % (tarif plein) |
+| Forfait fin de semaine | vendredi plein tarif, samedi 50 %, **dimanche gratuit**, retour le lundi |
+| Deux jours (samedi et dimanche) | samedi 100 %, dimanche 50 % |
+
+**Le point à retenir.** C'est la grille de durée la plus explicite du relevé, et
+elle change complètement la lecture des prix affichés. Le « Maxi Fun » à 330 $
+n'est pas à 330 $ pour une fin de semaine : le forfait vendredi-à-lundi revient
+à 150 % du tarif, soit **495 $** pour trois jours. À l'inverse, une location du
+dimanche seul se paie plein tarif. Le prix à l'affiche est donc un prix
+d'appel : il faut lire la grille pour connaître le vrai montant.
+
+**Conditions**
+
+| Élément | Ce qui est écrit |
+| --- | --- |
+| Livraison | **non incluse dans les prix**, mention répétée deux fois dans la FAQ ; livraison possible « selon l'horaire et la disponibilité de nos routes » |
+| Montant du tarif de livraison | **non établi** — aucun montant ni grille kilométrique publiés |
+| Seuil de gratuité | aucun |
+| Zone desservie | tout le Québec depuis Saint-Jérôme ; Montréal, Laval, Lanaudière, Laurentides, Outaouais et Québec sont nommés |
+| Dépôt | **acompte de 25 %** |
+| Annulation / report | possible **jusqu'à 48 h avant** l'événement ; l'acompte de 25 % n'est pas remboursé mais **converti en note de crédit valable un an** sur toute autre location |
+| Mode de paiement | une section « Modes de paiement » existe dans la FAQ, mais son contenu n'a pas été relevé → **non établi** |
+| Cueillette | Saint-Jérôme, sur rendez-vous ; les rendez-vous du vendredi se prennent le jeudi |
+| Réservation en ligne | **non, malgré les apparences** — on ajoute au panier, mais on « complète une demande de soumission » ; la réservation n'est confirmée qu'à la signature d'un contrat envoyé par courriel |
+
+**Longueur d'une fiche produit**
+
+- Fiche « Maxi Fun » : **environ 75 mots**, dont une phrase de présentation et
+  une liste technique (besoin électrique de 2 × 15 A, 1 surveillant requis, âge
+  de 4 à 12 ans, 8 participants, contenu de la location, dimensions 20 × 19 × 15
+  pi, poids 368 lb).
+
+Fait notable : le calendrier de la fiche porte une consigne de sélection
+explicite pour le forfait fin de semaine (choisir du vendredi au lundi).
+
 ---
 
 ## 4. Tableau comparatif
