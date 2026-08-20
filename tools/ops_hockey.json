@@ -1,0 +1,41 @@
+{
+ "coupes": [
+  {"op": "garder_debut", "sel": "p.evx-sous", "jusqua": "en deux modèles au même prix."},
+  {"op": "remove", "sel": "div.evx-galerie"},
+  {"op": "remove", "sel": "p.evx-tournage"},
+  {"op": "remove", "sel": "p.evx-label", "contient": "Vos dates"},
+  {"op": "remove", "sel": "p.evx-label", "contient": "ajouter la table"},
+  {"op": "remove", "sel": "p.evx-source"},
+  {"op": "retirer_phrase", "sel": "p.evx-micro", "phrase": "Sans frais cachés."},
+  {"op": "retirer_phrase", "sel": "p.evx-prix-note", "phrase": "Les deux modèles sont au même prix : ce montant ne dépend pas de votre choix."},
+  {"op": "remove", "sel": "p.evx-q-intro"},
+  {"op": "remove", "sel": "p.evx-avert"},
+  {"op": "remove", "sel": "div.evx-pt i"},
+  {"op": "remove", "sel": "div.evx-pt", "contient": "vous signez le décompte"},
+  {"op": "remove", "sel": "div.evx-pt span", "contient": "Surveillance adulte en tout temps"},
+  {"op": "retirer_phrase", "sel": "div.evx-pt span", "phrase": "Nos conditions disent : « Respectez les limites d'âge, de poids et de nombre indiquées »."},
+  {"op": "retirer_phrase", "sel": "div.evx-pt span", "phrase": "Une table à soufflerie rentrée humide, c'est exactement le cas visé."},
+  {"op": "retirer_phrase", "sel": "div.evx-pt span", "phrase": "Un palet et un poussoir sont des pièces."},
+  {"op": "retirer_phrase", "sel": "div.evx-pt span", "phrase": "Un palet perdu reste donc à votre charge, protection ou non."},
+  {"op": "garder_lignes_tableau", "sel": "table.evx-fiche", "libelles": ["Ce qui est fourni", "Ce qui distingue les deux modèles", "Alimentation électrique", "Dimensions", "Poids", "Ramassage"]},
+  {"op": "retirer_phrase", "sel": "table.evx-fiche td", "phrase": "Notre catalogue de location ne décrit pas le contenu de cet article : aucun forfait n'y ajoute d'accessoire, et aucun palet, aucun poussoir, aucune rondelle et aucun maillet n'existe séparément dans tout le catalogue."},
+  {"op": "retirer_phrase", "sel": "table.evx-fiche td", "phrase": "et ce n'est pas une formule de prudence :"},
+  {"op": "retirer_phrase", "sel": "table.evx-fiche td", "phrase": "Même prix, même structure tarifaire, même photo, même description, aucun poids, aucune propriété."},
+  {"op": "retirer_phrase", "sel": "table.evx-fiche td", "phrase": ", et la plaque signalétique n'est pas lisible sur la photo"},
+  {"op": "remove", "sel": "div.evx-nrl span"},
+  {"op": "remove", "sel": "div.evx-nrl", "contient": "Le nombre de palets"},
+  {"op": "remove", "sel": "div.evx-nrl", "contient": "Le nombre de poussoirs"},
+  {"op": "remove", "sel": "div.evx-nrl", "contient": "Ce qui distingue « commerciale »"},
+  {"op": "remove", "sel": "div.evx-nrl", "contient": "Les dimensions de la table"},
+  {"op": "remove", "sel": "div.evx-nrl", "contient": "L'alimentation électrique et le cordon"},
+  {"op": "remove", "sel": "div.evx-nrl", "contient": "Le poids, et si elle se plie"},
+  {"op": "garder_n_enfants", "sel": "div.evx-cpl", "n": 4},
+  {"op": "remove", "sel": "p.evx-forfait-note"},
+  {"op": "retirer_phrase", "sel": "div.evx-cpl-tete", "phrase": "Classé par ce que nos clients ajoutent vraiment à cet article."},
+  {"op": "remove", "sel": "section.evx-sect", "contient": "Ce qu'il faut demander"},
+  {"op": "retirer_phrase", "sel": "p.evx-sous-sect", "phrase": "Si votre question porte sur les palets, les poussoirs ou la différence entre les deux modèles, écrivez-le : ce sont celles qu'on nous pose le plus, et on ira regarder avant de vous répondre."}
+ ],
+ "variante": [
+  {"op": "style", "sel": "div.evx-hero-img", "propriete": "order", "valeur": "4"}
+ ]
+}

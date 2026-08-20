@@ -126,6 +126,7 @@ with sync_playwright() as p:
             marque = "PREMIER" if b["premierEcran"] else "       "
             print(f"{b['top']:>6} h={b['hauteur']:>4} {marque} {b['label'][:40]:<40} {b['texte'][:58]}")
 
+    mesurer("_avant", [])
     mesurer("", page.evaluate(APPLY, ops))
     if variante:
         mesurer("_variante", page.evaluate(APPLY, variante))

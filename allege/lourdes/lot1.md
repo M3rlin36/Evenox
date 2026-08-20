@@ -64,6 +64,8 @@ Dollars canadiens, taxes en sus. Paiement par carte de crédit seulement, en lig
 
 [lien] Politique et conditions de location
 
+**Le tarif selon la durée**
+
 [2 jours *tarif de base* · 3 jours *× 1,5* · 1 semaine *× 2* · 4 semaines *× 4*]
 
 AVANT DE RÉSERVER
@@ -95,11 +97,7 @@ LA FICHE
 
 CE QUI N'EST PAS RELEVÉ
 
-- Le nombre de raquettes
-- Le nombre de balles
-- Le filet
 - Les dimensions de la table dépliée
-- L'encombrement une fois pliée, et le transport
 - Le poids
 - L'espace de jeu à prévoir
 - À l'intérieur ou à l'extérieur
@@ -131,9 +129,9 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 
 ## 3. Mots APRÈS et pourcentage retiré
 
-- **Mots APRÈS : 487**
-- **Retiré : 1 931 mots, soit 80 %**
-- Hauteur de la page à 375 px : 18 129 px → **7 407 px** (−59 %)
+- **Mots APRÈS : 475**
+- **Retiré : 1 943 mots, soit 80 %**
+- Hauteur de la page à 375 px : 18 129 px → **7 448 px** (−59 %)
 
 ## 4. La liste des faits conservés
 
@@ -152,7 +150,7 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 | Retour propre, sec et complet ; les jeux se retournent secs | Ce qui encadre l'usage |
 | Frais : bris ou pièce manquante = réparation ou valeur de remplacement ; usure normale jamais facturée | Ce qui encadre l'usage |
 | Frais : protection bris accidentel 8 %, et ce qu'elle ne couvre pas (négligence, vol, perte, pièces non retournées, frais de retard) | Ce qui encadre l'usage |
-| Dimensions, encombrement plié, poids, espace de jeu : **non relevés** | Ce qui n'est pas relevé |
+| Dimensions dépliée, poids, espace de jeu à prévoir : **non relevés** | Ce qui n'est pas relevé |
 | Intérieur ou extérieur : non tranché | Ce qui n'est pas relevé |
 | Marque : Penn | la phrase sous le titre |
 | Photo : celle du fabricant, pas prise à l'entrepôt | légende de la photo |
@@ -170,7 +168,8 @@ et le raisonnement.
 | **Méthode interne** | « Une étiquette a été cherchée sur la photo du dossier… quatre zones recadrées et agrandies… » et « Pourquoi cette liste est aussi longue… nous choisissons le silence — et le téléphone. » | ≈ 260 |
 | **Sources répétées** — dicté : disparaît | les six lignes « Source : Conditions de location d'Évenox, relues le 17 août 2026 », plus le chapeau « Les six points ci-dessous viennent tous du même endroit : nos conditions de location… » | ≈ 120 |
 | **Encadrement de l'usage : garder ce qui protège** | le point « On compte le matériel devant vous, et vous signez le décompte » (procédure, elle est dans les conditions, et le lien y va), et les commentaires en fin de point : « Une table rentrée mouillée… », « Une balle et une raquette sont des pièces. », « Une raquette perdue reste donc à votre charge, protection ou non. », « Nos conditions l'écrivent deux fois… pour les jeux géants » | ≈ 150 |
-| **Déjà dit ailleurs sur la même page** | lignes de tableau « Article », « Marque », « Tarif », « Montage » ; libellés « Vos dates — on affiche ce qui est libre » et « Ajouter la table » (le bouton le dit) ; « Le total exact s'affiche au panier, avant tout engagement. » | ≈ 90 |
+| **Déjà dit ailleurs sur la même page** | lignes de tableau « Article », « Marque », « Tarif », « Montage » ; libellés « Vos dates — on affiche ce qui est libre » et « Ajouter la table » (le bouton le dit) ; « Le total exact s'affiche au panier, avant tout engagement. » ; dans « Ce qui n'est pas relevé », les intitulés « Le nombre de raquettes », « Le nombre de balles » et « Le filet », qui répètent mot pour mot la ligne « Ce qui est fourni » du tableau | ≈ 100 |
+| **Pliage** — dicté | l'intitulé « L'encombrement une fois pliée, et le transport » | 8 |
 | **Variantes : il n'y en a pas** — dicté | ligne de tableau « Variantes : Aucune — un seul modèle, un seul prix. Le montant ci-dessus ne dépend d'aucun choix. » | ≈ 20 |
 | **Raisonnement derrière un fait déjà écrit** | les 8 explications de « Ce qui n'est pas relevé » (les 8 intitulés restent, la démonstration part), et la preuve de catalogue dans la cellule « Ce qui est fourni » | ≈ 640 |
 | **Souvent loué avec : quatre maximum** — dicté | les cartes « Jeu de poches & Cornhole » et « Chaise Pliante Brune », et le paragraphe de classement « sur les 86 locations… réparties sur 69 dossiers… 13 fois » | ≈ 120 |
@@ -263,3 +262,237 @@ le gabarit mobile, pas une coupe de texte), le prix remonte à **383**, le séle
 à **592**, et le bloc du bouton commence à **682** — le bouton cliquable est à **750**. Il
 manque encore 83 px. Sans toucher à l'en-tête du site ni aux marges du bloc de prix, le
 bouton ne peut pas entrer dans le premier écran à 375 px.
+
+---
+
+# Fiche 2 — Table d'air hockey
+
+## 1. Adresse et mots AVANT
+
+- **Adresse :** https://evenox.ca/product/table-air-hockey-en-location/ (HTTP 200)
+- **Mots AVANT : 2 680**
+- Hauteur de la page à 375 px : **20 421 px**
+
+## 2. Le texte allégé complet, prêt à relire
+
+---
+
+# Table d'air hockey
+
+Une table de marque VEVOR, en deux modèles au même prix.
+
+[photo] La photo du fabricant. Elle n'a pas été prise à notre entrepôt.
+
+**120,00 $** / table · [durée affichée par le composant : « 2 Jours »]
+
+Prix pour ramassage à notre entrepôt de Sainte-Thérèse. **Le montage n'est pas compris.**
+
+[sélecteur de dates]
+
+[sélecteur de modèle : 7 pieds (résidentiel) · 7 pieds (commerciale)]
+
+[bouton : 2 Jours · 120,00 $ · Ajouter au panier]
+
+**Réservez avec 20 % du total.** Le solde au ramassage.
+
+Dollars canadiens, taxes en sus. Paiement par carte de crédit seulement, en ligne.
+
+[lien] Politique et conditions de location
+
+**Le tarif selon la durée**
+
+[2 jours *tarif de base* · 3 jours *× 1,5* · 1 semaine *× 2* · 4 semaines *× 4*]
+
+AVANT DE RÉSERVER
+
+## Ce qui encadre l'usage
+
+- **Un adulte surveille, en tout temps**
+- **Les limites d'âge et de nombre s'appliquent** — Pour cet article, aucune limite d'âge
+  n'est écrite nulle part dans notre catalogue. Nous n'en inventerons pas une :
+  demandez-la-nous au 514-559-1893.
+- **Le matériel revient propre, sec et complet** — Nos conditions : « à l'heure convenue,
+  propre, sec et complet », et pour les jeux « Retournez les jeux secs. Un jeu rangé humide
+  moisit ».
+- **Une pièce manquante se facture** — Nos conditions : « Un bris ou une pièce manquante :
+  coût de réparation, ou valeur de remplacement si l'article n'est pas réparable ».
+  « L'usure normale ne se facture jamais. »
+- **La protection facultative ne couvre pas les pièces non retournées** — La protection bris
+  accidentel coûte 8 % du montant de la location. Nos conditions listent ce qu'elle ne couvre
+  pas : « la négligence, le vol, la perte, les pièces non retournées, les frais de retard ».
+
+LA FICHE
+
+## Ce qui est vérifié
+
+| Caractéristique | Ce qui est vérifié |
+| --- | --- |
+| Ce qui est fourni | **Non établi** — ni le nombre de palets, ni le nombre de poussoirs. Appelez le 514-559-1893, on va sortir la table et compter. |
+| Ce qui distingue les deux modèles | **Non établi** — dans notre catalogue, les deux modèles ne diffèrent que par leur nom. Si le choix compte pour vous, appelez avant de réserver. |
+| Alimentation électrique | **À relever** — la table a une soufflerie, donc elle se branche. Ni la tension, ni la puissance, ni la longueur du cordon ne sont relevées chez nous. Prévoyez une prise ; pour le reste, appelez. |
+| Dimensions | **À relever** — longueur, largeur, hauteur de jeu : rien n'est mesuré à l'entrepôt, et la photo ne porte aucune référence d'échelle |
+| Poids | **À relever** — ni pesée, ni estimée |
+| Ramassage | Entrepôt de Sainte-Thérèse — 215, boulevard René-A.-Robert |
+
+CE QUI N'EST PAS RELEVÉ
+
+- Le bruit de la soufflerie
+- L'espace de jeu à prévoir
+
+À AJOUTER
+
+## Souvent loué avec
+
+Un seul ramassage, un seul dépôt.
+
+| | Prix | Durée |
+| --- | --- | --- |
+| Table de Baby Foot | À partir de 120,00 $ | 24 h · modèle résidentiel ; commerciale 160,00 $ |
+| Jeu de poches & Cornhole | 40,00 $ | 48 h |
+| Table de Ping Pong | 50,00 $ | 48 h |
+| Jeu Putterball | 50,00 $ | 48 h |
+
+## Une question avant de réserver ?
+
+Deux champs obligatoires, deux facultatifs. Pour réserver, tout se passe en haut de page.
+
+[formulaire : Votre nom (obligatoire) · Votre téléphone (obligatoire) · Votre courriel
+(facultatif) · Date de votre événement (AAAA-MM-JJ) (obligatoire) · Où la table sera
+installée, et vos questions · Envoyer ma question]
+
+Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
+
+---
+
+## 3. Mots APRÈS et pourcentage retiré
+
+- **Mots APRÈS : 563**
+- **Retiré : 2 117 mots, soit 79 %**
+- Hauteur de la page à 375 px : 20 421 px → **8 702 px** (−57 %)
+
+## 4. La liste des faits conservés
+
+| Fait | Où il reste |
+| --- | --- |
+| Prix : 120,00 $ / table, identique sur les deux modèles | premier écran, bloc prix, et la phrase sous le titre |
+| Durée réelle : 48 h (« 2 Jours » dans le composant) | premier écran, sous le prix |
+| Multiplicateurs : 3 jours × 1,5 · 1 semaine × 2 · 4 semaines × 4 | une seule fois, sous le bouton |
+| Bouton d'ajout au panier, avec le choix du modèle | bloc prix |
+| Deux modèles : 7 pieds (résidentiel) et 7 pieds (commerciale) | une seule fois : le sélecteur du bouton |
+| Ce qui est fourni : **non établi** — ni palets, ni poussoirs, avec le téléphone | tableau |
+| Ce qui distingue les deux modèles : **non établi**, ils ne diffèrent que par leur nom | tableau |
+| Le montage **n'est pas compris** | ligne sous le prix |
+| Ramassage : entrepôt de Sainte-Thérèse, 215, boulevard René-A.-Robert | tableau, une seule fois |
+| Dépôt de 20 %, solde au ramassage, taxes en sus, carte de crédit seulement en ligne | bloc prix |
+| Sécurité : un adulte surveille, en tout temps | Ce qui encadre l'usage |
+| Âge : aucune limite d'âge écrite dans le catalogue pour cet article, demandez-la au téléphone | Ce qui encadre l'usage |
+| Retour propre, sec et complet ; les jeux se retournent secs | Ce qui encadre l'usage |
+| Frais : bris ou pièce manquante = réparation ou valeur de remplacement ; usure normale jamais facturée | Ce qui encadre l'usage |
+| Frais : protection bris accidentel 8 %, et ce qu'elle ne couvre pas | Ce qui encadre l'usage |
+| Électricité : la table a une soufflerie, elle se branche ; prévoyez une prise ; tension, puissance et cordon non relevés | tableau |
+| Dimensions et poids : **à relever** | tableau |
+| Bruit de la soufflerie, espace de jeu : **non relevés** | Ce qui n'est pas relevé |
+| Marque : VEVOR | la phrase sous le titre |
+| Photo : celle du fabricant, pas prise à l'entrepôt | légende de la photo |
+| Lien vers les conditions | bloc prix |
+
+## 5. Ce que j'ai coupé, par motif
+
+| Motif | Ce qui part | Mots |
+| --- | --- | --- |
+| **Trop de titres sous le titre** | 2 des 3 phrases de la phrase d'accroche : « 120,00 $ pour 48 h, ramassage à Sainte-Thérèse. » et « Ce qui vient avec la table n'est pas établi : c'est écrit plus bas, sans détour. » | ≈ 30 |
+| **Notes de production, pas du texte client** | les six vignettes « À produire » (Le compte, Les palets, Les poussoirs, Les deux modèles, La prise, L'échelle) et le paragraphe « Six vues à produire… 1200 px minimum » | ≈ 210 |
+| **Méthode interne** | « Une étiquette a été cherchée sur la photo du dossier… cinq zones recadrées et agrandies jusqu'à huit fois… » et « Pourquoi cette liste est aussi longue… nous choisissons le silence — et le téléphone. » | ≈ 280 |
+| **Sources répétées** — dicté : disparaît | les six lignes « Source : Conditions de location d'Évenox… » et le chapeau « Les six points ci-dessous viennent tous du même endroit… » | ≈ 120 |
+| **Encadrement de l'usage : garder ce qui protège** | le point « On compte le matériel devant vous, et vous signez le décompte » (procédure : elle est dans les conditions, et le lien y va), et les commentaires de fin de point : « Une table à soufflerie rentrée humide… », « Un palet et un poussoir sont des pièces. », « Un palet perdu reste donc à votre charge, protection ou non. », « Nos conditions l'écrivent deux fois… pour les jeux et les arcades » | ≈ 170 |
+| **Variantes : une seule fois** — dicté | la ligne de tableau « Modèles : Deux — nommés au catalogue “7 pieds (commerciale)” et “7 pieds (résidentiel)”… Les deux sont à 120,00 $. » (le sélecteur du bouton affiche déjà les deux noms), la ligne de prix « Les deux modèles sont au même prix : ce montant ne dépend pas de votre choix. », le libellé « Choisir le modèle et ajouter la table », et l'intitulé « Ce qui distingue “commerciale” de “résidentiel” » dans la liste du bas | ≈ 90 |
+| **Déjà dit ailleurs sur la même page** | lignes de tableau « Article », « Marque », « Tarif », « Montage », « Puissance de la soufflerie » (la ligne Alimentation le dit déjà) ; libellé « Vos dates — on affiche ce qui est libre » ; « Le total exact s'affiche au panier, avant tout engagement. » ; les intitulés « Le nombre de palets », « Le nombre de poussoirs », « Les dimensions de la table », « L'alimentation électrique et le cordon » qui répètent le tableau | ≈ 130 |
+| **Pliage** — dicté | l'intitulé « Le poids, et si elle se plie » (le poids reste au tableau) | 8 |
+| **Raisonnement derrière un fait déjà écrit** | les 8 explications de « Ce qui n'est pas relevé », la preuve de catalogue dans la cellule « Ce qui est fourni », l'énumération « même prix, même structure tarifaire, même photo, même description, aucun poids, aucune propriété » | ≈ 700 |
+| **Souvent loué avec : quatre maximum** — dicté | les cartes « Table Beer Pong » et « Jeux Arcade Multijeux », et le paragraphe de classement « les 64 lignes… 17 commandes distinctes… 4 fois » | ≈ 130 |
+| **Bloc entier hors de la liste des six blocs à garder** | toute la section « Quatre questions / Ce qu'il faut demander » et ses 4 questions dépliables | ≈ 850 |
+| **Formulation avantageuse** | « Sans frais cachés. » | 4 |
+
+Même arbitrage que sur la fiche 1 : si tu veux garder une question, c'est « Qu'est-ce qui
+vient avec la table ? ». La deuxième candidate ici serait « Quelle différence entre le modèle
+commercial et le résidentiel ? », mais son contenu est déjà dans la ligne de tableau « Ce qui
+distingue les deux modèles ».
+
+## 6. Faux ou douteux — signalé, pas corrigé
+
+1. **« Sans frais cachés. »** — même formulation avantageuse que sur la fiche 1, sur une page
+   qui annonce par ailleurs réparation, valeur de remplacement, frais de retard et protection
+   à 8 %. Retirée, pas remplacée.
+2. **Écart de prix important, consigné dans le code de la page et jamais publié.** Sur les
+   64 lignes de facturation relevées : 100,00 $ quarante fois, 180,00 $ treize fois,
+   120,00 $ onze fois. **Le montant le plus fréquemment facturé est 100,00 $, alors que la
+   fiche affiche 120,00 $.** La note interne explique qu'une bonne part vient d'un ancien
+   article renommé (« Table Air Hockey - 5 pieds »), mais qu'il reste sept lignes à 100,00 $
+   sous les noms actuels, inexpliquées, et treize lignes à 180,00 $ toutes en commerciale,
+   toutes facturées sur 48 h. Je n'ai rien corrigé : la fiche continue d'afficher 120,00 $.
+   C'est le point qui mérite ton arbitrage avant tout le reste.
+3. **Le prix du groupe est à zéro dans le catalogue.** Le prix ne vit que sur les deux
+   variantes (120,00 $ chacune). La fiche affiche le bon montant, mais elle l'affiche par un
+   attribut écrit à la main : si le composant se met à lire le groupe, il affichera 0,00 $.
+4. **Deux formats de prix sur le même écran.** Le bloc du haut écrit « 120,00 $ » ; le bouton
+   Booqable écrit « $120.00 ». Vu à l'écran, avant comme après.
+5. **Deux unités de durée sur le même écran** : « 48 h » dans le texte, « 2 Jours » dans le
+   composant.
+6. **Deux libellés coupés à 375 px, avant comme après ma coupe** : le sélecteur de modèle
+   affiche « Sélectionner une vari » (texte tronqué) et le bouton affiche « Ajouter au
+   panie ». Ce n'est pas causé par les coupes : c'est déjà comme ça sur la fiche en ligne.
+7. **« 7 pieds » n'est pas une mesure.** La fiche elle-même l'écrit dans sa version longue :
+   c'est un nom de catalogue. Après coupe, les noms de modèles restent dans le sélecteur
+   (« 7 pieds (résidentiel) », « 7 pieds (commerciale) ») pendant que la ligne « Dimensions »
+   du tableau dit « à relever ». Contradiction apparente, non corrigée : les deux sont vraies,
+   mais elles se lisent mal ensemble.
+8. **Deux modèles, deux prix, une seule différence : le nom.** La fiche l'écrit noir sur
+   blanc. Ce n'est pas faux, c'est simplement un état du catalogue à corriger ailleurs qu'ici.
+9. **L'adresse de ramassage est incomplète** : « 215, boulevard René-A.-Robert », sans
+   « local 100 ». Non complétée. Aucune mention de Mirabel : vérifié.
+10. **Aucun tarif de livraison sur la fiche**, et la même note interne que sur la fiche 1
+    (« il n'y a pas de livraison, tout se ramasse à Sainte-Thérèse »), qui contredit le tarif
+    dicté. Rien n'a été ajouté.
+11. **Description de boutique non reprise** (elle parle de Laval et de la Rive-Nord et promet
+    une expérience « simple et sans stress »). Elle reste non reprise.
+
+## 7. Le premier écran à 375 px
+
+**AVANT** — l'écran contient : le bandeau téléphone/courriel, le logo et le menu (0 → 242),
+le titre (256), la phrase d'accroche sur **4 lignes** (298 → 451), et le haut de la photo,
+coupée (467 → 667).
+
+| Élément | Position AVANT | Dans le premier écran ? |
+| --- | --- | --- |
+| Titre | 256 | oui |
+| Phrase sous le titre | 298 (153 px de haut) | oui |
+| Photo | 467 | à moitié |
+| **Prix** | **745** | **non — 78 px trop bas** |
+| Durée sous le prix | 785 | non |
+| Ligne de prix (ramassage, montage, deux modèles) | 821 (190 px de haut) | non |
+| Sélecteur de dates | 1 101 | non |
+| Sélecteur de modèle | 1 417 | non |
+| **Bouton Ajouter au panier** | **1 533** | **non — 866 px trop bas** |
+| Lien vers les conditions | 1 839 | non |
+
+**APRÈS** — l'écran contient : le bandeau, le logo et le menu, le titre (256), la phrase sur
+**deux lignes** (298 → 349), **la photo en entier** (365 → 615), et **le prix** (643).
+
+| Élément | Position APRÈS | Dans le premier écran ? |
+| --- | --- | --- |
+| Titre | 256 | oui |
+| Phrase sous le titre | 298 (51 px de haut) | oui |
+| Photo | 365 → 615 | **oui, en entier** |
+| **Prix** | **643** | **oui** |
+| Durée sous le prix | 683 | non — 16 px trop bas |
+| Ligne de prix (ramassage, montage) | 719 (115 px, une phrase de moins) | non |
+| Sélecteur de dates | 852 | non |
+| Sélecteur de modèle | 942 | non |
+| **Bouton Ajouter au panier** | **1 058** | **non — 391 px trop bas** |
+| Lien vers les conditions | 1 339 | non |
+
+Mesuré aussi, en descendant la photo **sous** le bloc de prix (une ligne de CSS mobile, pas
+une coupe de texte) : prix à **383**, durée à **423**, ligne de prix à **459**, sélecteur de
+dates à **592** — tout dans le premier écran. Le sélecteur de modèle tombe à **682** et le
+bouton à **798**. Comme sur la fiche 1, le bouton reste dehors : cette fiche a un sélecteur
+de modèle de plus, ce qui coûte 116 px, et l'en-tête du site en prend déjà 242.
