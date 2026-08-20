@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeux géants en location | Évenox — maquette du texte allégé</title>
+<style>
+  :root { --violet:#5a1fd6; --violet-d:#4413a8; --txt:#1b1b1f; --gris:#5b5b66; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; color:var(--txt); -webkit-font-smoothing:antialiased; }
+
+  /* barre de contact, reprise du site */
+  .bar { background:var(--violet); color:#fff; display:flex; gap:18px; justify-content:center;
+         align-items:center; height:62px; font-size:14px; font-weight:600; }
+  .bar a { color:#fff; text-decoration:none; }
+
+  /* en-tete, reprise du site */
+  .head { height:134px; display:flex; align-items:center; justify-content:space-between;
+          padding:0 22px; }
+  .logo { color:var(--violet); font-size:30px; font-weight:800; letter-spacing:-.5px; }
+  .burger { width:30px; }
+  .burger span { display:block; height:3px; background:var(--violet); border-radius:2px; margin:6px 0; }
+
+  main { padding:0 20px 40px; }
+
+  h1 { font-size:30px; line-height:1.15; margin:0 0 10px; color:var(--violet); font-weight:800; }
+  .geo { font-size:16px; line-height:1.4; margin:0 0 12px; color:var(--txt); }
+  .cond { font-size:14px; line-height:1.45; margin:0 0 18px; color:var(--gris); }
+  .cond a { color:var(--violet); font-weight:700; }
+
+  ul.jeux { list-style:none; margin:0; padding:0; border-top:1px solid #e6e6ec; }
+  ul.jeux li { border-bottom:1px solid #e6e6ec; }
+  ul.jeux a { display:flex; justify-content:space-between; align-items:center; gap:12px;
+              padding:13px 2px; text-decoration:none; color:var(--txt); font-size:16px;
+              line-height:1.25; min-height:52px; }
+  ul.jeux .prix { color:var(--violet); font-weight:800; white-space:nowrap; font-size:17px; }
+
+  .notes { margin:18px 0 0; font-size:14px; line-height:1.5; color:var(--gris); }
+  .notes p { margin:0 0 6px; }
+
+  h2 { font-size:22px; margin:28px 0 10px; color:var(--violet); }
+  form { display:grid; gap:10px; }
+  input, textarea { font:inherit; font-size:16px; padding:12px; border:1px solid #ccccd6; border-radius:8px; width:100%; }
+  button { font:inherit; font-size:17px; font-weight:700; background:var(--violet); color:#fff;
+           border:0; border-radius:999px; padding:14px; }
+  .coord { margin:12px 0 0; font-size:15px; }
+  .coord a { color:var(--violet); font-weight:700; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="bar"><a href="tel:5145591893">514-559-1893</a><a href="mailto:evenox.ca@gmail.com">evenox.ca@gmail.com</a></div>
+<div class="head"><div class="logo">Évenox</div><div class="burger"><span></span><span></span><span></span></div></div>
+
+<main>
+  <h1>Jeux géants en location</h1>
+  <p class="geo">Team building, 5 à 7 et soirées d’équipe. Laval, Rive-Nord, Montréal.</p>
+  <p class="cond">Ramassage à Sainte-Thérèse, livraison en sus. Dépôt 20 %, solde au ramassage,
+    taxes en sus. <a href="https://evenox.ca/conditions-de-location-evenox/">Conditions de location</a></p>
+
+  <ul class="jeux" id="jeux"></ul>
+
+  <div class="notes">
+    <p>Recommandations d’âge : voir chaque fiche.</p>
+    <p>Parcs, écoles, camps ou terrains municipaux : avec l’autorisation du lieu.</p>
+  </div>
+
+  <h2>Demande de soumission</h2>
+  <form onsubmit="return false">
+    <input placeholder="Nom"><input placeholder="Courriel"><input placeholder="Téléphone">
+    <input placeholder="Date de l’événement"><textarea rows="3" placeholder="Message"></textarea>
+    <button>Envoyer ma demande</button>
+  </form>
+  <p class="coord"><a href="tel:5145591893">514-559-1893</a> · <a href="mailto:evenox.ca@gmail.com">evenox.ca@gmail.com</a></p>
+</main>
+
+<script>
+const JEUX = [
+["Table de Soccer Géant 1 v 1","/product/table-de-soccer-geant-1-v-1/","250 $"],
+["Forfait Nintendo Switch","/product/forfait-nintendo-switch/","185 $"],
+["Jeu de Skeeball Arcade (9 pieds)","/product/jeu-de-skeeball-arcade-9-pieds/","150 $"],
+["Jeu Pong Géant","/product/jeu-pong-geant/","150 $"],
+["Guess Who Géant","/product/guess-who-geant/","150 $"],
+["Jeux Arcade Multijeux (100+ Jeux)","/product/jeux-arcade-multijeux-100-jeux/","140 $"],
+["Table Air Hockey","/product/table-air-hockey-en-location/","120 $"],
+["Table de Baby Foot","/product/location-table-de-baby-foot/","120 $"],
+["Piscine à balles XL","/product/location-piscine-a-balle-xl/","120 $"],
+["Laser Tag","/product/laser-tag/","120 $"],
+["Twister Géant","/product/twister-geant/","120 $"],
+["Table de Missisipi","/product/table-de-missisipi/","120 $"],
+["Machine Arcade Pacman","/product/machine-arcade-pacman/","100 $"],
+["Jeux Dames Géant","/product/jeux-dames-geant/","100 $"],
+["Mini Dunk Tank","/product/dunk-tank/","100 $"],
+["Basket Pong","/product/basket-pong/","80 $"],
+["Connect 4 Géant","/product/connect-4-geant/","80 $"],
+["Table de Poker (8 places)","/product/table-de-poker-8-places-location/","70 $"],
+["Soccer Dart Gonflable Géant","/product/soccer-dart-gonflable-geant/","60 $"],
+["Nintendo Switch","/product/nintendo-switch-location/","60 $"],
+["Guess Who XL","/product/location-jeu-guess-who-xl/","50 $"],
+["Jeu de Plinko XL","/product/location-jeu-plinko-xl/","50 $"],
+["Ensemble de golf XL (géant)","/product/location-ensemble-golf-xl/","50 $"],
+["Jeux de KerPlunk XL","/product/location-jeu-kerplunk-xl/","50 $"],
+["Jeu de Tétris Géant","/product/jeu-de-tetris-geant/","50 $"],
+["Table de Billard Portable","/product/table-de-billard-portable/","50 $"],
+["Table Beer Pong","/product/table-beer-pong/","50 $"],
+["Course de Sac à Patate","/product/course-de-sac-a-patate/","50 $"],
+["Roue de Chance","/product/roue-de-chance/","50 $"],
+["Table de Ping Pong","/product/table-de-ping-pong/","50 $"],
+["Jeu Putterball","/product/jeu-putterball/","50 $"],
+["Roue de Bingo","/product/rouedebingo/","40 $"],
+["Croquet","/product/croquet/","40 $"],
+["Spikeball","/product/spikeball/","40 $"],
+["Soccer Bulle","/product/soccer-bulle/","40 $"],
+["Lancer de hache","/product/lancer-de-hache/","40 $"],
+["Jeu Pichenotte","/product/jeux-pichenettes/","40 $"],
+["Jeux de Parachute","/product/jeux-de-parachute-location/","40 $"],
+["Jenga Géant","/product/jenga-geant/","40 $"],
+["Jeu de poches & Cornhole","/product/cornhole/","40 $"],
+["Jeux Mario Kart Nintendo Switch","/product/jeux-mario-kart-nintendo-switch-location/","25 $"],
+["Serpent Échelle Géant","/product/serpent-echelle-geant/","25 $"],
+["Jetons de poker professionnels","/product/jetons-de-poker-professionnels-location/","20 $"],
+["Tug Of War","/product/tug-of-war/","20 $"],
+["Nerf Gun","/product/nerf-gun/","20 $"],
+["Tic-Tac-TOE Géant","/product/tic-tac-toe-geant/","20 $"],
+["Kan Jam","/product/kan-jam/","20 $"]
+];
+document.getElementById('jeux').innerHTML = JEUX.map(([n,h,p]) =>
+  `<li><a href="https://evenox.ca${h}"><span class="nom">${n}</span><span class="prix">${p}</span></a></li>`).join('');
+</script>
+</body>
+</html>
