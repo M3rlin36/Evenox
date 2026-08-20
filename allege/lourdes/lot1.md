@@ -496,3 +496,250 @@ une coupe de texte) : prix à **383**, durée à **423**, ligne de prix à **459
 dates à **592** — tout dans le premier écran. Le sélecteur de modèle tombe à **682** et le
 bouton à **798**. Comme sur la fiche 1, le bouton reste dehors : cette fiche a un sélecteur
 de modèle de plus, ce qui coûte 116 px, et l'en-tête du site en prend déjà 242.
+
+---
+
+# Fiche 3 — Table de baby-foot
+
+## 1. Adresse et mots AVANT
+
+- **Adresse :** https://evenox.ca/product/location-table-de-baby-foot/ (HTTP 200)
+- **Mots AVANT : 2 809** — la plus lourde des trois
+- Hauteur de la page à 375 px : **20 808 px**
+
+## 2. Le texte allégé complet, prêt à relire
+
+---
+
+# Table de baby-foot
+
+24 h, et non 48 h comme nos autres jeux de table.
+
+[photo] La photo du fabricant. Elle n'a pas été prise à notre entrepôt.
+
+**120,00 $** / table · [durée affichée par le composant : « 1 jour »]
+
+**Prix pour ramassage à notre entrepôt de Sainte-Thérèse.** Le montant ci-dessus est celui du
+format résidentiel, le moins cher des deux. **Le montage n'est pas compris.**
+
+**Les deux formats**
+
+| Format | Prix |
+| --- | --- |
+| Résidentiel | 120,00 $ / 24 h |
+| Commerciale | 160,00 $ / 24 h |
+
+[sélecteur de dates]
+
+[sélecteur de format : Résidentiel · Commerciale]
+
+[bouton : 1 jour · 120,00 $ · Ajouter au panier]
+
+**Réservez avec 20 % du total.** Le solde au ramassage.
+
+Dollars canadiens, taxes en sus. Paiement par carte de crédit seulement, en ligne.
+
+[lien] Politique et conditions de location
+
+**Le tarif selon la durée**
+
+[1 jour *24 h · tarif de base* · 2 jours *× 2*]
+
+AVANT DE RÉSERVER
+
+## Ce qui encadre l'usage
+
+- **Un adulte surveille, en tout temps**
+- **Les limites d'âge et de nombre s'appliquent** — Pour cet article, aucune limite d'âge et
+  aucun nombre de joueurs ne sont écrits nulle part dans notre catalogue. Nous n'en
+  inventerons pas : demandez-les-nous au 514-559-1893.
+- **Le matériel revient propre, sec et complet** — Nos conditions : « à l'heure convenue,
+  propre, sec et complet », et pour les jeux « Retournez les jeux secs. Un jeu rangé humide
+  moisit ».
+- **Une pièce manquante se facture** — Nos conditions : « Un bris ou une pièce manquante :
+  coût de réparation, ou valeur de remplacement si l'article n'est pas réparable ».
+  « L'usure normale ne se facture jamais. »
+- **La protection facultative ne couvre pas les pièces non retournées** — La protection bris
+  accidentel coûte 8 % du montant de la location. Nos conditions listent ce qu'elle ne couvre
+  pas : « la négligence, le vol, la perte, les pièces non retournées, les frais de retard ».
+
+LA FICHE
+
+## Ce qui est vérifié
+
+| Caractéristique | Ce qui est vérifié |
+| --- | --- |
+| Ce qui est fourni | **Non établi** — le nombre de balles n'est écrit nulle part. Appelez le 514-559-1893, on va sortir la table et compter. |
+| Marque | **À relever** |
+| Dimensions, poids, hauteur de jeu | **À relever** — rien n'est mesuré ni pesé à l'entrepôt |
+| Ramassage | Entrepôt de Sainte-Thérèse — 215, boulevard René-A.-Robert |
+
+CE QUI N'EST PAS RELEVÉ
+
+- Le nombre de joueurs, et le nombre de barres
+- L'espace de jeu à prévoir
+
+À AJOUTER
+
+## Souvent loué avec
+
+Un seul ramassage, un seul dépôt.
+
+| | Prix | Durée |
+| --- | --- | --- |
+| Table Air Hockey | 120,00 $ | 48 h · deux modèles 7 pieds, même prix |
+| Jeu de poches & Cornhole | 40,00 $ | 48 h |
+| Table de Ping Pong | 50,00 $ | 48 h |
+| Jeu Putterball | 50,00 $ | 48 h |
+
+## Une question avant de réserver ?
+
+Deux champs obligatoires, deux facultatifs. Pour réserver, tout se passe en haut de page.
+
+[formulaire : Votre nom (obligatoire) · Votre téléphone (obligatoire) · Votre courriel
+(facultatif) · Date de votre événement (AAAA-MM-JJ) (obligatoire) · Où la table sera
+installée, et vos questions · Envoyer ma question]
+
+Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
+
+---
+
+## 3. Mots APRÈS et pourcentage retiré
+
+- **Mots APRÈS : 508**
+- **Retiré : 2 301 mots, soit 82 %**
+- Hauteur de la page à 375 px : 20 808 px → **7 711 px** (−63 %)
+
+## 4. La liste des faits conservés
+
+| Fait | Où il reste |
+| --- | --- |
+| Prix : 120,00 $ (résidentiel) et 160,00 $ (commerciale) | bloc prix, et le bloc « Les deux formats » |
+| Le montant affiché est celui du format le moins cher | ligne sous le prix — indispensable, sinon le 120,00 $ trompe |
+| **Durée réelle : 24 h**, et non 48 h comme les autres jeux de table | la phrase sous le titre, le composant (« 1 jour ») et le bloc de durée |
+| Journée supplémentaire : 2 jours × 2 | bloc de durée, une seule fois |
+| Bouton d'ajout au panier, avec le choix du format | bloc prix |
+| Deux formats : Résidentiel, Commerciale | le bloc « Les deux formats » et le sélecteur du bouton |
+| Ce qui est fourni : **non établi** — le nombre de balles n'est écrit nulle part, avec le téléphone | tableau |
+| Le montage **n'est pas compris** | ligne sous le prix |
+| Ramassage : entrepôt de Sainte-Thérèse, 215, boulevard René-A.-Robert | tableau, une seule fois |
+| Dépôt de 20 %, solde au ramassage, taxes en sus, carte de crédit seulement en ligne | bloc prix |
+| Sécurité : un adulte surveille, en tout temps | Ce qui encadre l'usage |
+| Âge et nombre : aucune limite d'âge, aucun nombre de joueurs écrits au catalogue | Ce qui encadre l'usage |
+| Retour propre, sec et complet ; les jeux se retournent secs | Ce qui encadre l'usage |
+| Frais : bris ou pièce manquante = réparation ou valeur de remplacement ; usure normale jamais facturée | Ce qui encadre l'usage |
+| Frais : protection bris accidentel 8 %, et ce qu'elle ne couvre pas | Ce qui encadre l'usage |
+| Dimensions, poids, hauteur de jeu : **à relever** | tableau |
+| Marque : **à relever** | tableau |
+| Nombre de joueurs et de barres, espace de jeu : **non relevés** | Ce qui n'est pas relevé |
+| Photo : celle du fabricant, pas prise à l'entrepôt | légende de la photo |
+| Lien vers les conditions | bloc prix |
+
+## 5. Ce que j'ai coupé, par motif
+
+| Motif | Ce qui part | Mots |
+| --- | --- | --- |
+| **Trop de titres sous le titre** — la phrase d'accroche faisait quatre phrases et cinq lignes de téléphone | « Deux formats. », « 120,00 $ ou 160,00 $ pour 24 h, ramassage à Sainte-Thérèse. », « Ce qui vient avec la table n'est pas établi : c'est écrit plus bas, sans détour. » — il reste la seule phrase que rien ne redit ailleurs : « 24 h, et non 48 h comme nos autres jeux de table. » | ≈ 30 |
+| **Notes de production, pas du texte client** | les six vignettes « À produire » (Le compte, Les balles, L'échelle, La hauteur, Le dessous, L'état) et le paragraphe « Six vues à produire… 1200 px minimum » | ≈ 220 |
+| **Méthode interne** | « Une étiquette a été cherchée sur la photo du dossier, et cette fois elle ne se lit pas… agrandi vingt-quatre fois, il reste une tache… » et « Pourquoi cette liste est aussi longue… nous choisissons le silence — et le téléphone. » | ≈ 300 |
+| **Durée : dite une fois de trop, quatre fois** | le paragraphe « La durée de base est de 24 h, pas de 48 h. Si vous avez consulté une autre fiche de jeu de table chez nous — ping-pong, air hockey, cornhole — vous y avez lu 48 h… Regardez bien vos dates avant de valider. » et la ligne de tableau « Durée » — la phrase sous le titre, le composant et le bloc de durée le disent déjà | ≈ 130 |
+| **Durées et multiplicateurs** — dicté | la ligne de tableau « Journée supplémentaire » (le bloc de durée écrit « 2 jours × 2 ») | ≈ 35 |
+| **Unités en inventaire** — dicté | les deux phrases d'inventaire du bloc des formats : « Deux unités au registre d'inventaire, les deux marquées en stock au 18 août 2026. Seul le calendrier dit ce qui est libre à votre date. » et celle du format commercial (voir le point 6, à confirmer) | ≈ 90 |
+| **Variantes : une seule fois** — dicté | les lignes de tableau « Variantes » et « Tarif » : le bloc « Les deux formats » et le sélecteur du bouton portent déjà les deux noms et les deux montants | ≈ 50 |
+| **Encadrement de l'usage : garder ce qui protège** | le point « On compte le matériel devant vous, et vous signez le décompte », et les commentaires de fin de point : « Un caisson de baby-foot est en panneau de bois : rentré humide, il gonfle. », « Une balle de baby-foot est une pièce, et c'est la plus petite de toutes. », « Une balle perdue reste donc à votre charge, protection ou non. », « Nos conditions l'écrivent deux fois… pour les jeux géants » | ≈ 160 |
+| **Déjà dit ailleurs sur la même page** | lignes de tableau « Article », « Montage », « Nombre de joueurs » (le point sur l'âge et le nombre le dit déjà) ; libellés « Vos dates — on affiche ce qui est libre » et « Ajouter la table » ; « Le total exact s'affiche au panier, avant tout engagement. » ; les intitulés « Le nombre de balles », « Les dimensions de la table », « La hauteur de jeu », « Le poids, et le transport », « La marque » qui répètent le tableau | ≈ 140 |
+| **Pliage** — dicté | l'intitulé et l'explication « Le pliage, et l'encombrement » (voir le point 6) | ≈ 70 |
+| **Hors de la liste des six blocs à garder** | la ligne de tableau « Forfait qui la contient : Un seul, le Forfait Jeux Gonflable Le Basique… Il n'y ajoute aucune balle. » | ≈ 30 |
+| **Raisonnement derrière un fait déjà écrit** | les 8 explications de « Ce qui n'est pas relevé », et la preuve de catalogue dans la cellule « Ce qui est fourni » | ≈ 620 |
+| **Souvent loué avec : quatre maximum** — dicté | les cartes « Jeux Arcade Multijeux » et « Table Pliante », et le paragraphe de classement « 17 commandes distinctes… 3 fois » | ≈ 110 |
+| **Bloc entier hors de la liste des six blocs à garder** | toute la section « Quatre questions / Ce qu'il faut demander » et ses 4 questions dépliables | ≈ 900 |
+| **Formulation avantageuse** | « Sans frais cachés. » | 4 |
+
+## 6. Faux ou douteux — signalé, pas corrigé
+
+1. **La coupe que je te demande de confirmer.** Le bloc des formats écrivait, pour le format
+   commercial : « **Aucune unité n'est rattachée à ce format** dans notre registre d'inventaire
+   au 18 août 2026, alors que le format est ouvert à la réservation et qu'il est sorti 10 fois
+   depuis avril. Appelez avant de compter dessus : 514-559-1893. » Tu as dicté que
+   « Unités en inventaire » disparaît, donc je l'ai retiré. Mais c'est la seule phrase du site
+   qui prévienne qu'on peut réserver, à 160,00 $, un format auquel aucune unité n'est
+   rattachée. Si une seule ligne d'inventaire doit survivre sur les trois fiches, c'est
+   celle-là.
+2. **Une phrase devenue fausse par la coupe : je l'ai retirée, je ne l'ai pas corrigée.**
+   Sous les compléments, la fiche écrivait « Attention à la durée : **les six** sont à 48 h,
+   le baby-foot est à 24 h. Une commande qui mélange les deux ne se rend pas le même jour. »
+   Avec quatre cartes au lieu de six, « les six » devient faux. Je l'ai donc coupée. Si tu
+   veux garder l'avertissement — il est utile — il faut le réécrire toi-même, et je ne le
+   fais pas à ta place.
+3. **« Sans frais cachés. »** — même formulation avantageuse que sur les deux autres fiches.
+   Retirée, pas remplacée.
+4. **Le prix s'affiche en format américain** : « $120.00 » dans le composant et sur le bouton,
+   « 120,00 $ » partout ailleurs sur la fiche. Vu à l'écran.
+5. **Deux durées écrites différemment sur le même écran** : « 24 h » dans le texte et dans le
+   bloc de durée, « 1 jour » dans le composant.
+6. **Écart de prix, relevé non pas ici mais dans la note interne des deux autres fiches** :
+   sur 64 lignes de facturation du baby-foot, 120,00 $ vingt-deux fois, **100,00 $ vingt
+   fois**, 160,00 $ dix fois, 200,00 $ six fois, 240,00 $ six fois. Le montant de 100,00 $ ne
+   correspond à aucune des deux variantes du catalogue. Rien n'a été corrigé : la fiche
+   affiche 120,00 $ et 160,00 $.
+7. **Le pliage.** La fiche écrivait : « Est-ce que cette table se plie ? Nous ne l'affirmons
+   pas. Un ancien libellé d'inventaire l'a laissé entendre ; il a été retiré depuis, et
+   personne ici n'a plié l'unité pour le vérifier. » Tu as dicté que « Pliage » part, donc
+   c'est parti — mais la fiche n'écrit plus rien sur l'encombrement d'une table qu'il faut
+   venir chercher soi-même.
+8. **Deux formats, deux prix, et rien qui dise ce qui les distingue.** La fiche l'écrivait
+   dans sa version longue (« notre catalogue ne le décrit pas »). Après coupe, il reste deux
+   montants et deux noms. Ce n'est pas faux, mais c'est un état du catalogue à corriger
+   ailleurs qu'ici.
+9. **Aucune marque n'est établie** : le badge du caisson est illisible parce que la photo au
+   dossier ne fait que 500 px. La ligne du tableau dit « à relever » ; je n'ai rien deviné.
+10. **L'adresse de ramassage est incomplète** : « 215, boulevard René-A.-Robert », sans
+    « local 100 ». Non complétée. Aucune mention de Mirabel : vérifié.
+11. **Aucun tarif de livraison sur la fiche.** Contrairement aux deux autres, cette page ne
+    porte aucune note interne à ce sujet. Rien n'a été ajouté.
+12. **Cette fiche n'a aucune note de travail dans son code**, là où les deux autres en ont
+    une longue. Ce n'est pas une erreur, c'est une différence de fabrication : les écarts de
+    prix du baby-foot ne sont consignés que sur les pages du ping-pong et de l'air hockey.
+
+## 7. Le premier écran à 375 px
+
+**AVANT** — l'écran contient : le bandeau téléphone/courriel, le logo et le menu (0 → 242),
+le titre (256), la phrase d'accroche sur **cinq lignes** (298 → 477), et la première ligne de
+pixels de la photo (492 → 667). Le prix était à **770**, le bouton à **2 673** : il fallait
+défiler **quatre écrans** pour ajouter la table au panier.
+
+| Élément | Position AVANT | Dans le premier écran ? |
+| --- | --- | --- |
+| Titre | 256 | oui |
+| Phrase sous le titre | 298 (179 px de haut, 5 lignes) | oui |
+| Photo | 492 | à peine |
+| **Prix** | **770** | **non — 103 px trop bas** |
+| Durée sous le prix | 810 | non |
+| Ligne de prix (ramassage, format le moins cher, montage) | 846 | non |
+| Paragraphe « La durée de base est de 24 h, pas de 48 h » | 1 031 | non |
+| Bloc « Les deux formats » (avec l'inventaire) | 1 483 → 2 160 | non |
+| Sélecteur de dates | 2 265 | non |
+| **Bouton Ajouter au panier** | **2 673** | **non — 2 006 px trop bas** |
+
+**APRÈS** — l'écran contient : le bandeau, le logo et le menu, le titre (256), la phrase sur
+**une ligne** (298 → 349), **la photo en entier** (365 → 615), et **le prix** (643).
+
+| Élément | Position APRÈS | Dans le premier écran ? |
+| --- | --- | --- |
+| Titre | 256 | oui |
+| Phrase sous le titre (la durée de 24 h) | 298 (51 px de haut) | oui |
+| Photo | 365 → 615 | **oui, en entier** |
+| **Prix** | **643** | **oui** |
+| Durée sous le prix | 683 | non — 16 px trop bas |
+| Ligne de prix (ramassage, format le moins cher, montage) | 719 | non |
+| Bloc « Les deux formats » | 902 → 1 100 | non |
+| Sélecteur de dates | 1 136 | non |
+| **Bouton Ajouter au panier** | **1 342** | **non — 675 px trop bas** |
+| Lien vers les conditions | 1 623 | non |
+
+Le bouton remonte de **2 673 à 1 342 px** : de quatre écrans de défilement à un seul. Mesuré
+aussi, en descendant la photo sous le bloc de prix (une ligne de CSS mobile, pas une coupe de
+texte) : prix à **383**, durée à **423**, ligne de prix à **459**, bloc des deux formats à
+**642** — tout dans le premier écran, et le bouton à **1 082**. Sur les trois fiches, c'est
+celle où le bouton reste le plus loin, parce qu'elle porte en plus un bloc de deux formats et
+un sélecteur.

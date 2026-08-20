@@ -42,9 +42,27 @@ APPLY = """(ops) => {
       });
     } else if (op.op === 'retirer_phrase') {
       els.forEach((el) => {
-        const avant = norm(el.textContent);
-        const apres = avant.split(op.phrase).join('').replace(/\\s+/g, ' ').trim();
-        if (avant !== apres) { el.textContent = apres; journal.push(['retirer_phrase', op.sel, op.phrase, 1]); }
+        if (!norm(el.textContent).includes(op.phrase)) return;
+        // 1. la phrase tient dans un seul noeud de texte : on la retire de ce noeud
+        const marcheur = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        let n;
+        while ((n = marcheur.nextNode())) {
+          if (n.data.includes(op.phrase)) {
+            n.data = n.data.split(op.phrase).join('');
+            journal.push(['retirer_phrase(texte)', op.sel, op.phrase, 1]);
+            return;
+          }
+        }
+        // 2. la phrase est exactement un element enfant : on retire l'element
+        const enfant = Array.from(el.querySelectorAll('*')).find((c) => norm(c.textContent) === op.phrase);
+        if (enfant) {
+          enfant.remove();
+          journal.push(['retirer_phrase(element)', op.sel, op.phrase, 1]);
+          return;
+        }
+        // 3. dernier recours : on aplatit le noeud
+        el.textContent = norm(el.textContent).split(op.phrase).join('').replace(/\\s+/g, ' ').trim();
+        journal.push(['retirer_phrase(aplati)', op.sel, op.phrase, 1]);
       });
     } else if (op.op === 'garder_n_enfants') {
       els.forEach((el) => {
