@@ -289,6 +289,91 @@ La fiche mobilier proprement dite tient en une dizaine de mots (« chaise pliant
 blanche, siège et dos en plastique ») : tout le reste est du texte de conditions
 recopié d'un produit à l'autre.
 
+### 3.5 JS Party — `jsparty.com`
+
+1706, boulevard des Laurentides, Laval. Spécialiste de la fête d'enfants à
+domicile : jeux gonflables, machines à popcorn et à barbe à papa, mascottes,
+maquillage, animation. Site très sommaire, sans boutique en ligne.
+
+**Les trois articles de référence**
+
+| Article | Prix annoncé | Durée annoncée |
+| --- | --- | --- |
+| Chaise pliante | **non établi** — aucune chaise relevée au catalogue |
+| Table 6 pieds | **non établi** — aucune table relevée au catalogue |
+| Jeu gonflable, entrée de gamme (« 3 en 1 », « Petit Prince ») | **60 $** | **du vendredi au lundi**, mention explicite en tête de page |
+| Jeu gonflable, milieu de gamme (« Sautez et glissez », « Sport ») | 75 $ | du vendredi au lundi |
+| Jeu gonflable, haut de gamme (« Méga », « Princesse », « Obstacle ») | 130 $ | du vendredi au lundi |
+| Machine à popcorn | 50 $ | **pour la fin de semaine** ; 20 $ par tranche de 20 portions, sacs et grains inclus ; chariot en option 10 $ |
+
+**Le point à retenir sur la durée.** C'est l'offre la plus généreuse en durée de
+tout le relevé, et elle est annoncée franchement : le tarif couvre **du vendredi
+au lundi**, avec cueillette le vendredi de 10 h à 17 h et retour le lundi de
+10 h à 17 h — soit trois nuits. Un jeu gonflable à 60 $ pour trois jours ne se
+compare pas à un jeu gonflable à 50 $ pour un jour. C'est exactement le genre
+d'écart que la lecture d'un seul chiffre fait manquer.
+
+**Conditions**
+
+| Élément | Ce qui est écrit |
+| --- | --- |
+| Livraison | payante, **à partir de 50 $** (mention publiée sur la version anglaise du site ; la page française relevée n'affiche pas ce montant) |
+| Seuil de gratuité | aucun seuil publié |
+| Zone desservie | Montréal, Laval et régions avoisinantes ; aucun rayon en kilomètres |
+| Cueillette | Laval, vendredi de 10 h à 17 h ; retour le lundi de 10 h à 17 h ; rendez-vous hors de ces plages sur demande |
+| Dépôt | **non établi** |
+| Mode de paiement | **non établi** |
+| Annulation | **non établi** ; la seule mention relevée est un astérisque « certaines conditions peuvent s'appliquer » |
+| Taxes | **non établi** — aucune mention relevée |
+| Réservation en ligne | **non** — aucun panier ni calendrier ; on contacte l'entreprise |
+
+**Longueur d'une fiche produit**
+
+- Il n'y a pas de fiche produit à proprement parler. Chaque jeu gonflable est
+  décrit par **une ligne d'environ 8 mots** : un nom, un prix, des dimensions,
+  et parfois une capacité (« capacité 3-4 enfants »). L'ensemble du catalogue
+  tient sur une seule page.
+
+C'est le plancher du marché en matière de contenu : **8 mots par article**,
+contre 240 chez Eventuum.
+
+### 3.6 Fiesta jeux gonflables — `fiestajeuxgonflables.ca`
+
+Repéré via la recherche sur les tables et chaises. Catalogue : jeux gonflables,
+jeux de kermesse, mini-putt, machines à mousse et à friandises, plus une page
+dédiée aux tables et chaises.
+
+**Les trois articles de référence**
+
+| Article | Prix annoncé | Durée annoncée |
+| --- | --- | --- |
+| Chaise pliante blanche (adulte) | **3,50 $** la chaise | **non établi** — aucune durée écrite ; le prix est **conditionnel à la location d'un jeu gonflable** et inclut la livraison |
+| Chaise pliante blanche (enfant) | 3,50 $ la chaise | mêmes conditions |
+| Table rectangulaire 6 pieds (bois, 30 po × 72 po) | **12 $** la table | mêmes conditions : avec un jeu gonflable, livraison incluse, durée non écrite |
+| Jeu gonflable | **non établi** — les prix ne figurent pas sur la page relevée |
+
+**Le point à retenir.** C'est le seul concurrent relevé qui **inclut la
+livraison dans le prix du mobilier** — mais uniquement en vente liée : il faut
+louer un jeu gonflable pour y avoir droit. Le mobilier n'est pas un produit chez
+eux, c'est un accessoire de forfait. Et aucune durée n'est publiée, ce qui rend
+le 3,50 $ incomparable en l'état.
+
+**Conditions**
+
+| Élément | Ce qui est écrit |
+| --- | --- |
+| Livraison | **incluse** dans les prix de mobilier affichés, à condition de louer aussi un jeu gonflable |
+| Zone desservie | **non établi** sur la page relevée |
+| Dépôt | **non établi** |
+| Mode de paiement | **non établi** |
+| Annulation | **non établi** ; une page « Règlements et sécurité » existe mais n'a pas été relevée |
+| Réservation en ligne | **non** — la page invite à contacter l'entreprise pour réserver (450 812-7422) |
+
+**Longueur d'une fiche produit**
+
+- Fiche mobilier : **environ 20 mots** par article (désignation, dimensions,
+  prix et condition d'obtention).
+
 ---
 
 ## 4. Tableau comparatif
