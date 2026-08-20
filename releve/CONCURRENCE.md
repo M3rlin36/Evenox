@@ -76,6 +76,58 @@ un fait notable en soi (voir conclusions).
 
 _(une section par entreprise ; complété au fur et à mesure)_
 
+### 3.1 Les Ballounes — `lesballounes.com`
+
+Entrepôt principal à Blainville ; points de cueillette annoncés à Blainville,
+Laval, Sainte-Thérèse, Boucherville, Saint-Joseph-du-Lac et
+Saint-Adolphe-d'Howard. C'est le concurrent le plus visible : il ressort dans 3
+des 4 requêtes clients testées, et il annonce un point de cueillette **à
+Sainte-Thérèse**, soit la ville même d'Evenox.
+
+**Les trois articles de référence**
+
+| Article | Prix annoncé | Durée annoncée |
+| --- | --- | --- |
+| Chaise pliante blanche | 6,25 $ / unité | « par événement » — aucune durée en heures ou en jours n'est écrite |
+| Table pliante 6 pieds | 15 $ / unité | « par événement » — idem, durée non chiffrée |
+| Jeu gonflable (entrée de gamme, ex. jeu 20 × 7 pi) | 120 $ | jour de semaine (1 jour) |
+| Jeu gonflable (même article, fin de semaine) | 165 $ | fin de semaine, **2e journée gratuite** → 2 jours |
+| Jeu gonflable (haut de la grille relevée) | 295 $ / 360 $ | semaine / fin de semaine 2 jours |
+
+Autres relevés utiles : chaise Crystal transparente 10 $ l'unité, nappe noire ou
+blanche 15 $ l'unité, supplément hiver de 39,95 $ sur le prix régulier d'un jeu
+gonflable, machine à popcorn à partir de 75 $ (24 portions incluses, 2e journée
+gratuite la fin de semaine, 24 portions de plus pour 15 $).
+
+**Le point à retenir sur la durée.** Le mobilier est facturé « par événement »
+sans que la durée soit chiffrée nulle part sur les pages relevées. Les jeux
+gonflables, eux, sont explicites : un tarif jour de semaine et un tarif fin de
+semaine où la deuxième journée est gratuite. C'est donc un affichage à deux
+vitesses chez le même marchand — précis sur le gonflable, flou sur le mobilier.
+
+**Conditions**
+
+| Élément | Ce qui est écrit |
+| --- | --- |
+| Livraison | payante, jamais gratuite ; « des frais de livraison s'appliquent selon le secteur » |
+| Montant du tarif de livraison | **non établi** — aucun montant ni aucun tarif kilométrique n'est publié |
+| Seuil de gratuité | aucun seuil publié ; la cueillette est présentée comme l'option sans frais |
+| Zone desservie | livraison depuis Blainville vers Montréal, Laval, Rive-Nord, Lanaudière et Laurentides jusqu'à Sainte-Adèle ; villes nommées : Laval, Boisbriand, Rosemère, Sainte-Thérèse, Mirabel, Saint-Jérôme, Saint-Eustache, Terrebonne, Mascouche |
+| Dépôt | **non établi** — aucun pourcentage ni montant relevé sur les pages publiques |
+| Mode de paiement | **non établi** — non précisé sur les pages relevées |
+| Annulation | **gratuite jusqu'à 24 h avant la prise de possession**, argument météo mis en avant |
+| Taxes | en sus, mention répétée sur chaque article |
+| Réservation en ligne | oui — plateforme avec prix et disponibilité en temps réel, réservation en quelques clics |
+
+**Longueur d'une fiche produit**
+
+- Fiche mobilier (chaise blanche pliante) : **76 mots**
+- Fiche jeu gonflable (ex. « L'Everest ») : **94 mots**, dont dimensions,
+  dégagement requis et poids maximal
+
+Les fiches sont courtes et listées en puces sur des pages de catégorie plutôt
+que sur des pages produit individuelles étoffées.
+
 ---
 
 ## 4. Tableau comparatif
