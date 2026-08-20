@@ -12,7 +12,7 @@ Propositions seulement. **Rien n'a été modifié sur evenox.ca** : les trois fi
 |---|---|---|---|
 | [Jeu de Tétris Géant](https://evenox.ca/product/jeu-de-tetris-geant/) | 2 924 mots | 628 mots | **79 %** |
 | [Jeu pong géant](https://evenox.ca/product/jeu-pong-geant/) | 2 791 mots | 708 mots | **75 %** |
-| [Basket Pong](https://evenox.ca/product/basket-pong/) | 2 675 mots | — | — |
+| [Basket Pong](https://evenox.ca/product/basket-pong/) | 2 675 mots | 704 mots | **74 %** |
 | _Référence : [chaise pliante](https://evenox.ca/product/chaise-pliante/)_ | _759 mots_ | — | — |
 
 ## Méthode
@@ -487,3 +487,221 @@ aucun texte touché) :
 avant la carte. En B, le prix et le bouton entrent tous les deux, mais la photo tombe après toute
 la carte, à 1 576 px : le client voit le prix avant de voir le jeu. **B respecte la consigne, A
 respecte la photo.** C'est l'arbitrage à rendre, et je ne le rends pas à votre place.
+
+---
+
+# 3. Basket Pong
+
+**Adresse.** https://evenox.ca/product/basket-pong/
+**Avant : 2 675 mots.** → **Après : 704 mots. 74 % retiré.**
+
+Le tarif de cette fiche est le plus régulier des trois, et son contenu le moins documenté :
+combien de ballons, quelle taille, de l'eau ou de l'air. Deux photos sont au dossier et elles ne
+montrent pas la même chose. Les deux restent, parce que quatre lignes du tableau parlent de
+l'une et de l'autre.
+
+## 3.1 Le texte allégé, prêt à relire
+
+> ### Basket Pong
+>
+> Les seaux à lancer, en format géant.
+>
+> _(voir le signalement 3.4-1 sur le mot « géant »)_
+>
+> ---
+> **$80.00** / jeu · 2 Jours
+>
+> `[ compteur de quantité + Ajouter au panier — widget Booqable ]`
+>
+> **Prix pour ramassage à notre entrepôt de Sainte-Thérèse.** Le montage n'est pas compris.
+>
+> Vos dates — on affiche ce qui est libre
+>
+> `[ sélecteur de dates ]`
+>
+> **Réservez avec 20 % du total.** Le solde au ramassage.
+>
+> Dollars canadiens, taxes en sus. Paiement par carte de crédit seulement, en ligne.
+>
+> [Politique et conditions de location](https://evenox.ca/conditions-de-location-evenox/)
+>
+> Le tarif selon la durée — 2 jours : tarif de base · 3 jours : × 1,5 · 1 semaine : × 2 ·
+> 4 semaines : × 4
+> ---
+>
+> _(notre photo, sans légende)_
+>
+> _(la planche de catalogue du fabricant)_
+> **La planche de catalogue du fabricant.** Elle montre deux ballons et un sac ; elle n'a pas été
+> prise chez nous, et rien ne dit qu'elle décrit notre exemplaire.
+>
+> ### Ce qui encadre l'usage
+>
+> - **Un adulte surveille, en tout temps**
+> - **Les limites d'âge et de nombre s'appliquent** — Pour cet article, **aucune limite d'âge
+>   et aucun nombre de joueurs ne sont écrits nulle part dans notre catalogue**. Nous n'en
+>   inventerons pas : demandez-les-nous au 514-559-1893.
+> - **Le jeu revient sec**
+> - **On compte le jeu devant vous, au départ et au retour** — Vous signez le décompte.
+> - **Une pièce manquante se facture** — « Un bris ou une pièce manquante : coût de réparation,
+>   ou valeur de remplacement si l'article n'est pas réparable ». « L'usure normale ne se
+>   facture jamais. »
+> - **La protection facultative ne couvre pas les pièces non retournées** — La protection bris
+>   accidentel coûte 8 % du montant de la location et s'ajoute avant le ramassage. Nos
+>   conditions listent ce qu'elle ne couvre pas : « la négligence, le vol, la perte, les pièces
+>   non retournées, les frais de retard ».
+>
+> ### Ce qui est vérifié
+>
+> | Caractéristique | Ce qui est vérifié |
+> |---|---|
+> | Article | Basket Pong — un seul article au catalogue, sans variante |
+> | Le nombre de ballons | **Non établi** — notre catalogue ne décrit pas le contenu de cet article, et **nos deux photos se contredisent : la nôtre n'en montre aucun, celle du fabricant en montre deux**. Aucun ballon de basket n'existe séparément dans tout le catalogue, et aucun forfait n'en ajoute. Appelez le 514-559-1893, on va sortir le jeu et compter. |
+> | La taille des ballons | **Non établie** — aucune taille n'est écrite ni mesurée chez nous, et une impression d'échelle sur une photo de catalogue n'est pas une mesure. |
+> | De l'eau ou de l'air | **Non établi** — sur notre photo, les seaux sont en plastique rigide et posés vides : ce ne sont pas des structures gonflables. Mais **rien chez nous ne dit s'il faut les lester**, ni avec quoi, ni combien. |
+> | Seaux visibles sur notre photo | Douze — deux groupes de six, disposés en triangle et se faisant face. C'est ce qu'on voit sur une photo, pas un inventaire certifié : le décompte signé au ramassage fait foi. |
+> | Les dimensions d'un seau et l'espace de jeu | Hauteur et diamètre d'un seau, distance entre les deux groupes, surface totale à prévoir : **rien n'est mesuré à l'entrepôt**. |
+> | L'alimentation électrique | **Aucune alimentation n'est documentée chez nous pour cet article**, et rien sur nos photos n'en laisse voir. |
+> | L'usage à l'extérieur | Notre photo a été prise dehors, sous un chapiteau, sur de l'asphalte. **Cela montre un usage, cela ne l'autorise pas** : notre catalogue ne tranche ni le vent, ni la pluie, ni le type de sol pour cet article. |
+> | Le sac et ce qui part avec le jeu | La photo de catalogue montre un sac de transport noir marqué BASKETPONG. **La nôtre ne le montre pas**, et notre catalogue n'en fait aucune mention. |
+> | Marque lisible | BASKETPONG — lue à l'agrandissement sur les seaux, les ballons et le sac, sur les deux photos. Aucun nom de fabricant, aucun numéro de modèle, aucune dimension. |
+> | Tarif | 80,00 $ pour 48 h · aucun rabais de quantité |
+> | Ramassage | Entrepôt de Sainte-Thérèse — 215, boulevard René-A.-Robert |
+>
+> ### Souvent loué avec
+>
+> Un seul ramassage, un seul dépôt.
+>
+> Cornhole 40,00 $ · 48 h — Jenga Géant 40,00 $ · 48 h — Connect 4 Géant 60,00 $ · 48 h —
+> Jeu Putterball 50,00 $ · 48 h
+>
+> ### Une question avant de réserver ?
+>
+> Deux champs obligatoires, deux facultatifs. Pour réserver, tout se passe en haut de page.
+>
+> _(formulaire : nom, téléphone, courriel, date de l'événement, message)_
+>
+> Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
+
+## 3.2 Les faits conservés
+
+| | |
+|---|---|
+| **Prix** | 80,00 $ / jeu, affiché dans la carte et redit une fois au tableau |
+| **Durée réelle** | 48 h (« 2 Jours » au sélecteur). Au-delà : 3 jours × 1,5 · 1 semaine × 2 · 4 semaines × 4 |
+| **Dépôt** | 20 % du total, solde au ramassage, taxes en sus, carte de crédit seulement, en ligne |
+| **Ramassage** | Entrepôt de Sainte-Thérèse — 215, boulevard René-A.-Robert |
+| **Sécurité** | Adulte en tout temps · limites d'âge, de poids et de nombre à respecter, **et aucune n'est écrite pour cet article** · lestage non établi · le catalogue ne tranche ni le vent, ni la pluie, ni le sol |
+| **Ce qui n'est PAS fourni** | Le montage. Le nombre et la taille des ballons ne sont pas établis. Aucun ballon de basket ne s'ajoute à la commande. Rien ne dit dans quoi le jeu repart |
+| **Frais possibles** | Pièce manquante ou bris : réparation ou valeur de remplacement · l'usure normale ne se facture jamais · protection bris 8 %, qui ne couvre ni la négligence, ni le vol, ni la perte, ni les pièces non retournées, ni les frais de retard |
+| **Retour** | Le jeu revient sec · décompte signé au départ et au retour |
+| **Dimensions / poids** | **Non établis** : hauteur et diamètre d'un seau, distance entre les groupes, surface totale, taille des ballons. Le seul nombre conservé est celui qu'on voit sur la photo — **douze seaux** — avec sa réserve d'origine |
+| **Lien** | Politique et conditions de location |
+| **Compléments** | 4 (Cornhole, Jenga Géant, Connect 4 Géant, Jeu Putterball) |
+
+## 3.3 Ce qui est coupé, par motif
+
+**Dit deux fois ou plus (1 034 mots).**
+- La liste « Ce qui n'est pas relevé » (470 mots, 8 points) : quatre de ses huit points
+  reprenaient une ligne du tableau. Les quatre faits qui n'étaient qu'ici — dimensions d'un seau
+  et espace de jeu, alimentation électrique, usage à l'extérieur, le sac — sont devenus quatre
+  lignes du tableau, texte intact.
+- La section « Quatre questions / Ce qu'il faut demander » (564 mots).
+- Dans la carte : « Le total exact s'affiche au panier, avant tout engagement. »
+- La légende de notre photo (« Notre photo, prise à l'entrepôt. Deux groupes de six seaux. Aucun
+  ballon dans le cadre. ») : ses deux constats sont déjà deux lignes du tableau. Celle de la
+  planche du fabricant reste : elle porte l'avertissement, et lui seul.
+
+**Les sur-titres.** « Avant de réserver », « La fiche », « Ce qui n'est pas relevé »,
+« À ajouter ».
+
+**L'attribution des conditions.** Les six lignes « Source : … relues le 18 août 2026 »,
+l'introduction du bloc sécurité, et les « Nos conditions disent : ». Le lien reste dans la carte.
+
+**Le matériel de production photo (198 mots).** Les six vignettes « À produire » et la consigne
+de tournage.
+
+**La méthode interne (125 + 44 mots).** Le paragraphe qui explique le classement des compléments
+(63 lignes, 18 commandes distinctes) et la ligne « Constance du tarif ».
+
+**Les lignes de tableau nommées par Alexandre.** « Variantes » (aucune), « Montage » (déjà dans
+la carte).
+
+**Deux compléments au-delà de quatre.** Lancer de hache (40,00 $) et Soccer Bulle (à partir de
+40,00 $).
+
+**Une formulation avantageuse.** « Sans frais cachés. », et dans la section supprimée : « Ce
+tarif est le plus stable de notre catalogue : 63 locations sur 63 au même montant depuis juin
+2024. »
+
+**Un libellé rendu inutile par son widget.** « Combien de jeux ? » — voir 1.3.
+
+## 3.4 Ce qui est faux ou douteux — signalé, pas corrigé
+
+1. **« En format géant », dans la seule phrase que je garde.** Comme sur la fiche 2 : la phrase
+   affirme une taille, et le tableau écrit que la hauteur et le diamètre d'un seau ne sont
+   mesurés nulle part. Ici le titre de la fiche, lui, ne dit pas « géant ». **Si vous voulez le
+   silence plutôt que la formulation avantageuse, c'est cette phrase qu'il faut retirer** — et
+   il ne restera plus de phrase sous le titre.
+2. **Les mêmes conditions citées de deux façons sur la même page.** Le bloc sécurité cite
+   « Respectez les limites d'âge, de poids et de nombre indiquées » ; la liste « Ce qui n'est pas
+   relevé » cite, du même document, « les limites de nombre indiquées » — sans l'âge ni le poids.
+   Sur les deux autres fiches, la même clause est citée deux fois de façon identique. L'une des
+   deux citations de cette fiche est donc tronquée ; je ne sais pas laquelle est fidèle et je ne
+   l'ai pas corrigée. La version longue est celle qui reste.
+3. **Le prix s'affiche deux fois, et en format anglophone.** `$80.00` à l'écran, « 80,00 $ » dans
+   la prose, « Dollars canadiens » juste en dessous ; et le montant apparaît une fois sur la
+   ligne de prix, une fois dans le bloc d'ajout au panier.
+4. **La fiche publie une image dont elle dit qu'elle ne prouve rien.** La planche du fabricant
+   est affichée avec, en légende, « elle n'a pas été prise chez nous, et rien ne dit qu'elle
+   décrit notre exemplaire », et le tableau ajoute que les deux photos se contredisent. Je l'ai
+   gardée parce que quatre lignes du tableau y renvoient (le nombre de ballons, leur taille, le
+   sac, la marque) : la retirer casserait ces quatre lignes. Mais publier une image déclarée non
+   fiable est une décision, pas un fait, et elle vous revient.
+5. **Un tableau intitulé « Ce qui est vérifié » dont la moitié des lignes dit « Non établi ».**
+6. **La ligne que je couperais si vous en voulez une de moins.** « L'alimentation électrique ».
+   Pour douze seaux de plastique et des ballons, poser la question du courant électrique crée un
+   doute que la fiche ne peut pas lever. Je l'ai gardée parce que la retirer retire un fait
+   (nous ne l'avons pas documenté), mais c'est la première que j'enlèverais.
+
+## 3.5 Le premier écran à 375 px
+
+**Avant** — le premier écran s'arrête au milieu du paragraphe sous le titre.
+
+| Élément | Position | Dans le premier écran ? |
+|---|---|---|
+| Titre « Basket Pong » | 256 → 296 px | oui |
+| Le paragraphe sous le titre (8 lignes) | 298 → 502 px | oui |
+| Notre photo | 518 → 774 px | commence, coupée par le bas |
+| Légende de notre photo | 792 → 877 px | non |
+| **Le prix** | **905 px** | **non** |
+| Sélecteur de dates | 1 153 px | non |
+| **Bouton « Ajouter au panier »** | **1 543 → 1 595 px** | **non** |
+| Lien vers les conditions | 1 849 px | non |
+| La planche du fabricant | 2 258 px | non |
+
+**Après, A — mise en page inchangée :**
+
+| Élément | Position | Dans le premier écran ? |
+|---|---|---|
+| Titre | 256 → 296 px | oui |
+| La phrase sous le titre (1 ligne) | 298 → 349 px | oui |
+| Notre photo | 365 → 621 px | oui, entière |
+| **Le prix** | **649 → 683 px** | **oui, il commence à 649** |
+| **Bouton « Ajouter au panier »** | **788 → 840 px** | **non — 121 px sous le pli** |
+
+**Après, B — la carte passe au-dessus de la photo sur mobile :**
+
+| Élément | Position | Dans le premier écran ? |
+|---|---|---|
+| Titre | 256 → 296 px | oui |
+| La phrase sous le titre (1 ligne) | 298 → 349 px | oui |
+| **Le prix « $80.00 / jeu · 2 Jours »** | **383 → 417 px** | **oui** |
+| **Bouton « Ajouter au panier »** | **522 → 574 px** | **oui** |
+| « Prix pour ramassage… Le montage n'est pas compris. » | 593 → 708 px | oui, commence |
+| Sélecteur de dates | 799 px | non |
+| Notre photo | 1 490 px | non |
+
+Même arbitrage que sur la fiche 2, et il se joue au même endroit : la photo fait 256 px, l'en-tête
+du site 256 px. Avec la photo devant, le prix entre (649 px) mais le bouton non. Avec la carte
+devant, les deux entrent, et la photo passe après la carte.
