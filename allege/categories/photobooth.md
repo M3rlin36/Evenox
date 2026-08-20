@@ -1,7 +1,10 @@
 # Allègement — page de catégorie « Photobooth »
 
-Page lue le 20 août 2026, en lecture seule. Rien n'a été modifié sur evenox.ca. Quatre visites
-en tout, espacées, toutes en HTTP 200 : aucun 403.
+Page lue le 20 août 2026, en lecture seule. Rien n'a été modifié sur evenox.ca. Six
+chargements de la page en tout, espacés : un en `curl` pour le texte, cinq au navigateur pour
+les mesures d'écran — dont un interrompu par une erreur de mon propre script. Plus un appel à
+la page des conditions de location, pour vérifier que le lien répond. Tous en HTTP 200 : aucun
+403.
 
 ---
 
@@ -81,8 +84,9 @@ Pour des événements plus éloignés, contactez-nous.
 
 ## Délai pour réserver
 
-2 à 4 semaines pour les mariages et événements corporatifs, 1 à 2 semaines pour les fêtes
-privées. On accepte aussi les demandes de dernière minute selon la disponibilité.
+Pour les mariages et événements corporatifs, réservez 2 à 4 semaines à l'avance. Pour les
+fêtes privées, 1 à 2 semaines suffisent. On accepte aussi les demandes de dernière minute selon
+la disponibilité.
 
 ## Ajoutez des jeux géants — à partir de 250 $
 
@@ -104,14 +108,27 @@ technicien était super professionnel. » — Marie-Ève L., Mariage — Laval
 
 ## 3. Longueur après
 
-- Mots après : **335**
-- Retiré : **689 mots, soit 67 %** de la zone éditoriale.
+- Mots après : **339**
+- Retiré : **685 mots, soit 67 %** de la zone éditoriale.
 - Le prix est devenu le premier contenu de la page, juste sous le titre. Il était au 3ᵉ bloc,
   à 2 414 px du haut.
 
-Deux ajouts, et deux seulement, tous deux prévus par la consigne : le lien vers les conditions
-de location, et le mot « Forfait » en tête de colonne du tableau. Aucun autre mot n'a été
-écrit : tout ce qui reste est mot pour mot le texte de la page.
+Tout ce qui reste est mot pour mot le texte de la page. Onze mots font exception, et les
+voici, pour que rien ne passe en douce :
+
+- les quatre en-têtes du tableau — « Forfait », « Prix », « Durée », « En plus » (5 mots) ;
+- « Dans les trois : », qui introduit ce qui était écrit trois fois (3 mots) ;
+- « Conditions de location », le libellé du lien vers les conditions (3 mots) — le seul lien
+  ajouté, et il est prévu par la consigne.
+
+Les intertitres, eux, sont taillés dans les mots de la page : « Zone de livraison » et « Délai
+pour réserver » viennent de ses deux questions de FAQ (« Quelle est la zone de livraison ? »,
+« Quel est le délai pour réserver ? »), « Réserver » de ses boutons. Quatre phrases ont été
+raccourcies en coupant à l'intérieur, sans qu'un mot soit ajouté ni déplacé : « On peut créer un
+overlay personnalisé… » perd « On peut créer un » et « les noms des mariés » ; « On livre à
+Montréal, Laval… » perd « On livre à » ; « Ajoutez des jeux géants à votre événement » perd
+« à votre événement » ; « Combinez votre photobooth avec nos jeux géants (Jenga, Connect 4,
+gonflables, arcade…) pour une animation complète » ne garde que la parenthèse.
 
 ---
 
@@ -185,8 +202,32 @@ Le lien vers les conditions de location est là pour ça. C'est le seul lien que
 
 ## 5. Ce qui a été coupé, par motif
 
-**Répétitions : 268 mots.** Chaque fait de cette page est écrit entre trois et douze fois.
-Relevé exact, sur les 1 024 mots :
+Bloc par bloc, ce qui entre et ce qui sort. Les deux colonnes de chiffres sont comptées, pas
+estimées ; elles totalisent 1 024 et 339.
+
+| Bloc d'origine | Avant | Ce qui en reste | Après |
+|---|---|---|---|
+| Bandeau : pastille, H1, paragraphe, 2 boutons | 56 | la ligne de livraison, descendue sous le prix, et les deux boutons | 32 |
+| Compteurs du bandeau + Portfolio | 26 | « 4.8/5 sur Google — 50+ avis · 500+ événements · Réponse en moins de 24h » | 15 |
+| Pastille visuelle + 5 crochets | 25 | rien | 0 |
+| Intro « Nos services » | 23 | le titre de section, mot pour mot | 4 |
+| Carte Photobooth Classique | 59 | le nom, le prix, les 6 caractéristiques | 24 |
+| Carte Vidéobooth 360° | 50 | le nom, le prix, les 6 caractéristiques | 23 |
+| Intro « Tout est inclus. Zéro stress. » | 19 | rien | 0 |
+| 6 pastilles d'inclusions | 91 | la ligne des 100+ props | 8 |
+| Bloc jeux géants | 37 | le nom, le prix, les 4 jeux, le lien | 17 |
+| « Réserver en 3 étapes » | 74 | rien | 0 |
+| 3 témoignages | 84 | un témoignage | 25 |
+| Intro « Forfaits » | 24 | le titre « Forfaits Photobooth » | 2 |
+| Les 3 forfaits | 180 | le tableau et la ligne commune aux trois | 120 |
+| FAQ, 6 questions | 239 | la zone de livraison, le délai, l'overlay | 58 |
+| Appel à l'action final + 3 pastilles | 37 | deux boutons | 6 |
+| *(titre de l'onglet réutilisé en H1)* | — | « Location de photobooth à Montréal » | 5 |
+
+Les motifs, maintenant.
+
+**Répétitions.** Chaque fait de cette page est écrit entre trois et douze fois. Relevé exact,
+sur les 1 024 mots :
 
 | Fait | Nombre de fois | Gardé |
 |---|---|---|
@@ -203,7 +244,7 @@ Relevé exact, sur les 1 024 mots :
 | Props & accessoires | 4 | 2 |
 | 4.8 / 50+ avis | 3 | 1 |
 
-**La FAQ : 239 mots, réduits à 47.** Quatre des six questions ne font que répéter la page.
+**La FAQ : 239 mots, réduits à 58.** Quatre des six questions ne font que répéter la page.
 « Quelle est la différence entre le photobooth et le vidéobooth 360° ? » redit les deux
 descriptions de produit qui la précèdent. « Est-ce qu'un technicien est toujours présent ? »
 redit « 1 animateur dédié sur place », écrit trois fois vingt lignes plus haut. « Peut-on
@@ -222,7 +263,7 @@ voir 6d, elles ne sont pas coupées pour longueur.
 moins de 24 h et l'overlay personnalisé — sont conservés ailleurs. « Zéro stress », « Vos
 invités vivent une expérience mémorable », « Vous n'avez rien à faire » ne disent rien.
 
-**Deux témoignages sur trois : 56 mots.** Consigne : en garder un. J'ai gardé le premier. Le
+**Deux témoignages sur trois : 59 mots.** Consigne : en garder un. J'ai gardé le premier. Le
 choix est arbitraire, à trancher — sauf pour le deuxième, que j'aurais coupé de toute façon :
 « Livraison, installation, opération — tout était parfait » fait dire à un client que
 l'installation est comprise (voir 6d).
@@ -231,30 +272,37 @@ l'installation est comprise (voir 6d).
 HD en moins de 10 sec » puis cinq crochets qui recopient un à un la liste du Photobooth
 Classique située 200 px plus bas. C'est aussi le bloc dont l'alignement est cassé (voir 7b).
 
-**Le paragraphe du bandeau : 34 mots sur 56.** « Photos illimitées. Impression HD instantanée.
+**Le paragraphe du bandeau : 12 mots sur 35.** « Photos illimitées. Impression HD instantanée.
 Vidéobooth 360°. Technicien inclus. Clé en main. » Cinq affirmations, cinq répétitions de ce
-qui suit. Le tarif de livraison qui terminait ce paragraphe est conservé, mais plus bas : à
-375 px, il occupait trois des six lignes du premier écran et repoussait le prix hors de l'écran.
+qui suit. Les 23 mots restants sont le tarif de livraison, conservé, mais plus bas : à 375 px,
+il occupait trois des six lignes du premier écran et repoussait le prix hors de l'écran.
 
 **Le portfolio : 16 mots, réduits à « 500+ événements ».** « Mariages, galas, fêtes privées,
 corporatifs — on rend chaque moment mémorable » : les quatre types d'événements sont déjà dans
 les témoignages et la FAQ.
 
-**Les deux paragraphes d'ambiance des cartes produit : 42 mots.** « Le classique indémodable qui
-met tout le monde en mode fête » et « L'expérience wow de tous vos invités. Incontournable pour
-les mariages, galas et événements corporatifs. » Les caractéristiques techniques, elles, sont
-toutes conservées.
+**Les deux paragraphes de présentation des appareils : 52 mots.** « Cabine photo premium avec
+écran tactile 21″. Photos illimitées, impression HD en 10 secondes, galerie numérique remise
+après l'événement. Le classique indémodable qui met tout le monde en mode fête. » et son
+équivalent pour le 360°, qui finit sur « L'expérience wow de tous vos invités. Incontournable
+pour les mariages, galas et événements corporatifs. » Les faits de la première moitié sont tous
+repris, mot pour mot, par la liste à puces située juste en dessous ; la seconde moitié ne dit
+rien. Les douze caractéristiques techniques, elles, sont toutes conservées.
 
-**Les pastilles d'urgence et les étiquettes : 32 mots.** « Été 2026 — Les dates se remplissent
+**Les pastilles d'urgence et les étiquettes : 37 mots.** « Été 2026 — Les dates se remplissent
 vite », « Les fins de semaine partent vite — vérifiez votre date dès maintenant », « Produit
 star », « Tendance 2026 », « Le plus populaire », « Tarification simple », « Nos services »,
 « Simple comme bonjour », « Ce qui est inclus », « Portfolio ». Aucune ne porte de fait. La
 première est de toute façon invisible sur un téléphone (voir 7a).
 
-**Les titres et l'appel final : 30 mots.** « Tout est inclus. Zéro stress. », « Créez des
-souvenirs inoubliables », « Trois formules clé en main. Tout inclus, zéro surprise. »
-Le deuxième bouton « Vérifier la disponibilité → » du bas de page part avec : il y en avait
-deux, à 12 px l'un de l'autre.
+**Les titres sans fait et l'appel final : 29 mots.** « Tout est inclus. Zéro stress. », « Créez
+des souvenirs inoubliables », « Trois formules clé en main. Tout inclus, zéro surprise. »,
+« Vérifiez la disponibilité pour votre date. Réponse en 24h, zéro engagement. » Les deux boutons
+du bas de page sont gardés ; les trois pastilles qui les suivent — « Montréal, Laval &
+Rive-Nord », « Réponse en moins de 24h », « Livraison dès 100 $ » — redisent la zone de
+livraison, le délai de réponse et le tarif, tous trois conservés ailleurs. Le quatrième
+« Vérifier la disponibilité → » compté dans ce bloc n'est pas un bouton de page : c'est le
+libellé du bouton flottant, voir 7b.
 
 ---
 
@@ -328,7 +376,16 @@ le tarif de livraison est écrit six fois, en trois typographies différentes ; 
 douze fois, sous quatre noms ; la galerie numérique sept fois. La FAQ, 239 mots, répète la page
 dans quatre de ses six réponses.
 
-Après coupe : 335 mots, 67 % de moins, et aucun fait perdu — la liste du point 4 est complète.
+Après coupe : 339 mots, 67 % de moins. Tous les prix, toutes les durées, toutes les
+caractéristiques techniques et toutes les villes sont là — la liste du point 4 est complète.
+Cinq précisions de second rang sont tombées avec les blocs qui les portaient, et je les nomme
+plutôt que de prétendre n'avoir rien perdu : « du début à la fin » et « Il guide vos invités,
+gère les impressions et règle tout problème technique en temps réel » (à propos de l'animateur,
+dont la présence sur place reste écrite) ; « galerie numérique remise après l'événement » et
+« Toutes les photos accessibles par QR code » (la galerie et le QR restent écrits) ; « Partage
+instantané sur les réseaux avec le vidéobooth 360° » (« Partage réseaux sociaux » reste écrit
+sous le vidéobooth) ; le mot « Cabine » de « Cabine photo premium » ; et « On recommande de
+combiner les deux ». À remettre si l'une compte.
 
 ### b) L'apparence mal alignée
 
@@ -377,7 +434,7 @@ code, sans espace après le point.
 
 | Écrit sur la page | Où | Ce qui manque |
 |---|---|---|
-| `599$` `799$` `999$` | les trois forfaits, en 51,2 px | aucune espace avant le `$` |
+| `599$` `799$` `999$` | les 3 forfaits en 51,2 px, les 2 appareils en 26,4 px | aucune espace avant le `$` |
 | `100 $` `7 $/km` | les trois forfaits + 2 pastilles | espace ordinaire, sécable : « 100 » et « $ » peuvent se retrouver sur deux lignes |
 | `100,00 $` `7,00 $` | le bandeau | deux décimales, alors que les mêmes montants n'en ont pas ailleurs |
 
@@ -411,8 +468,8 @@ Mesuré à 375 × 667 px, dans un vrai navigateur.
 | 18→34 px | 📞 514-559-1893 et ✉️ evenox.ca@gmail.com, en 14 px, dans la barre du site |
 | 53→184 px | l'en-tête blanc : le logo et le menu hamburger |
 | 100→136 px | la pastille « Été 2026 » — **recouverte par l'en-tête, invisible** |
-| 166→373 px | le H1 sur 4 lignes, sommet de la 1ʳᵉ ligne rogné |
-| 395→607 px | le paragraphe du bandeau, 6 lignes, 212 px, dont 3 lignes de tarif de livraison |
+| 166→373 px | le H1 sur 5 lignes, sommet de la 1ʳᵉ ligne rogné |
+| 395→607 px | le paragraphe du bandeau, 7 lignes, 212 px, dont 4 lignes de tarif de livraison |
 | 645→694 px | le bouton « Vérifier la disponibilité → » : **22 px sur 49 au-dessus du pli** |
 | par-dessus | la bulle de clavardage et le bouton panier, qui mordent sur le texte |
 
