@@ -754,7 +754,7 @@ Pour tout ce qui n’est pas écrit ici, il y a le téléphone. 514-559-1893
 ### 3. Mots APRÈS et pourcentage retiré
 
 - **606 mots** (avant : 2 969) → **−80 %**, soit 2 363 mots de moins. C'est la plus longue des
-  trois fiches allégées, et la seule qui reste un peu au-dessus de la moitié de la référence.
+  trois fiches allégées : 77 % de la référence (783 mots), contre 66 % pour la fiche 1.
 - C'est la fiche où il reste le plus de lignes « non établi », parce que c'est celle où les deux
   textes internes se contredisent le plus. Chacune de ces lignes est un fait : elle dit au client
   ce qu'il ne saura pas avant d'avoir appelé.
