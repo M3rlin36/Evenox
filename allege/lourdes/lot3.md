@@ -144,7 +144,7 @@ volume était consacré à répéter cette absence, sur cinq blocs différents. 
 
 ## 1.3 Ce qui est coupé, par motif
 
-**Dit deux fois ou plus (1 060 mots).**
+**Dit deux fois ou plus (1 232 mots).**
 - La section « Le point le plus important » (251 mots) : le titre « géant » non confirmé était
   déjà dans le tableau. Sa seule phrase unique (« Le mot “géant” n'apparaît ni dans son nom, ni
   dans son code interne, ni dans son adresse, ni dans sa description ») a été **déplacée** dans
@@ -165,12 +165,13 @@ n'est pas relevé », « À ajouter » : quatre étiquettes posées au-dessus d'
 relues le 18 août 2026 », la phrase d'introduction du bloc sécurité, et les « Nos conditions
 disent : » devant chaque citation. Le **lien** vers les conditions reste dans la carte.
 
-**Le matériel de production photo (334 mots).** L'encadré « Aucune photo de ce jeu », la légende
-du fichier écarté, les six vignettes « À produire » et la consigne de tournage (cadrage 1:1,
-1200 px, fond blanc). C'est une commande de travail pour le photographe, publiée sur la fiche
-client. Le fait — nous n'avons pas de photo — reste dans la phrase sous le titre.
+**Le matériel de production photo (255 mots).** L'encadré « Aucune photo de ce jeu » (38 mots),
+la légende du fichier écarté (23), les six vignettes « À produire » (28) et la consigne de
+tournage (166 : cadrage 1:1, 1200 px, fond blanc). C'est une commande de travail pour le
+photographe, publiée sur la fiche client. Le fait — nous n'avons pas de photo — reste dans la
+phrase sous le titre.
 
-**La méthode interne (159 + 61 mots).** Le paragraphe qui explique le classement des
+**La méthode interne (159 + 64 mots).** Le paragraphe qui explique le classement des
 compléments (42 lignes de location, 11 commandes distinctes, égalités départagées par date) et
 la ligne de tableau « Constance du tarif » (37 locations sur 37, les 42 lignes relues une par
 une). Le prix est affiché ; son historique d'audit n'est pas un fait produit.
@@ -214,7 +215,7 @@ resté seul au-dessus d'un bloc vide.
    y a bien un fichier, il a été écarté. Les deux affirmations tiennent ensemble, mais lues à la
    suite elles se cognent.
 6. **Une absence présentée comme une vérification.** Le titre du tableau est « Ce qui est
-   vérifié », et neuf de ses onze lignes disent qu'on ne sait pas. Le titre n'a pas été touché.
+   vérifié », et sept de ses onze lignes disent qu'on ne sait pas. Le titre n'a pas été touché.
 
 ## 1.5 Le premier écran à 375 px
 
@@ -388,10 +389,11 @@ n'est pas relevé », puis dans les questions. Une fois suffit.
 relues le 18 août 2026 », l'introduction du bloc sécurité, et les « Nos conditions disent : »
 devant chaque citation. Le lien vers les conditions reste dans la carte.
 
-**Le matériel de production photo (216 mots).** Les six vignettes « À produire » et la consigne
-de tournage. La photo, elle, reste : c'est la seule preuve du produit sur cette fiche.
+**Le matériel de production photo (227 mots).** Les six vignettes « À produire » (25) et la
+consigne de tournage (202). La photo, elle, reste : c'est la seule preuve du produit sur cette
+fiche.
 
-**La méthode interne (161 + 74 mots).** Le paragraphe qui explique le classement des compléments
+**La méthode interne (161 + 69 mots).** Le paragraphe qui explique le classement des compléments
 (47 lignes, 16 commandes distinctes) et la ligne « Constance du tarif ».
 
 **Le jargon d'outil.** « sa fiche Booqable n'a aucune description, aucun extrait, aucune note ».
@@ -434,8 +436,8 @@ fiche, donc la queue part. Ce qu'elle disait est repris par la ligne « Ce qu'il
    haut placé ne figure pas ici : il n'a aucune page sur ce site. » La liste est donc présentée
    comme un classement de commandes réelles, alors que son premier de classe est retiré. En
    coupant le paragraphe, on efface aussi l'aveu. Je le signale plutôt que de le réécrire.
-5. **Un tableau intitulé « Ce qui est vérifié » dont la moitié des lignes dit « Non établi ».**
-   Le titre n'a pas été touché. Même remarque que sur la fiche 1.
+5. **Un tableau intitulé « Ce qui est vérifié » dont six lignes sur douze disent « Non
+   établi ».** Le titre n'a pas été touché. Même remarque que sur la fiche 1.
 6. **La date des conditions.** Même flottement que sur la fiche 1 : les six lignes « Source »
    disent « relues le 18 août 2026 ».
 
@@ -618,10 +620,10 @@ l'une et de l'autre.
 **L'attribution des conditions.** Les six lignes « Source : … relues le 18 août 2026 »,
 l'introduction du bloc sécurité, et les « Nos conditions disent : ». Le lien reste dans la carte.
 
-**Le matériel de production photo (198 mots).** Les six vignettes « À produire » et la consigne
-de tournage.
+**Le matériel de production photo (190 mots).** Les six vignettes « À produire » (25) et la
+consigne de tournage (165).
 
-**La méthode interne (125 + 44 mots).** Le paragraphe qui explique le classement des compléments
+**La méthode interne (125 + 40 mots).** Le paragraphe qui explique le classement des compléments
 (63 lignes, 18 commandes distinctes) et la ligne « Constance du tarif ».
 
 **Les lignes de tableau nommées par Alexandre.** « Variantes » (aucune), « Montage » (déjà dans
@@ -658,7 +660,8 @@ tarif est le plus stable de notre catalogue : 63 locations sur 63 au même monta
    gardée parce que quatre lignes du tableau y renvoient (le nombre de ballons, leur taille, le
    sac, la marque) : la retirer casserait ces quatre lignes. Mais publier une image déclarée non
    fiable est une décision, pas un fait, et elle vous revient.
-5. **Un tableau intitulé « Ce qui est vérifié » dont la moitié des lignes dit « Non établi ».**
+5. **Un tableau intitulé « Ce qui est vérifié » dont sept lignes sur douze disent « Non
+   établi ».**
 6. **La ligne que je couperais si vous en voulez une de moins.** « L'alimentation électrique ».
    Pour douze seaux de plastique et des ballons, poser la question du courant électrique crée un
    doute que la fiche ne peut pas lever. Je l'ai gardée parce que la retirer retire un fait
