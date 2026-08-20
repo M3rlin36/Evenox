@@ -10,7 +10,17 @@
 > **non établi**. Aucun texte de concurrent n'est recopié : on note des faits et
 > des chiffres. Aucune connexion à un compte, aucune modification nulle part.
 
-**Statut :** document en cours de rédaction — écrit au fur et à mesure du relevé.
+**Statut :** relevé terminé. **8 concurrents examinés**, 6 requêtes clients,
+`evenox.ca` vérifié (aucun 403).
+
+**En trois phrases.** Sur les articles où la durée permet une comparaison
+honnête, Evenox est le **moins cher du marché relevé** — mais son affichage le
+cache, parce que nous vendons 48 heures pendant que les autres affichent une
+journée. Nous sommes aussi les seuls, ou presque, à publier un tarif de
+livraison, ce qui nous fait paraître chers face à sept concurrents qui écrivent
+« frais selon le secteur » et rien d'autre. Et il manque à nos fiches deux
+choses que le marché publie couramment : **ce qui arrive s'il pleut**, et **le
+prix des jeux gonflables**.
 
 ---
 
@@ -58,17 +68,15 @@ consultations. Aucun 403 n'a été rencontré, le relevé a donc pu se poursuivr
 
 ## 2. Méthode
 
-Recherches menées comme un client le ferait, une requête à la fois :
+Recherches menées comme un client le ferait, une requête à la fois, avec au
+moins deux secondes entre chacune. Uniquement de la consultation publique :
+aucun panier rempli, aucun formulaire envoyé, aucun compte, aucune modification
+nulle part.
 
-- « location de chaises Laval »
-- « location jeu gonflable Rive-Nord »
-- « location table et chaise Montréal »
-- « location machine à popcorn »
-
-Les entreprises retenues sont celles qui reviennent le plus souvent dans ces
-résultats. Pour chacune : prix de trois articles comparables **avec la durée
-annoncée**, conditions de livraison, dépôt, paiement, annulation, possibilité de
-réserver en ligne, et longueur d'une fiche produit en nombre de mots.
+Pour chaque entreprise retenue : prix de trois articles comparables **avec la
+durée annoncée**, conditions de livraison, dépôt, paiement, annulation,
+possibilité de réserver en ligne, et longueur d'une fiche produit en nombre de
+mots.
 
 ### Journal des recherches
 
@@ -78,20 +86,33 @@ réserver en ligne, et longueur d'une fiche produit en nombre de mots.
 | 2 | location jeu gonflable Rive-Nord Montréal | Les Ballounes, GVL Rive-Nord, Chez Fun Fou, Popup Amusements, Jeux AéroFun |
 | 3 | location table et chaise Montréal | Happening, La Nouvelle Tablée, Cité-Fêtes, Atelier Location Turbo |
 | 4 | location machine à popcorn Laval Montréal prix | JS Party, Jeux AéroFun, Sonolum, Les Ballounes |
+| 5 | Les Ballounes location chaises tables prix | (approfondissement) |
+| 6 | location table 6 pieds chaise pliante frais de livraison Rive-Nord | Les Ballounes, Fiesta jeux gonflables |
 
 Constat de fréquence : **Les Ballounes** ressort dans 3 requêtes sur 4,
-**Jeux AéroFun** dans 2. Evenox ressort lui-même dans les 4 requêtes, ce qui est
-un fait notable en soi (voir conclusions).
+**Jeux AéroFun** dans 2. Evenox ressort lui-même dans les 4 requêtes clients,
+souvent en première position — notre visibilité n'est pas le problème ; ce que
+le client lit une fois arrivé, si.
 
-### Liste retenue (à relever une par une)
+### Les huit entreprises retenues
 
-1. Les Ballounes — Blainville / Laval / Sainte-Thérèse
-2. Eventuum — Laval
-3. Jeux AéroFun
-4. Sonolum
-5. JS Party — Laval
-6. Chez Fun Fou — Saint-Jérôme
-7. Location Turbo / Happening / La Nouvelle Tablée — à départager (Montréal)
+| # | Entreprise | Base | Ce qu'elle loue parmi nos trois articles |
+| --- | --- | --- | --- |
+| 3.1 | Les Ballounes | Blainville, Laval, Sainte-Thérèse | chaise, table, jeu gonflable |
+| 3.2 | Eventuum | Laval | chaise, table, jeu gonflable |
+| 3.3 | Jeux AéroFun | Blainville | jeu gonflable |
+| 3.4 | Sonolum | Terrebonne | chaise, table, jeu gonflable |
+| 3.5 | JS Party | Laval | jeu gonflable |
+| 3.6 | Fiesta jeux gonflables | Rive-Nord | chaise, table, jeu gonflable |
+| 3.7 | Chez Fun Fou | Saint-Jérôme | jeu gonflable |
+| 3.8 | La Nouvelle Tablée | grand Montréal | chaise, table |
+
+Écartés faute de recoupement suffisant sur nos trois articles de référence :
+GVL Rive-Nord, Popup Amusements, Happening, Cité-Fêtes, Atelier Location Turbo.
+
+Trois d'entre elles ont un point de service à moins de dix minutes de notre
+entrepôt : Les Ballounes annonce une cueillette **à Sainte-Thérèse même**,
+Jeux AéroFun et Les Ballounes sont à Blainville.
 
 ---
 
