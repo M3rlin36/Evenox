@@ -705,3 +705,62 @@ tarif est le plus stable de notre catalogue : 63 locations sur 63 au même monta
 Même arbitrage que sur la fiche 2, et il se joue au même endroit : la photo fait 256 px, l'en-tête
 du site 256 px. Avec la photo devant, le prix entre (649 px) mais le bouton non. Avec la carte
 devant, les deux entrent, et la photo passe après la carte.
+
+---
+
+# Vérifications passées sur les trois textes
+
+**Rien n'a été réécrit, et je l'ai fait vérifier par la machine.** Chaque suite de six mots du
+texte allégé a été cherchée dans le texte d'origine de la même fiche. Les seules suites qui n'y
+sont pas sont les **points de raccord** — l'endroit exact où une phrase a été raccourcie ou
+déplacée — et chacun correspond à une coupe listée plus haut :
+
+| Raccord | La coupe qui l'a créé |
+|---|---|
+| « …taxes en sus. Paiement par carte… » | « Sans frais cachés. » retiré entre les deux |
+| « …et de nombre s'appliquent. Pour cet article, aucune limite… » | le « Nos conditions disent : » et la citation retirés |
+| « …se facture. « Un bris ou une pièce manquante… » | le « Nos conditions : » retiré |
+| « …un jeu de table du commerce. Le mot « géant » n'apparaît… » | phrase déplacée depuis la section supprimée (fiche 1) |
+| « …aucun forfait n'en ajoute. Le décompte signé… » | « la recherche a été faite dans les deux sens » retiré |
+| « …le contenu de cet article. Aucun gobelet n'existe… » | la mention du logiciel retirée (fiche 2) |
+| « Ce qu'il y a dans les étuis — Ils n'ont pas été ouverts… » | la première phrase du point retirée (fiche 2) |
+| « Deux champs obligatoires… Pour réserver, tout se passe… » | la phrase du milieu retirée |
+
+**Zéro mot inventé** sur les trois fiches. Aucun chiffre, aucune mesure, aucune date n'a été
+ajoutée.
+
+**Les formules interdites sont absentes** des trois textes : « livraison incluse », « livraison
+gratuite », « montage compris », « annulation gratuite 7 jours », « report sans frais en cas de
+pluie », « remplacement pendant l'événement ». Aucune ne figurait sur les fiches d'origine non
+plus ; les trois écrivent au contraire « Le montage n'est pas compris », et cette phrase reste.
+
+**Mirabel n'apparaît nulle part.** Le ramassage est écrit deux fois par fiche et toujours de la
+même façon : entrepôt de Sainte-Thérèse, 215, boulevard René-A.-Robert.
+
+**Le dépôt, les taxes et le lien** sont présents sur les trois : 20 % du total, solde au
+ramassage, taxes en sus, et le lien vers la politique et les conditions de location.
+
+# Deux points à trancher, qui dépassent les trois fiches
+
+**1. La livraison : je n'ai rien ajouté, et c'est délibéré.** Votre consigne donne les faits
+(100 $ pour les 10 premiers km, puis 7 $/km jusqu'à 40 km, au-delà soumission). **Aucune des
+trois fiches ne parle de livraison**, ni en bien ni en mal : elles écrivent seulement que le prix
+est un tarif de ramassage. Comme la règle est « on n'ajoute jamais rien », je n'ai pas introduit
+la grille de livraison. Le code de la fiche de référence dit d'ailleurs la même chose en propres
+termes : « On n'écrit TOUJOURS aucun prix, aucune zone et aucun délai de livraison — rien n'est
+documenté. » Si vous voulez cette grille sur les fiches, c'est un ajout, et il vous revient de le
+demander explicitement — la ligne serait alors la même partout, avec le lien vers les conditions.
+
+**2. La disposition sur mobile, pour les deux fiches qui ont une photo.** Le prix et le bouton
+n'entrent tous les deux dans le premier écran que si la carte de réservation passe **au-dessus**
+de la photo. Mesuré : c'est vrai pour le pong (bouton à 607 px au lieu de 809) comme pour le
+basket (522 px au lieu de 788). Le prix, lui, entre dans les deux dispositions. La fiche 1 n'a pas
+de photo, donc elle n'a pas ce problème. Je propose la carte en premier, mais la photo se retrouve
+alors après toute la carte, et ce choix-là est le vôtre.
+
+# Ce qui reste identique sur les trois fiches, et volontairement
+
+La carte de réservation, le bloc « Ce qui encadre l'usage » (six lignes) et le formulaire sont
+mot pour mot les mêmes d'une fiche à l'autre : ce sont les conditions de la maison, pas la
+description du produit. Ce qui distingue une fiche de l'autre tient dans une phrase, un tableau
+et quatre compléments.
