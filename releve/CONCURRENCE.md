@@ -229,6 +229,66 @@ C'est le seul concurrent relevé jusqu'ici qui publie à la fois un prix, une
 durée, une politique d'annulation et un calendrier de disponibilité sur la même
 page produit.
 
+### 3.4 Sonolum — `sonolum.ca`
+
+Terrebonne / Rive-Nord, en activité depuis 2018. Boutique en ligne complète avec
+panier, sélection de dates et quantités. C'est **le concurrent le plus
+directement comparable à Evenox** : il loue les trois articles de référence, il
+affiche ses prix, et il publie ses conditions générales au complet.
+
+**Les trois articles de référence**
+
+| Article | Prix annoncé | Durée annoncée |
+| --- | --- | --- |
+| Chaise pliante noire | **1,75 $** | **par jour**, rabais de durée calculés au panier |
+| Chaise pliante blanche | **2,25 $** | par jour, idem |
+| Chaise Martha blanche | 5,00 $ | par jour |
+| Table pliante plastique 6 pi | **8,00 $** | par jour, rabais de durée calculés au panier |
+| Jeu gonflable résidentiel, entrée de gamme (« Petite Princesse ») | **50 $** | par jour |
+| Jeu gonflable résidentiel, haut de la grille (« Course Express », « Crayola », etc.) | 140 $ | par jour |
+| Machine à popcorn 8 oz | 50 $ | par jour, 25 portions incluses, chariot 10 $ |
+
+**Le point à retenir sur la durée.** Sonolum est le seul à écrire noir sur blanc
+que le prix est **par jour** et que des rabais de durée sont calculés au panier.
+Le client qui sélectionne deux dates voit donc son prix bouger. C'est la
+mécanique tarifaire la plus lisible du lot — mais c'est aussi celle qui rend la
+comparaison à l'affiche trompeuse : une chaise « à 1,75 $ » n'est pas à 1,75 $
+pour une fin de semaine.
+
+**Conditions** — les plus détaillées de tout le relevé.
+
+| Élément | Ce qui est écrit |
+| --- | --- |
+| Livraison | payante ; « des frais de livraison s'appliquent selon la distance et le volume » |
+| Montant du tarif de livraison | **non établi** — aucun montant ni tarif au kilomètre publié |
+| Seuil de gratuité | aucun seuil publié |
+| Installation | **incluse gratuitement** pour les chapiteaux (piquetage compris) et les jeux gonflables commerciaux ; pour le mobilier, l'éclairage et la sonorisation, des frais d'installation peuvent s'appliquer |
+| Zone desservie | Rive-Nord, Montréal, Rive-Sud, Laval et environs |
+| Horaires | livraison annoncée 24 h sur 24, 7 jours sur 7 ; heures normales de 7 h à 17 h, frais hors horaire ; créneaux standards de 8 h à 12 h ou de 13 h à 16 h sans heure fixe garantie |
+| Frais d'attente | 15 minutes incluses, puis **32,50 $ par tranche de 30 minutes** |
+| Dépôt de sécurité | exigé pour toutes les locations, **minimum 50 $**, variable selon la valeur des articles ; restitué après inspection, dans les 5 jours suivant la fin de la location |
+| Prépaiement | **30 % non remboursable** pour toute commande de plus de 250 $ avant taxes — sauf les jeux gonflables, exclus de cette clause |
+| Commandes de 250 $ et moins | paiement à 100 % immédiatement en magasin, ou 48 h avant la livraison |
+| Solde | dû **48 h avant** la livraison ; rien n'est livré si le paiement complet n'est pas reçu |
+| Modes de paiement | carte de crédit par téléphone ou par lien sécurisé transmis par courriel, virement Interac, argent comptant en magasin seulement |
+| Annulation (général) | **plus de 5 jours avant : 30 %** du total ; **entre 3 et 5 jours : 50 %** ; **2 jours ou moins : 100 %** du coût total |
+| Annulation (jeux gonflables) | **gratuite** en cas de météo défavorable |
+| Autres frais | frais de nettoyage si le matériel est rendu sale, frais de retard, frais de second déplacement en cas d'absence, frais de stationnement possibles au centre-ville de Montréal, frais de renonciation aux dommages |
+| Présence du client | **obligatoire** à la livraison, pour signer le bon de livraison |
+| Réservation en ligne | **oui** — panier, dates, quantités ; à noter toutefois que les modes de paiement publiés (téléphone, lien courriel, Interac, comptant) laissent entendre que le paiement se finalise hors du panier |
+
+**Longueur d'une fiche produit**
+
+- Fiche chaise pliante blanche : **114 mots**, dont environ 60 de conditions
+  standard répétées sur toutes les fiches
+- Fiche jeu gonflable (« Course Express ») : **203 mots**, avec dimensions,
+  restriction d'usage résidentiel, consignes de supervision, obligation de
+  retour propre et sec, politique de pluie
+
+La fiche mobilier proprement dite tient en une dizaine de mots (« chaise pliante
+blanche, siège et dos en plastique ») : tout le reste est du texte de conditions
+recopié d'un produit à l'autre.
+
 ---
 
 ## 4. Tableau comparatif
