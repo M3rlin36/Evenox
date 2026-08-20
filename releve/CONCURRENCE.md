@@ -434,6 +434,48 @@ d'appel : il faut lire la grille pour connaître le vrai montant.
 Fait notable : le calendrier de la fiche porte une consigne de sélection
 explicite pour le forfait fin de semaine (choisir du vendredi au lundi).
 
+### 3.8 La Nouvelle Tablée — `lanouvelletablee.com`
+
+Montérégie / grand Montréal, en activité depuis 1996. C'est le joueur le plus
+ancien et le plus haut de gamme du relevé : mobilier lounge, chaises Chiavari
+(l'entreprise en annonce environ 2 000), chaises Tolix, Windsor, Ghost,
+Caméléon, Luxor, Picasso, plus de l'équipement de cuisson et de service pour
+festivals. Références publiées : Marché Bonsecours, Gare Windsor, Grand Quai du
+Vieux-Port, Caisse de dépôt.
+
+**Les trois articles de référence**
+
+| Article | Prix annoncé | Durée annoncée |
+| --- | --- | --- |
+| Chaise pliante | **non établi** — le catalogue comporte une catégorie « chaise pliante » (6 modèles), mais aucun prix exploitable n'a pu être relevé |
+| Table 6 pieds | **non établi** |
+| Jeu gonflable | sans objet — l'entreprise n'en loue pas |
+
+**Le point à retenir.** Le site porte un avis explicite : les prix y sont **en
+cours de modification**, et ce sont les tarifs des soumissions transmises qui
+font foi. Autrement dit, le doyen du marché retire volontairement ses prix de la
+comparaison publique. Le catalogue offre pourtant un tri « par prix » — la
+fonction existe, la donnée n'est pas fiable.
+
+**Conditions**
+
+| Élément | Ce qui est écrit |
+| --- | --- |
+| Livraison | service de livraison et d'installation « disponible » ; **tarif non établi** |
+| Zone desservie | grand Montréal et Montérégie |
+| Dépôt | **non établi** |
+| Mode de paiement | **non établi** |
+| Annulation | **non établi** |
+| Réservation en ligne | **non** — catalogue en ligne, mais tarification par soumission ; téléphone publié |
+
+**Longueur d'une fiche produit**
+
+- **Non établi** — les pages produit n'ont pas pu être relevées dans un état
+  stable pendant la refonte annoncée. Le contenu éditorial existe en revanche
+  sous forme de billets de blogue (l'histoire de la chaise Tolix, par exemple,
+  fait plusieurs centaines de mots), ce qu'aucun autre concurrent relevé ne
+  fait.
+
 ---
 
 ## 4. Tableau comparatif
