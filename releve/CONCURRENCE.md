@@ -118,7 +118,9 @@ Jeux AéroFun et Les Ballounes sont à Blainville.
 
 ## 3. Entreprises relevées
 
-_(une section par entreprise ; complété au fur et à mesure)_
+Une section par entreprise. Chacune suit le même plan : les trois articles de
+référence avec leur durée, le point à retenir sur la durée, les conditions, puis
+la longueur d'une fiche produit.
 
 ### 3.1 Les Ballounes — `lesballounes.com`
 
