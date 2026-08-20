@@ -503,7 +503,109 @@ fonction existe, la donnée n'est pas fiable.
 
 ## 4. Tableau comparatif
 
-_(à compléter une fois les relevés faits)_
+### 4.1 Les trois articles de référence, prix affiché et durée affichée
+
+Le prix seul ne veut rien dire. La colonne « durée » est celle qui compte.
+
+| Entreprise | Chaise pliante | Table 6 pi | Jeu gonflable (entrée de gamme) |
+| --- | --- | --- | --- |
+| **Evenox** | blanche **3,00 $ / 48 h**<br>noire 4,00 $ / 48 h | **10,00 $ / 48 h** | **non établi** |
+| Sonolum | noire **1,75 $ / jour**<br>blanche 2,25 $ / jour | **8,00 $ / jour** | **50 $ / jour** |
+| Les Ballounes | blanche **6,25 $ / « par événement »** (durée non écrite) | **15 $ / « par événement »** (durée non écrite) | **120 $** jour de semaine · **165 $** fin de semaine (2 j, 2e gratuite) |
+| Fiesta jeux gonflables | **3,50 $**, livraison incluse, **uniquement avec un jeu gonflable** (durée non écrite) | **12 $**, mêmes conditions | non établi |
+| Eventuum | **aucun prix publié** | **aucun prix publié** | **aucun prix publié** |
+| Jeux AéroFun | n'en loue pas | n'en loue pas | **115 $ / « jour »** (≈ 40 h en pratique) |
+| JS Party | n'en loue pas | n'en loue pas | **60 $ / du vendredi au lundi** (3 jours) |
+| Chez Fun Fou | n'en loue pas | n'en loue pas | **154 $ / jour** (fin de semaine = 150 % du tarif) |
+| La Nouvelle Tablée | prix retirés du site (refonte) | prix retirés du site | n'en loue pas |
+
+### 4.2 La même comparaison ramenée à 48 heures
+
+C'est ici que les fausses aubaines se voient. Les montants marqués d'une
+astérisque sont des prix bruts avant les rabais de durée que le marchand
+annonce mais ne chiffre pas publiquement.
+
+| Article | Evenox | Sonolum | Les Ballounes | Fiesta |
+| --- | --- | --- | --- | --- |
+| Chaise pliante blanche, 48 h | **3,00 $** | 4,50 $ * | 6,25 $ (durée non établie) | 3,50 $ (durée non établie) |
+| Chaise pliante noire, 48 h | 4,00 $ | **3,50 $** * | non offert | non offert |
+| Table 6 pi, 48 h | **10,00 $** | 16,00 $ * | 15,00 $ (durée non établie) | 12,00 $ (durée non établie) |
+
+Lecture : sur 48 heures, **Evenox est le moins cher du lot sur la chaise
+blanche et sur la table de 6 pieds**, parmi les quatre entreprises qui publient
+un prix. Le seul article où Evenox est battu est la chaise noire — et il s'agit
+d'un produit différent (l'assise Evenox est rembourrée, celle de Sonolum est en
+plastique).
+
+**Le piège de l'affichage.** À l'affiche, Sonolum semble deux fois moins cher
+que nous : 1,75 $ contre 4,00 $. C'est la comparaison que fait le client qui
+ouvre trois onglets. Sur la durée réelle d'un événement de fin de semaine,
+l'écart s'inverse.
+
+### 4.3 Jeu gonflable : le prix par jour de location effective
+
+| Entreprise | Prix affiché | Durée réelle couverte | Coût par jour effectif |
+| --- | --- | --- | --- |
+| JS Party | 60 $ | vendredi au lundi (3 jours) | **20 $** |
+| Jeux AéroFun | 115 $ | ≈ 40 h (vendredi soir au dimanche matin) | ≈ 69 $ |
+| Sonolum | 50 $ | 1 jour | 50 $ |
+| Les Ballounes | 165 $ | 2 jours (fin de semaine) | 82,50 $ |
+| Chez Fun Fou | 231 $ (154 $ × 1,5) | 3 jours (vendredi au lundi) | 77 $ |
+| **Evenox** | **non établi** | — | — |
+
+Le jeu gonflable le moins cher à l'affiche (Sonolum, 50 $) est le troisième
+plus cher une fois ramené au jour effectif. Celui qui semble le plus cher
+(Chez Fun Fou) est au milieu du peloton. C'est exactement le mécanisme que le
+mandat demandait de débusquer.
+
+### 4.4 Livraison
+
+| Entreprise | Tarif publié | Seuil de gratuité | Zone |
+| --- | --- | --- | --- |
+| **Evenox** | **100 $ pour 10 km, puis 7 $/km jusqu'à 40 km** (fait fourni) ; le site publie plutôt un ajustement de secteur de −100 $ à +200 $ sur les forfaits | livraison **incluse** dans les forfaits à partir de 449 $, zone 0–20 km ; sous ce seuil, ramassage seulement | Rive-Nord, Laval, Montréal |
+| JS Party | **à partir de 50 $** (publié sur la version anglaise seulement) | aucun | Montréal, Laval et environs |
+| Fiesta | **incluse** dans le prix du mobilier | conditionnel à la location d'un jeu gonflable | non établi |
+| Sonolum | non établi — « selon la distance et le volume » | aucun | Rive-Nord, Montréal, Rive-Sud, Laval |
+| Les Ballounes | non établi — « selon le secteur » | aucun | Montréal, Rive-Nord, Lanaudière, Laurentides |
+| Jeux AéroFun | non établi | aucun | Blainville, Laval, Saint-Jérôme, Rive-Nord |
+| Chez Fun Fou | non établi — « non incluse dans les prix » | aucun | tout le Québec |
+| Eventuum | non établi | aucun | Laval, Montréal, Rive-Sud |
+| La Nouvelle Tablée | non établi | aucun | grand Montréal, Montérégie |
+
+**Sur huit concurrents, un seul publie un montant de livraison** (JS Party, et
+seulement dans sa version anglaise). Evenox est donc, avec lui, le seul du
+marché à mettre un chiffre en face du mot livraison.
+
+### 4.5 Dépôt, paiement, annulation, réservation
+
+| Entreprise | Dépôt | Paiement | Annulation | Réservation en ligne |
+| --- | --- | --- | --- | --- |
+| **Evenox** | **20 % à la réservation**, solde au ramassage | **carte de crédit seulement, en ligne** | **non établi** (sauf « Express 72 h » : non remboursable) | **oui** |
+| Sonolum | **50 $ minimum**, variable ; + 30 % non remboursable au-delà de 250 $ | carte par téléphone ou lien courriel, Interac, comptant en magasin | **30 % à plus de 5 j · 50 % à 3–5 j · 100 % à 2 j ou moins** ; gratuite pour la pluie sur les gonflables | panier oui, paiement hors panier |
+| Jeux AéroFun | **aucun** | carte de crédit en garantie au comptoir, avec autorisation signée | **gratuite** en cas de pluie | **oui**, 24 h sur 24 |
+| Chez Fun Fou | **25 %** | non établi | report ou annulation **jusqu'à 48 h avant** ; l'acompte devient une **note de crédit valable 1 an** | non — le panier mène à une soumission |
+| Les Ballounes | non établi | non établi | **gratuite jusqu'à 24 h avant** la prise de possession | **oui**, disponibilité en temps réel |
+| JS Party | non établi | non établi | non établi | non |
+| Fiesta | non établi | non établi | non établi | non |
+| Eventuum | non établi | non établi | non établi | non |
+| La Nouvelle Tablée | non établi | non établi | non établi | non |
+
+### 4.6 Longueur d'une fiche produit
+
+| Entreprise | Mots par fiche | Ce que contient la fiche |
+| --- | --- | --- |
+| **Evenox** | **801** | prix, durée, dépôt, paliers de durée, mesures, produits complémentaires chiffrés, forfaits comparés, six questions-réponses, mentions de ce qui reste à mesurer |
+| Eventuum | 240 | quatre sections rédigées, caractéristiques techniques — **et aucun prix** |
+| Sonolum | 203 (gonflable) · 114 (mobilier) | prix, durée, conditions standard répétées ; la description propre au produit fait une dizaine de mots |
+| Jeux AéroFun | 185 | prix, dimensions, âge, capacité, poids maximal, options chiffrées |
+| Les Ballounes | 94 (gonflable) · 76 (mobilier) | prix semaine et fin de semaine, dimensions, dégagement, poids maximal, points de cueillette |
+| Chez Fun Fou | ≈ 75 | prix, ampérage, surveillant requis, âge, participants, dimensions, poids |
+| Fiesta | ≈ 20 | désignation, dimensions, prix conditionnel |
+| JS Party | ≈ 8 | nom, prix, dimensions, capacité |
+| La Nouvelle Tablée | non établi | pages en refonte |
+
+**Médiane des concurrents mesurés : environ 94 mots. Evenox : 801 mots**, soit
+**8,5 fois la médiane** et 3,3 fois le concurrent le plus bavard.
 
 ---
 
