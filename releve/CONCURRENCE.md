@@ -128,6 +128,52 @@ vitesses chez le même marchand — précis sur le gonflable, flou sur le mobili
 Les fiches sont courtes et listées en puces sur des pages de catégorie plutôt
 que sur des pages produit individuelles étoffées.
 
+### 3.2 Eventuum — `eventuum.ca`
+
+1275, boulevard des Laurentides, Laval. Ressort en première position sur
+« location de chaises Laval ». Inventaire annoncé : tables rondes et
+rectangulaires, tables cocktail, chaises Martha, chaises pliantes, chaises
+Chiavari transparentes, chapiteaux, nappes, audiovisuel, jeux gonflables,
+machines à popcorn et à barbe à papa, génératrices.
+
+**Les trois articles de référence**
+
+| Article | Prix annoncé | Durée annoncée |
+| --- | --- | --- |
+| Chaise pliante blanche | **aucun prix publié** | **non établi** |
+| Table pliable résine 6 pi | **aucun prix publié** — la fiche porte la mention « Contactez-nous » à la place du prix | **non établi** |
+| Jeu gonflable (course à obstacles, glissade d'eau, etc.) | **aucun prix publié** | **non établi** |
+
+**Le point à retenir.** Eventuum est le cas extrême du modèle sur soumission :
+sur les fiches consultées, la ligne de prix est littéralement occupée par une
+invitation à téléphoner. Le client qui ouvre trois onglets ne peut pas comparer
+Eventuum à qui que ce soit sans passer un appel. Aucune fausse aubaine possible
+— mais aucune comparaison possible non plus.
+
+**Conditions**
+
+| Élément | Ce qui est écrit |
+| --- | --- |
+| Livraison | **non établi** — ni tarif, ni seuil de gratuité, ni grille kilométrique publiés |
+| Zone desservie | Laval, Montréal et Rive-Sud selon les titres de pages ; aucun rayon en kilomètres |
+| Dépôt | **non établi** |
+| Mode de paiement | **non établi** |
+| Annulation | **non établi** |
+| Taxes | **non établi** |
+| Réservation en ligne | **non** — pas de panier ni de paiement ; on téléphone au 438 771-5565 ou on écrit à l'adresse courriel publiée |
+| Autre fait relevé | horaire de comptoir publié, fermé le mardi, samedi et dimanche seulement de 10 h à 12 h |
+
+**Longueur d'une fiche produit**
+
+- Fiche chaise pliante blanche : **240 mots**, structurée en quatre
+  sous-sections (description, usage, produits complémentaires, arguments de
+  choix), avec caractéristiques techniques chiffrées : capacité 500 livres,
+  poids 7 livres, dimensions 17,75 × 17,75 po, matériaux.
+
+C'est la fiche la plus longue relevée jusqu'ici — et elle ne contient aucun
+prix. Le texte est visiblement écrit pour le référencement local : la formule
+« location de chaises pliantes blanches à Laval » y revient à cinq reprises.
+
 ---
 
 ## 4. Tableau comparatif
