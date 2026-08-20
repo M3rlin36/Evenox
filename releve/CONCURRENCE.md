@@ -345,8 +345,8 @@ maquillage, animation. Site très sommaire, sans boutique en ligne.
 
 | Article | Prix annoncé | Durée annoncée |
 | --- | --- | --- |
-| Chaise pliante | **non établi** — aucune chaise relevée au catalogue |
-| Table 6 pieds | **non établi** — aucune table relevée au catalogue |
+| Chaise pliante | **non établi** — aucune chaise relevée au catalogue | — |
+| Table 6 pieds | **non établi** — aucune table relevée au catalogue | — |
 | Jeu gonflable, entrée de gamme (« 3 en 1 », « Petit Prince ») | **60 $** | **du vendredi au lundi**, mention explicite en tête de page |
 | Jeu gonflable, milieu de gamme (« Sautez et glissez », « Sport ») | 75 $ | du vendredi au lundi |
 | Jeu gonflable, haut de gamme (« Méga », « Princesse », « Obstacle ») | 130 $ | du vendredi au lundi |
@@ -396,7 +396,7 @@ dédiée aux tables et chaises.
 | Chaise pliante blanche (adulte) | **3,50 $** la chaise | **non établi** — aucune durée écrite ; le prix est **conditionnel à la location d'un jeu gonflable** et inclut la livraison |
 | Chaise pliante blanche (enfant) | 3,50 $ la chaise | mêmes conditions |
 | Table rectangulaire 6 pieds (bois, 30 po × 72 po) | **12 $** la table | mêmes conditions : avec un jeu gonflable, livraison incluse, durée non écrite |
-| Jeu gonflable | **non établi** — les prix ne figurent pas sur la page relevée |
+| Jeu gonflable | **non établi** — les prix ne figurent pas sur la page relevée | — |
 
 **Le point à retenir.** C'est le seul concurrent relevé qui **inclut la
 livraison dans le prix du mobilier** — mais uniquement en vente liée : il faut
@@ -431,8 +431,8 @@ sur un achat.
 
 | Article | Prix annoncé | Durée annoncée |
 | --- | --- | --- |
-| Chaise pliante | **non établi** — aucune chaise au catalogue relevé |
-| Table 6 pieds | **non établi** — aucune table de banquet au catalogue relevé |
+| Chaise pliante | **non établi** — aucune chaise au catalogue relevé | — |
+| Table 6 pieds | **non établi** — aucune table de banquet au catalogue relevé | — |
 | Jeu gonflable « Parc Zoo » | 154 $ | 1 journée (voir grille ci-dessous) |
 | Jeu gonflable « Fun fou » | 175 $ | 1 journée |
 | Jeu gonflable « Île aux Pirates » | 198 $ | 1 journée |
@@ -493,9 +493,9 @@ Vieux-Port, Caisse de dépôt.
 
 | Article | Prix annoncé | Durée annoncée |
 | --- | --- | --- |
-| Chaise pliante | **non établi** — le catalogue comporte une catégorie « chaise pliante » (6 modèles), mais aucun prix exploitable n'a pu être relevé |
-| Table 6 pieds | **non établi** |
-| Jeu gonflable | sans objet — l'entreprise n'en loue pas |
+| Chaise pliante | **non établi** — le catalogue comporte une catégorie « chaise pliante » (6 modèles), mais aucun prix exploitable n'a pu être relevé | — |
+| Table 6 pieds | **non établi** | — |
+| Jeu gonflable | sans objet — l'entreprise n'en loue pas | — |
 
 **Le point à retenir.** Le site porte un avis explicite : les prix y sont **en
 cours de modification**, et ce sont les tarifs des soumissions transmises qui
