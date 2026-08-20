@@ -737,8 +737,11 @@ gratuite », « montage compris », « annulation gratuite 7 jours », « report
 pluie », « remplacement pendant l'événement ». Aucune ne figurait sur les fiches d'origine non
 plus ; les trois écrivent au contraire « Le montage n'est pas compris », et cette phrase reste.
 
-**Mirabel n'apparaît nulle part.** Le ramassage est écrit deux fois par fiche et toujours de la
-même façon : entrepôt de Sainte-Thérèse, 215, boulevard René-A.-Robert.
+**Mirabel n'apparaît nulle part**, ni avant ni après. Le lieu de ramassage est nommé deux fois
+par fiche au lieu de trois ou quatre : une fois dans la carte (« notre entrepôt de
+Sainte-Thérèse »), une fois au tableau, avec l'adresse. Le mot « ramassage » lui-même passe de
+9-11 occurrences à 6, dont quatre sont de simples repères de temps (« le solde au ramassage »,
+« avant le ramassage », « le décompte signé au ramassage », « un seul ramassage »).
 
 **Le dépôt, les taxes et le lien** sont présents sur les trois : 20 % du total, solde au
 ramassage, taxes en sus, et le lien vers la politique et les conditions de location.
@@ -785,8 +788,8 @@ alors après toute la carte, et ce choix-là est le vôtre.
 (« Prix pour ramassage à notre entrepôt de Sainte-Thérèse »), parce que c'est ce qui explique le
 prix et que ça doit se lire dans le premier écran. Et il est au tableau (« Entrepôt de
 Sainte-Thérèse — 215, boulevard René-A.-Robert »), parce que c'est le seul endroit où figure
-l'adresse, que vous protégez. Sur les fiches d'origine, la même information revenait six fois ;
-il en reste deux. Pour n'en avoir qu'une, il faut soit renoncer à l'adresse sur la fiche, soit
+l'adresse, que vous protégez. Sur les fiches d'origine, le lieu était nommé trois ou quatre fois ;
+il l'est deux fois. Pour n'en avoir qu'une, il faut soit renoncer à l'adresse sur la fiche, soit
 faire entrer l'adresse dans la ligne de la carte — et ça, c'est réécrire une phrase, donc je ne
 l'ai pas fait. Note : la fiche écrit « 215, boulevard René-A.-Robert » sans « local 100 », qui
 figure dans votre consigne et dans le pied de page du site. Je ne l'ai pas ajouté.
