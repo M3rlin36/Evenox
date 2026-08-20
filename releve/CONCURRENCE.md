@@ -611,5 +611,151 @@ marché à mettre un chiffre en face du mot livraison.
 
 ## 5. Conclusions
 
-_(à rédiger en fin de relevé : Evenox est-il cher ? Que disent-ils que nous ne
-disons pas ? Que disons-nous qu'ils ne disent pas ?)_
+### 5.1 Evenox est-il cher, dans la moyenne, ou bon marché ?
+
+**Sur le mobilier : bon marché, et le seul chiffre qui le contredit est un
+chiffre trompeur.**
+
+Sur les deux articles où la comparaison est possible à durée égale, Evenox est
+le moins cher du marché relevé :
+
+| Article, 48 h | Evenox | Le suivant | Le plus cher |
+| --- | --- | --- | --- |
+| Chaise pliante blanche | **3,00 $** | 3,50 $ (Fiesta, durée non écrite) | 6,25 $ (Les Ballounes) |
+| Table 6 pi | **10,00 $** | 12,00 $ (Fiesta, durée non écrite) | 16,00 $ (Sonolum, 8 $/j × 2) |
+
+Le seul concurrent qui affiche moins cher que nous est Sonolum, et l'écart
+disparaît dès qu'on lit la durée : sa chaise blanche à 2,25 $ est un tarif
+**par jour**, la nôtre à 3,00 $ couvre **48 heures**. Sur une fin de semaine,
+sa chaise coûte 4,50 $ avant rabais, la nôtre 3,00 $ ferme. Nous sommes
+**33 % moins chers** sur l'article le plus comparé du marché — et notre site
+l'affiche d'une façon qui ne le fait pas voir.
+
+Le forfait ramassage à **6,25 $ la place** (24 chaises, 4 tables, 4 nappes pour
+150 $) n'a aucun équivalent chiffré chez les huit concurrents : personne
+d'autre ne publie un prix par place.
+
+**Sur la livraison : nous paraissons chers, sans qu'on puisse le vérifier.**
+Notre plancher de 100 $ pour 10 km est le seul montant de livraison chiffré du
+marché avec celui de JS Party (à partir de 50 $). Nous ne sommes pas
+nécessairement plus chers — nous sommes les seuls à montrer le chiffre. Sept
+concurrents sur huit écrivent « des frais s'appliquent selon le secteur » et
+s'arrêtent là. Le client qui compare voit 100 $ d'un côté et rien de l'autre,
+et conclut que l'autre est moins cher. C'est le principal risque commercial
+identifié par ce relevé.
+
+**Sur le jeu gonflable : impossible de conclure.** Aucun prix de jeu gonflable
+Evenox n'a été trouvé publiquement. C'est en soi le constat : sur une catégorie
+où cinq des huit concurrents affichent des prix allant de 50 $ à 330 $, nous
+sommes invisibles au moment où le client compare.
+
+**Verdict global : bon marché sur le mobilier, non établi sur le gonflable, et
+perçu comme cher sur la livraison par le seul effet de la transparence.**
+
+### 5.2 Qu'est-ce que les concurrents disent que nous ne disons pas ?
+
+**1. Ce qui arrive s'il pleut.** C'est le point le plus net du relevé.
+**Quatre concurrents sur huit** publient une politique météo, et trois d'entre
+eux en font un argument de vente en haut de page :
+
+- Jeux AéroFun : annulation sans frais en cas de pluie, aucun dépôt de
+  réservation, aucun dépôt de sécurité — le tout regroupé sous un nom, la
+  « politique à 0 $ »
+- Les Ballounes : annulation gratuite jusqu'à 24 h avant la prise de possession
+- Sonolum : annulation gratuite en cas de météo défavorable sur les gonflables
+- Chez Fun Fou : report jusqu'à 48 h avant, acompte converti en note de crédit
+  valable un an
+
+Chez nous, la politique d'annulation est **non établie** sur les pages
+relevées. Un client qui organise un événement extérieur au Québec se pose cette
+question avant de payer. Trois de nos concurrents lui répondent avant qu'il
+demande ; nous ne lui répondons pas du tout.
+
+**2. Le rabais quand on garde plus longtemps, dit comme un cadeau.** Nous
+publions des paliers (3 jours × 1,5 ; 1 semaine × 2 ; 4 semaines × 4). Les
+concurrents publient la même mécanique à l'envers, formulée comme un gain :
+« la 2e journée est gratuite » (Les Ballounes), « dimanche gratuit » (Chez Fun
+Fou), « du vendredi au lundi » (JS Party). C'est la même arithmétique. Ce n'est
+pas la même lecture.
+
+**3. Les consignes de sécurité et les contraintes d'installation.** Sur les
+jeux et les machines, les concurrents chiffrent systématiquement l'ampérage
+requis, le dégagement autour du jeu, le nombre de surveillants, l'âge
+recommandé, le poids maximal par utilisateur et au total. Sonolum va jusqu'à
+publier un guide d'installation en PDF ; AéroFun publie un guide des parents.
+
+**4. Les frais accessoires, nommés d'avance.** Sonolum publie ses frais
+d'attente (15 minutes incluses, puis 32,50 $ par tranche de 30 minutes), ses
+frais de nettoyage, de retard, de second déplacement, et prévient que des frais
+de stationnement peuvent s'ajouter au centre-ville de Montréal.
+
+**5. Les assurances et les licences.** Sonolum affiche une assurance
+responsabilité civile mentionnant explicitement les jeux gonflables ; AéroFun
+affiche « licence et assurances » comme argument.
+
+**6. Ce qui est inclus dans l'installation.** Sonolum écrit que l'installation
+est gratuite pour les chapiteaux et les jeux gonflables commerciaux, et
+payante pour le reste. Nous écrivons que la livraison et le montage ne sont pas
+compris, mais pas ce qu'ils coûteraient.
+
+### 5.3 Qu'est-ce que nous disons qu'ils ne disent pas ?
+
+**1. La durée, à côté de chaque prix.** C'est notre avantage le plus net et le
+moins exploité. Nous écrivons « 3,00 $ · 48 h » ; le marché écrit « 6,25 $ par
+événement » (Les Ballounes, sans jamais définir « événement ») ou « 3,50 $ »
+(Fiesta, sans durée). **Sur huit concurrents, un seul — Sonolum — accole
+systématiquement une durée à ses prix.** Trois n'affichent aucun prix du tout.
+
+**2. Le montant exact prélevé aujourd'hui.** « Réservez avec 20 % du total. Le
+solde au ramassage. Le total exact s'affiche au panier, avant tout
+engagement. » Aucun concurrent ne dit à la fois combien on paie maintenant,
+quand on paie le reste, et qu'on voit le total avant de s'engager. Sonolum a
+des règles (50 $ minimum, 30 % au-delà de 250 $, solde 48 h avant) mais
+éparpillées sur une page de politique distincte, pas sur la fiche produit.
+
+**3. Ce que nous n'avons pas mesuré.** Notre fiche porte des mentions
+« [à relever à l'entrepôt] » à la place des cotes non vérifiées, avec la phrase
+qui l'explique. **Aucun concurrent relevé ne signale une donnée manquante** :
+le champ est simplement absent. C'est un marqueur d'honnêteté unique sur ce
+marché, et il ne coûte rien à conserver.
+
+**4. Les questions à poser ailleurs.** Notre fiche invite le client à demander
+partout s'il s'agit d'un prix de ramassage ou d'un prix livré, quel est le
+montant exact prélevé, et qui juge de l'état au retour. C'est un dispositif de
+comparaison que personne d'autre n'offre — et ce relevé montre qu'il est
+fondé : sept concurrents sur huit ne peuvent pas répondre à la première
+question par écrit.
+
+**5. Le prix par place, et l'écart avec l'unité.** « 6,25 $ par place, 18 $ de
+moins qu'à l'unité. » Personne d'autre ne publie de prix par place ni ne chiffre
+l'économie du forfait.
+
+**6. Un tarif de livraison, tout court.** Voir 5.1 : c'est à la fois notre
+faiblesse apparente et notre singularité réelle.
+
+**7. Le volume d'information.** 801 mots contre une médiane de 94. Nous
+écrivons huit fois plus que le marché. La question n'est donc pas d'en écrire
+davantage sur les 178 fiches, mais de vérifier que chacun de ces 801 mots
+travaille — et d'y ajouter les deux choses qui manquent : **ce qui arrive s'il
+pleut**, et **le prix des jeux gonflables**.
+
+### 5.4 Ce que ce relevé ne dit pas
+
+Par honnêteté méthodologique, voici les limites de ce document.
+
+- **Les prix des jeux gonflables Evenox sont non établis.** La comparaison de
+  la section 4.3 est donc incomplète du côté Evenox.
+- **Les rabais de durée de Sonolum ne sont pas chiffrés publiquement** (« rabais
+  de durée calculés au panier »). Les montants sur 48 h de la section 4.2 sont
+  des prix bruts ; l'écart réel avec Evenox est donc au maximum celui indiqué,
+  possiblement moindre.
+- **Aucun panier n'a été rempli, aucun compte créé, aucun formulaire envoyé.**
+  Tous les chiffres viennent de pages publiques consultées en lecture seule.
+- **Les durées « par événement »** de Les Ballounes et **les durées absentes**
+  de Fiesta ne peuvent pas être normalisées. Leurs prix ne sont pas
+  strictement comparables aux nôtres.
+- **La politique d'annulation d'Evenox est peut-être publiée ailleurs** sur le
+  site, dans une page de conditions générales qui n'a pas été atteinte par ce
+  relevé. Le constat porte sur ce qu'un client voit depuis une fiche produit.
+- **Aucun texte de concurrent n'a été recopié.** Ce document ne contient que
+  des faits, des chiffres et des constats.
