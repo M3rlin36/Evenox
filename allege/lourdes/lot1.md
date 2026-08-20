@@ -193,7 +193,7 @@ et le raisonnement.
 | **Déjà dit ailleurs sur la même page** | lignes de tableau « Article », « Marque », « Tarif », « Montage » ; libellés « Vos dates — on affiche ce qui est libre » et « Ajouter la table » (le bouton le dit) ; « Le total exact s'affiche au panier, avant tout engagement. » ; dans « Ce qui n'est pas relevé », les intitulés « Le nombre de raquettes », « Le nombre de balles » et « Le filet », qui répètent mot pour mot la ligne « Ce qui est fourni » du tableau | ≈ 100 |
 | **Pliage** — dicté | l'intitulé « L'encombrement une fois pliée, et le transport » | 8 |
 | **Variantes : il n'y en a pas** — dicté | ligne de tableau « Variantes : Aucune — un seul modèle, un seul prix. Le montant ci-dessus ne dépend d'aucun choix. » | ≈ 20 |
-| **Raisonnement derrière un fait déjà écrit** | les 8 explications de « Ce qui n'est pas relevé » (les 8 intitulés restent, la démonstration part), et la preuve de catalogue dans la cellule « Ce qui est fourni » | ≈ 640 |
+| **Raisonnement derrière un fait déjà écrit** | les huit explications de « Ce qui n'est pas relevé » (quatre intitulés restent, la démonstration part), et la preuve de catalogue dans la cellule « Ce qui est fourni » | ≈ 640 |
 | **Souvent loué avec : quatre maximum** — dicté | les cartes « Jeu de poches & Cornhole » et « Chaise Pliante Brune », et le paragraphe de classement « sur les 86 locations… réparties sur 69 dossiers… 13 fois » | ≈ 120 |
 | **Bloc entier hors de la liste des six blocs à garder** | toute la section « Quatre questions / Ce qu'il faut demander » et ses 4 questions dépliables | ≈ 750 |
 | **Formulation avantageuse** | « Sans frais cachés. » — voir le point 6 | 4 |
@@ -247,8 +247,8 @@ c'est la question de cette page. Elle coûterait environ 130 mots.
 Mesuré à 375 × 667 px. Le seuil est 667 px : au-delà, il faut défiler.
 
 **AVANT** — l'écran contient : le bandeau téléphone/courriel, le logo et le menu (0 → 242),
-le titre (256), la phrase d'accroche sur **4 lignes** (298 → 451), et le haut de la photo,
-coupée au milieu (467 → 667).
+le titre (256), la phrase d'accroche sur **six lignes** (298 → 451), et le haut de la photo,
+coupée par le bord de l'écran (467 → 667, sur 250 px de haut).
 
 | Élément | Position AVANT | Dans le premier écran ? |
 | --- | --- | --- |
@@ -262,7 +262,7 @@ coupée au milieu (467 → 667).
 | Lien vers les conditions | 1 693 | non |
 
 **APRÈS** — l'écran contient : le bandeau, le logo et le menu, le titre (256), la phrase
-sur **une ligne** (298 → 349), **la photo en entier** (365 → 615), et **le prix** (643).
+sur **deux lignes** (298 → 349), **la photo en entier** (365 → 615), et **le prix** (643).
 
 | Élément | Position APRÈS | Dans le premier écran ? |
 | --- | --- | --- |
@@ -430,7 +430,7 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 | **Variantes : une seule fois** — dicté | la ligne de tableau « Modèles : Deux — nommés au catalogue “7 pieds (commerciale)” et “7 pieds (résidentiel)”… Les deux sont à 120,00 $. » (le sélecteur du bouton affiche déjà les deux noms), la ligne de prix « Les deux modèles sont au même prix : ce montant ne dépend pas de votre choix. », le libellé « Choisir le modèle et ajouter la table », et l'intitulé « Ce qui distingue “commerciale” de “résidentiel” » dans la liste du bas | ≈ 90 |
 | **Déjà dit ailleurs sur la même page** | lignes de tableau « Article », « Marque », « Tarif », « Montage », « Puissance de la soufflerie » (la ligne Alimentation le dit déjà) ; libellé « Vos dates — on affiche ce qui est libre » ; « Le total exact s'affiche au panier, avant tout engagement. » ; les intitulés « Le nombre de palets », « Le nombre de poussoirs », « Les dimensions de la table », « L'alimentation électrique et le cordon » qui répètent le tableau | ≈ 130 |
 | **Pliage** — dicté | l'intitulé « Le poids, et si elle se plie » (le poids reste au tableau) | 8 |
-| **Raisonnement derrière un fait déjà écrit** | les 8 explications de « Ce qui n'est pas relevé », la preuve de catalogue dans la cellule « Ce qui est fourni », l'énumération « même prix, même structure tarifaire, même photo, même description, aucun poids, aucune propriété » | ≈ 700 |
+| **Raisonnement derrière un fait déjà écrit** | les huit explications de « Ce qui n'est pas relevé » (deux intitulés restent), la preuve de catalogue dans la cellule « Ce qui est fourni », l'énumération « même prix, même structure tarifaire, même photo, même description, aucun poids, aucune propriété » | ≈ 700 |
 | **Souvent loué avec : quatre maximum** — dicté | les cartes « Table Beer Pong » et « Jeux Arcade Multijeux », et le paragraphe de classement « les 64 lignes… 17 commandes distinctes… 4 fois » | ≈ 130 |
 | **Bloc entier hors de la liste des six blocs à garder** | toute la section « Quatre questions / Ce qu'il faut demander » et ses 4 questions dépliables | ≈ 850 |
 | **Formulation avantageuse** | « Sans frais cachés. » | 4 |
@@ -493,7 +493,7 @@ ponctuation qui restait était déjà là.
 ## 7. Le premier écran à 375 px
 
 **AVANT** — l'écran contient : le bandeau téléphone/courriel, le logo et le menu (0 → 242),
-le titre (256), la phrase d'accroche sur **4 lignes** (298 → 451), et le haut de la photo,
+le titre (256), la phrase d'accroche sur **six lignes** (298 → 451), et le haut de la photo,
 coupée (467 → 667).
 
 | Élément | Position AVANT | Dans le premier écran ? |
@@ -673,10 +673,10 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 
 | Motif | Ce qui part | Mots |
 | --- | --- | --- |
-| **Trop de titres sous le titre** — la phrase d'accroche faisait quatre phrases et cinq lignes de téléphone | « Deux formats. », « 120,00 $ ou 160,00 $ pour 24 h, ramassage à Sainte-Thérèse. », « Ce qui vient avec la table n'est pas établi : c'est écrit plus bas, sans détour. » — il reste la seule phrase que rien ne redit ailleurs : « 24 h, et non 48 h comme nos autres jeux de table. » | ≈ 30 |
+| **Trop de titres sous le titre** — la phrase d'accroche faisait quatre phrases et sept lignes de téléphone | « Deux formats. », « 120,00 $ ou 160,00 $ pour 24 h, ramassage à Sainte-Thérèse. », « Ce qui vient avec la table n'est pas établi : c'est écrit plus bas, sans détour. » — il reste la seule phrase que rien ne redit ailleurs : « 24 h, et non 48 h comme nos autres jeux de table. » | ≈ 30 |
 | **Notes de production, pas du texte client** | les six vignettes « À produire » (Le compte, Les balles, L'échelle, La hauteur, Le dessous, L'état) et le paragraphe « Six vues à produire… 1200 px minimum » | ≈ 220 |
 | **Méthode interne** | « Une étiquette a été cherchée sur la photo du dossier, et cette fois elle ne se lit pas… agrandi vingt-quatre fois, il reste une tache… » et « Pourquoi cette liste est aussi longue… nous choisissons le silence — et le téléphone. » | ≈ 300 |
-| **Durée : dite une fois de trop, quatre fois** | le paragraphe « La durée de base est de 24 h, pas de 48 h. Si vous avez consulté une autre fiche de jeu de table chez nous — ping-pong, air hockey, cornhole — vous y avez lu 48 h… Regardez bien vos dates avant de valider. » et la ligne de tableau « Durée » — la phrase sous le titre, le composant et le bloc de durée le disent déjà | ≈ 130 |
+| **Durée : la mention « 24 h » revenait 17 fois dans le texte** (comptées ligne par ligne) — il en reste 5 : la phrase sous le titre, les deux formats, le bloc de durée, et le « 1 jour » écrit par le composant | le paragraphe « La durée de base est de 24 h, pas de 48 h. Si vous avez consulté une autre fiche de jeu de table chez nous — ping-pong, air hockey, cornhole — vous y avez lu 48 h… Regardez bien vos dates avant de valider. » et la ligne de tableau « Durée » — la phrase sous le titre, le composant et le bloc de durée le disent déjà | ≈ 130 |
 | **Durées et multiplicateurs** — dicté | la ligne de tableau « Journée supplémentaire » (le bloc de durée écrit « 2 jours × 2 ») | ≈ 35 |
 | **Unités en inventaire** — dicté | les deux phrases d'inventaire du bloc des formats : « Deux unités au registre d'inventaire, les deux marquées en stock au 18 août 2026. Seul le calendrier dit ce qui est libre à votre date. » et celle du format commercial (voir le point 6, à confirmer) | ≈ 90 |
 | **Variantes : une seule fois** — dicté | les lignes de tableau « Variantes » et « Tarif » : le bloc « Les deux formats » et le sélecteur du bouton portent déjà les deux noms et les deux montants | ≈ 50 |
@@ -684,7 +684,7 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 | **Déjà dit ailleurs sur la même page** | lignes de tableau « Article », « Montage », « Nombre de joueurs » (le point sur l'âge et le nombre le dit déjà) ; libellés « Vos dates — on affiche ce qui est libre » et « Ajouter la table » ; « Le total exact s'affiche au panier, avant tout engagement. » ; les intitulés « Le nombre de balles », « Les dimensions de la table », « La hauteur de jeu », « Le poids, et le transport », « La marque » qui répètent le tableau | ≈ 140 |
 | **Pliage** — dicté | l'intitulé et l'explication « Le pliage, et l'encombrement » (voir le point 6) | ≈ 70 |
 | **Hors de la liste des six blocs à garder** | la ligne de tableau « Forfait qui la contient : Un seul, le Forfait Jeux Gonflable Le Basique… Il n'y ajoute aucune balle. » | ≈ 30 |
-| **Raisonnement derrière un fait déjà écrit** | les 8 explications de « Ce qui n'est pas relevé », et la preuve de catalogue dans la cellule « Ce qui est fourni » | ≈ 620 |
+| **Raisonnement derrière un fait déjà écrit** | les huit explications de « Ce qui n'est pas relevé » (deux intitulés restent), et la preuve de catalogue dans la cellule « Ce qui est fourni » | ≈ 620 |
 | **Souvent loué avec : quatre maximum** — dicté | les cartes « Jeux Arcade Multijeux » et « Table Pliante », et le paragraphe de classement « 17 commandes distinctes… 3 fois » | ≈ 110 |
 | **Bloc entier hors de la liste des six blocs à garder** | toute la section « Quatre questions / Ce qu'il faut demander » et ses 4 questions dépliables | ≈ 900 |
 | **Formulation avantageuse** | « Sans frais cachés. » | 4 |
@@ -738,14 +738,14 @@ Pour tout ce qui n'est pas écrit ici, il y a le téléphone. 514-559-1893
 ## 7. Le premier écran à 375 px
 
 **AVANT** — l'écran contient : le bandeau téléphone/courriel, le logo et le menu (0 → 242),
-le titre (256), la phrase d'accroche sur **cinq lignes** (298 → 477), et la première ligne de
-pixels de la photo (492 → 667). Le prix était à **770**, le bouton à **2 673** : il fallait
+le titre (256), la phrase d'accroche sur **sept lignes** (298 → 477), et les 175 premiers
+pixels de la photo (492 → 667, sur 250 px de haut). Le prix était à **770**, le bouton à **2 673** : il fallait
 défiler **quatre écrans** pour ajouter la table au panier.
 
 | Élément | Position AVANT | Dans le premier écran ? |
 | --- | --- | --- |
 | Titre | 256 | oui |
-| Phrase sous le titre | 298 (179 px de haut, 5 lignes) | oui |
+| Phrase sous le titre | 298 (179 px de haut, 7 lignes) | oui |
 | Photo | 492 | à peine |
 | **Prix** | **770** | **non — 103 px trop bas** |
 | Durée sous le prix | 810 | non |
@@ -756,7 +756,7 @@ défiler **quatre écrans** pour ajouter la table au panier.
 | **Bouton Ajouter au panier** | **2 673** | **non — 2 006 px trop bas** |
 
 **APRÈS** — l'écran contient : le bandeau, le logo et le menu, le titre (256), la phrase sur
-**une ligne** (298 → 349), **la photo en entier** (365 → 615), et **le prix** (643).
+**deux lignes** (298 → 349), **la photo en entier** (365 → 615), et **le prix** (643).
 
 | Élément | Position APRÈS | Dans le premier écran ? |
 | --- | --- | --- |
