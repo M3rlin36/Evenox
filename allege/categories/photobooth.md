@@ -275,7 +275,7 @@ Classique située 200 px plus bas. C'est aussi le bloc dont l'alignement est cas
 **Le paragraphe du bandeau : 12 mots sur 35.** « Photos illimitées. Impression HD instantanée.
 Vidéobooth 360°. Technicien inclus. Clé en main. » Cinq affirmations, cinq répétitions de ce
 qui suit. Les 23 mots restants sont le tarif de livraison, conservé, mais plus bas : à 375 px,
-il occupait trois des six lignes du premier écran et repoussait le prix hors de l'écran.
+il occupait quatre des sept lignes du premier écran et repoussait le prix hors de l'écran.
 
 **Le portfolio : 16 mots, réduits à « 500+ événements ».** « Mariages, galas, fêtes privées,
 corporatifs — on rend chaque moment mémorable » : les quatre types d'événements sont déjà dans
@@ -293,7 +293,7 @@ rien. Les douze caractéristiques techniques, elles, sont toutes conservées.
 vite », « Les fins de semaine partent vite — vérifiez votre date dès maintenant », « Produit
 star », « Tendance 2026 », « Le plus populaire », « Tarification simple », « Nos services »,
 « Simple comme bonjour », « Ce qui est inclus », « Portfolio ». Aucune ne porte de fait. La
-première est de toute façon invisible sur un téléphone (voir 7a).
+première est de toute façon invisible sur un téléphone (voir 7b).
 
 **Les titres sans fait et l'appel final : 29 mots.** « Tout est inclus. Zéro stress. », « Créez
 des souvenirs inoubliables », « Trois formules clé en main. Tout inclus, zéro surprise. »,
@@ -339,7 +339,7 @@ six fois que la livraison est en sus. Coupé.
 
 **g) Le compteur du bandeau part de 0.** Le HTML livre « 0 » et un script l'anime jusqu'à 500
 (`data-target="500"`). Sans JavaScript, le visiteur lit « 0 + Événements ». À 375 px, la
-question ne se pose même pas : ce bloc est coupé par le bandeau (voir 7a). Ailleurs sur la
+question ne se pose même pas : ce bloc est coupé par le bandeau (voir 7b). Ailleurs sur la
 page, un titre dit « Plus de 500 événements animés ».
 
 **h) « Réponse garantie ».** Le mot « garantie » accompagne le 24 h dans le bandeau. J'ai gardé
