@@ -11,13 +11,43 @@ Généré le 2026-08-29. Aucun conflit n'est tranché : c'est une décision d'af
 | Produits à prix unique | 169 |
 | Produits en conflit (même id, prix différents) | 2 |
 | Assistant jeux (catégorie) | 70 |
+| Assistant persona (év) | 0 |
+| Calculateur fête | 0 |
 
-## Sources absentes de ce clone
+## Sources absentes — recherche 2026-08-29 (2e passe)
 
-Relu en GET sur evenox.ca : `/assistant-evenement/`, `/calcule-ton-evenement/`, `/calculateur-fete/`, `/calculateur/`, `/calculer-mon-evenement/` → **404**. Rien n'a été inventé.
+Toujours **introuvables**. Rien n’a été inventé. Le vérificateur ignore ces chemins s’ils n’existent pas sur disque.
 
 - `assistant-evenement/ev-widget.js`
 - `calculateur-fete.html`
+
+### Où on a cherché
+
+| Endroit | Résultat |
+|---|---|
+| Workspace `/workspace` et `/tmp` (caches live) | Aucun `ev-widget*` / `calculateur-fete*` |
+| Toutes les branches git (`git ls-tree -r` sur chaque ref) | Aucun de ces chemins n’a jamais été commité |
+| Drive (titres `ev-widget`, `calculateur-fete`, `assistant-evenement`, `payload`, `.js`/`.html` ; texte `expressActif` / `49289`) | 0 fichier source |
+| Gmail (pièces `filename:js`/`html`, sujets widget/calculateur, chaînes `expressActif` / `49289`) | 0 pièce jointe |
+| Notion (CURSOR-BRIEF, ev-widget, 49289, expressActif) | Pages opérationnelles seulement, pas le JS |
+| Slack public (`ev-widget`, `calculateur-fete`, `assistant-evenement`) | 0 message |
+| GitHub `M3rlin36` (code `ev-widget.js`, `expressActif`, `49289`) | Repo Evenox uniquement, fichiers absents |
+| Transcripts agents (`bc-7ed6825a`, `bc-99910cae`, `bc-69ba5bba`, `bc-f64e73f8`) | Le parent a déjà conclu 404 ; les autres n’ont jamais vu les fichiers |
+| Sitemap Yoast `page-sitemap.xml` (226 pages publiées) | Aucun slug `assistant-evenement` ni `calculateur*` |
+
+### GET publics evenox.ca (3 s entre requêtes ; stop 403/429 — aucun 403/429)
+
+1re passe (déjà documentée) : `/assistant-evenement/`, `/calcule-ton-evenement/`, `/calculateur-fete/`, `/calculateur/`, `/calculer-mon-evenement/` → **404**.
+
+2e passe : `/calculateur-de-fete/`, `/calculateur-evenement/`, `/calcule-ta-fete/`, `/assistant-persona/`, `/calculateur-secteur/`, `/calculateur-secteur-v2/` → **404**.
+
+REST public `GET /wp-json/wp/v2/pages?search=assistant` : pages déjà extraites (`location-decoration-evenementielle`, `location-jeux-geants`, `location-jeux-exterieurs` 4839, `chapiteaux-structures-evenementielles`). Pas de slug `assistant-evenement` (la page prévue au §7 est draft / pas encore créée).
+
+REST public `GET /wp-json/wp/v2/pages?search=calculateur` : `location-tables-chaises` 6569, `nos-forfaits-tout-inclus`, forfaits mobilier — déjà dans le catalogue. Pas de `calculateur-fete`.
+
+### Blocage
+
+Les ~95 produits persona et la grille du calculateur de fête (dont `expressActif: false`) vivent seulement dans `C:\Users\Admin\Evenox` chez Alexandre. Sans ces deux fichiers, le chantier 1 ne peut pas atteindre la couverture « ~95 persona ». Relancer l’extracteur dès qu’ils sont poussés ici.
 
 ## Conflits de prix (même identifiant)
 

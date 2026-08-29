@@ -42,11 +42,31 @@ md += `| Produits fusionnés | ${produits.length} |\n`;
 md += `| Produits à prix unique | ${produits.filter((p) => p.prix != null).length} |\n`;
 md += `| Produits en conflit (même id, prix différents) | ${liste.length} |\n`;
 md += `| Assistant jeux (catégorie) | ${produits.filter((p) => p.categorie === 'assistant-jeux' || p.sources.some((s) => s.fichier.includes('jw-widget'))).length} |\n`;
+  md += `| Assistant persona (év) | ${produits.filter((p) => p.categorie === 'assistant-evenement' || p.sources.some((s) => s.fichier.includes('ev-widget'))).length} |\n`;
+  md += `| Calculateur fête | ${produits.filter((p) => p.categorie === 'calculateur-fete' || p.sources.some((s) => s.fichier.includes('calculateur-fete'))).length} |\n`;
 
 if (absents.length) {
-  md += '\n## Sources absentes de ce clone\n\n';
-  md += "Relu en GET sur evenox.ca : `/assistant-evenement/`, `/calcule-ton-evenement/`, `/calculateur-fete/`, `/calculateur/`, `/calculer-mon-evenement/` → **404**. Rien n'a été inventé.\n\n";
+  md += '\n## Sources absentes — recherche 2026-08-29 (2e passe)\n\n';
+  md += 'Toujours **introuvables**. Rien n’a été inventé. Le vérificateur ignore ces chemins s’ils n’existent pas sur disque.\n\n';
   for (const a of absents) md += `- \`${a}\`\n`;
+  md += '\n### Où on a cherché\n\n';
+  md += '| Endroit | Résultat |\n|---|---|\n';
+  md += '| Workspace `/workspace` et `/tmp` (caches live) | Aucun `ev-widget*` / `calculateur-fete*` |\n';
+  md += '| Toutes les branches git (`git ls-tree -r` sur chaque ref) | Aucun de ces chemins n’a jamais été commité |\n';
+  md += '| Drive (titres `ev-widget`, `calculateur-fete`, `assistant-evenement`, `payload`, `.js`/`.html` ; texte `expressActif` / `49289`) | 0 fichier source |\n';
+  md += '| Gmail (pièces `filename:js`/`html`, sujets widget/calculateur, chaînes `expressActif` / `49289`) | 0 pièce jointe |\n';
+  md += '| Notion (CURSOR-BRIEF, ev-widget, 49289, expressActif) | Pages opérationnelles seulement, pas le JS |\n';
+  md += '| Slack public (`ev-widget`, `calculateur-fete`, `assistant-evenement`) | 0 message |\n';
+  md += '| GitHub `M3rlin36` (code `ev-widget.js`, `expressActif`, `49289`) | Repo Evenox uniquement, fichiers absents |\n';
+  md += '| Transcripts agents (`bc-7ed6825a`, `bc-99910cae`, `bc-69ba5bba`, `bc-f64e73f8`) | Le parent a déjà conclu 404 ; les autres n’ont jamais vu les fichiers |\n';
+  md += '| Sitemap Yoast `page-sitemap.xml` (226 pages publiées) | Aucun slug `assistant-evenement` ni `calculateur*` |\n';
+  md += '\n### GET publics evenox.ca (3 s entre requêtes ; stop 403/429 — aucun 403/429)\n\n';
+  md += '1re passe (déjà documentée) : `/assistant-evenement/`, `/calcule-ton-evenement/`, `/calculateur-fete/`, `/calculateur/`, `/calculer-mon-evenement/` → **404**.\n\n';
+  md += '2e passe : `/calculateur-de-fete/`, `/calculateur-evenement/`, `/calcule-ta-fete/`, `/assistant-persona/`, `/calculateur-secteur/`, `/calculateur-secteur-v2/` → **404**.\n\n';
+  md += 'REST public `GET /wp-json/wp/v2/pages?search=assistant` : pages déjà extraites (`location-decoration-evenementielle`, `location-jeux-geants`, `location-jeux-exterieurs` 4839, `chapiteaux-structures-evenementielles`). Pas de slug `assistant-evenement` (la page prévue au §7 est draft / pas encore créée).\n\n';
+  md += 'REST public `GET /wp-json/wp/v2/pages?search=calculateur` : `location-tables-chaises` 6569, `nos-forfaits-tout-inclus`, forfaits mobilier — déjà dans le catalogue. Pas de `calculateur-fete`.\n\n';
+  md += '### Blocage\n\n';
+  md += 'Les ~95 produits persona et la grille du calculateur de fête (dont `expressActif: false`) vivent seulement dans `C:\\Users\\Admin\\Evenox` chez Alexandre. Sans ces deux fichiers, le chantier 1 ne peut pas atteindre la couverture « ~95 persona ». Relancer l’extracteur dès qu’ils sont poussés ici.\n';
 }
 
 md += '\n## Conflits de prix (même identifiant)\n\n';
