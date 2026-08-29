@@ -1,0 +1,3176 @@
+{
+  "genereLe": "2026-08-29",
+  "note": "prix = null quand les sources divergent. Aucun conflit n'est tranché.",
+  "sourcesAbsentes": [
+    "assistant-evenement/ev-widget.js",
+    "calculateur-fete.html"
+  ],
+  "produits": [
+    {
+      "id": "air-hockey",
+      "nom": "Air Hockey",
+      "categorie": "landing-jeux-exterieurs",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 11,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "baby-foot",
+      "nom": "Baby-foot",
+      "categorie": "landing-jeux-exterieurs",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 12,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "balle-de-golf",
+      "nom": "Balle de Golf",
+      "categorie": "jeux-geants",
+      "prix": 1,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 118,
+          "prix": 1
+        }
+      ]
+    },
+    {
+      "id": "ballon-soccer",
+      "nom": "Ballon Soccer",
+      "categorie": "jeux-geants",
+      "prix": 5,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 119,
+          "prix": 5
+        }
+      ]
+    },
+    {
+      "id": "bar",
+      "nom": "Bar courbé à DEL",
+      "categorie": "chapiteaux",
+      "prix": 150,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 150
+        }
+      ]
+    },
+    {
+      "id": "baril",
+      "nom": "Baril d'ancrage",
+      "categorie": "chapiteaux",
+      "prix": 35,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 35
+        }
+      ]
+    },
+    {
+      "id": "basket-pong",
+      "nom": "Basket Pong",
+      "categorie": "jeux-geants",
+      "prix": 80,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 115,
+          "prix": 80
+        }
+      ]
+    },
+    {
+      "id": "baton-de-golf",
+      "nom": "Baton de Golf",
+      "categorie": "jeux-geants",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 120,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "bbq",
+      "nom": "BBQ",
+      "categorie": "chapiteaux",
+      "prix": 160,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 160
+        }
+      ]
+    },
+    {
+      "id": "beer-pong-table-8-pi",
+      "nom": "Beer pong (table 8 pi)",
+      "categorie": "mobilier",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 4,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "billard-portable",
+      "nom": "Billard portable",
+      "categorie": "mobilier",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 10,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "blanche",
+      "nom": "Pliante blanche",
+      "categorie": "mobilier",
+      "prix": 3,
+      "unite": "location",
+      "pas": 5,
+      "max": 200,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 139,
+          "prix": 3
+        }
+      ]
+    },
+    {
+      "id": "brune",
+      "nom": "Pliante brune",
+      "categorie": "mobilier",
+      "prix": 2,
+      "unite": "location",
+      "pas": 5,
+      "max": 520,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 138,
+          "prix": 2
+        }
+      ]
+    },
+    {
+      "id": "chaise-chiavari-blanche",
+      "nom": "Chaise Chiavari blanche",
+      "categorie": "chapiteaux",
+      "prix": 8,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 8
+        }
+      ]
+    },
+    {
+      "id": "chaise-chiavari-transparente",
+      "nom": "Chaise Chiavari transparente",
+      "categorie": "chapiteaux",
+      "prix": 8,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 8
+        }
+      ]
+    },
+    {
+      "id": "chaise-haute-noire",
+      "nom": "Chaise haute noire",
+      "categorie": "mobilier",
+      "prix": 8,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 91,
+          "prix": 8
+        }
+      ]
+    },
+    {
+      "id": "chaise-martha",
+      "nom": "Chaise Martha, résine blanche",
+      "categorie": "chapiteaux",
+      "prix": 5,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 5
+        }
+      ]
+    },
+    {
+      "id": "chaise-pliante-blanche",
+      "nom": "Chaise pliante blanche",
+      "categorie": "chapiteaux",
+      "prix": 3,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 3
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 91,
+          "prix": 3
+        }
+      ]
+    },
+    {
+      "id": "chaise-pliante-brune",
+      "nom": "Chaise pliante brune",
+      "categorie": "chapiteaux",
+      "prix": 2,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 2
+        }
+      ]
+    },
+    {
+      "id": "chaise-rembourree",
+      "nom": "Chaise rembourrée",
+      "categorie": "chapiteaux",
+      "prix": 4,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 4
+        }
+      ]
+    },
+    {
+      "id": "chauffage",
+      "nom": "Chauffe-terrasse au propane",
+      "categorie": "chapiteaux",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "chauffage-pyr",
+      "nom": "Chauffe-terrasse pyramide",
+      "categorie": "chapiteaux",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "chiavari_bl",
+      "nom": "Chiavari blanche",
+      "categorie": "mobilier",
+      "prix": 8,
+      "unite": "location",
+      "pas": 5,
+      "max": 120,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 143,
+          "prix": 8
+        }
+      ]
+    },
+    {
+      "id": "chiavari_tr",
+      "nom": "Chiavari transparente",
+      "categorie": "mobilier",
+      "prix": 8,
+      "unite": "location",
+      "pas": 5,
+      "max": 34,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 142,
+          "prix": 8
+        }
+      ]
+    },
+    {
+      "id": "chips-de-poker-profesionnel",
+      "nom": "Chips de poker profesionnel",
+      "categorie": "arcade",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 113,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "connect-4-geant",
+      "nom": "Connect 4 Géant",
+      "categorie": "jeux-geants",
+      "prix": null,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 104,
+          "prix": 60
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 165,
+          "prix": 80
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 2,
+          "prix": 80
+        }
+      ]
+    },
+    {
+      "id": "cornhole-jeu-de-poches",
+      "nom": "Cornhole (jeu de poches)",
+      "categorie": "jeux-geants",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 173,
+          "prix": 40
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 3,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "course-de-sac-a-patate",
+      "nom": "Course de Sac à Patate",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 121,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "croquet-geant",
+      "nom": "Croquet géant",
+      "categorie": "jeux-geants",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 166,
+          "prix": 40
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 5,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "devine-tete-geant",
+      "nom": "Devine Tête géant",
+      "categorie": "jeux-geants",
+      "prix": 150,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 8,
+          "prix": 150
+        }
+      ]
+    },
+    {
+      "id": "divan-gonflable",
+      "nom": "Divan Gonflable",
+      "categorie": "gonflables",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 124,
+          "prix": 20
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 144,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "dunk-tank",
+      "nom": "Dunk Tank",
+      "categorie": "gonflables",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 121,
+          "prix": 100
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 141,
+          "prix": 100
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 26,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "dunk-tank-ext",
+      "nom": "Dunk Tank",
+      "categorie": "gonflables",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 185,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "ecran-gonflable-16-pied",
+      "nom": "Écran Gonflable 16 pied",
+      "categorie": "gonflables",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 126,
+          "prix": 50
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 146,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "ecran-gonflable-20-pieds",
+      "nom": "Écran Gonflable 20 pieds",
+      "categorie": "gonflables",
+      "prix": 60,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 125,
+          "prix": 60
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 145,
+          "prix": 60
+        }
+      ]
+    },
+    {
+      "id": "ensemble-pop-golf-xl",
+      "nom": "Ensemble Pop Golf XL",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 122,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "express-72h-100",
+      "nom": "Express 72 h — 100 pers",
+      "categorie": "forfaits",
+      "prix": 420,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 99,
+          "prix": 420
+        }
+      ]
+    },
+    {
+      "id": "express-72h-20",
+      "nom": "Express 72 h — 20 pers",
+      "categorie": "forfaits",
+      "prix": 90,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 99,
+          "prix": 90
+        }
+      ]
+    },
+    {
+      "id": "express-72h-50",
+      "nom": "Express 72 h — 50 pers",
+      "categorie": "forfaits",
+      "prix": 210,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 99,
+          "prix": 210
+        }
+      ]
+    },
+    {
+      "id": "extincteur",
+      "nom": "Extincteur",
+      "categorie": "chapiteaux",
+      "prix": 25,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 25
+        }
+      ]
+    },
+    {
+      "id": "forfait-arcade",
+      "nom": "Forfait arcade",
+      "categorie": "forfaits",
+      "prix": 299,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 95,
+          "prix": 299
+        }
+      ]
+    },
+    {
+      "id": "forfait-corpo-1195",
+      "nom": "Forfait corpo 1195",
+      "categorie": "forfaits",
+      "prix": 1195,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 94,
+          "prix": 1195
+        }
+      ]
+    },
+    {
+      "id": "forfait-corpo-1995",
+      "nom": "Forfait corpo 1995",
+      "categorie": "forfaits",
+      "prix": 1995,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 94,
+          "prix": 1995
+        }
+      ]
+    },
+    {
+      "id": "forfait-corpo-2495",
+      "nom": "Forfait corpo 2495",
+      "categorie": "forfaits",
+      "prix": 2495,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 94,
+          "prix": 2495
+        }
+      ]
+    },
+    {
+      "id": "forfait-decor-wow",
+      "nom": "Décor WOW",
+      "categorie": "forfaits",
+      "prix": 899,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 95,
+          "prix": 899
+        }
+      ]
+    },
+    {
+      "id": "forfait-essentiel",
+      "nom": "Forfait Essentiel",
+      "categorie": "forfaits",
+      "prix": 449,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 14,
+          "prix": 449
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 87,
+          "prix": 449
+        }
+      ]
+    },
+    {
+      "id": "forfait-grande-salle",
+      "nom": "Forfait Grande Salle",
+      "categorie": "forfaits",
+      "prix": 849,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 16,
+          "prix": 849
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 89,
+          "prix": 849
+        }
+      ]
+    },
+    {
+      "id": "forfait-jeux-essentiel",
+      "nom": "Forfait Jeux Essentiel",
+      "categorie": "forfaits",
+      "prix": 499,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 94,
+          "prix": 499
+        }
+      ]
+    },
+    {
+      "id": "forfait-jeux-premium",
+      "nom": "Forfait Jeux Premium",
+      "categorie": "forfaits",
+      "prix": 599,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 94,
+          "prix": 599
+        }
+      ]
+    },
+    {
+      "id": "forfait-mega-fete",
+      "nom": "Forfait Méga Fête",
+      "categorie": "forfaits",
+      "prix": 1099,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 94,
+          "prix": 1099
+        }
+      ]
+    },
+    {
+      "id": "forfait-mobilier-1049",
+      "nom": "Forfait mobilier 1049 (calculateur fête)",
+      "categorie": "forfaits",
+      "prix": 1049,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 96,
+          "prix": 1049
+        }
+      ]
+    },
+    {
+      "id": "forfait-mobilier-649",
+      "nom": "Forfait mobilier 649 (calculateur fête)",
+      "categorie": "forfaits",
+      "prix": 649,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 96,
+          "prix": 649
+        }
+      ]
+    },
+    {
+      "id": "forfait-mobilier-849",
+      "nom": "Forfait mobilier 849 (calculateur fête)",
+      "categorie": "forfaits",
+      "prix": 849,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 96,
+          "prix": 849
+        }
+      ]
+    },
+    {
+      "id": "forfait-photobooth-1099",
+      "nom": "Photobooth 1099",
+      "categorie": "forfaits",
+      "prix": 1099,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 95,
+          "prix": 1099
+        }
+      ]
+    },
+    {
+      "id": "forfait-photobooth-799",
+      "nom": "Photobooth 799",
+      "categorie": "forfaits",
+      "prix": 799,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 95,
+          "prix": 799
+        }
+      ]
+    },
+    {
+      "id": "forfait-reception",
+      "nom": "Forfait Réception",
+      "categorie": "forfaits",
+      "prix": 649,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 15,
+          "prix": 649
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 88,
+          "prix": 649
+        }
+      ]
+    },
+    {
+      "id": "forfait-soiree-signature",
+      "nom": "Soirée Signature",
+      "categorie": "forfaits",
+      "prix": 1449,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 95,
+          "prix": 1449
+        }
+      ]
+    },
+    {
+      "id": "guess-who-geant-personnalisation-complete",
+      "nom": "Guess Who Géant Personnalisation Complète",
+      "categorie": "jeux-geants",
+      "prix": 400,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 105,
+          "prix": 400
+        }
+      ]
+    },
+    {
+      "id": "guess-who-geant-regulier",
+      "nom": "Guess Who Géant Régulier",
+      "categorie": "jeux-geants",
+      "prix": 150,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 106,
+          "prix": 150
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 168,
+          "prix": 150
+        }
+      ]
+    },
+    {
+      "id": "guess-who-xl",
+      "nom": "Guess Who XL",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 107,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "guirlande",
+      "nom": "Guirlande lumineuse 50 pi",
+      "categorie": "chapiteaux",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "jenga-geant",
+      "nom": "Jenga Géant",
+      "categorie": "jeux-geants",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 98,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "jetons-de-poker-professionnels-loc",
+      "nom": "Jetons de poker professionnels",
+      "categorie": "arcade",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 109,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "jeu-arcade-pac-man",
+      "nom": "Jeu Arcade Pac Man",
+      "categorie": "arcade",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 100,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "jeu-de-dames-geant",
+      "nom": "Jeu de dames géant",
+      "categorie": "jeux-geants",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 14,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "jeu-de-parachute",
+      "nom": "Jeu de parachute",
+      "categorie": "landing-jeux-exterieurs",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 23,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "jeu-de-pichenettes",
+      "nom": "Jeu de pichenettes",
+      "categorie": "landing-jeux-exterieurs",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 22,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "jeu-de-plinko-xl",
+      "nom": "Jeu de Plinko XL",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 108,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "jeu-de-skeeball-arcade-9-pieds",
+      "nom": "Jeu de Skeeball Arcade (9 pieds)",
+      "categorie": "arcade",
+      "prix": 150,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 99,
+          "prix": 150
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 149,
+          "prix": 150
+        }
+      ]
+    },
+    {
+      "id": "jeu-de-tetris-geant",
+      "nom": "Jeu de Tétris Géant",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 100,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "jeu-gonflable-mini-princesse",
+      "nom": "Princesses",
+      "categorie": "gonflables",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 99,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 119,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "jeu-gonflable-minions",
+      "nom": "Minions",
+      "categorie": "gonflables",
+      "prix": 150,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 103,
+          "prix": 150
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 123,
+          "prix": 150
+        }
+      ]
+    },
+    {
+      "id": "jeu-gonflable-palmiers",
+      "nom": "Jeu Gonflable Palmiers",
+      "categorie": "gonflables",
+      "prix": 180,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 113,
+          "prix": 180
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 133,
+          "prix": 180
+        }
+      ]
+    },
+    {
+      "id": "jeu-gonflable-pat-patrouille-xl",
+      "nom": "Pat Patrouille XL",
+      "categorie": "gonflables",
+      "prix": 150,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 104,
+          "prix": 150
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 124,
+          "prix": 150
+        }
+      ]
+    },
+    {
+      "id": "jeu-gonflable-reine-des-neiges",
+      "nom": "Jeu Gonflable Reine des Neiges",
+      "categorie": "gonflables",
+      "prix": 200,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 114,
+          "prix": 200
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 134,
+          "prix": 200
+        }
+      ]
+    },
+    {
+      "id": "jeu-gonflable-spiderman",
+      "nom": "Spiderman",
+      "categorie": "gonflables",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 100,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 120,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "jeu-gonflable-spiderman-xl",
+      "nom": "Spiderman XL",
+      "categorie": "gonflables",
+      "prix": 200,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 110,
+          "prix": 200
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 130,
+          "prix": 200
+        }
+      ]
+    },
+    {
+      "id": "jeu-pong-geant",
+      "nom": "Jeu Pong Géant",
+      "categorie": "jeux-geants",
+      "prix": 150,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 116,
+          "prix": 150
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 175,
+          "prix": 150
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 7,
+          "prix": 150
+        }
+      ]
+    },
+    {
+      "id": "jeu-putterball",
+      "nom": "Jeu Putterball",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 123,
+          "prix": 50
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 176,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "jeux-arcade-multijeux-100-jeux",
+      "nom": "Jeux Arcade Multijeux (100+ Jeux)",
+      "categorie": "arcade",
+      "prix": 140,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 98,
+          "prix": 140
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 148,
+          "prix": 140
+        }
+      ]
+    },
+    {
+      "id": "jeux-dames-geant",
+      "nom": "Jeux Dames Géant",
+      "categorie": "jeux-geants",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 102,
+          "prix": 100
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 169,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "jeux-de-parachute-location",
+      "nom": "Jeux de Parachute",
+      "categorie": "jeux-geants",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 111,
+          "prix": 40
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 182,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-avengers",
+      "nom": "Avengers",
+      "categorie": "gonflables",
+      "prix": 180,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 105,
+          "prix": 180
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 125,
+          "prix": 180
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-chateau-du-prince",
+      "nom": "Jeux Gonflable Château du Prince",
+      "categorie": "gonflables",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 115,
+          "prix": 100
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 135,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-chateau-multicolore",
+      "nom": "Jeux Gonflable Château Multicolore",
+      "categorie": "gonflables",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 116,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 136,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-flash-mcqueen",
+      "nom": "Jeux Gonflable Flash McQueen",
+      "categorie": "gonflables",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 117,
+          "prix": 100
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 137,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-forteresse",
+      "nom": "Forteresse",
+      "categorie": "gonflables",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 98,
+          "prix": 100
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 118,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-moyen-bouncer",
+      "nom": "Moyen Bouncer",
+      "categorie": "gonflables",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 97,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 117,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-parcours-dobstacle",
+      "nom": "Parcours d’Obstacle",
+      "categorie": "gonflables",
+      "prix": 160,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 106,
+          "prix": 160
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 126,
+          "prix": 160
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-pat-patrouille-2",
+      "nom": "Pat Patrouille",
+      "categorie": "gonflables",
+      "prix": 140,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 101,
+          "prix": 140
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 121,
+          "prix": 140
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-reine-des-neiges-co",
+      "nom": "Reine des Neiges XL",
+      "categorie": "gonflables",
+      "prix": 180,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 107,
+          "prix": 180
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 127,
+          "prix": 180
+        }
+      ]
+    },
+    {
+      "id": "jeux-gonflable-terrain-de-basket",
+      "nom": "Terrain de Basket",
+      "categorie": "gonflables",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 120,
+          "prix": 100
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 140,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "jeux-mario-kart-nintendo-switch-lo",
+      "nom": "Jeux Mario Kart Nintendo Switch",
+      "categorie": "arcade",
+      "prix": 25,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 118,
+          "prix": 25
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 163,
+          "prix": 25
+        }
+      ]
+    },
+    {
+      "id": "jeux-pichenettes",
+      "nom": "Jeu Pichenotte",
+      "categorie": "jeux-geants",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 99,
+          "prix": 40
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 172,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "joystick-pac-man",
+      "nom": "Joystick Pac Man",
+      "categorie": "arcade",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 101,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "kan-jam",
+      "nom": "Kan Jam",
+      "categorie": "assistant-jeux",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 177,
+          "prix": 20
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 19,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "lancer-de-hache",
+      "nom": "Lancer de hache",
+      "categorie": "assistant-jeux",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 178,
+          "prix": 40
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 21,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "laser-tag",
+      "nom": "Laser Tag",
+      "categorie": "gonflables",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 122,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 142,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "location-ensemble-golf-xl",
+      "nom": "Location d’ensemble de golf XL (géant)",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 112,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "location-jeu-gonflable-licorne",
+      "nom": "Licorne",
+      "categorie": "gonflables",
+      "prix": 200,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 109,
+          "prix": 200
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 129,
+          "prix": 200
+        }
+      ]
+    },
+    {
+      "id": "location-jeu-gonflable-mario-bros",
+      "nom": "Mario Bros",
+      "categorie": "gonflables",
+      "prix": 200,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 111,
+          "prix": 200
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 131,
+          "prix": 200
+        }
+      ]
+    },
+    {
+      "id": "location-jeu-gonflable-mickey-mous",
+      "nom": "Mickey Mouse",
+      "categorie": "gonflables",
+      "prix": 280,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 112,
+          "prix": 280
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 132,
+          "prix": 280
+        }
+      ]
+    },
+    {
+      "id": "location-jeu-gonflable-princesse-x",
+      "nom": "Princesse XL",
+      "categorie": "gonflables",
+      "prix": 180,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 108,
+          "prix": 180
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 128,
+          "prix": 180
+        }
+      ]
+    },
+    {
+      "id": "location-jeu-kerplunk-xl",
+      "nom": "Jeux de KerPlunk XL",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 101,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "machine-a-karaoke",
+      "nom": "Machine à karaoké",
+      "categorie": "assistant-jeux",
+      "prix": 60,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 184,
+          "prix": 60
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 25,
+          "prix": 60
+        }
+      ]
+    },
+    {
+      "id": "machine-arcade-pacman",
+      "nom": "Arcade Pacman",
+      "categorie": "arcade",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 97,
+          "prix": 100
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 147,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "machine-arcade1up-big-buck-hunter-mossy-oak-deluxe",
+      "nom": "Machine Arcade1Up Big Buck Hunter Mossy Oak Deluxe",
+      "categorie": "arcade",
+      "prix": 140,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 102,
+          "prix": 140
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 152,
+          "prix": 140
+        }
+      ]
+    },
+    {
+      "id": "machine-arcade1up-le-jeu-d-arcade-de-luxe-fast-the-furious",
+      "nom": "Machine ARCADE1UP Le jeu d'arcade de luxe Fast & The Furious",
+      "categorie": "arcade",
+      "prix": 140,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 103,
+          "prix": 140
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 151,
+          "prix": 140
+        }
+      ]
+    },
+    {
+      "id": "machine-d-arcade1up-mortal-kombat-ii",
+      "nom": "Machine d'Arcade1up Mortal Kombat II",
+      "categorie": "arcade",
+      "prix": 140,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 104,
+          "prix": 140
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 150,
+          "prix": 140
+        }
+      ]
+    },
+    {
+      "id": "marq-10x10",
+      "nom": "Marquise 10' × 10'",
+      "categorie": "chapiteaux",
+      "prix": 275,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 275
+        }
+      ]
+    },
+    {
+      "id": "marq-10x15",
+      "nom": "Marquise 10' × 15'",
+      "categorie": "chapiteaux",
+      "prix": 350,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 350
+        }
+      ]
+    },
+    {
+      "id": "marq-10x20",
+      "nom": "Marquise 10' × 20'",
+      "categorie": "chapiteaux",
+      "prix": 400,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 400
+        }
+      ]
+    },
+    {
+      "id": "marq-15x15",
+      "nom": "Marquise 15' × 15'",
+      "categorie": "chapiteaux",
+      "prix": 400,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 400
+        }
+      ]
+    },
+    {
+      "id": "marq-15x20",
+      "nom": "Marquise 15' × 20'",
+      "categorie": "chapiteaux",
+      "prix": 450,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 450
+        }
+      ]
+    },
+    {
+      "id": "marq-15x30",
+      "nom": "Marquise 15' × 30'",
+      "categorie": "chapiteaux",
+      "prix": 650,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 650
+        }
+      ]
+    },
+    {
+      "id": "marq-20x20",
+      "nom": "Marquise 20' × 20'",
+      "categorie": "chapiteaux",
+      "prix": 500,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 500
+        }
+      ]
+    },
+    {
+      "id": "marq-20x30",
+      "nom": "Marquise 20' × 30'",
+      "categorie": "chapiteaux",
+      "prix": 700,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 700
+        }
+      ]
+    },
+    {
+      "id": "marq-20x40",
+      "nom": "Marquise 20' × 40'",
+      "categorie": "chapiteaux",
+      "prix": 800,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 800
+        }
+      ]
+    },
+    {
+      "id": "marq-30x30",
+      "nom": "Marquise 30' × 30'",
+      "categorie": "chapiteaux",
+      "prix": 1000,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 96,
+          "prix": 1000
+        }
+      ]
+    },
+    {
+      "id": "martha",
+      "nom": "Martha",
+      "categorie": "mobilier",
+      "prix": 5,
+      "unite": "location",
+      "pas": 5,
+      "max": 72,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 141,
+          "prix": 5
+        }
+      ]
+    },
+    {
+      "id": "meta-quest-oculus",
+      "nom": "Meta Quest Oculus",
+      "categorie": "arcade",
+      "prix": 80,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 119,
+          "prix": 80
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 164,
+          "prix": 80
+        }
+      ]
+    },
+    {
+      "id": "mississippi-shuffleboard",
+      "nom": "Mississippi (shuffleboard)",
+      "categorie": "assistant-jeux",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 179,
+          "prix": 120
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 6,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "mur-lateral",
+      "nom": "Mur latéral",
+      "categorie": "chapiteaux",
+      "prix": 10,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 10
+        }
+      ]
+    },
+    {
+      "id": "nappe-cocktail",
+      "nom": "Nappe à cocktail",
+      "categorie": "mobilier",
+      "prix": 6,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 397,
+          "prix": 6
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 92,
+          "prix": 6
+        }
+      ]
+    },
+    {
+      "id": "nappe-rect",
+      "nom": "Nappe rectangulaire",
+      "categorie": "chapiteaux",
+      "prix": 8,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 8
+        },
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 152,
+          "prix": 8
+        }
+      ]
+    },
+    {
+      "id": "nappe-ronde",
+      "nom": "Nappe ronde 120 po",
+      "categorie": "chapiteaux",
+      "prix": 10,
+      "unite": "location",
+      "pas": 5,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 10
+        },
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 152,
+          "prix": 10
+        }
+      ]
+    },
+    {
+      "id": "nerf-gun-combat-set",
+      "nom": "Nerf Gun (combat set)",
+      "categorie": "assistant-jeux",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 181,
+          "prix": 20
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 20,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "nintendo-switch-location",
+      "nom": "Nintendo Switch",
+      "categorie": "arcade",
+      "prix": 60,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 117,
+          "prix": 60
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 162,
+          "prix": 60
+        }
+      ]
+    },
+    {
+      "id": "ping-pong-exterieur",
+      "nom": "Ping-pong (extérieur)",
+      "categorie": "landing-jeux-exterieurs",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 13,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "piscine-a-balle-xl",
+      "nom": "Piscine à Balle XL",
+      "categorie": "gonflables",
+      "prix": 150,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 102,
+          "prix": 150
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 122,
+          "prix": 150
+        }
+      ]
+    },
+    {
+      "id": "plancher",
+      "nom": "Panneau de plancher 4' × 8'",
+      "categorie": "chapiteaux",
+      "prix": 100,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 100
+        }
+      ]
+    },
+    {
+      "id": "poids-support",
+      "nom": "Poids de support (lot de 4)",
+      "categorie": "chapiteaux",
+      "prix": 10,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 10
+        }
+      ]
+    },
+    {
+      "id": "pouf-poire-gonflable",
+      "nom": "Pouf Poire Gonflable",
+      "categorie": "gonflables",
+      "prix": 15,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 123,
+          "prix": 15
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 143,
+          "prix": 15
+        }
+      ]
+    },
+    {
+      "id": "putterball",
+      "nom": "Putterball",
+      "categorie": "landing-jeux-exterieurs",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 15,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "rect6",
+      "nom": "Rectangulaire 6 pi",
+      "categorie": "mobilier",
+      "prix": 10,
+      "unite": "location",
+      "pas": 1,
+      "max": 105,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 147,
+          "prix": 10
+        }
+      ]
+    },
+    {
+      "id": "rect8",
+      "nom": "Rectangulaire 8 pi",
+      "categorie": "mobilier",
+      "prix": 15,
+      "unite": "location",
+      "pas": 1,
+      "max": 15,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 148,
+          "prix": 15
+        }
+      ]
+    },
+    {
+      "id": "rembourree",
+      "nom": "Rembourrée",
+      "categorie": "mobilier",
+      "prix": 4,
+      "unite": "location",
+      "pas": 5,
+      "max": 158,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 140,
+          "prix": 4
+        }
+      ]
+    },
+    {
+      "id": "ronde48",
+      "nom": "Ronde 48 po",
+      "categorie": "mobilier",
+      "prix": 15,
+      "unite": "location",
+      "pas": 1,
+      "max": 7,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 149,
+          "prix": 15
+        }
+      ]
+    },
+    {
+      "id": "ronde60",
+      "nom": "Ronde 60 po",
+      "categorie": "mobilier",
+      "prix": 15,
+      "unite": "location",
+      "pas": 1,
+      "max": 10,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 150,
+          "prix": 15
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 92,
+          "prix": 15
+        }
+      ]
+    },
+    {
+      "id": "roue-de-chance",
+      "nom": "Roue de chance",
+      "categorie": "assistant-jeux",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 183,
+          "prix": 50
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 24,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "serpent-echelle-geant",
+      "nom": "Serpent Échelle Géant",
+      "categorie": "jeux-geants",
+      "prix": 25,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 97,
+          "prix": 25
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 170,
+          "prix": 25
+        }
+      ]
+    },
+    {
+      "id": "serpent-et-echelle-geant",
+      "nom": "Serpent et échelle géant",
+      "categorie": "jeux-geants",
+      "prix": 25,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 16,
+          "prix": 25
+        }
+      ]
+    },
+    {
+      "id": "set-boule-de-billard",
+      "nom": "Set Boule de Billard",
+      "categorie": "arcade",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 114,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "seuil-livraison-incluse",
+      "nom": "Seuil de livraison incluse (forfait)",
+      "categorie": "forfaits",
+      "prix": null,
+      "unite": "seuil",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 1179,
+          "prix": 449
+        },
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 1188,
+          "prix": 449
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 162,
+          "prix": 449
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 162,
+          "prix": 500
+        },
+        {
+          "fichier": "page-nos-forfaits-secteur.js",
+          "ligne": 25,
+          "prix": 500
+        }
+      ]
+    },
+    {
+      "id": "slip-and-slide",
+      "nom": "Slip and Slide",
+      "categorie": "assistant-jeux",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 186,
+          "prix": 50
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 27,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "soccer-bulle-format-adolescent-et-adulte",
+      "nom": "Soccer Bulle Format Adolescent et Adulte",
+      "categorie": "jeux-geants",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 124,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "soccer-bulle-format-enfant",
+      "nom": "Soccer Bulle Format Enfant",
+      "categorie": "jeux-geants",
+      "prix": 40,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 113,
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "soccer-dart-gonflable-geant",
+      "nom": "Soccer Dart Gonflable Géant",
+      "categorie": "gonflables",
+      "prix": 60,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 119,
+          "prix": 60
+        },
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 114,
+          "prix": 60
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 139,
+          "prix": 60
+        }
+      ]
+    },
+    {
+      "id": "son",
+      "nom": "Système de son Bluetooth",
+      "categorie": "chapiteaux",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "sucture-gonflable-bunker",
+      "nom": "Sucture Gonflable (Bunker)",
+      "categorie": "gonflables",
+      "prix": 25,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "gonflables-blob1.js",
+          "ligne": 118,
+          "prix": 25
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 138,
+          "prix": 25
+        }
+      ]
+    },
+    {
+      "id": "table-air-hockey-en-location",
+      "nom": "Table Air Hockey en Location",
+      "categorie": "arcade",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 110,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 157,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "table-beer-pong",
+      "nom": "Table Beer Pong",
+      "categorie": "arcade",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 107,
+          "prix": 50
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 155,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "table-beer-pong-ext",
+      "nom": "Beer pong (table 8 pi)",
+      "categorie": "mobilier",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 174,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "table-cocktail",
+      "nom": "Table à cocktail",
+      "categorie": "mobilier",
+      "prix": 10,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "kit-wizard-decoded.js",
+          "ligne": 394,
+          "prix": 10
+        },
+        {
+          "fichier": "CURSOR-BRIEF.md",
+          "ligne": 91,
+          "prix": 10
+        }
+      ]
+    },
+    {
+      "id": "table-de-baby-foot-commerciale",
+      "nom": "Table de Baby Foot Commerciale",
+      "categorie": "arcade",
+      "prix": 160,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 116,
+          "prix": 160
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 159,
+          "prix": 160
+        }
+      ]
+    },
+    {
+      "id": "table-de-baby-foot-residentiel",
+      "nom": "Table de Baby Foot Résidentiel",
+      "categorie": "arcade",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 111,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 158,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "table-de-billard-de-golf",
+      "nom": "Table de Billard de Golf",
+      "categorie": "arcade",
+      "prix": 200,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 115,
+          "prix": 200
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 161,
+          "prix": 200
+        }
+      ]
+    },
+    {
+      "id": "table-de-billard-portable",
+      "nom": "Table de Billard Portable",
+      "categorie": "arcade",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 106,
+          "prix": 50
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 154,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "table-de-missisipi",
+      "nom": "Table de Missisipi",
+      "categorie": "arcade",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 112,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 160,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "table-de-ping-pong",
+      "nom": "Table de Ping Pong",
+      "categorie": "arcade",
+      "prix": 50,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 105,
+          "prix": 50
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 153,
+          "prix": 50
+        }
+      ]
+    },
+    {
+      "id": "table-de-poker-8-places-location",
+      "nom": "Table de Poker (8 places)",
+      "categorie": "arcade",
+      "prix": 70,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "arcade-blob1.js",
+          "ligne": 108,
+          "prix": 70
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 156,
+          "prix": 70
+        }
+      ]
+    },
+    {
+      "id": "table-de-soccer-geant-1-v-1",
+      "nom": "Table de Soccer Géant 1 v 1",
+      "categorie": "jeux-geants",
+      "prix": 250,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 117,
+          "prix": 250
+        }
+      ]
+    },
+    {
+      "id": "table-rect-6",
+      "nom": "Table rectangulaire 6 pi",
+      "categorie": "chapiteaux",
+      "prix": 10,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 10
+        }
+      ]
+    },
+    {
+      "id": "table-rect-8",
+      "nom": "Table rectangulaire 8 pi",
+      "categorie": "chapiteaux",
+      "prix": 15,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 15
+        }
+      ]
+    },
+    {
+      "id": "table-ronde-48",
+      "nom": "Table ronde 48 po",
+      "categorie": "chapiteaux",
+      "prix": 15,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 15
+        }
+      ]
+    },
+    {
+      "id": "table-ronde-60",
+      "nom": "Table ronde 60 po",
+      "categorie": "chapiteaux",
+      "prix": 15,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "chapiteaux-blob1.js",
+          "ligne": 97,
+          "prix": 15
+        }
+      ]
+    },
+    {
+      "id": "tic-tac-toe-geant",
+      "nom": "Tic-Tac-TOE Géant",
+      "categorie": "jeux-geants",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 109,
+          "prix": 20
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 171,
+          "prix": 20
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 17,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "tug-of-war",
+      "nom": "Tug of War (souque à la corde)",
+      "categorie": "assistant-jeux",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 180,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "tug-of-war-souque-a-la-corde",
+      "nom": "Tug of War (souque à la corde)",
+      "categorie": "landing-jeux-exterieurs",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 18,
+          "prix": 20
+        }
+      ]
+    },
+    {
+      "id": "twister-geant",
+      "nom": "Twister Géant",
+      "categorie": "jeux-geants",
+      "prix": 120,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 103,
+          "prix": 120
+        },
+        {
+          "fichier": "assistant-jeux/jw-widget.js",
+          "ligne": 167,
+          "prix": 120
+        },
+        {
+          "fichier": "page-location-jeux-exterieurs-cartes.html",
+          "ligne": 9,
+          "prix": 120
+        }
+      ]
+    },
+    {
+      "id": "yahtzee-xl",
+      "nom": "Yahtzee XL",
+      "categorie": "jeux-geants",
+      "prix": 20,
+      "unite": "location",
+      "pas": 1,
+      "max": null,
+      "sources": [
+        {
+          "fichier": "jeux-geants-blob1.js",
+          "ligne": 110,
+          "prix": 20
+        }
+      ]
+    }
+  ]
+}
