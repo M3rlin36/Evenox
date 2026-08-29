@@ -11,6 +11,8 @@ const {
 } = require('./helpers');
 
 async function axeSansGrave(page) {
+  await page.locator('.jw-step.jw-on').waitFor();
+  await page.waitForTimeout(500);
   const results = await new AxeBuilder({ page }).include('#assistant-jeux').analyze();
   const graves = results.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious');
   expect(graves, JSON.stringify(graves, null, 2)).toEqual([]);
