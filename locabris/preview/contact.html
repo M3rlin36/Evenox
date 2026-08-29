@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parlons de votre entrée | Locabris</title>
+  <link rel="stylesheet" href="css/chrome.css">
+  <script>window.LOCABRIS_PREVIEW=true;</script>
+</head>
+<body>
+<header class="chrome-header">
+  <a class="chrome-logo" href="index.html">
+    <img src="https://locabris.ca/wp-content/uploads/2024/09/cropped-COnfort-et-Protection-quelques-soient-les-conditions-2.png" alt="Locabris">
+    LOCABRIS
+  </a>
+  <nav class="chrome-nav">
+    <a href="soumission.html">Soumission Rapide</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a href="shop.html">Boutique</a>
+    <a href="product.html">Fiche abri</a>
+    <a href="privacy.html">Confidentialité</a>
+  </nav>
+</header>
+<main>
+<style>
+.cx1:hover{background:#0E2C4F !important}
+.cx2:hover{background:#0E2C4F !important}
+.cx3:hover{opacity:.85}
+#ctc{font-family:Raleway,sans-serif;color:#121212}
+#ctc-ok{display:none;max-width:1080px;margin:0 auto;padding:56px clamp(20px,3vw,40px) 24px}
+#ctc-ok .ctc-box{background:#D9EDF7;border-radius:12px;padding:32px 34px;text-align:center}
+#ctc-ok b{display:block;font-weight:800;font-size:24px;color:#0E2C4F;margin-bottom:8px}
+#ctc-ok span{font-weight:600;color:#35454E}
+#ctc input,#ctc textarea{width:100%;min-width:0;border:1px solid #D7E0E6;border-radius:8px;background:#FBFCFD;padding:17px 16px;font-family:Raleway,sans-serif;font-weight:700;font-size:16px;color:#121212}
+#ctc input:focus,#ctc textarea:focus{border-color:#1088B5;background:#FFFFFF;outline:none}
+#ctc input::placeholder,#ctc textarea::placeholder{color:#9BAAB3;font-weight:600}
+.ctc-err{display:none;font-weight:700;font-size:14px;color:#0E2C4F;background:#D9EDF7;border-radius:6px;padding:12px 14px}
+.ctc-err.is-on{display:block}
+#ctc-form.is-off{display:none}
+@media(max-width:980px){.loca-tap{min-height:44px}}
+</style>
+
+<div id="ctc">
+  <div id="ctc-ok">
+    <div class="ctc-box">
+      <b>Message envoyé.</b>
+      <span>On vous revient d'ici la fin de la journée. Pour une réponse immédiate, appelez le 438-439-0201.</span>
+    </div>
+  </div>
+
+  <div style="background-image:linear-gradient(180deg,rgba(14,44,79,.42) 0%,rgba(14,44,79,.86) 100%),url(https://locabris.ca/wp-content/uploads/2026/08/locabris-img-5536.jpg);background-size:cover;background-position:center;color:#FFFFFF">
+    <div style="max-width:1080px;margin:0 auto;padding:72px clamp(20px,3vw,40px) 60px;display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+      <div style="font-weight:700;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#6E9DBC">Contact</div>
+      <div style="font-weight:800;font-size:clamp(30px,4vw,46px);line-height:1.06;letter-spacing:-0.025em;max-width:20ch">Parlons de votre entrée</div>
+      <div style="font-weight:700;font-size:16px;line-height:1.5;color:#C3D5E2;max-width:44ch">Un appel, un courriel ou un message. On répond le jour même.</div>
+    </div>
+  </div>
+
+  <div style="max-width:1080px;margin:0 auto;padding:44px clamp(20px,3vw,40px) 88px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:28px;align-items:start">
+    <div id="ctc-form" style="background:#FFFFFF;border:1px solid #E6EBEF;border-radius:12px;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:22px;min-width:0">
+      <div style="font-weight:800;font-size:21px;line-height:1.15">Écrivez-nous</div>
+      <label style="display:flex;flex-direction:column;gap:9px">
+        <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Nom et prénom</span>
+        <input name="nom" autocomplete="name" placeholder="Votre nom">
+      </label>
+      <label style="display:flex;flex-direction:column;gap:9px">
+        <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Téléphone</span>
+        <input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="438 439 0201">
+      </label>
+      <label style="display:flex;flex-direction:column;gap:9px">
+        <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Courriel</span><span style="font-weight:600;font-size:12px;color:#9BAAB3">facultatif</span></span>
+        <input name="courriel" type="email" autocomplete="email" placeholder="prenom@courriel.com">
+      </label>
+      <label style="display:flex;flex-direction:column;gap:9px">
+        <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Ville</span><span style="font-weight:600;font-size:12px;color:#9BAAB3">facultatif</span></span>
+        <input name="ville" autocomplete="address-level2" placeholder="Sainte-Thérèse">
+      </label>
+      <label style="display:flex;flex-direction:column;gap:9px">
+        <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Message</span>
+        <textarea name="message" rows="4" placeholder="Votre question, le format qui vous intéresse, la date visée…"></textarea>
+      </label>
+      <div class="ctc-err" data-err></div>
+      <div data-send class="loca-tap cx2" style="background:#1088B5;color:#FFFFFF;padding:20px;border-radius:8px;font-weight:800;font-size:17px;text-align:center;cursor:pointer">Envoyer mon message</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.6;color:#9BAAB3;text-align:center">Réponse le jour même, du lundi au samedi.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+      <div style="background:#0E2C4F;color:#FFFFFF;border-radius:12px;padding:32px 30px;display:flex;flex-direction:column;gap:26px">
+        <div>
+          <div style="font-weight:700;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#6E9DBC">Téléphone</div>
+          <a href="tel:+14384390201" class="cx3" style="font-weight:800;font-size:28px;letter-spacing:-0.01em;color:#FFFFFF">438-439-0201</a>
+          <div style="font-weight:600;font-size:13px;color:#C3D5E2;margin-top:6px">Le plus rapide, surtout en pleine saison.</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#6E9DBC">Courriel</div>
+          <a href="mailto:locabris.ca@gmail.com" class="cx3" style="font-weight:800;font-size:17px;color:#FFFFFF">locabris.ca@gmail.com</a>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#6E9DBC">Facebook</div>
+          <a href="https://www.facebook.com/locabris" class="cx3" style="font-weight:800;font-size:17px;color:#FFFFFF">Locabris</a>
+        </div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EBEF;border-radius:12px;padding:26px 24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-weight:700;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#7A8B95">Heures</div>
+        <div style="display:flex;justify-content:space-between;gap:16px"><span style="font-weight:700;color:#35454E">Lundi au vendredi</span><span style="font-weight:800">8 h – 19 h</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px"><span style="font-weight:700;color:#35454E">Samedi</span><span style="font-weight:800">9 h – 17 h</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px"><span style="font-weight:700;color:#35454E">Dimanche</span><span style="font-weight:800">Sur rendez-vous</span></div>
+      </div>
+      <div style="border-top:1px solid #E6EBEF;padding-top:20px">
+        <div style="font-weight:700;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#7A8B95">Secteur desservi</div>
+        <div style="font-weight:700;font-size:15px;line-height:1.55;color:#35454E;margin-top:8px">Rayon de 20 km de notre entrepôt de Sainte-Thérèse : Laval, Blainville, Mirabel, Boisbriand, Rosemère, Terrebonne et les environs. Montréal en livraison seulement.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var z=document.getElementById("ctc");
+  if(!z||z.getAttribute("data-ready"))return;
+  z.setAttribute("data-ready","1");
+  var hook="https://hooks.zapier.com/hooks/catch/16509085/udt0i4j/";
+  function field(name){var n=z.querySelector('[name="'+name+'"]');return n?n.value.trim():"";}
+  function digits(s){return (s.match(/\d/g)||[]).length;}
+  function err(msg){var b=z.querySelector("[data-err]");if(!b)return;b.textContent=msg;b.classList.toggle("is-on",!!msg);}
+  z.addEventListener("click",function(e){
+    var btn=e.target.closest("[data-send]");
+    if(!btn)return;
+    var nom=field("nom"), tel=field("tel");
+    if(!nom||!tel){err("Indiquez votre nom et votre numéro de téléphone.");return;}
+    if(digits(tel)<10){err("Le numéro de téléphone doit contenir 10 chiffres.");return;}
+    err("");
+    var payload={source:"page-contact",nom:nom,tel:tel,courriel:field("courriel"),ville:field("ville"),message:field("message")};
+    var label=btn.textContent;
+    btn.textContent="Envoi en cours...";
+    var req=window.LOCABRIS_PREVIEW?Promise.resolve({ok:true}):fetch(hook,{method:"POST",body:JSON.stringify(payload)});
+    req.then(function(r){
+      if(!r||r.ok===false)throw new Error("send");
+      document.getElementById("ctc-ok").style.display="block";
+      document.getElementById("ctc-form").classList.add("is-off");
+      window.scrollTo(0,0);
+    }).catch(function(){
+      btn.textContent="Réessayer";
+      err("L'envoi n'a pas fonctionné. Réessayez ou appelez le 438-439-0201.");
+    });
+  });
+})();
+</script>
+
+</main>
+<footer class="chrome-footer">
+  <div class="chrome-footer-grid">
+    <div>
+      <img src="https://locabris.ca/wp-content/uploads/2024/09/cropped-COnfort-et-Protection-quelques-soient-les-conditions-2.png" alt="" width="72" height="72">
+      <h4>Nos réseaux sociaux</h4>
+      <p>Facebook</p>
+    </div>
+    <div>
+      <h4>Catégories</h4>
+      <p><a href="shop.html">Tempo Simple</a><br><a href="shop.html">Tempo Double</a><br><a href="shop.html">Accessoires</a></p>
+    </div>
+    <div>
+      <h4>Contact / Ressource</h4>
+      <p><a href="contact.html">Contact</a><br>Téléphone: 438-439-0201<br>Courriel: locabris.ca@gmail.com</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

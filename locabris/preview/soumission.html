@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soumission rapide | Locabris</title>
+  <link rel="stylesheet" href="css/chrome.css">
+  <script>window.LOCABRIS_PREVIEW=true;</script>
+</head>
+<body>
+<header class="chrome-header">
+  <a class="chrome-logo" href="index.html">
+    <img src="https://locabris.ca/wp-content/uploads/2024/09/cropped-COnfort-et-Protection-quelques-soient-les-conditions-2.png" alt="Locabris">
+    LOCABRIS
+  </a>
+  <nav class="chrome-nav">
+    <a href="soumission.html" aria-current="page">Soumission Rapide</a>
+    <a href="contact.html">Contact</a>
+    <a href="shop.html">Boutique</a>
+    <a href="product.html">Fiche abri</a>
+    <a href="privacy.html">Confidentialité</a>
+  </nav>
+</header>
+<main>
+<style>
+.lx3:hover{border-color:#1088B5 !important}
+.lx4:hover{background:#0E2C4F !important}
+.lx6:hover{color:#1088B5 !important}
+.loca-on{outline:2px solid #1088B5 !important;outline-offset:-2px}
+#loca-merci{display:none;max-width:760px;margin:40px auto 0;padding:28px 32px;background:#D9EDF7;border-radius:6px;text-align:center;font-family:Raleway,sans-serif}
+#loca-merci b{display:block;font-weight:700;font-size:22px;color:#0E2C4F;margin-bottom:8px}
+#loca-merci span{font-weight:600;color:#35454E}
+#loca-plan{font-family:Raleway,sans-serif;color:#121212}
+#loca-plan input,#loca-plan textarea{width:100%;min-width:0;border:1px solid #D7E0E6;border-radius:8px;background:#FBFCFD;padding:17px 16px;font-family:Raleway,sans-serif;font-weight:700;font-size:16px;color:#121212}
+#loca-plan input:focus,#loca-plan textarea:focus{border-color:#1088B5;background:#FFFFFF;outline:none}
+#loca-plan input::placeholder,#loca-plan textarea::placeholder{color:#9BAAB3;font-weight:600}
+.loca-err{display:none;font-weight:700;font-size:14px;color:#0E2C4F;background:#D9EDF7;border-radius:6px;padding:12px 14px}
+.loca-err.is-on{display:block}
+.loca-step{display:none}
+.loca-step.is-on{display:block}
+@media(max-width:980px){.loca-tap{min-height:44px}}
+</style>
+
+<div id="loca-plan">
+  <div id="loca-merci">
+    <b>Merci, votre demande est reçue.</b>
+    <span>Un conseiller vous appelle d'ici la fin de la journée · 438-439-0201</span>
+  </div>
+
+  <div id="loca-step-choix" class="loca-step is-on">
+    <div style="max-width:760px;margin:0 auto;padding:56px clamp(17px,2.3vw,31px) 4px;text-align:center">
+      <div style="font-weight:700;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#1088B5">Soumission rapide</div>
+      <div style="font-weight:600;font-size:17px;line-height:1.7;color:#5A6B75;margin-top:12px">Choisissez ce dont vous avez besoin. Un conseiller vous rappelle le jour même.</div>
+    </div>
+    <div style="max-width:760px;margin:0 auto;padding:60px clamp(17px,2.3vw,31px) 88px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+      <div role="button" tabindex="0" data-go="achat" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:38px 34px;display:flex;flex-direction:column;gap:12px;cursor:pointer;min-width:0">
+        <div style="font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7A8B95">Achat</div>
+        <div style="font-weight:800;font-size:26px;line-height:1.12">Je veux acheter un abri</div>
+        <div style="font-weight:600;font-size:15px;line-height:1.6;color:#5A6B75">Abris usagés vérifiés, dès 250 $. Avec ou sans installation.</div>
+        <div style="margin-top:8px;font-weight:800;font-size:15px;color:#1088B5">Choisir un abri →</div>
+      </div>
+      <div role="button" tabindex="0" data-go="install" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:38px 34px;display:flex;flex-direction:column;gap:12px;cursor:pointer;min-width:0">
+        <div style="font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7A8B95">Installation</div>
+        <div style="font-weight:800;font-size:26px;line-height:1.12">J'ai déjà mon abri</div>
+        <div style="font-weight:600;font-size:15px;line-height:1.6;color:#5A6B75">Montage et ancrage seulement : 200 $ pour un simple, 300 $ pour un double.</div>
+        <div style="margin-top:8px;font-weight:800;font-size:15px;color:#1088B5">Réserver ma date →</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="loca-step-achat" class="loca-step">
+    <div style="max-width:760px;margin:0 auto;padding:48px clamp(17px,2.3vw,31px) 88px;display:flex;flex-direction:column;gap:32px">
+      <div data-back class="loca-tap lx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#7A8B95;cursor:pointer">← Changer de demande</div>
+      <div>
+        <div style="font-weight:800;font-size:15px;margin-bottom:14px">L'abri qui vous intéresse</div>
+        <div class="loca-group" data-group="abri" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px">
+          <div role="button" tabindex="0" data-value="simple" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:20px 18px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:16px">Abri simple</div>
+            <div style="font-weight:600;font-size:13px;color:#5A6B75">11 et 12 pi · dès 250 $</div>
+          </div>
+          <div role="button" tabindex="0" data-value="double-longueur" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:20px 18px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:16px">Double longueur</div>
+            <div style="font-weight:600;font-size:13px;color:#5A6B75">Jusqu'à 32 pi · sur demande</div>
+          </div>
+          <div role="button" tabindex="0" data-value="double-largeur" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:20px 18px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:16px">Double largeur</div>
+            <div style="font-weight:600;font-size:13px;color:#5A6B75">18 et 20 pi · dès 700 $</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:800;font-size:15px;margin-bottom:14px">Avec installation ?</div>
+        <div class="loca-group" data-group="installation" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
+          <div role="button" tabindex="0" data-value="oui" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:20px 18px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:16px">Oui, installez-le</div>
+            <div style="font-weight:600;font-size:13px;color:#5A6B75">200 $ simple · 300 $ double</div>
+          </div>
+          <div role="button" tabindex="0" data-value="non" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:20px 18px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:16px">Non, livraison seule</div>
+            <div style="font-weight:600;font-size:13px;color:#5A6B75">Je le monte moi-même</div>
+          </div>
+        </div>
+      </div>
+      <div class="loca-form" style="display:flex;flex-direction:column;gap:18px">
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Nom et prénom</span>
+          <input name="nom" autocomplete="name" placeholder="Votre nom">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Numéro de téléphone</span>
+          <input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="438 439 0201">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Adresse de livraison</span><span style="font-weight:600;font-size:12px;color:#9BAAB3">ville et code postal</span></span>
+          <input name="adresse" autocomplete="street-address" placeholder="Ville et code postal">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Précisions</span><span style="font-weight:600;font-size:12px;color:#9BAAB3">facultatif</span></span>
+          <textarea name="precisions" rows="3" placeholder="Date visée, type de sol, format exact…"></textarea>
+        </label>
+        <div class="loca-err" data-err></div>
+        <div data-send class="loca-tap lx4" style="background:#1088B5;color:#FFFFFF;padding:20px;border-radius:8px;font-weight:800;font-size:17px;text-align:center;cursor:pointer">Recevoir mon prix</div>
+        <div style="font-weight:600;font-size:12px;line-height:1.6;color:#9BAAB3;text-align:center">Aucun engagement. Vos coordonnées servent uniquement à vous rappeler.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="loca-step-install" class="loca-step">
+    <div style="max-width:760px;margin:0 auto;padding:48px clamp(17px,2.3vw,31px) 88px;display:flex;flex-direction:column;gap:32px">
+      <div data-back class="loca-tap lx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#7A8B95;cursor:pointer">← Changer de demande</div>
+      <div>
+        <div style="font-weight:800;font-size:15px;margin-bottom:14px">Votre abri</div>
+        <div class="loca-group" data-group="abri" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:12px">
+          <div role="button" tabindex="0" data-value="simple" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:20px 18px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:16px">Simple</div>
+            <div style="font-weight:600;font-size:13px;color:#5A6B75">Montage 200 $</div>
+          </div>
+          <div role="button" tabindex="0" data-value="double" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:20px 18px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:16px">Double</div>
+            <div style="font-weight:600;font-size:13px;color:#5A6B75">Montage 300 $</div>
+          </div>
+          <div role="button" tabindex="0" data-value="inconnu" class="loca-tap lx3" style="border:1px solid #E6EBEF;padding:20px 18px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:16px">Je ne sais pas</div>
+            <div style="font-weight:600;font-size:13px;color:#5A6B75">On valide au téléphone</div>
+          </div>
+        </div>
+      </div>
+      <div class="loca-form" style="display:flex;flex-direction:column;gap:18px">
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Nom et prénom</span>
+          <input name="nom" autocomplete="name" placeholder="Votre nom">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Numéro de téléphone</span>
+          <input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="438 439 0201">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Adresse d'installation</span><span style="font-weight:600;font-size:12px;color:#9BAAB3">ville et code postal</span></span>
+          <input name="adresse" autocomplete="street-address" placeholder="Ville et code postal">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Précisions</span><span style="font-weight:600;font-size:12px;color:#9BAAB3">facultatif</span></span>
+          <textarea name="precisions" rows="3" placeholder="Surface, pente, date visée…"></textarea>
+        </label>
+        <div class="loca-err" data-err></div>
+        <div data-send class="loca-tap lx4" style="background:#1088B5;color:#FFFFFF;padding:20px;border-radius:8px;font-weight:800;font-size:17px;text-align:center;cursor:pointer">Réserver mon montage</div>
+        <div style="font-weight:600;font-size:12px;line-height:1.6;color:#9BAAB3;text-align:center">Installation dans un rayon de 20 km de notre entrepôt de Sainte-Thérèse.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:760px;margin:0 auto;padding:0 clamp(17px,2.3vw,31px) 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:22px">
+    <div>
+      <div style="font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7A8B95">Ou appelez directement</div>
+      <a href="tel:+14384390201" style="font-weight:800;font-size:24px;color:#0E2C4F">438-439-0201</a>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7A8B95">Courriel</div>
+      <a href="mailto:locabris.ca@gmail.com" style="font-weight:800;font-size:17px;color:#0E2C4F">locabris.ca@gmail.com</a>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7A8B95">Zone desservie</div>
+      <div style="font-weight:700;font-size:15px;line-height:1.5;color:#35454E">Rayon de 20 km de notre entrepôt de Sainte-Thérèse. Montréal en livraison seulement.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById("loca-plan");
+  if(!root||root.getAttribute("data-ready"))return;
+  root.setAttribute("data-ready","1");
+  var hook="https://hooks.zapier.com/hooks/catch/16509085/udt0i4j/";
+  var parcours="";
+
+  function show(id){
+    root.querySelectorAll(".loca-step").forEach(function(s){s.classList.remove("is-on");});
+    var el=document.getElementById(id);
+    if(el)el.classList.add("is-on");
+    window.scrollTo(0,0);
+  }
+  function pick(el){
+    var g=el.closest(".loca-group");
+    if(!g)return;
+    g.querySelectorAll(".loca-tap").forEach(function(n){n.classList.remove("loca-on");});
+    el.classList.add("loca-on");
+  }
+  function val(step,group){
+    var n=step.querySelector('.loca-group[data-group="'+group+'"] .loca-on');
+    return n?n.getAttribute("data-value"):"";
+  }
+  function field(step,name){
+    var n=step.querySelector('[name="'+name+'"]');
+    return n?n.value.trim():"";
+  }
+  function digits(s){return (s.match(/\d/g)||[]).length;}
+  function err(step,msg){
+    var b=step.querySelector("[data-err]");
+    if(!b)return;
+    b.textContent=msg;
+    b.classList.toggle("is-on",!!msg);
+  }
+  function send(btn){
+    var step=btn.closest(".loca-step");
+    var nom=field(step,"nom");
+    var tel=field(step,"tel");
+    var adresse=field(step,"adresse");
+    var abri=val(step,"abri");
+    var installation=parcours==="achat"?val(step,"installation"):"montage-seul";
+    if(!abri){err(step,"Choisissez le format d'abri.");return;}
+    if(parcours==="achat"&&!installation){err(step,"Dites-nous si vous voulez l'installation.");return;}
+    if(!nom||!tel){err(step,"Indiquez votre nom et votre numéro de téléphone.");return;}
+    if(digits(tel)<10){err(step,"Le numéro de téléphone doit contenir 10 chiffres.");return;}
+    if(!adresse){err(step,"Indiquez la ville et le code postal.");return;}
+    err(step,"");
+    var payload={
+      source:"soumission-rapide",
+      parcours:parcours,
+      abri:abri,
+      installation:installation,
+      nom:nom,
+      tel:tel,
+      adresse:adresse,
+      precisions:field(step,"precisions")
+    };
+    var label=btn.textContent;
+    btn.textContent="Envoi en cours...";
+    var req=window.LOCABRIS_PREVIEW
+      ? Promise.resolve({ok:true})
+      : fetch(hook,{method:"POST",body:JSON.stringify(payload)});
+    req.then(function(r){
+      if(!r||r.ok===false)throw new Error("send");
+      root.querySelectorAll(".loca-step").forEach(function(s){s.classList.remove("is-on");});
+      document.getElementById("loca-merci").style.display="block";
+      window.scrollTo(0,0);
+    }).catch(function(){
+      btn.textContent="Réessayer";
+      err(step,"L'envoi n'a pas fonctionné. Réessayez ou appelez le 438-439-0201.");
+    });
+  }
+
+  root.addEventListener("click",function(e){
+    var go=e.target.closest("[data-go]");
+    if(go){parcours=go.getAttribute("data-go");show(parcours==="achat"?"loca-step-achat":"loca-step-install");return;}
+    if(e.target.closest("[data-back]")){parcours="";show("loca-step-choix");return;}
+    var choice=e.target.closest(".loca-group .loca-tap");
+    if(choice){pick(choice);return;}
+    var btn=e.target.closest("[data-send]");
+    if(btn)send(btn);
+  });
+  root.addEventListener("keydown",function(e){
+    if(e.key!=="Enter"&&e.key!==" ")return;
+    var t=e.target.closest("[data-go], .loca-group .loca-tap, [data-send], [data-back]");
+    if(!t||e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA")return;
+    e.preventDefault();
+    t.click();
+  });
+})();
+</script>
+
+</main>
+<footer class="chrome-footer">
+  <div class="chrome-footer-grid">
+    <div>
+      <img src="https://locabris.ca/wp-content/uploads/2024/09/cropped-COnfort-et-Protection-quelques-soient-les-conditions-2.png" alt="" width="72" height="72">
+      <h4>Nos réseaux sociaux</h4>
+      <p>Facebook</p>
+    </div>
+    <div>
+      <h4>Catégories</h4>
+      <p><a href="shop.html">Tempo Simple</a><br><a href="shop.html">Tempo Double</a><br><a href="shop.html">Accessoires</a></p>
+    </div>
+    <div>
+      <h4>Contact / Ressource</h4>
+      <p><a href="contact.html">Contact</a><br>Téléphone: 438-439-0201<br>Courriel: locabris.ca@gmail.com</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
