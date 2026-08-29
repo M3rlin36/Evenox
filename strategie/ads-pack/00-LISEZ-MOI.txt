@@ -1,0 +1,27 @@
+PACK GOOGLE ADS ÉVENOX — import
+================================
+Date: 2026-08-29
+Doc stratégie: strategie/CAMPAGNES-ADS-V2-APPROFONDI.md
+Defaults: strategie/ops/DEFAULTS-LANCEMENT-ADS.md
+
+FICHIERS
+1. 01-keywords.csv              → mots-clés + Final URL (Phrase/Exact)
+2. 02-negatifs-compte.txt       → négatifs NIVEAU COMPTE
+3. 03-rsa-annonces.csv          → titres/descriptions RSA
+4. 04-checklist-lancement.txt   → ordre mise en ligne
+5. 05-negatifs-par-adgroup.csv  → négatifs croisés intention
+6. 06-structure-campagnes.txt   → noms campagnes / AG / budgets %
+7. 07-sitelinks-callouts.csv    → extensions
+
+RÈGLE LANDING
+- Location générique → pages location/ville/Express
+- Forfait / clé en main / tout inclus / livré placé → pages forfaits SEULEMENT
+
+IMPORT
+A. Lire 06-structure-campagnes.txt
+B. Créer 4 campagnes Search + ad groups
+C. Import 01-keywords + RSA 03 + négatifs 02+05 + sitelinks 07
+D. Tracking appel + form AVANT >20 $/j
+E. Budget J0: 20 $/j · Corpo OFF · defaults Notion
+
+BUDGET % : Mobilier 40 · Jeux 30 · Photobooth 25 · Corpo 5

@@ -1,0 +1,26 @@
+Campaign,Ad Group,Negative Keyword,Match Type,Reason
+Mobilier Search,Express 72h,forfait,Phrase,Intention clé en main → AG Mobilier cle en main
+Mobilier Search,Express 72h,clé en main,Phrase,Intention clé en main
+Mobilier Search,Express 72h,tout inclus,Phrase,Intention clé en main
+Mobilier Search,Express 72h,livré placé,Phrase,Intention clé en main
+Mobilier Search,Express 72h,mariage,Phrase,Hors Express urgence
+Mobilier Search,Chaises Laval,forfait,Phrase,Clé en main ailleurs
+Mobilier Search,Chaises Laval,acheter,Phrase,Intent achat
+Mobilier Search,Tables chaises location,forfait,Phrase,Clé en main ailleurs
+Mobilier Search,Tables chaises location,clé en main,Phrase,Clé en main ailleurs
+Mobilier Search,Mobilier cle en main,urgent,Phrase,Urgence → Express
+Mobilier Search,Mobilier cle en main,72h,Phrase,Urgence → Express
+Mobilier Search,Mobilier cle en main,kijiji,Phrase,Intent mauvais
+Jeux Search,Gonflables hub,forfait,Phrase,Clé en main → Forfait cle en main
+Jeux Search,Gonflables hub,tout inclus,Phrase,Clé en main
+Jeux Search,Gonflables hub,acheter,Phrase,Achat
+Jeux Search,Gonflables Laval,forfait,Phrase,Clé en main
+Jeux Search,Forfait cle en main,location seul,Phrase,Location pure
+Jeux Search,Forfait cle en main,cueillette,Phrase,Location pure
+Photobooth Search,Photobooth location,forfait,Phrase,Clé en main AG
+Photobooth Search,Photobooth location,tout inclus,Phrase,Clé en main
+Photobooth Search,Photobooth Laval,forfait,Phrase,Clé en main
+Photobooth Search,Videobooth 360,photobooth classique,Phrase,Séparer SKU
+Photobooth Search,Forfait cle en main,louer seulement,Phrase,Location pure
+Corpo Search,5 a 7 party bureau,anniversaire enfant,Phrase,Hors corpo
+Corpo Search,Noel gala,mariage,Phrase,Hors Noël corpo
