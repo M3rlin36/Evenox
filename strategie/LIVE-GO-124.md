@@ -13,6 +13,7 @@ Dossier : https://drive.google.com/drive/folders/1PreFY9kBAORAg9wNUoWNu3d7hsqh4a
 | 02-negatifs-compte | https://drive.google.com/file/d/1GIzZsUZDNEtZXd0iJPh0z70yJnLYyFqR/view |
 | 03-rsa-annonces (Sheet) | https://docs.google.com/spreadsheets/d/1nN6nw6OPFx8-hoOnup65ZfsxM1vtMI-XLAXo-gbBy94/edit |
 | 04-checklist-lancement | https://drive.google.com/file/d/1RsfeWny_J0OyFO0PzVhMQp5elRev-Qto/view |
+| evenox-ads-pack.zip | https://drive.google.com/file/d/1J4OP0YxZkffp239MvCu-Bxs6CBUQrP4u/view |
 
 Miroir repo : `strategie/ads-pack/`
 
