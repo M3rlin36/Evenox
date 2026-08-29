@@ -18,6 +18,7 @@ test.describe('Chantier 5 — filet webhook jw', () => {
     await ouvrirJw(page);
     await page.evaluate(() => {
       sessionStorage.setItem('evx_mode', 'echec');
+      localStorage.setItem('evx_mode', 'echec');
       window.evxSimulerReseau.mode = 'echec';
     });
 
@@ -35,9 +36,11 @@ test.describe('Chantier 5 — filet webhook jw', () => {
 
     await page.evaluate(() => {
       sessionStorage.setItem('evx_mode', 'echec');
+      localStorage.setItem('evx_mode', 'echec');
     });
     await page.reload();
     await page.locator('#jwBox').waitFor();
+    await page.waitForTimeout(300);
     const file2 = await page.evaluate(() => window.EvxEnvoi.lireFile());
     expect(file2.length).toBeGreaterThanOrEqual(1);
     expect((file2[0].champs || file2[0].lead).email).toBe('filet@evenox.test');
