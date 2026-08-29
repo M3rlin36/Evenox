@@ -1,0 +1,28 @@
+PACK GOOGLE ADS ÉVENOX — import
+================================
+Date: 2026-08-29
+Doc stratégie: strategie/CAMPAGNES-ADS-V2-APPROFONDI.md (repo GitHub Evenox)
+
+FICHIERS
+1. 01-keywords.csv     → mots-clés + Final URL (Phrase/Exact)
+2. 02-negatifs-compte.txt → négatifs à coller au NIVEAU COMPTE
+3. 03-rsa-annonces.csv → titres/descriptions RSA par ad group
+4. 04-checklist-lancement.txt → ordre de mise en ligne
+
+RÈGLE LANDING
+- Location générique → pages location/ville/Express
+- Forfait / clé en main / tout inclus / livré placé → pages forfaits SEULEMENT
+
+IMPORT SUGGESTÉ
+A. Créer manuellement les 4 campagnes Search (noms exacts du CSV)
+B. Créer les ad groups
+C. Importer 01-keywords.csv (Google Ads Editor ou copier-coller)
+D. Créer RSA à partir de 03-rsa-annonces.csv
+E. Coller négatifs compte
+F. Tracking: appel + form contact AVANT d'augmenter le budget
+
+BUDGET DÉPART SUGGÉRÉ (ajuster)
+- Mobilier Search: 40%
+- Jeux Search: 30%
+- Photobooth Search: 25%
+- Corpo Search: 5% (↑ oct-déc)

@@ -1,0 +1,13 @@
+[ ] Compte Google Ads + facturation
+[ ] Tag conversion: appel 514-559-1893
+[ ] Tag conversion: submit contact / soumission
+[ ] Zone: présence dans rayon ~40 km Ste-Thérèse (ajuster)
+[ ] Display Network OFF
+[ ] Match: Phrase + Exact seulement
+[ ] Négatifs compte collés
+[ ] 4 campagnes créées
+[ ] RSA live (1-2 / AG)
+[ ] Extensions: call + sitelinks + callouts
+[ ] Qui répond aux leads < 1h (script Notion)
+[ ] Stock weekends vérifié (photobooth / chaises)
+[ ] Search Terms review J+2 J+4 J+7
