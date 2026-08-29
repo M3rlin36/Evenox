@@ -40,9 +40,11 @@ Budget de départ proposé : **30–40 $/jour** (~900–1 200 $/mois), ajustable
 
 | # | Campagne | % budget | Landing | Objectif conversion |
 | --- | --- | --- | --- | --- |
-| C1 | Express + Mobilier | 40 % | `/#express` ou `/forfaits-tables-chaises/` | Appel + form contact + (idéal) dépôt |
-| C2 | Jeux gonflables / anniversaire | 30 % | `/location-jeux-gonflable/` **ou** forfait enfants | Appel + form |
-| C3 | Photobooth / 360 | 30 % | `/forfaits-photobooth/` | Appel + form + date |
+| C1 | Express + Mobilier | 40 % | Home Express · `/forfaits-tables-chaises/` · `/forfait-mobilier-reception/` | Appel + form contact + (idéal) dépôt |
+| C2 | Jeux / anniversaire | 30 % | **`/forfaits-fete-enfants/`** (+ `/forfait-jeux-essentiel/`) | Appel + form |
+| C3 | Photobooth / 360 | 30 % | **`/forfaits-photobooth/`** (+ `/location-videobooth-360/`) | Appel + form + date |
+
+> Mapping complet des bonnes pages : `strategie/LANDINGS-ADS-BONNES-PAGES.md`
 
 Réseau : **Search uniquement** au début (pas Display).  
 Zone : rayon **~40 km autour de Sainte-Thérèse** (à confirmer).  
