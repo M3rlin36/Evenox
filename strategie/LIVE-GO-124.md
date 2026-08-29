@@ -6,7 +6,11 @@ https://app.notion.com/p/3cb31d285ea6815d8e0be2fb5fc60392
 ## 2 — Google Drive pack
 https://drive.google.com/drive/folders/1PreFY9kBAORAg9wNUoWNu3d7hsqh4ats
 
-Fichiers : 00→07 (keywords, négatifs compte+AG, RSA, structure, sitelinks, ZIP)
+Fichiers : 00→07 + [ZIP v2](https://drive.google.com/file/d/1KsuWPKQyTwwTPOehp4kN9GAAsHI9Ke_X/view)
+
+Cibles salles Notion : https://app.notion.com/p/3cb31d285ea681dba85edaa4478b7bab
+
+Gmail : 3 outreach + 1 auto-réponse lead (brouillons, non envoyés)
 
 ## 4 — Script téléphone
 https://app.notion.com/p/3cb31d285ea6814ea57fe482461dce4a
