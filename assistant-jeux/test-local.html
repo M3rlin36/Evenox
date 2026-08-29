@@ -388,7 +388,15 @@ window.__evxMailto = [];
         .then(function () {
           retirer(it.hash);
         })
-        .catch(function () {});
+        .catch(function () {
+          if (it.tentatives >= MAX_TENTATIVES) {
+            if (!it.mailtoFait) {
+              it.mailtoFait = true;
+              ecrireFile(file);
+              mailtoRepli(champs);
+            }
+          }
+        });
     });
   }
 

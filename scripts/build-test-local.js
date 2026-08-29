@@ -38,6 +38,7 @@ function main() {
     'window.evx_ajax = \'https://evenox.test/wp-admin/admin-ajax.php\';',
     'window.evxSimulerReseau = { mode: (function(){ try { return sessionStorage.getItem(\'evx_mode\') || \'ok\'; } catch (e) { return \'ok\'; } })(), envois: [] };',
     'window.__evxFetches = [];',
+    'window.__evxMailto = [];',
     '(function(){',
     '  var origFetch = window.fetch;',
     '  function lireBody(init){',
