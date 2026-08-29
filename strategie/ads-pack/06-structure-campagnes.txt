@@ -1,0 +1,42 @@
+STRUCTURE GOOGLE ADS ÉDITOR — Évenox
+=====================================
+Réseau: Search ONLY | Langue: FR | Match: Phrase + Exact | Display: OFF
+
+CAMPAGNE 1 — Mobilier Search
+  Budget jour: 40% du total (ex. 12$/j si 30$/j)
+  Bid: Maximize conversions (après 15+ conv) sinon Maximize clicks + CPA cible soft
+  Loc: rayon 40 km Ste-Thérèse (ajuster) EXCLURE Rive-Sud si confirmé
+  Ad groups:
+    - Express 72h          → https://evenox.ca/
+    - Chaises Laval        → /location-chaises-laval/
+    - Chaises Sainte-Therese → /location-chaises-sainte-therese/
+    - Chaises Blainville   → /location-chaises-blainville/
+    - Tables chaises location → /location-tables-chaises/
+    - Mobilier cle en main → /forfaits-tables-chaises/
+
+CAMPAGNE 2 — Jeux Search (30%)
+    - Gonflables hub
+    - Gonflables Laval
+    - Jeux ville (autres geos CSV)
+    - Forfait cle en main → /forfaits-fete-enfants/
+
+CAMPAGNE 3 — Photobooth Search (25%)
+    - Photobooth location → /photobooth/
+    - Photobooth Laval
+    - Videobooth 360
+    - Forfait cle en main → /forfaits-photobooth/
+
+CAMPAGNE 4 — Corpo Search (5% — pause OK jusqu'oct)
+    - 5 a 7 party bureau
+    - Noel gala
+
+IMPORT ORDER
+1. Créer 4 campagnes + settings
+2. Créer ad groups vides
+3. Import 01-keywords.csv
+4. Import / coller RSA depuis 03-rsa-annonces.csv
+5. Coller 02-negatifs-compte.txt au NIVEAU COMPTE
+6. Import 05-negatifs-par-adgroup.csv
+7. Extensions: call 514-559-1893, sitelinks (Express, Jeux, Photobooth, Contact)
+8. Conversions: appel + form contact
+9. Status: Enabled seulement après tracking + stock check weekend
