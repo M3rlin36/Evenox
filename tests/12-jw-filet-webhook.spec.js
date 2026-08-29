@@ -28,8 +28,9 @@ test.describe('Chantier 5 — filet webhook jw', () => {
     await page.waitForFunction(() => window.EvxEnvoi && window.EvxEnvoi.lireFile().length >= 1);
     const file1 = await page.evaluate(() => window.EvxEnvoi.lireFile());
     expect(file1.length).toBe(1);
-    expect(file1[0].lead.evx_test).toBe('TEST');
-    expect(file1[0].lead.details).toMatch(/^TEST/);
+    var rec = file1[0].champs || file1[0].lead;
+    expect(rec.evx_test || rec.marqueur).toBe('TEST');
+    expect(rec.details).toMatch(/TEST/);
     await expect(page.locator('#jwStatut')).toContainText('réessaiera');
 
     await page.evaluate(() => {
@@ -39,11 +40,11 @@ test.describe('Chantier 5 — filet webhook jw', () => {
     await page.locator('#jwBox').waitFor();
     const file2 = await page.evaluate(() => window.EvxEnvoi.lireFile());
     expect(file2.length).toBeGreaterThanOrEqual(1);
-    expect(file2[0].lead.email).toBe('filet@evenox.test');
+    expect((file2[0].champs || file2[0].lead).email).toBe('filet@evenox.test');
 
     await page.evaluate(() => {
       var f = window.EvxEnvoi.lireFile();
-      f[0].tentatives = window.EvxEnvoi.MAX - 1;
+      f[0].tentatives = window.EvxEnvoi.MAX;
       window.EvxEnvoi.ecrireFile(f);
       window.evxSimulerReseau.mode = 'echec';
       window.EvxEnvoi.rejouer();

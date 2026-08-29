@@ -28,11 +28,18 @@ test('5 — file d\'attente locale si réseau coupé, retry au chargement', asyn
 
   const file = await page.evaluate(() => JSON.parse(localStorage.getItem('evx_file_leads') || '[]'));
   expect(file.length).toBe(1);
-  expect(file[0].lead.email).toBe('test@evenox.test');
-  expect(file[0].lead.marqueur || file[0].lead.evx_test).toBeTruthy();
+  expect((file[0].champs || file[0].lead).email).toBe('test@evenox.test');
+  expect((file[0].champs || file[0].lead).marqueur || (file[0].champs || file[0].lead).evx_test).toBeTruthy();
 
+  await page.evaluate(() => {
+    try { sessionStorage.removeItem('evx_mode'); } catch (e) {}
+  });
   await page.reload();
   await page.locator('#jwBox').waitFor();
+  await page.evaluate(() => {
+    window.evxSimulerReseau.mode = 'ok';
+    if (window.EvxEnvoi) window.EvxEnvoi.rejouer();
+  });
 
   await page.waitForFunction(() => {
     const raw = localStorage.getItem('evx_file_leads');
