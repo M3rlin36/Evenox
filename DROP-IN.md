@@ -27,8 +27,10 @@ Si tu as aussi `calculateur-secteur-v2.html`, le poser à la racine
 ## 2. Une commande
 
 ```bash
-node scripts/integrer-sources.js
+npm run integrer
 ```
+
+Équivalent : `node scripts/integrer-sources.js`.
 
 Elle refuse d’inventer ce qui manque. Si les fichiers sont là, elle enchaîne :
 

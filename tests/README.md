@@ -7,10 +7,17 @@ Harnais local sur les `test-local.html` autonomes. **Aucun serveur.** Rien n’e
 ```bash
 npm install
 npx playwright install chromium
-npx playwright test
+npm test
 ```
 
 Depuis la racine du dépôt. Un seul navigateur suffit (Chromium).
+
+Porte complète (catalogue + lint jw + Playwright) — même chose que la CI
+(`.github/workflows/tests.yml`) :
+
+```bash
+npm run ci
+```
 
 Régénérer la page de test jw après un changement de widget :
 
