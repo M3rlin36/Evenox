@@ -46,27 +46,11 @@ md += `| Assistant jeux (catégorie) | ${produits.filter((p) => p.categorie === 
   md += `| Calculateur fête | ${produits.filter((p) => p.categorie === 'calculateur-fete' || p.sources.some((s) => s.fichier.includes('calculateur-fete'))).length} |\n`;
 
 if (absents.length) {
-  md += '\n## Sources absentes — recherche 2026-08-29 (2e passe)\n\n';
-  md += 'Toujours **introuvables**. Rien n’a été inventé. Le vérificateur ignore ces chemins s’ils n’existent pas sur disque.\n\n';
+  md += '\n## Sources absentes\n\n';
+  md += 'Toujours **introuvables** dans ce clone. Rien n’a été inventé.\n\n';
   for (const a of absents) md += `- \`${a}\`\n`;
-  md += '\n### Où on a cherché\n\n';
-  md += '| Endroit | Résultat |\n|---|---|\n';
-  md += '| Workspace `/workspace` et `/tmp` (caches live) | Aucun `ev-widget*` / `calculateur-fete*` |\n';
-  md += '| Toutes les branches git (`git ls-tree -r` sur chaque ref) | Aucun de ces chemins n’a jamais été commité |\n';
-  md += '| Drive (titres `ev-widget`, `calculateur-fete`, `assistant-evenement`, `payload`, `.js`/`.html` ; texte `expressActif` / `49289`) | 0 fichier source |\n';
-  md += '| Gmail (pièces `filename:js`/`html`, sujets widget/calculateur, chaînes `expressActif` / `49289`) | 0 pièce jointe |\n';
-  md += '| Notion (CURSOR-BRIEF, ev-widget, 49289, expressActif) | Pages opérationnelles seulement, pas le JS |\n';
-  md += '| Slack public (`ev-widget`, `calculateur-fete`, `assistant-evenement`) | 0 message |\n';
-  md += '| GitHub `M3rlin36` (code `ev-widget.js`, `expressActif`, `49289`) | Repo Evenox uniquement, fichiers absents |\n';
-  md += '| Transcripts agents (`bc-7ed6825a`, `bc-99910cae`, `bc-69ba5bba`, `bc-f64e73f8`) | Le parent a déjà conclu 404 ; les autres n’ont jamais vu les fichiers |\n';
-  md += '| Sitemap Yoast `page-sitemap.xml` (226 pages publiées) | Aucun slug `assistant-evenement` ni `calculateur*` |\n';
-  md += '\n### GET publics evenox.ca (3 s entre requêtes ; stop 403/429 — aucun 403/429)\n\n';
-  md += '1re passe (déjà documentée) : `/assistant-evenement/`, `/calcule-ton-evenement/`, `/calculateur-fete/`, `/calculateur/`, `/calculer-mon-evenement/` → **404**.\n\n';
-  md += '2e passe : `/calculateur-de-fete/`, `/calculateur-evenement/`, `/calcule-ta-fete/`, `/assistant-persona/`, `/calculateur-secteur/`, `/calculateur-secteur-v2/` → **404**.\n\n';
-  md += 'REST public `GET /wp-json/wp/v2/pages?search=assistant` : pages déjà extraites (`location-decoration-evenementielle`, `location-jeux-geants`, `location-jeux-exterieurs` 4839, `chapiteaux-structures-evenementielles`). Pas de slug `assistant-evenement` (la page prévue au §7 est draft / pas encore créée).\n\n';
-  md += 'REST public `GET /wp-json/wp/v2/pages?search=calculateur` : `location-tables-chaises` 6569, `nos-forfaits-tout-inclus`, forfaits mobilier — déjà dans le catalogue. Pas de `calculateur-fete`.\n\n';
-  md += '### Blocage\n\n';
-  md += 'Les ~95 produits persona et la grille du calculateur de fête (dont `expressActif: false`) vivent seulement dans `C:\\Users\\Admin\\Evenox` chez Alexandre. Sans ces deux fichiers, le chantier 1 ne peut pas atteindre la couverture « ~95 persona ». Relancer l’extracteur dès qu’ils sont poussés ici.\n';
+  md += '\nDétail des 3 passes (GET, Drive, Gmail, Notion, Slack, git) : `RAPPORT-RECHERCHE.md`.\n';
+  md += 'Quand les fichiers sont copiés depuis `C:\\Users\\Admin\\Evenox` : voir `DROP-IN.md`, puis `node scripts/integrer-sources.js`.\n';
 }
 
 md += '\n## Conflits de prix (même identifiant)\n\n';
@@ -108,7 +92,11 @@ for (const p of seuils) {
 
 md += '\n## Autres écarts utiles (pas le même id)\n\n';
 md += 'Commentaire interne du kit wizard : « 115 exemplaires en stock » pour la table 6 pi, alors que `STOCK.rect6` vaut **105**. Le catalogue retient 105 (la constante), et note le commentaire comme écart documentaire — pas un second prix.\n\n';
-md += '`expressActif: false` est cité dans le brief pour `calculateur-fete.html`, fichier absent de ce clone. Rien à extraire.\n';
+if (!fs.existsSync(path.join(ROOT, 'calculateur-fete.html'))) {
+  md += '`expressActif: false` est cité dans le brief pour `calculateur-fete.html`, fichier absent de ce clone. Rien à extraire.\n';
+} else {
+  md += '`expressActif` : relire `calculateur-fete.html` (décision §6 — ne pas trancher ici).\n';
+}
 
 md += '\n## Décisions en attente (rappel §6)\n\n';
 md += '1. Zones Montréal / Longueuil / Brossard / Gatineau — transport sur mesure, jamais un ajustement inventé.\n';
