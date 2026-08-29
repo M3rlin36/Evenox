@@ -45,7 +45,7 @@ md += `| Assistant jeux (catégorie) | ${produits.filter((p) => p.categorie === 
 
 if (absents.length) {
   md += '\n## Sources absentes de ce clone\n\n';
-  md += "Le brief les nomme. Elles n'étaient pas dans le dépôt GitHub. Rien n'a été inventé à leur place.\n\n";
+  md += "Relu en GET sur evenox.ca : `/assistant-evenement/`, `/calcule-ton-evenement/`, `/calculateur-fete/`, `/calculateur/`, `/calculer-mon-evenement/` → **404**. Rien n'a été inventé.\n\n";
   for (const a of absents) md += `- \`${a}\`\n`;
 }
 

@@ -6,7 +6,7 @@ Généré le 2026-08-29. Aucun conflit n'est tranché : c'est une décision d'af
 
 | | |
 |---|---|
-| Observations lues | 257 |
+| Observations lues | 265 |
 | Produits fusionnés | 171 |
 | Produits à prix unique | 169 |
 | Produits en conflit (même id, prix différents) | 2 |
@@ -14,7 +14,7 @@ Généré le 2026-08-29. Aucun conflit n'est tranché : c'est une décision d'af
 
 ## Sources absentes de ce clone
 
-Le brief les nomme. Elles n'étaient pas dans le dépôt GitHub. Rien n'a été inventé à leur place.
+Relu en GET sur evenox.ca : `/assistant-evenement/`, `/calcule-ton-evenement/`, `/calculateur-fete/`, `/calculateur/`, `/calculer-mon-evenement/` → **404**. Rien n'a été inventé.
 
 - `assistant-evenement/ev-widget.js`
 - `calculateur-fete.html`
@@ -52,8 +52,10 @@ Décision ouverte (§6). Ne pas publier un seul prix tant que ce n'est pas tranc
 Ce ne sont pas le même id : deux offres de capacité voisine, prix très différents. Le brief les signale comme conflit d'affaires, pas comme une dérive de catalogue.
 
 - Express 50 pers — `CURSOR-BRIEF.md` L99 → **210 $**
+- Express 50 pers — `page-accueil-express.html` L3 → **210 $**
 - Réception 48 pers — `kit-wizard-decoded.js` L15 → **649 $**
 - Réception 48 pers — `CURSOR-BRIEF.md` L88 → **649 $**
+- Réception 48 pers — `page-nos-forfaits-cartes.html` L4 → **649 $**
 
 Écart : **439 $** pour ~50 places. Non tranché.
 

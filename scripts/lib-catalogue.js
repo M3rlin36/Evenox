@@ -18,6 +18,8 @@ const SOURCE_FILES = [
   'CURSOR-BRIEF.md',
   'page-nos-forfaits-secteur.js',
   'page-location-jeux-exterieurs-cartes.html',
+  'page-accueil-express.html',
+  'page-nos-forfaits-cartes.html',
 ];
 
 const KIT_STOCK = {
@@ -46,6 +48,8 @@ const CATEGORIE_PAR_FICHIER = {
   'CURSOR-BRIEF.md': 'brief',
   'page-nos-forfaits-secteur.js': 'forfaits-secteur',
   'page-location-jeux-exterieurs-cartes.html': 'landing-jeux-exterieurs',
+  'page-accueil-express.html': 'accueil',
+  'page-nos-forfaits-cartes.html': 'forfaits-page',
 };
 
 function readSource(rel) {
@@ -163,18 +167,33 @@ function parseKitNappes(text, fichier) {
 
 function parseLandingCards(text, fichier) {
   const hits = [];
-  const re = /<h4>([^<]+)<\/h4>[\s\S]*?<div class="product-price">\s*([0-9]+(?:[.,][0-9]+)?)\s*\$/g;
+  const re =
+    /<article(?:\s+data-id="([^"]+)")?[^>]*>\s*<h4>([^<]+)<\/h4>[\s\S]*?<div class="(?:product-price|forfait-price|express-price)">\s*([0-9]+(?:[.,][0-9]+)?)\s*\$/g;
   let m;
   while ((m = re.exec(text))) {
-    const nom = m[1].trim();
-    const prix = Number(m[2].replace(',', '.'));
+    const nom = m[2].trim();
+    const prix = Number(m[3].replace(',', '.'));
     hits.push({
-      id: slugify(nom),
+      id: m[1] || slugify(nom),
       nom,
       prix,
       fichier,
       ligne: text.slice(0, m.index).split('\n').length,
     });
+  }
+  const loose =
+    /<h4>([^<]+)<\/h4>[\s\S]*?<div class="product-price">\s*([0-9]+(?:[.,][0-9]+)?)\s*\$/g;
+  if (!hits.length) {
+    while ((m = loose.exec(text))) {
+      const nom = m[1].trim();
+      hits.push({
+        id: slugify(nom),
+        nom,
+        prix: Number(m[2].replace(',', '.')),
+        fichier,
+        ligne: text.slice(0, m.index).split('\n').length,
+      });
+    }
   }
   return hits;
 }
@@ -268,7 +287,11 @@ function extraireSources() {
       observations.push(...parseBrief(text, rel));
       continue;
     }
-    if (rel === 'page-location-jeux-exterieurs-cartes.html') {
+    if (
+      rel === 'page-location-jeux-exterieurs-cartes.html' ||
+      rel === 'page-accueil-express.html' ||
+      rel === 'page-nos-forfaits-cartes.html'
+    ) {
       observations.push(...parseLandingCards(text, rel));
       continue;
     }
