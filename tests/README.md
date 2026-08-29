@@ -29,14 +29,17 @@ node scripts/build-test-local.js
 | 9 | jw | JS off : 3 cartes-liens (on ne les suit pas) |
 | 10 | jw | J4P = 35 km → livraison 275 $ (100 + 7×25). ev skip |
 
+| file | jw | réseau coupé → `localStorage` ; retry au reload |
+
 `calculateur-fete.html` est absent : pas de spec inventée.
 
 Prix du panier = ceux de `jw-widget.js` (Moyen Bouncer 120, Pac-Man 100,
 Connect 4 80, Fast & Furious 140, Air hockey 120). Flipper et stocks à 2
 n’existent pas dans ce fichier — on ne les invente pas.
 
-A11y (C4) : `tests/a11y-jw.spec.js` (axe-core, 375px, clavier). ev et
-calculateur : skip.
+A11y (C4) : `tests/11-jw-a11y-mobile.spec.js` + `tests/a11y-jw.spec.js`.
+Filet (C5) : `tests/12-jw-filet-webhook.spec.js` (file localStorage, mailto).
+ev et calculateur : skip.
 
 ## Ouvert
 

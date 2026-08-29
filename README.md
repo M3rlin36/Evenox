@@ -30,5 +30,6 @@ node scripts/build-test-local.js
 ```
 
 `build.js assistant-evenement` échoue tant que le dossier manque (voulu).
+Filet des leads : `lib/evx-envoi.js` + `WEBHOOK.md` (destination §6.3 ouverte).
 Décisions §6 (zones, seuil 449/500, destination des leads, conflits de prix) :
 ouvertes, non tranchées ici.

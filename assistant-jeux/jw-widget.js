@@ -488,36 +488,39 @@
     var statut = $('jwStatut');
     statut.className = 'jw-statut';
     statut.textContent = 'Ta demande part chez nous...';
-    var fd = new FormData();
-    fd.append('action', 'evx_soumission');
-    fd.append('evx_nonce', window.evx_nonce || '');
-    fd.append('nom_complet', $('jwNom').value.trim());
-    fd.append('email', $('jwCourriel').value.trim());
-    fd.append('telephone', $('jwTel').value.trim());
-    fd.append('date_event', $('jwDate').value);
-    fd.append('details', resume(calc));
-    fd.append('service', 'Assistant jeux (landing extérieurs)');
-    fd.append('page_url', window.location.href);
-    fd.append('referrer', document.referrer || 'direct');
-    fd.append('device', window.innerWidth <= 600 ? 'mobile' : (window.innerWidth <= 960 ? 'tablet' : 'desktop'));
-    fd.append('timestamp', new Date().toISOString());
-    fetch(window.evx_ajax || '/wp-admin/admin-ajax.php', { method:'POST', body:fd, credentials:'same-origin' })
-      .then(function(r){ return r.json(); })
-      .then(function(d){
+    var largeur = window.innerWidth;
+    var appareil = largeur <= 600 ? 'mobile' : (largeur <= 960 ? 'tablet' : 'desktop');
+    EvxEnvoi.envoyer({
+      hash: hash,
+      lead: {
+        action: 'evx_soumission',
+        nom_complet: $('jwNom').value.trim(),
+        email: $('jwCourriel').value.trim(),
+        telephone: $('jwTel').value.trim(),
+        date_event: $('jwDate').value,
+        details: resume(calc),
+        service: 'Assistant jeux (landing extérieurs)',
+        page_url: window.location.href,
+        referrer: document.referrer || 'direct',
+        device: appareil,
+        timestamp: new Date().toISOString()
+      },
+      onOk: function () {
         etat.envoiEnCours = false;
-        if (d) { if (d.success) {
-          etat.envoiHash = hash;
-          statut.className = 'jw-statut jw-ok';
-          statut.textContent = 'Ta demande est chez nous. On te confirme les disponibilités et le prix final en 24 h.';
-          return;
-        } }
-        throw new Error('refus');
-      })
-      .catch(function(){
+        etat.envoiHash = hash;
+        statut.className = 'jw-statut jw-ok';
+        statut.textContent = 'Ta demande est chez nous. On te confirme les disponibilités et le prix final en 24 h.';
+      },
+      onEchec: function (info) {
         etat.envoiEnCours = false;
         statut.className = 'jw-statut jw-echec';
-        statut.textContent = 'L\'envoi n\'a pas passé. Appelle-nous au 514-559-1893, on prend ta demande tout de suite.';
-      });
+        var mailto = false;
+        if (info) { if (info.mailto) mailto = true; }
+        statut.textContent = mailto
+          ? 'L\'envoi n\'a pas passé. On t\'ouvre un courriel de secours, ou appelle au 514-559-1893.'
+          : 'L\'envoi n\'a pas passé. On réessaiera. Appelle-nous au 514-559-1893 si ça urge.';
+      }
+    });
   }
   function revelerPrix(){
     var calc = calculer();

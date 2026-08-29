@@ -31,7 +31,17 @@ const bloquerReseau = couperReseau;
 
 async function ouvrirJw(page, query) {
   await couperReseau(page);
+  await page.addInitScript(() => {
+    try {
+      if (!sessionStorage.getItem('evx_session_ouverte')) {
+        localStorage.removeItem('evx_file_leads');
+      }
+    } catch (e) {}
+  });
   await page.goto(jwUrl(query));
+  await page.evaluate(() => {
+    try { sessionStorage.setItem('evx_session_ouverte', '1'); } catch (e) {}
+  });
   await page.locator('#jwBox').waitFor();
 }
 

@@ -36,7 +36,7 @@ function main() {
     'window.evx_test = true;',
     'window.evx_nonce = \'TEST\';',
     'window.evx_ajax = \'https://evenox.test/wp-admin/admin-ajax.php\';',
-    'window.evxSimulerReseau = { mode: \'ok\', envois: [] };',
+    'window.evxSimulerReseau = { mode: (function(){ try { return sessionStorage.getItem(\'evx_mode\') || \'ok\'; } catch (e) { return \'ok\'; } })(), envois: [] };',
     'window.__evxFetches = [];',
     '(function(){',
     '  var origFetch = window.fetch;',

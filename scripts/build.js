@@ -23,7 +23,9 @@
  */
 
 const fs = require('fs');
+const path = require('path');
 const {
+  ROOT,
   parseArgs,
   infoWidget,
   fichiersManquants,
@@ -31,6 +33,17 @@ const {
   verifierPayload,
   formaterErreurs,
 } = require('./lib-payload');
+
+function jsAvecFilet(jsWidget, relWidget) {
+  const envoiRel = 'lib/evx-envoi.js';
+  const envoiPath = path.join(ROOT, envoiRel);
+  if (!fs.existsSync(envoiPath)) return { js: jsWidget, relsJs: relWidget };
+  const envoi = fs.readFileSync(envoiPath, 'utf8');
+  return {
+    js: envoi.replace(/\s+$/, '') + '\n' + jsWidget,
+    relsJs: envoiRel + ' + ' + relWidget,
+  };
+}
 
 function usage() {
   console.error('Usage : node scripts/build.js <assistant-evenement|assistant-jeux> [--assert-length=N]');
@@ -79,13 +92,14 @@ function main(argv) {
 
   const html = fs.readFileSync(info.abs.html, 'utf8');
   const css = fs.readFileSync(info.abs.css, 'utf8');
-  const js = fs.readFileSync(info.abs.js, 'utf8');
+  const jsWidget = fs.readFileSync(info.abs.js, 'utf8');
+  const { js, relsJs } = jsAvecFilet(jsWidget, info.rels.js);
 
   const { payload, erreurs: errAssemble } = assembler({
     html,
     css,
     js,
-    rels: info.rels,
+    rels: Object.assign({}, info.rels, { js: relsJs }),
   });
   if (errAssemble.length) {
     console.error(`ÉCHEC du build ${info.dossier} : règle §4 violée dans les sources\n`);
