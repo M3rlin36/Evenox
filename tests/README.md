@@ -32,6 +32,8 @@ node scripts/build-test-local.js
 | file | jw | réseau coupé → `localStorage` ; retry au reload |
 
 `calculateur-fete.html` est absent : pas de spec inventée.
+Quand ev arrive : `DROP-IN.md` → `node scripts/integrer-sources.js`,
+puis écrire les scénarios 1–5 avec les vrais sélecteurs (ne pas les inventer).
 
 Prix du panier = ceux de `jw-widget.js` (Moyen Bouncer 120, Pac-Man 100,
 Connect 4 80, Fast & Furious 140, Air hockey 120). Flipper et stocks à 2

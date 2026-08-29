@@ -3,6 +3,20 @@
 Catalogue, générateur de payload Divi, et tests Playwright.
 **Aucun déploiement**, aucun POST WordPress, aucune écriture sur evenox.ca.
 
+## État après chantiers 1–5
+
+jw (assistant jeux) est prêt. ev (persona) et le calculateur de fête
+**ne sont pas dans ce clone** et **ne sont pas en ligne** (404, 3 passes :
+`RAPPORT-RECHERCHE.md`). Rien n’a été inventé.
+
+Pour les déposer depuis `C:\Users\Admin\Evenox` : **`DROP-IN.md`**.
+
+```bash
+node scripts/integrer-sources.js
+```
+
+Exit 2 tant que `assistant-evenement/ev-widget.*` manque (voulu).
+
 ## Tests
 
 ```bash
@@ -16,9 +30,9 @@ Chromium seulement. Les specs ouvrent `assistant-jeux/test-local.html` en `file:
 
 Détail des scénarios 1–10 : `tests/README.md`.
 
-`assistant-evenement/` et `calculateur-fete.html` sont absents de ce clone
-(404 en ligne). Tests 1–5 (ev) et le volet ev du test 10 : `skip` —
-relancer quand `ev-widget.js` arrive. Ne pas inventer ce widget.
+Tests 1–5 (ev) et le volet ev du test 10 : `skip` —
+relancer quand `ev-widget.js` arrive, puis écrire les sélecteurs DOM
+(ne pas les inventer avant). `calculateur-fete.html` : pas de spec inventée.
 
 ## Build / lint / catalogue
 

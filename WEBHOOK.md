@@ -6,8 +6,9 @@ chargement, `mailto:` en **dernier recours**.
 Zapier / Make / Mailchimp ici.
 
 Widgets concernés : assistant-jeux (jw) aujourd’hui. `assistant-evenement` et
-`calculateur-fete.html` sont absents — le même module les branchera quand ils
-arriveront. Ne pas inventer ces widgets.
+`calculateur-fete.html` sont absents (3 passes : `RAPPORT-RECHERCHE.md`).
+Le même module les branchera quand ils arriveront — `DROP-IN.md`.
+Ne pas inventer ces widgets. Destination §6.3 toujours ouverte.
 
 ## Champs envoyés (POST, `multipart/form-data` ou JSON)
 

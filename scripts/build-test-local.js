@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * Assemble assistant-jeux/test-local.html : widget jw inliné, ouvrable en file://.
+ * Assemble test-local.html (jw toujours ; ev seulement si ev-widget.* existe).
  * Aucun serveur. Les fetch de leads sont simulés dans la page (marqueur TEST).
- * assistant-evenement et calculateur-fete sont absents : on ne les invente pas.
+ * assistant-evenement et calculateur-fete absents : on ne les invente pas.
  */
 
 const fs = require('fs');
@@ -11,14 +11,12 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 
-function main() {
-  const dir = path.join(ROOT, 'assistant-jeux');
-  const htmlPath = path.join(dir, 'jw-widget.html');
-  const cssPath = path.join(dir, 'jw-widget.css');
-  const jsPath = path.join(dir, 'jw-widget.js');
+function ecrireTestLocal(dir, prefixe, titre) {
+  const htmlPath = path.join(dir, prefixe + '-widget.html');
+  const cssPath = path.join(dir, prefixe + '-widget.css');
+  const jsPath = path.join(dir, prefixe + '-widget.js');
   if (!fs.existsSync(htmlPath) || !fs.existsSync(cssPath) || !fs.existsSync(jsPath)) {
-    console.error('ÉCHEC : sources jw-widget.* introuvables. Rien n\'a été inventé.');
-    process.exit(1);
+    return false;
   }
 
   const html = fs.readFileSync(htmlPath, 'utf8');
@@ -84,7 +82,7 @@ function main() {
     '<head>',
     '<meta charset="utf-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1">',
-    '<title>Assistant jeux — test local (pas de reseau)</title>',
+    '<title>' + titre + '</title>',
     '<style>',
     css.replace(/\s+$/, ''),
     '</style>',
@@ -102,7 +100,29 @@ function main() {
 
   const dest = path.join(dir, 'test-local.html');
   fs.writeFileSync(dest, out, 'utf8');
-  console.log('OK : assistant-jeux/test-local.html — ' + out.length + ' caractères');
+  console.log('OK : ' + path.relative(ROOT, dest) + ' — ' + out.length + ' caractères');
+  return true;
+}
+
+function main() {
+  const jw = ecrireTestLocal(
+    path.join(ROOT, 'assistant-jeux'),
+    'jw',
+    'Assistant jeux — test local (pas de reseau)'
+  );
+  if (!jw) {
+    console.error('ÉCHEC : sources jw-widget.* introuvables. Rien n\'a été inventé.');
+    process.exit(1);
+  }
+  const evDir = path.join(ROOT, 'assistant-evenement');
+  const ev = ecrireTestLocal(
+    evDir,
+    'ev',
+    'Assistant evenement — test local (pas de reseau)'
+  );
+  if (!ev) {
+    console.log('assistant-evenement/ev-widget.* absent — test-local ev non créé (voulu).');
+  }
 }
 
 main();
