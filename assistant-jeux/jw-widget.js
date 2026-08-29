@@ -240,6 +240,8 @@
     for (var k = 0; k < pas.length; k++) {
       pas[k].classList.toggle('jw-actif', k === iEtape);
       pas[k].classList.toggle('jw-fait', k <= vu);
+      if (k === iEtape) pas[k].setAttribute('aria-current', 'step');
+      else pas[k].removeAttribute('aria-current');
     }
     $('jwPrec').style.visibility = (iEtape === 0) ? 'hidden' : 'visible';
     var suiv = $('jwSuiv');
@@ -250,7 +252,11 @@
     var boite = racine.getBoundingClientRect();
     if (boite.top < 0) racine.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-  function erreur(txt){ $('jwErr').textContent = txt; }
+  function erreur(txt){
+    var el = $('jwErr');
+    el.textContent = txt;
+    if (txt) el.focus();
+  }
   function courrielValide(v){ return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); }
   function peutAvancer(){
     var e = ETAPES[iEtape];
@@ -266,6 +272,10 @@
       var nom = $('jwNom').value.trim(), courriel = $('jwCourriel').value.trim();
       $('jwChampNom').classList.toggle('jw-erreur', !nom);
       $('jwChampCourriel').classList.toggle('jw-erreur', !courrielValide(courriel));
+      $('jwNom').setAttribute('aria-invalid', nom ? 'false' : 'true');
+      $('jwCourriel').setAttribute('aria-invalid', courrielValide(courriel) ? 'false' : 'true');
+      $('jwNom').setAttribute('aria-describedby', nom ? '' : 'jwErr');
+      $('jwCourriel').setAttribute('aria-describedby', courrielValide(courriel) ? '' : 'jwErr');
       if (!nom) { erreur('Il nous faut ton nom pour préparer ta soumission.'); return false; }
       if (!courrielValide(courriel)) { erreur('Il nous faut un courriel valide pour t\'envoyer ta soumission.'); return false; }
       return true;
@@ -292,15 +302,36 @@
     /* onglets de categories, pour piger dans plusieurs sans revenir en arriere */
     var tabs = $('jwTabs');
     tabs.innerHTML = '';
-    CATEGORIES.forEach(function(c){
+    tabs.setAttribute('role', 'tablist');
+    tabs.setAttribute('aria-label', 'Catégories de jeux');
+    CATEGORIES.forEach(function(c, idx){
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'jw-tab' + (c.id === etat.categorie ? ' jw-on' : '');
+      b.id = 'jwTab-' + c.id;
+      b.setAttribute('role', 'tab');
+      b.setAttribute('aria-selected', c.id === etat.categorie ? 'true' : 'false');
+      b.setAttribute('aria-controls', 'jwGroupes');
+      b.tabIndex = c.id === etat.categorie ? 0 : -1;
       b.textContent = c.nom;
       b.addEventListener('click', function(){ etat.categorie = c.id; batirSelection(); });
+      b.addEventListener('keydown', function(ev){
+        var dir = 0;
+        if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') dir = 1;
+        if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') dir = -1;
+        if (!dir) return;
+        ev.preventDefault();
+        var next = (idx + dir + CATEGORIES.length) % CATEGORIES.length;
+        etat.categorie = CATEGORIES[next].id;
+        batirSelection();
+        var focus = $('jwTab-' + etat.categorie);
+        if (focus) focus.focus();
+      });
       tabs.appendChild(b);
     });
     var hote = $('jwGroupes');
+    hote.setAttribute('role', 'tabpanel');
+    hote.setAttribute('aria-labelledby', 'jwTab-' + etat.categorie);
     hote.innerHTML = '';
     (GROUPES[etat.categorie] || []).forEach(function(gr){
       var titre = document.createElement('p');
@@ -331,6 +362,7 @@
         moins.setAttribute('aria-label', 'Moins de ' + p.nom);
         var val = document.createElement('span');
         val.textContent = q;
+        val.setAttribute('aria-live', 'polite');
         var plus = document.createElement('button');
         plus.type = 'button'; plus.textContent = '+';
         plus.setAttribute('aria-label', 'Plus de ' + p.nom);
@@ -366,6 +398,8 @@
     etat.mode = m;
     $('jwModeLiv').classList.toggle('jw-on', m === 'livraison');
     $('jwModeRam').classList.toggle('jw-on', m === 'ramassage');
+    $('jwModeLiv').setAttribute('aria-pressed', m === 'livraison' ? 'true' : 'false');
+    $('jwModeRam').setAttribute('aria-pressed', m === 'ramassage' ? 'true' : 'false');
     $('jwPostalBloc').style.display = (m === 'ramassage') ? 'none' : '';
   }
   $('jwModeLiv').addEventListener('click', function(){ majMode('livraison'); });
@@ -509,6 +543,12 @@
     montre(iEtape + 1);
   });
   $('jwPrec').addEventListener('click', function(){ montre(iEtape - 1); });
+  racine.addEventListener('keydown', function(ev){
+    if (ev.key !== 'Escape') return;
+    if (iEtape === 0) return;
+    ev.preventDefault();
+    montre(iEtape - 1);
+  });
   $('jwModifier').addEventListener('click', function(){ montre(1); });
   /* barre de progression */
   (function(){
@@ -517,7 +557,10 @@
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'jw-pas';
-      var i = document.createElement('i'); b.appendChild(i);
+      b.setAttribute('aria-label', 'Étape ' + nom);
+      var i = document.createElement('i');
+      i.setAttribute('aria-hidden', 'true');
+      b.appendChild(i);
       var em = document.createElement('em'); em.textContent = nom; b.appendChild(em);
       b.addEventListener('click', function(){ if (k <= vu) montre(k); });
       barre.appendChild(b);

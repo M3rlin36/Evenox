@@ -1,6 +1,6 @@
 <section class="jw-sec" id="assistant-jeux">
 <div class="jw-wrap">
-<div class="jw-head"><span class="jw-eyebrow">Réservation en ligne</span></p>
+<div class="jw-head"><span class="jw-eyebrow">Réservation en ligne</span>
 <h2>Choisis tes jeux, vois ton prix livré</h2>
 <p>Gonflables, arcade ou jeux géants : monte ta sélection, dis-nous où t&rsquo;envoyer la soumission, et ton total livré s&rsquo;affiche tout de suite.</p>
 </div>
@@ -16,13 +16,13 @@
 <p class="jw-intro">Prix par jour. Ajoute autant de jeux que tu veux, dans n&rsquo;importe quelle catégorie.</p>
 <div class="jw-tabs" id="jwTabs"></div>
 <div id="jwGroupes"></div>
-<p class="jw-mini" id="jwMini">
+<p class="jw-mini" id="jwMini" aria-live="polite"></p>
 </div>
 <div class="jw-step" id="jwStep-livraison">
 <p class="jw-q">On te livre ou tu ramasses ?</p>
 <p class="jw-intro">Livré et repris chez toi, ou ramassage gratuit à notre entrepôt de Sainte-Thérèse. Si on livre, ton code postal chiffre le transport.</p>
-<div class="jw-modes"><button type="button" class="jw-mode jw-on" id="jwModeLiv"><b>Livraison chez toi</b><small>100 $ de base pour les 10 premiers km, puis environ 7 $ du km jusqu&rsquo;à 40 km, calculé avec ton code postal.</small></button><button type="button" class="jw-mode" id="jwModeRam"><b>Ramassage à Sainte-Thérèse</b><small>Gratuit, peu importe le montant. Tu passes prendre le matériel à l&rsquo;entrepôt et tu le rapportes.</small></button></div>
-<div class="jw-postal" id="jwPostalBloc"><input type="text" id="jwCP" maxlength="7" placeholder="J7E" autocomplete="postal-code" aria-label="Code postal"><span class="jw-ville jw-inconnu" id="jwVille">En attente</span></div>
+<div class="jw-modes"><button type="button" class="jw-mode jw-on" id="jwModeLiv" aria-pressed="true"><b>Livraison chez toi</b><small>100 $ de base pour les 10 premiers km, puis environ 7 $ du km jusqu&rsquo;à 40 km, calculé avec ton code postal.</small></button><button type="button" class="jw-mode" id="jwModeRam" aria-pressed="false"><b>Ramassage à Sainte-Thérèse</b><small>Gratuit, peu importe le montant. Tu passes prendre le matériel à l&rsquo;entrepôt et tu le rapportes.</small></button></div>
+<div class="jw-postal" id="jwPostalBloc"><label class="jw-postal-lbl" for="jwCP">Code postal</label><input type="text" id="jwCP" maxlength="7" placeholder="J7E" autocomplete="postal-code"><span class="jw-ville jw-inconnu" id="jwVille">En attente</span></div>
 </div>
 <div class="jw-step" id="jwStep-coordonnees">
 <p class="jw-q">Dernière étape avant ton prix</p>
@@ -42,14 +42,14 @@
 <ul id="jwRecap"></ul>
 <div class="jw-ligne"><span>Sous-total</span><strong id="jwSousTotal">&#8211;</strong></div>
 <div class="jw-ligne"><span id="jwLivLbl">Livraison et reprise</span><strong id="jwLiv">&#8211;</strong></div>
-<div class="jw-total"><span>Total</span><strong id="jwTotal">&#8211;</strong></div>
-<p class="jw-note" id="jwNote">
+<div class="jw-total"><span>Total</span><strong id="jwTotal" aria-live="polite">&#8211;</strong></div>
+<p class="jw-note" id="jwNote"></p>
 <div class="jw-statut" id="jwStatut"></div>
 <div class="jw-prix-actions"><button type="button" id="jwModifier">Modifier ma sélection</button><a class="jw-tel" href="tel:5145591893">Appelle-nous : 514-559-1893</a></div>
 </div>
 </div>
 <div class="jw-nav" id="jwNav" style="display:none"><button type="button" id="jwPrec">Retour</button><button type="button" id="jwSuiv">Continuer</button></div>
-<p class="jw-err" id="jwErr">
+<p class="jw-err" id="jwErr" role="alert" aria-live="assertive" tabindex="-1"></p>
 </div>
 </div>
 </section>

@@ -35,6 +35,9 @@ Prix du panier = ceux de `jw-widget.js` (Moyen Bouncer 120, Pac-Man 100,
 Connect 4 80, Fast & Furious 140, Air hockey 120). Flipper et stocks à 2
 n’existent pas dans ce fichier — on ne les invente pas.
 
+A11y (C4) : `tests/a11y-jw.spec.js` (axe-core, 375px, clavier). ev et
+calculateur : skip.
+
 ## Ouvert
 
 - Pas de widget ev ni de `test-local.html` persona : 1–5 et le volet ev du 10 restent skippés.
