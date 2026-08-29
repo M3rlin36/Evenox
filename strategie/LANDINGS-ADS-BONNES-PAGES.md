@@ -3,19 +3,22 @@
 **Date :** 29 août 2026  
 **Méthode :** inventaire sitemap (~226 pages + produits) + scoring (prix visibles, CTA, offre claire, geo, hub vs SKU vs blog).
 
+> **Correction intention :** les pages **forfait** = uniquement si la recherche contient un signal **clé en main / tout inclus / forfait / livré-placé**.  
+> Voir `strategie/LANDINGS-INTENTION-CLE-EN-MAIN.md`. Search générique (`location chaises Laval`) → pages **location / ville / Express**, pas forfait.
+
 ---
 
 ## Verdict rapide — URL finale par campagne
 
-| Campagne Ads | Landing **principale** (meilleure) | Landings **secondaires** (ad groups geo / intent) |
+| Campagne Ads | Landing **Search générique** | Landing **seulement si clé en main / forfait** |
 | --- | --- | --- |
-| **C1a Express urgence** | `https://evenox.ca/` (bloc Express 90/210/420 $) | — (pas de page `/express/` dédiée) |
-| **C1b Mobilier forfait** | `https://evenox.ca/forfaits-tables-chaises/` | `forfait-mobilier-reception/` (649 $) · `forfait-mobilier-essentiel/` (449 $) · `forfait-mobilier-grande-salle/` (849 $) · pages ville chaises |
-| **C2 Jeux / anniversaire** | `https://evenox.ca/forfaits-fete-enfants/` | `forfait-jeux-essentiel/` (499 $) · `forfait-jeux-premium/` (599 $) · `forfait-mega-fete/` (1099 $) · `location-jeux-gonflables-laval/` |
-| **C3 Photobooth** | `https://evenox.ca/forfaits-photobooth/` | `photobooth/` · `location-videobooth-360/` · `location-photobooth-laval/` · `location-photobooth-montreal/` · `location-photobooth-rive-nord/` |
-| **C4 Corpo (phase 2)** | `https://evenox.ca/forfaits-corporatif/` | `forfait-5-a-7-equipe/` · `forfait-party-de-bureau/` · `forfait-party-de-noel-entreprise/` · `forfait-gala-signature/` · `nos-forfaits-tout-inclus/` |
+| **C1a Express urgence** | `https://evenox.ca/` (Express 90/210/420 $) | — |
+| **C1b Mobilier** | `/location-tables-chaises/` · `/location-chaises-laval/` · `/location-chaises-sainte-therese/` | `/forfaits-tables-chaises/` · `/forfait-mobilier-reception/` (649 $) · essentiel / grande salle |
+| **C2 Jeux** | `/location-jeux-gonflables/` · `/location-jeux-gonflables-laval/` · `/jeux-laval/` · `/jeux-rive-nord/` | `/forfaits-fete-enfants/` · `/forfait-jeux-essentiel/` (499 $) · premium / méga fête |
+| **C3 Photobooth** | `/photobooth/` · `/location-photobooth-laval/` · `…-montreal/` · `…-rive-nord/` · `/location-videobooth-360/` | `/forfaits-photobooth/` (requête forfait / clé en main / tout inclus) |
+| **C4 Corpo (phase 2)** | — (peu de « location item ») | `/forfaits-corporatif/` · 5à7 / party bureau / Noël / gala |
 
-**Ne pas utiliser comme landing Ads principale :** `/contact/` seul, fiches `/product/…`, blogs « combien coûte… », catalogue gonflable sans forfait, `evenox.booqable.com` (login employés).
+**Ne pas utiliser comme landing Ads principale :** `/contact/` seul, fiches `/product/…`, blogs « combien coûte… », `evenox.booqable.com` (login employés).
 
 Shop booking public (si tu changes les CTA plus tard) : `https://evenox.booqableshop.com/`
 
