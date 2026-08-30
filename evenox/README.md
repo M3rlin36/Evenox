@@ -2,7 +2,7 @@
 
 Calculateur une question à la fois pour [evenox.ca/location-tables-chaises/](https://evenox.ca/location-tables-chaises/).
 
-Même UX que le calculateur Locabris (cartes, barre d’étapes, estimation, contact à la fin). Branding Évenox : violet `#5E17EB`, Raleway, logo et header du site.
+La page Divi (hero, photos, kit, couleurs `#5E17EB`, Raleway) reste. Le plugin 1.0.2 n’injecte que dans `#evx-plan` s’il existe. Sans cet hôte, le calculateur d’origine (déjà en étapes) s’affiche.
 
 Le site WordPress n’est pas dans ce dépôt. On livre un plugin + une preview.
 
