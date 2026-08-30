@@ -98,6 +98,13 @@ function locabris_fix_product_html()
         . '</div></div>';
 }
 
+add_filter('wp_get_attachment_image_attributes', function ($attr, $attachment = null, $size = null) {
+    if (isset($attr['alt'])) {
+        $attr['alt'] = locabris_fix_clean_title($attr['alt']);
+    }
+    return $attr;
+}, 20, 3);
+
 add_filter('the_title', function ($title, $post_id = 0) {
     if (is_admin()) {
         return $title;
