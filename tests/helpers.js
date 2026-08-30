@@ -33,7 +33,17 @@ async function ouvrirJw(page, query) {
   await couperReseau(page);
   await page.addInitScript(() => {
     try {
-      if (!sessionStorage.getItem('evx_session_ouverte')) {
+      var raw = localStorage.getItem('evx_file_leads');
+      var fileEnCours = false;
+      if (raw) {
+        try {
+          var arr = JSON.parse(raw);
+          fileEnCours = arr && arr.length > 0;
+        } catch (e2) {}
+      }
+      if (fileEnCours) {
+        if (!sessionStorage.getItem('evx_mode')) sessionStorage.setItem('evx_mode', 'echec');
+      } else if (!sessionStorage.getItem('evx_session_ouverte')) {
         localStorage.removeItem('evx_file_leads');
       }
     } catch (e) {}

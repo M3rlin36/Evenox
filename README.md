@@ -8,7 +8,7 @@ Catalogue, générateur de payload Divi, et tests Playwright.
 | Fait | Bloqué |
 |---|---|
 | C1–C5 pour **jw** (catalogue, build, Playwright, a11y, filet) | `assistant-evenement/ev-widget.*` et `calculateur-fete.html` : sur le PC seulement (`DROP-IN.md`) |
-| CI GitHub : `.github/workflows/tests.yml` appelle `npm run ci` (catalogue, contrats outils, lint jw, Playwright) | §6 : zones, seuil 449/500, destination des leads, conflits de prix — **ne pas trancher ici** |
+| CI GitHub : `.github/workflows/tests.yml` appelle `npm run ci` (catalogue, contrats outils, lint jw, Playwright) | §6 : constantes dans `lib/evx-decisions.js` + `DECISIONS.md` — **drapeaux actifs à `null` / `false`** |
 
 Rien n’a été inventé. ev / calculateur : 3 passes, toujours absents (`RAPPORT-RECHERCHE.md`).
 
@@ -58,3 +58,4 @@ npm run build:test-local
 `npm run build:ev` / `lint:payload:ev` échouent tant que le dossier manque (voulu).
 `node scripts/build.js assistant-jeux --check` refuse un `payload.txt` désaligné.
 Filet des leads : `lib/evx-envoi.js` + `WEBHOOK.md` (destination §6.3 ouverte).
+Décisions §6 : `lib/evx-decisions.js` + `DECISIONS.md` (paramétrables, non tranchées).

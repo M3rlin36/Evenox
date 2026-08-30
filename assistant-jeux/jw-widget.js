@@ -207,6 +207,22 @@
     if (km <= LIV_KM_INCLUS) return LIV_BASE;
     return Math.round(LIV_BASE + LIV_PAR_KM * (km - LIV_KM_INCLUS));
   }
+  function decisions(){
+    if (typeof window !== 'undefined') {
+      if (window.EvxDecisions) return window.EvxDecisions;
+    }
+    return {};
+  }
+  function nomDeZone(zone){
+    if (!zone || zone === 'UNKNOWN') return '';
+    return zone[0] || '';
+  }
+  function forcerTransportSurMesure(nom){
+    var d = decisions();
+    if (d.forcerSurMesure !== true) return false;
+    if (typeof d.estVilleSurMesure === 'function') return d.estVilleSurMesure(nom);
+    return false;
+  }
   function lookupZone(brut){
     var fsa = (brut || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 3);
     if (fsa.length < 3) return null;
@@ -437,6 +453,12 @@
       return { lignes: lignes, livTxt: livTxt, total: money(st) + ' +', note: note };
     }
     var km = (zone === 'UNKNOWN') ? null : zone[1];
+    if (forcerTransportSurMesure(nomDeZone(zone))) {
+      etat.surDevis = true;
+      livTxt = 'Sur devis';
+      note = 'Ton secteur demande un transport sur mesure : on te confirme la livraison en 24 h. Aucun montant inventé. Prix avant taxes.';
+      return { lignes: lignes, livTxt: livTxt, total: money(st) + ' +', note: note };
+    }
     var liv = (zone === 'UNKNOWN') ? null : livraisonPour(km);
     if (liv === null) {
       etat.surDevis = true;

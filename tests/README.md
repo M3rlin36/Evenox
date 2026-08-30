@@ -52,6 +52,8 @@ n’existent pas dans ce fichier — on ne les invente pas.
 
 A11y (C4) : `tests/11-jw-a11y-mobile.spec.js` + `tests/a11y-jw.spec.js`.
 Filet (C5) : `tests/12-jw-filet-webhook.spec.js` (file localStorage, mailto).
+S6 : `tests/13-jw-decisions-s6.spec.js` (constantes exposées, Brossard sur devis,
+Longueuil encore au km tant que `forcerSurMesure` est false).
 ev et calculateur : skip.
 
 ## Ouvert

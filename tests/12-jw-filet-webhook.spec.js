@@ -40,7 +40,10 @@ test.describe('Chantier 5 — filet webhook jw', () => {
     });
     await page.reload();
     await page.locator('#jwBox').waitFor();
-    await page.waitForTimeout(300);
+    await page.evaluate(() => {
+      if (window.evxSimulerReseau) window.evxSimulerReseau.mode = 'echec';
+    });
+    await page.waitForFunction(() => window.EvxEnvoi && window.EvxEnvoi.lireFile().length >= 1);
     const file2 = await page.evaluate(() => window.EvxEnvoi.lireFile());
     expect(file2.length).toBeGreaterThanOrEqual(1);
     expect((file2[0].champs || file2[0].lead).email).toBe('filet@evenox.test');

@@ -381,12 +381,32 @@ function resoudrePayloadPath(cible) {
   return { abs, rel: String(rel).replace(/\\/g, '/'), existe: fs.existsSync(abs) };
 }
 
+/** Modules vanilla inlinés devant le JS du widget (décisions S6, puis filet). */
+const LIBS_WIDGET = ['lib/evx-decisions.js', 'lib/evx-envoi.js'];
+
+function lireLibsWidget() {
+  const parts = [];
+  const rels = [];
+  for (const rel of LIBS_WIDGET) {
+    const abs = path.join(ROOT, rel);
+    if (!fs.existsSync(abs)) continue;
+    parts.push(fs.readFileSync(abs, 'utf8').replace(/\s+$/, ''));
+    rels.push(rel);
+  }
+  return {
+    js: parts.length ? parts.join('\n') + '\n' : '',
+    rels,
+  };
+}
+
 module.exports = {
   ROOT,
   PREFIXES,
+  LIBS_WIDGET,
   parseArgs,
   infoWidget,
   fichiersManquants,
+  lireLibsWidget,
   assembler,
   verifierPayload,
   formaterErreurs,

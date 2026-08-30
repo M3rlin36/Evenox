@@ -78,6 +78,16 @@ function main() {
   if (lintEv.status !== 1) fail('lint ev doit exit 1 (payload absent), reçu ' + lintEv.status);
   ok('lint ev exit 1 (payload absent)');
 
+  const decisions = fs.readFileSync(path.join(ROOT, 'lib', 'evx-decisions.js'), 'utf8');
+  if (decisions.indexOf('&') !== -1) fail('lib/evx-decisions.js contient un & littéral');
+  if (!/seuilLivraisonIncluseActif:\s*null/.test(decisions)) {
+    fail('S6.2 : seuilLivraisonIncluseActif doit rester null');
+  }
+  if (!/forcerSurMesure:\s*false/.test(decisions)) {
+    fail('S6.1 : forcerSurMesure doit rester false (comportement jw actuel)');
+  }
+  ok('evx-decisions.js : S6 non tranché, aucun &');
+
   const buildCheck = run(['scripts/build.js', 'assistant-jeux', '--check']);
   if (buildCheck.status !== 0) {
     fail('payload jw désaligné :\n' + (buildCheck.stderr || buildCheck.stdout || ''));

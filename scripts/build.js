@@ -24,25 +24,22 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 const {
-  ROOT,
   parseArgs,
   infoWidget,
   fichiersManquants,
+  lireLibsWidget,
   assembler,
   verifierPayload,
   formaterErreurs,
 } = require('./lib-payload');
 
 function jsAvecFilet(jsWidget, relWidget) {
-  const envoiRel = 'lib/evx-envoi.js';
-  const envoiPath = path.join(ROOT, envoiRel);
-  if (!fs.existsSync(envoiPath)) return { js: jsWidget, relsJs: relWidget };
-  const envoi = fs.readFileSync(envoiPath, 'utf8');
+  const libs = lireLibsWidget();
+  if (!libs.js) return { js: jsWidget, relsJs: relWidget };
   return {
-    js: envoi.replace(/\s+$/, '') + '\n' + jsWidget,
-    relsJs: envoiRel + ' + ' + relWidget,
+    js: libs.js + jsWidget,
+    relsJs: libs.rels.join(' + ') + ' + ' + relWidget,
   };
 }
 

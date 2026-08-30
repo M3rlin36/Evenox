@@ -2,7 +2,9 @@
 
 Le filet (`lib/evx-envoi.js`) est en place : file `localStorage`, réessai au
 chargement, `mailto:` en **dernier recours**.  
-**La destination des leads n’est pas tranchée (§6.3).** On ne crée aucun compte
+**La destination des leads n’est pas tranchée (§6.3).** Constante
+`destinationLeads` vide dans `lib/evx-decisions.js` (`DECISIONS.md`).
+On ne crée aucun compte
 Zapier / Make / Mailchimp ici.
 
 Widgets concernés : assistant-jeux (jw) aujourd’hui. `assistant-evenement` et

@@ -8,6 +8,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { lireLibsWidget } = require('./lib-payload');
 
 const ROOT = path.resolve(__dirname, '..');
 
@@ -24,11 +25,7 @@ function ecrireTestLocal(dir, prefixe, titre, opts) {
   const css = fs.readFileSync(cssPath, 'utf8');
   const js = fs.readFileSync(jsPath, 'utf8');
 
-  const envoiPath = path.join(ROOT, 'lib', 'evx-envoi.js');
-  let envoi = '';
-  if (fs.existsSync(envoiPath)) {
-    envoi = fs.readFileSync(envoiPath, 'utf8').replace(/\s+$/, '') + '\n';
-  }
+  const envoi = lireLibsWidget().js;
 
   const stub = [
     '<script>',

@@ -82,6 +82,8 @@ Commentaire interne du kit wizard : « 115 exemplaires en stock » pour la table
 
 ## Décisions en attente (rappel §6)
 
+Constantes (non tranchées) : `lib/evx-decisions.js`, mode d’emploi `DECISIONS.md`.
+
 1. Zones Montréal / Longueuil / Brossard / Gatineau — transport sur mesure, jamais un ajustement inventé.
 2. Seuil 449 $ ou 500 $.
 3. Destination des leads — hors chantier 1.

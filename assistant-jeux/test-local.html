@@ -209,6 +209,44 @@ window.__evxMailto = [];
 (function (global) {
   'use strict';
   /*
+    Décisions S6 du brief : constantes en tête, documentées.
+    Ne pas trancher ici. Les drapeaux actifs sont à null / false
+    pour garder le comportement jw et le catalogue tels quels.
+    Après une décision d'affaires : changer UNE constante.
+    Jamais un montant inventé pour Montréal, Longueuil, Brossard, Gatineau.
+  */
+  function minuscules(s) {
+    return String(s || '').toLowerCase();
+  }
+  function estVilleSurMesure(nom) {
+    var villes = EvxDecisions.villesSurMesure || [];
+    var n = minuscules(nom);
+    var i;
+    for (i = 0; i < villes.length; i++) {
+      if (n.indexOf(minuscules(villes[i])) !== -1) return true;
+    }
+    return false;
+  }
+  var EvxDecisions = {
+    villesSurMesure: ['Montréal', 'Longueuil', 'Brossard', 'Gatineau'],
+    ajustementSurMesure: null,
+    forcerSurMesure: false,
+    seuilLivraisonIncluseKit: 449,
+    seuilLivraisonIncluseSecteur: 500,
+    seuilLivraisonIncluseActif: null,
+    destinationLeads: '',
+    connect4Jx: 60,
+    connect4Jw: 80,
+    connect4Actif: null,
+    plancherCommande: 300,
+    appliquerPlancherCommande: false,
+    estVilleSurMesure: estVilleSurMesure
+  };
+  global.EvxDecisions = EvxDecisions;
+})(typeof window !== 'undefined' ? window : this);
+(function (global) {
+  'use strict';
+  /*
     Module d'envoi des leads (vanilla, inlinable par scripts/build.js).
     DÉCISION §6 — destination des leads (Mailchimp / CRM / courriel) :
     ne pas coder en dur. Brancher via window.evx_ajax ou EVX_WEBHOOK_URL.
@@ -633,6 +671,22 @@ window.__evxMailto = [];
     if (km <= LIV_KM_INCLUS) return LIV_BASE;
     return Math.round(LIV_BASE + LIV_PAR_KM * (km - LIV_KM_INCLUS));
   }
+  function decisions(){
+    if (typeof window !== 'undefined') {
+      if (window.EvxDecisions) return window.EvxDecisions;
+    }
+    return {};
+  }
+  function nomDeZone(zone){
+    if (!zone || zone === 'UNKNOWN') return '';
+    return zone[0] || '';
+  }
+  function forcerTransportSurMesure(nom){
+    var d = decisions();
+    if (d.forcerSurMesure !== true) return false;
+    if (typeof d.estVilleSurMesure === 'function') return d.estVilleSurMesure(nom);
+    return false;
+  }
   function lookupZone(brut){
     var fsa = (brut || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 3);
     if (fsa.length < 3) return null;
@@ -863,6 +917,12 @@ window.__evxMailto = [];
       return { lignes: lignes, livTxt: livTxt, total: money(st) + ' +', note: note };
     }
     var km = (zone === 'UNKNOWN') ? null : zone[1];
+    if (forcerTransportSurMesure(nomDeZone(zone))) {
+      etat.surDevis = true;
+      livTxt = 'Sur devis';
+      note = 'Ton secteur demande un transport sur mesure : on te confirme la livraison en 24 h. Aucun montant inventé. Prix avant taxes.';
+      return { lignes: lignes, livTxt: livTxt, total: money(st) + ' +', note: note };
+    }
     var liv = (zone === 'UNKNOWN') ? null : livraisonPour(km);
     if (liv === null) {
       etat.surDevis = true;
