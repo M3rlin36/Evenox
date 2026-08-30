@@ -63,6 +63,8 @@ else:
         fail.append("plugin: checkout ne doit plus renvoyer au panier vide")
     if "locabris_fix_strip_home_navy_tile" not in php or "litespeed_buffer_after" not in php or "is_front_page" not in php:
         fail.append("plugin: retrait de la tuile navy accueil manquant")
+    if "locabrisRunScripts" not in php or "locabris-correctifs-src" not in php:
+        fail.append("plugin: le JS des modules doit être relancé après injection")
 zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
     fail.append("zip plugin manquant")

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Locabris Correctifs
  * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: Evenox
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
-define('LOCABRIS_FIX_VER', '1.2.0');
+define('LOCABRIS_FIX_VER', '1.2.1');
 
 function locabris_fix_page_slug()
 {
@@ -234,24 +234,42 @@ add_action('wp_footer', function () {
     if ($html === '') {
         return;
     }
-    echo '<div id="locabris-correctifs-src" hidden>' . $html . '</div>';
+    echo '<textarea id="locabris-correctifs-src" hidden>' . htmlspecialchars($html, ENT_QUOTES, 'UTF-8') . '</textarea>';
     echo '<script>
     document.addEventListener("DOMContentLoaded",function(){
       var src=document.getElementById("locabris-correctifs-src");
       if(!src)return;
+      var html=src.value;
       var main=document.querySelector("#main-content .et_builder_inner_content")
         ||document.querySelector("#main-content .entry-content")
         ||document.querySelector("#main-content");
-      if(!main){src.removeAttribute("hidden");return;}
+      if(!main){
+        var box=document.createElement("div");
+        box.innerHTML=html;
+        src.parentNode.insertBefore(box,src);
+        locabrisRunScripts(box);
+        src.remove();
+        return;
+      }
       if(document.body.classList.contains("woocommerce-shop")){
         var desc=document.querySelector(".page-description");
-        if(desc){desc.innerHTML=src.innerHTML;}
+        if(desc){desc.innerHTML=html;locabrisRunScripts(desc);}
       }else{
-        main.innerHTML=src.innerHTML;
+        main.innerHTML=html;
+        locabrisRunScripts(main);
       }
       main.style.visibility="visible";
       src.remove();
     });
+    function locabrisRunScripts(box){
+      var list=box.querySelectorAll("script");
+      for(var i=0;i<list.length;i++){
+        var old=list[i];
+        var s=document.createElement("script");
+        s.textContent=old.textContent;
+        old.parentNode.replaceChild(s,old);
+      }
+    }
     </script>';
     echo '<script>
     document.addEventListener("DOMContentLoaded",function(){
