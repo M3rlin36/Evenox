@@ -182,6 +182,21 @@ add_action('wp_footer', function () {
       src.remove();
     });
     </script>';
+    echo '<script>
+    document.addEventListener("DOMContentLoaded",function(){
+      var walk=function(n){
+        if(n.nodeType===3){
+          n.nodeValue=n.nodeValue
+            .replace(/Accessoires Abri Hivernale/g,"Accessoires pour abri hivernal")
+            .replace(/Abris Hivernale/g,"Abri hivernal")
+            .replace(/Abri Hivernale/g,"Abri hivernal");
+        }else if(n.nodeType===1 && !/^(SCRIPT|STYLE|TEXTAREA)$/.test(n.tagName)){
+          for(var i=0;i<n.childNodes.length;i++) walk(n.childNodes[i]);
+        }
+      };
+      walk(document.body);
+    });
+    </script>';
 }, 5);
 
 function locabris_fix_seo_title($title)
