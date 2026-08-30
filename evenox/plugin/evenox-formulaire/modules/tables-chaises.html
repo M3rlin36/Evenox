@@ -1,0 +1,737 @@
+<style>
+.evx3:hover{border-color:#5E17EB !important}
+.evx4:hover{background:#4a12c0 !important}
+.evx6:hover{color:#5E17EB !important}
+.evx-on{outline:2px solid #5E17EB !important;outline-offset:-2px}
+#evx-merci{display:none;max-width:640px;margin:40px auto 0;padding:28px 32px;background:#f3eeff;border-radius:6px;text-align:center;font-family:Raleway,sans-serif}
+#evx-merci b{display:block;font-weight:700;font-size:22px;color:#0d0a1a;margin-bottom:8px}
+#evx-merci span{font-weight:600;color:#1a1730}
+#evx-plan{font-family:Raleway,sans-serif;color:#0d0a1a}
+#evx-plan input,#evx-plan textarea{width:100%;min-width:0;border:1px solid #ede8f8;border-radius:8px;background:#FBFCFD;padding:17px 16px;font-family:Raleway,sans-serif;font-weight:700;font-size:16px;color:#0d0a1a}
+#evx-plan input:focus,#evx-plan textarea:focus{border-color:#5E17EB;background:#FFFFFF;outline:none}
+#evx-plan input::placeholder,#evx-plan textarea::placeholder{color:#6b6880;font-weight:600}
+.evx-err{display:none;font-weight:700;font-size:14px;color:#0d0a1a;background:#f3eeff;border-radius:6px;padding:12px 14px}
+.evx-err.is-on{display:block}
+.evx-step{display:none}
+.evx-step.is-on{display:block}
+.evx-pip{height:4px;flex:1;background:#ede8f8;border-radius:2px}
+.evx-pip.is-on{background:#5E17EB}
+#evx-estime{display:none;max-width:640px;margin:0 auto;padding:16px clamp(17px,2.3vw,31px) 0}
+#evx-estime.is-on{display:block}
+.evx-qty{display:flex;align-items:center;gap:12px;margin-top:8px}
+.evx-qty button{width:44px;height:44px;border:1px solid #ede8f8;background:#fff;border-radius:8px;font-weight:800;font-size:22px;cursor:pointer;color:#0d0a1a}
+.evx-qty input{width:88px;text-align:center;padding:12px 8px}
+@media(max-width:980px){.evx-tap{min-height:44px}}
+</style>
+
+<div id="evx-plan">
+  <div id="evx-merci">
+    <b>Merci, votre demande est reçue.</b>
+    <span>On confirme les disponibilités et le prix final en 24 heures · 514-559-1893</span>
+  </div>
+
+  <div id="evx-calc">
+    <div id="evx-bar" style="max-width:640px;margin:0 auto;padding:40px clamp(17px,2.3vw,31px) 0;display:none;flex-direction:column;gap:10px">
+      <div style="display:flex;gap:6px">
+        <div class="evx-pip" data-pip="1"></div>
+        <div class="evx-pip" data-pip="2"></div>
+        <div class="evx-pip" data-pip="3"></div>
+        <div class="evx-pip" data-pip="4"></div>
+        <div class="evx-pip" data-pip="5"></div>
+        <div class="evx-pip" data-pip="6"></div>
+        <div class="evx-pip" data-pip="7"></div>
+        <div class="evx-pip" data-pip="8"></div>
+      </div>
+      <div id="evx-bar-txt" style="font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6b6880">Étape 1 sur 7</div>
+    </div>
+
+    <div id="evx-estime">
+      <div style="background:#f3eeff;border-radius:8px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5E17EB">Estimation</div>
+          <div id="evx-estime-txt" style="font-weight:600;font-size:14px;color:#1a1730;margin-top:4px"></div>
+        </div>
+        <div id="evx-estime-prix" style="font-weight:800;font-size:22px;color:#0d0a1a"></div>
+      </div>
+    </div>
+
+    <div id="evx-step-invites" class="evx-step is-on">
+      <div style="max-width:640px;margin:0 auto;padding:48px clamp(17px,2.3vw,31px) 12px;text-align:center">
+        <div style="font-weight:700;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5E17EB">Prix en ligne</div>
+        <div style="font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.12;letter-spacing:-0.02em;margin-top:12px">Combien d'invités ?</div>
+        <div style="font-weight:600;font-size:16px;line-height:1.6;color:#6b6880;margin-top:10px">Une question à la fois. Le nombre de places décide tables, chaises et nappes.</div>
+      </div>
+      <div class="evx-group" data-group="invites" style="max-width:640px;margin:0 auto;padding:28px clamp(17px,2.3vw,31px) 24px;display:flex;flex-direction:column;gap:12px">
+        <div role="button" tabindex="0" data-value="24" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;justify-content:space-between;gap:16px;align-items:center;cursor:pointer">
+          <div>
+            <div style="font-weight:800;font-size:18px">24 invités</div>
+            <div style="font-weight:600;font-size:14px;color:#6b6880;margin-top:4px">Forfait Essentiel · 4 tables</div>
+          </div>
+          <div style="font-weight:800;font-size:16px;color:#5E17EB;white-space:nowrap">24</div>
+        </div>
+        <div role="button" tabindex="0" data-value="48" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;justify-content:space-between;gap:16px;align-items:center;cursor:pointer">
+          <div>
+            <div style="font-weight:800;font-size:18px">48 invités</div>
+            <div style="font-weight:600;font-size:14px;color:#6b6880;margin-top:4px">Forfait Réception · 8 tables</div>
+          </div>
+          <div style="font-weight:800;font-size:16px;color:#5E17EB;white-space:nowrap">48</div>
+        </div>
+        <div role="button" tabindex="0" data-value="72" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;justify-content:space-between;gap:16px;align-items:center;cursor:pointer">
+          <div>
+            <div style="font-weight:800;font-size:18px">72 invités</div>
+            <div style="font-weight:600;font-size:14px;color:#6b6880;margin-top:4px">Forfait Grande Salle · 12 tables</div>
+          </div>
+          <div style="font-weight:800;font-size:16px;color:#5E17EB;white-space:nowrap">72</div>
+        </div>
+        <div role="button" tabindex="0" data-value="autre" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+          <div style="font-weight:800;font-size:18px">Autre nombre</div>
+          <div style="font-weight:600;font-size:14px;color:#6b6880">Vous entrez le chiffre exact</div>
+        </div>
+      </div>
+      <div id="evx-invites-custom" style="display:none;max-width:640px;margin:0 auto;padding:0 clamp(17px,2.3vw,31px) 72px">
+        <div class="evx-qty">
+          <button type="button" data-qty="-5" aria-label="Moins d'invités">−</button>
+          <input name="invites" id="evx-invites" type="number" min="1" max="600" inputmode="numeric" value="50" aria-label="Nombre d'invités">
+          <button type="button" data-qty="5" aria-label="Plus d'invités">+</button>
+          <span style="font-weight:700;color:#6b6880">invités</span>
+        </div>
+        <div data-next="invites" class="evx-tap evx4" style="margin-top:18px;background:#5E17EB;color:#fff;padding:20px;border-radius:8px;font-weight:800;font-size:17px;text-align:center;cursor:pointer">Continuer</div>
+      </div>
+    </div>
+
+    <div id="evx-step-mode" class="evx-step">
+      <div style="max-width:640px;margin:0 auto;padding:28px clamp(17px,2.3vw,31px) 72px;display:flex;flex-direction:column;gap:22px">
+        <div data-back class="evx-tap evx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#6b6880;cursor:pointer">← Retour</div>
+        <div>
+          <div style="font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em">Livraison ou ramassage ?</div>
+          <div style="font-weight:600;font-size:15px;color:#6b6880;margin-top:8px">Touchez une carte pour continuer.</div>
+        </div>
+        <div class="evx-group" data-group="mode" style="display:flex;flex-direction:column;gap:12px">
+          <div role="button" tabindex="0" data-value="livraison" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:18px">Livraison chez vous</div>
+            <div style="font-weight:600;font-size:14px;color:#6b6880">100 $ les 10 premiers km, puis environ 7 $ du km jusqu'à 40 km. Dès 300 $ de matériel.</div>
+          </div>
+          <div role="button" tabindex="0" data-value="ramassage" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;flex-direction:column;gap:6px;cursor:pointer">
+            <div style="font-weight:800;font-size:18px">Ramassage à Sainte-Thérèse</div>
+            <div style="font-weight:600;font-size:14px;color:#6b6880">Gratuit. Vous passez à l'entrepôt et vous rapportez.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="evx-step-postal" class="evx-step">
+      <div style="max-width:640px;margin:0 auto;padding:28px clamp(17px,2.3vw,31px) 72px;display:flex;flex-direction:column;gap:22px">
+        <div data-back class="evx-tap evx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#6b6880;cursor:pointer">← Retour</div>
+        <div>
+          <div style="font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em">Votre code postal ?</div>
+          <div style="font-weight:600;font-size:15px;color:#6b6880;margin-top:8px">Il chiffre la livraison depuis Sainte-Thérèse.</div>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#1a1730">Code postal</span>
+          <input name="postal" id="evx-postal" maxlength="7" autocomplete="postal-code" placeholder="J7E 1A1">
+        </label>
+        <div id="evx-ville" style="font-weight:700;font-size:15px;color:#6b6880"></div>
+        <div class="evx-err" data-err-postal></div>
+        <div data-next="postal" class="evx-tap evx4" style="background:#5E17EB;color:#fff;padding:20px;border-radius:8px;font-weight:800;font-size:17px;text-align:center;cursor:pointer">Continuer</div>
+      </div>
+    </div>
+
+    <div id="evx-step-chaises" class="evx-step">
+      <div style="max-width:640px;margin:0 auto;padding:28px clamp(17px,2.3vw,31px) 72px;display:flex;flex-direction:column;gap:22px">
+        <div data-back class="evx-tap evx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#6b6880;cursor:pointer">← Retour</div>
+        <div>
+          <div style="font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em">Vos chaises</div>
+          <div style="font-weight:600;font-size:15px;color:#6b6880;margin-top:8px">La quantité suit le nombre d'invités. Touchez une carte.</div>
+        </div>
+        <div class="evx-group" data-group="chaise" id="evx-opts-chaises" style="display:flex;flex-direction:column;gap:12px"></div>
+      </div>
+    </div>
+
+    <div id="evx-step-tables" class="evx-step">
+      <div style="max-width:640px;margin:0 auto;padding:28px clamp(17px,2.3vw,31px) 72px;display:flex;flex-direction:column;gap:22px">
+        <div data-back class="evx-tap evx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#6b6880;cursor:pointer">← Retour</div>
+        <div>
+          <div style="font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em">Vos tables</div>
+          <div style="font-weight:600;font-size:15px;color:#6b6880;margin-top:8px">Le nombre se calcule selon les places.</div>
+        </div>
+        <div class="evx-group" data-group="table" id="evx-opts-tables" style="display:flex;flex-direction:column;gap:12px"></div>
+      </div>
+    </div>
+
+    <div id="evx-step-nappes" class="evx-step">
+      <div style="max-width:640px;margin:0 auto;padding:28px clamp(17px,2.3vw,31px) 72px;display:flex;flex-direction:column;gap:22px">
+        <div data-back class="evx-tap evx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#6b6880;cursor:pointer">← Retour</div>
+        <div>
+          <div style="font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em">Vos nappes</div>
+          <div style="font-weight:600;font-size:15px;color:#6b6880;margin-top:8px">On ne montre que les couleurs en stock pour ce format.</div>
+        </div>
+        <div class="evx-group" data-group="nappe" id="evx-opts-nappes" style="display:flex;flex-direction:column;gap:12px"></div>
+      </div>
+    </div>
+
+    <div id="evx-step-cocktail" class="evx-step">
+      <div style="max-width:640px;margin:0 auto;padding:28px clamp(17px,2.3vw,31px) 72px;display:flex;flex-direction:column;gap:22px">
+        <div data-back class="evx-tap evx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#6b6880;cursor:pointer">← Retour</div>
+        <div>
+          <div style="font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em">Tables à cocktail ?</div>
+          <div style="font-weight:600;font-size:15px;color:#6b6880;margin-top:8px">10 $ chacune. Elles s'ajoutent à vos tables, elles ne les remplacent pas.</div>
+        </div>
+        <div class="evx-group" data-group="cocktail" style="display:flex;flex-direction:column;gap:12px">
+          <div role="button" tabindex="0" data-value="0" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;cursor:pointer">
+            <div style="font-weight:800;font-size:18px">Non, pas besoin</div>
+          </div>
+          <div role="button" tabindex="0" data-value="2" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer">
+            <div style="font-weight:800;font-size:18px">2 tables</div>
+            <div style="font-weight:800;font-size:16px;color:#5E17EB">20 $</div>
+          </div>
+          <div role="button" tabindex="0" data-value="4" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer">
+            <div style="font-weight:800;font-size:18px">4 tables</div>
+            <div style="font-weight:800;font-size:16px;color:#5E17EB">40 $</div>
+          </div>
+          <div role="button" tabindex="0" data-value="6" class="evx-tap evx3" style="border:1px solid #ede8f8;padding:22px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer">
+            <div style="font-weight:800;font-size:18px">6 tables</div>
+            <div style="font-weight:800;font-size:16px;color:#5E17EB">60 $</div>
+          </div>
+        </div>
+        <div id="evx-cock-nappe" style="display:none;flex-direction:column;gap:12px">
+          <div style="font-weight:800;font-size:16px">Nappe à cocktail · 6 $ chacune</div>
+          <div class="evx-group" data-group="nappeCocktail" id="evx-opts-cock-nappe" style="display:flex;flex-direction:column;gap:12px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="evx-step-coord" class="evx-step">
+      <div style="max-width:640px;margin:0 auto;padding:28px clamp(17px,2.3vw,31px) 48px;display:flex;flex-direction:column;gap:22px">
+        <div data-back class="evx-tap evx6" style="align-self:flex-start;font-weight:800;font-size:13px;letter-spacing:.06em;color:#6b6880;cursor:pointer">← Retour</div>
+        <div>
+          <div style="font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em">On vous envoie ça</div>
+          <div style="font-weight:600;font-size:15px;color:#6b6880;margin-top:8px">Nom et courriel. On confirme en 24 heures.</div>
+        </div>
+        <div id="evx-recap" style="font-weight:600;font-size:14px;line-height:1.7;color:#1a1730;background:#f3eeff;border-radius:8px;padding:16px 18px"></div>
+        <div class="evx-form" style="display:flex;flex-direction:column;gap:16px">
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#1a1730">Nom et prénom</span>
+            <input name="nom" autocomplete="name" placeholder="Votre nom">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#1a1730">Courriel</span>
+            <input name="email" type="email" autocomplete="email" placeholder="vous@exemple.com">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#1a1730">Téléphone</span><span style="font-weight:600;font-size:12px;color:#6b6880">facultatif</span></span>
+            <input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="514 559 1893">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#1a1730">Date de l'événement</span><span style="font-weight:600;font-size:12px;color:#6b6880">facultatif</span></span>
+            <input name="date" type="text" placeholder="14 novembre 2026">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#1a1730">Précisions</span><span style="font-weight:600;font-size:12px;color:#6b6880">facultatif</span></span>
+            <textarea name="precisions" rows="2" placeholder="Heure, étage, sous-sol…"></textarea>
+          </label>
+          <div class="evx-err" data-err></div>
+          <div data-send class="evx-tap evx4" style="background:#5E17EB;color:#FFFFFF;padding:20px;border-radius:8px;font-weight:800;font-size:17px;text-align:center;cursor:pointer">Recevoir ma soumission</div>
+          <div style="font-weight:600;font-size:12px;line-height:1.6;color:#6b6880;text-align:center">Réponse en 24 heures. Sans engagement. Aucun paiement en ligne.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:640px;margin:0 auto;padding:8px clamp(17px,2.3vw,31px) 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:22px">
+    <div>
+      <div style="font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#6b6880">Ou appelez</div>
+      <a href="tel:+15145591893" style="font-weight:800;font-size:24px;color:#5E17EB">514-559-1893</a>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#6b6880">Courriel</div>
+      <a href="mailto:evenox.ca@gmail.com" style="font-weight:800;font-size:17px;color:#0d0a1a">evenox.ca@gmail.com</a>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#6b6880">Zone</div>
+      <div style="font-weight:700;font-size:15px;line-height:1.5;color:#1a1730">Laval, Montréal et la Rive-Nord. Entrepôt à Sainte-Thérèse.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById("evx-plan");
+  if(!root||root.getAttribute("data-ready"))return;
+  root.setAttribute("data-ready","1");
+
+var ZONES= {
+    'J7A':['Rosemère',2.7],'J7E':['Sainte-Thérèse',2.7],'J7B':['Blainville',5.3],
+    'H7L':['Laval (Sainte-Rose)',6.1],'J7G':['Boisbriand',6.4],'J6Z':['Lorraine',7.4],
+    'J7H':['Boisbriand',7.6],'J7C':['Blainville',8.6],'J7P':['Saint-Eustache',9.8],
+    'J6Y':['Terrebonne',10.1],'H7H':['Laval (Auteuil)',10.3],'H7P':['Laval (Fabreville)',12.1],
+    'H7K':['Laval (Auteuil)',13.1],'H7T':['Laval (Chomedey)',14.3],'H7R':['Laval (Fabreville)',14.4],
+    'H7J':['Laval (Saint-François)',14.5],'H7E':['Laval (Duvernay)',15.0],'J6X':['Terrebonne',15.1],
+    'J7R':['Saint-Eustache',15.2],'H7S':['Laval (Chomedey)',15.6],'J7J':['Mirabel',15.7],
+    'H7X':['Laval (Sainte-Dorothée)',17.9],'H7V':['Laval (Chomedey)',18.4],'H7M':['Laval (Vimont)',18.7],
+    'H7W':['Laval (Chomedey)',19.2],'H7G':['Laval (Pont-Viau)',19.4],'J7L':['Mascouche',19.5],
+    'H7Y':['Laval (Sainte-Dorothée)',19.7],'H7N':['Laval (Laval-des-Rapides)',19.9],'H4J':['Montréal (Ahuntsic-Cartierville)',20.5],
+    'H3M':['Montréal (Ahuntsic-Cartierville)',20.9],'H2B':['Montréal (Ahuntsic-Cartierville)',21.4],'H2C':['Montréal (Ahuntsic-Cartierville)',21.4],
+    'H7C':['Laval (Saint-Vincent-de-Paul)',21.8],'H1H':['Montréal (Montréal-Nord)',22.1],'J6W':['Terrebonne',22.4],
+    'H2M':['Montréal (Ahuntsic-Cartierville)',23.4],'H4N':['Montréal (Saint-Laurent)',23.4],'H4S':['Montréal (Saint-Laurent)',23.8],
+    'H1G':['Montréal (Montréal-Nord)',24.1],'H1Z':['Montréal (Villeray)',24.1],'H4K':['Montréal (Ahuntsic-Cartierville)',24.1],
+    'H7B':['Laval (Saint-François)',24.2],'H2E':['Montréal (Villeray)',24.5],'H4L':['Montréal (Saint-Laurent)',24.7],
+    'H3L':['Montréal (Ahuntsic-Cartierville)',24.9],'H9C':['Montréal (L\'Île-Bizard)',25.3],'H8Y':['Montréal (Pierrefonds-Roxboro)',25.4],
+    'H1R':['Montréal (Saint-Léonard)',25.5],'H3N':['Montréal (Villeray)',26.0],'H1P':['Montréal (Saint-Léonard)',26.4],
+    'H2G':['Montréal (Rosemont)',26.5],'J7Z':['Saint-Jérôme',26.5],'H2P':['Montréal (Villeray)',26.6],
+    'H2N':['Montréal (Ahuntsic-Cartierville)',26.8],'H2R':['Montréal (Villeray)',27.5],'H4R':['Montréal (Saint-Laurent)',27.6],
+    'H7A':['Laval (Saint-François)',27.6],'H4M':['Montréal (Saint-Laurent)',27.8],'H9B':['Dollard-des-Ormeaux',27.8],
+    'H4T':['Montréal (Saint-Laurent)',28.2],'H8Z':['Montréal (Pierrefonds-Roxboro)',28.2],'H9E':['Montréal (L\'Île-Bizard)',28.5],
+    'J7M':['Terrebonne',28.6],'J7K':['Mascouche',28.7],'H2S':['Montréal (Rosemont)',29.1],
+    'J0N':['Oka',29.2],'H4P':['Mont-Royal',29.3],'J7Y':['Saint-Jérôme',29.4],
+    'H1E':['Montréal (Rivière-des-Prairies)',29.5],'H9P':['Dorval',30.0],'H2A':['Montréal (Villeray)',30.1],
+    'J6V':['Terrebonne',30.5],'H8T':['Montréal (Lachine)',30.9],'H9A':['Dollard-des-Ormeaux',31.4],
+    'H9G':['Dollard-des-Ormeaux',31.4],'H1J':['Montréal (Anjou)',31.5],'H8S':['Montréal (Lachine)',31.5],
+    'J7N':['Mirabel',31.8],'H9S':['Dorval',32.0],'H9R':['Pointe-Claire',32.1],
+    'H1Y':['Montréal (Rosemont)',32.3],'H5B':['Montréal (Ville-Marie)',32.3],'H4A':['Montréal (Côte-des-Neiges)',32.5],
+    'J5L':['Saint-Jérôme',32.5],'H1S':['Montréal (Saint-Léonard)',32.7],'H4W':['Côte-Saint-Luc',32.7],
+    'H4V':['Montréal (Côte-des-Neiges)',32.8],'H1X':['Montréal (Rosemont)',33.1],'H1T':['Montréal (Rosemont)',33.3],
+    'H9J':['Kirkland',33.5],'H1K':['Montréal (Anjou)',33.9],'J5M':['Saint-Lin',34.1],
+    'H9H':['Kirkland',34.2],'H1M':['Montréal (Mercier)',34.4],'J4K':['Longueuil',34.5],
+    'H4B':['Montréal (Côte-des-Neiges)',34.6],'J5J':['Sainte-Sophie',34.6],'H4X':['Montréal-Ouest',34.8],
+    'H4C':['Montréal (Le Sud-Ouest)',34.9],'J4P':['Saint-Lambert',35.0],'J4H':['Longueuil',35.2],
+    'H1W':['Montréal (Mercier)',35.9],'H1N':['Montréal (Mercier)',36.0],'H8N':['Montréal (LaSalle)',36.1],
+    'H9W':['Beaconsfield',36.1],'J5Z':['Repentigny',36.1],'J5K':['Saint-Colomban',36.2],
+    'H0M':['Montréal (Rivière-des-Prairies)',36.3],'H4G':['Montréal (Verdun)',36.3],'H1V':['Montréal (Mercier)',36.5],
+    'J6A':['Repentigny',36.5],'H1L':['Montréal (Mercier)',36.6],'H4H':['Montréal (Verdun)',37.4],
+    'H5A':['Montréal (Ville-Marie)',37.6],'H4E':['Montréal (Le Sud-Ouest)',38.2],'H4Z':['Montréal (Ville-Marie)',38.6],
+    'J5Y':['Repentigny',39.5],'H9K':['Montréal (Pierrefonds-Roxboro)',39.7],'H8R':['Kahnawà:ke',39.8],
+    'H8P':['LaSalle',40.0],'H1A':['Montréal (Rivière-des-Prairies)',null],'H1B':['Montréal-Est',null],
+    'H1C':['Montréal (Rivière-des-Prairies)',null],'H2H':['Montréal (Le Plateau-Mont-Royal)',null],'H2J':['Montréal (Le Plateau-Mont-Royal)',null],
+    'H2K':['Montréal (Ville-Marie)',null],'H2L':['Montréal (Ville-Marie)',null],'H2T':['Montréal (Le Plateau-Mont-Royal)',null],
+    'H2V':['Montréal (Outremont)',null],'H2W':['Montréal (Le Plateau-Mont-Royal)',null],'H2X':['Montréal (Ville-Marie)',null],
+    'H2Y':['Montréal (Ville-Marie)',null],'H2Z':['Montréal (Ville-Marie)',null],'H3A':['Montréal (Ville-Marie)',null],
+    'H3B':['Montréal (Ville-Marie)',null],'H3C':['Montréal (Ville-Marie)',null],'H3E':['Montréal (Verdun)',null],
+    'H3G':['Montréal (Ville-Marie)',null],'H3H':['Montréal (Ville-Marie)',null],'H3J':['Montréal (Le Sud-Ouest)',null],
+    'H3K':['Montréal (Le Sud-Ouest)',null],'H3P':['Mont-Royal',null],'H3R':['Mont-Royal',null],
+    'H3S':['Montréal (Côte-des-Neiges)',null],'H3T':['Montréal (Côte-des-Neiges)',null],'H3V':['Montréal (Côte-des-Neiges)',null],
+    'H3W':['Montréal (Côte-des-Neiges)',null],'H3X':['Hampstead',null],'H3Y':['Westmount',null],
+    'H3Z':['Westmount',null],'H9X':['Sainte-Anne-de-Bellevue',null],'J0H':['Bois-Francs-Sud (Saint-Nazaire-D\'Acton)',null],
+    'J0J':['Montérégie-Est (Bedford)',null],'J0L':['Montérégie-Nord (Saint-Antoine-Sur-Richelieu)',null],'J0P':['Vaudreuil-Soulanges (Coteau-du-Lac)',null],
+    'J0R':['Lanaudière-Sud (Prévost)',null],'J0S':['Montérégie-Ouest (Saint-Anicet)',null],'J2N':['Farnham',null],
+    'J2R':['Saint-Hyacinthe',null],'J2S':['Saint-Hyacinthe',null],'J2T':['Saint-Hyacinthe',null],
+    'J2W':['Saint-Luc',null],'J2X':['Saint-Jean-sur-Richelieu',null],'J2Y':['Saint-Jean-sur-Richelieu',null],
+    'J3A':['Saint-Jean-sur-Richelieu',null],'J3B':['Saint-Jean-sur-Richelieu',null],'J3E':['Sainte-Julie',null],
+    'J3G':['Beloeil',null],'J3H':['Beloeil',null],'J3L':['Chambly',null],
+    'J3M':['Marieville',null],'J3N':['Saint-Basile-Le-Grand',null],'J3R':['Sorel',null],
+    'J3V':['Saint-Bruno',null],'J3X':['Varennes',null],'J3Y':['Saint-Hubert',null],
+    'J3Z':['Saint-Hubert',null],'J4B':['Boucherville',null],'J4G':['Longueuil',null],
+    'J4J':['Longueuil',null],'J4L':['Longueuil',null],'J4M':['Longueuil',null],
+    'J4N':['Longueuil',null],'J4R':['Saint-Lambert',null],'J4S':['Saint-Lambert',null],
+    'J4T':['Saint-Hubert',null],'J4V':['Greenfield Park',null],'J4W':['Brossard',null],
+    'J4X':['Brossard',null],'J4Y':['Brossard',null],'J4Z':['Brossard',null],
+    'J5A':['Saint-Constant',null],'J5B':['Delson',null],'J5C':['Sainte-Catherine',null],
+    'J5R':['La Prairie',null],'J5T':['Lavaltrie',null],'J5W':['L\'Assomption',null],
+    'J5X':['L\'Épiphanie',null],'J6E':['Joliette',null],'J6J':['Châteauguay',null],
+    'J6K':['Châteauguay',null],'J6N':['Beauharnois',null],'J6R':['Mercier',null],
+    'J6S':['Salaberry-de-Valleyfield',null],'J6T':['Salaberry-de-Valleyfield',null],'J7T':['Vaudreuil-Dorion',null],
+    'J7V':['Vaudreuil-Dorion',null],'J7W':['Pincourt',null],'J7X':['Valleyfield',null],
+    'J8A':['Saint-Hippolyte',null],'J8B':['Sainte-Adèle',null],'J8C':['Sainte-Agathe-Des-Monts',null],
+    'J8G':['Chatham',null],'J8H':['Lachute',null]
+  };
+
+  var CHAISES=[
+    {id:"aucune",nom:"Pas besoin",prix:0},
+    {id:"brune",nom:"Pliante brune",prix:2,hint:"la chaise"},
+    {id:"blanche",nom:"Pliante blanche",prix:3,hint:"la chaise"},
+    {id:"rembourree",nom:"Rembourrée",prix:4,hint:"la chaise"},
+    {id:"martha",nom:"Martha",prix:5,hint:"la chaise"},
+    {id:"chiavari_tr",nom:"Chiavari transparente",prix:8,hint:"la chaise"},
+    {id:"chiavari_bl",nom:"Chiavari blanche",prix:8,hint:"la chaise"}
+  ];
+  var TABLES=[
+    {id:"aucune",nom:"Pas besoin",prix:0,places:0,nappe:null},
+    {id:"rect6",nom:"Rectangulaire 6 pi",prix:10,places:8,nappe:"rect"},
+    {id:"rect8",nom:"Rectangulaire 8 pi",prix:15,places:10,nappe:"rect"},
+    {id:"ronde48",nom:"Ronde 48 po",prix:15,places:6,nappe:"ronde"},
+    {id:"ronde60",nom:"Ronde 60 po",prix:15,places:8,nappe:"ronde"}
+  ];
+  var NAPPES={rect:{nom:"Nappe rectangulaire",prix:8},ronde:{nom:"Nappe ronde 120 po",prix:10}};
+  var COULEURS=[
+    {id:"aucune",nom:"Non merci"},
+    {id:"blanche",nom:"Blanche"},
+    {id:"noire",nom:"Noire"},
+    {id:"rouge",nom:"Rouge"},
+    {id:"bourgogne",nom:"Bourgogne"}
+  ];
+  var COULEURS_PAR={
+    rect6:["aucune","blanche","noire","rouge","bourgogne"],
+    rect8:["aucune","blanche","noire"],
+    ronde48:["aucune","blanche","noire"],
+    ronde60:["aucune","blanche","noire"],
+    cocktail:["aucune","blanche","noire","rouge"]
+  };
+  var LOTS={
+    brune:{base:2,lots:[{n:50,p:1.75},{n:100,p:1.50}]},
+    blanche:{base:3,lots:[{n:40,p:2.75},{n:60,p:2.50},{n:100,p:2.25}]},
+    rembourree:{base:4,lots:[{n:40,p:3.50},{n:70,p:3.00}]},
+    martha:{base:5,lots:[{n:40,p:4.50},{n:60,p:4.00}]},
+    chiavari_bl:{base:8,lots:[{n:50,p:7.50},{n:100,p:7.00}]}
+  };
+  var LOTS_TB={rect6:{base:10,lots:[{n:20,p:9},{n:40,p:8}]}};
+  var COCKTAIL=10, NAPPE_COCK=6, MIN_CMD=300, LIV_BASE=100, LIV_KM_IN=10, LIV_PAR_KM=7, LIV_KM_MAX=40;
+
+  var state={invites:0,mode:"",postal:"",ville:"",km:null,chaise:"",table:"",nappe:"blanche",cocktail:0,nappeCocktail:"blanche",n:1,total:7};
+
+  function find(list,id){for(var i=0;i<list.length;i++){if(list[i].id===id)return list[i];}return list[0];}
+  function money(n){
+    var s=Math.round(n*100)/100;
+    var txt=(s%1===0)?String(s):s.toFixed(2).replace(".",",");
+    return txt.replace(/\B(?=(\d{3})+(?!\d))/g," ")+" $";
+  }
+  function tarif(lots,q){
+    if(!lots)return null;
+    var p=lots.base;
+    lots.lots.forEach(function(l){if(q>=l.n)p=l.p;});
+    return p;
+  }
+  function lookupZone(raw){
+    var fsa=(raw||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3);
+    if(fsa.length<3)return null;
+    return ZONES[fsa]||"UNKNOWN";
+  }
+  function livCarte(km){
+    if(km===null||km>LIV_KM_MAX)return null;
+    if(km<=LIV_KM_IN)return LIV_BASE;
+    return Math.round(LIV_BASE+LIV_PAR_KM*(km-LIV_KM_IN));
+  }
+  function qChaises(){return state.chaise==="aucune"?0:state.invites;}
+  function qTables(){
+    var t=find(TABLES,state.table);
+    if(!t||!t.places)return 0;
+    return Math.ceil(state.invites/t.places);
+  }
+  function panier(){
+    var lines=[], total=0;
+    var ch=find(CHAISES,state.chaise);
+    var tb=find(TABLES,state.table);
+    var qc=qChaises(), qt=qTables();
+    if(ch&&ch.id!=="aucune"&&qc>0){
+      var pu=tarif(LOTS[ch.id],qc); if(pu===null)pu=ch.prix;
+      var sc=pu*qc; lines.push(qc+" × "+ch.nom); total+=sc;
+    }
+    if(tb&&tb.id!=="aucune"&&qt>0){
+      var pu2=tarif(LOTS_TB[tb.id],qt); if(pu2===null)pu2=tb.prix;
+      var st=pu2*qt; lines.push(qt+" × "+tb.nom); total+=st;
+      if(state.nappe&&state.nappe!=="aucune"&&NAPPES[tb.nappe]){
+        var np=NAPPES[tb.nappe];
+        var col=find(COULEURS,state.nappe);
+        lines.push(qt+" × "+np.nom+" "+col.nom.toLowerCase());
+        total+=np.prix*qt;
+      }
+    }
+    if(state.cocktail>0){
+      lines.push(state.cocktail+" × Table à cocktail");
+      total+=COCKTAIL*state.cocktail;
+      if(state.nappeCocktail&&state.nappeCocktail!=="aucune"){
+        var cc=find(COULEURS,state.nappeCocktail);
+        lines.push(state.cocktail+" × Nappe à cocktail "+cc.nom.toLowerCase());
+        total+=NAPPE_COCK*state.cocktail;
+      }
+    }
+    var ship=0, shipTxt="", shipOk=false;
+    if(state.mode==="ramassage"){ship=0;shipTxt="Ramassage gratuit";shipOk=true;}
+    else if(state.mode==="livraison"){
+      if(total>0&&total<MIN_CMD){ship=0;shipTxt="Ramassage (min. 300 $ pour livrer)";shipOk=true;}
+      else if(!state.postal){shipTxt="Livraison à confirmer";}
+      else if(state.km===null){shipTxt="Livraison sur devis";}
+      else {ship=livCarte(state.km); if(ship===null){shipTxt="Livraison sur devis";} else {shipTxt="Livraison "+money(ship); shipOk=true;}}
+    }
+    return {lines:lines,mobilier:total,ship:ship,shipTxt:shipTxt,shipOk:shipOk,total:total+(ship||0)};
+  }
+  function steps(){
+    var s=["evx-step-invites","evx-step-mode"];
+    if(state.mode==="livraison") s.push("evx-step-postal");
+    s.push("evx-step-chaises","evx-step-tables");
+    var tb=find(TABLES,state.table);
+    if(tb&&tb.nappe) s.push("evx-step-nappes");
+    s.push("evx-step-cocktail","evx-step-coord");
+    return s;
+  }
+  function field(name){var n=root.querySelector('[name="'+name+'"]');return n?n.value.trim():"";}
+  function err(msg,sel){
+    var b=root.querySelector(sel||"[data-err]");
+    if(!b)return;
+    b.textContent=msg;
+    b.classList.toggle("is-on",!!msg);
+  }
+  function emailOk(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+  function pick(el){
+    var g=el.closest(".evx-group");
+    if(!g)return;
+    g.querySelectorAll(".evx-tap").forEach(function(n){n.classList.remove("evx-on");});
+    el.classList.add("evx-on");
+  }
+  function card(html){return html;}
+  function fillList(id,items,active,priceFn){
+    var box=document.getElementById(id);
+    box.innerHTML="";
+    items.forEach(function(o){
+      var b=document.createElement("div");
+      b.setAttribute("role","button");
+      b.tabIndex=0;
+      b.setAttribute("data-value",o.id);
+      b.className="evx-tap evx3"+(o.id===active?" evx-on":"");
+      b.style.cssText="border:1px solid #ede8f8;padding:22px 20px;display:flex;justify-content:space-between;gap:16px;align-items:center;cursor:pointer";
+      var right=priceFn?priceFn(o):"";
+      b.innerHTML='<div><div style="font-weight:800;font-size:18px">'+o.nom+'</div>'+(o.sub?'<div style="font-weight:600;font-size:14px;color:#6b6880;margin-top:4px">'+o.sub+"</div>":"")+"</div>"+(right?'<div style="font-weight:800;font-size:16px;color:#5E17EB;white-space:nowrap">'+right+"</div>":"");
+      box.appendChild(b);
+    });
+  }
+  function couleursDe(id){
+    var ids=COULEURS_PAR[id]||["aucune","blanche","noire"];
+    return COULEURS.filter(function(c){return ids.indexOf(c.id)>=0;});
+  }
+  function paintChoices(){
+    fillList("evx-opts-chaises",CHAISES.map(function(c){return {id:c.id,nom:c.nom,sub:c.prix?money(c.prix)+" / ch.":""};}),state.chaise,function(o){
+      var c=find(CHAISES,o.id);return c.prix?money(c.prix):"";
+    });
+    fillList("evx-opts-tables",TABLES.map(function(t){return {id:t.id,nom:t.nom,sub:t.places?t.places+" places":""};}),state.table,function(o){
+      var t=find(TABLES,o.id);return t.prix?money(t.prix):"";
+    });
+    var tb=find(TABLES,state.table);
+    if(tb&&tb.nappe){
+      var np=NAPPES[tb.nappe];
+      fillList("evx-opts-nappes",couleursDe(tb.id).map(function(c){return {id:c.id,nom:c.nom,sub:c.id==="aucune"?"":money(np.prix)+" / nappe"};}),state.nappe,function(o){
+        return o.id==="aucune"?"":money(np.prix);
+      });
+    }
+    fillList("evx-opts-cock-nappe",couleursDe("cocktail").map(function(c){return {id:c.id,nom:c.nom};}),state.nappeCocktail,function(o){
+      return o.id==="aucune"?"":money(NAPPE_COCK);
+    });
+  }
+  function estime(){
+    var box=document.getElementById("evx-estime");
+    var txt=document.getElementById("evx-estime-txt");
+    var prix=document.getElementById("evx-estime-prix");
+    var p=panier();
+    if(!state.invites||(!state.chaise&&!state.table&&!state.cocktail)){box.classList.remove("is-on");return;}
+    if(!p.lines.length&&!state.mode){box.classList.remove("is-on");return;}
+    var bits=[];
+    if(state.invites) bits.push(state.invites+" invités");
+    if(p.lines.length) bits.push(p.lines[0]);
+    if(p.lines.length>1) bits.push("+"+(p.lines.length-1));
+    if(p.shipTxt) bits.push(p.shipTxt);
+    txt.textContent=bits.join(" · ");
+    if(!p.lines.length){prix.textContent="";box.classList.add("is-on");return;}
+    if(state.mode==="livraison"&&!p.shipOk) prix.textContent=money(p.mobilier)+" +";
+    else prix.textContent=money(p.total);
+    box.classList.add("is-on");
+  }
+  function recap(){
+    var p=panier();
+    var h="";
+    if(p.lines.length) h=p.lines.map(function(l){return l;}).join("<br>");
+    else h="Aucun article sélectionné.";
+    h+="<br>"+(state.mode==="ramassage"?"Ramassage":"Livraison")+" <b>"+p.shipTxt+"</b>";
+    h+="<br>Total estimé <b>"+(p.shipOk||state.mode==="ramassage"?money(p.total):money(p.mobilier)+" +")+"</b>";
+    if(state.ville) h+="<br>Secteur <b>"+state.ville+"</b>";
+    h+="<br><span style='font-weight:600;color:#6b6880'>Prix avant taxes.</span>";
+    document.getElementById("evx-recap").innerHTML=h;
+  }
+  function show(id){
+    var list=steps();
+    if(list.indexOf(id)<0)id=list[0];
+    state.n=list.indexOf(id)+1;
+    state.total=list.length;
+    root.querySelectorAll(".evx-step").forEach(function(s){s.classList.remove("is-on");});
+    var el=document.getElementById(id);
+    if(el)el.classList.add("is-on");
+    var bar=document.getElementById("evx-bar");
+    bar.style.display=id==="evx-step-invites"?"none":"flex";
+    root.querySelectorAll(".evx-pip").forEach(function(p){
+      var i=parseInt(p.getAttribute("data-pip"),10);
+      p.classList.toggle("is-on", i<=state.n && i<=state.total);
+      p.style.display=i<=state.total?"":"none";
+    });
+    document.getElementById("evx-bar-txt").textContent="Étape "+state.n+" sur "+state.total;
+    paintChoices();
+    if(id==="evx-step-coord")recap();
+    var cock=document.getElementById("evx-cock-nappe");
+    cock.style.display=state.cocktail>0?"flex":"none";
+    estime();
+    window.scrollTo(0,0);
+  }
+  function nextAfter(id){
+    var list=steps();
+    var i=list.indexOf(id);
+    if(i<list.length-1) show(list[i+1]);
+  }
+  function prevFrom(id){
+    var list=steps();
+    var i=list.indexOf(id);
+    if(i>0) show(list[i-1]);
+    else show("evx-step-invites");
+  }
+  function resume(){
+    var p=panier();
+    var t=["CONFIGURATEUR TABLES ET CHAISES","", "Invités : "+state.invites];
+    if(state.mode==="ramassage") t.push("Formule : RAMASSAGE à l'entrepôt (Sainte-Thérèse)");
+    else {
+      t.push("Formule : livraison");
+      t.push("Secteur : "+(state.ville||"non précisé")+(state.postal?" ("+state.postal+")":""));
+    }
+    t.push("","PANIER :");
+    if(p.lines.length){p.lines.forEach(function(l){t.push("  - "+l);}); t.push("","Mobilier : "+money(p.mobilier)); t.push((state.mode==="ramassage"?"Ramassage : ":"Livraison : ")+p.shipTxt); t.push("TOTAL ESTIMÉ : "+(p.shipOk||state.mode==="ramassage"?money(p.total):money(p.mobilier)+" +"));}
+    else t.push("  (aucun article sélectionné)");
+    return t.join("\n");
+  }
+  function send(btn){
+    var nom=field("nom");
+    var email=field("email");
+    if(!nom||!emailOk(email)){err("Il nous faut au moins votre nom et un courriel valide.");return;}
+    if(!state.invites){err("Indiquez le nombre d'invités.");return;}
+    if(!state.mode){err("Choisissez livraison ou ramassage.");return;}
+    if(state.mode==="livraison"&&!state.postal){err("Indiquez le code postal pour la livraison.");return;}
+    err("");
+    var details=resume();
+    var extra=field("precisions");
+    if(extra) details+="\n\nMESSAGE DU CLIENT :\n"+extra;
+    var fd=new FormData();
+    fd.append("action","evx_soumission");
+    fd.append("evx_nonce",window.evx_nonce||"");
+    fd.append("nom_complet",nom);
+    fd.append("email",email);
+    fd.append("telephone",field("tel"));
+    fd.append("date_event",field("date"));
+    fd.append("details",details);
+    fd.append("service","Configurateur tables et chaises");
+    fd.append("page_url",window.location.href);
+    fd.append("referrer",document.referrer||"direct");
+    fd.append("device",window.innerWidth<=600?"mobile":(window.innerWidth<=960?"tablet":"desktop"));
+    fd.append("timestamp",new Date().toISOString());
+    btn.textContent="Envoi en cours...";
+    var req=window.EVENOX_PREVIEW
+      ? Promise.resolve({ok:true,json:function(){return Promise.resolve({success:true});}})
+      : fetch(window.evx_ajax||"/wp-admin/admin-ajax.php",{method:"POST",body:fd,credentials:"same-origin"});
+    req.then(function(r){
+      if(window.EVENOX_PREVIEW)return {success:true};
+      return r.json();
+    }).then(function(d){
+      if(!d||!d.success)throw new Error("send");
+      document.getElementById("evx-calc").style.display="none";
+      document.getElementById("evx-merci").style.display="block";
+      window.scrollTo(0,0);
+    }).catch(function(){
+      btn.textContent="Réessayer";
+      err("L'envoi n'a pas passé. Appelez-nous au 514-559-1893, on prend votre demande tout de suite.");
+    });
+  }
+
+  function setInvites(n){
+    n=parseInt(n,10);
+    if(isNaN(n)||n<1)n=1;
+    if(n>600)n=600;
+    state.invites=n;
+    var inp=document.getElementById("evx-invites");
+    if(inp)inp.value=String(n);
+    estime();
+  }
+
+  paintChoices();
+
+  root.addEventListener("click",function(e){
+    var qty=e.target.closest("[data-qty]");
+    if(qty){
+      var cur=parseInt(field("invites"),10)||50;
+      setInvites(cur+parseInt(qty.getAttribute("data-qty"),10));
+      return;
+    }
+    if(e.target.closest("[data-back]")){
+      var cur=root.querySelector(".evx-step.is-on");
+      prevFrom(cur?cur.id:"evx-step-invites");
+      return;
+    }
+    var nx=e.target.closest("[data-next]");
+    if(nx){
+      var kind=nx.getAttribute("data-next");
+      if(kind==="invites"){
+        setInvites(field("invites")||state.invites||50);
+        if(!state.invites){return;}
+        setTimeout(function(){nextAfter("evx-step-invites");},80);
+      }else if(kind==="postal"){
+        var z=lookupZone(field("postal"));
+        var ville=document.getElementById("evx-ville");
+        if(!z){err("Entrez un code postal québécois, ex. J7E 1A1.","[data-err-postal]");return;}
+        err("","[data-err-postal]");
+        state.postal=field("postal").toUpperCase();
+        if(z==="UNKNOWN"){state.ville="";state.km=null;ville.textContent="Secteur à confirmer — livraison sur devis.";}
+        else {state.ville=z[0];state.km=z[1];ville.textContent=z[0]+(z[1]!==null?" · "+z[1]+" km":"");}
+        estime();
+        setTimeout(function(){nextAfter("evx-step-postal");},80);
+      }
+      return;
+    }
+    var choice=e.target.closest(".evx-group .evx-tap");
+    if(choice&&!choice.getAttribute("data-send")&&!choice.getAttribute("data-next")){
+      pick(choice);
+      var g=choice.closest(".evx-group");
+      var group=g?g.getAttribute("data-group"):"";
+      var val=choice.getAttribute("data-value");
+      if(group==="invites"){
+        document.getElementById("evx-invites-custom").style.display=val==="autre"?"block":"none";
+        if(val==="autre"){setInvites(field("invites")||50);return;}
+        setInvites(val);
+        setTimeout(function(){nextAfter("evx-step-invites");},120);
+      }else if(group==="mode"){
+        state.mode=val;
+        if(val==="ramassage"){state.postal="";state.ville="";state.km=null;}
+        estime();
+        setTimeout(function(){nextAfter("evx-step-mode");},120);
+      }else if(group==="chaise"){
+        state.chaise=val;
+        estime();
+        setTimeout(function(){nextAfter("evx-step-chaises");},120);
+      }else if(group==="table"){
+        state.table=val;
+        var tb=find(TABLES,val);
+        if(tb&&tb.nappe){
+          var ok=COULEURS_PAR[tb.id]||[];
+          if(ok.indexOf(state.nappe)<0)state.nappe="blanche";
+        }
+        estime();
+        setTimeout(function(){nextAfter("evx-step-tables");},120);
+      }else if(group==="nappe"){
+        state.nappe=val;
+        estime();
+        setTimeout(function(){nextAfter("evx-step-nappes");},120);
+      }else if(group==="cocktail"){
+        state.cocktail=parseInt(val,10)||0;
+        document.getElementById("evx-cock-nappe").style.display=state.cocktail>0?"flex":"none";
+        estime();
+        if(state.cocktail===0) setTimeout(function(){nextAfter("evx-step-cocktail");},120);
+      }else if(group==="nappeCocktail"){
+        state.nappeCocktail=val;
+        estime();
+        setTimeout(function(){nextAfter("evx-step-cocktail");},120);
+      }
+      return;
+    }
+    var btn=e.target.closest("[data-send]");
+    if(btn)send(btn);
+  });
+  root.addEventListener("input",function(e){
+    if(e.target.id==="evx-invites")setInvites(e.target.value);
+    if(e.target.id==="evx-postal"){
+      var z=lookupZone(e.target.value);
+      var ville=document.getElementById("evx-ville");
+      if(!z){ville.textContent="";return;}
+      if(z==="UNKNOWN"){state.km=null;state.ville="";ville.textContent="Secteur à confirmer.";}
+      else {state.ville=z[0];state.km=z[1];ville.textContent=z[0]+(z[1]!==null?" · "+z[1]+" km environ":"");}
+      state.postal=e.target.value.trim().toUpperCase();
+      estime();
+    }
+  });
+  root.addEventListener("keydown",function(e){
+    if(e.key!=="Enter"&&e.key!==" ")return;
+    var t=e.target.closest("[data-go], .evx-group .evx-tap, [data-send], [data-back], [data-next]");
+    if(!t||e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA")return;
+    e.preventDefault();
+    t.click();
+  });
+})();
+</script>
