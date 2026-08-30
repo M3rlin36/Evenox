@@ -327,7 +327,7 @@
     var buy=item.buy*qty;
     var pose=state.installation==="oui"?item.pose*qty:0;
     out.poseOn=state.installation!=="non";
-    out.title=qty+" "+item.label.toLowerCase()+(qty>1?"s":"");
+    out.title=qty+" × "+item.label;
     if(item.buy){
       out.lines.push({t:item.label+" × "+qty,p:"dès "+money(buy)});
       out.abris="dès "+money(buy);
