@@ -1,0 +1,23 @@
+{
+  "name": "evenox",
+  "private": true,
+  "description": "Outils locaux Évenox (catalogue, payload, tests). Rien n'est déployé depuis ce dossier.",
+  "scripts": {
+    "test": "playwright test",
+    "test-local": "node scripts/build-test-local.js",
+    "build:jw": "node scripts/build.js assistant-jeux",
+    "build:ev": "node scripts/build.js assistant-evenement --assert-length=49289",
+    "build:test-local": "node scripts/build-test-local.js",
+    "lint:payload": "node scripts/lint-payload.js assistant-jeux",
+    "lint:payload:ev": "node scripts/lint-payload.js assistant-evenement --assert-length=49289",
+    "extraire:catalogue": "node scripts/extraire-catalogue.js",
+    "verifier:catalogue": "node scripts/verifier-catalogue.js",
+    "integrer": "node scripts/integrer-sources.js",
+    "test:outils": "node scripts/test-outils.js",
+    "ci": "node scripts/ci.js"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.55.0"
+  }
+}

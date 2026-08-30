@@ -1,0 +1,24 @@
+# Harnais local seulement (file://). Aucun appel vers evenox.ca.
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  playwright:
+    name: Playwright Chromium
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Installer les dépendances
+        run: npm ci
+      - name: Installer Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Porte locale (catalogue, outils, lint jw, Playwright)
+        run: npm run ci

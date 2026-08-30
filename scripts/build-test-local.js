@@ -1,0 +1,147 @@
+'use strict';
+
+/**
+ * Assemble test-local.html (jw toujours ; ev seulement si ev-widget.* existe).
+ * Aucun serveur. Les fetch de leads sont simulés dans la page (marqueur TEST).
+ * assistant-evenement et calculateur-fete absents : on ne les invente pas.
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { lireLibsWidget } = require('./lib-payload');
+
+const ROOT = path.resolve(__dirname, '..');
+
+function ecrireTestLocal(dir, prefixe, titre, opts) {
+  const check = opts && opts.check;
+  const htmlPath = path.join(dir, prefixe + '-widget.html');
+  const cssPath = path.join(dir, prefixe + '-widget.css');
+  const jsPath = path.join(dir, prefixe + '-widget.js');
+  if (!fs.existsSync(htmlPath) || !fs.existsSync(cssPath) || !fs.existsSync(jsPath)) {
+    return false;
+  }
+
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const css = fs.readFileSync(cssPath, 'utf8');
+  const js = fs.readFileSync(jsPath, 'utf8');
+
+  const envoi = lireLibsWidget().js;
+
+  const stub = [
+    '<script>',
+    'window.evx_test = true;',
+    'window.evx_nonce = \'TEST\';',
+    'window.evx_ajax = \'https://evenox.test/wp-admin/admin-ajax.php\';',
+    'window.evxSimulerReseau = { mode: (function(){ try { return sessionStorage.getItem(\'evx_mode\') || localStorage.getItem(\'evx_mode\') || \'ok\'; } catch (e) { return \'ok\'; } })(), envois: [] };',
+    'window.__evxFetches = [];',
+    'window.__evxMailto = [];',
+    '(function(){',
+    '  var origFetch = window.fetch;',
+    '  function lireBody(init){',
+    '    if (!init || !init.body) return { TEST: true, test: \'TEST\', marqueur: \'TEST\' };',
+    '    if (typeof FormData !== \'undefined\' && init.body instanceof FormData) {',
+    '      var o = { TEST: true, test: \'TEST\', marqueur: \'TEST\' };',
+    '      init.body.forEach(function(v, k){ o[k] = v; });',
+    '      if (!o.marqueur) o.marqueur = \'TEST\';',
+    '      if (!o.test) o.test = \'TEST\';',
+    '      return o;',
+    '    }',
+    '    return { raw: String(init.body), TEST: true, test: \'TEST\', marqueur: \'TEST\' };',
+    '  }',
+    '  window.fetch = function(input, init){',
+    '    var url = (typeof input === \'string\') ? input : (input && input.url);',
+    '    var u = String(url || \'\');',
+    '    var estLead = u.indexOf(\'admin-ajax\') !== -1 || u.indexOf(\'evenox.test\') !== -1;',
+    '    if (!estLead) {',
+    '      if (origFetch) return origFetch.apply(this, arguments);',
+    '      return Promise.reject(new Error(\'TEST: requete bloquee\'));',
+    '    }',
+    '    var body = lireBody(init);',
+    '    var rec = { url: u, method: (init && init.method) || \'GET\', body: body, TEST: true, test: \'TEST\' };',
+    '    for (var k in body) { if (Object.prototype.hasOwnProperty.call(body, k)) rec[k] = body[k]; }',
+    '    window.evxSimulerReseau.envois.push(rec);',
+    '    window.__evxFetches.push(rec);',
+    '    if (window.evxSimulerReseau.mode === \'echec\') {',
+    '      return Promise.reject(new Error(\'TEST reseau coupe\'));',
+    '    }',
+    '    return Promise.resolve({',
+    '      ok: true,',
+    '      json: function(){ return Promise.resolve({ success: true, TEST: true }); },',
+    '      text: function(){ return Promise.resolve(\'{"success":true,"TEST":true}\'); }',
+    '    });',
+    '  };',
+    '})();',
+    '</script>',
+  ].join('\n');
+
+  const out = [
+    '<!DOCTYPE html>',
+    '<html lang="fr">',
+    '<head>',
+    '<meta charset="utf-8">',
+    '<meta name="viewport" content="width=device-width, initial-scale=1">',
+    '<title>' + titre + '</title>',
+    '<style>',
+    css.replace(/\s+$/, ''),
+    '</style>',
+    '</head>',
+    '<body>',
+    html.replace(/\s+$/, ''),
+    stub,
+    '<script>',
+    envoi + js.replace(/\s+$/, ''),
+    '</script>',
+    '</body>',
+    '</html>',
+    '',
+  ].join('\n');
+
+  const dest = path.join(dir, 'test-local.html');
+  const rel = path.relative(ROOT, dest);
+  if (check) {
+    if (!fs.existsSync(dest)) {
+      console.error('ÉCHEC --check : ' + rel + ' introuvable.');
+      process.exit(1);
+    }
+    const actuel = fs.readFileSync(dest, 'utf8');
+    if (actuel !== out) {
+      console.error(
+        'ÉCHEC --check : ' +
+          rel +
+          " n'est plus aligné sur les sources. Relancer sans --check puis committer."
+      );
+      process.exit(1);
+    }
+    console.log('OK --check : ' + rel + ' aligné — ' + out.length + ' caractères');
+    return true;
+  }
+  fs.writeFileSync(dest, out, 'utf8');
+  console.log('OK : ' + rel + ' — ' + out.length + ' caractères');
+  return true;
+}
+
+function main(argv) {
+  const check = (argv || []).indexOf('--check') !== -1;
+  const jw = ecrireTestLocal(
+    path.join(ROOT, 'assistant-jeux'),
+    'jw',
+    'Assistant jeux — test local (pas de reseau)',
+    { check: check }
+  );
+  if (!jw) {
+    console.error('ÉCHEC : sources jw-widget.* introuvables. Rien n\'a été inventé.');
+    process.exit(1);
+  }
+  const evDir = path.join(ROOT, 'assistant-evenement');
+  const ev = ecrireTestLocal(
+    evDir,
+    'ev',
+    'Assistant evenement — test local (pas de reseau)',
+    { check: check }
+  );
+  if (!ev) {
+    console.log('assistant-evenement/ev-widget.* absent — test-local ev non créé (voulu).');
+  }
+}
+
+main(process.argv.slice(2));

@@ -1,0 +1,4 @@
+<div>a & b</div>
+<script>
+var x=1;
+</script>

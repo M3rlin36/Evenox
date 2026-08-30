@@ -1,0 +1,55 @@
+<section class="jw-sec" id="assistant-jeux">
+<div class="jw-wrap">
+<div class="jw-head"><span class="jw-eyebrow">Réservation en ligne</span>
+<h2>Choisis tes jeux, vois ton prix livré</h2>
+<p>Gonflables, arcade ou jeux géants : monte ta sélection, dis-nous où t&rsquo;envoyer la soumission, et ton total livré s&rsquo;affiche tout de suite.</p>
+</div>
+<div class="jw-box" id="jwBox">
+<div class="jw-barre" id="jwBarre"></div>
+<div class="jw-step jw-on" id="jwStep-type">
+<p class="jw-q">C&rsquo;est quel genre de jeux ?</p>
+<p class="jw-intro">Tu pourras piger dans les trois catégories : celle-ci ouvre juste le bon catalogue.</p>
+<div class="jw-cats"><a class="jw-cat" data-cat="gonflables" href="https://evenox.ca/location-jeux-gonflables/"><b>Jeux gonflables</b><small>Livrés, montés, désinfectés</small></a><a class="jw-cat" data-cat="arcade" href="https://evenox.ca/location-arcade/"><b>Jeux d&rsquo;arcade</b><small>Bornes, tables de jeux, consoles</small></a><a class="jw-cat" data-cat="exterieurs" href="https://evenox.ca/location-jeux-geants/"><b>Jeux extérieurs géants</b><small>Les classiques en format XL</small></a></div>
+</div>
+<div class="jw-step" id="jwStep-selection">
+<p class="jw-q">Monte ta sélection</p>
+<p class="jw-intro">Prix par jour. Ajoute autant de jeux que tu veux, dans n&rsquo;importe quelle catégorie.</p>
+<div class="jw-tabs" id="jwTabs"></div>
+<div id="jwGroupes"></div>
+<p class="jw-mini" id="jwMini" aria-live="polite"></p>
+</div>
+<div class="jw-step" id="jwStep-livraison">
+<p class="jw-q">On te livre ou tu ramasses ?</p>
+<p class="jw-intro">Livré et repris chez toi, ou ramassage gratuit à notre entrepôt de Sainte-Thérèse. Si on livre, ton code postal chiffre le transport.</p>
+<div class="jw-modes"><button type="button" class="jw-mode jw-on" id="jwModeLiv" aria-pressed="true"><b>Livraison chez toi</b><small>100 $ de base pour les 10 premiers km, puis environ 7 $ du km jusqu&rsquo;à 40 km, calculé avec ton code postal.</small></button><button type="button" class="jw-mode" id="jwModeRam" aria-pressed="false"><b>Ramassage à Sainte-Thérèse</b><small>Gratuit, peu importe le montant. Tu passes prendre le matériel à l&rsquo;entrepôt et tu le rapportes.</small></button></div>
+<div class="jw-postal" id="jwPostalBloc"><label class="jw-postal-lbl" for="jwCP">Code postal</label><input type="text" id="jwCP" maxlength="7" placeholder="J7E" autocomplete="postal-code"><span class="jw-ville jw-inconnu" id="jwVille">En attente</span></div>
+</div>
+<div class="jw-step" id="jwStep-coordonnees">
+<p class="jw-q">Dernière étape avant ton prix</p>
+<p class="jw-intro">Dis-nous à qui envoyer la soumission : ton total s&rsquo;affiche à l&rsquo;écran juste après, et on te confirme les disponibilités de ta date en 24 h.</p>
+<div class="jw-champs">
+<div class="jw-champ" id="jwChampNom"><label for="jwNom">Ton nom</label><input type="text" id="jwNom" autocomplete="name" placeholder="Prénom et nom"></div>
+<div class="jw-champ" id="jwChampCourriel"><label for="jwCourriel">Ton courriel</label><input type="email" id="jwCourriel" autocomplete="email" placeholder="toi@exemple.com"></div>
+<div class="jw-champ"><label for="jwTel">Téléphone <small>(facultatif)</small></label><input type="tel" id="jwTel" autocomplete="tel" placeholder="514-555-1234"></div>
+<div class="jw-champ"><label for="jwDate">Date de l&rsquo;événement <small>(facultatif)</small></label><input type="date" id="jwDate"></div>
+<div class="jw-champ"><label for="jwInv">Combien d&rsquo;invités ?</label><input type="number" id="jwInv" min="1" max="2000" value="20" inputmode="numeric"></div>
+</div>
+<p class="jw-rassure"><span>Réponse en 24 h</span><span>Sans engagement</span><span>Aucun paiement en ligne</span></p>
+</div>
+<div class="jw-step" id="jwStep-prix">
+<p class="jw-q">Ton prix</p>
+<div class="jw-prix">
+<ul id="jwRecap"></ul>
+<div class="jw-ligne"><span>Sous-total</span><strong id="jwSousTotal">&#8211;</strong></div>
+<div class="jw-ligne"><span id="jwLivLbl">Livraison et reprise</span><strong id="jwLiv">&#8211;</strong></div>
+<div class="jw-total"><span>Total</span><strong id="jwTotal" aria-live="polite">&#8211;</strong></div>
+<p class="jw-note" id="jwNote"></p>
+<div class="jw-statut" id="jwStatut"></div>
+<div class="jw-prix-actions"><button type="button" id="jwModifier">Modifier ma sélection</button><a class="jw-tel" href="tel:5145591893">Appelle-nous : 514-559-1893</a></div>
+</div>
+</div>
+<div class="jw-nav" id="jwNav" style="display:none"><button type="button" id="jwPrec">Retour</button><button type="button" id="jwSuiv">Continuer</button></div>
+<p class="jw-err" id="jwErr" role="alert" aria-live="assertive" tabindex="-1"></p>
+</div>
+</div>
+</section>
