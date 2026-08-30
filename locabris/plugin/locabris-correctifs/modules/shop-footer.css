@@ -1,0 +1,10 @@
+/* Divi → Options du thème → CSS personnalisé
+   Ancien dump visible sur /shop/ — maintenant dans un vrai CSS. */
+.et_pb_section_0_tb_footer.et_pb_section{background-color:#0E2C4F !important;padding-top:52px !important;padding-bottom:28px !important}
+.et_pb_text_0_tb_footer.et_pb_text,.et_pb_text_0_tb_footer h1,.et_pb_text_0_tb_footer h3{color:#FFFFFF !important}
+.et_pb_text_1_tb_footer.et_pb_text,.et_pb_text_1_tb_footer h1,.et_pb_text_1_tb_footer h4{color:#D9EDF7 !important}
+.et_pb_text_2_tb_footer.et_pb_text,.et_pb_text_2_tb_footer h4{color:#D9EDF7 !important}
+.et_pb_text_1_tb_footer a,.et_pb_text_2_tb_footer a{color:#D9EDF7 !important;text-decoration:none !important;transition:color .2s ease}
+.et_pb_text_1_tb_footer a:hover,.et_pb_text_2_tb_footer a:hover{color:#FFFFFF !important}
+.et_pb_text_1_tb_footer h4,.et_pb_text_2_tb_footer h4,.et_pb_text_0_tb_footer h3{text-decoration:none !important;font-family:Raleway,sans-serif !important;font-weight:600 !important;font-size:13px !important;letter-spacing:.16em !important;text-transform:uppercase !important;color:#1088B5 !important;margin-bottom:10px !important}
+.et_pb_text_1_tb_footer.et_pb_text p,.et_pb_text_2_tb_footer.et_pb_text p{font-family:Raleway,sans-serif !important;font-weight:500 !important;line-height:2 !important}

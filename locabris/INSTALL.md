@@ -1,6 +1,10 @@
-# Coller dans WordPress — 20 minutes
+# Déployer
 
-Le header et le footer Divi restent en place. On remplace seulement le contenu cassé.
+**Voie rapide :** voir `GO.md` — un zip, Activer.
+
+**Voie manuelle** (si tu préfères coller dans Divi) :
+
+Le header et le footer Divi restent en place. On replace seulement le contenu cassé.
 
 ## 1. Soumission
 

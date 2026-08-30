@@ -46,9 +46,20 @@ if "hooks.zapier.com/hooks/catch/16509085/udt0i4j" not in soum:
 if "#0E2C4F" not in soum or "#1088B5" not in soum:
     fail.append("soumission: couleurs branding manquantes")
 
+plug = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs" / "locabris-correctifs.php"
+if not plug.is_file():
+    fail.append("plugin PHP manquant")
+else:
+    php = plug.read_text(encoding="utf-8")
+    if "soumission-location-tempo" not in php or "wp_redirect" not in php:
+        fail.append("plugin: slugs ou 301 manquants")
+zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
+if not zpath.is_file() or zpath.stat().st_size < 1000:
+    fail.append("zip plugin manquant")
+
 if fail:
     print("FAIL")
     for f in fail:
         print(" -", f)
     sys.exit(1)
-print("OK", len([soum, ctc, priv, shop, fiche]), "modules")
+print("OK", len([soum, ctc, priv, shop, fiche]), "modules + plugin")

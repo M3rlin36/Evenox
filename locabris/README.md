@@ -1,7 +1,9 @@
 # Locabris — correctifs au branding existant
 
-Plan : `PLAN.md`  
-Méga-prompt exécuté : `MEGA_PROMPT.md`  
-Collage WP : `INSTALL.md`
+**Go :** `GO.md` + `plugin/locabris-correctifs.zip`
 
-Preview locale : `preview/` (même navy, même bleu, même Raleway).
+Plan : `PLAN.md`  
+Méga-prompt : `MEGA_PROMPT.md`  
+Collage Divi : `INSTALL.md`
+
+Preview : `preview/`
