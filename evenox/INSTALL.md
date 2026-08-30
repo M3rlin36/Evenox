@@ -1,55 +1,32 @@
-# Déployer le formulaire tables et chaises
+# Restaurer la page tables et chaises
 
-Evenox n’est pas dans ce dépôt : le site live est WordPress / Divi sur [evenox.ca](https://evenox.ca). Ce dossier livre un plugin à coller par-dessus.
+Evenox n’est pas dans ce dépôt : le site live est WordPress / Divi sur [evenox.ca](https://evenox.ca).
 
-## Déjà en ligne
+## État voulu
 
-Le plugin **Evenox Formulaire** 1.0.2 n’injecte **que** dans un hôte `#evx-plan` déjà présent. Sans cet hôte, la page Divi (hero, kit, photos, FAQ) reste intacte. Le calculateur d’origine est déjà une question à la fois.
+https://evenox.ca/location-tables-chaises/ = **page Divi originale** :
 
-Les versions 1.0.0 / 1.0.1 remplaçaient `#calculateur` ou tout `et_builder_inner_content`. Ne pas les réinstaller.
+- hero « Location de tables et chaises »
+- photos
+- kit « Monte ton kit, vois ton prix » (invités, livraison, chaises, tables, nappes, cocktail, estimation)
+- forfaits Essentiel / Réception / Grande Salle
+- FAQ
 
-Pour une mise à jour : re-téléverser le zip (écraser) puis vider LiteSpeed.
+Le plugin **Evenox Formulaire** 1.0.3-restore est **inerte**. Il ne remplace plus `et_builder_inner_content`, `#calculateur` ni `.tc-calc`.
 
-## Voie rapide
+## Si un agent a réinstallé 1.0.0 / 1.0.1 / 1.0.2
 
-1. Générer le zip : `evenox/plugin/pack.sh`
-2. WordPress → Extensions → Ajouter → Téléverser `plugin/evenox-formulaire.zip`
-3. Si le plugin existe déjà : remplacer / écraser.
-4. Activer **Evenox Formulaire**.
-5. Vider le cache LiteSpeed (Purge All).
-6. Ouvrir https://evenox.ca/location-tables-chaises/
+1. WordPress → Extensions → **désactiver** Evenox Formulaire.
+2. Ou téléverser ce zip (écraser) : le fichier PHP ne fait plus rien.
+3. LiteSpeed → Purge All.
+4. Ouvrir https://evenox.ca/location-tables-chaises/ : hero + photos + kit d’origine.
 
-Le header, le footer, le hero et les sections Divi restent. Le plugin ne touche pas `#main-content .et_builder_inner_content`.
+## Ne pas faire
 
-## Hôte optionnel
+- Ne pas réactiver une version qui injecte un wizard.
+- Ne pas cacher `.et_builder_inner_content` ni `.tc-calc`.
+- Ne pas transformer Evenox en site Locabris.
 
-Pour coller le wizard du module à un endroit précis, ajouter dans un module Code Divi :
+## Preview locale
 
-```html
-<div id="evx-plan" data-evenox-host="1"></div>
-```
-
-Sans ce bloc, le plugin ne change rien.
-
-## Envoi des soumissions
-
-Le formulaire d’origine réutilise le pipeline déjà en place :
-
-- `admin-ajax.php` action `evx_soumission`
-- nonce `window.evx_nonce` (fourni par le site)
-- courriel vers evenox.ca@gmail.com
-
-Aucun nouveau webhook Zapier.
-
-En preview locale (`evenox/preview/`), `window.EVENOX_PREVIEW=true` : aucun envoi.
-
-## Rollback
-
-Désactiver le plugin. La page Divi d’origine reste (c’est déjà le cas en 1.0.2).
-
-## Test après activation
-
-1. L’URL montre le hero Evenox, les photos, le kit, les forfaits — pas un wizard plein écran.
-2. Un seul formulaire (celui de la page). Une question à la fois via le KIT WIZARD d’origine.
-3. 48 invités → Livraison → J7E → chaise blanche → table 60 po → nappe blanche.
-4. Couleurs : violet Évenox `#5E17EB`, pas le bleu Locabris.
+`evenox/preview/` montre encore le module wizard pour référence. Ce n’est **pas** ce qui doit être en ligne sur evenox.ca.

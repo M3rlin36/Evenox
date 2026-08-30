@@ -1,12 +1,10 @@
-# Evenox — formulaire tables et chaises
+# Evenox — page tables et chaises
 
-Calculateur une question à la fois pour [evenox.ca/location-tables-chaises/](https://evenox.ca/location-tables-chaises/).
+La page live [evenox.ca/location-tables-chaises/](https://evenox.ca/location-tables-chaises/) est la **page Divi originale** (hero, photos, kit, forfaits).
 
-La page Divi (hero, photos, kit, couleurs `#5E17EB`, Raleway) reste. Le plugin 1.0.2 n’injecte que dans `#evx-plan` s’il existe. Sans cet hôte, le calculateur d’origine (déjà en étapes) s’affiche.
+Le plugin `plugin/evenox-formulaire/` 1.0.3-restore est inerte : il ne remplace plus le contenu Divi. Les versions 1.0.0–1.0.2 injectaient un wizard ; ne pas les réinstaller.
 
-Le site WordPress n’est pas dans ce dépôt. On livre un plugin + une preview.
-
-- Module : `modules/tables-chaises.html`
-- Plugin : `plugin/evenox-formulaire/`
-- Preview : `preview/tables.html` (envois mockés)
-- Install : `INSTALL.md`
+- Plugin inerte : `plugin/evenox-formulaire/`
+- Module wizard (preview seulement, pas le live) : `modules/tables-chaises.html`
+- Preview : `preview/tables.html`
+- Install / rollback : `INSTALL.md`

@@ -1,14 +1,16 @@
-# Go — formulaire Evenox
+# Go — restaurer Evenox
 
-**Statut : 1.0.2 restaure le chrome Evenox. Le plugin n’injecte plus que dans `#evx-plan` (30 août 2026).**
+**Statut : page Divi originale restaurée. Plugin 1.0.3-restore inerte (30 août 2026).**
 
-evenox.ca est un WordPress / Divi hors de ce dépôt. Le zip `plugin/evenox-formulaire.zip` est installé et activé. Cache LiteSpeed vidé.
+evenox.ca est un WordPress / Divi hors de ce dépôt.
 
-`/location-tables-chaises/` réaffiche la page Divi d’origine :
+`/location-tables-chaises/` doit afficher :
 
 - hero, photos, kit, forfaits, FAQ, header/footer Divi
 - violet `#5E17EB`, Raleway
-- le calculateur déjà en une question à la fois (`KIT WIZARD` dans la page)
-- le plugin ne remplace plus `#calculateur`, `.tc-calc` ni `et_builder_inner_content`
+- le calculateur d’origine (invités, mode, produits, quantités, estimation)
+- **aucun** wizard injecté par plugin
+
+Le plugin **Evenox Formulaire** est désactivé (ou inerte s’il est réactivé). Cache LiteSpeed vidé.
 
 Webhook inchangé : `evx_soumission` → evenox.ca@gmail.com
