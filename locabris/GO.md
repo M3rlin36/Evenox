@@ -1,12 +1,12 @@
 # Go — en ligne
 
-**Statut : déployé sur locabris.ca le 30 août 2026 (plugin 1.3.1).**
+**Statut : déployé sur locabris.ca le 30 août 2026 (plugin 1.4.0).**
 
 Plugin WordPress `Locabris Correctifs` : installé et activé. Cache LiteSpeed vidé.
 
 Le front affiche maintenant :
 
-- Soumission = wizard achat / installation
+- Soumission = kit style Evenox (besoin, format, quantité, pose, panier, contact)
 - Contact = plus de succès au chargement
 - Boutique = plus de CSS en texte
 - Fiches produits = photo + prix + soumission

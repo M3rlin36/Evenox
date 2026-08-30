@@ -28,6 +28,10 @@ if "loca-step-choix" not in soum or "loca-step-abri" not in soum or "loca-step-c
     fail.append("soumission: calculateur incomplet")
 if "loca-estime" not in soum or "loca-step-achat" not in soum:
     fail.append("soumission: estimation ou étape pose manquante")
+if "loca-panier" not in soum or "loca-step-qte" not in soum or "loca-qty" not in soum:
+    fail.append("soumission: kit Evenox (panier, quantité) manquant")
+if "Montez votre kit" not in soum or "Voir mon prix" not in soum:
+    fail.append("soumission: en-tête kit ou bouton prix manquant")
 if "window.location.href='/shop/'" in soum:
     fail.append("soumission: les cartes ne doivent plus naviguer")
 if "alert(" in soum or "alert(" in ctc:
@@ -87,8 +91,8 @@ else:
         fail.append("plugin: page abris simples manquante")
     if "abri-double" not in php or "doubles.html" not in php:
         fail.append("plugin: page abris doubles manquante")
-    if "1.3.1" not in php:
-        fail.append("plugin: version 1.3.1 manquante")
+    if "1.4.0" not in php:
+        fail.append("plugin: version 1.4.0 manquante")
 zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
     fail.append("zip plugin manquant")
