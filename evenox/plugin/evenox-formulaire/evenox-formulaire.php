@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Evenox Formulaire
- * Description: Calculateur tables et chaises, une question à la fois. Remplace le formulaire de /location-tables-chaises/ sans changer le header Divi.
- * Version: 1.0.0
+ * Description: Calculateur tables et chaises, une question à la fois. Remplace le contenu de /location-tables-chaises/ sans changer le header Divi.
+ * Version: 1.0.1
  * Author: Evenox
  */
 
@@ -11,11 +11,18 @@ if (!defined('ABSPATH')) {
 }
 
 define('EVENOX_FORM_DIR', plugin_dir_path(__FILE__));
-define('EVENOX_FORM_VER', '1.0.0');
+define('EVENOX_FORM_VER', '1.0.1');
 
 function evenox_form_is_tables_page()
 {
-    return is_page('location-tables-chaises');
+    if (is_page('location-tables-chaises')) {
+        return true;
+    }
+    if (is_page(6569)) {
+        return true;
+    }
+    $uri = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';
+    return (bool) preg_match('#/location-tables-chaises(/|\?|$)#', $uri);
 }
 
 function evenox_form_module()
@@ -38,7 +45,10 @@ add_action('wp_head', function () {
     if (!evenox_form_is_tables_page()) {
         return;
     }
-    echo '<style id="evenox-formulaire">.evenox-form-tables .tc-calc{visibility:hidden}</style>';
+    echo '<style id="evenox-formulaire">'
+        . '.evenox-form-tables #main-content .et_builder_inner_content{visibility:hidden}'
+        . '.evenox-form-tables .tc-page,.evenox-form-tables .tc-hero,.evenox-form-tables .tc-calc,.evenox-form-tables #tcFloatingCta,.evenox-form-tables .floating-cta{visibility:hidden}'
+        . '</style>';
 }, 20);
 
 add_action('wp_footer', function () {
@@ -51,36 +61,45 @@ add_action('wp_footer', function () {
     }
     echo '<textarea id="evenox-form-src" hidden>' . htmlspecialchars($html, ENT_QUOTES, 'UTF-8') . '</textarea>';
     echo '<script>
-    document.addEventListener("DOMContentLoaded",function(){
-      var src=document.getElementById("evenox-form-src");
-      if(!src)return;
-      var html=src.value;
-      var box=document.createElement("div");
-      box.innerHTML=html;
-      var old=document.querySelector("#calculateur")
-        ||document.querySelector(".tc-calc")
-        ||document.querySelector("#main-content .et_builder_inner_content")
-        ||document.querySelector("#main-content");
-      if(!old){
-        src.parentNode.insertBefore(box,src);
-        evenoxRunScripts(box);
+    (function(){
+      function evenoxRunScripts(box){
+        var list=box.querySelectorAll("script");
+        for(var i=0;i<list.length;i++){
+          var old=list[i];
+          var s=document.createElement("script");
+          s.textContent=old.textContent;
+          old.parentNode.replaceChild(s,old);
+        }
+      }
+      function evenoxInject(){
+        var src=document.getElementById("evenox-form-src");
+        if(!src||src.getAttribute("data-done"))return;
+        src.setAttribute("data-done","1");
+        var html=src.value;
+        var main=document.querySelector("#main-content .et_builder_inner_content")
+          ||document.querySelector("#main-content .entry-content")
+          ||document.querySelector("#main-content");
+        if(!main){
+          var box=document.createElement("div");
+          box.innerHTML=html;
+          src.parentNode.insertBefore(box,src);
+          evenoxRunScripts(box);
+          src.remove();
+          return;
+        }
+        main.innerHTML=html;
+        main.style.visibility="visible";
+        evenoxRunScripts(main);
         src.remove();
-        return;
+        var cta=document.getElementById("tcFloatingCta");
+        if(cta)cta.remove();
+        document.querySelectorAll(".floating-cta").forEach(function(n){n.remove();});
       }
-      old.innerHTML="";
-      old.appendChild(box);
-      old.style.visibility="visible";
-      evenoxRunScripts(box);
-      src.remove();
-    });
-    function evenoxRunScripts(box){
-      var list=box.querySelectorAll("script");
-      for(var i=0;i<list.length;i++){
-        var old=list[i];
-        var s=document.createElement("script");
-        s.textContent=old.textContent;
-        old.parentNode.replaceChild(s,old);
+      if(document.readyState==="loading"){
+        document.addEventListener("DOMContentLoaded",evenoxInject);
+      }else{
+        evenoxInject();
       }
-    }
+    })();
     </script>';
 }, 5);

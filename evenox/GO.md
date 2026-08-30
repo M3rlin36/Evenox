@@ -1,12 +1,12 @@
 # Go — formulaire Evenox
 
-**Statut : en ligne sur evenox.ca (plugin Evenox Formulaire 1.0.0, 30 août 2026).**
+**Statut : 1.0.1 remplace tout le contenu de /location-tables-chaises/ (30 août 2026).**
 
 evenox.ca est un WordPress / Divi hors de ce dépôt. Le zip `plugin/evenox-formulaire.zip` est installé et activé. Cache LiteSpeed vidé.
 
-`/location-tables-chaises/` affiche le wizard :
+`/location-tables-chaises/` affiche le wizard dès le premier écran :
 
-- une question par écran
+- une question par écran, sans hero ni ancien kit au-dessus
 - barre Étape N sur M
 - cartes, avance auto
 - estimation live (prix Booqable + livraison FSA)

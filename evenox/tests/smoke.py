@@ -47,6 +47,14 @@ else:
         fail.append("plugin: slug de page manquant")
     if "evenoxRunScripts" not in php or "evenox-form-src" not in php:
         fail.append("plugin: le JS du module doit être relancé après injection")
+    if "#main-content .et_builder_inner_content" not in php:
+        fail.append("plugin: doit remplacer #main-content .et_builder_inner_content")
+    if php.find('querySelector("#calculateur")') != -1 and php.find('querySelector("#calculateur")') < php.find("#main-content .et_builder_inner_content"):
+        fail.append("plugin: ne pas injecter dans #calculateur avant le contenu Divi")
+    if ".evenox-form-tables #main-content .et_builder_inner_content{visibility:hidden}" not in php:
+        fail.append("plugin: cacher le contenu Divi jusqu'au remplacement")
+    if "1.0.1" not in php:
+        fail.append("plugin: version 1.0.1 attendue")
 
 zpath = ROOT / "plugin" / "evenox-formulaire.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
