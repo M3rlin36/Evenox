@@ -59,6 +59,8 @@ else:
         fail.append("plugin: titres produits ou Woo FR manquants")
     if "woocommerce_checkout_redirect_empty_cart" not in php:
         fail.append("plugin: checkout ne doit plus renvoyer au panier vide")
+    if "background: #0E2C4F" not in php or "is_front_page" not in php:
+        fail.append("plugin: masque de la tuile navy accueil manquant")
 zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
     fail.append("zip plugin manquant")

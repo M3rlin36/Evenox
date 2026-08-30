@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Locabris Correctifs
  * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Evenox
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
-define('LOCABRIS_FIX_VER', '1.1.0');
+define('LOCABRIS_FIX_VER', '1.1.1');
 
 function locabris_fix_page_slug()
 {
@@ -147,8 +147,28 @@ add_action('wp_head', function () {
     if (is_readable($footer)) {
         $css .= file_get_contents($footer);
     }
+    if (is_front_page()) {
+        $css .= '.home div[style*="background: #0E2C4F"][style*="aspect-ratio: 1"]{display:none!important}';
+    }
     echo '<style id="locabris-correctifs">' . $css . '</style>';
 }, 20);
+
+add_action('wp_footer', function () {
+    if (!is_front_page()) {
+        return;
+    }
+    echo '<script>
+    document.addEventListener("DOMContentLoaded",function(){
+      var nodes=document.querySelectorAll("div[style*=\\"background: #0E2C4F\\"]");
+      for(var i=0;i<nodes.length;i++){
+        var el=nodes[i];
+        if(!el.querySelector("svg")) continue;
+        var wrap=el.parentElement;
+        if(wrap){wrap.remove();}else{el.remove();}
+      }
+    });
+    </script>';
+}, 4);
 
 add_action('wp_footer', function () {
     $slug = locabris_fix_page_slug();
