@@ -110,7 +110,7 @@
 
         <div id="loca-step-vehicules" class="loca-step is-on">
           <div class="loca-label"><span class="loca-num">1</span>Combien de véhicules ?</div>
-          <p class="loca-intro">C'est tout pour cette étape.</p>
+          <p class="loca-intro">Un ou deux, on choisit le format après.</p>
           <div class="loca-qty">
             <button type="button" data-qty="vehicules" data-delta="-1" aria-label="Moins de véhicules">−</button>
             <input name="vehicules" id="loca-vehicules" type="number" min="1" max="8" inputmode="numeric" value="1" aria-label="Nombre de véhicules">
@@ -489,6 +489,7 @@
   function show(id){
     if(STEPS.indexOf(id)<0)id=STEPS[0];
     if(id==="loca-step-pose" && skipPose())id="loca-step-extras";
+    stepErr("");
     state.n=STEPS.indexOf(id)+1;
     state.total=STEPS.length;
     if(state.n>state.vu)state.vu=state.n;
