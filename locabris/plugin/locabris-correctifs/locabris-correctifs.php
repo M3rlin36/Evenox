@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Locabris Correctifs
  * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
- * Version: 1.1.2
+ * Version: 1.1.3
  * Author: Evenox
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
-define('LOCABRIS_FIX_VER', '1.1.2');
+define('LOCABRIS_FIX_VER', '1.1.3');
 
 function locabris_fix_page_slug()
 {
@@ -160,21 +160,49 @@ function locabris_fix_strip_home_navy_tile($html)
     if (!is_string($html) || $html === '') {
         return $html;
     }
-    $stripped = preg_replace(
-        '#<div style="display: flex; flex-direction: column; gap: 14px; min-width: 0;"><div style="width: 100%; aspect-ratio: 1; background: #0E2C4F;[^>]*>.*?</svg>\s*</div></div>#su',
-        '',
-        $html,
-        1
-    );
-    return is_string($stripped) ? $stripped : $html;
+    $mark = '18 à 20 pieds';
+    $pos  = strpos($html, $mark);
+    if ($pos === false) {
+        $pos = strpos($html, '18 &agrave; 20 pieds');
+    }
+    if ($pos === false) {
+        return $html;
+    }
+    $open  = '<div style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">';
+    $head  = substr($html, 0, $pos);
+    $start = strrpos($head, $open);
+    if ($start === false) {
+        return $html;
+    }
+    $svg = strpos($html, '</svg>', $pos);
+    if ($svg === false) {
+        return $html;
+    }
+    $end = strpos($html, '</div></div>', $svg);
+    if ($end === false) {
+        return $html;
+    }
+    return substr($html, 0, $start) . substr($html, $end + 12);
 }
 
-add_action('template_redirect', function () {
+function locabris_fix_maybe_strip_home_navy_tile($html)
+{
+    if (function_exists('is_front_page') && !is_front_page()) {
+        return $html;
+    }
+    return locabris_fix_strip_home_navy_tile($html);
+}
+
+add_filter('the_content', 'locabris_fix_maybe_strip_home_navy_tile', 9999);
+add_filter('et_builder_render_layout', 'locabris_fix_maybe_strip_home_navy_tile', 9999);
+add_filter('litespeed_buffer_after', 'locabris_fix_maybe_strip_home_navy_tile', 20);
+
+add_action('wp', function () {
     if (!is_front_page()) {
         return;
     }
     ob_start('locabris_fix_strip_home_navy_tile');
-}, 0);
+}, 1);
 
 add_action('wp_footer', function () {
     if (!is_front_page()) {
