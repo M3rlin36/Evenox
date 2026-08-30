@@ -1,14 +1,18 @@
-# Go — un zip
+# Go — en ligne
 
-WordPress → Extensions → Ajouter → Téléverser → `plugin/locabris-correctifs.zip` → Activer.
+**Statut : déployé sur locabris.ca le 30 août 2026.**
 
-Le plugin remplace le contenu cassé en front (Divi reste en place, branding identique) :
+Plugin WordPress `Locabris Correctifs` 1.0.0 : installé et activé. Cache LiteSpeed vidé.
 
-- Soumission = wizard
+Le front affiche maintenant :
+
+- Soumission = wizard achat / installation
 - Contact = plus de succès au chargement
 - Boutique = plus de CSS en texte
 - Fiches produits = photo + prix + soumission
 - Politique = texte Loi 25
-- Yoast vente (plus location) + 301 `/boutique/` et `/blog/`
+- Yoast en vente (plus location) + 301 `/boutique/` → `/shop/` et `/blog/` → `/`
 
-Désactiver le plugin = revenir à l’ancien site.
+Header / footer Divi inchangés. Désactiver le plugin = rollback.
+
+Fichier source : `plugin/locabris-correctifs.zip`

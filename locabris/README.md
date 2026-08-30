@@ -1,6 +1,6 @@
 # Locabris — correctifs au branding existant
 
-**Go :** `GO.md` + `plugin/locabris-correctifs.zip`
+**En ligne** sur locabris.ca (30 août 2026). Détail : `GO.md`. Zip : `plugin/locabris-correctifs.zip`.
 
 Plan : `PLAN.md`  
 Méga-prompt : `MEGA_PROMPT.md`  
