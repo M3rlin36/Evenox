@@ -26,16 +26,18 @@ if "display:none" not in soum or "loca-merci" not in soum:
     fail.append("soumission: #loca-merci doit être caché")
 if "loca-step-vehicules" not in soum or "loca-step-pose" not in soum or "loca-step-coord" not in soum:
     fail.append("soumission: calculateur incomplet")
-if "loca-estime" not in soum or "loca-step-pose" not in soum:
-    fail.append("soumission: estimation ou étape pose manquante")
 if "loca-panier" not in soum or "loca-step-vehicules" not in soum or "loca-step-livraison" not in soum:
     fail.append("soumission: kit Evenox (panier, véhicules, livraison) manquant")
-if "loca-step-type" not in soum or "loca-step-format" not in soum or "loca-step-extras" not in soum:
-    fail.append("soumission: les 6 étapes Evenox (type, format, extras) manquent")
+if "loca-step-besoin" not in soum or "loca-step-format" not in soum or "loca-step-extras" not in soum:
+    fail.append("soumission: les 6 étapes (projet, format, extras) manquent")
 if "Monte ton kit" not in soum or "Voir mon prix" not in soum:
     fail.append("soumission: en-tête kit ou bouton prix manquant")
 if soum.count("loca-pas") < 6:
     fail.append("soumission: le stepper doit avoir 6 pas comme Evenox")
+if "loca-step-besoin" not in soum or "Acheter ou faire installer" not in soum:
+    fail.append("soumission: l'achat et la pose doivent être une étape à part")
+if 'id="loca-estime"' in soum:
+    fail.append("soumission: l'estimation en cours de route mélange le client")
 if "window.location.href='/shop/'" in soum:
     fail.append("soumission: les cartes ne doivent plus naviguer")
 if "alert(" in soum or "alert(" in ctc:
@@ -63,8 +65,8 @@ if "#0E2C4F" not in soum or "#1088B5" not in soum:
     fail.append("soumission: couleurs branding manquantes")
 for step_id in (
     "loca-step-vehicules",
+    "loca-step-besoin",
     "loca-step-livraison",
-    "loca-step-type",
     "loca-step-format",
     "loca-step-pose",
     "loca-step-extras",
@@ -109,8 +111,8 @@ else:
         fail.append("plugin: page abris simples manquante")
     if "abri-double" not in php or "doubles.html" not in php:
         fail.append("plugin: page abris doubles manquante")
-    if "1.5.0" not in php:
-        fail.append("plugin: version 1.5.0 manquante")
+    if "1.6.0" not in php:
+        fail.append("plugin: version 1.6.0 manquante")
 zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
     fail.append("zip plugin manquant")
