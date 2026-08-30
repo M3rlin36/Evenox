@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Locabris Correctifs
  * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
- * Version: 1.3.0
+ * Version: 1.3.1
  * Author: Evenox
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
-define('LOCABRIS_FIX_VER', '1.3.0');
+define('LOCABRIS_FIX_VER', '1.3.1');
 
 function locabris_fix_page_slug()
 {
@@ -28,6 +28,9 @@ function locabris_fix_page_slug()
     if (is_page('location-abri-simple')) {
         return 'simples';
     }
+    if (is_page('abri-double')) {
+        return 'doubles';
+    }
     return '';
 }
 
@@ -38,6 +41,7 @@ function locabris_fix_module($name)
         'contact'    => 'contact.html',
         'privacy'    => 'privacy.html',
         'simples'    => 'simples.html',
+        'doubles'    => 'doubles.html',
     );
     if (!isset($map[$name])) {
         return '';

@@ -18,6 +18,7 @@ priv = read("privacy.html")
 shop = read("shop-description.html")
 fiche = read("product-abri.html")
 simples = read("simples.html")
+doubles = read("doubles.html")
 
 if 'split("").join(" ")' in soum or "split('').join(' ')" in soum:
     fail.append("soumission: split/join encore présent")
@@ -54,6 +55,16 @@ if simples.count("loca-chip") < 10:
     fail.append("simples: longueurs manquantes")
 if "en location" in simples.lower():
     fail.append("simples: vocabulaire location")
+if doubles.count('class="loca-modele"') != 3:
+    fail.append("doubles: trois fiches de largeur attendues")
+if 'data-w="16"' not in doubles or 'data-w="18"' not in doubles or 'data-w="20"' not in doubles:
+    fail.append("doubles: cartes 16, 18 et 20 pieds manquantes")
+if doubles.count("loca-chip") < 8:
+    fail.append("doubles: longueurs ou toits manquants")
+if "en location" in doubles.lower():
+    fail.append("doubles: vocabulaire location")
+if "loca-on" not in doubles or "soumission-location-tempo" not in doubles:
+    fail.append("doubles: sélection ou CTA soumission manquant")
 
 plug = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs" / "locabris-correctifs.php"
 if not plug.is_file():
@@ -74,6 +85,10 @@ else:
         fail.append("plugin: le JS des modules doit être relancé après injection")
     if "location-abri-simple" not in php or "simples.html" not in php:
         fail.append("plugin: page abris simples manquante")
+    if "abri-double" not in php or "doubles.html" not in php:
+        fail.append("plugin: page abris doubles manquante")
+    if "1.3.1" not in php:
+        fail.append("plugin: version 1.3.1 manquante")
 zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
     fail.append("zip plugin manquant")
@@ -83,4 +98,4 @@ if fail:
     for f in fail:
         print(" -", f)
     sys.exit(1)
-print("OK", len([soum, ctc, priv, shop, fiche, simples]), "modules + plugin")
+print("OK", len([soum, ctc, priv, shop, fiche, simples, doubles]), "modules + plugin")
