@@ -1,12 +1,13 @@
 # Go — en ligne
 
-**Statut : déployé sur locabris.ca le 30 août 2026 (plugin 1.4.1).**
+**Statut : plugin 1.5.0 — kit soumission calqué sur Evenox.**
 
-Plugin WordPress `Locabris Correctifs` : installé et activé. Cache LiteSpeed vidé.
+Plugin WordPress `Locabris Correctifs` : installer / écraser le zip, activer, vider LiteSpeed.
 
 Le front affiche maintenant :
 
-- Soumission = calculateur une question à la fois (besoin → format → pose → coordonnées)
+- Soumission = même modèle qu’Evenox : 6 questions une à la fois (véhicules, livraison, type, format, pose, extras), stepper, estimation, panier, puis contact
+- Textes abris hivernaux, navy `#0E2C4F`, bleu `#1088B5`, Raleway
 - Contact = plus de succès au chargement
 - Boutique = plus de CSS en texte
 - Fiches produits = photo + prix + soumission
@@ -15,6 +16,6 @@ Le front affiche maintenant :
 - Politique = texte Loi 25
 - Yoast en vente (plus location) + 301 `/boutique/` → `/shop/` et `/blog/` → `/`
 
-Header / footer Divi inchangés. Désactiver le plugin = rollback.
+Header / footer Divi inchangés. Evenox n’est pas touché. Désactiver le plugin = rollback.
 
 Fichier source : `plugin/locabris-correctifs.zip`
