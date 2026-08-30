@@ -20,9 +20,5 @@ jobs:
         run: npm ci
       - name: Installer Chromium
         run: npx playwright install --with-deps chromium
-      - name: Vérifier le catalogue
-        run: node scripts/verifier-catalogue.js
-      - name: Lint payload jw
-        run: node scripts/lint-payload.js assistant-jeux
-      - name: Playwright (Chromium)
-        run: npx playwright test
+      - name: Porte locale (catalogue, outils, lint jw, Playwright)
+        run: npm run ci

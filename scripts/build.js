@@ -5,6 +5,7 @@
  *
  * Usage :
  *   node scripts/build.js assistant-jeux
+ *   node scripts/build.js assistant-jeux --check
  *   node scripts/build.js assistant-evenement --assert-length=49289
  *
  * Préfixes : assistant-evenement → ev, assistant-jeux → jw.
@@ -46,7 +47,9 @@ function jsAvecFilet(jsWidget, relWidget) {
 }
 
 function usage() {
-  console.error('Usage : node scripts/build.js <assistant-evenement|assistant-jeux> [--assert-length=N]');
+  console.error(
+    'Usage : node scripts/build.js <assistant-evenement|assistant-jeux> [--assert-length=N] [--check]'
+  );
 }
 
 function messageManquants(info, manquants, dossierAbsent) {
@@ -115,6 +118,22 @@ function main(argv) {
     console.error(`ÉCHEC du build ${info.dossier} : ${errPayload.length} règle(s) §4 violée(s)\n`);
     console.error(formaterErreurs(errPayload));
     process.exit(1);
+  }
+
+  if (args.check) {
+    if (!fs.existsSync(info.abs.payload)) {
+      console.error(`ÉCHEC --check : ${info.rels.payload} introuvable.`);
+      process.exit(1);
+    }
+    const actuel = fs.readFileSync(info.abs.payload, 'utf8');
+    if (actuel !== payload) {
+      console.error(
+        `ÉCHEC --check : ${info.rels.payload} n'est plus aligné sur les sources (${actuel.length} car. commités, ${payload.length} car. rebuild). Relancer sans --check puis committer.`
+      );
+      process.exit(1);
+    }
+    console.log(`OK --check : ${info.rels.payload} aligné — ${payload.length} caractères`);
+    process.exit(0);
   }
 
   fs.writeFileSync(info.abs.payload, payload, 'utf8');

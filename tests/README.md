@@ -12,12 +12,16 @@ npm test
 
 Depuis la racine du dépôt. Un seul navigateur suffit (Chromium).
 
-Porte complète (catalogue + lint jw + Playwright) — même chose que la CI
-(`.github/workflows/tests.yml`) :
+Porte complète (catalogue + contrats outils + lint jw + Playwright) — même
+chose que la CI (`.github/workflows/tests.yml` appelle `npm run ci`) :
 
 ```bash
 npm run ci
 ```
+
+`npm run test:outils` : lint §4 refuse & / ligne vide / HTML multi-lignes /
+mauvaise longueur ; `build ev` et `integrer` restent en échec tant que les
+sources PC manquent ; payload + `test-local.html` jw alignés (`--check`).
 
 Régénérer la page de test jw après un changement de widget :
 

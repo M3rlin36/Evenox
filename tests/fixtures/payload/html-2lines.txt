@@ -1,0 +1,5 @@
+<div>ligne1</div>
+<div>ligne2</div>
+<script>
+var x=1;
+</script>

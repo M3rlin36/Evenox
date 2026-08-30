@@ -36,6 +36,7 @@ const ENTITES = {
 function parseArgs(argv) {
   const positionnels = [];
   let assertLength = null;
+  let check = false;
   for (const a of argv) {
     if (a.startsWith('--assert-length=')) {
       const n = a.slice('--assert-length='.length);
@@ -43,13 +44,15 @@ function parseArgs(argv) {
         return { erreur: `--assert-length attend un entier, reçu : ${n}` };
       }
       assertLength = Number(n);
+    } else if (a === '--check') {
+      check = true;
     } else if (a.startsWith('-')) {
       return { erreur: `option inconnue : ${a}` };
     } else {
       positionnels.push(a);
     }
   }
-  return { positionnels, assertLength };
+  return { positionnels, assertLength, check };
 }
 
 function normaliserDossier(nom) {

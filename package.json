@@ -13,6 +13,7 @@
     "extraire:catalogue": "node scripts/extraire-catalogue.js",
     "verifier:catalogue": "node scripts/verifier-catalogue.js",
     "integrer": "node scripts/integrer-sources.js",
+    "test:outils": "node scripts/test-outils.js",
     "ci": "node scripts/ci.js"
   },
   "devDependencies": {

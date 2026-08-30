@@ -11,7 +11,8 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 
-function ecrireTestLocal(dir, prefixe, titre) {
+function ecrireTestLocal(dir, prefixe, titre, opts) {
+  const check = opts && opts.check;
   const htmlPath = path.join(dir, prefixe + '-widget.html');
   const cssPath = path.join(dir, prefixe + '-widget.css');
   const jsPath = path.join(dir, prefixe + '-widget.js');
@@ -99,16 +100,36 @@ function ecrireTestLocal(dir, prefixe, titre) {
   ].join('\n');
 
   const dest = path.join(dir, 'test-local.html');
+  const rel = path.relative(ROOT, dest);
+  if (check) {
+    if (!fs.existsSync(dest)) {
+      console.error('ÉCHEC --check : ' + rel + ' introuvable.');
+      process.exit(1);
+    }
+    const actuel = fs.readFileSync(dest, 'utf8');
+    if (actuel !== out) {
+      console.error(
+        'ÉCHEC --check : ' +
+          rel +
+          " n'est plus aligné sur les sources. Relancer sans --check puis committer."
+      );
+      process.exit(1);
+    }
+    console.log('OK --check : ' + rel + ' aligné — ' + out.length + ' caractères');
+    return true;
+  }
   fs.writeFileSync(dest, out, 'utf8');
-  console.log('OK : ' + path.relative(ROOT, dest) + ' — ' + out.length + ' caractères');
+  console.log('OK : ' + rel + ' — ' + out.length + ' caractères');
   return true;
 }
 
-function main() {
+function main(argv) {
+  const check = (argv || []).indexOf('--check') !== -1;
   const jw = ecrireTestLocal(
     path.join(ROOT, 'assistant-jeux'),
     'jw',
-    'Assistant jeux — test local (pas de reseau)'
+    'Assistant jeux — test local (pas de reseau)',
+    { check: check }
   );
   if (!jw) {
     console.error('ÉCHEC : sources jw-widget.* introuvables. Rien n\'a été inventé.');
@@ -118,11 +139,12 @@ function main() {
   const ev = ecrireTestLocal(
     evDir,
     'ev',
-    'Assistant evenement — test local (pas de reseau)'
+    'Assistant evenement — test local (pas de reseau)',
+    { check: check }
   );
   if (!ev) {
     console.log('assistant-evenement/ev-widget.* absent — test-local ev non créé (voulu).');
   }
 }
 
-main();
+main(process.argv.slice(2));

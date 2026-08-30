@@ -1,11 +1,12 @@
 'use strict';
 
 /**
- * Porte locale = celle de .github/workflows/tests.yml
+ * Porte locale = celle de .github/workflows/tests.yml (`npm run ci`)
  *   node scripts/ci.js
  *   npm run ci
  *
  * Ne build pas ev (sources absentes). Ne déploie rien.
+ * Rebuild payload / test-local en --check : refuse un fichier généré périmé.
  */
 
 const { spawnSync } = require('child_process');
@@ -28,9 +29,10 @@ function run(cmd, args) {
 
 function main() {
   run('node', ['scripts/verifier-catalogue.js']);
+  run('node', ['scripts/test-outils.js']);
   run('node', ['scripts/lint-payload.js', 'assistant-jeux']);
   run('npx', ['playwright', 'test']);
-  console.log('\nOK : catalogue + lint jw + Playwright.');
+  console.log('\nOK : catalogue + outils + lint jw + Playwright.');
 }
 
 main();
