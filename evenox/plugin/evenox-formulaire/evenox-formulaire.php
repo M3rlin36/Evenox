@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Evenox Formulaire
  * Description: N'injecte le calculateur que dans #evx-plan. Ne remplace jamais le hero, les photos ni le contenu Divi.
- * Version: 1.1.1
+ * Version: 2.0.0
  * Author: Evenox
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 define('EVENOX_FORM_DIR', plugin_dir_path(__FILE__));
-define('EVENOX_FORM_VER', '1.1.1');
+define('EVENOX_FORM_VER', '2.0.0');
 
 function evenox_form_is_tables_page()
 {

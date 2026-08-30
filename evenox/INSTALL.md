@@ -4,9 +4,9 @@ Evenox n’est pas dans ce dépôt : le site live est WordPress / Divi sur [even
 
 ## Déjà en ligne
 
-Le plugin **Evenox Formulaire** 1.1.1 n’injecte **que** dans un hôte `#evx-plan` déjà présent. Sans cet hôte, la page Divi (hero, kit, photos, FAQ) reste intacte. Le calculateur d’origine est déjà une question à la fois.
+Le plugin **Evenox Formulaire** 2.0.0 n’injecte **que** dans un hôte `#evx-plan` déjà présent. Sans cet hôte, la page Divi (hero, kit, photos, FAQ) reste intacte. Le calculateur d’origine est déjà une question à la fois.
 
-Les versions 1.0.1 / 1.1.0 remplaçaient tout `et_builder_inner_content`. Ne pas les réinstaller.
+Les versions 1.0.1 / 1.1.0 / 1.2.0 remplaçaient tout `et_builder_inner_content`. Ne pas les réinstaller.
 
 Pour une mise à jour : re-téléverser le zip (écraser) puis vider LiteSpeed.
 
@@ -45,7 +45,7 @@ En preview locale (`evenox/preview/`), `window.EVENOX_PREVIEW=true` : aucun envo
 
 ## Rollback
 
-Désactiver le plugin. La page Divi d’origine reste (c’est déjà le cas en 1.1.1).
+Désactiver le plugin. La page Divi d’origine reste (c’est déjà le cas en 2.0.0).
 
 ## Test après activation
 

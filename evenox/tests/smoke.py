@@ -57,8 +57,8 @@ else:
         fail.append("plugin: ne plus cacher tout le contenu Divi")
     if ".evenox-form-tables .tc-hero" in php and "visibility:hidden" in php:
         fail.append("plugin: ne plus cacher .tc-hero")
-    if "1.1.1" not in php:
-        fail.append("plugin: version 1.1.1 attendue")
+    if "2.0.0" not in php:
+        fail.append("plugin: version 2.0.0 attendue")
 
 zpath = ROOT / "plugin" / "evenox-formulaire.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
