@@ -6,6 +6,7 @@ mkdir -p "$DEST"
 cp "$ROOT/modules/soumission.html" "$DEST/"
 cp "$ROOT/modules/contact.html" "$DEST/"
 cp "$ROOT/modules/privacy.html" "$DEST/"
+cp "$ROOT/modules/simples.html" "$DEST/"
 cp "$ROOT/modules/shop-footer.css" "$DEST/"
 cd "$ROOT/plugin"
 rm -f locabris-correctifs.zip

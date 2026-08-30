@@ -1,6 +1,6 @@
 # Go — en ligne
 
-**Statut : déployé sur locabris.ca le 30 août 2026 (plugin 1.2.2).**
+**Statut : déployé sur locabris.ca le 30 août 2026 (plugin 1.3.0).**
 
 Plugin WordPress `Locabris Correctifs` : installé et activé. Cache LiteSpeed vidé.
 

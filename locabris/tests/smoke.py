@@ -17,6 +17,7 @@ ctc = read("contact.html")
 priv = read("privacy.html")
 shop = read("shop-description.html")
 fiche = read("product-abri.html")
+simples = read("simples.html")
 
 if 'split("").join(" ")' in soum or "split('').join(' ')" in soum:
     fail.append("soumission: split/join encore présent")
@@ -47,6 +48,12 @@ if "hooks.zapier.com/hooks/catch/16509085/udt0i4j" not in soum:
     fail.append("soumission: webhook Zapier manquant")
 if "#0E2C4F" not in soum or "#1088B5" not in soum:
     fail.append("soumission: couleurs branding manquantes")
+if "loca-modele" not in simples or 'data-w="11"' not in simples or 'data-w="12"' not in simples:
+    fail.append("simples: deux fiches 11 et 12 pieds manquantes")
+if simples.count("loca-chip") < 10:
+    fail.append("simples: longueurs manquantes")
+if "en location" in simples.lower():
+    fail.append("simples: vocabulaire location")
 
 plug = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs" / "locabris-correctifs.php"
 if not plug.is_file():
@@ -65,6 +72,8 @@ else:
         fail.append("plugin: retrait de la tuile navy accueil manquant")
     if "locabrisRunScripts" not in php or "locabris-correctifs-src" not in php:
         fail.append("plugin: le JS des modules doit être relancé après injection")
+    if "location-abri-simple" not in php or "simples.html" not in php:
+        fail.append("plugin: page abris simples manquante")
 zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
     fail.append("zip plugin manquant")
@@ -74,4 +83,4 @@ if fail:
     for f in fail:
         print(" -", f)
     sys.exit(1)
-print("OK", len([soum, ctc, priv, shop, fiche]), "modules + plugin")
+print("OK", len([soum, ctc, priv, shop, fiche, simples]), "modules + plugin")

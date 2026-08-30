@@ -22,6 +22,7 @@ HEADER = """<!DOCTYPE html>
   </a>
   <nav class="chrome-nav">
     <a href="soumission.html"{soumission}>Soumission Rapide</a>
+    <a href="simples.html"{simples}>Abris simples</a>
     <a href="contact.html"{contact}>Contact</a>
     <a href="shop.html"{shop}>Boutique</a>
     <a href="product.html"{product}>Fiche abri</a>
@@ -56,7 +57,7 @@ FOOTER = """
 
 
 def flags(active):
-    keys = ("soumission", "contact", "shop", "product", "privacy")
+    keys = ("soumission", "simples", "contact", "shop", "product", "privacy")
     return {k: ' aria-current="page"' if k == active else "" for k in keys}
 
 
@@ -71,6 +72,12 @@ write(
     "Soumission rapide | Locabris",
     MOD.joinpath("soumission.html").read_text(encoding="utf-8"),
     "soumission",
+)
+write(
+    "simples.html",
+    "Abris simples 11 et 12 pieds | Locabris",
+    MOD.joinpath("simples.html").read_text(encoding="utf-8"),
+    "simples",
 )
 write(
     "contact.html",
@@ -113,6 +120,7 @@ index = """
   <h1>Correctifs Locabris</h1>
   <p>Même branding. Wizard, contact, boutique, fiche et politique. Les envois sont mockés ici — Zapier n’est pas appelé.</p>
   <a class="chrome-card" href="soumission.html"><strong>Soumission</strong><span>Calculateur une question à la fois, estimation, merci seulement après envoi.</span></a>
+  <a class="chrome-card" href="simples.html"><strong>Abris simples</strong><span>Deux fiches : 11 pi et 12 pi, toutes les longueurs.</span></a>
   <a class="chrome-card" href="contact.html"><strong>Contact</strong><span>Plus de « Message envoyé » au chargement.</span></a>
   <a class="chrome-card" href="shop.html"><strong>Boutique</strong><span>Description propre, plus de CSS en texte.</span></a>
   <a class="chrome-card" href="product.html"><strong>Fiche abri</strong><span>Photo, prix, inclus, bouton soumission.</span></a>
