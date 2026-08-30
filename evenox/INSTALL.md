@@ -2,6 +2,12 @@
 
 Evenox n’est pas dans ce dépôt : le site live est WordPress / Divi sur [evenox.ca](https://evenox.ca). Ce dossier livre un plugin à coller par-dessus, comme Locabris.
 
+## Déjà en ligne
+
+Le plugin **Evenox Formulaire** 1.0.0 est activé sur evenox.ca (août 2026). Ouvrir https://evenox.ca/location-tables-chaises/ et descendre au calculateur.
+
+Pour une mise à jour : re-téléverser le zip (écraser) puis vider LiteSpeed.
+
 ## Voie rapide
 
 1. Générer le zip : `evenox/plugin/pack.sh`

@@ -1,10 +1,10 @@
 # Go — formulaire Evenox
 
-**Statut : module prêt, déploiement WordPress à faire.**
+**Statut : en ligne sur evenox.ca (plugin Evenox Formulaire 1.0.0, 30 août 2026).**
 
-evenox.ca est un WordPress / Divi hors de ce dépôt. Le zip `plugin/evenox-formulaire.zip` s’installe comme Locabris Correctifs.
+evenox.ca est un WordPress / Divi hors de ce dépôt. Le zip `plugin/evenox-formulaire.zip` est installé et activé. Cache LiteSpeed vidé.
 
-Après activation, `/location-tables-chaises/` affiche le wizard :
+`/location-tables-chaises/` affiche le wizard :
 
 - une question par écran
 - barre Étape N sur M

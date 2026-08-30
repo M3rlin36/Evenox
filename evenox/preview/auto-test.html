@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <title>Auto-test formulaire Evenox</title>
+  <script>window.EVENOX_PREVIEW=true;</script>
+</head>
+<body>
+<div id="host"></div>
+<pre id="log" style="font:14px/1.4 ui-monospace,monospace;padding:16px"></pre>
+<script>
+(async function(){
+  var log=document.getElementById("log");
+  function say(s){log.textContent += s+"\n";}
+  try{
+    var html=await (await fetch("tables.html")).text();
+    var m=html.match(/<main>([\s\S]*?)<\/main>/);
+    document.getElementById("host").innerHTML=m?m[1]:html;
+    var scripts=document.getElementById("host").querySelectorAll("script");
+    scripts.forEach(function(old){
+      var s=document.createElement("script");
+      s.textContent=old.textContent;
+      old.parentNode.replaceChild(s,old);
+    });
+    function tap(sel){
+      var el=document.querySelector(sel);
+      if(!el) throw new Error("manque "+sel);
+      el.click();
+    }
+    function vis(id){return document.getElementById(id).classList.contains("is-on");}
+    var merci0=document.getElementById("evx-merci");
+    if(!merci0) throw new Error("bloc merci manquant");
+    if(merci0.style.display==="block") throw new Error("merci visible trop tôt");
+    tap('[data-group="invites"] [data-value="48"]');
+    await new Promise(r=>setTimeout(r,180));
+    if(!vis("evx-step-mode")) throw new Error("pas passé à livraison");
+    tap('[data-group="mode"] [data-value="livraison"]');
+    await new Promise(r=>setTimeout(r,180));
+    if(!vis("evx-step-postal")) throw new Error("pas passé au code postal");
+    document.querySelector('[name="postal"]').value="J7E 1A1";
+    document.querySelector('[name="postal"]').dispatchEvent(new Event("input",{bubbles:true}));
+    tap('[data-next="postal"]');
+    await new Promise(r=>setTimeout(r,180));
+    if(!vis("evx-step-chaises")) throw new Error("pas passé aux chaises");
+    tap('[data-group="chaise"] [data-value="blanche"]');
+    await new Promise(r=>setTimeout(r,180));
+    tap('[data-group="table"] [data-value="ronde60"]');
+    await new Promise(r=>setTimeout(r,180));
+    if(!vis("evx-step-nappes")) throw new Error("pas passé aux nappes");
+    tap('[data-group="nappe"] [data-value="blanche"]');
+    await new Promise(r=>setTimeout(r,180));
+    tap('[data-group="cocktail"] [data-value="2"]');
+    await new Promise(r=>setTimeout(r,80));
+    tap('[data-group="nappeCocktail"] [data-value="blanche"]');
+    await new Promise(r=>setTimeout(r,180));
+    if(!vis("evx-step-coord")) throw new Error("pas passé au contact");
+    var est=document.getElementById("evx-estime-prix").textContent;
+    if(!est || est.indexOf("$")<0) throw new Error("estimation vide: "+est);
+    document.querySelector('[data-send]').click();
+    await new Promise(r=>setTimeout(r,80));
+    var err=document.querySelector("[data-err]");
+    if(!err.classList.contains("is-on")) throw new Error("pas d'erreur inline à vide");
+    document.querySelector('[name="nom"]').value="Test Preview";
+    document.querySelector('[name="email"]').value="preview@evenox.test";
+    document.querySelector('[data-send]').click();
+    await new Promise(r=>setTimeout(r,80));
+    var merci=document.getElementById("evx-merci");
+    if(merci.style.display!=="block") throw new Error("merci pas affiché après envoi mock");
+    if(document.getElementById("evx-calc").style.display!=="none") throw new Error("calc encore visible");
+    say("OK "+est);
+    document.title="AUTOTEST OK "+est;
+  }catch(e){
+    say("FAIL "+e.message);
+    document.title="AUTOTEST FAIL "+e.message;
+  }
+})();
+</script>
+</body>
+</html>
