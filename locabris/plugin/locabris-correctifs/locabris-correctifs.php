@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Locabris Correctifs
- * Description: Affiche les modules corrigés (soumission, contact, boutique, fiches, politique) par-dessus Divi, sans changer le branding.
- * Version: 1.0.0
+ * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
+ * Version: 1.1.0
  * Author: Evenox
  */
 
@@ -12,6 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
+define('LOCABRIS_FIX_VER', '1.1.0');
 
 function locabris_fix_page_slug()
 {
@@ -44,6 +45,24 @@ function locabris_fix_module($name)
     return file_get_contents($path);
 }
 
+function locabris_fix_clean_title($title)
+{
+    $title = preg_replace('/Abris d[\'’]auto hivernale/i', 'Abri hivernal', $title);
+    $title = preg_replace('/Abris Hivernale/i', 'Abri hivernal', $title);
+    $title = preg_replace('/Abri Hivernale/i', 'Abri hivernal', $title);
+    $title = preg_replace('/\s+en location/i', '', $title);
+    $title = preg_replace('/\s+-?\s*copie\s*$/i', '', $title);
+    return trim($title);
+}
+
+function locabris_fix_dims($text)
+{
+    if (preg_match('/(\d+)\s*x\s*(\d+)/i', $text, $m)) {
+        return array($m[1], $m[2]);
+    }
+    return array('', '');
+}
+
 function locabris_fix_product_html()
 {
     if (!function_exists('wc_get_product')) {
@@ -57,9 +76,7 @@ function locabris_fix_product_html()
     if (!$img) {
         $img = 'https://locabris.ca/wp-content/uploads/2026/08/locabris-img-3214.jpg';
     }
-    $title = get_the_title();
-    $title = preg_replace('/Abris Hivernale/i', 'Abri hivernal', $title);
-    $title = preg_replace('/\s+en location/i', '', $title);
+    $title = locabris_fix_clean_title(get_the_title());
     $price = $product->get_price_html();
     $soum  = home_url('/soumission-location-tempo/');
     $cart  = do_shortcode('[add_to_cart id="' . (int) $product->get_id() . '" show_price="false" style=""]');
@@ -80,6 +97,32 @@ function locabris_fix_product_html()
         . '<div class="loca-woo-cart">' . $cart . '</div>'
         . '</div></div>';
 }
+
+add_filter('the_title', function ($title, $post_id = 0) {
+    if (is_admin()) {
+        return $title;
+    }
+    $post = $post_id ? get_post($post_id) : null;
+    if ($post && $post->post_type === 'product') {
+        return locabris_fix_clean_title($title);
+    }
+    if ($post && $post->post_name === 'cart') {
+        return 'Panier';
+    }
+    if ($post && $post->post_name === 'checkout') {
+        return 'Commande';
+    }
+    if ($post && $post->post_name === 'payment-failed') {
+        return 'Paiement échoué';
+    }
+    if ($post && $post->post_name === 'payment-confirmation') {
+        return 'Paiement confirmé';
+    }
+    if ($post && in_array($post->post_name, array('418-2', 'accessoires'), true)) {
+        return 'Accessoires pour abri hivernal';
+    }
+    return $title;
+}, 20, 2);
 
 add_filter('body_class', function ($classes) {
     if (locabris_fix_page_slug() || (function_exists('is_shop') && is_shop()) || (function_exists('is_product') && is_product())) {
@@ -134,7 +177,8 @@ add_action('wp_footer', function () {
     </script>';
 }, 5);
 
-add_filter('wpseo_title', function ($title) {
+function locabris_fix_seo_title($title)
+{
     if (is_front_page()) {
         return 'Le spécialiste de l\'abri d\'auto sur la Rive-Nord | Locabris';
     }
@@ -150,10 +194,51 @@ add_filter('wpseo_title', function ($title) {
     if (is_page('location-abri-simple')) {
         return 'Abris simples usagés — 11 et 12 pieds | Locabris';
     }
+    if (is_page('abri-double')) {
+        return 'Abris d\'auto doubles à vendre — 16 à 20 pieds | Locabris';
+    }
+    if (is_page(array('418-2', 'accessoires'))) {
+        return 'Accessoires pour abri hivernal | Locabris';
+    }
+    if (is_page('installation-abri-hivernale-laval-rive-nord')) {
+        return 'On monte, on aligne, on ancre | Locabris';
+    }
+    if (is_page('location-abri-tempo-locabris')) {
+        return 'Nous ne louons plus — on vend nos abris | Locabris';
+    }
+    if (is_page('vente-installation-abris-de-voiture-tempo-avec-livraison-locabris')) {
+        return 'Un véhicule ou deux, protégés tout l\'hiver | Locabris';
+    }
+    if (is_page('faq')) {
+        return 'Les questions qu\'on nous pose | Locabris';
+    }
+    if (is_page('regions-desservies')) {
+        return 'Installation d\'abris d\'auto sur la Rive-Nord | Locabris';
+    }
+    if (function_exists('is_cart') && is_cart()) {
+        return 'Panier | Locabris';
+    }
+    if (function_exists('is_checkout') && is_checkout()) {
+        return 'Commande | Locabris';
+    }
+    if (is_page('payment-failed')) {
+        return 'Paiement échoué | Locabris';
+    }
+    if (is_page('payment-confirmation')) {
+        return 'Paiement confirmé | Locabris';
+    }
+    if (function_exists('is_product') && is_product()) {
+        list($w, $l) = locabris_fix_dims(get_the_title() . ' ' . get_post_field('post_name', get_the_ID()));
+        if ($w && $l) {
+            return 'Abri hivernal ' . $w . ' x ' . $l . ' usagé à vendre | Locabris';
+        }
+        return locabris_fix_clean_title(get_the_title()) . ' | Locabris';
+    }
     return $title;
-}, 20);
+}
 
-add_filter('wpseo_metadesc', function ($desc) {
+function locabris_fix_seo_desc($desc)
+{
     if (is_front_page()) {
         return 'Vente et installation d\'abris d\'auto usagés. Laval, Blainville, Mirabel et Rive-Nord. Réponse le jour même.';
     }
@@ -169,20 +254,61 @@ add_filter('wpseo_metadesc', function ($desc) {
     if (is_page('location-abri-simple')) {
         return 'Abris d\'auto simples usagés, 11 et 12 pieds. Vérifiés, prêts à poser. Dès 250 $.';
     }
+    if (is_page('abri-double')) {
+        return 'Abris doubles usagés, 16 à 20 pieds. Vente et installation, Rive-Nord.';
+    }
+    if (is_page(array('418-2', 'accessoires'))) {
+        return 'Portes, ancrages et protecteurs de pavé pour votre abri.';
+    }
+    if (is_page('installation-abri-hivernale-laval-rive-nord')) {
+        return 'Installation d\'abri d\'auto à Laval et sur la Rive-Nord. 200 $ simple, 300 $ double.';
+    }
+    if (is_page('location-abri-tempo-locabris')) {
+        return 'Locabris ne loue plus. Abris usagés à vendre dès 250 $, installation sur la Rive-Nord.';
+    }
+    if (is_page('vente-installation-abris-de-voiture-tempo-avec-livraison-locabris')) {
+        return 'Abris d\'auto usagés, un ou deux véhicules. Vente, livraison et installation, Rive-Nord.';
+    }
+    if (is_page('faq')) {
+        return 'Prix, installation, formats et délais. Les réponses avant d\'écrire.';
+    }
+    if (is_page('regions-desservies')) {
+        return 'Installation dans un rayon de 20 km de Sainte-Thérèse. Laval, Blainville, Mirabel, Rive-Nord.';
+    }
     if (function_exists('is_product') && is_product()) {
+        list($w, $l) = locabris_fix_dims(get_the_title() . ' ' . get_post_field('post_name', get_the_ID()));
+        if ($w && $l) {
+            return 'Abri d\'auto ' . $w . ' x ' . $l . ' usagé, condition 8/10. Vente et installation, Rive-Nord.';
+        }
         return 'Abri d\'auto usagé, condition 8/10. Vente et installation, Rive-Nord.';
     }
     return $desc;
-}, 20);
+}
+
+add_filter('wpseo_title', 'locabris_fix_seo_title', 20);
+add_filter('pre_get_document_title', 'locabris_fix_seo_title', 20);
+add_filter('wpseo_metadesc', 'locabris_fix_seo_desc', 20);
+
+add_filter('woocommerce_checkout_redirect_empty_cart', '__return_false');
+
+function locabris_fix_redirect_map()
+{
+    return array(
+        'boutique' => '/shop/',
+        'blog' => '/',
+        'hello-world' => '/',
+        '418-2' => '/accessoires/',
+        'product/abris-hivernale-11-x-12-en-location' => '/product/abri-hivernal-11-x-12/',
+        'product/abris-hivernale-11-x-8-en-location-copie' => '/product/abri-hivernal-11-x-8/',
+        'product/abris-hivernale-20-x-16-en-location' => '/product/abri-hivernal-20-x-16/',
+    );
+}
 
 add_action('template_redirect', function () {
     $path = isset($_SERVER['REQUEST_URI']) ? trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/') : '';
-    if ($path === 'boutique') {
-        wp_redirect(home_url('/shop/'), 301);
+    $map  = locabris_fix_redirect_map();
+    if (isset($map[$path])) {
+        wp_redirect(home_url($map[$path]), 301);
         exit;
     }
-    if ($path === 'blog') {
-        wp_redirect(home_url('/'), 301);
-        exit;
-    }
-});
+}, 1);

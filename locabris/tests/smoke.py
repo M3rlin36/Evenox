@@ -53,6 +53,12 @@ else:
     php = plug.read_text(encoding="utf-8")
     if "soumission-location-tempo" not in php or "wp_redirect" not in php:
         fail.append("plugin: slugs ou 301 manquants")
+    if "abri-hivernal-11-x-12" not in php or "accessoires" not in php:
+        fail.append("plugin: 301 slugs produits / accessoires manquants")
+    if "Abri hivernal" not in php or "Panier | Locabris" not in php:
+        fail.append("plugin: titres produits ou Woo FR manquants")
+    if "woocommerce_checkout_redirect_empty_cart" not in php:
+        fail.append("plugin: checkout ne doit plus renvoyer au panier vide")
 zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
     fail.append("zip plugin manquant")

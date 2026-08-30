@@ -32,7 +32,8 @@ Ton : phrases courtes, « on », Québec, aucun engagement, rappel le jour même
 3. Boutique — sortir le CSS du texte, le remettre dans un `<style>`.
 4. Fiche abri — image, prix, inclus, bouton vers soumission.
 5. Politique — texte Loi 25, même mise en page.
-6. Yoast + redirections — plus un mot « location » là où on vend.
+6. Yoast + redirections — plus un mot « location » là où on vend. **Fait (1.0 + 1.1).**
+7. Slugs `en-location` / `418-2`, titres `Abri hivernal`, Woo FR, checkout qui reste sur `/checkout/`. **Fait (1.1).**
 
 ## Hors scope
 

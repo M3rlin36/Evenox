@@ -2,6 +2,8 @@
 
 Enlever le mot location partout où on vend.
 
+**En ligne (plugin 1.1.0)** : titles/metas + 301 ci-dessous. Les slugs produits sont aussi renommés dans Woo.
+
 ## Titles et metas
 
 | Page WP | Title SEO | Meta description |
