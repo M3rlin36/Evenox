@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Locabris Correctifs
  * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Evenox
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
-define('LOCABRIS_FIX_VER', '1.1.1');
+define('LOCABRIS_FIX_VER', '1.1.2');
 
 function locabris_fix_page_slug()
 {
@@ -148,10 +148,33 @@ add_action('wp_head', function () {
         $css .= file_get_contents($footer);
     }
     if (is_front_page()) {
-        $css .= '.home div[style*="background: #0E2C4F"][style*="aspect-ratio: 1"]{display:none!important}';
+        $css .= '.home div[style*="background: #0E2C4F"][style*="aspect-ratio: 1"],'
+            . '.home div:has(> div[style*="background: #0E2C4F"][style*="aspect-ratio: 1"])'
+            . '{display:none!important;height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}';
     }
     echo '<style id="locabris-correctifs">' . $css . '</style>';
 }, 20);
+
+function locabris_fix_strip_home_navy_tile($html)
+{
+    if (!is_string($html) || $html === '') {
+        return $html;
+    }
+    $stripped = preg_replace(
+        '#<div style="display: flex; flex-direction: column; gap: 14px; min-width: 0;"><div style="width: 100%; aspect-ratio: 1; background: #0E2C4F;[^>]*>.*?</svg>\s*</div></div>#su',
+        '',
+        $html,
+        1
+    );
+    return is_string($stripped) ? $stripped : $html;
+}
+
+add_action('template_redirect', function () {
+    if (!is_front_page()) {
+        return;
+    }
+    ob_start('locabris_fix_strip_home_navy_tile');
+}, 0);
 
 add_action('wp_footer', function () {
     if (!is_front_page()) {
@@ -159,10 +182,10 @@ add_action('wp_footer', function () {
     }
     echo '<script>
     document.addEventListener("DOMContentLoaded",function(){
-      var nodes=document.querySelectorAll("div[style*=\\"background: #0E2C4F\\"]");
+      var nodes=document.querySelectorAll("div[style*=\\"background: #0E2C4F\\"][style*=\\"aspect-ratio: 1\\"]");
       for(var i=0;i<nodes.length;i++){
         var el=nodes[i];
-        if(!el.querySelector("svg")) continue;
+        if(el.textContent.indexOf("18")===-1) continue;
         var wrap=el.parentElement;
         if(wrap){wrap.remove();}else{el.remove();}
       }
