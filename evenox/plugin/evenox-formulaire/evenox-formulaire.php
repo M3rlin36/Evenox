@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Evenox Formulaire
- * Description: N'injecte le calculateur que dans #evx-plan. Ne remplace jamais le hero, les photos ni le contenu Divi.
- * Version: 1.0.2
+ * Description: Calculateur tables et chaises, une question à la fois. Remplace le contenu de /location-tables-chaises/ (hero et ancien kit compris).
+ * Version: 1.1.0
  * Author: Evenox
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 define('EVENOX_FORM_DIR', plugin_dir_path(__FILE__));
-define('EVENOX_FORM_VER', '1.0.2');
+define('EVENOX_FORM_VER', '1.1.0');
 
 function evenox_form_is_tables_page()
 {
@@ -41,19 +41,13 @@ add_filter('body_class', function ($classes) {
     return $classes;
 });
 
-/*
- * 1.0.1 cachait tout le builder Divi puis y collait le wizard :
- * hero, kit, photos et FAQ disparaissaient.
- * 1.0.2 n'injecte que dans un hôte #evx-plan déjà présent. Sans cet
- * hôte, la page Divi d'origine (déjà en une question à la fois via
- * KIT WIZARD) reste intacte.
- */
 add_action('wp_head', function () {
     if (!evenox_form_is_tables_page()) {
         return;
     }
     echo '<style id="evenox-formulaire">'
-        . '#evx-plan[data-evenox-host]{min-height:0}'
+        . '.evenox-form-tables #main-content .et_builder_inner_content{visibility:hidden}'
+        . '.evenox-form-tables .tc-page,.evenox-form-tables .tc-hero,.evenox-form-tables .tc-calc,.evenox-form-tables #tcFloatingCta,.evenox-form-tables .floating-cta{visibility:hidden}'
         . '</style>';
 }, 20);
 
@@ -77,32 +71,29 @@ add_action('wp_footer', function () {
           old.parentNode.replaceChild(s,old);
         }
       }
-      function evenoxFindSlot(){
-        var hosts=document.querySelectorAll("#evx-plan");
-        for(var i=0;i<hosts.length;i++){
-          var el=hosts[i];
-          if(el.getAttribute("data-evenox-host")==="1")return el;
-          if(el.querySelector(".evx-step"))continue;
-          if((el.textContent||"").trim()===""&&el.children.length===0)return el;
-        }
-        return null;
-      }
       function evenoxInject(){
         var src=document.getElementById("evenox-form-src");
         if(!src||src.getAttribute("data-done"))return;
         src.setAttribute("data-done","1");
-        var slot=evenoxFindSlot();
-        if(!slot){
+        var html=src.value;
+        var main=document.querySelector("#main-content .et_builder_inner_content")
+          ||document.querySelector("#main-content .entry-content")
+          ||document.querySelector("#main-content");
+        if(!main){
+          var box=document.createElement("div");
+          box.innerHTML=html;
+          src.parentNode.insertBefore(box,src);
+          evenoxRunScripts(box);
           src.remove();
           return;
         }
-        var html=src.value;
-        var box=document.createElement("div");
-        box.innerHTML=html;
-        slot.innerHTML="";
-        while(box.firstChild)slot.appendChild(box.firstChild);
-        evenoxRunScripts(slot);
+        main.innerHTML=html;
+        main.style.visibility="visible";
+        evenoxRunScripts(main);
         src.remove();
+        var cta=document.getElementById("tcFloatingCta");
+        if(cta)cta.remove();
+        document.querySelectorAll(".floating-cta").forEach(function(n){n.remove();});
       }
       if(document.readyState==="loading"){
         document.addEventListener("DOMContentLoaded",evenoxInject);

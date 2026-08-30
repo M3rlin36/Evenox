@@ -47,22 +47,16 @@ else:
         fail.append("plugin: slug de page manquant")
     if "evenoxRunScripts" not in php or "evenox-form-src" not in php:
         fail.append("plugin: le JS du module doit être relancé après injection")
-    if "evenoxFindSlot" not in php or "#evx-plan" not in php:
-        fail.append("plugin: n'injecter que dans #evx-plan")
-    if "main.innerHTML" in php.replace("/*", "").replace("*", ""):
-        fail.append("plugin: ne jamais remplacer tout #main-content")
-    if "old.innerHTML" in php and "#calculateur" in php:
-        fail.append("plugin: ne pas vider #calculateur")
-    if 'querySelector("#main-content .et_builder_inner_content")' in php:
-        fail.append("plugin: ne jamais cibler et_builder_inner_content")
-    if 'querySelector("#calculateur")' in php or 'querySelector(".tc-calc")' in php:
-        fail.append("plugin: ne pas remplacer #calculateur / .tc-calc")
-    if ".evenox-form-tables #main-content .et_builder_inner_content{visibility:hidden}" in php:
-        fail.append("plugin: ne plus cacher tout le contenu Divi")
-    if ".evenox-form-tables .tc-page" in php and "visibility:hidden" in php:
-        fail.append("plugin: ne plus cacher .tc-page / .tc-hero")
-    if "1.0.2" not in php:
-        fail.append("plugin: version 1.0.2 attendue")
+    if php.find("#calculateur") != -1 and php.find("#calculateur") < php.find("#main-content .et_builder_inner_content"):
+        fail.append("plugin: ne pas injecter dans #calculateur avant le contenu Divi")
+    if 'querySelector("#main-content .et_builder_inner_content")' not in php:
+        fail.append("plugin: doit remplacer #main-content .et_builder_inner_content")
+    if ".evenox-form-tables #main-content .et_builder_inner_content{visibility:hidden}" not in php:
+        fail.append("plugin: cacher le contenu Divi jusqu'au remplacement")
+    if "1.1.0" not in php:
+        fail.append("plugin: version 1.1.0 attendue")
+    if "1.0.3-restore" in php or "Inerte" in php:
+        fail.append("plugin: ne pas livrer la version inerte")
 
 zpath = ROOT / "plugin" / "evenox-formulaire.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
