@@ -112,7 +112,7 @@ index = """
   <div style="font-weight:700;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#1088B5">Preview</div>
   <h1>Correctifs Locabris</h1>
   <p>Même branding. Wizard, contact, boutique, fiche et politique. Les envois sont mockés ici — Zapier n’est pas appelé.</p>
-  <a class="chrome-card" href="soumission.html"><strong>Soumission</strong><span>Wizard en 2 étapes, validation inline, merci seulement après envoi.</span></a>
+  <a class="chrome-card" href="soumission.html"><strong>Soumission</strong><span>Calculateur une question à la fois, estimation, merci seulement après envoi.</span></a>
   <a class="chrome-card" href="contact.html"><strong>Contact</strong><span>Plus de « Message envoyé » au chargement.</span></a>
   <a class="chrome-card" href="shop.html"><strong>Boutique</strong><span>Description propre, plus de CSS en texte.</span></a>
   <a class="chrome-card" href="product.html"><strong>Fiche abri</strong><span>Photo, prix, inclus, bouton soumission.</span></a>

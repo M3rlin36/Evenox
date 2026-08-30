@@ -22,8 +22,10 @@ if 'split("").join(" ")' in soum or "split('').join(' ')" in soum:
     fail.append("soumission: split/join encore présent")
 if "display:none" not in soum or "loca-merci" not in soum:
     fail.append("soumission: #loca-merci doit être caché")
-if "loca-step-choix" not in soum or "loca-step-achat" not in soum:
-    fail.append("soumission: wizard incomplet")
+if "loca-step-choix" not in soum or "loca-step-abri" not in soum or "loca-step-coord" not in soum:
+    fail.append("soumission: calculateur incomplet")
+if "loca-estime" not in soum or "loca-step-achat" not in soum:
+    fail.append("soumission: estimation ou étape pose manquante")
 if "window.location.href='/shop/'" in soum:
     fail.append("soumission: les cartes ne doivent plus naviguer")
 if "alert(" in soum or "alert(" in ctc:
