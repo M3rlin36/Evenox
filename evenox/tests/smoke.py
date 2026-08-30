@@ -53,8 +53,8 @@ else:
         fail.append("plugin: doit remplacer #main-content .et_builder_inner_content")
     if ".evenox-form-tables #main-content .et_builder_inner_content{visibility:hidden}" not in php:
         fail.append("plugin: cacher le contenu Divi jusqu'au remplacement")
-    if "1.1.0" not in php:
-        fail.append("plugin: version 1.1.0 attendue")
+    if "1.2.0" not in php:
+        fail.append("plugin: version 1.2.0 attendue")
     if "1.0.3-restore" in php or "Inerte" in php:
         fail.append("plugin: ne pas livrer la version inerte")
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Evenox Formulaire
  * Description: Calculateur tables et chaises, une question à la fois. Remplace le contenu de /location-tables-chaises/ (hero et ancien kit compris).
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Evenox
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 define('EVENOX_FORM_DIR', plugin_dir_path(__FILE__));
-define('EVENOX_FORM_VER', '1.1.0');
+define('EVENOX_FORM_VER', '1.2.0');
 
 function evenox_form_is_tables_page()
 {

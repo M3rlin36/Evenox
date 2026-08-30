@@ -4,7 +4,7 @@ Evenox n’est pas dans ce dépôt : le site live est WordPress / Divi sur [even
 
 ## Déjà en ligne
 
-Le plugin **Evenox Formulaire** 1.1.0 remplace tout le contenu de `/location-tables-chaises/` (hero + ancien kit compris). La première question apparaît tout de suite, sans défiler.
+Le plugin **Evenox Formulaire** 1.2.0 remplace tout le contenu de `/location-tables-chaises/` (hero + ancien kit compris). La première question apparaît tout de suite, sans défiler.
 
 Pour une mise à jour : re-téléverser le zip (écraser) puis vider LiteSpeed.
 

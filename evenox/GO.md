@@ -1,6 +1,6 @@
 # Go — formulaire Evenox
 
-**Statut : 1.1.0 remplace tout le contenu de /location-tables-chaises/.**
+**Statut : 1.2.0 remplace tout le contenu de /location-tables-chaises/.**
 
 evenox.ca est un WordPress / Divi hors de ce dépôt. Le zip `plugin/evenox-formulaire.zip` est installé et activé. Cache LiteSpeed vidé.
 
