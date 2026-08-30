@@ -1,0 +1,709 @@
+<style>
+#loca-merci{display:none;max-width:560px;margin:48px auto 0;padding:32px 28px;background:#D9EDF7;border-radius:16px;text-align:center;font-family:Raleway,sans-serif}
+#loca-merci b{display:block;font-weight:800;font-size:24px;color:#0E2C4F;margin-bottom:8px}
+#loca-merci span{font-weight:600;color:#35454E;line-height:1.55}
+#loca-plan{font-family:Raleway,sans-serif;color:#121212;background:linear-gradient(180deg,#FFFFFF 0%,#E7F3F8 100%);padding:8px 0 8px}
+#loca-plan input,#loca-plan textarea{width:100%;min-width:0;border:1px solid #D7E0E6;border-radius:12px;background:#FBFCFD;padding:16px 16px;font-family:Raleway,sans-serif;font-weight:700;font-size:16px;color:#121212}
+#loca-plan input:focus,#loca-plan textarea:focus{border-color:#1088B5;background:#FFFFFF;outline:none;box-shadow:0 0 0 4px rgba(16,136,181,.12)}
+#loca-plan input::placeholder,#loca-plan textarea::placeholder{color:#9BAAB3;font-weight:600}
+.loca-err{display:none;font-weight:700;font-size:14px;color:#0E2C4F;background:#D9EDF7;border-radius:10px;padding:12px 14px}
+.loca-err.is-on{display:block}
+.loca-head{max-width:720px;margin:0 auto;padding:36px clamp(16px,3vw,28px) 8px;text-align:center}
+.loca-eyebrow{display:inline-block;font-weight:800;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#1088B5;background:#FFFFFF;border:1px solid #D7E0E6;border-radius:99px;padding:7px 16px}
+.loca-title{font-weight:800;font-size:clamp(28px,4vw,40px);line-height:1.1;letter-spacing:-0.03em;margin:16px 0 0;color:#0E2C4F}
+.loca-sub{font-weight:600;font-size:16px;line-height:1.55;color:#5A6B75;margin:10px auto 0;max-width:40ch}
+#loca-box{max-width:720px;margin:22px auto 0;background:#FFFFFF;border:1px solid #D7E0E6;border-radius:24px;box-shadow:0 18px 50px rgba(14,44,79,.08)}
+#loca-inputs{padding:28px clamp(18px,4vw,48px) 36px}
+.loca-step{display:none;text-align:center;animation:locaIn .28s ease}
+.loca-step.is-on{display:block}
+@keyframes locaIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.loca-label{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:clamp(22px,3vw,30px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:8px}
+.loca-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#1088B5,#0E2C4F);color:#fff;font-weight:800;font-size:13px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(16,136,181,.28)}
+.loca-intro{font-weight:600;font-size:15px;line-height:1.55;color:#5A6B75;margin:0 auto 22px;max-width:38ch}
+.loca-pas{flex:1 1 0;border:none;padding:0;background:none;cursor:pointer;font-family:Raleway,sans-serif;text-align:left}
+.loca-pas i{display:block;height:5px;border-radius:3px;background:#E6EBEF}
+.loca-pas em{display:block;font-style:normal;font-size:11px;font-weight:700;color:#9BAAB3;margin-top:7px;letter-spacing:.02em}
+.loca-pas.is-on i{background:linear-gradient(90deg,#1088B5,#0E2C4F)}
+.loca-pas.is-on em{color:#1088B5}
+.loca-pas.is-done i{background:#1088B5}
+.loca-pas.is-done em{color:#5A6B75}
+.loca-qty{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#FBFCFD;border:1px solid #E6EBEF;border-radius:16px;padding:8px 10px}
+.loca-qty button{width:48px;height:48px;border:none;background:#FFFFFF;border-radius:12px;font-weight:800;font-size:24px;cursor:pointer;color:#0E2C4F;box-shadow:0 1px 0 #E6EBEF}
+.loca-qty button:hover{color:#1088B5}
+.loca-qty input{width:72px;text-align:center;padding:12px 4px;border:none;background:transparent;font-size:28px}
+.loca-hint{font-weight:600;font-size:13px;color:#7A8B95;margin-top:14px}
+.loca-grid{display:grid;gap:12px;text-align:left}
+.loca-grid.is-2{grid-template-columns:1fr 1fr}
+.loca-tap{position:relative;border:1px solid #E6EBEF;background:#FFFFFF;border-radius:16px;padding:20px 18px;cursor:pointer;transition:border-color .16s,box-shadow .16s,transform .16s}
+.loca-tap:hover{border-color:#1088B5;transform:translateY(-1px);box-shadow:0 8px 20px rgba(14,44,79,.06)}
+.loca-on{border-color:#1088B5;box-shadow:0 0 0 3px rgba(16,136,181,.14),0 8px 20px rgba(16,136,181,.10)}
+.loca-on::after{content:"";position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;background:#1088B5 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12l6 6L20 5'/%3E%3C/svg%3E") center/12px 12px no-repeat}
+.loca-tap b{display:block;font-weight:800;font-size:17px;color:#121212;letter-spacing:-0.02em}
+.loca-tap small{display:block;font-weight:600;font-size:13px;color:#5A6B75;margin-top:4px;line-height:1.45}
+.loca-tap .loca-prix{margin-top:12px;font-weight:800;font-size:15px;color:#0E2C4F}
+.loca-rec{display:inline-block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#1088B5;background:#E7F3F8;border-radius:99px;padding:4px 8px;margin-bottom:8px}
+.loca-barvis{height:10px;background:#E7F3F8;border-radius:99px;overflow:hidden;margin:12px 0 2px}
+.loca-barvis i{display:block;height:100%;background:linear-gradient(90deg,#1088B5,#0E2C4F);border-radius:99px}
+.loca-addon{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#F7FBFD;border:1px solid #E6EBEF;border-radius:16px;padding:16px 16px;text-align:left}
+.loca-addon-qte{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.loca-addon-qte button{width:40px;height:40px;border:1px solid #E6EBEF;background:#fff;border-radius:10px;font-weight:800;font-size:20px;cursor:pointer;color:#0E2C4F}
+.loca-addon-val{min-width:28px;text-align:center;font-weight:800;font-size:18px;color:#0E2C4F}
+.loca-nav{display:flex;gap:10px;max-width:420px;margin:26px auto 0}
+.loca-nav [data-back]{background:#fff;border:2px solid #E6EBEF;color:#7A8B95;padding:0 18px;border-radius:12px;min-height:50px;font-family:Raleway,sans-serif;font-weight:700;font-size:15px;cursor:pointer}
+.loca-nav [data-back]:hover{border-color:#1088B5;color:#1088B5}
+.loca-nav [data-next]{flex:1;background:linear-gradient(135deg,#1088B5,#0E2C4F);border:none;color:#fff;padding:0 22px;border-radius:12px;min-height:50px;font-family:Raleway,sans-serif;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 8px 22px rgba(16,136,181,.28)}
+.loca-nav [data-next]:hover{transform:translateY(-1px)}
+.loca-nav.is-start [data-back]{display:none}
+#loca-panier{display:none;margin:0  clamp(18px,4vw,48px) 36px;background:linear-gradient(#F7FBFD,#F7FBFD) padding-box,linear-gradient(90deg,#1088B5,#0E2C4F) border-box;border:1px solid transparent;border-top:3px solid #1088B5;border-radius:18px;padding:28px 26px 30px}
+#loca-panier.is-on{display:block;animation:locaIn .32s ease}
+#loca-step-coord{display:none;max-width:none;margin:0 clamp(18px,4vw,48px) 36px}
+#loca-step-coord.is-on{display:block;text-align:left;animation:locaIn .28s ease}
+#loca-retour-prix{display:none;align-items:center;gap:8px;margin:8px clamp(18px,4vw,48px) 0;background:none;border:none;padding:6px 0;cursor:pointer;font-family:Raleway,sans-serif;font-size:15px;font-weight:700;color:#7A8B95;min-height:44px}
+#loca-retour-prix.is-on{display:inline-flex}
+#loca-retour-prix:hover{color:#1088B5}
+.loca-cart{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.loca-cart li{display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:15px;color:#5A6B75}
+.loca-cart li span:last-child{font-weight:800;color:#121212}
+.loca-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding-top:16px;border-top:1px solid #D7E0E6;font-weight:700;font-size:15px;color:#5A6B75}
+.loca-total strong{font-weight:800;font-size:28px;color:#0E2C4F}
+.loca-cta{background:linear-gradient(135deg,#1088B5,#0E2C4F);color:#fff;padding:18px;border-radius:12px;font-weight:800;font-size:17px;text-align:center;cursor:pointer;box-shadow:0 8px 22px rgba(16,136,181,.28)}
+.loca-cta:hover{transform:translateY(-1px)}
+#loca-calc.is-fini #loca-inputs{display:none}
+#loca-calc.is-form #loca-panier-ctas{display:none}
+.loca-foot{max-width:720px;margin:0 auto;padding:22px clamp(16px,3vw,28px) 56px;display:flex;flex-wrap:wrap;gap:22px 36px;justify-content:space-between}
+.loca-foot small{display:block;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7A8B95;margin-bottom:6px}
+.loca-foot a,.loca-foot p{font-weight:800;font-size:16px;color:#0E2C4F;margin:0;line-height:1.4}
+.loca-foot p{font-weight:600;font-size:14px;color:#35454E}
+@media(max-width:760px){
+  .loca-pas em{display:none}
+  .loca-grid.is-2{grid-template-columns:1fr}
+  .loca-qty button,.loca-addon-qte button,.loca-tap{min-height:44px}
+}
+</style>
+
+<div id="loca-plan">
+  <div id="loca-merci">
+    <b>Merci, votre demande est reçue.</b>
+    <span>Un conseiller vous appelle d'ici la fin de la journée · 438-439-0201</span>
+  </div>
+
+  <div id="loca-calc">
+    <div class="loca-head">
+      <div class="loca-eyebrow">Ton kit en six questions</div>
+      <div class="loca-title">Monte ton kit, vois ton prix</div>
+      <p class="loca-sub">Une question à la fois. Ton prix à la fin, avant d'écrire à qui que ce soit.</p>
+    </div>
+
+    <div id="loca-box">
+      <div id="loca-inputs">
+        <div id="loca-bar" style="display:flex;flex-direction:column;gap:10px;padding:4px 0 8px">
+          <div id="loca-pips" style="display:flex;gap:8px">
+            <button type="button" class="loca-pas" data-pip="1"><i></i><em>Véhicules</em></button>
+            <button type="button" class="loca-pas" data-pip="2"><i></i><em>Projet</em></button>
+            <button type="button" class="loca-pas" data-pip="3"><i></i><em>Livraison</em></button>
+            <button type="button" class="loca-pas" data-pip="4"><i></i><em>Format</em></button>
+            <button type="button" class="loca-pas" data-pip="5"><i></i><em>Pose</em></button>
+            <button type="button" class="loca-pas" data-pip="6"><i></i><em>Extras</em></button>
+          </div>
+          <div id="loca-bar-txt" style="font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#1088B5">Étape 1 sur 6 · Véhicules</div>
+        </div>
+
+        <div id="loca-step-vehicules" class="loca-step is-on">
+          <div class="loca-label"><span class="loca-num">1</span>Combien de véhicules ?</div>
+          <p class="loca-intro">Un ou deux, on choisit le format après.</p>
+          <div class="loca-qty">
+            <button type="button" data-qty="vehicules" data-delta="-1" aria-label="Moins de véhicules">−</button>
+            <input name="vehicules" id="loca-vehicules" type="number" min="1" max="8" inputmode="numeric" value="1" aria-label="Nombre de véhicules">
+            <button type="button" data-qty="vehicules" data-delta="1" aria-label="Plus de véhicules">+</button>
+          </div>
+          <div class="loca-hint" id="loca-veh-hint">1 véhicule → abri simple</div>
+        </div>
+
+        <div id="loca-step-besoin" class="loca-step">
+          <div class="loca-label"><span class="loca-num">2</span>Acheter ou faire installer ?</div>
+          <p class="loca-intro">Un seul choix. On ajuste le reste après.</p>
+          <div class="loca-group loca-grid is-2" data-group="besoin">
+            <div role="button" tabindex="0" data-value="achat" class="loca-tap">
+              <span class="loca-rec">Le plus choisi</span>
+              <b>Acheter un abri</b>
+              <small>Usagé vérifié, avec ou sans pose.</small>
+              <div class="loca-prix">dès 250 $</div>
+            </div>
+            <div role="button" tabindex="0" data-value="install" class="loca-tap">
+              <b>Faire installer le mien</b>
+              <small>Tu as déjà l'abri. On le monte.</small>
+              <div class="loca-prix">200 $ ou 300 $</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="loca-step-livraison" class="loca-step">
+          <div class="loca-label"><span class="loca-num">3</span>Livraison ou ramassage ?</div>
+          <p class="loca-intro">Rayon 20 km de Sainte-Thérèse.</p>
+          <div class="loca-group loca-grid is-2" data-group="livraison">
+            <div role="button" tabindex="0" data-value="livraison" class="loca-tap">
+              <span class="loca-rec">Chez toi</span>
+              <b>Livraison</b>
+              <small>Dans ton entrée. Montréal en livraison seulement.</small>
+            </div>
+            <div role="button" tabindex="0" data-value="ramassage" class="loca-tap">
+              <b>Ramassage</b>
+              <small>Gratuit à l'entrepôt de Sainte-Thérèse.</small>
+            </div>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:8px;text-align:left;max-width:360px;margin:18px auto 0">
+            <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Ville et code postal</span>
+            <input name="codepostal" id="loca-postal" autocomplete="postal-code" placeholder="Sainte-Thérèse  J7E">
+          </label>
+        </div>
+
+        <div id="loca-step-format" class="loca-step">
+          <div class="loca-label"><span class="loca-num">4</span>Quel format ?</div>
+          <p class="loca-intro" id="loca-format-intro">On te montre ce qui va avec tes véhicules.</p>
+          <div id="loca-format-simple" class="loca-group loca-grid is-2" data-group="format">
+            <div role="button" tabindex="0" data-value="11" class="loca-tap">
+              <span class="loca-rec">Le plus choisi</span>
+              <b>11 pieds</b>
+              <small>Un véhicule, le format courant.</small>
+              <div class="loca-barvis"><i style="width:55%"></i></div>
+              <div class="loca-prix" data-prix-simple>dès 250 $</div>
+            </div>
+            <div role="button" tabindex="0" data-value="12" class="loca-tap">
+              <b>12 pieds</b>
+              <small>Un peu plus de dégagement.</small>
+              <div class="loca-barvis"><i style="width:62%"></i></div>
+              <div class="loca-prix" data-prix-simple>dès 250 $</div>
+            </div>
+            <div role="button" tabindex="0" data-value="a-confirmer" class="loca-tap" style="grid-column:1/-1">
+              <b>Je ne suis pas sûr</b>
+              <small>On mesure ensemble au téléphone.</small>
+            </div>
+          </div>
+          <div id="loca-format-double" class="loca-group loca-grid is-2" data-group="format" style="display:none">
+            <div role="button" tabindex="0" data-value="16" class="loca-tap">
+              <b>16 pieds</b>
+              <small>Double compact.</small>
+              <div class="loca-barvis"><i style="width:78%"></i></div>
+              <div class="loca-prix" data-prix-double>dès 700 $</div>
+            </div>
+            <div role="button" tabindex="0" data-value="18" class="loca-tap">
+              <span class="loca-rec">Le plus choisi</span>
+              <b>18 pieds</b>
+              <small>Deux véhicules à l'aise.</small>
+              <div class="loca-barvis"><i style="width:90%"></i></div>
+              <div class="loca-prix" data-prix-double>dès 700 $</div>
+            </div>
+            <div role="button" tabindex="0" data-value="20" class="loca-tap">
+              <b>20 pieds</b>
+              <small>Double largeur.</small>
+              <div class="loca-barvis"><i style="width:100%"></i></div>
+              <div class="loca-prix" data-prix-double>dès 700 $</div>
+            </div>
+            <div role="button" tabindex="0" data-value="a-confirmer" class="loca-tap">
+              <b>Je ne suis pas sûr</b>
+              <small>On mesure ensemble.</small>
+            </div>
+          </div>
+        </div>
+
+        <div id="loca-step-pose" class="loca-step">
+          <div class="loca-label"><span class="loca-num">5</span>On l'installe ?</div>
+          <p class="loca-intro" id="loca-pose-intro">200 $ simple · 300 $ double, rayon 20 km.</p>
+          <div id="loca-pose-achat" class="loca-group loca-grid is-2" data-group="installation">
+            <div role="button" tabindex="0" data-value="oui" class="loca-tap">
+              <span class="loca-rec">Recommandé</span>
+              <b>Oui, installez-le</b>
+              <small>Montage et ancrage compris.</small>
+            </div>
+            <div role="button" tabindex="0" data-value="non" class="loca-tap">
+              <b>Non, je le monte</b>
+              <small>Livraison seule, sans pose.</small>
+            </div>
+          </div>
+          <div id="loca-pose-install" class="loca-group loca-grid" data-group="installation" style="display:none">
+            <div role="button" tabindex="0" data-value="montage-seul" class="loca-tap">
+              <b>Oui, montez le mien</b>
+              <small>200 $ simple · 300 $ double.</small>
+            </div>
+          </div>
+        </div>
+
+        <div id="loca-step-extras" class="loca-step">
+          <div class="loca-label"><span class="loca-num">6</span>Un extra ?</div>
+          <p class="loca-intro">Tu peux laisser zéro et continuer.</p>
+          <div style="display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto">
+            <div class="loca-addon">
+              <span><b style="font-weight:800;font-size:16px;display:block">Portes</b><small style="font-weight:600;color:#5A6B75">Si tu en veux, on confirme le stock</small></span>
+              <span class="loca-addon-qte">
+                <button type="button" data-qty="portes" data-delta="-1" aria-label="Moins de portes">−</button>
+                <span class="loca-addon-val" id="loca-portes-val">0</span>
+                <button type="button" data-qty="portes" data-delta="1" aria-label="Plus de portes">+</button>
+              </span>
+            </div>
+            <div class="loca-addon">
+              <span><b style="font-weight:800;font-size:16px;display:block">Ancrages extra</b><small style="font-weight:600;color:#5A6B75">Si le sol demande plus de prise</small></span>
+              <span class="loca-addon-qte">
+                <button type="button" data-qty="ancrages" data-delta="-1" aria-label="Moins d'ancrages">−</button>
+                <span class="loca-addon-val" id="loca-ancrages-val">0</span>
+                <button type="button" data-qty="ancrages" data-delta="1" aria-label="Plus d'ancrages">+</button>
+              </span>
+            </div>
+            <label style="display:flex;flex-direction:column;gap:8px;text-align:left">
+              <span style="font-weight:700;font-size:13px;color:#7A8B95">Note — facultatif</span>
+              <textarea name="precisions" rows="2" placeholder="Date visée, type de sol…"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="loca-nav is-start">
+          <button type="button" data-back>Retour</button>
+          <button type="button" data-next>Continuer</button>
+        </div>
+        <div class="loca-err" data-err-step style="max-width:440px;margin:14px auto 0"></div>
+      </div>
+
+      <div style="text-align:left">
+        <button type="button" id="loca-retour-prix">← Modifier mes choix</button>
+      </div>
+
+      <div id="loca-panier">
+        <p style="font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#1088B5;margin:0">Ton panier</p>
+        <h3 id="loca-panier-titre" style="font-weight:800;font-size:26px;letter-spacing:-0.02em;margin:8px 0 0;color:#0E2C4F"></h3>
+        <ul class="loca-cart" id="loca-cart"></ul>
+        <div class="loca-total"><span>Total</span><strong id="loca-res-total">–</strong></div>
+        <p style="font-weight:600;font-size:13px;color:#7A8B95;margin:10px 0 0">Prix avant taxes. Confirmé au téléphone. Rien n'est réservé.</p>
+        <div id="loca-panier-ctas" style="margin-top:22px">
+          <div data-want class="loca-cta">Ça m'intéresse</div>
+        </div>
+      </div>
+
+      <div id="loca-step-coord">
+        <div style="font-weight:800;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em">On t'envoie ça</div>
+        <div style="font-weight:600;font-size:15px;color:#5A6B75;margin-top:8px">Un conseiller confirme le prix le jour même.</div>
+        <div id="loca-form-recap" style="font-weight:600;font-size:14px;color:#35454E;background:#E7F3F8;border-radius:12px;padding:12px 14px;margin:16px 0 0"></div>
+        <div class="loca-form" style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Ton nom</span>
+            <input name="nom" autocomplete="name" placeholder="Prénom et nom">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Téléphone</span>
+            <input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="438 439 0201">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#35454E">Ville</span>
+            <input name="adresse" autocomplete="street-address" placeholder="Sainte-Thérèse  J7E 0A1">
+          </label>
+          <div class="loca-err" data-err></div>
+          <div data-send class="loca-cta">Recevoir mon prix</div>
+          <div id="loca-legal" style="font-weight:600;font-size:12px;line-height:1.6;color:#9BAAB3;text-align:center">Aucun engagement. Tes coordonnées servent uniquement à te rappeler.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loca-foot">
+    <div>
+      <small>Téléphone</small>
+      <a href="tel:+14384390201">438-439-0201</a>
+    </div>
+    <div>
+      <small>Courriel</small>
+      <a href="mailto:locabris.ca@gmail.com">locabris.ca@gmail.com</a>
+    </div>
+    <div>
+      <small>Zone</small>
+      <p>20 km de Sainte-Thérèse. Montréal en livraison seulement.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById("loca-plan");
+  if(!root||root.getAttribute("data-ready"))return;
+  root.setAttribute("data-ready","1");
+  var hook="https://hooks.zapier.com/hooks/catch/16509085/udt0i4j/";
+  var STEPS=["loca-step-vehicules","loca-step-besoin","loca-step-livraison","loca-step-format","loca-step-pose","loca-step-extras"];
+  var NOMS=["Véhicules","Projet","Livraison","Format","Pose","Extras"];
+  var state={
+    parcours:"",vehicules:1,livraison:"",postal:"",type:"",format:"",
+    abri:"",installation:"",portes:0,ancrages:0,n:1,total:6,vu:1,phase:"kit"
+  };
+
+  function clamp(n,min,max){
+    n=parseInt(n,10);
+    if(!n||n<min)n=min;
+    if(n>max)n=max;
+    return n;
+  }
+  function vehicules(){
+    var n=clamp(document.getElementById("loca-vehicules").value,1,8);
+    state.vehicules=n;
+    document.getElementById("loca-vehicules").value=String(n);
+    return n;
+  }
+  function money(n){
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g," ")+" $";
+  }
+  function inferType(){
+    if(state.format==="a-confirmer"||!state.format)return state.format==="a-confirmer"?"inconnu":"";
+    if(["16","18","20"].indexOf(state.format)>=0)return "double";
+    return "simple";
+  }
+  function abriKey(){
+    state.type=inferType();
+    if(state.type==="inconnu")return "inconnu";
+    if(state.type==="double")return "double-largeur";
+    if(state.type==="simple")return "simple";
+    return "";
+  }
+  function qteAbris(){
+    var v=vehicules();
+    if(inferType()==="simple")return v;
+    if(inferType()==="double")return v<=2?1:Math.ceil(v/2);
+    return 1;
+  }
+  function catalog(){
+    return {
+      simple:{label:"Abri simple",buy:250,pose:200},
+      "double-largeur":{label:"Abri double",buy:700,pose:300},
+      inconnu:{label:"Format à confirmer",buy:0,pose:0}
+    };
+  }
+  function formatLabel(){
+    var map={"11":"11 pi","12":"12 pi","16":"16 pi","18":"18 pi","20":"20 pi","a-confirmer":"à confirmer"};
+    return map[state.format]||"";
+  }
+  function quote(){
+    state.abri=abriKey();
+    var item=catalog()[state.abri];
+    var qty=qteAbris();
+    var out={ok:false,lines:[],total:"–",title:"Ton kit",summary:"",amount:""};
+    if(!state.parcours)return out;
+    out.ok=true;
+    var v=vehicules();
+    out.title=v+" véhicule"+(v>1?"s":"");
+    if(state.parcours==="install"){
+      if(!item){out.summary="Installation";return out;}
+      out.lines.push({t:item.label+" · montage × "+qty,p:item.pose?money(item.pose*qty):"à confirmer"});
+      if(state.livraison==="livraison")out.lines.push({t:"Déplacement 20 km",p:"inclus"});
+      if(state.livraison==="ramassage")out.lines.push({t:"Ramassage",p:"gratuit"});
+      if(state.portes)out.lines.push({t:"Portes × "+state.portes,p:"sur demande"});
+      if(state.ancrages)out.lines.push({t:"Ancrages extra × "+state.ancrages,p:"sur demande"});
+      out.total=item.pose?money(item.pose*qty):"à confirmer";
+      out.amount=out.total;
+      out.summary=item.label+" · montage";
+      return out;
+    }
+    if(!item){out.summary="Achat";return out;}
+    var buy=item.buy*qty;
+    var pose=state.installation==="oui"?item.pose*qty:0;
+    var fl=formatLabel();
+    var name=item.label+(fl?" "+fl:"");
+    if(item.buy)out.lines.push({t:name+" × "+qty,p:"dès "+money(buy)});
+    else out.lines.push({t:name+" × "+qty,p:"sur demande"});
+    if(state.livraison==="livraison")out.lines.push({t:"Livraison 20 km",p:"incluse"});
+    else if(state.livraison==="ramassage")out.lines.push({t:"Ramassage",p:"gratuit"});
+    if(state.installation==="oui")out.lines.push({t:"Installation × "+qty,p:item.pose?money(pose):"à confirmer"});
+    if(state.portes)out.lines.push({t:"Portes × "+state.portes,p:"sur demande"});
+    if(state.ancrages)out.lines.push({t:"Ancrages extra × "+state.ancrages,p:"sur demande"});
+    if(!item.buy||v>=3){out.total="sur demande";out.amount="sur demande";}
+    else if(state.installation==="oui"&&item.pose){out.total="dès "+money(buy+pose);out.amount=out.total;}
+    else if(state.installation==="non"){out.total="dès "+money(buy);out.amount=out.total;}
+    else {out.total=item.buy?"dès "+money(buy):"sur demande";out.amount=out.total;}
+    out.summary=name+(state.installation==="oui"?" + pose":"");
+    return out;
+  }
+  function paintCart(){
+    var q=quote();
+    var ul=document.getElementById("loca-cart");
+    ul.innerHTML="";
+    q.lines.forEach(function(line){
+      var li=document.createElement("li");
+      var a=document.createElement("span");
+      var b=document.createElement("span");
+      a.textContent=line.t;
+      b.textContent=line.p;
+      li.appendChild(a);li.appendChild(b);ul.appendChild(li);
+    });
+    document.getElementById("loca-panier-titre").textContent=q.title;
+    document.getElementById("loca-res-total").textContent=q.total;
+    document.getElementById("loca-form-recap").textContent=q.summary+(q.amount?" · "+q.amount:"");
+  }
+  function stepErr(msg){
+    var b=root.querySelector("[data-err-step]");
+    if(!b)return;
+    b.textContent=msg||"";
+    b.classList.toggle("is-on",!!msg);
+  }
+  function syncHint(){
+    var n=vehicules();
+    document.getElementById("loca-veh-hint").textContent=n>=2
+      ?"2 véhicules ou plus → abri double"
+      :"1 véhicule → abri simple";
+  }
+  function syncFormat(){
+    var two=vehicules()>=2;
+    document.getElementById("loca-format-simple").style.display=two?"none":"grid";
+    document.getElementById("loca-format-double").style.display=two?"grid":"none";
+    document.getElementById("loca-format-intro").textContent=two
+      ?"Deux véhicules : on te propose les doubles."
+      :"Un véhicule : un simple suffit.";
+    var buy=state.parcours!=="install";
+    root.querySelectorAll("[data-prix-simple]").forEach(function(n){n.textContent=buy?"dès 250 $":"200 $";});
+    root.querySelectorAll("[data-prix-double]").forEach(function(n){n.textContent=buy?"dès 700 $":"300 $";});
+    var simple=["11","12"];
+    var dbl=["16","18","20"];
+    if(state.format && state.format!=="a-confirmer"){
+      if(two && simple.indexOf(state.format)>=0){state.format="";clearOn("#loca-format-simple");}
+      if(!two && dbl.indexOf(state.format)>=0){state.format="";clearOn("#loca-format-double");}
+    }
+  }
+  function clearOn(sel){
+    root.querySelectorAll(sel+" .loca-on").forEach(function(n){n.classList.remove("loca-on");});
+  }
+  function syncPose(){
+    var inst=state.parcours==="install";
+    document.getElementById("loca-pose-achat").style.display=inst?"none":"grid";
+    document.getElementById("loca-pose-install").style.display=inst?"grid":"none";
+    document.getElementById("loca-pose-intro").textContent=inst
+      ?"Montage seulement, rayon 20 km."
+      :"200 $ simple · 300 $ double, rayon 20 km.";
+  }
+  function skipPose(){return state.parcours==="install";}
+  function after(id){
+    if(id==="loca-step-livraison")return "loca-step-format";
+    if(id==="loca-step-format" && skipPose()){
+      state.installation="montage-seul";
+      return "loca-step-extras";
+    }
+    var i=STEPS.indexOf(id);
+    return STEPS[Math.min(i+1,STEPS.length-1)];
+  }
+  function before(id){
+    if(id==="loca-step-extras" && skipPose())return "loca-step-format";
+    var i=STEPS.indexOf(id);
+    return STEPS[Math.max(i-1,0)];
+  }
+  function show(id){
+    if(STEPS.indexOf(id)<0)id=STEPS[0];
+    if(id==="loca-step-pose" && skipPose())id="loca-step-extras";
+    stepErr("");
+    state.n=STEPS.indexOf(id)+1;
+    state.total=STEPS.length;
+    if(state.n>state.vu)state.vu=state.n;
+    root.querySelectorAll(".loca-step").forEach(function(s){s.classList.remove("is-on");});
+    var el=document.getElementById(id);
+    if(el)el.classList.add("is-on");
+    root.querySelectorAll(".loca-pas").forEach(function(p){
+      var i=parseInt(p.getAttribute("data-pip"),10);
+      p.classList.toggle("is-on", i===state.n);
+      p.classList.toggle("is-done", i<state.n || (i<=state.vu && i!==state.n));
+    });
+    document.getElementById("loca-bar-txt").textContent="Étape "+state.n+" sur "+state.total+" · "+(NOMS[state.n-1]||"");
+    syncHint();
+    syncFormat();
+    syncPose();
+    var nav=root.querySelector(".loca-nav");
+    nav.classList.toggle("is-start", state.n===1);
+    root.querySelector("[data-next]").textContent=state.n===state.total?"Voir mon prix":"Continuer";
+    var send=root.querySelector("[data-send]");
+    var legal=document.getElementById("loca-legal");
+    if(state.parcours==="install"){
+      send.textContent="Réserver mon montage";
+      legal.textContent="Installation dans un rayon de 20 km de Sainte-Thérèse.";
+    }else{
+      send.textContent="Recevoir mon prix";
+      legal.textContent="Aucun engagement. Tes coordonnées servent uniquement à te rappeler.";
+    }
+  }
+  function pick(el){
+    var g=el.closest(".loca-group");
+    if(!g)return;
+    g.querySelectorAll(".loca-tap").forEach(function(n){n.classList.remove("loca-on");});
+    el.classList.add("loca-on");
+  }
+  function field(name){
+    var n=root.querySelector('[name="'+name+'"]');
+    return n?n.value.trim():"";
+  }
+  function digits(s){return (s.match(/\d/g)||[]).length;}
+  function err(msg){
+    var b=root.querySelector("[data-err]");
+    if(!b)return;
+    b.textContent=msg;
+    b.classList.toggle("is-on",!!msg);
+  }
+  function canLeave(id){
+    if(id==="loca-step-vehicules" && vehicules()<1){stepErr("Indique le nombre de véhicules.");return false;}
+    if(id==="loca-step-besoin" && !state.parcours){stepErr("Choisis acheter ou faire installer.");return false;}
+    if(id==="loca-step-livraison"){
+      if(!state.livraison){stepErr("Choisis livraison ou ramassage.");return false;}
+      if(!field("codepostal")){stepErr("Indique la ville et le code postal.");return false;}
+    }
+    if(id==="loca-step-format" && !state.format){stepErr("Choisis un format.");return false;}
+    if(id==="loca-step-pose" && !state.installation){stepErr("Dis-nous si tu veux l'installation.");return false;}
+    stepErr("");
+    return true;
+  }
+  function goNext(){
+    var cur=root.querySelector(".loca-step.is-on");
+    var id=cur?cur.id:STEPS[0];
+    if(!canLeave(id))return;
+    if(id===STEPS[STEPS.length-1])finishKit();
+    else show(after(id));
+  }
+  function finishKit(){
+    state.phase="prix";
+    document.getElementById("loca-calc").classList.add("is-fini");
+    document.getElementById("loca-calc").classList.remove("is-form");
+    document.getElementById("loca-panier").classList.add("is-on");
+    document.getElementById("loca-retour-prix").classList.add("is-on");
+    document.getElementById("loca-step-coord").classList.remove("is-on");
+    var adr=root.querySelector('[name="adresse"]');
+    if(adr&&!adr.value)adr.value=field("codepostal");
+    paintCart();
+    window.scrollTo(0,0);
+  }
+  function backToKit(){
+    state.phase="kit";
+    document.getElementById("loca-calc").classList.remove("is-fini","is-form");
+    document.getElementById("loca-panier").classList.remove("is-on");
+    document.getElementById("loca-retour-prix").classList.remove("is-on");
+    document.getElementById("loca-step-coord").classList.remove("is-on");
+    show(STEPS[STEPS.length-1]);
+    window.scrollTo(0,0);
+  }
+  function wantForm(){
+    state.phase="form";
+    document.getElementById("loca-calc").classList.add("is-fini","is-form");
+    document.getElementById("loca-panier").classList.add("is-on");
+    document.getElementById("loca-retour-prix").classList.add("is-on");
+    document.getElementById("loca-step-coord").classList.add("is-on");
+    paintCart();
+    window.scrollTo(0,0);
+  }
+  function send(btn){
+    var nom=field("nom");
+    var tel=field("tel");
+    var adresse=field("adresse")||field("codepostal");
+    var abri=abriKey();
+    var installation=state.parcours==="achat"?state.installation:"montage-seul";
+    if(!abri){err("Choisis le format d'abri.");return;}
+    if(state.parcours==="achat"&&!installation){err("Dis-nous si tu veux l'installation.");return;}
+    if(!nom||!tel){err("Indique ton nom et ton numéro de téléphone.");return;}
+    if(digits(tel)<10){err("Le numéro de téléphone doit contenir 10 chiffres.");return;}
+    if(!adresse){err("Indique la ville et le code postal.");return;}
+    err("");
+    var notes=field("precisions");
+    var bits=["Véhicules: "+vehicules(),"Livraison: "+state.livraison,"Format: "+(formatLabel()||state.format)];
+    if(state.portes)bits.push("Portes: "+state.portes);
+    if(state.ancrages)bits.push("Ancrages: "+state.ancrages);
+    var prefix=bits.join(". ")+".";
+    var payload={
+      source:"soumission-rapide",
+      parcours:state.parcours,
+      abri:abri,
+      installation:installation,
+      nom:nom,
+      tel:tel,
+      adresse:adresse,
+      precisions:notes?prefix+" "+notes:prefix,
+      vehicules:vehicules(),
+      livraison:state.livraison,
+      format:state.format,
+      portes:state.portes,
+      ancrages:state.ancrages
+    };
+    btn.textContent="Envoi en cours...";
+    var req=window.LOCABRIS_PREVIEW
+      ? Promise.resolve({ok:true})
+      : fetch(hook,{method:"POST",body:JSON.stringify(payload)});
+    req.then(function(r){
+      if(!r||r.ok===false)throw new Error("send");
+      document.getElementById("loca-calc").style.display="none";
+      document.getElementById("loca-merci").style.display="block";
+      window.scrollTo(0,0);
+    }).catch(function(){
+      btn.textContent="Réessayer";
+      err("L'envoi n'a pas fonctionné. Réessaie ou appelle le 438-439-0201.");
+    });
+  }
+
+  root.addEventListener("click",function(e){
+    var pas=e.target.closest(".loca-pas");
+    if(pas){
+      var i=parseInt(pas.getAttribute("data-pip"),10);
+      if(i&&i<=state.vu){
+        var dest=STEPS[i-1];
+        if(dest==="loca-step-pose" && skipPose())dest="loca-step-extras";
+        show(dest);
+      }
+      return;
+    }
+    if(e.target.closest("#loca-retour-prix")){backToKit();return;}
+    if(e.target.closest("[data-want]")){wantForm();return;}
+    if(e.target.closest("[data-back]")){
+      var cur=root.querySelector(".loca-step.is-on");
+      show(before(cur?cur.id:STEPS[0]));
+      return;
+    }
+    if(e.target.closest("[data-next]")){goNext();return;}
+    var qtyBtn=e.target.closest("[data-qty]");
+    if(qtyBtn){
+      var key=qtyBtn.getAttribute("data-qty");
+      var delta=parseInt(qtyBtn.getAttribute("data-delta"),10)||0;
+      if(key==="vehicules"){
+        document.getElementById("loca-vehicules").value=String(clamp(vehicules()+delta,1,8));
+        syncHint();syncFormat();
+      }else if(key==="portes"){
+        state.portes=clamp((state.portes||0)+delta,0,6);
+        document.getElementById("loca-portes-val").textContent=String(state.portes);
+      }else if(key==="ancrages"){
+        state.ancrages=clamp((state.ancrages||0)+delta,0,8);
+        document.getElementById("loca-ancrages-val").textContent=String(state.ancrages);
+      }
+      return;
+    }
+    var choice=e.target.closest(".loca-group .loca-tap");
+    if(choice&&!choice.getAttribute("data-send")&&!choice.getAttribute("data-want")){
+      pick(choice);
+      var g=choice.closest(".loca-group");
+      var group=g?g.getAttribute("data-group"):"";
+      var val=choice.getAttribute("data-value");
+      if(group==="besoin"){
+        state.parcours=val;
+        if(val==="install")state.installation="montage-seul";
+        else if(state.installation==="montage-seul")state.installation="";
+        syncFormat();
+      }else if(group==="livraison"){
+        state.livraison=val;
+      }else if(group==="format"){
+        state.format=val;
+        state.type=inferType();
+      }else if(group==="installation"){
+        state.installation=val;
+      }
+      if(group==="besoin"||group==="format"||group==="installation"){
+        setTimeout(goNext,180);
+      }
+      return;
+    }
+    var btn=e.target.closest("[data-send]");
+    if(btn)send(btn);
+  });
+  root.addEventListener("input",function(e){
+    if(e.target && e.target.id==="loca-vehicules"){syncHint();syncFormat();}
+    if(e.target && e.target.id==="loca-postal")state.postal=e.target.value.trim();
+  });
+  root.addEventListener("keydown",function(e){
+    if(e.key!=="Enter"&&e.key!==" ")return;
+    var t=e.target.closest("[data-next], [data-back], [data-want], [data-send], [data-qty], .loca-group .loca-tap, .loca-pas, #loca-retour-prix");
+    if(!t||e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA")return;
+    e.preventDefault();
+    t.click();
+  });
+  show("loca-step-vehicules");
+})();
+</script>
