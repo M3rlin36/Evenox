@@ -16,7 +16,7 @@
 .loca-step.is-on{display:block}
 .loca-pip{height:4px;flex:1;background:#E6EBEF;border-radius:2px}
 .loca-pip.is-on{background:#1088B5}
-#loca-estime{display:none;max-width:640px;margin:0 auto;padding:0 clamp(17px,2.3vw,31px) 28px}
+#loca-estime{display:none;max-width:640px;margin:0 auto;padding:16px clamp(17px,2.3vw,31px) 0}
 #loca-estime.is-on{display:block}
 @media(max-width:980px){.loca-tap{min-height:44px}}
 </style>
@@ -36,6 +36,16 @@
         <div class="loca-pip" data-pip="4"></div>
       </div>
       <div id="loca-bar-txt" style="font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7A8B95">Étape 1 sur 4</div>
+    </div>
+
+    <div id="loca-estime">
+      <div style="background:#E7F3F8;border-radius:8px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#1088B5">Estimation</div>
+          <div id="loca-estime-txt" style="font-weight:600;font-size:14px;color:#35454E;margin-top:4px"></div>
+        </div>
+        <div id="loca-estime-prix" style="font-weight:800;font-size:22px;color:#0E2C4F"></div>
+      </div>
     </div>
 
     <div id="loca-step-choix" class="loca-step is-on">
@@ -162,16 +172,6 @@
           <div data-send class="loca-tap lx4" style="background:#1088B5;color:#FFFFFF;padding:20px;border-radius:8px;font-weight:800;font-size:17px;text-align:center;cursor:pointer">Recevoir mon prix</div>
           <div id="loca-legal" style="font-weight:600;font-size:12px;line-height:1.6;color:#9BAAB3;text-align:center">Aucun engagement. Vos coordonnées servent uniquement à vous rappeler.</div>
         </div>
-      </div>
-    </div>
-
-    <div id="loca-estime">
-      <div style="background:#E7F3F8;border-radius:8px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
-        <div>
-          <div style="font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#1088B5">Estimation</div>
-          <div id="loca-estime-txt" style="font-weight:600;font-size:14px;color:#35454E;margin-top:4px"></div>
-        </div>
-        <div id="loca-estime-prix" style="font-weight:800;font-size:22px;color:#0E2C4F"></div>
       </div>
     </div>
   </div>
