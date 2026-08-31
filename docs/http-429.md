@@ -29,13 +29,22 @@ Un plugin WordPress **ne peut pas** corriger un 429 CDN : la requête n’attein
 
 ---
 
-## 3 clics à faire aujourd’hui
+## À faire aujourd’hui (clics dans l’ordre)
 
-1. **hPanel → Sites web → evenox.ca → Gérer → Usage des Ressources.** Si CPU, RAM, processus ou I/O touchent la ligne rouge : **Boostez maintenant** (24 h, 1×/mois), puis planifie un upgrade Business / Cloud.
-2. **hPanel → Sites web → evenox.ca → Gérer → Performance → CDN → Sécurité.** Baisse le niveau s’il est trop agressif ; vérifie **Blocage du trafic** (pas d’IP bureau ni du Québec bloquée).
-3. **WP-admin → LiteSpeed Cache → Boîte à outils → Purge → Tout purger.** Puis **Crawler → OFF**. Exclure panier / commande / `wp-admin`.
+1. **hPanel → Sites web → evenox.ca → Gérer → Usage des Ressources** (ou *Resource usage*). Si **CPU** ou **Processus** (workers PHP) sont au rouge : c’est ça. En haut de la page : **Boostez maintenant** (24 h, 1×/mois) si le bouton est là.
+2. **Court terme :** attends **15–30 min**, ouvre le site sur un autre réseau (4G / autre Wi-Fi). **Ne pas F5 en boucle** — ça empire le 429.
+3. **Alléger WordPress :** WP-admin → **LiteSpeed Cache**
+   - Cache des pages : **ON** (à garder)
+   - **Crawler → OFF** s’il est actif
+   - **Cache → Exclusions** : `wp-admin`, panier, commande (`/panier/`, `/commander/`)
+   - **Boîte à outils → Purge → Tout purger** (une seule fois)
+4. **hPanel → Sites web → evenox.ca → Gérer → Performance → CDN** → onglets **Sécurité** / **Blocage du trafic** / protection bots. Ne pas bloquer un vrai Chrome. Whitelist **Googlebot** si le réglage existe. Baisse le niveau de sécurité s’il est trop haut.
+5. Si l’usage reste au max **tous les jours** (Ads + Woo + beaucoup de hits) : **upgrade** Premium → Business / Cloud. Hostinger l’a déjà recommandé le 20 août.
+6. **Ticket Hostinger** si ça bloque encore (hPanel → **Aide** / chat → Créer un ticket) :
 
-Détail ci-dessous.
+   > evenox.ca renvoie 429, forfait Premium overlimit depuis le 20 août, merci de vérifier PHP workers + rate-limit CDN et de débloquer mon IP.
+
+Détail des écrans ci-dessous. Le texte de ticket plus long est à la fin.
 
 ---
 
@@ -185,7 +194,11 @@ Fichier : `wordpress/mu-plugins/evenox-rate-limit-headers.php`
 
 ## Ticket Hostinger (à coller)
 
-**Sujet :** evenox.ca — 429 Too Many Requests + plan Premium au-dessus des limites
+Version courte (chat / premier message) :
+
+> evenox.ca renvoie 429, forfait Premium overlimit depuis le 20 août, merci de vérifier PHP workers + rate-limit CDN et de débloquer mon IP.
+
+**Sujet (ticket écrit) :** evenox.ca — 429 Too Many Requests + plan Premium au-dessus des limites
 
 ```
 Bonjour,
