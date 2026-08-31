@@ -26,10 +26,13 @@ echo
 
 print_interesting_headers() {
   local hdrs="$1"
-  # Retry-After + en-têtes Hostinger CDN / LiteSpeed seulement.
-  echo "$hdrs" | awk 'BEGIN{IGNORECASE=1}
-    /^(retry-after|x-hcdn-|x-litespeed-|x-qc-|server|platform|x-powered-by|cf-ray):/ {
-      print "    " $0
+  # mawk n'a pas IGNORECASE — comparer en minuscules.
+  # Préfixes : x-hcdn-* / x-litespeed-* (pas seulement « x-hcdn: »).
+  echo "$hdrs" | awk '
+    {
+      l = tolower($0)
+      if (l ~ /^(retry-after:|x-hcdn-|x-litespeed-|x-qc-|x-turbo-charged-by:|server:|platform:|x-powered-by:|cf-ray:)/)
+        print "    " $0
     }'
 }
 
@@ -74,7 +77,7 @@ check_one() {
   fi
 
   hdrs="$(tr -d '\r' < "$tmp")"
-  retry_after="$(echo "$hdrs" | awk 'BEGIN{IGNORECASE=1} /^retry-after:/{sub(/^[^:]+:[ \t]*/,""); print; exit}')"
+  retry_after="$(echo "$hdrs" | awk 'tolower($0) ~ /^retry-after:/{sub(/^[^:]+:[ \t]*/,""); print; exit}')"
 
   printf "%s  %s\n" "$http_code" "$url"
   print_interesting_headers "$hdrs"
