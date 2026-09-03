@@ -16,5 +16,10 @@ Calculateur chapiteaux : wizard 6 étapes, prescription, porte courriel, payload
 décoration → photobooth → jeux gonflables → calculateur global.
 Premier filtre gonflables : fête d’enfants → garçon / fille / mixte.
 
-Les catalogues déco / photobooth / gonflables ne sont **pas** dans ce dépôt GitHub.
-Sans les fichiers Windows (`C:\Users\Admin\Evenox\`), on ne fabrique pas de prix.
+Les catalogues item-par-item **décoration** et **photobooth** ne sont pas dans `main`.
+Une autre branche GitHub, `cursor/catalogue-conflits-6384`, contient déjà un
+`catalogue.json` de 171 produits extraits des blobs live (gonflables, chapiteaux,
+mobilier, forfaits). Prix de forfaits connus : Décor WOW 899 $, photobooth 799 / 1099 $.
+Pas de liste à l’unité pour arches / néons / arrière-plans. On n’invente rien :
+soit Alexandre fournit le catalogue déco, soit on enchaîne sur les gonflables
+dont les prix sont déjà dans cette branche.
