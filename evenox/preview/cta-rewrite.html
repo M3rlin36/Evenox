@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evenox — réécriture CTA jeux géants</title>
+  <style>
+    :root{
+      --evx-mauve:#5e17eb; --evx-mauve-fonce:#4b06df;
+      --evx-blanc-violace:#faf9ff; --evx-blanc:#fff;
+      --evx-bleu-nuit:#1a1a2e; --evx-texte:#2d3436; --evx-gris:#666;
+      --evx-bord:#ece8f6; --evx-bord-fort:#ddd5f0;
+      --evx-ombre-hover:0 12px 40px rgba(94,23,235,.16);
+      --evx-r-btn:8px;
+      --evx-ral:'Raleway',ui-sans-serif,system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--evx-ral);color:var(--evx-texte);background:#fff}
+    .note{max-width:760px;margin:32px auto 0;padding:0 20px;color:var(--evx-gris);font-size:.95rem;line-height:1.5}
+    .note code{background:#f4f0ff;padding:1px 6px;border-radius:4px;color:var(--evx-mauve-fonce)}
+    .href{font-family:ui-monospace,monospace;font-size:.85rem;word-break:break-all;margin:8px 0 0}
+    .href.bad{color:#b42318}
+    .href.good{color:#067647}
+    .evx-fin{background:var(--evx-blanc-violace);border-top:1px solid var(--evx-bord);
+      padding:64px 0 72px;text-align:center;margin-top:20px}
+    .evx-fin h2{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800;letter-spacing:-.03em;
+      color:var(--evx-bleu-nuit);margin:0}
+    .evx-fin p{color:var(--evx-gris);font-weight:500;max-width:46ch;margin:12px auto 0;
+      font-size:1.05rem}
+    .evx-fin-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+    .evx-fin-1{background:var(--evx-mauve);color:#fff;text-decoration:none;font-weight:700;
+      padding:16px 32px;border-radius:var(--evx-r-btn);display:inline-flex;align-items:center;
+      min-height:52px;font-size:1.05rem}
+    .evx-fin-2{background:transparent;color:var(--evx-bleu-nuit);text-decoration:none;
+      font-weight:700;padding:16px 28px;border:1.5px solid var(--evx-bord-fort);
+      border-radius:var(--evx-r-btn);display:inline-flex;align-items:center;min-height:52px;
+      font-size:1.05rem}
+    .label{max-width:760px;margin:40px auto 0;padding:0 20px;font-weight:800;color:var(--evx-bleu-nuit)}
+  </style>
+</head>
+<body>
+  <p class="note">
+    Preview locale du plugin <code>evenox-cta-jeux-geants</code>.
+    Le site live n’est pas modifié tant que le zip n’est pas activé dans WordPress.
+    Même JS que le pied de page du plugin : réécrit seulement <code>a.evx-fin-1</code>
+    s’il vise encore <code>location-tables-chaises</code>.
+  </p>
+
+  <p class="label">Avant (capture live 2026-09-03)</p>
+  <section class="evx-fin" id="avant">
+    <div class="evx-large">
+      <h2>Monte ton forfait</h2>
+      <p>Dis-nous combien d'invités et ton code postal. Tu vois ton total livré,<br>
+         placé et ramassé — sans attendre de rappel.</p>
+      <div class="evx-fin-actions">
+        <a class="evx-fin-1" href="https://evenox.ca/location-tables-chaises/">Monter mon forfait</a>
+        <a class="evx-fin-2" href="tel:+15145591893">Aime mieux qu'on s'en occupe&nbsp;? 514 559-1893</a>
+      </div>
+      <p class="href bad" id="avant-href"></p>
+    </div>
+  </section>
+
+  <p class="label">Après le plugin (même markup, href réécrit)</p>
+  <section class="evx-fin" id="apres">
+    <div class="evx-large">
+      <h2>Monte ton forfait</h2>
+      <p>Dis-nous combien d'invités et ton code postal. Tu vois ton total livré,<br>
+         placé et ramassé — sans attendre de rappel.</p>
+      <div class="evx-fin-actions">
+        <a class="evx-fin-1" id="cta-apres" href="https://evenox.ca/location-tables-chaises/">Monter mon forfait</a>
+        <a class="evx-fin-2" href="tel:+15145591893">Aime mieux qu'on s'en occupe&nbsp;? 514 559-1893</a>
+      </div>
+      <p class="href good" id="apres-href"></p>
+    </div>
+  </section>
+
+  <script id="evenox-cta-jeux-geants">
+  (function(){
+    var NEW="https://evenox.ca/location-jeux-geants/#configurateur";
+    function fix(root){
+      var list=(root||document).querySelectorAll("a.evx-fin-1");
+      for(var i=0;i<list.length;i++){
+        var a=list[i];
+        var href=a.getAttribute("href")||"";
+        if(/location-tables-chaises/i.test(href)){a.setAttribute("href",NEW);}
+      }
+    }
+    document.getElementById("avant-href").textContent =
+      "href = " + document.querySelector("#avant a.evx-fin-1").getAttribute("href");
+    fix(document.getElementById("apres"));
+    document.getElementById("apres-href").textContent =
+      "href = " + document.getElementById("cta-apres").getAttribute("href");
+  })();
+  </script>
+</body>
+</html>
