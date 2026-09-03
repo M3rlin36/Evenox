@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Aperçu — Monter mon forfait → bon calculateur</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 820px; margin: 2rem auto; color: #1a1a2e; }
+    a.evx-fin-1 { display: inline-block; background: #5e17eb; color: #fff; padding: .7rem 1.2rem; border-radius: 8px; text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: .92rem; }
+    th, td { border-bottom: 1px solid #ece8f6; text-align: left; padding: .4rem .3rem; }
+    code { font-size: .85em; }
+  </style>
+</head>
+<body>
+  <h1>Monte ton forfait</h1>
+  <p>Avant : <code>https://evenox.ca/location-tables-chaises/</code></p>
+  <p id="apres">Après (jeux géants) : —</p>
+  <p>
+    <a class="evx-fin-1" href="https://evenox.ca/location-tables-chaises/">Monter mon forfait</a>
+  </p>
+  <table>
+    <thead><tr><th>Page</th><th>Calculateur</th></tr></thead>
+    <tbody>
+      <tr><td>/jeux-geants-interactifs/</td><td>/location-jeux-geants/#configurateur</td></tr>
+      <tr><td>/location-jeu-interieur/</td><td>/location-jeux-geants/#configurateur</td></tr>
+      <tr><td>/location-jeux-gonflable/</td><td>/location-jeux-gonflables/#configurateur</td></tr>
+      <tr><td>/friandises-confiseries/</td><td>/machines-gourmandises/#configurateur</td></tr>
+      <tr><td>/mur-decoratif/</td><td>/location-decoration-evenementielle/#configurateur</td></tr>
+      <tr><td>/decoration/</td><td>#calculateur</td></tr>
+      <tr><td>/equipement/</td><td>/location-tables-chaises/#calculateur</td></tr>
+    </tbody>
+  </table>
+  <script>
+    var t = "https://evenox.ca/location-jeux-geants/#configurateur";
+    document.querySelectorAll("a.evx-fin-1").forEach(function (a) { a.href = t; });
+    document.getElementById("apres").textContent = "Après (jeux géants) : " + t;
+  </script>
+</body>
+</html>
