@@ -5,6 +5,8 @@
 - Valeur : 1020 $
 - Pipeline : https://app.notion.com/3d031d285ea68197a69cf6d1795c10b9
 - Séquence : **Pause** (elle a répondu)
+- Dépôt : non
+- Conversation : aujourd’hui (3 sept)
 
 ## Déjà fait
 

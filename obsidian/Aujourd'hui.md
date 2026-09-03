@@ -2,55 +2,45 @@
 
 Évenox. Une page. Une question : **quoi faire maintenant ?**
 
-Réponds au courriel avec **un mot** : `OUI` · `NON` · `sauf Festipod` · `stop Chana`
+Réponds au courriel avec **un mot** : `OUI` · `NON` · `sauf Mathieu` · `stop Mathieu`
 
 Pas de numéros.
 
 Notion : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
-## Ce matin
+## Deux portes (avant chaque relance)
 
-- Aujourd’hui : rien à envoyer. **SP Canada = perdu.**
-- Demain : rien. **Juliana Garcia = perdu.**
-- Grosses factures : contexte à côté de chaque ligne.
-- An passé : 5 clients 2025. On écrit seulement si tu dis **OUI**.
-- Annie MindCore a déjà répondu — pas de relance.
+1. **Dépôt / confirmation déjà faits** → on n’écrit pas.
+2. **Conversation aujourd’hui ou récente** → on n’écrit pas.
 
-## Perdus aujourd’hui
+## Ce matin (validé)
 
-- SP Canada / Katherine — arche 3 sept, 560 $. Alexandre : perdu.
-- Juliana Garcia — tables 5 sept, 270 $, dépôt 0. Alexandre : perdu aussi.
+- **À envoyer** : personne, sauf si tu écris **OUI** pour Mathieu (KO Scène / Festipod). Pas de dépôt. Silence depuis le 23 juillet. Event 16 sept.
+- **Conversation en cours** : Dahlia, Annie, Chana, Catherine, Emilie Festipod, Justine Empreinte.
+- **Déjà confirmé / payé** : Christina, Dylan, Manon, Radiologix, Linq.
+- **Trop tôt** (portes OK) : SGM, DLGL, Toundra.
+- **Date passée** : RCGT.
+- **Perdus** : SP Canada, Juliana.
 
-## Grosses factures (avec contexte)
+## Conversation en cours (détail)
 
-| Client | $ | Contexte |
-|---|---|---|
-| Emilie Festipod | 5591 | 17–19 sept. Devis jamais envoyé. Plus grosse facture. C’est sûr ? |
-| Chana BNC | 4000 | 8 oct. Pas de courriel. Pause — on n’écrit pas. |
-| Marie-Eve SGM | 2498 | 12 déc. Trop tôt. Relancer plus tard. |
-| Sylvie DLGL | 2094 | Noël 28 nov. Trop tôt. |
-| Justine Empreinte | 1654 | Décembre. Trop tôt. |
-| Catherine LA VIRÉE | 1090 | Pas de courriel. Pause. |
-| Dahlia | 1082 | Pas de courriel. Pause. |
-| Annie MindCore | 1020 | Elle a répondu — salle seulement le 5 déc. |
-| Guillaume RCGT | 1016 | Date passée. Confirmer si encore ouvert. |
-| Jeanne Toundra | 999 | Août 2027. Dans un an. |
+| Client | Pourquoi on n’écrit pas |
+|---|---|
+| Dahlia | Elle a écrit aujourd’hui 17 h 36 — budget 500 $. [Fil](https://mail.google.com/mail/u/0/#inbox/1a0693422fdd7dc0) |
+| Annie MindCore | Elle a répondu ce matin. [Fil](https://mail.google.com/mail/u/0/#inbox/1a066b2329e678ac) |
+| Chana BNC | Tu lui as envoyé 4 idées aujourd’hui 15 h 42. |
+| Catherine LA VIRÉE | Tu as répondu cette nuit (lettres 4 pieds). Elle va confirmer. |
+| Emilie Festipod | 25 août : OK pour d’autres heures. Pas de dépôt. Devis 5591 $ jamais envoyé. |
+| Justine Empreinte | 24 août : elle attend tes 2 estimés. |
 
-## An passé (clients 2025 déjà servis)
+## Déjà confirmé / payé
 
-| Client | Courriel | Contexte |
-|---|---|---|
-| Christina / Mille et Une | christina@milleetune.ca | Repeat corpo. Havana Four Seasons. |
-| Dylan Djiboni | d.djiboni@gmail.com | Résa 967 fin 2025. |
-| Manon Morin | manonmorin@hotmail.com | Karaoké 2025. Suivi saison. |
-| Marie-Josée / Radiologix | mariejosee.laplante@radiologix.ca | Résa 865. |
-| Linq Immobilier | m.lafortune@linqimmobilier.ca | Résa 841. |
+- Christina — Havana 19 janv, livré. Dernier mail 14 fév.
+- Dylan — résa 967, 2025.
+- Manon — karaoké 2025.
+- Radiologix — dépôt 150 $ le 3 déc 2025, party 17 janv livré.
+- Linq — contrat 841 approuvé 14 nov 2025.
 
 ## Appels J+7
 
-Aucun ce matin. Premier rappel téléphone = **10 septembre**.
-
-## Réponse client
-
-**Annie MindCore** — salle seulement le 5 déc.
-Fil : https://mail.google.com/mail/u/0/#inbox/1a066b2329e678ac
+Aucun. Premier rappel téléphone = **10 septembre**.

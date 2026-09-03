@@ -35,11 +35,14 @@ Alexandre ouvre **une page** et reçoit **un courriel**. Rien d’autre.
 
 - Jusqu’au **10 septembre 2026** : aucun envoi client sans **OUI**.
 - À partir du **11 septembre 2026** : envoyer le gabarit, noter Envoyé.
+- **Deux portes avant toute relance** (remplir `Dépôt` + `Conversation` sur la fiche) :
+  1. Confirmation / dépôt déjà faits → Statut `Pas de suivi`. On n’écrit pas.
+  2. Conversation aujourd’hui ou récente (lui ou toi) → Statut `Pas de suivi`. On n’écrit pas.
 - Client répond → Séquence `Pause`, Étape `Répondu`, Type `Réponse client`, lien Gmail.
 - J+7 = **appel** dans le courriel du matin. Jamais avant 7 jours.
 - Devis < 800 $ : relance courriel seule (sauf l’appel J+7).
 - **Perdu** (SP Canada, Juliana Garcia, ou si Alexandre le dit) → Statut Perdu, Type Perdu, Séquence Stop. Ne plus écrire.
-- **An passé** : clients 2025 déjà servis. Même règle OUI avant d’écrire.
+- **An passé** : déjà servi = dépôt `Payé`, `Pas de suivi`. Pas une relance.
 - Grosses factures : toujours remplir **Contexte**.
 - Après un envoi réel seulement : `Prochaine relance` + `Étape suivi` + fichier `obsidian/Clients/`.
 

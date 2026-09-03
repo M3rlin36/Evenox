@@ -18,6 +18,8 @@ Jusqu’au 10 septembre 2026 : aucun courriel client sans OUI.
 
 Perdus (ne plus écrire) : SP Canada, Juliana Garcia.
 
+Avant chaque relance : si le dépôt est déjà payé, ou s’il y a déjà une conversation aujourd’hui / récente → Pas de suivi.
+
 Branding : violet #5E17EB, logo evenox.ca.
 
 Si Alexandre écrit `dispatch`, `suivi`, `relances` ou `aujourd’hui` : suivre `evenox-suivi`.

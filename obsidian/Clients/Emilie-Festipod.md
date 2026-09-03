@@ -4,16 +4,17 @@
 - Événement : 17-19 septembre 2026
 - Valeur : 5591 $
 - Pipeline : https://app.notion.com/3c331d285ea681efb62ccdade4c45199
-- Séquence : On — étape J+2 à valider
+- Séquence : Pause — Pas de suivi
+- Dépôt : non
+- Conversation : ouverte (25 août)
+
+## Validation 3 sept 2026
+
+Elle a écrit le 25 août : ouverte à d’autres horaires. Pas de dépôt. Devis 5591 $ jamais envoyé. Fil : https://mail.google.com/mail/u/0/#inbox/1a01a7fe5256f1ae
+
+Pas une relance gabarit. C’est à toi de répondre sur les heures, ou de ne pas prendre le contrat.
 
 ## Déjà fait
 
-Soumission au dossier. Pas de relance depuis.
+Échange photobooth août. Refus 3 soirs 16 h–minuit le 24 août.
 
-## Contexte
-
-17–19 sept, dans 2 semaines. Devis #818 jamais envoyé. Plus grosse facture. Alexandre a dit qu’une grosse facture est sûre — à confirmer si c’est celle-ci.
-
-## À faire
-
-Confirmer le go avant d’envoyer le devis.
