@@ -1,0 +1,47 @@
+{
+  "source": "variantes/frag/chapiteaux.js + systeme.json + decisions Alexandre 31 aout / 1 sept 2026",
+  "corrections": [
+    "marq-10x10: 275 -> 300 (le systeme fait foi)",
+    "poids-support retire: Alexandre ancre au sol, pas de poids",
+    "bar courbe a DEL retire: n existe pas",
+    "bar-portatif ajoute a 120 $: confirme dans le systeme"
+  ],
+  "ouverts": [
+    "guirlande 50 $ (configurateur) vs 10 $ (Booqable) — on garde 50 $ tant qu Alexandre n a pas tranche",
+    "nappe ronde 10 $ (configurateur) vs 12 $ (Booqable) — on garde 10 $"
+  ],
+  "produits": [
+    {"id": "marq-10x10", "nom": "Marquise 10' x 10'", "cap": 10, "prix": 300, "groupe": "marquises", "img": "https://evenox.ca/wp-content/uploads/2026/08/hero-chapiteaux-2026-600x450.webp"},
+    {"id": "marq-10x15", "nom": "Marquise 10' x 15'", "cap": 15, "prix": 350, "groupe": "marquises"},
+    {"id": "marq-10x20", "nom": "Marquise 10' x 20'", "cap": 20, "prix": 400, "groupe": "marquises"},
+    {"id": "marq-15x15", "nom": "Marquise 15' x 15'", "cap": 20, "prix": 400, "groupe": "marquises"},
+    {"id": "marq-15x20", "nom": "Marquise 15' x 20'", "cap": 30, "prix": 450, "groupe": "marquises"},
+    {"id": "marq-20x20", "nom": "Marquise 20' x 20'", "cap": 40, "prix": 500, "groupe": "marquises"},
+    {"id": "marq-15x30", "nom": "Marquise 15' x 30'", "cap": 50, "prix": 650, "groupe": "marquises"},
+    {"id": "marq-20x30", "nom": "Marquise 20' x 30'", "cap": 60, "prix": 700, "groupe": "marquises"},
+    {"id": "marq-20x40", "nom": "Marquise 20' x 40'", "cap": 80, "prix": 800, "groupe": "marquises"},
+    {"id": "marq-30x30", "nom": "Marquise 30' x 30'", "cap": 90, "prix": 1000, "groupe": "marquises"},
+    {"id": "mur-lateral", "nom": "Mur lateral", "prix": 10, "groupe": "options"},
+    {"id": "baril", "nom": "Baril d ancrage", "prix": 35, "groupe": "options"},
+    {"id": "extincteur", "nom": "Extincteur", "prix": 25, "groupe": "options"},
+    {"id": "plancher", "nom": "Panneau de plancher 4' x 8'", "prix": 100, "groupe": "options"},
+    {"id": "guirlande", "nom": "Guirlande lumineuse 50 pi", "prix": 50, "groupe": "options", "img": "https://content.booqablecdn.com/uploads/b70819cfd19504bd0bd3dcf90d78efc0/photo/photo/1368325b-092c-422f-b944-76c9653520cc/large_1711460222-557433646307887-0016-4404/upload.jpg"},
+    {"id": "chauffage", "nom": "Chauffe-terrasse au propane", "prix": 100, "groupe": "options"},
+    {"id": "chauffage-pyr", "nom": "Chauffe-terrasse pyramide", "prix": 120, "groupe": "options"},
+    {"id": "son", "nom": "Systeme de son Bluetooth", "prix": 120, "groupe": "options"},
+    {"id": "bar-portatif", "nom": "Bar portatif", "prix": 120, "groupe": "options"},
+    {"id": "bbq", "nom": "BBQ", "prix": 160, "groupe": "options"},
+    {"id": "chaise-pliante-blanche", "nom": "Chaise pliante blanche", "prix": 3, "groupe": "mobilier", "lot": "blanche", "img": "https://content.booqablecdn.com/uploads/b70819cfd19504bd0bd3dcf90d78efc0/photo/photo/5cf723e1-2661-4393-bcdf-227b1b66960c/large_upload.jpg"},
+    {"id": "chaise-pliante-brune", "nom": "Chaise pliante brune", "prix": 2, "groupe": "mobilier", "lot": "brune"},
+    {"id": "chaise-rembourree", "nom": "Chaise rembourree", "prix": 4, "groupe": "mobilier", "lot": "rembourree"},
+    {"id": "chaise-martha", "nom": "Chaise Martha, resine blanche", "prix": 5, "groupe": "mobilier", "lot": "martha"},
+    {"id": "chaise-chiavari-blanche", "nom": "Chaise Chiavari blanche", "prix": 8, "groupe": "mobilier", "lot": "chiavari_bl"},
+    {"id": "chaise-chiavari-transparente", "nom": "Chaise Chiavari transparente", "prix": 8, "groupe": "mobilier"},
+    {"id": "table-ronde-60", "nom": "Table ronde 60 po", "prix": 15, "groupe": "mobilier", "places": 8, "img": "https://content.booqablecdn.com/uploads/b70819cfd19504bd0bd3dcf90d78efc0/photo/photo/21c66349-e265-4374-8cd5-2db6de5fbc9a/large_table-banquet-pliante-ronde.jpg"},
+    {"id": "table-ronde-48", "nom": "Table ronde 48 po", "prix": 15, "groupe": "mobilier", "places": 6},
+    {"id": "table-rect-8", "nom": "Table rectangulaire 8 pi", "prix": 15, "groupe": "mobilier", "places": 8},
+    {"id": "table-rect-6", "nom": "Table rectangulaire 6 pi", "prix": 10, "groupe": "mobilier", "places": 8, "lot": "rect6"},
+    {"id": "nappe-rect", "nom": "Nappe rectangulaire", "prix": 8, "groupe": "mobilier"},
+    {"id": "nappe-ronde", "nom": "Nappe ronde 120 po", "prix": 10, "groupe": "mobilier"}
+  ]
+}
