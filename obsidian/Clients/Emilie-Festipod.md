@@ -10,6 +10,10 @@
 
 Soumission au dossier. Pas de relance depuis.
 
+## Contexte
+
+17–19 sept, dans 2 semaines. Devis #818 jamais envoyé. Plus grosse facture. Alexandre a dit qu’une grosse facture est sûre — à confirmer si c’est celle-ci.
+
 ## À faire
 
-Valider l’envoi J+2 (gabarit relance).
+Confirmer le go avant d’envoyer le devis.
