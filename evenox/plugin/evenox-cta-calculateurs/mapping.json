@@ -6,12 +6,18 @@
   "location-jeux-exterieur": "/location-jeux-exterieurs/#assistant-jeux",
   "jeux-de-table": "/location-jeux-geants/#configurateur",
   "location-jeux-techno": "/location-arcade/#configurateur",
+  "location-jeu-interieur": "/location-jeux-geants/#configurateur",
   "decoration": "#calculateur",
   "decoration-cle-en-main": "/location-decoration-evenementielle/#configurateur",
   "decoration-de-ballons": "/decoration/#calculateur",
   "decoration-decor-de-table": "/location-decoration-evenementielle/#configurateur",
   "decoration-tapis-accueil": "/location-decoration-evenementielle/#configurateur",
   "decoration-lettres-neons": "/lettres-lumineuses/#configurateur",
+  "mur-decoratif": "/location-decoration-evenementielle/#configurateur",
+  "friandises-confiseries": "/machines-gourmandises/#configurateur",
   "equipement": "/location-tables-chaises/#calculateur",
-  "equipement-technique": "/configurateur/"
+  "equipement-technique": "/configurateur/",
+  "location-chaise-pliante": "/location-tables-chaises/#calculateur",
+  "location-tables-rive-nord": "/location-tables-chaises/#calculateur",
+  "ustensile-et-vaiselle": "/location-tables-chaises/#calculateur"
 }
