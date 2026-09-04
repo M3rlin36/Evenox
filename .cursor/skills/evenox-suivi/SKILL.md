@@ -20,9 +20,22 @@ Chaque fiche :
 
 Un seul lien Notion : la page [Aujourd hui](https://app.notion.com/p/3d031d285ea681309e1afbc591262304). Jamais un lien Pipeline par client.
 
-Sections : **À faire** · **En cours** · **An passé**
+En haut : **Qui doit bouger ?** puis **Commence par [nom]** — inbound du jour d’abord, ensuite $ × jours avant l’event.
+
+Sections, une fiche après l’autre :
+
+- **C’est à toi** — Alexandre doit un devis, un estimé, ou une réponse (pas une relance). Tout nouveau lead Gmail/site du jour va ici.
+- **Si tu dis OUI** — une relance, seulement les silencieux pas payés. Question : « je garde le [date] ? »
+- **On attend** — eux doivent revenir
+- **An passé** — « vous le refaites ? » seulement si leur saison est dans 8–12 semaines
+
+Étiquettes enfant : **en premier** / **c’est à toi** / **elle a écrit** / **pas payé** / **on attend** / **fenêtre** / **trop tôt**
+
+Journal des ajouts : `obsidian/Journal-nuit.md`. Un ajout par passage. Pas de CRM.
 
 Fin : Réponds **OUI**, **NON** ou **sauf [nom]**.
+
+Ne jamais relancer quelqu’un qui a déjà écrit, déjà payé, ou à qui Alexandre doit encore quelque chose.
 
 ## Sources
 

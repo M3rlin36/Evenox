@@ -2,57 +2,40 @@
 
 Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
-Une fiche = nom, date, ce qui s’est passé, Booqable s’il y a une commande.
-Un seul lien Notion : cette page.
+**Qui doit bouger ?**
+**Commence par Joëlle** — elle a demandé ce soir (Radio-Canada, 21 sept). Puis Emilie (devis 5591 $). OUI n’écrit que Mathieu.
 
-## À faire
+## C’est à toi
 
-**Mathieu Lacroix** — KO Scène / Festipod  
-16 septembre — 1610 Saint-Denis  
-23 juillet : 250 chaises, pas de dépôt. Silence depuis.  
-Pas de commande Booqable
+**Joëlle Des Rosiers** — en premier · elle a écrit · 21–24 sept  
+40 tables 6×18, 3 tables 8×30, nappes. Livrer lundi 9 h, 1000 Papineau. Devis jamais parti. Pas de commande Booqable.
 
-## En cours
+**Emilie Brien** — c’est à toi · pas payé · 17–19 sept · 5591 $  
+Devis jamais parti. [Booqable #1758](https://evenox.booqable.com/orders/fcc556d7-09b2-4d3a-963a-d1b678be0cf9)
 
-**Dahlia**  
-3 septembre — elle a écrit, budget 500 $  
-#921 — https://evenox.booqable.com/orders?q=921
+**Justine Theriault** — c’est à toi · 1er déc  
+2 estimés dus depuis le 24 août. [Booqable #1759](https://evenox.booqable.com/orders/346349ed-30db-4037-bead-6c0b690279aa)
 
-**Annie Paquette** — MindCore  
-5 décembre — salle seulement, livrer le jour même. Répondu le 3 sept.  
-#1822 — https://evenox.booqable.com/orders/68417d10-6d96-4b9b-bd55-31a4c662ab8d
+**Dahlia** — elle a écrit · 3 sept · 500 $  
+Répondre. [Booqable #921](https://evenox.booqable.com/orders?q=921)
 
-**Chana** — BNC  
-8 octobre — tuto chasse. Tu lui as écrit le 3 sept.  
-Pas de commande Booqable
+**Annie Paquette** — elle a écrit · 5 déc  
+Salle seulement, livrer le jour même. [Booqable #1822](https://evenox.booqable.com/orders/68417d10-6d96-4b9b-bd55-31a4c662ab8d)
 
-**Catherine** — LA VIRÉE  
-3 septembre — lettres 4 pieds, elle va confirmer.  
-Pas de commande Booqable
+## Si tu dis OUI
 
-**Emilie Brien** — Festipod  
-17–19 septembre — 25 août : OK pour d’autres heures. Devis jamais envoyé.  
-#1758 — https://evenox.booqable.com/orders/fcc556d7-09b2-4d3a-963a-d1b678be0cf9
+**Mathieu Lacroix** — pas payé · 16 sept  
+Question : « je garde le 16 septembre ? » Silence depuis le 23 juillet. Pas de commande Booqable.
 
-**Justine Theriault** — Empreinte  
-1er décembre — elle attend tes 2 estimés depuis le 24 août.  
-#1759 — https://evenox.booqable.com/orders/346349ed-30db-4037-bead-6c0b690279aa
+## On attend
+
+**Chana** — 8 oct. Tu lui as écrit le 3 sept.  
+**Catherine** — 3 sept. Lettres 4 pieds, elle confirme.
 
 ## An passé
 
-**Christina Sterling** — 19 janv, Havana Four Seasons, livré  
-https://evenox.booqable.com/customers?q=Christina%20Sterling
-
-**Dylan Djiboni** — 31 déc 2025, résa 967  
-https://evenox.booqable.com/orders?q=967
-
-**Manon Morin** — karaoké déc 2025  
-https://evenox.booqable.com/customers?q=Manon%20Morin
-
-**Marie-Josée / Radiologix** — 17 janv, résa 865  
-https://evenox.booqable.com/orders?q=865
-
-**Linq Immobilier** — nov 2025, contrat 841  
-https://evenox.booqable.com/orders?q=841
+**Linq** — fenêtre (novembre). « vous le refaites ? »  
+**Dylan, Manon** — trop tôt (fin sept).  
+**Christina, Radiologix** — trop tôt (novembre).
 
 Réponds **OUI**, **NON** ou **sauf Mathieu**.
