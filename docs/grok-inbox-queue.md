@@ -8,7 +8,8 @@ Nate ne nettoie pas 5 200 unread. Il étiquette le courriel client, il ne draft 
 
 Skill Notion : [File d’attente courriels Grokbot](https://app.notion.com/p/3d131d285ea681ce8dcece11dba1889c)
 Cerveau : [répondre aux courriels](https://app.notion.com/p/3d131d285ea681bc9cb4e1756d622fb2)
-Drive : `file-attente.md` dans [Obsidian — Contexte agents](https://drive.google.com/drive/folders/155w3hoR-tyERqLAHwcoDQ5Yzq0fsbWbe) — [fichier](https://drive.google.com/file/d/1cp8Nme5jv789FlG-ksyIJ3_vXwlqVDL6/view)
+Drive : `file-attente.md` dans [Obsidian — Contexte agents](https://drive.google.com/drive/folders/155w3hoR-tyERqLAHwcoDQ5Yzq0fsbWbe) — [fichier](https://drive.google.com/file/d/1IrLK60rUYWm-uc-riOLqsMOqykr0XEFX/view)
+Drive process : `process.md` — [fichier](https://drive.google.com/file/d/1GrVNbRnVO9ONFzoVNbXrbT0RR-uPPNYI/view) (Grokbot / Patron Evenox ; le libellé Gmail reste `GROS-File`)
 
 ## Ce que Nate a dit (courriels seulement)
 
