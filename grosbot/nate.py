@@ -19,10 +19,10 @@ from grosbot.queries import (
 # Nate's six customer labels → Evenox labels already in evenox.ca@gmail.com.
 NATE_TO_EVENOX = {
     "Emergency": LABEL_URGENT,  # NOX-URGENT
-    "Needs you": LABEL_FILE,  # GROS-File (queue). Dual-written with NOX-À-traiter.
+    "Needs you": LABEL_FILE,  # Grok-File (queue). Dual-written with NOX-À-traiter.
     "Quote": LABEL_SOUMISSION,
-    "Schedule": LABEL_SCHEDULE,  # GROS-Livraison
-    "Billing": LABEL_BILLING,  # GROS-Acompte
+    "Schedule": LABEL_SCHEDULE,  # Grok-Livraison
+    "Billing": LABEL_BILLING,  # Grok-Acompte
     "Ignore (vendors / SEO / promo)": LABEL_SPAM,
 }
 

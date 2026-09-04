@@ -22,16 +22,16 @@ from grosbot.queries import (
     LABEL_URGENT,
 )
 
-# Live names (GROS-*) plus a Grok-* misspelling if a header ever says it.
-_FILE_N = {LABEL_FILE.lower(), LABEL_FILE_ALIAS.lower(), "grok-file"}
+# Live names (Grok-*) plus leftover GROS-* if a header still says it.
+_FILE_N = {LABEL_FILE.lower(), LABEL_FILE_ALIAS.lower(), "gros-file"}
 _IN_PROGRESS_N = {
     LABEL_IN_PROGRESS.lower(),
     LABEL_IN_PROGRESS_ALIAS.lower(),
-    "grok-en-cours",
+    "gros-en-cours",
 }
-_SKIP_N = {LABEL_SKIP.lower(), "grok-skip"}
-_BILLING_N = {LABEL_BILLING.lower(), "grok-acompte"}
-_SCHEDULE_N = {LABEL_SCHEDULE.lower(), "grok-livraison"}
+_SKIP_N = {LABEL_SKIP.lower(), "gros-skip"}
+_BILLING_N = {LABEL_BILLING.lower(), "gros-acompte"}
+_SCHEDULE_N = {LABEL_SCHEDULE.lower(), "gros-livraison"}
 
 _IGNORE_SENDER_NEEDLES = (
     "notifications@alarm.com",

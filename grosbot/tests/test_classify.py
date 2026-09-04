@@ -45,7 +45,7 @@ def test_wordpress_lead_is_queued_as_quote():
         snippet="Client Test evenement 2026-09-23 tables",
     )
     assert result.decision is Decision.QUEUE
-    assert result.queue_label == "GROS-File"
+    assert result.queue_label == "Grok-File"
     assert result.kind is Kind.QUOTE
     assert result.type_label == LABEL_SOUMISSION
 
@@ -113,7 +113,7 @@ def test_filter_recipes_skip_inbox_for_alarm():
 def test_weekly_report_uses_label_totals_not_unread_scan():
     stats = weekly_from_label_stats(
         [
-            {"name": "GROS-File", "threadsTotal": 11, "threadsUnread": 2},
+            {"name": "Grok-File", "threadsTotal": 11, "threadsUnread": 2},
             {"name": "NOX-À-traiter", "threadsTotal": 10, "threadsUnread": 2},
             {"name": "NOX-Processed", "threadsTotal": 100, "threadsUnread": 0},
             {"name": "INBOX", "threadsTotal": 20000, "threadsUnread": 20000},

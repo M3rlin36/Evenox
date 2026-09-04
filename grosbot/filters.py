@@ -62,7 +62,7 @@ FILTER_SPECS: tuple[FilterSpec, ...] = (
         "Nouveau lead",
         (LABEL_FILE, LABEL_SOUMISSION),
         False,
-        "Nate Quote label. Stay in inbox. Dual-write GROS-File in the agent.",
+        "Nate Quote label. Stay in inbox. Dual-write Grok-File in the agent.",
     ),
     FilterSpec(
         "wordpress soumission → file + quote",

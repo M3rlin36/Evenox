@@ -102,7 +102,7 @@ def _dedupe(labels: tuple[str, ...]) -> tuple[str, ...]:
 def triage_action(thread: Thread) -> QueueAction:
     """Turn a classification into label mutations. Cheap. No body fetch.
 
-    Dual-writes GROS-File + NOX-À-traiter so the split synonyms stay one queue.
+    Dual-writes Grok-File + NOX-À-traiter so the split synonyms stay one queue.
     Nate type labels (URGENT / Soumission / Livraison / Acompte) ride along.
     Never marks UNREAD as read.
     """
@@ -172,12 +172,12 @@ def claim_next(
     """Pick the single thread Grokbot may draft now.
 
     In-flight work always wins. Never start a second dossier while one is
-    labelled GROS-En-cours. Never draft more than MAX_DRAFTS_PER_RUN per run.
+    labelled Grok-En-cours. Never draft more than MAX_DRAFTS_PER_RUN per run.
     """
     if already_drafted_this_run >= MAX_DRAFTS_PER_RUN:
         raise QueueError(
             f"cap atteint : {MAX_DRAFTS_PER_RUN} brouillon(s) par run. "
-            "Le reste reste dans GROS-File."
+            "Le reste reste dans Grok-File."
         )
     live = [
         t
@@ -186,7 +186,7 @@ def claim_next(
     ]
     if len(live) > MAX_IN_FLIGHT:
         raise QueueError(
-            "plus d’un fil GROS-En-cours. Termine ou skip avant d’en ouvrir un autre."
+            "plus d’un fil Grok-En-cours. Termine ou skip avant d’en ouvrir un autre."
         )
     if live:
         return live[0]

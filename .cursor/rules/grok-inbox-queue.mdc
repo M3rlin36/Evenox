@@ -7,7 +7,7 @@ alwaysApply: true
 # File courriels Grokbot
 
 Grokbot / Patron Evenox. Courriel = TRI (0 envoi). Jamais 11 travailleurs en parallèle.
-Le libellé Gmail reste `GROS-File` (on ne le renomme pas).
+Libellés Gmail : `Grok-File` / `Grok-En-cours` / `Grok-Skip` / `Grok-Livraison` / `Grok-Acompte`. Jamais GROS.
 
 Gmail is the queue. The chat is not.
 

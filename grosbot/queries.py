@@ -1,26 +1,27 @@
 """Gmail search strings Grokbot must use. Never scan the whole unread inbox.
 
-MCP `search_threads` matches `label:GROS-File` (display name), not `label:Label_19`.
-Gmail UI accepts both. Always dual-write GROS-* and NOX-* synonyms.
+MCP `search_threads` matches `label:Grok-File` (display name), not `label:Label_19`.
+Gmail UI accepts both. Always dual-write Grok-* and NOX-* synonyms.
 """
 
 from __future__ import annotations
 
-# User labels in evenox.ca@gmail.com (IDs are Gmail-side; names are stable).
-# Canonical queue STATE = GROS-File. NOX-À-traiter is a synonym. Dual-write both.
-# Agent name = Grokbot. Do not rename live Gmail labels GROS-* → Grok-*.
-LABEL_FILE = "GROS-File"
+# User labels in evenox.ca@gmail.com. IDs stayed Label_19/20/21/24/25 after the
+# 4 sept 2026 rename GROS-* → Grok-* (same IDs, new display names).
+# Canonical queue STATE = Grok-File. NOX-À-traiter is a synonym. Dual-write both.
+# Agent name = Grokbot / Grok. Labels must say Grok, never GROS.
+LABEL_FILE = "Grok-File"
 LABEL_FILE_ALIAS = "NOX-À-traiter"
-LABEL_IN_PROGRESS = "GROS-En-cours"
+LABEL_IN_PROGRESS = "Grok-En-cours"
 LABEL_IN_PROGRESS_ALIAS = "NOX-En-cours"
-LABEL_SKIP = "GROS-Skip"
+LABEL_SKIP = "Grok-Skip"
 LABEL_PROCESSED = "NOX-Processed"
 LABEL_SPAM = "NOX-Spam"
 LABEL_DRAFT_IA = "Brouillon IA"
 LABEL_SOUMISSION = "Soumission"
 LABEL_URGENT = "NOX-URGENT"
-LABEL_SCHEDULE = "GROS-Livraison"
-LABEL_BILLING = "GROS-Acompte"
+LABEL_SCHEDULE = "Grok-Livraison"
+LABEL_BILLING = "Grok-Acompte"
 
 FILE_LABELS = (LABEL_FILE, LABEL_FILE_ALIAS)
 IN_PROGRESS_LABELS = (LABEL_IN_PROGRESS, LABEL_IN_PROGRESS_ALIAS)

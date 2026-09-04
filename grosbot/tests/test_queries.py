@@ -2,6 +2,7 @@ from grosbot.queries import (
     LABEL_BILLING,
     LABEL_FILE,
     LABEL_FILE_ALIAS,
+    LABEL_IDS,
     LABEL_IN_PROGRESS,
     LABEL_SKIP,
     LABEL_SCHEDULE,
@@ -31,11 +32,16 @@ def test_urgent_query_is_new_mail_only():
     assert LABEL_URGENT in URGENT_QUERY
 
 
-def test_queue_labels_stay_gros_gmail_names():
-    assert LABEL_FILE == "GROS-File"
-    assert LABEL_IN_PROGRESS == "GROS-En-cours"
-    assert LABEL_SKIP == "GROS-Skip"
-    assert LABEL_SCHEDULE == "GROS-Livraison"
-    assert LABEL_BILLING == "GROS-Acompte"
+def test_queue_labels_are_grok_gmail_names():
+    assert LABEL_FILE == "Grok-File"
+    assert LABEL_IN_PROGRESS == "Grok-En-cours"
+    assert LABEL_SKIP == "Grok-Skip"
+    assert LABEL_SCHEDULE == "Grok-Livraison"
+    assert LABEL_BILLING == "Grok-Acompte"
+    assert "GROS-File" not in QUEUE_QUERY
     assert LABEL_FILE in QUEUE_QUERY
-    assert "Grok-File" not in QUEUE_QUERY
+    assert LABEL_IDS[LABEL_FILE] == "Label_19"
+    assert LABEL_IDS[LABEL_IN_PROGRESS] == "Label_20"
+    assert LABEL_IDS[LABEL_SKIP] == "Label_21"
+    assert LABEL_IDS[LABEL_SCHEDULE] == "Label_24"
+    assert LABEL_IDS[LABEL_BILLING] == "Label_25"
