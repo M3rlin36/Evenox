@@ -7,6 +7,15 @@ description: Suivi Évenox ultra-simple. À utiliser pour le courriel du matin, 
 
 Alexandre ouvre **une page** et reçoit **un courriel**. Rien d’autre.
 
+La page et le courriel n’ont que ça :
+
+- **À faire :** [noms] — lien Pipeline
+- **On n’écrit pas :** [noms] — lien Pipeline
+- **An passé :** [noms] — lien Pipeline
+- Réponds **OUI**, **NON** ou **sauf [nom]**
+
+Pas de mode d’emploi. Pas de tableaux. Pas de Trop tôt / Date passée / Perdus.
+
 ## Sources
 
 1. Notion **Suivis** — `collection://e5929c01-4c1d-4f5f-8741-ec76e89034af`
@@ -23,7 +32,7 @@ Alexandre ouvre **une page** et reçoit **un courriel**. Rien d’autre.
 - Logo : https://evenox.ca/wp-content/uploads/2025/01/Creation-sans-titre-13.png
 - Ton : premium, accessible, une seule question. Interdit : cheap, promo, discount
 
-## Répondre (4 mots, pas de numéros)
+## Répondre
 
 - **OUI** — envoyer les relances du jour
 - **NON** — n’envoyer rien
@@ -35,32 +44,23 @@ Alexandre ouvre **une page** et reçoit **un courriel**. Rien d’autre.
 
 - Jusqu’au **10 septembre 2026** : aucun envoi client sans **OUI**.
 - À partir du **11 septembre 2026** : envoyer le gabarit, noter Envoyé.
-- **Deux portes avant toute relance** (remplir `Dépôt` + `Conversation` sur la fiche) :
-  1. Confirmation / dépôt déjà faits → Statut `Pas de suivi`. On n’écrit pas.
-  2. Conversation aujourd’hui ou récente (lui ou toi) → Statut `Pas de suivi`. On n’écrit pas.
-- Client répond → Séquence `Pause`, Étape `Répondu`, Type `Réponse client`, lien Gmail.
+- **Deux portes avant toute relance** (interne, pas sur la page) :
+  1. Confirmation / dépôt déjà faits → on n’écrit pas.
+  2. Conversation aujourd’hui ou récente → on n’écrit pas.
+- Client répond → Séquence `Pause`. Stop relance.
 - J+7 = **appel** dans le courriel du matin. Jamais avant 7 jours.
-- Devis < 800 $ : relance courriel seule (sauf l’appel J+7).
-- **Perdu** (SP Canada, Juliana Garcia, ou si Alexandre le dit) → Statut Perdu, Type Perdu, Séquence Stop. Ne plus écrire.
-- **An passé** : déjà servi = dépôt `Payé`, `Pas de suivi`. Pas une relance. Lister les contrats livrés l’an passé sur Aujourd hui, avec un lien Pipeline par client.
-- Chaque fiche Suivis a **Dossier** (relation Pipeline). Sur Aujourd hui, le nom du client ouvre le dossier.
-- Grosses factures : toujours remplir **Contexte**.
-- Après un envoi réel seulement : `Prochaine relance` + `Étape suivi` + fichier `obsidian/Clients/`.
+- **Perdu** (SP Canada, Juliana Garcia, ou si Alexandre le dit) → ne plus écrire. Ne pas lister sur la page.
+- **An passé** : déjà servi. Pas une relance, sauf **OUI** pour un nom.
+- Chaque nom sur la page = mention Pipeline.
+- Après un envoi réel seulement : mettre à jour Pipeline + `obsidian/Clients/`.
 
 ## Courriel du matin
 
-À `evenox.ca@gmail.com`. HTML branding violet + logo.
+À `evenox.ca@gmail.com`. Court. Violet + logo.
 
 Objet : `[SUIVI] AAAA-MM-JJ`
 
-1. Quoi faire (1 phrase)
-2. Aujourd hui / Demain
-3. Grosses factures + contexte
-4. An passé (si à valider)
-5. Appels J+7
-6. Réponses clients (lien Gmail)
-
-Fin : `Réponds OUI, NON, sauf [nom] ou stop [nom].`
+Même texte que la page. Fin : `Réponds OUI, NON ou sauf [nom].`
 
 ## Gabarits
 
