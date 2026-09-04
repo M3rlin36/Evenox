@@ -12,7 +12,7 @@
 
 Elle a écrit le 25 août : ouverte à d’autres horaires. Pas de dépôt. Devis 5591 $ jamais envoyé. Fil : https://mail.google.com/mail/u/0/#inbox/1a01a7fe5256f1ae
 
-Pas une relance gabarit. C’est à toi de répondre sur les heures, ou de ne pas prendre le contrat.
+Pas une relance gabarit. **À faire :** dis tes heures (pas 16 h–minuit × 3). Ensuite le devis. Ne pas inventer les heures.
 
 **Objet si devis :** Devis 17 septembre — Festipod
 

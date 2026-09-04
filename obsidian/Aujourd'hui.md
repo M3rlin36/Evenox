@@ -4,7 +4,7 @@ Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
 **Qui doit bouger ?**
 **Commence par Joëlle** — appelle (Radio-Canada, 21 sept).  
-Puis Emilie — envoie le devis (5591 $). Puis Dahlia — oui ou non (500 $ TTC, 13 sept).  
+Puis Emilie — dis tes heures (Festipod). Puis Dahlia — oui ou non (500 $ TTC, 13 sept).  
 OUI n’écrit que Mathieu.
 
 ## C’est à toi — ce matin
@@ -17,9 +17,9 @@ OUI n’écrit que Mathieu.
 **Objet :** Devis 21 septembre — Radio-Canada  
 Pas de commande Booqable.
 
-**Emilie Brien** — Festipod — ce matin · pas payé · 17–19 sept · 5591 $  
-Devis jamais parti.  
-**À faire :** envoie le devis 5591 $. Le dépôt garde le 17 sept.  
+**Emilie Brien** — Festipod — ce matin · elle a écrit · 17–19 sept  
+Ouverte à d’autres horaires. Pas 16 h–minuit × 3.  
+**À faire :** dis tes heures. Ensuite le devis. Le dépôt garde le 17 sept.  
 **Objet :** Devis 17 septembre — Festipod  
 [Booqable #1758](https://evenox.booqable.com/orders/fcc556d7-09b2-4d3a-963a-d1b678be0cf9)
 

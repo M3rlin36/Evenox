@@ -111,3 +111,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** Joëlle a un cellulaire (438) et « Si pas de réponse » = devis par courriel seulement.
 
 **Ajout :** **Si pas de réponse :** texto le même message + devis. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 12 — 4 sept 2026 05 h 45 Toronto
+
+**Question :** on n’a pas leurs heures : on envoie le devis quand même ?
+
+**Déjà en place ailleurs :** proposer tes heures, pas le devis du contrat refusé. Un choix clair. Ensuite seulement le chiffre.
+
+**Ce qui cloche chez nous :** Emilie = « envoie le devis 5591 $ ». Alexandre a déjà dit non (16 h–minuit × 3, 24 août). Elle a écrit le 25 août : ouverte à d’autres horaires. On lui doit les heures.
+
+**Ajout :** Emilie = **dis tes heures**, ensuite le devis. Aucun nouveau lead. Pas de courriel à Alexandre.
