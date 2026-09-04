@@ -20,6 +20,9 @@ Perdus (ne plus écrire) : SP Canada, Juliana Garcia.
 
 Avant chaque relance : si le dépôt est déjà payé, ou s’il y a déjà une conversation aujourd’hui / récente → Pas de suivi.
 
+Chaque client sur Aujourd hui a un lien Pipeline (nom cliquable ou colonne Dossier).
+An passé = contrats livrés l’an passé, pas une relance, sauf si Alexandre écrit OUI pour un nom.
+
 Branding : violet #5E17EB, logo evenox.ca.
 
 Si Alexandre écrit `dispatch`, `suivi`, `relances` ou `aujourd’hui` : suivre `evenox-suivi`.

@@ -42,7 +42,8 @@ Alexandre ouvre **une page** et reçoit **un courriel**. Rien d’autre.
 - J+7 = **appel** dans le courriel du matin. Jamais avant 7 jours.
 - Devis < 800 $ : relance courriel seule (sauf l’appel J+7).
 - **Perdu** (SP Canada, Juliana Garcia, ou si Alexandre le dit) → Statut Perdu, Type Perdu, Séquence Stop. Ne plus écrire.
-- **An passé** : déjà servi = dépôt `Payé`, `Pas de suivi`. Pas une relance.
+- **An passé** : déjà servi = dépôt `Payé`, `Pas de suivi`. Pas une relance. Lister les contrats livrés l’an passé sur Aujourd hui, avec un lien Pipeline par client.
+- Chaque fiche Suivis a **Dossier** (relation Pipeline). Sur Aujourd hui, le nom du client ouvre le dossier.
 - Grosses factures : toujours remplir **Contexte**.
 - Après un envoi réel seulement : `Prochaine relance` + `Étape suivi` + fichier `obsidian/Clients/`.
 
