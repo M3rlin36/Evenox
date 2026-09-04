@@ -16,7 +16,7 @@ Livraison lundi 21 sept dès 9 h. Retour jeudi 24 sept dès 9 h.
 
 Devis site abandonné à 0 $. Pas de commande Booqable.
 
-Pas une relance. Envoyer le devis.
+Pas une relance. Appelle d’abord (438-342-8309), ensuite le devis. Le dépôt garde le 21 sept.
 
 ## Fil
 

@@ -16,8 +16,9 @@ Chaque fiche :
 - **Nom** (seul, lisible)
 - **Date** de l’event ou du dernier mot
 - **Ce qui s’est passé** (1 ligne)
-- **À faire** — un verbe + un objet. Si c’est un devis : « Le dépôt garde le [date]. » Jamais « just checking in ».
+- **À faire** — un verbe + un objet. Lead inbound avec téléphone : **appelle** d’abord, ensuite le devis. Si c’est un devis : « Le dépôt garde le [date]. » Jamais « just checking in ».
 - **Booqable** si une commande existe. Sinon : « Pas de commande Booqable ».
+- Téléphone sur la fiche seulement si l’action est un appel.
 
 Un seul lien Notion : la page [Aujourd hui](https://app.notion.com/p/3d031d285ea681309e1afbc591262304). Jamais un lien Pipeline par client.
 
@@ -30,7 +31,7 @@ Sections, une fiche après l’autre :
 - **On attend** — eux doivent revenir
 - **An passé** — « vous le refaites ? » seulement si leur saison est dans 8–12 semaines
 
-Étiquettes enfant : **en premier** / **c’est à toi** / **elle a écrit** / **pas payé** / **on attend** / **fenêtre** / **trop tôt**
+Étiquettes enfant : **en premier** / **appelle** / **c’est à toi** / **elle a écrit** / **pas payé** / **on attend** / **fenêtre** / **trop tôt**
 
 Journal des ajouts : `obsidian/Journal-nuit.md`. Un ajout par passage. Pas de CRM.
 

@@ -21,3 +21,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** les fiches disaient quoi s’est passé, pas quoi faire. Emilie 5591 $ sans « envoie le devis ». Joëlle sans « le dépôt garde le 21 sept ».
 
 **Ajout :** ligne **À faire** sur chaque fiche. Gabarit `devis-premier.md`. Aucun nouveau lead Gmail. Pas de courriel à Alexandre.
+
+## Tick 3 — 3 sept 2026 23 h 00 Toronto
+
+**Question :** un lead site le soir, on écrit ou on appelle le matin ?
+
+**Déjà en place ailleurs :** appel d’abord (surtout inbound). Le voicemail seul perd le lead. Courriel de devis ensuite. Le dépôt garde la date.
+
+**Ce qui cloche chez nous :** Joëlle a un numéro (438-342-8309) et un avis « appeler dans l’heure ». La fiche disait seulement « envoie le devis ». Le timer matin demandait encore des numéros (1 3 7).
+
+**Ajout :** Joëlle = **appelle** + numéro. Règle skill : inbound avec téléphone → appel d’abord. Timer matin corrigé (OUI / NON / sauf). Pas de nouveau lead. Pas de courriel à Alexandre.

@@ -3,13 +3,13 @@
 Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
 **Qui doit bouger ?**
-**Commence par Joëlle** — elle a demandé ce soir (Radio-Canada, 21 sept). Puis Emilie (devis 5591 $). OUI n’écrit que Mathieu.
+**Commence par Joëlle** — appelle-la (Radio-Canada, 21 sept). Puis Emilie (devis 5591 $). OUI n’écrit que Mathieu.
 
 ## C’est à toi
 
-**Joëlle Des Rosiers** — en premier · elle a écrit · 21–24 sept  
+**Joëlle Des Rosiers** — en premier · appelle · 21–24 sept  
 40 tables 6×18, 3 tables 8×30, nappes. Livrer lundi 9 h, 1000 Papineau.  
-**À faire :** envoie le devis. Le dépôt garde le 21 sept.  
+**À faire :** appelle 438-342-8309. Ensuite le devis. Le dépôt garde le 21 sept.  
 Pas de commande Booqable.
 
 **Emilie Brien** — c’est à toi · pas payé · 17–19 sept · 5591 $  
