@@ -91,3 +91,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** Notion avait 5 fiches An passé (Linq + Dylan + Manon + Christina + Radiologix). Un enfant n’arrive plus à Joëlle.
 
 **Ajout :** An passé = Linq (**fenêtre**) + 2 lignes **trop tôt**. Skill : trop tôt groupé. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 10 — 4 sept 2026 04 h 15 Toronto
+
+**Question :** les 3 premières lignes d’un huddle du matin, on y met qui ?
+
+**Déjà en place ailleurs :** les 2–3 dossiers live, un verbe chacun. Pas seulement le plus gros $. L’event le plus proche reste visible.
+
+**Ce qui cloche chez nous :** « Qui doit bouger » disait Joëlle puis Emilie. Dahlia (13 sept, elle a écrit) n’était pas en haut.
+
+**Ajout :** les 3 **ce matin** en haut — appelle / envoie / oui ou non. Aucun nouveau lead. Pas de courriel à Alexandre.

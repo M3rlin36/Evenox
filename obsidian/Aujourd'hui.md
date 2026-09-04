@@ -3,7 +3,9 @@
 Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
 **Qui doit bouger ?**
-**Commence par Joëlle** — appelle-la (Radio-Canada, 21 sept). Puis Emilie (devis 5591 $). OUI n’écrit que Mathieu.
+**Commence par Joëlle** — appelle (Radio-Canada, 21 sept).  
+Puis Emilie — envoie le devis (5591 $). Puis Dahlia — oui ou non (500 $ TTC, 13 sept).  
+OUI n’écrit que Mathieu.
 
 ## C’est à toi — ce matin
 
