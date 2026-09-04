@@ -5,7 +5,9 @@ description: File Grosbot / Cerveau. À utiliser pour les courriels entrants, Gr
 
 # Grosbot — ne pas oublier un courriel
 
-Grosbot (Cerveau / Dispatch / Grok) n’a **pas** de mémoire. La file, c’est Gmail.
+Grosbot (Cerveau / Dispatch / Grok) = **Patron Evenox**. 3 directeurs dispatchent 11 travailleurs. **JAMAIS les 11 en parallèle.** Courriel = TRI : 0 envoi. La file, c’est Gmail.
+
+Grosbot n’a **pas** de mémoire. Étiqueter avant de promettre.
 
 ## Pourquoi il oubliait
 

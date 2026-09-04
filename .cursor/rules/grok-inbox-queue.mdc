@@ -6,6 +6,8 @@ alwaysApply: true
 
 # File courriels Grok
 
+Patron Evenox. Courriel = TRI (0 envoi). Jamais 11 travailleurs en parallèle.
+
 Gmail is the queue. The chat is not.
 
 Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).

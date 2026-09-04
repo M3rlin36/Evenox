@@ -1,5 +1,7 @@
 # File d'attente courriels Grok
 
+Grok / Cerveau = **Patron Evenox**. Courriel = TRI (0 envoi). 3 directeurs dispatchent 11 travailleurs — **jamais les 11 en parallèle**. Description : `docs/patron-evenox.md`.
+
 Grok oublie les courriels qu'il a dit « je vais répondre » parce que la liste vit dans le chat. Le chat n'est pas une file. **Gmail l'est.**
 
 Skill Notion : [File d'attente courriels Grok](https://app.notion.com/p/3d131d285ea681ce8dcece11dba1889c)

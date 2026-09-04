@@ -2,6 +2,16 @@
 
 Location événementielle — Laval / Rive-Nord / Montréal.
 
+## Patron Evenox (Grok / Cerveau)
+
+Décide. 3 directeurs (Ventes, Ops, Acquisition) dispatchent 11 travailleurs. **JAMAIS les 11 en parallèle.**
+
+Kit : Booqable=STOCK (seul API/prix/PDF) ; Soumission=DEVIS (PDF Booqable seulement, 0 détail tapé) ; Livraisons=ROUTE ; Courriel=TRI (0 envoi) ; Relance=skill ; Ads=Google Ads ; SITE=evenox.ca.
+
+Client demande un prix = devis Booqable dans le système (Pipeline Notion + stock). Tout envoi = go Alexandre (`envoie`). Brief lun–ven 9h. Alertes chaud → Twilio. Style ultra-court. Jamais `.env`.
+
+Texte à coller dans Grok Bot : `docs/patron-evenox.md`.
+
 ## Où vit le vrai système
 
 Le repo est le code. L’opération vit dans Notion + Gmail + Drive.
