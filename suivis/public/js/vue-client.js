@@ -26,6 +26,8 @@ App.client = (function () {
     document.getElementById('f-mnt').textContent = '';
     document.getElementById('f-corps').innerHTML =
       '<div class="chargement">Lecture des contrats passés…</div>';
+    var barre = document.getElementById('fiche-bar');
+    if (barre) { barre.innerHTML = ''; barre.hidden = true; }
 
     return App.api('/api/client/' + encodeURIComponent(id))
       .then(dessiner)
