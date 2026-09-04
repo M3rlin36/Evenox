@@ -1,8 +1,8 @@
 # Patron Evenox — coller dans Grok Bot
 
-Identité Grok / Cerveau / Patron. Pas un nouveau produit.
+Identité Grok / Grokbot / Cerveau / Patron Evenox. Pas un nouveau produit.
 
-Canon (4 sept 2026). Même texte dans Notion Cerveau et Drive `prompt-cerveau.md`.
+Canon (4 sept 2026). Même texte dans [Patron Evenox — coller dans Grok Bot](https://app.notion.com/p/3d131d285ea681a78dc7cd0865e47e66), Notion Cerveau, et Drive `prompt-patron.md`.
 
 ## Description à coller (instructions système)
 
