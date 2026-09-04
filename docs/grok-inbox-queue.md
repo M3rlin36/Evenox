@@ -48,7 +48,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 3. File vide = une recherche, `QUEUE VIDE`, **stop**.
 4. MCP `search_threads` : `label:Grok-File` (nom), pas `label:Label_19`.
 5. Ne jamais marquer lu.
-6. Jamais « j’envoie » sans preuve. `send_message` + `get_thread` **même tour**. `prove_sent` : id + `SENT` + `from:evenox.ca@gmail.com`. Sinon `PAS PARTI — brouillon encore là.` Un vieux SENT sur le fil ne compte pas. Preuve → coller `ENVOYÉ` (À / Heure / ID) puis `Grok-Envoyé`.
+6. Jamais « j’envoie ». Preuve = coller le mail (`Parti.` + À + Objet + texte). Sinon `Pas parti. Le brouillon est encore là.` Pas d’ID. Pas aller dans Gmail.
 
 ## Requêtes cheap
 

@@ -21,6 +21,6 @@ Discovery only if the queue is empty, and only `newer_than:2d` with subject/send
 
 Until 10 September 2026: drafts only. Never send without Alexandre saying `envoie`.
 
-Never say « j'envoie » / « c'est parti ». After `send_message`, `get_thread` in the same turn. `prove_sent` must see system `SENT` on that message id. Then paste `ENVOYÉ` (À / Heure / ID) and label `Grok-Envoyé`. Else `PAS PARTI — brouillon encore là.` An older SENT on the thread is not proof.
+Never say « j'envoie » / « c'est parti ». After `send_message`, `get_thread` PLAIN_TEXT same turn. Paste `Parti.` + À + Objet + the mail body. Else `Pas parti. Le brouillon est encore là.` No Gmail IDs in the chat.
 
 Full playbook: `docs/grok-inbox-queue.md`.

@@ -79,31 +79,35 @@ class QueueAction:
 
 @dataclass(frozen=True)
 class SentProof:
-    """Same-turn send proof. Chat is not proof. Gmail SENT is."""
+    """Same-turn send proof. Chat is not proof. Gmail SENT is.
+
+    Alexandre sees the mail itself (who / subject / body). Never an ID.
+    """
 
     ok: bool
     message_id: str = ""
     thread_id: str = ""
     to: str = ""
+    subject: str = ""
+    body: str = ""
     sent_at: str = ""
     reason: str = ""
 
     def line(self) -> str:
         if not self.ok:
-            extra = self.reason.strip()
-            if extra:
-                return f"PAS PARTI — brouillon encore là. {extra}"
-            return "PAS PARTI — brouillon encore là."
-        return (
-            f"ENVOYÉ\n"
-            f"À : {self.to}\n"
-            f"Heure : {self.sent_at}\n"
-            f"ID : {self.message_id}"
-        )
+            return "Pas parti. Le brouillon est encore là."
+        bits = ["Parti.", f"À : {self.to}"]
+        if self.subject:
+            bits.append(f"Objet : {self.subject}")
+        text = (self.body or "").strip()
+        if text:
+            bits.append("")
+            bits.append(text)
+        return "\n".join(bits)
 
 
 # Future-tense claims that made Alexandre wait on Gmail. Banned unless
-# prove_sent already returned ENVOYÉ in THIS turn.
+# prove_sent already returned Parti. in THIS turn.
 UNPROVEN_SEND_PHRASES = (
     "j'envoie",
     "j’envoie",
@@ -259,7 +263,7 @@ def finish(thread: Thread, *, drafted: bool) -> QueueAction:
             (LABEL_PROCESSED, LABEL_DRAFT_IA),
             FILE_LABELS + IN_PROGRESS_LABELS,
             QueueState.DRAFTED,
-            "brouillon prêt. PAS PARTI. Attendre envoie Alexandre.",
+            "brouillon prêt. Pas parti.",
         )
     return QueueAction(
         thread.id,
@@ -274,7 +278,7 @@ def mark_sent(thread: Thread, proof: SentProof) -> QueueAction:
     """Stamp Grok-Envoyé only after prove_sent.ok. Never on a promise."""
     if not proof.ok:
         raise QueueError(
-            "PAS PARTI — pas de preuve SENT. Grok-Envoyé interdit."
+            "Pas parti. Pas de preuve SENT. Grok-Envoyé interdit."
         )
     return QueueAction(
         thread.id,
@@ -338,6 +342,22 @@ def _to_of(msg: dict) -> str:
 
 def _date_of(msg: dict) -> str:
     return str(_field(msg, "date", "Date", "internalDate", "internal_date") or "")
+
+
+def _subject_of(msg: dict) -> str:
+    return str(_field(msg, "subject", "Subject") or "").strip()
+
+
+def _body_of(msg: dict) -> str:
+    raw = _field(
+        msg,
+        "plaintextBody",
+        "plaintext_body",
+        "plainText",
+        "body",
+        "snippet",
+    ) or ""
+    return str(raw).strip()
 
 
 def _messages_of(thread: object) -> list[dict]:
@@ -437,16 +457,20 @@ def prove_sent(
         message_id=sid,
         thread_id=tid,
         to=_to_of(match),
+        subject=_subject_of(match),
+        body=_body_of(match),
         sent_at=_date_of(match),
         reason="gmail SENT",
     )
 
 
 def is_unproven_send_claim(text: str) -> bool:
-    """True if chat claims a send without the ENVOYÉ proof block."""
+    """True if chat claims a send without the Parti. block (À + the mail)."""
     if not text:
         return False
-    if "ENVOYÉ" in text and "ID :" in text:
+    if text.startswith("Parti.") and "À :" in text:
+        return False
+    if "ENVOYÉ" in text and "À :" in text:
         return False
     lowered = text.casefold()
     return any(phrase in lowered for phrase in UNPROVEN_SEND_PHRASES)

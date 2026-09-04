@@ -36,7 +36,7 @@ Nate Herk ([vidéo Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)) : éti
 - MCP cherche `label:Grok-File` (nom), pas `label:Label_19`.
 - Ne jamais scanner `is:unread`. File vide = `QUEUE VIDE`. Pas de boucle 15/30 min.
 - Laisser unread. Jamais d’envoi client sans le mot **envoie** d’Alexandre.
-- Jamais « j’envoie » / « c’est parti ». Après `send_message` : `get_thread` **même tour**. Coller `ENVOYÉ` (À / Heure / ID) seulement si `SENT` est sur cet id. Sinon `PAS PARTI — brouillon encore là.` Puis `Grok-Envoyé`.
+- Jamais « j’envoie ». Après envoi : coller `Parti.` + À + Objet + le texte. Sinon `Pas parti. Le brouillon est encore là.` Pas d’ID.
 
 Triage cheap : `python -m pytest grosbot/tests`.
 

@@ -133,7 +133,7 @@ def test_finish_draft_is_not_a_send():
     action = finish(_t("1", labels=(LABEL_IN_PROGRESS,)), drafted=True)
     assert LABEL_DRAFT_IA in action.add_labels
     assert LABEL_SENT not in action.add_labels
-    assert "PAS PARTI" in action.reason
+    assert "Pas parti" in action.reason
 
 
 def _live_thread(**sent_overrides):
@@ -144,6 +144,8 @@ def _live_thread(**sent_overrides):
         "date": "2026-09-04T22:44:56Z",
         "labelIds": ["SENT"],
         "threadId": "thread-1",
+        "subject": "RE: Votre devis Evenox",
+        "plaintextBody": "Bonjour,\nVoici le lien de dépôt.\n",
     }
     sent.update(sent_overrides)
     return {
@@ -170,10 +172,11 @@ def test_prove_sent_ok_on_live_gmail_shape():
     }
     proof = prove_sent(send_result=send_result, thread=_live_thread())
     assert proof.ok is True
-    assert proof.line().startswith("ENVOYÉ")
+    assert proof.line().startswith("Parti.")
     assert "À : client@example.com" in proof.line()
-    assert "ID : msg-sent-1" in proof.line()
-    assert "Heure : 2026-09-04T22:44:56Z" in proof.line()
+    assert "Objet : RE: Votre devis Evenox" in proof.line()
+    assert "Voici le lien de dépôt." in proof.line()
+    assert "ID :" not in proof.line()
 
 
 def test_prove_sent_accepts_nested_send_message_and_snake_case():
@@ -188,6 +191,8 @@ def test_prove_sent_accepts_nested_send_message_and_snake_case():
                 "date": "2026-09-04T22:44:56Z",
                 "label_ids": ["SENT"],
                 "thread_id": "thread-1",
+                "subject": "RE: Votre devis Evenox",
+                "plaintext_body": "Bonjour,\nVoici le lien.",
             }
         ],
     }
@@ -198,7 +203,7 @@ def test_prove_sent_accepts_nested_send_message_and_snake_case():
 def test_prove_sent_fails_without_send_id():
     proof = prove_sent(send_result={}, thread=_live_thread())
     assert proof.ok is False
-    assert proof.line().startswith("PAS PARTI — brouillon encore là.")
+    assert proof.line() == "Pas parti. Le brouillon est encore là."
 
 
 def test_prove_sent_fails_when_get_thread_omits_draft():
@@ -213,7 +218,7 @@ def test_prove_sent_old_sent_is_not_proof_of_new_send():
     send_result = {"id": "msg-not-actually-sent", "labelIds": ["SENT"]}
     proof = prove_sent(send_result=send_result, thread=_live_thread())
     assert proof.ok is False
-    assert "ENVOYÉ" not in proof.line()
+    assert "Parti." not in proof.line()
 
 
 def test_prove_sent_fails_without_sent_label():
@@ -227,7 +232,7 @@ def test_prove_sent_fails_without_sent_label():
 
 
 def test_mark_sent_refuses_without_proof():
-    with pytest.raises(QueueError, match="PAS PARTI"):
+    with pytest.raises(QueueError, match="Pas parti"):
         mark_sent(_t("thread-1"), SentProof(ok=False, reason="get_thread manquant."))
 
 
@@ -247,5 +252,11 @@ def test_mark_sent_stamps_grok_envoye_after_proof():
 def test_j_envoie_without_proof_block_is_banned():
     assert is_unproven_send_claim("j'envoie Jacqueline") is True
     assert is_unproven_send_claim("c'est parti") is True
-    proven = "ENVOYÉ\nÀ : client@example.com\nHeure : 2026-09-04T22:44:56Z\nID : msg-sent-1"
+    proven = (
+        "Parti.\n"
+        "À : client@example.com\n"
+        "Objet : RE: Votre devis Evenox\n"
+        "\n"
+        "Bonjour,\nVoici le lien de dépôt."
+    )
     assert is_unproven_send_claim(proven) is False

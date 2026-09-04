@@ -52,18 +52,12 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 3. Triage cheap (en-têtes, `grosbot.classify`) → file + type Nate, ou `NOX-Spam`. Max 8. Ne pas marquer lu.
 4. `claim_next` : 1 fil. Dual-write En-cours, retirer File + alias.
 5. Lire **tout** ce fil. Un message Alexandre = un dossier (Nom / Date / Client veut / Fait / Action).
-6. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e. Brouillon = `PAS PARTI`. Ne jamais dire « j’envoie ».
-7. Après `envoie` : `send_message`, puis **dans le même tour** `get_thread` (METADATA_ONLY). `prove_sent` (`grosbot.queue`). Preuve = id `send_message` **et** ce même id dans le fil, `from:evenox.ca@gmail.com`, libellé système `SENT`. Un vieux SENT sur le fil ≠ ce tour.
-   - Preuve → coller exactement :
-     ```
-     ENVOYÉ
-     À : …
-     Heure : …
-     ID : …
-     ```
-     Puis `Grok-Envoyé` + `NOX-Processed` + `Auto-répondu`. Retirer File / En-cours / `Brouillon IA`.
-   - Sinon → `PAS PARTI — brouillon encore là.` Stop. Pas de `Grok-Envoyé`.
-8. Fermer un brouillon (sans envoi) : `NOX-Processed` + `Brouillon IA` (ou `Grok-Skip` + `NOX-Processed`). Retirer File **et** En-cours (les deux synonymes).
+6. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
+7. Après `envoie` : `send_message` puis `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.
+   - Parti → coller `Parti.` + À + Objet + **le texte du mail**. C’est la preuve. Pas d’ID. Pas « va voir Gmail ».
+   - Sinon → `Pas parti. Le brouillon est encore là.`
+   - En silence : `Grok-Envoyé` seulement si Parti.
+8. Fermer un brouillon (sans envoi) : `NOX-Processed` + `Brouillon IA`. Retirer File **et** En-cours.
 9. S’il reste de la file : une ligne « file : N restants ». Stop.
 
 ## Coût
@@ -78,10 +72,17 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 
 Le flux « Évenox — Canal courriel » crée déjà devis Booqable + brouillons. Grokbot **complète** la file, il ne reconstruit pas n8n.
 
-## Preuve d’envoi (même tour)
+## Preuve (simple)
 
-Alexandre ne doit plus attendre Gmail pour savoir si c’est parti.
+Alexandre doit voir **le mail**. Pas un ID. Pas aller dans Gmail.
 
-**Interdit** sans le bloc `ENVOYÉ` du même tour : « j’envoie », « je vais envoyer », « c’est parti », « je viens d’envoyer ».
+```
+Parti.
+À : …
+Objet : …
 
-`get_thread` cache les brouillons. Si `send_message` n’a rien collé en SENT, le nouveau message est absent → `PAS PARTI`.
+Bonjour …
+```
+
+Sinon : `Pas parti. Le brouillon est encore là.`
+Interdit : « j’envoie », « c’est parti ». Un vieux SENT sur le fil ne compte pas.
