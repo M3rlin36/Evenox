@@ -1,0 +1,21 @@
+---
+description: Grok email queue — Gmail labels are memory, never the chat
+globs:
+alwaysApply: true
+---
+
+# File courriels Grok
+
+Gmail is the queue. The chat is not.
+
+Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).
+One run = one dossier. Never "I'll do the rest after".
+Empty queue query `label:NOX-À-traiter -label:NOX-Processed` → reply `QUEUE VIDE` and stop. Do not open Notion or Booqable.
+
+Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).
+Noise (Alarm.com, newsletters) → `NOX-Spam` (`Label_4`) + `NOX-Processed`.
+Discovery only if the queue is empty, and only `newer_than:2d` with subject/sender — never the 20k unread inbox.
+
+Until 10 September 2026: drafts only. Never send without Alexandre saying `envoie`.
+
+Full playbook: `docs/grok-inbox-queue.md`.
