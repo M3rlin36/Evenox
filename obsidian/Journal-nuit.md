@@ -51,3 +51,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** Joëlle a Dis, mais rien si elle ne décroche pas. Le devis resterait dans la poche.
 
 **Ajout :** **Si pas de réponse :** même message + envoie le devis. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 6 — 4 sept 2026 01 h 15 Toronto
+
+**Question :** combien de noms sur la liste du matin pour closer ?
+
+**Déjà en place ailleurs :** huddle court. 2–3 dossiers qui bougent aujourd’hui. Le reste après. Trop de noms = on n’en fait aucun.
+
+**Ce qui cloche chez nous :** C’est à toi mélangeait Joëlle (ce soir) avec Justine et Annie (décembre). Un enfant ne voit plus qui d’abord.
+
+**Ajout :** **ce matin** (Joëlle, Emilie, Dahlia) et **Après** (Justine, Annie). Max 3 ce matin. Aucun nouveau lead. Pas de courriel à Alexandre.

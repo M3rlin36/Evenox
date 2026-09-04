@@ -28,12 +28,13 @@ En haut : **Qui doit bouger ?** puis **Commence par [nom]** — inbound du jour 
 
 Sections, une fiche après l’autre :
 
-- **C’est à toi** — Alexandre doit un devis, un estimé, ou une réponse (pas une relance). Tout nouveau lead Gmail/site du jour va ici.
+- **C’est à toi — ce matin** — inbound 24 h, ou event dans les 3 semaines. Max 3 noms.
+- **Après** — devis dus, event plus loin (décembre). Pas le premier regard.
 - **Si tu dis OUI** — une relance, seulement les silencieux pas payés. Question : « je garde le [date] ? »
 - **On attend** — eux doivent revenir
 - **An passé** — « vous le refaites ? » seulement si leur saison est dans 8–12 semaines
 
-Étiquettes enfant : **en premier** / **appelle** / **c’est à toi** / **elle a écrit** / **pas payé** / **on attend** / **fenêtre** / **trop tôt**
+Étiquettes enfant : **en premier** / **appelle** / **ce matin** / **après** / **c’est à toi** / **elle a écrit** / **pas payé** / **on attend** / **fenêtre** / **trop tôt**
 
 Journal des ajouts : `obsidian/Journal-nuit.md`. Un ajout par passage. Pas de CRM.
 
