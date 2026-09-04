@@ -20,6 +20,8 @@ Pas une relance. Appelle d’abord (438-342-8309), ensuite le devis.
 
 **Dis :** Allô Joëlle, Alexandre d’Évenox. J’ai votre demande pour le 21 septembre à Radio-Canada. Je vous envoie le devis ce matin — le dépôt garde la date.
 
+**Si pas de réponse :** texto le même message + envoie le devis.
+
 **Objet :** Devis 21 septembre — Radio-Canada
 
 ## Fil

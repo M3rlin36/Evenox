@@ -101,3 +101,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** « Qui doit bouger » disait Joëlle puis Emilie. Dahlia (13 sept, elle a écrit) n’était pas en haut.
 
 **Ajout :** les 3 **ce matin** en haut — appelle / envoie / oui ou non. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 11 — 4 sept 2026 05 h 00 Toronto
+
+**Question :** si le lead ne décroche pas, courriel seulement ou texto aussi ?
+
+**Déjà en place ailleurs :** le même message en SMS tout de suite, plus le devis. Le courriel seul reste non lu. 73 % des gens raccrochent au voicemail.
+
+**Ce qui cloche chez nous :** Joëlle a un cellulaire (438) et « Si pas de réponse » = devis par courriel seulement.
+
+**Ajout :** **Si pas de réponse :** texto le même message + devis. Aucun nouveau lead. Pas de courriel à Alexandre.
