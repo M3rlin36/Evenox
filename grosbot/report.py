@@ -5,7 +5,15 @@
 
 from __future__ import annotations
 
-from grosbot.queries import REPORT_LABELS
+from grosbot.queries import (
+    LABEL_DRAFT_IA,
+    LABEL_FILE,
+    LABEL_FILE_ALIAS,
+    LABEL_IN_PROGRESS,
+    LABEL_PROCESSED,
+    LABEL_SPAM,
+    REPORT_LABELS,
+)
 
 
 def weekly_from_label_stats(labels: list[dict]) -> dict[str, dict[str, int]]:
@@ -25,14 +33,14 @@ def weekly_from_label_stats(labels: list[dict]) -> dict[str, dict[str, int]]:
 
 
 def waiting_vs_done(stats: dict[str, dict[str, int]]) -> dict[str, int]:
-    file_n = stats.get("GROS-File", {}).get("threads", 0)
-    alias_n = stats.get("NOX-À-traiter", {}).get("threads", 0)
+    file_n = stats.get(LABEL_FILE, {}).get("threads", 0)
+    alias_n = stats.get(LABEL_FILE_ALIAS, {}).get("threads", 0)
     # Dual-write means the same threads may sit on both labels. Report the max.
     waiting = max(file_n, alias_n)
     return {
         "waiting": waiting,
-        "in_progress": stats.get("GROS-En-cours", {}).get("threads", 0),
-        "drafts": stats.get("Brouillon IA", {}).get("threads", 0),
-        "done": stats.get("NOX-Processed", {}).get("threads", 0),
-        "spam": stats.get("NOX-Spam", {}).get("threads", 0),
+        "in_progress": stats.get(LABEL_IN_PROGRESS, {}).get("threads", 0),
+        "drafts": stats.get(LABEL_DRAFT_IA, {}).get("threads", 0),
+        "done": stats.get(LABEL_PROCESSED, {}).get("threads", 0),
+        "spam": stats.get(LABEL_SPAM, {}).get("threads", 0),
     }

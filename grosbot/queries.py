@@ -6,8 +6,9 @@ Gmail UI accepts both. Always dual-write GROS-* and NOX-* synonyms.
 
 from __future__ import annotations
 
-# User labels created in evenox.ca@gmail.com (IDs are Gmail-side; names are stable).
+# User labels in evenox.ca@gmail.com (IDs are Gmail-side; names are stable).
 # Canonical queue STATE = GROS-File. NOX-À-traiter is a synonym. Dual-write both.
+# Agent name = Grokbot. Do not rename live Gmail labels GROS-* → Grok-*.
 LABEL_FILE = "GROS-File"
 LABEL_FILE_ALIAS = "NOX-À-traiter"
 LABEL_IN_PROGRESS = "GROS-En-cours"

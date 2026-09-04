@@ -13,10 +13,25 @@ import re
 from grosbot.queries import (
     LABEL_BILLING,
     LABEL_FILE,
+    LABEL_FILE_ALIAS,
+    LABEL_IN_PROGRESS,
+    LABEL_IN_PROGRESS_ALIAS,
     LABEL_SCHEDULE,
+    LABEL_SKIP,
     LABEL_SOUMISSION,
     LABEL_URGENT,
 )
+
+# Live names (GROS-*) plus a Grok-* misspelling if a header ever says it.
+_FILE_N = {LABEL_FILE.lower(), LABEL_FILE_ALIAS.lower(), "grok-file"}
+_IN_PROGRESS_N = {
+    LABEL_IN_PROGRESS.lower(),
+    LABEL_IN_PROGRESS_ALIAS.lower(),
+    "grok-en-cours",
+}
+_SKIP_N = {LABEL_SKIP.lower(), "grok-skip"}
+_BILLING_N = {LABEL_BILLING.lower(), "grok-acompte"}
+_SCHEDULE_N = {LABEL_SCHEDULE.lower(), "grok-livraison"}
 
 _IGNORE_SENDER_NEEDLES = (
     "notifications@alarm.com",
@@ -160,18 +175,13 @@ def classify(
     snippet_n = _norm(snippet)
     blob = f"{subject_n} {snippet_n}"
 
-    if "nox-processed" in labels or "gros-skip" in labels:
+    if "nox-processed" in labels or labels & _SKIP_N:
         return Classification(Decision.ALREADY_HANDLED, "already labelled done/skip")
     if "nox-spam" in labels:
         return Classification(Decision.IGNORE, "labelled NOX-Spam", kind=Kind.IGNORE)
-    if (
-        "gros-file" in labels
-        or "gros-en-cours" in labels
-        or "nox-à-traiter" in labels
-        or "nox-en-cours" in labels
-    ):
+    if labels & (_FILE_N | _IN_PROGRESS_N):
         kind = _kind_from_labels(labels, blob)
-        queue = "GROS-File" if "gros-file" in labels or "nox-à-traiter" in labels else "GROS-En-cours"
+        queue = LABEL_FILE if labels & _FILE_N else LABEL_IN_PROGRESS
         return Classification(
             Decision.ALREADY_HANDLED,
             "already in Grokbot queue",
@@ -196,7 +206,7 @@ def classify(
         return Classification(
             Decision.QUEUE,
             "site lead / abandoned quote",
-            "GROS-File",
+            LABEL_FILE,
             kind=Kind.QUOTE,
             type_label=LABEL_SOUMISSION,
         )
@@ -208,7 +218,7 @@ def classify(
         return Classification(
             Decision.QUEUE,
             "client reply in inbox" if kind is not Kind.QUOTE else "client quote thread",
-            "GROS-File",
+            LABEL_FILE,
             kind=kind,
             type_label=KIND_TYPE_LABEL[kind],
         )
@@ -219,9 +229,9 @@ def classify(
 def _kind_from_labels(labels: set[str], blob: str) -> Kind:
     if "nox-urgent" in labels:
         return Kind.EMERGENCY
-    if "gros-acompte" in labels:
+    if labels & _BILLING_N:
         return Kind.BILLING
-    if "gros-livraison" in labels:
+    if labels & _SCHEDULE_N:
         return Kind.SCHEDULE
     if "soumission" in labels:
         return Kind.QUOTE
