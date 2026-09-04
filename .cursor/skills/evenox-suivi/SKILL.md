@@ -64,7 +64,8 @@ Ne jamais relancer quelqu’un qui a déjà écrit, déjà payé, ou à qui Alex
 - **NON** — n’envoyer rien
 - **sauf [nom]** — tout sauf cette personne
 - **stop [nom]** — arrêter cette personne
-- **go [nom]** — reprendre
+- **go [nom]** — reprendre. **go** seul = OUI pour la relance du jour.
+- GO / OUI ne passe pas les portes : dépôt déjà fait = on n’écrit pas quand même.
 
 ## Règles dures
 

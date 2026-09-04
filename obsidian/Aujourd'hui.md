@@ -5,7 +5,7 @@ Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 **Qui doit bouger ?**
 **Commence par Joëlle** — appelle (Radio-Canada, 21 sept).  
 Puis Dahlia — oui ou non (500 $ TTC, 13 sept). Puis Emilie — dis tes heures (Festipod).  
-OUI = appelle Mathieu (J+7).
+Mathieu : dépôt déjà payé. On n’écrit pas.
 
 ## C’est à toi — ce matin
 
@@ -40,12 +40,12 @@ Salle seulement, livrer le jour même.
 **À faire :** réponds oui ou non pour le 5 déc.  
 [Booqable #1822](https://evenox.booqable.com/orders/68417d10-6d96-4b9b-bd55-31a4c662ab8d)
 
-## Si tu dis OUI
+## Déjà payé
 
-**Mathieu Lacroix** — KO Scène — pas payé · 16 sept  
-Silence depuis le 23 juillet. J+7 : appel, pas un courriel.  
-**À faire si OUI :** appelle — « je garde le 16 septembre ? »  
-Téléphone : pas au dossier. Pas de commande Booqable.
+**Mathieu Lacroix** — KO Scène — payé · 16–20 sept  
+Dépôt 300 $ le 12 août (Carolane). Soumission 1562. La date est gardée.  
+**À faire :** rien.  
+[Booqable #1562](https://evenox.booqable.com/orders?q=1562)
 
 ## On attend
 
@@ -58,5 +58,3 @@ Téléphone : pas au dossier. Pas de commande Booqable.
 [Booqable #841](https://evenox.booqable.com/orders?q=841)  
 **Dylan, Manon** — trop tôt (fin sept).  
 **Christina, Radiologix** — trop tôt (novembre).
-
-Réponds **OUI**, **NON** ou **sauf Mathieu**.
