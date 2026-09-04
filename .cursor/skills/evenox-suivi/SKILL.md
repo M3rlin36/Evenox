@@ -33,7 +33,7 @@ Sections, une fiche après l’autre :
 - **Après** — devis dus, event plus loin (décembre). Pas le premier regard.
 - **Si tu dis OUI** — une relance, seulement les silencieux pas payés. Question : « je garde le [date] ? »
 - **On attend** — eux doivent revenir
-- **An passé** — « vous le refaites ? » seulement si leur saison est dans 8–12 semaines
+- **An passé** — « vous le refaites ? » seulement si **fenêtre** (saison dans 8–12 semaines) : une fiche. **trop tôt** = une ligne groupée, pas une fiche chacun.
 
 Étiquettes enfant : **en premier** / **appelle** / **ce matin** / **après** / **c’est à toi** / **elle a écrit** / **pas payé** / **on attend** / **fenêtre** / **trop tôt**
 

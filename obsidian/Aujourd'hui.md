@@ -52,7 +52,8 @@ Pas de commande Booqable.
 
 ## An passé
 
-**Linq** — fenêtre (novembre). « vous le refaites ? »  
+**Linq** — fenêtre (novembre). Si OUI : « même contrat — vous le refaites ? »  
+[Booqable #841](https://evenox.booqable.com/orders?q=841)  
 **Dylan, Manon** — trop tôt (fin sept).  
 **Christina, Radiologix** — trop tôt (novembre).
 

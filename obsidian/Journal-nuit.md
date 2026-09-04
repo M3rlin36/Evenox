@@ -81,3 +81,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** Dahlia disait « réponds à ce qu’elle a écrit ». Elle a pourtant écrit : 500 $ TTC, plus de champagne, 13 sept 10 h 30–16 h. Le lien Booqable pointait #921 ; elle a répondu au devis **1826**.
 
 **Ajout :** Dahlia = **oui ou non pour 500 $ TTC**. Booqable #1826. Règle skill : budget → oui/non. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 9 — 4 sept 2026 03 h 30 Toronto
+
+**Question :** l’an passé doit-il rester sur la liste du matin ?
+
+**Déjà en place ailleurs :** huddle = ce qui bouge aujourd’hui. An passé seulement dans la fenêtre 8–12 semaines. Le reste = trop tôt, une ligne, pas une revue.
+
+**Ce qui cloche chez nous :** Notion avait 5 fiches An passé (Linq + Dylan + Manon + Christina + Radiologix). Un enfant n’arrive plus à Joëlle.
+
+**Ajout :** An passé = Linq (**fenêtre**) + 2 lignes **trop tôt**. Skill : trop tôt groupé. Aucun nouveau lead. Pas de courriel à Alexandre.
