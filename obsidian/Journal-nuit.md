@@ -11,3 +11,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** « on n’écrit pas » cachait la dette d’Alexandre (Emilie, Justine). Les nouveaux leads site n’arrivaient pas sur Aujourd’hui. Joëlle Radio-Canada a demandé ce soir — 40 tables, 21 sept — et n’était pas sur la page.
 
 **Ajout :** section **C’est à toi**. Ligne **Commence par**. Joëlle en premier. Étiquette **en premier**.
+
+## Tick 2 — 3 sept 2026 22 h 15 Toronto
+
+**Question :** comment les closers formulent le prochain pas après un devis ?
+
+**Déjà en place ailleurs :** une action seulement. Le dépôt = la date est gardée. Lien de paiement dans le devis. Pas « just checking in ».
+
+**Ce qui cloche chez nous :** les fiches disaient quoi s’est passé, pas quoi faire. Emilie 5591 $ sans « envoie le devis ». Joëlle sans « le dépôt garde le 21 sept ».
+
+**Ajout :** ligne **À faire** sur chaque fiche. Gabarit `devis-premier.md`. Aucun nouveau lead Gmail. Pas de courriel à Alexandre.

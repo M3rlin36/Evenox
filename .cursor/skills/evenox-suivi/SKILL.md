@@ -16,6 +16,7 @@ Chaque fiche :
 - **Nom** (seul, lisible)
 - **Date** de l’event ou du dernier mot
 - **Ce qui s’est passé** (1 ligne)
+- **À faire** — un verbe + un objet. Si c’est un devis : « Le dépôt garde le [date]. » Jamais « just checking in ».
 - **Booqable** si une commande existe. Sinon : « Pas de commande Booqable ».
 
 Un seul lien Notion : la page [Aujourd hui](https://app.notion.com/p/3d031d285ea681309e1afbc591262304). Jamais un lien Pipeline par client.
@@ -78,6 +79,7 @@ Objet : `[SUIVI] AAAA-MM-JJ`
 
 ## Gabarits
 
+- `obsidian/Gabarits/devis-premier.md` — premier envoi : une action, le dépôt garde la date
 - `obsidian/Gabarits/relance-j2.md`
 - `obsidian/Gabarits/relance-j4.md`
 - `obsidian/Gabarits/appel-j7.md`
