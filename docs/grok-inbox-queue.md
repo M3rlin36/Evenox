@@ -1,52 +1,76 @@
-# File d'attente courriels Grok
+# File d'attente courriels Grokbot (Nate Herk)
 
-Grok / Cerveau = **Patron Evenox**. Courriel = TRI (0 envoi). 3 directeurs dispatchent 11 travailleurs — **jamais les 11 en parallèle**. Description : `docs/patron-evenox.md`.
+Vidéo : [Nate Herk — Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)
 
-Grok oublie les courriels qu'il a dit « je vais répondre » parce que la liste vit dans le chat. Le chat n'est pas une file. **Gmail l'est.**
+L’agent s’appelle **Grokbot**. Le libellé Gmail reste `GROS-File` (déjà créé — on ne le renomme pas).
 
-Skill Notion : [File d'attente courriels Grok](https://app.notion.com/p/3d131d285ea681ce8dcece11dba1889c)
+Nate ne nettoie pas 5 200 unread. Il étiquette le courriel client, il ne draft que l’urgence, il n’envoie rien tant qu’il n’a pas dit send, et un check vide = no actions. Même chose ici, sur Evenox.
+
+Skill Notion : [File d’attente courriels Grokbot](https://app.notion.com/p/3d131d285ea681ce8dcece11dba1889c)
 Cerveau : [répondre aux courriels](https://app.notion.com/p/3d131d285ea681bc9cb4e1756d622fb2)
-Drive : `file-attente.md` dans [Obsidian — Contexte agents](https://drive.google.com/drive/folders/155w3hoR-tyERqLAHwcoDQ5Yzq0fsbWbe)
+Drive : `file-attente.md` dans [Obsidian — Contexte agents](https://drive.google.com/drive/folders/155w3hoR-tyERqLAHwcoDQ5Yzq0fsbWbe) — [fichier](https://drive.google.com/file/d/1cp8Nme5jv789FlG-ksyIJ3_vXwlqVDL6/view)
+
+## Ce que Nate a dit (courriels seulement)
+
+1. Un agent inbox dédié. Grokbot / Cerveau = cet agent. n8n reste le canal devis Booqable.
+2. Ne pas nettoyer le vieux tas unread (~20k). La valeur = le prochain urgent ne reste pas assis.
+3. Six types client : Emergency, Needs you, Quote, Schedule, Billing, Ignore.
+4. Trois habitudes : watch du **nouveau** courrier pour l’urgent ; le reste attend une liste weekday courte ; draft les réponses faciles à partir des docs.
+5. Brouillons jusqu’à confiance. Chez Evenox : jamais `send_message` sans le mot **envoie** (verrou jusqu’au 10 sept 2026).
+6. Laisser unread. L’humain voit encore le fil.
+7. Check vide = « no actions » / `QUEUE VIDE`. Stop.
+8. Feedback loop (bike method) : corriger un mauvais libellé, mettre à jour le skill.
+9. Rapport vendredi = comptes de libellés, pas un scan de 20k fils (`list_labels`).
+10. Pas de boucle 15/30 min sur toute l’inbox. Nate le faisait pour des urgences HVAC. Evenox = sweep cheap 3×/jour. Urgent = `URGENT_QUERY` newer_than:2d.
+
+## Mapping Nate → Evenox
+
+| Nate | Evenox | ID |
+|---|---|---|
+| Emergency | `NOX-URGENT` | `Label_15` |
+| Needs you (file) | `GROS-File` + `NOX-À-traiter` (dual-write) | `Label_19` + `Label_22` |
+| Quote | `Soumission` | `Label_2` |
+| Schedule | `GROS-Livraison` | `Label_24` |
+| Billing | `GROS-Acompte` | `Label_25` |
+| Ignore | `NOX-Spam` | `Label_4` |
+| In progress | `GROS-En-cours` + `NOX-En-cours` | `Label_20` + `Label_23` |
+| Done | `NOX-Processed` | `Label_5` |
+| Draft waiting | `Brouillon IA` | `Label_17` |
+
+Les synonymes GROS/NOX restent. Chaque mutation de file écrit **les deux**. Canon file = libellé `GROS-File`. Canon agent = Grokbot.
 
 ## Règle d'or
 
-1. Avant de dire « je vais répondre », étiqueter le fil `NOX-À-traiter`.
-2. Un run = **un** dossier. Jamais « je fais les 8 après ».
-3. File vide = une recherche, `QUEUE VIDE`, **stop**. Pas de Notion, pas de Booqable, pas de rapport.
-
-## Libellés (`evenox.ca@gmail.com`)
-
-| Libellé | ID | Rôle |
-|---|---|---|
-| `GROS-File` | `Label_19` | File canonique. |
-| `NOX-À-traiter` | `Label_22` | Synonyme. Les deux comptent. |
-| `GROS-En-cours` / `NOX-En-cours` | `Label_20` / `Label_23` | Claim. Un seul à la fois. |
-| `GROS-Skip` | `Label_21` | Vu, on n'écrit pas. |
-| `NOX-Processed` | `Label_5` | Terminé (brouillon, skip, ou ignoré). |
-| `NOX-Spam` | `Label_4` | Alarm.com, pubs, newsletters. |
-| `Brouillon IA` | `Label_17` | Un brouillon vivant existe. Ne pas en créer un 2e. |
-| `NOX-URGENT` | `Label_15` | Client qui attend (réponse, lien d'acompte). |
+1. Étiqueter **avant** de dire « je vais répondre ».
+2. Un run = **un** dossier. Urgent / acompte avant un nouveau lead.
+3. File vide = une recherche, `QUEUE VIDE`, **stop**.
+4. MCP `search_threads` : `label:GROS-File` (nom), pas `label:Label_19`.
+5. Ne jamais marquer lu.
 
 ## Requêtes cheap
 
-Ne jamais rescanner les ~20k unread.
-
 ```
-{label:GROS-File label:NOX-À-traiter} -label:NOX-Processed
+{label:GROS-File label:NOX-À-traiter} -label:NOX-Processed -label:GROS-En-cours -label:NOX-En-cours
 {label:GROS-En-cours label:NOX-En-cours} -label:NOX-Processed
+in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam
 in:inbox -label:NOX-Processed -label:NOX-Spam -label:GROS-File -label:NOX-À-traiter newer_than:2d
 ```
 
-Découverte = sujet + expéditeur seulement. Ouvrir le corps seulement après claim.
+Découverte = sujet + expéditeur. Corps seulement après claim.
+
+## Filtres Gmail (MCP 403)
+
+`create_filter` / `list_filters` = 403 sur cet agent. Recettes dans `grosbot/filters.py`. À coller dans Gmail → Paramètres → Filtres :
+
+- `from:(notifications@alarm.com)` → `NOX-Spam`, Skip Inbox
+- `from:(notifications@github.com)` → `NOX-Spam`, Skip Inbox
+- `from:(promo@promo.timhortons.ca)` → `NOX-Spam`, Skip Inbox
+- `from:(wordpress@evenox.ca) subject:(Nouveau lead)` → `GROS-File` + `Soumission` (rester inbox)
 
 ## Coût
 
-Cher = relire 20k courriels, ouvrir 15 fils, rédiger 8 brouillons, tout oublier, recommencer.
+Cher = 20k unread, 15 fils ouverts, 8 brouillons, tout oublier.
 
-Pas cher = 1 recherche file. Vide → stop. Plein → 1 dossier.
-
-Jusqu'au 10 septembre 2026 : **brouillon seulement**. Jamais `send_message` sans le mot `envoie` d'Alexandre.
+Pas cher = 1 recherche file. Vide → stop. Plein → 1 dossier. Rapport = `list_labels`.
 
 n8n « Évenox — Canal courriel » crée déjà des devis / brouillons. Si `Brouillon IA` est déjà là : montrer le brouillon vivant, ne pas dupliquer.
-
-Dispatch matin = exactement 3 brouillons, **mais** les autres fils ventes du scan reçoivent `NOX-À-traiter` avant de s'arrêter.
