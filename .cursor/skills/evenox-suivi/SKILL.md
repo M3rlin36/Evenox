@@ -18,6 +18,7 @@ Chaque fiche :
 - **Ce qui s’est passé** (1 ligne)
 - **À faire** — un verbe + un objet. Lead inbound avec téléphone : **appelle** d’abord, ensuite le devis. Si c’est un devis : « Le dépôt garde le [date]. » Jamais « just checking in ».
 - **Dis :** seulement si l’action est un appel — deux phrases (date, puis dépôt). Gabarit `appel-inbound.md`.
+- **Si pas de réponse :** même message + envoie le devis le matin même. Ne pas attendre un rappel.
 - **Booqable** si une commande existe. Sinon : « Pas de commande Booqable ».
 - Téléphone sur la fiche seulement si l’action est un appel.
 

@@ -11,6 +11,7 @@ Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 40 tables 6×18, 3 tables 8×30, nappes. Livrer lundi 9 h, 1000 Papineau.  
 **À faire :** appelle 438-342-8309. Ensuite le devis. Le dépôt garde le 21 sept.  
 **Dis :** Allô Joëlle, Alexandre d’Évenox. J’ai votre demande pour le 21 septembre à Radio-Canada. Je vous envoie le devis ce matin — le dépôt garde la date.  
+**Si pas de réponse :** même message + envoie le devis.  
 Pas de commande Booqable.
 
 **Emilie Brien** — c’est à toi · pas payé · 17–19 sept · 5591 $  

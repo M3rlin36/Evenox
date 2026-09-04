@@ -7,7 +7,7 @@ Allô [Prénom], Alexandre d’Évenox. J’ai votre demande pour le [date] à [
 Je vous envoie le devis ce matin. Le dépôt garde la date.
 ```
 
-Si messagerie : même deux phrases, plus « je vous écris le devis juste après ».
+Si pas de réponse : même deux phrases sur la messagerie, puis envoie le devis le matin même. Ne pas attendre un 2e appel.
 
 Règles : pas de prix inventé. Pas cheap / promo / discount. Pas un hello.
 Jusqu’au 10 septembre 2026 : c’est Alexandre qui appelle. L’agent n’appelle pas le client.

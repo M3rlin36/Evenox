@@ -41,3 +41,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** Joëlle dit « appelle » sans les mots. Le gabarit appel-j7 est pour une relance silencieuse, pas un lead du soir.
 
 **Ajout :** ligne **Dis :** sur Joëlle. Gabarit `appel-inbound.md`. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 5 — 4 sept 2026 00 h 30 Toronto
+
+**Question :** si le lead ne répond pas au rappel du matin, on attend ou on écrit ?
+
+**Déjà en place ailleurs :** message + devis (ou texto) tout de suite. Attendre un 2e appel le lendemain perd le lead.
+
+**Ce qui cloche chez nous :** Joëlle a Dis, mais rien si elle ne décroche pas. Le devis resterait dans la poche.
+
+**Ajout :** **Si pas de réponse :** même message + envoie le devis. Aucun nouveau lead. Pas de courriel à Alexandre.
