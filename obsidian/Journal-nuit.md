@@ -61,3 +61,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** C’est à toi mélangeait Joëlle (ce soir) avec Justine et Annie (décembre). Un enfant ne voit plus qui d’abord.
 
 **Ajout :** **ce matin** (Joëlle, Emilie, Dahlia) et **Après** (Justine, Annie). Max 3 ce matin. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 7 — 4 sept 2026 02 h 00 Toronto
+
+**Question :** quel objet de courriel fait ouvrir un premier devis ?
+
+**Déjà en place ailleurs :** la date dans l’objet (`Devis 21 septembre — Radio-Canada`). Pas « Devis Evenox », pas « following up ». Le client sait ce que c’est sans ouvrir.
+
+**Ce qui cloche chez nous :** Joëlle et Emilie disent « envoie le devis » sans objet. Le gabarit disait encore « Devis — événement du date ».
+
+**Ajout :** ligne **Objet :** sur Joëlle et Emilie seulement. Gabarit : `Devis [date] — [événement]`. Aucun nouveau lead. Pas de courriel à Alexandre.

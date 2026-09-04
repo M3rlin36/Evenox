@@ -14,6 +14,8 @@ Elle a écrit le 25 août : ouverte à d’autres horaires. Pas de dépôt. Devi
 
 Pas une relance gabarit. C’est à toi de répondre sur les heures, ou de ne pas prendre le contrat.
 
+**Objet si devis :** Devis 17 septembre — Festipod
+
 ## Déjà fait
 
 Échange photobooth août. Refus 3 soirs 16 h–minuit le 24 août.

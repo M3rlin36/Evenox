@@ -1,6 +1,6 @@
 # Premier devis — une action
 
-Objet : Devis — [événement] du [date]
+Objet : Devis [date] — [événement]
 
 ```
 Bonjour [Prénom],
