@@ -26,13 +26,18 @@ App.journal = (function () {
     corps.className = '';
 
     var html =
+      '<div class="pourquoi"><b>À quoi ça sert.</b> ' +
+      'Pas un calendrier, pas une to-do. C\'est le <b>cahier du jour</b> : ' +
+      'qui a appelé, qui a classé, ce que le système a préparé. ' +
+      'Si Alexandre et Marie touchent le même dossier, on le voit ici. ' +
+      'Vert = quelqu\'un de l\'équipe. Mauve = automatique.</div>' +
       '<div class="kpis">' +
       '<div class="kpi"><div class="n">' + d.kpis.automatiques + '</div>' +
-        '<div class="l">Actions automatiques</div></div>' +
+        '<div class="l">Préparé par le système</div></div>' +
       '<div class="kpi g"><div class="n">' + d.kpis.humaines + '</div>' +
-        '<div class="l">Actions faites par l\'équipe</div></div>' +
+        '<div class="l">Fait par l\'équipe</div></div>' +
       '<div class="kpi"><div class="n">' + App.h(App.argentBrut(d.kpis.valeur)) + '</div>' +
-        '<div class="l">Valeur débloquée</div></div>' +
+        '<div class="l">Montant touché aujourd\'hui</div></div>' +
       '</div>';
 
     if (!d.lignes.length) {
@@ -42,8 +47,8 @@ App.journal = (function () {
       html += '<div class="log">' + d.lignes.map(ligne).join('') + '</div>';
     }
 
-    html += '<div class="note">Le journal garde <b>qui a fait quoi</b> : ' +
-      'les actions automatiques de n8n en mauve, celles de l\'équipe en vert.</div>';
+    html += '<div class="note">On n\'agit pas d\'ici — on <b>vérifie</b>. ' +
+      'Pour travailler, retourne dans Soumissions, An passé ou Prospection.</div>';
 
     corps.innerHTML = html;
   }

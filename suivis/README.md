@@ -4,6 +4,16 @@ Le pipeline custom qui tourne en production à [evenoxpos.cloud/suivis/](https:/
 
 Le code source du VPS (Express + Booqable + Gmail) n’est **pas** dans ce dépôt. Ici : le frontend tel qu’il est servi, plus un serveur de démo pour développer sans jeton Booqable.
 
+## Les 3 files (matin)
+
+1. **Soumissions** — prix déjà envoyé ou à envoyer
+2. **An passé** — contrats de l’an dernier + merci J+7
+3. **Prospection** — premier contact, pas encore de soumission
+
+Calendrier : **aujourd’hui**, puis la **semaine**, le mois seulement si on le demande.  
+**À faire avancer** : bloqués → en retard → aujourd’hui → ils répondent → closer.  
+**Fait aujourd’hui** = cahier (qui a touché quoi). **Relances auto** = J+2 à J+30 en brouillons.
+
 ## Ce qui a été ajouté sur le frontend
 
 Sans casser les colonnes déjà servies par le VPS (`new` / `quoted` / `won` / `lost`) :

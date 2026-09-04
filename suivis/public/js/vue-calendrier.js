@@ -1,116 +1,81 @@
 'use strict';
 /* ============================================================
-   ONGLET CALENDRIER — le plan de travail.
-
-   mauve = relance sur un dossier en cours   → ouvre la fiche
-   vert  = contrat de l'an dernier à réveiller → ouvre le client
-
-   Les événements ont été retirés le 14 août 2026 : le calendrier
-   montrait 48 événements (dont 17 déjà gagnés) contre 3 relances.
-   On y voyait surtout du travail déjà fait.
-
-   Chaque point est cliquable individuellement. Avant, seule la
-   CASE du jour l'était, et seulement quand elle ne portait qu'un
-   seul dossier — sur un jour chargé, il n'y avait aucun moyen
-   d'ouvrir le troisième client.
+   SEMAINE — aujourd'hui d'abord, puis les 5 jours, le mois
+   seulement si on le demande. Le mois entier n'aide pas le matin.
    ============================================================ */
 
 App.calendrier = (function () {
 
-  var mois = new Date().getMonth();
-  var annee = new Date().getFullYear();
+  var vue = 'jour';
+  var curseur = new Date();
+  curseur.setHours(12, 0, 0, 0);
   var jours = {};
   var decales = 0;
+  var moisCharges = {};
 
-  function cleMois() {
-    return annee + '-' + String(mois + 1).padStart(2, '0');
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function iso(d) {
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+  function debutSemaine(d) {
+    var x = new Date(d);
+    var dec = (x.getDay() + 6) % 7;
+    x.setDate(x.getDate() - dec);
+    x.setHours(12, 0, 0, 0);
+    return x;
+  }
+  function cleMois(d) {
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1);
   }
 
   function charger() {
-    var grille = document.getElementById('cal-grid');
-    grille.innerHTML = '<div class="chargement" style="grid-column:1/-1">Chargement du mois…</div>';
-
-    return App.api('/api/calendrier?mois=' + cleMois())
-      .then(function (d) { jours = d.jours; decales = d.decales || 0; dessiner(); })
-      .catch(function (err) {
-        grille.innerHTML = '';
-        var boite = document.createElement('div');
-        boite.style.gridColumn = '1/-1';
-        grille.appendChild(boite);
-        App.erreurVue(boite, err, charger);
-        App.erreur(err, charger);
-      });
+    var corps = document.getElementById('cal-corps');
+    if (corps) App.chargement(corps, 'Chargement…');
+    return chargerMoisAutour().then(dessiner).catch(function (err) {
+      if (corps) App.erreurVue(corps, err, charger);
+      App.erreur(err, charger);
+    });
   }
 
-  /** Le libellé d'un point, court mais sans ambiguïté. */
+  function chargerMoisAutour() {
+    var aCharger = [cleMois(curseur)];
+    var lun = debutSemaine(curseur);
+    var dim = new Date(lun);
+    dim.setDate(lun.getDate() + 6);
+    var m2 = cleMois(lun);
+    var m3 = cleMois(dim);
+    if (aCharger.indexOf(m2) === -1) aCharger.push(m2);
+    if (aCharger.indexOf(m3) === -1) aCharger.push(m3);
+
+    var manquants = aCharger.filter(function (m) { return !moisCharges[m]; });
+    if (!manquants.length) return Promise.resolve();
+
+    return Promise.all(manquants.map(function (m) {
+      return App.api('/api/calendrier?mois=' + m).then(function (d) {
+        moisCharges[m] = true;
+        Object.keys(d.jours || {}).forEach(function (k) { jours[k] = d.jours[k]; });
+        decales += d.decales || 0;
+      });
+    }));
+  }
+
   function etiquette(p) {
-    if (p.genre === 'an') {
-      return p.titre + (p.annee_passee ? ' · ' + p.annee_passee : '');
-    }
+    if (p.genre === 'an') return p.titre + (p.annee_passee ? ' · ' + p.annee_passee : '');
     return p.titre + (p.montant ? ' · ' + App.argentBrut(p.montant) : '');
   }
 
-  /** L'infobulle : tout ce qu'on veut savoir sans cliquer. */
-  function infobulle(p) {
-    var l = [p.titre];
-    if (p.entreprise) l.push(p.entreprise);
+  function sousTitre(p) {
     if (p.genre === 'an') {
-      l.push('Contrat de ' + (p.annee_passee || 'l\'an dernier') +
-        (p.montant ? ' — ' + App.argentBrut(p.montant) : ''));
-      if (p.date_evenement) l.push('Événement du ' + App.dateLongue(p.date_evenement));
-      l.push('Cliquer pour voir ce qu\'il avait commandé');
-    } else {
-      if (p.montant) l.push(App.argentBrut(p.montant));
-      if (p.quoi) l.push(p.quoi);
-      if (p.date_evenement) l.push('Événement du ' + App.dateLongue(p.date_evenement));
-      l.push('Cliquer pour ouvrir le dossier');
+      return 'An passé' + (p.montant ? ' — ' + App.argentBrut(p.montant) : '') +
+        (p.date_evenement ? ' · événement le ' + App.dateLongue(p.date_evenement) : '');
     }
-    if (p.decale_de) l.push('Déplacé depuis le ' + App.dateLongue(p.decale_de) + ' (fin de semaine)');
-    return l.join('\n');
+    return (p.quoi || 'Relance') + (p.montant ? ' · ' + App.argentBrut(p.montant) : '');
   }
 
   function dessiner() {
-    document.getElementById('cal-mois').textContent = App.moisNom(mois) + ' ' + annee;
-
-    var premier = new Date(annee, mois, 1).getDay();   // 0 = dimanche
-    var decalage = (premier + 6) % 7;                   // grille lundi → dimanche
-    var nb = new Date(annee, mois + 1, 0).getDate();
-
-    var auj = new Date();
-    var memeMois = (auj.getMonth() === mois && auj.getFullYear() === annee);
-
-    var html = ['lun', 'mar', 'mer', 'jeu', 'ven', 'sam', 'dim']
-      .map(function (j, i) {
-        return '<div class="jn' + (i > 4 ? ' fds' : '') + '">' + j + '</div>';
-      }).join('');
-
-    for (var i = 0; i < decalage; i++) html += '<div class="j vide"></div>';
-
-    for (var d = 1; d <= nb; d++) {
-      var cle = annee + '-' + String(mois + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
-      var points = jours[cle] || [];
-      var estAuj = (memeMois && d === auj.getDate()) ? ' auj' : '';
-      // La fin de semaine est grisée : on n'y planifie rien, autant que
-      // ça se voie d'un coup d'œil.
-      var jsem = new Date(annee, mois, d).getDay();
-      var estFds = (jsem === 0 || jsem === 6) ? ' fds' : '';
-
-      html += '<div class="j' + estAuj + estFds + '" data-jour="' + cle + '">' +
-        '<span class="d">' + d + '</span>' +
-        points.slice(0, 3).map(function (p, idx) {
-          return '<button type="button" class="pt ' + p.genre + '" ' +
-            'data-point="' + cle + ':' + idx + '" ' +
-            'title="' + App.h(infobulle(p)) + '">' +
-            App.h(etiquette(p)) + '</button>';
-        }).join('') +
-        (points.length > 3
-          ? '<button type="button" class="pt pl" data-plus="' + cle + '">+' +
-            (points.length - 3) + ' autre' + (points.length - 3 > 1 ? 's' : '') + '</button>'
-          : '') +
-        '</div>';
-    }
-
-    document.getElementById('cal-grid').innerHTML = html;
+    document.querySelectorAll('[data-cal-vue]').forEach(function (b) {
+      b.classList.toggle('on', b.dataset.calVue === vue);
+    });
 
     var note = document.getElementById('cal-decales');
     if (note) {
@@ -119,99 +84,164 @@ App.calendrier = (function () {
           (decales > 1 ? 's' : '') + ' hors fin de semaine.'
         : '';
     }
+
+    if (vue === 'semaine') dessinerSemaine();
+    else if (vue === 'mois') dessinerMois();
+    else dessinerJour();
   }
 
-  /** Ouvre ce qu'il faut selon le genre du point. */
+  function lignePoint(p, cle, idx) {
+    return '<button type="button" class="cal-ligne ' + App.h(p.genre || 'rl') + '" ' +
+      'data-point="' + App.h(cle) + ':' + idx + '">' +
+      '<b>' + App.h(p.titre) + (p.entreprise ? ' <i>' + App.h(p.entreprise) + '</i>' : '') + '</b>' +
+      '<span>' + App.h(sousTitre(p)) + '</span></button>';
+  }
+
+  function dessinerJour() {
+    var cle = iso(curseur);
+    document.getElementById('cal-titre').textContent = App.dateLongue(cle);
+    var points = jours[cle] || [];
+    var html = '';
+    if (!points.length) {
+      html = '<div class="vide"><b>Rien de prévu ce jour-là.</b>' +
+        'Passe à la semaine pour voir ce qui s\'en vient.</div>';
+    } else {
+      html = '<div class="cal-jour">' + points.map(function (p, i) {
+        return lignePoint(p, cle, i);
+      }).join('') + '</div>';
+    }
+    document.getElementById('cal-corps').innerHTML = html;
+  }
+
+  function dessinerSemaine() {
+    var lun = debutSemaine(curseur);
+    var dim = new Date(lun);
+    dim.setDate(lun.getDate() + 4);
+    document.getElementById('cal-titre').textContent =
+      App.dateCourte(iso(lun)) + ' → ' + App.dateCourte(iso(dim));
+
+    var auj = iso(new Date());
+    var html = '<div class="cal-sem">';
+    for (var i = 0; i < 5; i++) {
+      var d = new Date(lun);
+      d.setDate(lun.getDate() + i);
+      var cle = iso(d);
+      var points = jours[cle] || [];
+      var noms = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'];
+      html += '<div class="cal-col' + (cle === auj ? ' auj' : '') + '">' +
+        '<div class="cal-col-h"><b>' + noms[i] + '</b><span>' + d.getDate() + '</span></div>';
+      if (!points.length) {
+        html += '<div class="cal-vide">—</div>';
+      } else {
+        html += points.map(function (p, idx) {
+          return lignePoint(p, cle, idx);
+        }).join('');
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+    document.getElementById('cal-corps').innerHTML = html;
+  }
+
+  function dessinerMois() {
+    var mois = curseur.getMonth();
+    var annee = curseur.getFullYear();
+    document.getElementById('cal-titre').textContent = App.moisNom(mois) + ' ' + annee;
+
+    var premier = new Date(annee, mois, 1).getDay();
+    var decalage = (premier + 6) % 7;
+    var nb = new Date(annee, mois + 1, 0).getDate();
+    var auj = new Date();
+    var memeMois = auj.getMonth() === mois && auj.getFullYear() === annee;
+
+    var html = '<div class="grid" id="cal-grid">';
+    html += ['lun', 'mar', 'mer', 'jeu', 'ven', 'sam', 'dim']
+      .map(function (j, i) {
+        return '<div class="jn' + (i > 4 ? ' fds' : '') + '">' + j + '</div>';
+      }).join('');
+    for (var i = 0; i < decalage; i++) html += '<div class="j vide"></div>';
+    for (var d = 1; d <= nb; d++) {
+      var cle = annee + '-' + pad(mois + 1) + '-' + pad(d);
+      var points = jours[cle] || [];
+      var estAuj = (memeMois && d === auj.getDate()) ? ' auj' : '';
+      var jsem = new Date(annee, mois, d).getDay();
+      var estFds = (jsem === 0 || jsem === 6) ? ' fds' : '';
+      html += '<div class="j' + estAuj + estFds + '" data-jour="' + cle + '">' +
+        '<span class="d">' + d + '</span>' +
+        points.slice(0, 3).map(function (p, idx) {
+          return '<button type="button" class="pt ' + p.genre + '" data-point="' +
+            cle + ':' + idx + '">' + App.h(etiquette(p)) + '</button>';
+        }).join('') +
+        (points.length > 3
+          ? '<button type="button" class="pt pl" data-plus="' + cle + '">+' +
+            (points.length - 3) + '</button>'
+          : '') +
+        '</div>';
+    }
+    html += '</div>';
+    document.getElementById('cal-corps').innerHTML = html;
+  }
+
   function ouvrirPoint(p) {
     if (!p) return;
-    if (p.genre === 'an') {
-      // Relance annuelle : il n'y a pas de dossier ouvert, seulement un
-      // client et son contrat de l'an dernier.
-      App.client.ouvrir(p.id);
-      return;
-    }
+    if (p.genre === 'an') { App.client.ouvrir(p.id); return; }
     App.fiche.ouvrir(p.id);
   }
 
+  function avancer(n) {
+    if (vue === 'semaine') curseur.setDate(curseur.getDate() + (7 * n));
+    else if (vue === 'mois') curseur.setMonth(curseur.getMonth() + n);
+    else curseur.setDate(curseur.getDate() + n);
+    charger();
+  }
+
   function brancher() {
-    document.getElementById('cal-prec').addEventListener('click', function () {
-      mois--; if (mois < 0) { mois = 11; annee--; }
-      charger();
-    });
-    document.getElementById('cal-suiv').addEventListener('click', function () {
-      mois++; if (mois > 11) { mois = 0; annee++; }
-      charger();
-    });
+    document.getElementById('cal-prec').addEventListener('click', function () { avancer(-1); });
+    document.getElementById('cal-suiv').addEventListener('click', function () { avancer(1); });
     document.getElementById('cal-auj').addEventListener('click', function () {
-      var n = new Date(); mois = n.getMonth(); annee = n.getFullYear();
+      curseur = new Date();
+      curseur.setHours(12, 0, 0, 0);
       charger();
     });
 
-    var etaler = document.getElementById('cal-etaler');
-    if (etaler) {
-      etaler.addEventListener('click', function () {
-        etaler.disabled = true;
-        // On simule d'abord : on ne redate pas 34 dossiers sans avoir dit
-        // ce qu'on allait faire.
-        App.api('/api/calendrier/etaler', { methode: 'POST', corps: { simulation: true } })
-          .then(function (apercu) {
-            etaler.disabled = false;
-            if (!apercu.places) { App.toast(apercu.message); return; }
-            App.confirmer(
-              'Répartir les suivis',
-              apercu.message + ' Les dossiers qui ont déjà une date ne bougent pas.',
-              function () {
-                App.api('/api/calendrier/etaler', { methode: 'POST', corps: {} })
-                  .then(function (r) { App.toast(r.message); charger(); })
-                  .catch(function (err) { App.erreur(err); App.toast('Rien n\'a changé — ' + err.message); });
-              }
-            );
-          })
-          .catch(function (err) { etaler.disabled = false; App.erreur(err); });
-      });
-    }
-
-    document.getElementById('cal-grid').addEventListener('click', function (e) {
+    document.getElementById('cal').addEventListener('click', function (e) {
+      var mode = e.target.closest('[data-cal-vue]');
+      if (mode) {
+        vue = mode.dataset.calVue;
+        charger();
+        return;
+      }
       var pt = e.target.closest('[data-point]');
       if (pt) {
         var parts = pt.dataset.point.split(':');
         ouvrirPoint((jours[parts[0]] || [])[Number(parts[1])]);
         return;
       }
-
-      // « +N autres » : on montre la liste complète du jour plutôt que
-      // d'ouvrir au hasard.
       var plus = e.target.closest('[data-plus]');
       if (plus) { App.calendrier.ouvrirJour(plus.dataset.plus); return; }
-
       var cellule = e.target.closest('[data-jour]');
-      if (!cellule) return;
-      var points = jours[cellule.dataset.jour] || [];
-      if (!points.length) {
-        App.toast(App.dateLongue(cellule.dataset.jour) + ' — rien de prévu');
-        return;
+      if (cellule) {
+        var cle = cellule.dataset.jour;
+        if (!(jours[cle] || []).length) {
+          App.toast(App.dateLongue(cle) + ' — rien de prévu');
+          return;
+        }
+        curseur = new Date(cle + 'T12:00:00');
+        vue = 'jour';
+        dessiner();
       }
-      App.calendrier.ouvrirJour(cellule.dataset.jour);
     });
   }
 
-  /** La liste complète d'un jour, dans la fenêtre modale. */
   function ouvrirJour(cle) {
     var points = jours[cle] || [];
     if (!points.length) return;
     if (points.length === 1) { ouvrirPoint(points[0]); return; }
-
     var html = points.map(function (p, i) {
       return '<button class="motif" type="button" data-jour-point="' + cle + ':' + i + '">' +
         '<b>' + App.h(p.titre) + (p.entreprise ? ' — ' + App.h(p.entreprise) : '') + '</b>' +
-        '<i>' + (p.genre === 'an'
-          ? 'Contrat de ' + App.h(p.annee_passee || 'l\'an dernier') +
-            (p.montant ? ' · ' + App.h(App.argentBrut(p.montant)) : '')
-          : 'Relance' + (p.montant ? ' · ' + App.h(App.argentBrut(p.montant)) : '') +
-            (p.quoi ? ' · ' + App.h(p.quoi) : '')) +
-        '</i></button>';
+        '<i>' + App.h(sousTitre(p)) + '</i></button>';
     }).join('');
-
     App.ouvrirListe(App.dateLongue(cle), points.length + ' à faire', html, function (cible) {
       var parts = cible.dataset.jourPoint.split(':');
       ouvrirPoint((jours[parts[0]] || [])[Number(parts[1])]);

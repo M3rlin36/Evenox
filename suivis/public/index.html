@@ -27,25 +27,31 @@
   <nav class="rail">
     <div class="rail-top"><div class="logo">EVE<span>NOX</span></div></div>
 
-    <div class="rail-sec">Travail du jour</div>
+    <div class="rail-sec">Les 3 files</div>
     <button class="nav-i on" type="button" data-vue="jour">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-      <span>Suivis</span><span class="nav-n" id="n-jour">—</span></button>
+      <span>Soumissions</span><span class="nav-n" id="n-jour">—</span></button>
+    <button class="nav-i" type="button" data-vue="an">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 4h18v4H3zM3 10h18v10H3z"/><path d="M8 14h8"/></svg>
+      <span>An passé</span><span class="nav-n" id="n-an">—</span></button>
+    <button class="nav-i" type="button" data-vue="prosp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+      <span>Prospection</span><span class="nav-n" id="n-prosp">—</span></button>
+
+    <div class="rail-sec">Pour s'y retrouver</div>
     <button class="nav-i" type="button" data-vue="cal">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
-      <span>Calendrier</span></button>
-    <button class="nav-i" type="button" data-vue="fait">
+      <span>Semaine</span></button>
+    <button class="nav-i nav-cache-m" type="button" data-vue="fait">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-      <span>Journal</span></button>
-    <button class="nav-i" type="button" data-vue="seq">
+      <span>Fait aujourd'hui</span></button>
+    <button class="nav-i nav-cache-m" type="button" data-vue="seq">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M4 8l8 5 8-5"/></svg>
-      <span>Séquence</span><span class="nav-n" id="n-seq">Off</span></button>
-
-    <div class="rail-sec">Vue d'ensemble</div>
+      <span>Relances auto</span><span class="nav-n" id="n-seq">Off</span></button>
     <button class="nav-i" type="button" data-vue="pipe">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="6" height="18" rx="1"/><rect x="14" y="3" width="6" height="11" rx="1"/></svg>
-      <span>Pipeline</span><span class="nav-n" id="n-pipe">—</span></button>
-    <button class="nav-i" type="button" data-vue="clos">
+      <span>À faire avancer</span><span class="nav-n" id="n-pipe">—</span></button>
+    <button class="nav-i nav-cache-m" type="button" data-vue="clos">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
       <span>Closing</span></button>
     <button class="nav-i" type="button" data-vue="base">
@@ -67,7 +73,7 @@
   <!-- ══════ PRINCIPAL ══════ -->
   <main class="main">
     <header class="top">
-      <h1 id="t-titre">Suivis <em>du jour</em></h1>
+      <h1 id="t-titre">Soumissions <em>en cours</em></h1>
       <div class="top-stats" id="t-stats"></div>
       <div class="top-r">
         <div class="prog-mini"><div class="pm-t"><div class="pm-f" id="pf"></div></div><span class="pm-x" id="pt">0/0</span></div>
@@ -80,33 +86,46 @@
     <!-- Résultats de la recherche qui ne sont pas dans l'onglet courant -->
     <div id="recherche-globale"></div>
 
-    <!-- ══ SUIVIS ══ -->
+    <!-- ══ 1. SOUMISSIONS EN COURS ══ -->
     <section class="view on" id="jour">
-      <div id="jour-corps" class="chargement">Chargement des suivis…</div>
+      <div id="jour-corps" class="chargement">Chargement des soumissions…</div>
     </section>
 
-    <!-- ══ CALENDRIER ══ -->
+    <!-- ══ 2. AN PASSÉ ══ -->
+    <section class="view" id="an">
+      <div id="an-corps" class="chargement">Chargement des contrats de l'an passé…</div>
+    </section>
+
+    <!-- ══ 3. PROSPECTION ══ -->
+    <section class="view" id="prosp">
+      <div id="prosp-corps" class="chargement">Chargement de la prospection…</div>
+    </section>
+
+    <!-- ══ SEMAINE / JOUR / MOIS ══ -->
     <section class="view" id="cal">
-      <div class="cal-h"><h3 id="cal-mois">…</h3>
+      <div class="cal-h">
+        <h3 id="cal-titre">…</h3>
         <div class="cal-nav">
           <button class="btn sm" type="button" id="cal-prec">&lsaquo;</button>
           <button class="btn sm" type="button" id="cal-auj">Aujourd'hui</button>
           <button class="btn sm" type="button" id="cal-suiv">&rsaquo;</button>
-          <button class="btn sm p" type="button" id="cal-etaler">Répartir les suivis</button>
+          <button class="btn sm on" type="button" data-cal-vue="jour">Jour</button>
+          <button class="btn sm" type="button" data-cal-vue="semaine">Semaine</button>
+          <button class="btn sm" type="button" data-cal-vue="mois">Mois</button>
         </div>
       </div>
       <div class="cal-lg">
-        <span><i style="background:var(--purple)"></i>Relance à faire</span>
-        <span><i style="background:var(--green)"></i>Contrat de l'an dernier</span>
+        <span><i style="background:var(--purple)"></i>Soumission à relancer</span>
+        <span><i style="background:var(--green)"></i>An passé</span>
         <span id="cal-decales" style="margin-left:auto;color:var(--faint)"></span>
       </div>
-      <div class="grid" id="cal-grid"></div>
-      <div class="note">Le calendrier montre <b>uniquement les suivis à faire</b> : les relances sur les dossiers en cours, et les <b>contrats de l'an dernier</b> à réveiller. Les événements et les dossiers déjà gagnés n'y sont plus. Rien n'est planifié la fin de semaine — une relance qui y tombait est déplacée au vendredi ou au lundi. <b>Chaque nom est cliquable.</b></div>
+      <div id="cal-corps"></div>
+      <div class="note">On commence par <b>aujourd'hui</b>. La semaine montre ce qui s'en vient. Le mois est là si tu veux regarder plus loin — ce n'est pas l'écran du matin.</div>
     </section>
 
-    <!-- ══ JOURNAL ══ -->
+    <!-- ══ FAIT AUJOURD'HUI ══ -->
     <section class="view" id="fait">
-      <div id="fait-corps" class="chargement">Chargement du journal…</div>
+      <div id="fait-corps" class="chargement">Chargement…</div>
     </section>
 
     <!-- ══ SÉQUENCE ══ -->

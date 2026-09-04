@@ -37,6 +37,19 @@ App.sequence = (function () {
 
     var html = '';
 
+    html += '<div class="pourquoi"><b>Comment ça marche, en une phrase.</b> ' +
+      'Quand une soumission part et que le client ne répond pas, le système ' +
+      '<b>prépare</b> les relances aux jours 2, 4, 7, 14, 21 et 30. ' +
+      'Rien n\'arrive dans la boîte du client tant que tu n\'as pas coché ' +
+      'les noms et lancé la phase brouillons. Un « oui », un dépôt ou le label ' +
+      'Pause-Auto arrête tout pour ce dossier.</div>';
+
+    html += '<div class="seq-etapes">' +
+      [['J+2', 'Brouillon'], ['J+4', 'Rappel'], ['J+7', 'Appel d\'abord'],
+       ['J+14', 'Dernier mail'], ['J+21', 'Pause'], ['J+30', 'On arrête']].map(function (e, i) {
+        return '<div class="seq-e' + (i === 2 ? ' fort' : '') + '"><b>' + e[0] + '</b><i>' + e[1] + '</i></div>';
+      }).join('') + '</div>';
+
     // ── L'avertissement de tête ──
     if (!enMarche) {
       html += '<div class="stop"><b class="t">La séquence est arrêtée. Aucun courriel ne part.</b>' +

@@ -172,12 +172,15 @@ function uiSuivi(d) {
     (d.date_evenement ? ' · événement le ' + d.date_evenement : '');
   var gestes = ['appel', 'fait'];
 
-  if (d.alerte === 'Relance échue') {
-    tag = { t: 'Relance échue', c: 'r' };
+  if (d.pipeline === 'prospection') {
+    tag = { t: 'Prospect', c: 'p' };
+    gestes = ['appel', 'devis', 'fait'];
+  } else if (d.alerte === 'Relance échue') {
+    tag = { t: 'Relance échue', c: 'u' };
     bordure = 'hot';
     gestes = ['appel', 'repondre', 'fait'];
   } else if (d.alerte === 'Sans prochaine action') {
-    tag = { t: 'Sans action', c: 'r' };
+    tag = { t: 'Sans action', c: 'u' };
     gestes = ['appel', 'devis', 'fait'];
   } else if (d.statut === 'quoted' && d.montant >= 2000) {
     tag = { t: 'À approuver', c: '' };
@@ -201,7 +204,14 @@ function uiSuivi(d) {
     ui_tag: tag,
     ui_pourquoi: pourquoi,
     ui_sous_titre: sous,
+    section: sectionDe(d),
   };
+}
+
+function sectionDe(d) {
+  if (d.pipeline === 'prospection') return 'prospection';
+  if (d.pipeline === 'post_evenement') return 'an';
+  return 'soumission';
 }
 
 function fileDuJour() {
@@ -209,10 +219,15 @@ function fileDuJour() {
     .filter(function (d) {
       if (d.statut === 'lost' || d.statut === 'deferred') return false;
       if (d.pipeline === 'post_evenement') return true;
+      if (d.pipeline === 'prospection') return true;
       if (d.alerte === 'Relance échue' || d.alerte === 'Sans prochaine action') return true;
       if (d.prochaine_relance && d.prochaine_relance <= aujourdHui()) return true;
       return false;
     });
+}
+
+function dossiersParSection(sec) {
+  return fileDuJour().filter(function (d) { return sectionDe(d) === sec; });
 }
 
 function alertesBooqable() {
@@ -376,8 +391,21 @@ function api(app) {
       var s = etat.dossiers[k].statut;
       return s !== 'lost' && s !== 'won' && s !== 'deferred';
     }).length;
+    var nSoum = dossiersParSection('soumission').length;
+    var nAn = dossiersParSection('an').length + relancesAnnuelles().length;
+    var nProsp = dossiersParSection('prospection').length;
+    var aAvancer = Object.keys(etat.dossiers).filter(function (k) {
+      var d = etat.dossiers[k];
+      if (d.statut === 'lost' || d.statut === 'won' || d.statut === 'deferred') return false;
+      return d.alerte === 'Sans prochaine action' || d.alerte === 'Relance échue' ||
+        (d.prochaine_relance && d.prochaine_relance <= aujourdHui());
+    }).length;
     res.json({
       dossiers_actifs: actifs,
+      a_avancer: aAvancer,
+      n_soumissions: nSoum,
+      n_an_passe: nAn,
+      n_prospection: nProsp,
       nb_clients: Object.keys(etat.clients).length,
       sequence_mode: etat.sequenceMode,
       synchro: { booqable_ok: true, gmail_ok: true },
@@ -386,26 +414,33 @@ function api(app) {
   });
 
   app.get('/api/suivis', exigerSession, function (req, res) {
-    var liste = fileDuJour().map(uiSuivi);
+    var soum = dossiersParSection('soumission').map(uiSuivi);
+    var prosp = dossiersParSection('prospection').map(uiSuivi);
+    var post = dossiersParSection('an').map(uiSuivi);
     var seq = Object.keys(etat.dossiers).filter(function (k) {
       return etat.dossiers[k].statut === 'following_up';
     }).length;
-    var attendent = fileDuJour().filter(function (d) { return d.attend_qui === 'evenox'; }).length;
-    var enJeu = fileDuJour().reduce(function (a, d) { return a + (Number(d.montant) || 0); }, 0);
+    var attendent = dossiersParSection('soumission').filter(function (d) { return d.attend_qui === 'evenox'; }).length;
+    var enJeu = dossiersParSection('soumission').reduce(function (a, d) { return a + (Number(d.montant) || 0); }, 0);
     res.json({
-      liste: liste,
+      liste: soum,
+      prospection: prosp,
+      post_evenement: post,
       alertes_booqable: alertesBooqable(),
       relances_annuelles: relancesAnnuelles(),
-      progression: { traites: 0, total: liste.length },
+      progression: { traites: 0, total: soum.length },
       compteurs: {
-        total_file: liste.length,
+        total_file: soum.length,
+        n_soumissions: soum.length,
+        n_an_passe: post.length + relancesAnnuelles().length,
+        n_prospection: prosp.length,
         en_jeu: enJeu,
         attendent: attendent,
-        evenements_48h: fileDuJour().filter(function (d) {
+        evenements_48h: dossiersParSection('soumission').filter(function (d) {
           return d.date_evenement && d.date_evenement <= fixtures.isoJour(2) &&
             d.date_evenement >= aujourdHui();
         }).length,
-        a_approuver: fileDuJour().filter(function (d) { return d.montant >= 2000 && !d.depot_paye; }).length,
+        a_approuver: dossiersParSection('soumission').filter(function (d) { return d.montant >= 2000 && !d.depot_paye; }).length,
         en_sequence: seq,
       },
       seuils: { max_par_jour: 8 },

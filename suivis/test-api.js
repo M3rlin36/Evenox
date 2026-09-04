@@ -108,9 +108,18 @@ srv.listen(0, '127.0.0.1', function () {
     .then(function () { return req({ port: port, path: '/api/suivis', cookie: cookie }); })
     .then(function (r) {
       assert.strictEqual(r.status, 200);
-      assert.ok(r.json.liste.length >= 1, 'liste du jour');
+      assert.ok(r.json.liste.length >= 1, 'soumissions');
+      assert.ok(r.json.prospection && r.json.prospection.length >= 1, 'prospection');
+      assert.ok(r.json.post_evenement && r.json.post_evenement.length >= 1, 'post-événement');
       assert.ok(r.json.relances_annuelles.length >= 1, 'relance annuelle');
       assert.ok(r.json.alertes_booqable.length >= 1, 'payé encore brouillon');
+      assert.ok(r.json.liste.every(function (x) { return x.section === 'soumission'; }));
+    })
+    .then(function () { return req({ port: port, path: '/api/etat', cookie: cookie }); })
+    .then(function (r) {
+      assert.ok(r.json.n_soumissions >= 1);
+      assert.ok(r.json.n_an_passe >= 1);
+      assert.ok(r.json.n_prospection >= 1);
     })
     .then(function () { return req({ port: port, path: '/api/clients', cookie: cookie }); })
     .then(function (r) {
@@ -118,7 +127,7 @@ srv.listen(0, '127.0.0.1', function () {
       assert.ok(r.json.total >= 6);
     })
     .then(function () {
-      console.log('OK — session, pipeline (7 colonnes + 4 alertes), fiche client, suivis.');
+      console.log('OK — 3 files, pipeline, fiche client, suivis.');
       srv.close();
       process.exit(0);
     })

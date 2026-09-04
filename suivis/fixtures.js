@@ -83,6 +83,18 @@ function etatInitial() {
       type: 'corporatif', tier: 'WARM', desabonne: false, recurrent: true,
       jamais_gagne: false, statut: 'À réveiller',
     },
+    'cli-restau': {
+      id: 'cli-restau', nom: 'Marc Pedneault', entreprise: 'Le Comptoir St-Joseph',
+      telephone: '450 555-0128', courriel: 'marc@comptoirstjoseph.example',
+      type: 'corporatif', tier: 'WARM', desabonne: false, recurrent: false,
+      jamais_gagne: true, statut: 'Prospect',
+    },
+    'cli-ecole': {
+      id: 'cli-ecole', nom: 'Direction', entreprise: 'École primaire des Mille-Fleurs',
+      telephone: '450 555-0144', courriel: 'direction@millefleurs.example',
+      type: 'municipal', tier: 'HOT', desabonne: false, recurrent: false,
+      jamais_gagne: true, statut: 'Prospect',
+    },
   };
 
   var dossiers = {
@@ -235,6 +247,36 @@ function etatInitial() {
       attend_qui: 'evenox', dernier_contact_le: auj,
       gmail_thread_id: 'thread-draft', booqable_orders: ['BQ-9400'],
       booqable_number: 'BQ-9400', booqable_status: 'draft',
+    },
+    'dos-restau': {
+      id: 'dos-restau', client_id: 'cli-restau', lead_id: 'PRO-REST',
+      nom: 'Marc Pedneault', entreprise: 'Le Comptoir St-Joseph',
+      statut: 'new', tier: 'WARM', type: 'corporatif',
+      montant: 0, montant_paye: 0, depot_paye: 0,
+      date_evenement: '',
+      prochaine_action: 'Qualifier — date et lieu', prochaine_relance: auj,
+      alerte: '', pipeline: 'prospection',
+      courriel: clients['cli-restau'].courriel, telephone: clients['cli-restau'].telephone,
+      assigne_a: 'Alexandre', notes: 'A vu une tente chez un voisin. Pas de date encore.',
+      desabonne: false, courriel_invalide: false, pause_auto: false,
+      attend_qui: 'evenox', dernier_contact_le: auj,
+      gmail_thread_id: '', booqable_orders: [], booqable_number: '',
+      booqable_status: '',
+    },
+    'dos-ecole': {
+      id: 'dos-ecole', client_id: 'cli-ecole', lead_id: 'PRO-ECOLE',
+      nom: 'Direction', entreprise: 'École primaire des Mille-Fleurs',
+      statut: 'new', tier: 'HOT', type: 'municipal',
+      montant: 0, montant_paye: 0, depot_paye: 0,
+      date_evenement: '2026-06-12',
+      prochaine_action: 'Rappeler la direction', prochaine_relance: auj,
+      alerte: '', pipeline: 'prospection',
+      courriel: clients['cli-ecole'].courriel, telephone: clients['cli-ecole'].telephone,
+      assigne_a: 'Marie', notes: 'Fête de fin d\'année. Budget à confirmer.',
+      desabonne: false, courriel_invalide: false, pause_auto: false,
+      attend_qui: 'evenox', dernier_contact_le: hier,
+      gmail_thread_id: '', booqable_orders: [], booqable_number: '',
+      booqable_status: '',
     },
   };
 

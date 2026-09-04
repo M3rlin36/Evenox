@@ -14,6 +14,13 @@ App.suivis = (function () {
 
   var donnees = null;
   var progression = { traites: 0, total: 0 };
+  var section = 'soumission';
+
+  var CORPS = {
+    soumission: 'jour-corps',
+    an: 'an-corps',
+    prospection: 'prosp-corps',
+  };
 
   var LIBELLES = {
     repondre: 'Répondre',
@@ -26,62 +33,114 @@ App.suivis = (function () {
   };
 
   /* ── Chargement ─────────────────────────────────────────── */
-  function charger() {
-    var corps = document.getElementById('jour-corps');
-    if (!donnees) App.chargement(corps, 'Chargement des suivis…');
+  function charger() { return chargerSection('soumission'); }
+
+  function chargerSection(sec) {
+    section = sec || 'soumission';
+    var corps = document.getElementById(CORPS[section] || 'jour-corps');
+    if (!donnees) App.chargement(corps, 'Chargement…');
 
     return App.api('/api/suivis')
       .then(function (d) {
         donnees = d;
-        progression = d.progression;
+        if (section === 'soumission') progression = d.progression || { traites: 0, total: 0 };
         dessiner();
         App.majCompteurs(d);
       })
       .catch(function (err) {
-        App.erreurVue(corps, err, charger);
-        App.erreur(err, charger);
+        App.erreurVue(corps, err, function () { chargerSection(section); });
+        App.erreur(err, function () { chargerSection(section); });
       });
+  }
+
+  function soumissions() {
+    var liste = donnees.liste || [];
+    return liste.filter(function (x) {
+      return (x.section || 'soumission') === 'soumission';
+    });
+  }
+
+  function prospection() {
+    if (donnees.prospection && donnees.prospection.length) return donnees.prospection;
+    return (donnees.liste || []).filter(function (x) { return x.section === 'prospection'; });
+  }
+
+  function postEvenement() {
+    if (donnees.post_evenement && donnees.post_evenement.length) return donnees.post_evenement;
+    return (donnees.liste || []).filter(function (x) { return x.section === 'an'; });
   }
 
   /* ── Dessin ─────────────────────────────────────────────── */
   function dessiner() {
+    if (section === 'an') { dessinerAn(); return; }
+    if (section === 'prospection') { dessinerProsp(); return; }
+    dessinerSoumissions();
+  }
+
+  function dessinerSoumissions() {
     var corps = document.getElementById('jour-corps');
     corps.className = '';
+    var liste = soumissions();
     var html = '';
 
-    // 1. À corriger dans Booqable — ce n'est PAS un suivi client.
-    if (donnees.alertes_booqable.length) {
+    html += '<div class="pourquoi"><b>File 1 — soumissions en cours.</b> ' +
+      'Le client a déjà un prix, ou il en attend un. C\'est le travail du matin : ' +
+      'appeler, relancer, envoyer le contrat. L\'an passé et la prospection sont à part.</div>';
+
+    if (donnees.alertes_booqable && donnees.alertes_booqable.length) {
       html += blocAlerte(donnees.alertes_booqable);
     }
 
-    // 2. La liste du jour.
-    html += '<div id="liste">' + donnees.liste.map(ligne).join('') + '</div>';
+    html += '<div id="liste">' + (liste.length ? liste.map(ligne).join('') : '') + '</div>';
 
-    // 3. Contrats de l'an dernier à réveiller.
-    if (donnees.relances_annuelles.length) {
-      html += blocAnDernier(donnees.relances_annuelles);
-    }
-
-    // 4. L'écran qui dit quand arrêter. Son texte se met à jour au fil
-    //    des gestes : voir texteFini(), appelé par majProgression().
     html +=
-      '<div class="fini' + (donnees.liste.length === 0 ? ' on' : '') + '" id="fini">' +
+      '<div class="fini' + (liste.length === 0 ? ' on' : '') + '" id="fini">' +
       '<h3>Terminé pour aujourd\'hui</h3><p id="fini-txt">' + texteFini() + '</p></div>';
 
-    // 5. Le rappel du bas.
     html +=
-      '<div class="note"><b>' + donnees.compteurs.en_sequence + ' dossier' +
-      (donnees.compteurs.en_sequence > 1 ? 's roulent' : ' roule') +
-      ' en séquence automatique</b> (J+2, J+4, J+7, J+14, J+21, J+30).<br>' +
-      '<b>Dès qu\'un dépôt entre, le dossier sort d\'ici</b> et la séquence s\'arrête.' +
-      (donnees.compteurs.total_file > donnees.liste.length
-        ? '<br>' + donnees.compteurs.total_file + ' dossiers attendent un geste — ' +
-          'les ' + donnees.seuils.max_par_jour + ' plus prioritaires sont affichés.'
-        : '') +
-      '</div>';
+      '<div class="note">Les relances automatiques (J+2 à J+30) préparent des <b>brouillons</b> — ' +
+      'elles n\'écrivent pas au client toutes seules. Un dépôt sort le dossier d\'ici.</div>';
 
     corps.innerHTML = html;
     majProgression();
+  }
+
+  function dessinerAn() {
+    var corps = document.getElementById('an-corps');
+    corps.className = '';
+    var html = '<div class="pourquoi"><b>File 2 — l\'an passé.</b> ' +
+      'Ceux qui ont loué l\'an dernier, au moment où <b>eux</b> réservent d\'habitude, ' +
+      'plus le merci J+7 après un événement. Pas de soumission en cours ici.</div>';
+
+    var post = postEvenement();
+    if (post.length) {
+      html += '<div class="vh"><h3>Après l\'événement — J+7</h3></div>';
+      html += post.map(ligne).join('');
+    }
+
+    var annuelles = donnees.relances_annuelles || [];
+    if (annuelles.length) html += blocAnDernier(annuelles);
+    if (!post.length && !annuelles.length) {
+      html += '<div class="vide"><b>Personne à réveiller aujourd\'hui.</b>' +
+        'Les contrats de l\'an dernier apparaissent ici selon le délai de chaque client.</div>';
+    }
+    corps.innerHTML = html;
+  }
+
+  function dessinerProsp() {
+    var corps = document.getElementById('prosp-corps');
+    corps.className = '';
+    var liste = prospection();
+    var html = '<div class="pourquoi"><b>File 3 — prospection.</b> ' +
+      'Premier contact, pas encore de soumission. On qualifie : date, lieu, budget. ' +
+      'Dès qu\'un prix part, le dossier bascule dans Soumissions.</div>';
+    if (!liste.length) {
+      html += '<div class="vide"><b>Aucun prospect en attente.</b>' +
+        'Un nouveau nom sans soumission atterrit ici.</div>';
+    } else {
+      html += liste.map(ligne).join('');
+    }
+    corps.innerHTML = html;
   }
 
   function blocAlerte(alertes) {
@@ -236,10 +295,34 @@ App.suivis = (function () {
 
   /* ── Branchements (délégation : aucun onclick dans le HTML) ── */
   function brancher() {
-    var zone = document.getElementById('jour');
+    ['jour', 'an', 'prosp'].forEach(function (id) {
+      var zone = document.getElementById(id);
+      if (zone) zone.addEventListener('click', onClic);
+    });
 
-    zone.addEventListener('click', function (e) {
-      var cible;
+    var enregistrer = App.attendre(function (id, valeur, bouton) {
+      App.api('/api/dossier/' + encodeURIComponent(id) + '/note', {
+        methode: 'PUT', corps: { note: valeur },
+      })
+        .then(function (r) { bouton.classList.toggle('plein', r.rempli); })
+        .catch(function (err) {
+          App.erreur(err);
+          App.toast('Note non enregistrée — ' + err.message);
+        });
+    }, 800);
+
+    document.getElementById('scroll').addEventListener('input', function (e) {
+      var ta = e.target.closest('[data-note-ta]');
+      if (!ta) return;
+      var bouton = ta.closest('.row').querySelector('.btn-note');
+      bouton.classList.toggle('plein', ta.value.trim() !== '');
+      enregistrer(ta.dataset.noteTa, ta.value, bouton);
+    });
+  }
+
+  function onClic(e) {
+    var zone = e.currentTarget;
+    var cible;
 
       // Ouvrir la fiche
       cible = e.target.closest('[data-fiche]');
@@ -303,28 +386,6 @@ App.suivis = (function () {
       // Passer une commande payée en réservée — confirmation obligatoire
       cible = e.target.closest('[data-reserver]');
       if (cible) { reserver(cible); return; }
-    });
-
-    // Note : enregistrement en continu, 800 ms après la dernière frappe.
-    var enregistrer = App.attendre(function (id, valeur, bouton) {
-      App.api('/api/dossier/' + encodeURIComponent(id) + '/note', {
-        methode: 'PUT', corps: { note: valeur },
-      })
-        .then(function (r) { bouton.classList.toggle('plein', r.rempli); })
-        .catch(function (err) {
-          App.erreur(err);
-          App.toast('Note non enregistrée — ' + err.message);
-        });
-    }, 800);
-
-    zone.addEventListener('input', function (e) {
-      var ta = e.target.closest('[data-note-ta]');
-      if (!ta) return;
-      var bouton = ta.closest('.row').querySelector('.btn-note');
-      // Le bouton devient mauve tout de suite : le retour visuel n'attend pas le réseau.
-      bouton.classList.toggle('plein', ta.value.trim() !== '');
-      enregistrer(ta.dataset.noteTa, ta.value, bouton);
-    });
   }
 
   function onFerme(id, motif) {
@@ -396,5 +457,5 @@ App.suivis = (function () {
     );
   }
 
-  return { charger: charger, brancher: brancher, onFerme: onFerme };
+  return { charger: charger, chargerSection: chargerSection, brancher: brancher, onFerme: onFerme };
 })();

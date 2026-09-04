@@ -10,17 +10,21 @@
 (function () {
 
   var TITRES = {
-    jour: ['Suivis <em>du jour</em>', true],
-    cal: ['Calendrier <em>des suivis</em>', false],
-    fait: ['Journal <em>du jour</em>', false],
-    seq: ['Séquence <em>de relance</em>', false],
-    pipe: ['Pipeline <em>des dossiers actifs</em>', false],
+    jour: ['Soumissions <em>en cours</em>', true],
+    an: ['An passé <em>— à réveiller</em>', false],
+    prosp: ['Prospection <em>— premier contact</em>', false],
+    cal: ['Cette semaine', false],
+    fait: ['Fait <em>aujourd\'hui</em>', false],
+    seq: ['Relances <em>automatiques</em>', false],
+    pipe: ['À faire <em>avancer</em>', false],
     clos: ['Closing', false],
     base: ['Clients', false],
   };
 
   var VUES = {
     jour: App.suivis,
+    an: { charger: function () { return App.suivis.chargerSection('an'); } },
+    prosp: { charger: function () { return App.suivis.chargerSection('prospection'); } },
     cal: App.calendrier,
     fait: App.journal,
     seq: App.sequence,
@@ -63,7 +67,12 @@
 
   /* ── Compteurs du rail et de la barre du haut ───────────── */
   App.majCompteurs = function (d) {
-    document.getElementById('n-jour').textContent = d.compteurs.total_file;
+    var c = d.compteurs || {};
+    document.getElementById('n-jour').textContent = c.n_soumissions != null ? c.n_soumissions : c.total_file;
+    var nAn = document.getElementById('n-an');
+    if (nAn) nAn.textContent = c.n_an_passe != null ? c.n_an_passe : '—';
+    var nP = document.getElementById('n-prosp');
+    if (nP) nP.textContent = c.n_prospection != null ? c.n_prospection : '—';
 
     var stats = [];
     stats.push('<span class="ts"><b>' + App.h(App.argentBrut(d.compteurs.en_jeu)) + '</b> en jeu</span>');
@@ -92,8 +101,15 @@
   App.rafraichirEtat = function () {
     return App.api('/api/etat')
       .then(function (e) {
-        document.getElementById('n-pipe').textContent = e.dossiers_actifs;
+        document.getElementById('n-pipe').textContent = e.a_avancer != null ? e.a_avancer : e.dossiers_actifs;
         document.getElementById('n-base').textContent = e.nb_clients;
+        if (e.n_soumissions != null) document.getElementById('n-jour').textContent = e.n_soumissions;
+        if (e.n_an_passe != null && document.getElementById('n-an')) {
+          document.getElementById('n-an').textContent = e.n_an_passe;
+        }
+        if (e.n_prospection != null && document.getElementById('n-prosp')) {
+          document.getElementById('n-prosp').textContent = e.n_prospection;
+        }
         App.majBadgeSequence(e.sequence_mode);
 
         var synchro = document.getElementById('etat-synchro');
