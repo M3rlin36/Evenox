@@ -121,3 +121,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** Emilie = « envoie le devis 5591 $ ». Alexandre a déjà dit non (16 h–minuit × 3, 24 août). Elle a écrit le 25 août : ouverte à d’autres horaires. On lui doit les heures.
 
 **Ajout :** Emilie = **dis tes heures**, ensuite le devis. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 13 — 4 sept 2026 06 h 30 Toronto
+
+**Question :** après l’inbound, on prend le plus gros $ ou la date la plus proche ?
+
+**Déjà en place ailleurs :** inbound d’abord. Ensuite l’event / le oui-non le plus proche. Un plus gros $ plus loin attend.
+
+**Ce qui cloche chez nous :** Emilie (heures, 17 sept) était avant Dahlia (oui/non 500 $, 13 sept).
+
+**Ajout :** ordre **ce matin** = Joëlle, Dahlia, Emilie. Aucun nouveau lead. Pas de courriel à Alexandre.

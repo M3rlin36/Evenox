@@ -25,7 +25,7 @@ Chaque fiche :
 
 Un seul lien Notion : la page [Aujourd hui](https://app.notion.com/p/3d031d285ea681309e1afbc591262304). Jamais un lien Pipeline par client.
 
-En haut : **Qui doit bouger ?** puis **Commence par [nom]** — inbound du jour d’abord, ensuite $ × jours. Les 3 **ce matin**, un verbe chacun. Pas seulement le plus gros $.
+En haut : **Qui doit bouger ?** puis **Commence par [nom]** — inbound du jour d’abord, ensuite la date la plus proche / le oui-non argent, pas un plus gros $ plus loin. Les 3 **ce matin**, un verbe chacun.
 
 Sections, une fiche après l’autre :
 

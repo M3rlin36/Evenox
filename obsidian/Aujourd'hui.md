@@ -4,7 +4,7 @@ Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
 **Qui doit bouger ?**
 **Commence par Joëlle** — appelle (Radio-Canada, 21 sept).  
-Puis Emilie — dis tes heures (Festipod). Puis Dahlia — oui ou non (500 $ TTC, 13 sept).  
+Puis Dahlia — oui ou non (500 $ TTC, 13 sept). Puis Emilie — dis tes heures (Festipod).  
 OUI n’écrit que Mathieu.
 
 ## C’est à toi — ce matin
@@ -17,16 +17,16 @@ OUI n’écrit que Mathieu.
 **Objet :** Devis 21 septembre — Radio-Canada  
 Pas de commande Booqable.
 
+**Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
+Retire le champagne. Max 500 $ TTC : mur de fleurs + 2 chiffres + livraison. 10 h 30–16 h.  
+**À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 13 sept.  
+[Booqable #1826](https://evenox.booqable.com/orders?q=1826)
+
 **Emilie Brien** — Festipod — ce matin · elle a écrit · 17–19 sept  
 Ouverte à d’autres horaires. Pas 16 h–minuit × 3.  
 **À faire :** dis tes heures. Ensuite le devis. Le dépôt garde le 17 sept.  
 **Objet :** Devis 17 septembre — Festipod  
 [Booqable #1758](https://evenox.booqable.com/orders/fcc556d7-09b2-4d3a-963a-d1b678be0cf9)
-
-**Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
-Retire le champagne. Max 500 $ TTC : mur de fleurs + 2 chiffres + livraison. 10 h 30–16 h.  
-**À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 13 sept.  
-[Booqable #1826](https://evenox.booqable.com/orders?q=1826)
 
 ## Après
 
