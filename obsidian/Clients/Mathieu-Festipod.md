@@ -19,4 +19,4 @@ Devis envoyé 21 juillet. Le 23 juillet il demande 250 chaises et dit qu’il re
 
 ## À faire
 
-Seulement si Alexandre écrit **OUI** : répondre aux chaises + confirmer si le 16 sept est encore ouvert. Pas un gabarit « je remonte mon message » froid si tu as quelque chose de précis à dire.
+Seulement si Alexandre écrit **OUI** : **appelle** (J+7, silence depuis le 23 juillet). « je garde le 16 septembre ? » Téléphone : pas au dossier. Pas un courriel gabarit.

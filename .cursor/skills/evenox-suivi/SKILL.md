@@ -71,7 +71,7 @@ Ne jamais relancer quelqu’un qui a déjà écrit, déjà payé, ou à qui Alex
 - Jusqu’au **10 septembre 2026** : aucun envoi client sans **OUI**.
 - À partir du **11 septembre 2026** : envoyer le gabarit, noter Envoyé.
 - Deux portes (interne) : dépôt déjà fait = on n’écrit pas. Conversation récente = on n’écrit pas.
-- J+7 = appel dans le courriel. Jamais avant 7 jours.
+- J+7 = appel dans le courriel. Jamais avant 7 jours. Si OUI pour un J+7 : **appelle**, n’écris pas.
 - Perdu (SP Canada, Juliana) : ne plus écrire, ne pas lister.
 - An passé : déjà servi. Pas une relance, sauf **OUI** pour un nom.
 - Après un envoi réel seulement : mettre à jour Pipeline + `obsidian/Clients/`.

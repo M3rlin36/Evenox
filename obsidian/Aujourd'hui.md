@@ -5,7 +5,7 @@ Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 **Qui doit bouger ?**
 **Commence par Joëlle** — appelle (Radio-Canada, 21 sept).  
 Puis Dahlia — oui ou non (500 $ TTC, 13 sept). Puis Emilie — dis tes heures (Festipod).  
-OUI n’écrit que Mathieu.
+OUI = appelle Mathieu (J+7).
 
 ## C’est à toi — ce matin
 
@@ -43,9 +43,9 @@ Salle seulement, livrer le jour même.
 ## Si tu dis OUI
 
 **Mathieu Lacroix** — KO Scène — pas payé · 16 sept  
-Silence depuis le 23 juillet.  
-**À faire si OUI :** « je garde le 16 septembre ? »  
-Pas de commande Booqable.
+Silence depuis le 23 juillet. J+7 : appel, pas un courriel.  
+**À faire si OUI :** appelle — « je garde le 16 septembre ? »  
+Téléphone : pas au dossier. Pas de commande Booqable.
 
 ## On attend
 
