@@ -20,7 +20,7 @@ Perdus (ne plus écrire) : SP Canada, Juliana Garcia.
 
 Avant chaque relance : si le dépôt est déjà payé, ou s’il y a déjà une conversation aujourd’hui / récente → Pas de suivi.
 
-Page et courriel : À faire / On n’écrit pas / An passé. Chaque nom = Pipeline. Rien d’autre.
+Page et courriel : une fiche par personne (nom, date, ce qui s’est passé, Booqable). Un seul lien Notion : Aujourd hui.
 
 Branding : violet #5E17EB, logo evenox.ca.
 

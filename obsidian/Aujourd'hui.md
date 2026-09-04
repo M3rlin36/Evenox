@@ -1,11 +1,58 @@
 # Aujourd’hui — 4 septembre 2026
 
-**À faire :** [Mathieu](https://app.notion.com/p/3d031d285ea681a0ae5eed45c657d495)
+Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
-**On n’écrit pas :** [Dahlia](https://app.notion.com/p/3d031d285ea6818b8c3dd06c7734855f), [Annie](https://app.notion.com/p/3d031d285ea68197a69cf6d1795c10b9), [Chana](https://app.notion.com/p/3d031d285ea681998572d107c14679bd), [Catherine](https://app.notion.com/p/3d031d285ea68167b7ded5ddc56914d6), [Emilie](https://app.notion.com/p/3c331d285ea681efb62ccdade4c45199), [Justine](https://app.notion.com/p/3c331d285ea6810f8954db575a947ec3)
+Une fiche = nom, date, ce qui s’est passé, Booqable s’il y a une commande.
+Un seul lien Notion : cette page.
 
-**An passé :** [Christina](https://app.notion.com/p/3d131d285ea681c0b835c3ac4290f141), [Dylan](https://app.notion.com/p/3d131d285ea681ad874ec168bd8b7fc3), [Manon](https://app.notion.com/p/3d131d285ea681928adbd08e07434413), [Radiologix](https://app.notion.com/p/3d131d285ea681728d33d4178d491838), [Linq](https://app.notion.com/p/3d131d285ea6817e9685f8e3c236de1e)
+## À faire
+
+**Mathieu Lacroix** — KO Scène / Festipod  
+16 septembre — 1610 Saint-Denis  
+23 juillet : 250 chaises, pas de dépôt. Silence depuis.  
+Pas de commande Booqable
+
+## En cours
+
+**Dahlia**  
+3 septembre — elle a écrit, budget 500 $  
+#921 — https://evenox.booqable.com/orders?q=921
+
+**Annie Paquette** — MindCore  
+5 décembre — salle seulement, livrer le jour même. Répondu le 3 sept.  
+#1822 — https://evenox.booqable.com/orders/68417d10-6d96-4b9b-bd55-31a4c662ab8d
+
+**Chana** — BNC  
+8 octobre — tuto chasse. Tu lui as écrit le 3 sept.  
+Pas de commande Booqable
+
+**Catherine** — LA VIRÉE  
+3 septembre — lettres 4 pieds, elle va confirmer.  
+Pas de commande Booqable
+
+**Emilie Brien** — Festipod  
+17–19 septembre — 25 août : OK pour d’autres heures. Devis jamais envoyé.  
+#1758 — https://evenox.booqable.com/orders/fcc556d7-09b2-4d3a-963a-d1b678be0cf9
+
+**Justine Theriault** — Empreinte  
+1er décembre — elle attend tes 2 estimés depuis le 24 août.  
+#1759 — https://evenox.booqable.com/orders/346349ed-30db-4037-bead-6c0b690279aa
+
+## An passé
+
+**Christina Sterling** — 19 janv, Havana Four Seasons, livré  
+https://evenox.booqable.com/customers?q=Christina%20Sterling
+
+**Dylan Djiboni** — 31 déc 2025, résa 967  
+https://evenox.booqable.com/orders?q=967
+
+**Manon Morin** — karaoké déc 2025  
+https://evenox.booqable.com/customers?q=Manon%20Morin
+
+**Marie-Josée / Radiologix** — 17 janv, résa 865  
+https://evenox.booqable.com/orders?q=865
+
+**Linq Immobilier** — nov 2025, contrat 841  
+https://evenox.booqable.com/orders?q=841
 
 Réponds **OUI**, **NON** ou **sauf Mathieu**.
-
-Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
