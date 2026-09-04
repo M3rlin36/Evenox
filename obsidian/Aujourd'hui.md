@@ -21,9 +21,10 @@ Devis jamais parti.
 **Objet :** Devis 17 septembre — Festipod  
 [Booqable #1758](https://evenox.booqable.com/orders/fcc556d7-09b2-4d3a-963a-d1b678be0cf9)
 
-**Dahlia** — ce matin · elle a écrit · 3 sept · 500 $  
-**À faire :** réponds à ce qu’elle a écrit.  
-[Booqable #921](https://evenox.booqable.com/orders?q=921)
+**Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
+Retire le champagne. Max 500 $ TTC : mur de fleurs + 2 chiffres + livraison. 10 h 30–16 h.  
+**À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 13 sept.  
+[Booqable #1826](https://evenox.booqable.com/orders?q=1826)
 
 ## Après
 

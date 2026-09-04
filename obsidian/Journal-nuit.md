@@ -71,3 +71,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** Joëlle et Emilie disent « envoie le devis » sans objet. Le gabarit disait encore « Devis — événement du date ».
 
 **Ajout :** ligne **Objet :** sur Joëlle et Emilie seulement. Gabarit : `Devis [date] — [événement]`. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 8 — 4 sept 2026 02 h 45 Toronto
+
+**Question :** un client écrit avec un budget : on dit quoi ?
+
+**Déjà en place ailleurs :** un vrai oui/non sur le montant + ce qu’elle garde. Une prochaine étape (le dépôt garde la date). Pas « réponds », pas une grille de prix.
+
+**Ce qui cloche chez nous :** Dahlia disait « réponds à ce qu’elle a écrit ». Elle a pourtant écrit : 500 $ TTC, plus de champagne, 13 sept 10 h 30–16 h. Le lien Booqable pointait #921 ; elle a répondu au devis **1826**.
+
+**Ajout :** Dahlia = **oui ou non pour 500 $ TTC**. Booqable #1826. Règle skill : budget → oui/non. Aucun nouveau lead. Pas de courriel à Alexandre.
