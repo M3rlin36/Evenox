@@ -1,0 +1,49 @@
+# Suivis Évenox
+
+Le pipeline custom qui tourne en production à [evenoxpos.cloud/suivis/](https://evenoxpos.cloud/suivis/).
+
+Le code source du VPS (Express + Booqable + Gmail) n’est **pas** dans ce dépôt. Ici : le frontend tel qu’il est servi, plus un serveur de démo pour développer sans jeton Booqable.
+
+## Ce qui a été ajouté sur le frontend
+
+Sans casser les colonnes déjà servies par le VPS (`new` / `quoted` / `won` / `lost`) :
+
+- Colonnes **En relance**, **Négociation**, **Reportés**
+- Filtres **Sans prochaine action**, **Relance échue**, **Renouvellement**, **Post-événement**
+- Chaque carte montre la prochaine action et sa date (badge rouge si elle manque ou si elle est échue)
+- Fiche dossier : bloc « Prochaine action »
+- Fiche client : **timeline d’interactions** (tous dossiers). L’onglet Clients ouvre toujours cette fiche
+- Relance annuelle : cliquer la ligne ouvre la fiche client
+
+Les champs API `alerte`, `prochaine_action`, `prochaine_relance`, `pipeline`, `interactions` sont optionnels. Si le VPS ne les envoie pas encore, l’UI reste utilisable.
+
+## Démo locale
+
+```bash
+cd suivis
+npm install
+npm start
+```
+
+Ouvrir http://localhost:3000/ — code **`1111`**. Aucun courriel ne part. Aucun appel Booqable.
+
+```bash
+npm test
+```
+
+## Déploiement sur le VPS
+
+Copier `public/js/*.js` et `public/css/app.css` par-dessus les fichiers déjà servis sous `/suivis/`. Ne pas déployer `server.js` : c’est uniquement la démo locale.
+
+Côté API production, ajouter quand c’est prêt :
+
+| Champ | Où | Valeurs |
+| --- | --- | --- |
+| `pipeline` | carte + dossier | `ventes` · `renouvellement` · `post_evenement` |
+| `prochaine_action` | carte + dossier | texte libre déjà saisi, jamais inventé |
+| `prochaine_relance` | carte + dossier | date ISO déjà saisie |
+| `alerte` | carte + dossier | `Sans prochaine action` · `Relance échue` |
+| `filtres.*` | `GET /api/pipeline` | compteurs pour les chips |
+| `interactions` | `GET /api/client/:id` | `{ date, type, titre, detail, par, dossier_id }` |
+
+Règle déjà en vigueur : **aucun courriel client sans OUI jusqu’au 10 sept. 2026**.
