@@ -17,6 +17,7 @@ Chaque fiche :
 - **Date** de l’event ou du dernier mot
 - **Ce qui s’est passé** (1 ligne)
 - **À faire** — un verbe + un objet. Lead inbound avec téléphone : **appelle** d’abord, ensuite le devis. Si c’est un devis : « Le dépôt garde le [date]. » Jamais « just checking in ».
+- **Dis :** seulement si l’action est un appel — deux phrases (date, puis dépôt). Gabarit `appel-inbound.md`.
 - **Booqable** si une commande existe. Sinon : « Pas de commande Booqable ».
 - Téléphone sur la fiche seulement si l’action est un appel.
 
@@ -81,6 +82,7 @@ Objet : `[SUIVI] AAAA-MM-JJ`
 ## Gabarits
 
 - `obsidian/Gabarits/devis-premier.md` — premier envoi : une action, le dépôt garde la date
+- `obsidian/Gabarits/appel-inbound.md` — lead du jour : deux phrases
 - `obsidian/Gabarits/relance-j2.md`
 - `obsidian/Gabarits/relance-j4.md`
 - `obsidian/Gabarits/appel-j7.md`

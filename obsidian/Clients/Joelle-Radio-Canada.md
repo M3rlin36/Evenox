@@ -16,7 +16,9 @@ Livraison lundi 21 sept dès 9 h. Retour jeudi 24 sept dès 9 h.
 
 Devis site abandonné à 0 $. Pas de commande Booqable.
 
-Pas une relance. Appelle d’abord (438-342-8309), ensuite le devis. Le dépôt garde le 21 sept.
+Pas une relance. Appelle d’abord (438-342-8309), ensuite le devis.
+
+**Dis :** Allô Joëlle, Alexandre d’Évenox. J’ai votre demande pour le 21 septembre à Radio-Canada. Je vous envoie le devis ce matin — le dépôt garde la date.
 
 ## Fil
 

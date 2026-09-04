@@ -31,3 +31,13 @@ Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
 **Ce qui cloche chez nous :** Joëlle a un numéro (438-342-8309) et un avis « appeler dans l’heure ». La fiche disait seulement « envoie le devis ». Le timer matin demandait encore des numéros (1 3 7).
 
 **Ajout :** Joëlle = **appelle** + numéro. Règle skill : inbound avec téléphone → appel d’abord. Timer matin corrigé (OUI / NON / sauf). Pas de nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 4 — 3 sept 2026 23 h 45 Toronto
+
+**Question :** qu’est-ce qu’on dit dans les 30 premières secondes d’un appel inbound ?
+
+**Déjà en place ailleurs :** date + lieu d’abord (oui/non dispo). Une prochaine étape. Le dépôt garde la date. Pas de catalogue au téléphone.
+
+**Ce qui cloche chez nous :** Joëlle dit « appelle » sans les mots. Le gabarit appel-j7 est pour une relance silencieuse, pas un lead du soir.
+
+**Ajout :** ligne **Dis :** sur Joëlle. Gabarit `appel-inbound.md`. Aucun nouveau lead. Pas de courriel à Alexandre.
