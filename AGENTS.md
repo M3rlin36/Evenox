@@ -22,7 +22,7 @@ Le repo est le code. L’opération vit dans Notion + Gmail + Drive.
 
 ## Grokbot — courriels (obligatoire)
 
-Nom canon de l’agent : **Grokbot** / **Grok**. Libellés Gmail : `Grok-File`, `Grok-En-cours`, `Grok-Skip`, `Grok-Livraison`, `Grok-Acompte`. Jamais GROS.
+Nom canon de l’agent : **Grokbot** / **Grok**. Libellés Gmail : `Grok-File`, `Grok-En-cours`, `Grok-Skip`, `Grok-Livraison`, `Grok-Acompte`, `Grok-Envoyé`. Jamais GROS.
 
 Grokbot oublie les mails s’il les garde dans le chat. La file = libellés Gmail.
 
@@ -36,6 +36,7 @@ Nate Herk ([vidéo Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)) : éti
 - MCP cherche `label:Grok-File` (nom), pas `label:Label_19`.
 - Ne jamais scanner `is:unread`. File vide = `QUEUE VIDE`. Pas de boucle 15/30 min.
 - Laisser unread. Jamais d’envoi client sans le mot **envoie** d’Alexandre.
+- Jamais « j’envoie » / « c’est parti ». Après `send_message` : `get_thread` **même tour**. Coller `ENVOYÉ` (À / Heure / ID) seulement si `SENT` est sur cet id. Sinon `PAS PARTI — brouillon encore là.` Puis `Grok-Envoyé`.
 
 Triage cheap : `python -m pytest grosbot/tests`.
 

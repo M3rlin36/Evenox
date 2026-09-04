@@ -1,9 +1,11 @@
 from grosbot.queries import (
+    LABEL_AUTO_REPLIED,
     LABEL_BILLING,
     LABEL_FILE,
     LABEL_FILE_ALIAS,
     LABEL_IDS,
     LABEL_IN_PROGRESS,
+    LABEL_SENT,
     LABEL_SKIP,
     LABEL_SCHEDULE,
     LABEL_URGENT,
@@ -45,3 +47,6 @@ def test_queue_labels_are_grok_gmail_names():
     assert LABEL_IDS[LABEL_SKIP] == "Label_21"
     assert LABEL_IDS[LABEL_SCHEDULE] == "Label_24"
     assert LABEL_IDS[LABEL_BILLING] == "Label_25"
+    assert LABEL_SENT == "Grok-Envoyé"
+    assert LABEL_IDS[LABEL_SENT] == "Label_26"
+    assert LABEL_IDS[LABEL_AUTO_REPLIED] == "Label_6"

@@ -2,7 +2,7 @@
 
 Vidéo : [Nate Herk — Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)
 
-L’agent s’appelle **Grokbot** / **Grok**. Les libellés Gmail de file sont `Grok-File`, `Grok-En-cours`, `Grok-Skip`, `Grok-Livraison`, `Grok-Acompte` (renommés depuis GROS-* le 4 sept 2026 ; IDs inchangés).
+L’agent s’appelle **Grokbot** / **Grok**. Les libellés Gmail de file sont `Grok-File`, `Grok-En-cours`, `Grok-Skip`, `Grok-Livraison`, `Grok-Acompte`, `Grok-Envoyé` (renommés depuis GROS-* le 4 sept 2026 ; IDs inchangés).
 
 Nate ne nettoie pas 5 200 unread. Il étiquette le courriel client, il ne draft que l’urgence, il n’envoie rien tant qu’il n’a pas dit send, et un check vide = no actions. Même chose ici, sur Evenox.
 
@@ -37,6 +37,7 @@ Drive process : `process.md` — [fichier](https://drive.google.com/file/d/1llpt
 | In progress | `Grok-En-cours` + `NOX-En-cours` | `Label_20` + `Label_23` |
 | Done | `NOX-Processed` | `Label_5` |
 | Draft waiting | `Brouillon IA` | `Label_17` |
+| Sent (proved) | `Grok-Envoyé` | `Label_26` |
 
 Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Canon file = libellé `Grok-File`. Canon agent = Grokbot. Pas de GROS dans les libellés Gmail.
 
@@ -47,6 +48,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 3. File vide = une recherche, `QUEUE VIDE`, **stop**.
 4. MCP `search_threads` : `label:Grok-File` (nom), pas `label:Label_19`.
 5. Ne jamais marquer lu.
+6. Jamais « j’envoie » sans preuve. `send_message` + `get_thread` **même tour**. `prove_sent` : id + `SENT` + `from:evenox.ca@gmail.com`. Sinon `PAS PARTI — brouillon encore là.` Un vieux SENT sur le fil ne compte pas. Preuve → coller `ENVOYÉ` (À / Heure / ID) puis `Grok-Envoyé`.
 
 ## Requêtes cheap
 

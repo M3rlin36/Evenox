@@ -7,7 +7,7 @@ description: File Grokbot / Cerveau selon Nate Herk. Courriels, Grokbot, Dispatc
 
 Vidéo : https://www.youtube.com/watch?v=4hKJ9X6rGFo
 
-Nom canon : **Grokbot** / **Grok**. Libellés Gmail : `Grok-File`, `Grok-En-cours`, `Grok-Skip`, `Grok-Livraison`, `Grok-Acompte`. Jamais GROS.
+Nom canon : **Grokbot** / **Grok**. Libellés Gmail : `Grok-File`, `Grok-En-cours`, `Grok-Skip`, `Grok-Livraison`, `Grok-Acompte`, `Grok-Envoyé`. Jamais GROS.
 
 Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un à la fois, drafts jusqu’à « envoie », ne pas nettoyer 20k unread.
 
@@ -19,6 +19,7 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 - Schedule → `Grok-Livraison`
 - Billing → `Grok-Acompte`
 - Ignore → `NOX-Spam`
+- Envoyé (preuve) → `Grok-Envoyé`
 
 ## Pourquoi il oubliait
 
@@ -51,9 +52,19 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 3. Triage cheap (en-têtes, `grosbot.classify`) → file + type Nate, ou `NOX-Spam`. Max 8. Ne pas marquer lu.
 4. `claim_next` : 1 fil. Dual-write En-cours, retirer File + alias.
 5. Lire **tout** ce fil. Un message Alexandre = un dossier (Nom / Date / Client veut / Fait / Action).
-6. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
-7. Fermer : `NOX-Processed` + `Brouillon IA` (ou `Grok-Skip` + `NOX-Processed`). Retirer File **et** En-cours (les deux synonymes).
-8. S’il reste de la file : une ligne « file : N restants ». Stop.
+6. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e. Brouillon = `PAS PARTI`. Ne jamais dire « j’envoie ».
+7. Après `envoie` : `send_message`, puis **dans le même tour** `get_thread` (METADATA_ONLY). `prove_sent` (`grosbot.queue`). Preuve = id `send_message` **et** ce même id dans le fil, `from:evenox.ca@gmail.com`, libellé système `SENT`. Un vieux SENT sur le fil ≠ ce tour.
+   - Preuve → coller exactement :
+     ```
+     ENVOYÉ
+     À : …
+     Heure : …
+     ID : …
+     ```
+     Puis `Grok-Envoyé` + `NOX-Processed` + `Auto-répondu`. Retirer File / En-cours / `Brouillon IA`.
+   - Sinon → `PAS PARTI — brouillon encore là.` Stop. Pas de `Grok-Envoyé`.
+8. Fermer un brouillon (sans envoi) : `NOX-Processed` + `Brouillon IA` (ou `Grok-Skip` + `NOX-Processed`). Retirer File **et** En-cours (les deux synonymes).
+9. S’il reste de la file : une ligne « file : N restants ». Stop.
 
 ## Coût
 
@@ -66,3 +77,11 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 ## n8n
 
 Le flux « Évenox — Canal courriel » crée déjà devis Booqable + brouillons. Grokbot **complète** la file, il ne reconstruit pas n8n.
+
+## Preuve d’envoi (même tour)
+
+Alexandre ne doit plus attendre Gmail pour savoir si c’est parti.
+
+**Interdit** sans le bloc `ENVOYÉ` du même tour : « j’envoie », « je vais envoyer », « c’est parti », « je viens d’envoyer ».
+
+`get_thread` cache les brouillons. Si `send_message` n’a rien collé en SENT, le nouveau message est absent → `PAS PARTI`.

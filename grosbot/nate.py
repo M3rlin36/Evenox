@@ -31,6 +31,7 @@ HABITS = (
     "Watch only NEW mail for emergencies. Empty check = QUEUE VIDE / no actions.",
     "Everything else waits on a short weekday list (3×/jour, not every 15 min).",
     "Draft easy replies from Drive docs. Never send until Alexandre says envoie.",
+    "Never say j'envoie. After send_message, get_thread same turn. SENT or PAS PARTI.",
 )
 
 # Nate: highest value is not cleaning 5k/20k unread. Next emergency must not sit.

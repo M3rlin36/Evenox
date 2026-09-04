@@ -22,6 +22,13 @@ LABEL_SOUMISSION = "Soumission"
 LABEL_URGENT = "NOX-URGENT"
 LABEL_SCHEDULE = "Grok-Livraison"
 LABEL_BILLING = "Grok-Acompte"
+LABEL_SENT = "Grok-Envoyé"
+LABEL_AUTO_REPLIED = "Auto-répondu"
+
+# System Gmail labels. SENT is the only proof an email left. DRAFT means it did not.
+SYSTEM_SENT = "SENT"
+SYSTEM_DRAFT = "DRAFT"
+ACCOUNT_FROM = "evenox.ca@gmail.com"
 
 FILE_LABELS = (LABEL_FILE, LABEL_FILE_ALIAS)
 IN_PROGRESS_LABELS = (LABEL_IN_PROGRESS, LABEL_IN_PROGRESS_ALIAS)
@@ -40,6 +47,8 @@ LABEL_IDS = {
     LABEL_URGENT: "Label_15",
     LABEL_SCHEDULE: "Label_24",
     LABEL_BILLING: "Label_25",
+    LABEL_SENT: "Label_26",
+    LABEL_AUTO_REPLIED: "Label_6",
 }
 
 # Cheap intake: last 2 days only (Nate: do not clean the old unread pile).
@@ -91,6 +100,7 @@ REPORT_LABELS = (
     LABEL_SOUMISSION,
     LABEL_SCHEDULE,
     LABEL_BILLING,
+    LABEL_SENT,
     LABEL_DRAFT_IA,
     LABEL_SPAM,
     LABEL_PROCESSED,

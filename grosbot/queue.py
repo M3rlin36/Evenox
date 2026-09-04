@@ -11,18 +11,23 @@ from enum import Enum
 
 from grosbot.classify import Classification, Decision, classify
 from grosbot.queries import (
+    ACCOUNT_FROM,
     FILE_LABELS,
     IN_PROGRESS_LABELS,
+    LABEL_AUTO_REPLIED,
     LABEL_BILLING,
     LABEL_DRAFT_IA,
     LABEL_FILE,
     LABEL_IN_PROGRESS,
     LABEL_PROCESSED,
     LABEL_SCHEDULE,
+    LABEL_SENT,
     LABEL_SKIP,
     LABEL_SOUMISSION,
     LABEL_SPAM,
     LABEL_URGENT,
+    SYSTEM_DRAFT,
+    SYSTEM_SENT,
 )
 
 # Hard caps so a run cannot chew tokens on 20k unread threads.
@@ -50,6 +55,7 @@ class QueueState(str, Enum):
     DRAFTED = "DRAFTED"
     SKIPPED = "SKIPPED"
     SPAM = "SPAM"
+    SENT = "SENT"
     DONE = "DONE"
 
 
@@ -69,6 +75,46 @@ class QueueAction:
     remove_labels: tuple[str, ...]
     state: QueueState
     reason: str
+
+
+@dataclass(frozen=True)
+class SentProof:
+    """Same-turn send proof. Chat is not proof. Gmail SENT is."""
+
+    ok: bool
+    message_id: str = ""
+    thread_id: str = ""
+    to: str = ""
+    sent_at: str = ""
+    reason: str = ""
+
+    def line(self) -> str:
+        if not self.ok:
+            extra = self.reason.strip()
+            if extra:
+                return f"PAS PARTI — brouillon encore là. {extra}"
+            return "PAS PARTI — brouillon encore là."
+        return (
+            f"ENVOYÉ\n"
+            f"À : {self.to}\n"
+            f"Heure : {self.sent_at}\n"
+            f"ID : {self.message_id}"
+        )
+
+
+# Future-tense claims that made Alexandre wait on Gmail. Banned unless
+# prove_sent already returned ENVOYÉ in THIS turn.
+UNPROVEN_SEND_PHRASES = (
+    "j'envoie",
+    "j’envoie",
+    "je vais envoyer",
+    "je l'envoie",
+    "je l’envoie",
+    "c'est parti",
+    "c’est parti",
+    "je viens d'envoyer",
+    "je viens d’envoyer",
+)
 
 
 def promised_threads(said_ids: list[str], queued_ids: list[str]) -> list[str]:
@@ -213,7 +259,7 @@ def finish(thread: Thread, *, drafted: bool) -> QueueAction:
             (LABEL_PROCESSED, LABEL_DRAFT_IA),
             FILE_LABELS + IN_PROGRESS_LABELS,
             QueueState.DRAFTED,
-            "draft ready, waiting for Alexandre envoie",
+            "brouillon prêt. PAS PARTI. Attendre envoie Alexandre.",
         )
     return QueueAction(
         thread.id,
@@ -222,6 +268,188 @@ def finish(thread: Thread, *, drafted: bool) -> QueueAction:
         QueueState.SKIPPED,
         "skipped",
     )
+
+
+def mark_sent(thread: Thread, proof: SentProof) -> QueueAction:
+    """Stamp Grok-Envoyé only after prove_sent.ok. Never on a promise."""
+    if not proof.ok:
+        raise QueueError(
+            "PAS PARTI — pas de preuve SENT. Grok-Envoyé interdit."
+        )
+    return QueueAction(
+        thread.id,
+        (LABEL_SENT, LABEL_PROCESSED, LABEL_AUTO_REPLIED),
+        FILE_LABELS + IN_PROGRESS_LABELS + (LABEL_DRAFT_IA,),
+        QueueState.SENT,
+        "gmail SENT proven",
+    )
+
+
+def _as_dict(obj: object) -> dict:
+    if isinstance(obj, dict):
+        return obj
+    return {}
+
+
+def _unwrap_message(obj: object) -> dict:
+    data = _as_dict(obj)
+    inner = data.get("message")
+    if isinstance(inner, dict) and (inner.get("id") or inner.get("labelIds") or inner.get("label_ids")):
+        return inner
+    return data
+
+
+def _field(obj: dict, *names: str) -> object:
+    for name in names:
+        if name in obj and obj[name] not in (None, ""):
+            return obj[name]
+    return None
+
+
+def _id_of(obj: dict) -> str:
+    return str(_field(obj, "id", "messageId", "message_id") or "")
+
+
+def _thread_id_of(obj: dict) -> str:
+    return str(_field(obj, "threadId", "thread_id", "id") or "")
+
+
+def _labels_of(obj: dict) -> tuple[str, ...]:
+    raw = _field(obj, "labelIds", "label_ids") or []
+    if isinstance(raw, str):
+        return (raw,)
+    if isinstance(raw, (list, tuple)):
+        return tuple(str(x) for x in raw if x)
+    return ()
+
+
+def _sender_of(msg: dict) -> str:
+    return str(_field(msg, "sender", "from", "From") or "").lower()
+
+
+def _to_of(msg: dict) -> str:
+    recips = _field(msg, "toRecipients", "to_recipients", "to", "To") or []
+    if isinstance(recips, str):
+        return recips
+    if isinstance(recips, (list, tuple)):
+        return ", ".join(str(x) for x in recips if x)
+    return str(recips)
+
+
+def _date_of(msg: dict) -> str:
+    return str(_field(msg, "date", "Date", "internalDate", "internal_date") or "")
+
+
+def _messages_of(thread: object) -> list[dict]:
+    data = _as_dict(thread)
+    messages = data.get("messages")
+    if isinstance(messages, list):
+        return [m for m in messages if isinstance(m, dict)]
+    threads = data.get("threads")
+    if isinstance(threads, list) and threads:
+        first = threads[0]
+        if isinstance(first, dict) and isinstance(first.get("messages"), list):
+            return [m for m in first["messages"] if isinstance(m, dict)]
+    return []
+
+
+def prove_sent(
+    *,
+    send_result: object | None,
+    thread: object | None,
+    expected_thread_id: str | None = None,
+) -> SentProof:
+    """Prove a client send in THIS turn.
+
+    Both required:
+    1. send_message returned an id
+    2. get_thread shows that same id, from evenox.ca@gmail.com, with SENT
+
+    get_thread omits drafts. If the mail is still a draft, the new message
+    is missing → PAS PARTI. An older SENT on the same thread is not proof.
+    """
+    send_msg = _unwrap_message(send_result)
+    sid = _id_of(send_msg)
+    if not sid:
+        return SentProof(ok=False, reason="send_message n’a pas d’id.")
+
+    send_labels = set(_labels_of(send_msg))
+    if SYSTEM_DRAFT in send_labels and SYSTEM_SENT not in send_labels:
+        return SentProof(
+            ok=False,
+            message_id=sid,
+            thread_id=_thread_id_of(send_msg),
+            reason="send_message a encore DRAFT.",
+        )
+
+    messages = _messages_of(thread)
+    if not messages:
+        return SentProof(
+            ok=False,
+            message_id=sid,
+            thread_id=_thread_id_of(send_msg),
+            reason="get_thread manquant.",
+        )
+
+    match = next((m for m in messages if _id_of(m) == sid), None)
+    if match is None:
+        return SentProof(
+            ok=False,
+            message_id=sid,
+            thread_id=_thread_id_of(_as_dict(thread)) or _thread_id_of(send_msg),
+            reason="id send_message absent du fil (les brouillons sont cachés).",
+        )
+
+    labels = set(_labels_of(match))
+    if SYSTEM_SENT not in labels:
+        return SentProof(
+            ok=False,
+            message_id=sid,
+            thread_id=_thread_id_of(match) or _thread_id_of(send_msg),
+            to=_to_of(match),
+            sent_at=_date_of(match),
+            reason="Gmail n’a pas SENT.",
+        )
+
+    if ACCOUNT_FROM not in _sender_of(match):
+        return SentProof(
+            ok=False,
+            message_id=sid,
+            thread_id=_thread_id_of(match),
+            to=_to_of(match),
+            sent_at=_date_of(match),
+            reason="pas parti de evenox.ca@gmail.com.",
+        )
+
+    tid = _thread_id_of(match) or _thread_id_of(send_msg) or _thread_id_of(_as_dict(thread))
+    if expected_thread_id and tid and expected_thread_id != tid:
+        return SentProof(
+            ok=False,
+            message_id=sid,
+            thread_id=tid,
+            to=_to_of(match),
+            sent_at=_date_of(match),
+            reason="mauvais fil.",
+        )
+
+    return SentProof(
+        ok=True,
+        message_id=sid,
+        thread_id=tid,
+        to=_to_of(match),
+        sent_at=_date_of(match),
+        reason="gmail SENT",
+    )
+
+
+def is_unproven_send_claim(text: str) -> bool:
+    """True if chat claims a send without the ENVOYÉ proof block."""
+    if not text:
+        return False
+    if "ENVOYÉ" in text and "ID :" in text:
+        return False
+    lowered = text.casefold()
+    return any(phrase in lowered for phrase in UNPROVEN_SEND_PHRASES)
 
 
 def cap_triage(threads: list[Thread]) -> list[Thread]:
