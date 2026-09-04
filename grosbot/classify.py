@@ -54,6 +54,13 @@ _IGNORE_SENDER_NEEDLES = (
     "news@email.",
     "communications.hydro.qc.ca",
     "hydro-quebec@",
+    "hydro.qc.ca",
+    "ads-noreply@google.com",
+    "news.railway.app",
+    "skool.com",
+    "wecookmeals",
+    "tiktok.com",
+    "shopsante.",
 )
 
 _IGNORE_SUBJECT_NEEDLES = (

@@ -44,3 +44,12 @@ def waiting_vs_done(stats: dict[str, dict[str, int]]) -> dict[str, int]:
         "done": stats.get(LABEL_PROCESSED, {}).get("threads", 0),
         "spam": stats.get(LABEL_SPAM, {}).get("threads", 0),
     }
+
+
+def veille_line(names: list[str]) -> str:
+    """One line for Alexandre after the yesterday catch-up. No IDs."""
+    clean = [n.strip() for n in names if n and n.strip()]
+    if not clean:
+        return "Veille : 0 oublié."
+    shown = clean[:8]
+    return f"Veille : {len(clean)} rattrapé(s). {', '.join(shown)}."

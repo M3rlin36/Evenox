@@ -38,18 +38,18 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 1. File : `{label:Grok-File label:NOX-À-traiter} -label:NOX-Processed -label:Grok-En-cours -label:NOX-En-cours`
 2. En cours : `{label:Grok-En-cours label:NOX-En-cours} -label:NOX-Processed`
 3. Urgent Nate (nouveau seulement) : `in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam`
-4. Triage (max 8) : `in:inbox newer_than:2d -label:NOX-Processed -label:NOX-Spam -label:Grok-File -label:NOX-À-traiter`
+4. Triage / **veille** (max 8, **même si File n’est pas vide**) : `CATCHUP_QUERY` = inbox `newer_than:2d` sans File/Processed/Spam. En-têtes, `grosbot.classify` → File + type Nate, ou `NOX-Spam`. Une ligne `Veille : 0 oublié.` ou `Veille : N rattrapé(s). …`
 5. Leads site : `from:wordpress@evenox.ca newer_than:14d` (sujets Nouveau lead / Nouvelle soumission)
 
-**Interdit :** `is:unread` seul. **Interdit :** relire l’inbox entière. **Interdit :** boucle 15/30 min. Sweep cheap 3×/jour. File vide = `QUEUE VIDE` et stop.
+**Interdit :** `is:unread` seul. **Interdit :** relire l’inbox entière. **Interdit :** boucle 15/30 min. Sweep cheap 3×/jour. **Le matin (9h) : toujours la veille**, même si File est pleine. File vide = `QUEUE VIDE` et stop.
 
 `search_threads` MCP matche le **nom** du libellé (`Grok-File`), pas `label:Label_19`.
 
 ## Run (ordre Nate)
 
-1. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
-2. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
-3. Triage cheap (en-têtes, `grosbot.classify`) → file + type Nate, ou `NOX-Spam`. Max 8. Ne pas marquer lu.
+1. **Veille (toujours, même si File n’est pas vide)** : `CATCHUP_QUERY` (headers, max 8) → dual-write File ou Spam. Une ligne `Veille : …`. En-tête le plus récent > 2 j = faux positif Gmail, skip. Dernier message = SENT Evenox → déjà répondu, ne pas File.
+2. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
+3. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
 4. `claim_next` : 1 fil. Dual-write En-cours, retirer File + alias.
 5. Lire **tout** ce fil. Un message Alexandre = un dossier (Nom / Date / Client veut / Fait / Action).
 6. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
@@ -66,7 +66,7 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 - Triage = règles, pas un LLM.
 - 1 brouillon / run. Le reste attend dans `Grok-File` (0 token).
 - Rapport vendredi = `list_labels` (`grosbot.report`), jamais un scan de fils.
-- Sweep cheap 3×/jour (`0 13,16,20 * * 1-5` UTC = 9h/12h/16h Montréal).
+- Sweep cheap 3×/jour (`0 13,16,20 * * 1-5` UTC = 9h/12h/16h Montréal). Le 9h = routine **veille** (rattraper hier). Toujours, même si File n’est pas vide.
 
 ## n8n
 

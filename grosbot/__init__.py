@@ -18,7 +18,7 @@ from grosbot.queue import (
     sort_queue,
     triage_action,
 )
-from grosbot.report import waiting_vs_done, weekly_from_label_stats
+from grosbot.report import veille_line, waiting_vs_done, weekly_from_label_stats
 
 __all__ = [
     "Decision",
@@ -43,5 +43,6 @@ __all__ = [
     "sort_queue",
     "triage_action",
     "waiting_vs_done",
+    "veille_line",
     "weekly_from_label_stats",
 ]

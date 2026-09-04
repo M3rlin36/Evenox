@@ -1,4 +1,5 @@
 from grosbot.queries import (
+    CATCHUP_QUERY,
     LABEL_AUTO_REPLIED,
     LABEL_BILLING,
     LABEL_FILE,
@@ -50,3 +51,10 @@ def test_queue_labels_are_grok_gmail_names():
     assert LABEL_SENT == "Grok-Envoyé"
     assert LABEL_IDS[LABEL_SENT] == "Label_26"
     assert LABEL_IDS[LABEL_AUTO_REPLIED] == "Label_6"
+
+
+def test_catchup_is_the_triage_window_not_the_unread_pile():
+    assert CATCHUP_QUERY == TRIAGE_QUERY
+    assert "newer_than:2d" in CATCHUP_QUERY
+    assert "is:unread" not in CATCHUP_QUERY
+    assert f"-label:{LABEL_FILE}" in CATCHUP_QUERY

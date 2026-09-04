@@ -61,6 +61,10 @@ TRIAGE_QUERY = (
     f"-label:{LABEL_SKIP}"
 )
 
+# Morning catch-up: SAME query. Must run even when Grok-File is not empty,
+# otherwise yesterday's unlabeled client mail is literally forgotten.
+CATCHUP_QUERY = TRIAGE_QUERY
+
 # Work queue. Gmail is the only list Grokbot may promise replies from.
 QUEUE_QUERY = (
     f"{{label:{LABEL_FILE} label:{LABEL_FILE_ALIAS}}} "

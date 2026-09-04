@@ -1,7 +1,7 @@
 from grosbot.classify import Decision, Kind, classify
 from grosbot.nate import HABITS, NATE_TO_EVENOX, VIDEO_URL
 from grosbot.queries import LABEL_BILLING, LABEL_SOUMISSION, LABEL_URGENT
-from grosbot.report import waiting_vs_done, weekly_from_label_stats
+from grosbot.report import veille_line, waiting_vs_done, weekly_from_label_stats
 from grosbot.filters import FILTER_SPECS, gmail_ui_recipe
 
 
@@ -28,6 +28,19 @@ def test_hydro_quebec_promo_is_ignored():
         subject="Votre facture est disponible",
     )
     assert result.decision is Decision.IGNORE
+
+
+def test_google_ads_and_shopsante_are_ignored():
+    ads = classify(
+        sender="ads-noreply@google.com",
+        subject="Augmentez les conversions avec AI Max",
+    )
+    shop = classify(
+        sender="info@shopsante.ca",
+        subject="Une commande 4025112 est en cours!",
+    )
+    assert ads.decision is Decision.IGNORE
+    assert shop.decision is Decision.IGNORE
 
 
 def test_newsletter_is_ignored():
@@ -100,6 +113,7 @@ def test_nate_mapping_covers_six_kinds():
     }
     assert NATE_TO_EVENOX["Emergency"] == LABEL_URGENT
     assert "draft" in " ".join(HABITS).lower()
+    assert "catch-up" in " ".join(HABITS).lower()
     assert VIDEO_URL.endswith("4hKJ9X6rGFo")
 
 
@@ -123,3 +137,11 @@ def test_weekly_report_uses_label_totals_not_unread_scan():
     summary = waiting_vs_done(stats)
     assert summary["waiting"] == 11
     assert summary["done"] == 100
+
+
+def test_veille_line_is_one_line_no_ids():
+    assert veille_line([]) == "Veille : 0 oublié."
+    assert veille_line(["", "  "]) == "Veille : 0 oublié."
+    line = veille_line(["Jacqueline", "Dahlia"])
+    assert line == "Veille : 2 rattrapé(s). Jacqueline, Dahlia."
+    assert "ID" not in line

@@ -49,6 +49,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 4. MCP `search_threads` : `label:Grok-File` (nom), pas `label:Label_19`.
 5. Ne jamais marquer lu.
 6. Jamais « j’envoie ». Preuve = coller le mail (`Parti.` + À + Objet + texte). Sinon `Pas parti. Le brouillon est encore là.` Pas d’ID. Pas aller dans Gmail.
+7. Matin : **veille**. Catch-up `newer_than:2d` même si File n’est pas vide. Une ligne `Veille : 0 oublié.` ou `Veille : N rattrapé(s).`
 
 ## Requêtes cheap
 

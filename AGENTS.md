@@ -35,6 +35,7 @@ Nate Herk ([vidéo Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)) : éti
 - 1 dossier à la fois (`Grok-En-cours` + `NOX-En-cours`). Urgent / acompte avant un nouveau lead.
 - MCP cherche `label:Grok-File` (nom), pas `label:Label_19`.
 - Ne jamais scanner `is:unread`. File vide = `QUEUE VIDE`. Pas de boucle 15/30 min.
+- Matin : routine **veille**. Catch-up `newer_than:2d` **même si File n’est pas vide**. Une ligne `Veille : 0 oublié.` ou `Veille : N rattrapé(s).`
 - Laisser unread. Jamais d’envoi client sans le mot **envoie** d’Alexandre.
 - Jamais « j’envoie ». Après envoi : coller `Parti.` + À + Objet + le texte. Sinon `Pas parti. Le brouillon est encore là.` Pas d’ID.
 
