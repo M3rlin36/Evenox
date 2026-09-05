@@ -35,7 +35,10 @@ npm install
 npm start
 ```
 
-Ouvrir http://localhost:3000/ — code **`1111`**. Aucun courriel ne part. Aucun appel Booqable.
+Ouvrir http://localhost:3000/ — code **`1111`**.
+
+Les gabarits J+2…J+30, réponse, an passé et prospection sont branchés sur Relances auto et sur « Réponse pré-écrite ».  
+**M’envoyer un test** part seulement à `evenox.ca@gmail.com`. **Démarrer en brouillons** prépare les courriels — aucun client n’est écrit avant le 10 septembre 2026. Sans jeton Gmail (`GMAIL_REFRESH_TOKEN` + client id/secret), les courriels restent dans `data/courriels.json` et s’affichent dans l’écran Relances auto.
 
 ```bash
 npm test

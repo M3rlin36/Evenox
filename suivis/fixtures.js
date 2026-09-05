@@ -423,6 +423,8 @@ function etatInitial() {
     notes: {},
     annulations: {},
     sequenceCandidats: ['dos-marie', 'dos-bouchard'],
+    sequenceDossiers: {},
+    courriels: [],
   };
 }
 

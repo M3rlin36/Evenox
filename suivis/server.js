@@ -17,6 +17,8 @@ var express = require('express');
 var path = require('path');
 var crypto = require('crypto');
 var fixtures = require('./fixtures');
+var gabarits = require('./gabarits');
+var mailer = require('./mailer');
 
 var PORT = Number(process.env.PORT) || 3000;
 var DEMO_CODE = String(process.env.DEMO_CODE || '1111');
@@ -331,6 +333,75 @@ function ficheClient(id) {
   };
 }
 
+function raisonExclusion(d) {
+  if (d.statut === 'lost') return { raison: 'Dossier perdu — ne pas écrire', bonne_nouvelle: false };
+  if (d.desabonne) return { raison: 'Désabonné LCAP', bonne_nouvelle: false };
+  if (d.pause_auto) return { raison: 'Label Pause-Auto', bonne_nouvelle: false };
+  if (d.courriel_invalide) return { raison: 'Courriel invalide', bonne_nouvelle: false };
+  if (Number(d.depot_paye) > 0 || Number(d.montant_paye) > 0) {
+    return { raison: 'Dépôt encaissé', bonne_nouvelle: true };
+  }
+  if (d.statut === 'won' && d.pipeline !== 'post_evenement') {
+    return { raison: 'Déjà gagné', bonne_nouvelle: true };
+  }
+  if (!d.courriel) return { raison: 'Pas de courriel', bonne_nouvelle: false };
+  return null;
+}
+
+function dernierEntrant(dossierId) {
+  var disc = etat.discussion[dossierId] || [];
+  for (var i = 0; i < disc.length; i++) {
+    if (disc[i].direction === 'entrant') return disc[i];
+  }
+  return null;
+}
+
+function publicCourriel(c) {
+  if (!c) return null;
+  return {
+    id: c.id,
+    cree_le: c.cree_le,
+    mode: c.mode,
+    gabarit: c.gabarit,
+    etape: c.etape,
+    titre: c.titre,
+    dossier_id: c.dossier_id,
+    nom: c.nom,
+    destinataire: c.destinataire,
+    destinataire_prevu: c.destinataire_prevu,
+    sujet: c.sujet,
+    texte: c.texte,
+    appel_dabord: c.appel_dabord,
+    transport: c.transport,
+    gmail_id: c.gmail_id || '',
+    gmail_draft_id: c.gmail_draft_id || '',
+  };
+}
+
+function expedierDossier(d, opts, done) {
+  var extra = {};
+  if (opts.reponse) {
+    extra.reponse = true;
+    var ent = dernierEntrant(d.id);
+    if (ent) extra.sujet_entrant = ent.sujet;
+  }
+  if (opts.gabarit) extra.gabarit = opts.gabarit;
+  if (opts.bandeau_test) extra.bandeau_test = true;
+  var rendu = gabarits.rendre(d, extra);
+  mailer.expedier(rendu, {
+    mode: opts.mode,
+    forcer_test: opts.forcer_test,
+    dossier_id: d.id,
+    nom: d.nom,
+  }, function (err, entree) {
+    if (!err && entree) {
+      etat.courriels = etat.courriels || [];
+      etat.courriels.unshift(entree);
+    }
+    done(err, entree);
+  });
+}
+
 function journaliser(par, resume, dossier) {
   etat.journal.unshift({
     cree_le: new Date().toISOString(),
@@ -553,7 +624,22 @@ function api(app) {
   });
 
   app.post('/api/dossier/:id/brouillon', exigerSession, function (req, res) {
-    res.json({ message: 'Brouillon simulé — rien n\'est parti (démo locale).' });
+    var d = dossierDe(req.params.id);
+    if (!d) { res.status(404).json({ erreur: 'Dossier introuvable.' }); return; }
+    if (d.statut === 'lost') {
+      res.status(400).json({ erreur: 'Dossier perdu — ne pas écrire.' }); return;
+    }
+    if (d.desabonne) {
+      res.status(400).json({ erreur: 'Désabonné LCAP — aucun brouillon.' }); return;
+    }
+    expedierDossier(d, { mode: 'brouillon', reponse: true }, function (err, entree) {
+      if (err) { res.status(400).json({ erreur: err.message }); return; }
+      journaliser(utilisateur(req).nom, 'Brouillon ' + entree.etape + ' préparé', d);
+      res.json({
+        message: 'Brouillon « ' + entree.sujet + ' » préparé — rien n\'est parti.',
+        courriel: publicCourriel(entree),
+      });
+    });
   });
 
   app.post('/api/dossier/:id/materiel', exigerSession, function (req, res) {
@@ -569,23 +655,51 @@ function api(app) {
     res.json({ message: d.assigne_a ? ('Assigné à ' + d.assigne_a) : 'Plus personne d\'assigné.' });
   });
 
+  app.get('/api/gabarits', exigerSession, function (req, res) {
+    res.json({ gabarits: gabarits.liste(), compte_test: mailer.COMPTE_TEST });
+  });
+
+  app.get('/api/gabarits/:id/apercu', exigerSession, function (req, res) {
+    var d = dossierDe(req.query.dossier || etat.sequenceCandidats[0]);
+    if (!d) { res.status(404).json({ erreur: 'Dossier introuvable.' }); return; }
+    var rendu = gabarits.rendre(d, { gabarit: req.params.id });
+    res.json({ dossier: { id: d.id, nom: d.nom, courriel: d.courriel }, courriel: rendu });
+  });
+
+  app.get('/api/courriels', exigerSession, function (req, res) {
+    res.json({
+      gmail_configure: mailer.gmailConfigure(),
+      envoi_client_autorise: mailer.envoiClientAutorise(),
+      compte_test: mailer.COMPTE_TEST,
+      courriels: (etat.courriels || []).map(publicCourriel),
+    });
+  });
+
   app.get('/api/sequence', exigerSession, function (req, res) {
     var candidats = etat.sequenceCandidats.map(function (id) {
       var d = dossierDe(id);
+      if (!d) return null;
+      var gab = gabarits.choisir(d);
       return {
         id: d.id, nom: d.nom, courriel: d.courriel, montant: d.montant,
         contexte: (d.entreprise || d.type) + ' · ' + (d.date_evenement || 'sans date'),
-        relance_courte: d.prochaine_action || 'J+2',
-        appel_dabord: d.montant >= 2000,
+        relance_courte: d.prochaine_action || gab.etape,
+        gabarit: gab.id,
+        gabarit_etape: gab.etape,
+        gabarit_titre: gab.titre,
+        appel_dabord: Boolean(gab.appel_dabord) || d.montant >= 2000,
         approbation_requise: d.montant >= 2000,
       };
     }).filter(Boolean);
     var exclus = Object.keys(etat.dossiers).map(function (k) { return etat.dossiers[k]; })
       .filter(function (d) { return etat.sequenceCandidats.indexOf(d.id) === -1; })
       .map(function (d) {
-        var raison = d.statut === 'lost' ? 'Dossier perdu — ne pas écrire'
-          : (d.depot_paye ? 'Dépôt encaissé' : (d.desabonne ? 'Désabonné LCAP' : 'Pas encore éligible'));
-        return { nom: d.nom, raison: raison, detail: d.lead_id, bonne_nouvelle: Boolean(d.depot_paye) };
+        var ex = raisonExclusion(d);
+        var raison = ex ? ex.raison : 'Pas encore éligible';
+        return {
+          nom: d.nom, raison: raison, detail: d.lead_id,
+          bonne_nouvelle: Boolean(ex && ex.bonne_nouvelle),
+        };
       });
     res.json({
       mode: etat.sequenceMode,
@@ -593,21 +707,76 @@ function api(app) {
       exclus: exclus,
       nb_exclus: exclus.length,
       garde_fous: { max_par_jour: 8, seuil_approbation: 2000 },
-      compte_test: 'evenox.ca@gmail.com',
+      compte_test: mailer.COMPTE_TEST,
+      gabarits: gabarits.liste(),
+      courriels: (etat.courriels || []).slice(0, 12).map(publicCourriel),
     });
   });
 
   app.post('/api/sequence/test', exigerSession, function (req, res) {
-    res.json({ message: 'Test simulé vers evenox.ca@gmail.com — aucun client touché.' });
+    var ids = (req.body && req.body.ids) || [];
+    if (!ids.length) ids = etat.sequenceCandidats.slice(0, 1);
+    var d = ids.map(dossierDe).filter(Boolean)[0];
+    if (!d) { res.status(400).json({ erreur: 'Aucun dossier à tester.' }); return; }
+    expedierDossier(d, { mode: 'test', forcer_test: true, bandeau_test: true }, function (err, entree) {
+      if (err) { res.status(500).json({ erreur: err.message }); return; }
+      journaliser(utilisateur(req).nom,
+        'Test séquence ' + entree.etape + ' envoyé à ' + mailer.COMPTE_TEST, d);
+      res.json({
+        message: 'Test ' + entree.etape + ' envoyé à evenox.ca@gmail.com — aucun client touché.',
+        courriel: publicCourriel(entree),
+        transport: entree.transport,
+      });
+    });
   });
 
   app.post('/api/sequence/demarrer', exigerSession, function (req, res) {
-    etat.sequenceMode = 'brouillons';
-    res.json({ message: 'Phase 1 démarrée en brouillons (démo).', refuses: [] });
+    var ids = (req.body && req.body.ids) || [];
+    if (!ids.length) {
+      res.status(400).json({ erreur: 'Cochez au moins un dossier.' }); return;
+    }
+    var refuses = [];
+    var aFaire = [];
+    ids.forEach(function (id) {
+      var d = dossierDe(id);
+      if (!d) { refuses.push({ nom: id, raison: 'Introuvable' }); return; }
+      var ex = raisonExclusion(d);
+      if (ex) { refuses.push({ nom: d.nom, raison: ex.raison }); return; }
+      aFaire.push(d);
+    });
+    var crees = [];
+    function suivant(i) {
+      if (i >= aFaire.length) {
+        etat.sequenceMode = crees.length ? 'brouillons' : etat.sequenceMode;
+        res.json({
+          message: crees.length
+            ? crees.length + ' brouillon' + (crees.length > 1 ? 's' : '') +
+              ' préparé' + (crees.length > 1 ? 's' : '') + ' — rien n\'est parti au client.'
+            : 'Aucun brouillon créé.',
+          brouillons: crees.map(publicCourriel),
+          refuses: refuses,
+        });
+        return;
+      }
+      var d = aFaire[i];
+      expedierDossier(d, { mode: 'brouillon' }, function (err, entree) {
+        if (err) {
+          refuses.push({ nom: d.nom, raison: err.message });
+        } else {
+          crees.push(entree);
+          journaliser('auto', 'Brouillon ' + entree.etape + ' préparé', d);
+          etat.sequenceDossiers = etat.sequenceDossiers || {};
+          etat.sequenceDossiers[d.id] = { gabarit: entree.gabarit, depuis: entree.cree_le };
+        }
+        suivant(i + 1);
+      });
+    }
+    suivant(0);
   });
 
   app.post('/api/sequence/arreter', exigerSession, function (req, res) {
     etat.sequenceMode = 'off';
+    etat.sequenceDossiers = {};
     res.json({ message: 'Séquence arrêtée. Aucun courriel ne part.' });
   });
 
@@ -814,7 +983,10 @@ if (require.main === module) {
   var app = creerApp();
   app.listen(PORT, '0.0.0.0', function () {
     console.log('Suivis démo : http://localhost:' + PORT + '/');
-    console.log('Code de démo : ' + DEMO_CODE + '  (aucun courriel ne part)');
+    console.log('Code de démo : ' + DEMO_CODE);
+    console.log('Test courriel : ' + mailer.COMPTE_TEST +
+      (mailer.gmailConfigure() ? ' (Gmail branché)' : ' (brouillons locaux — pas de jeton Gmail)'));
+    console.log('Envoi client : ' + (mailer.envoiClientAutorise() ? 'autorisé' : 'bloqué jusqu\'au ' + mailer.ENVOI_CLIENT_DES_LE));
   });
 }
 

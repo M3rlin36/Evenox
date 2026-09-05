@@ -467,7 +467,26 @@ App.fiche = (function () {
         App.api('/api/dossier/' + encodeURIComponent(cible.dataset.brouillon) + '/brouillon', {
           methode: 'POST',
         })
-          .then(function (r) { App.toast(r.message); cible.disabled = false; })
+          .then(function (r) {
+            App.toast(r.message);
+            cible.disabled = false;
+            if (r.courriel && r.courriel.texte) {
+              var zone = document.getElementById('f-apercu-mail');
+              if (!zone) {
+                zone = document.createElement('div');
+                zone.id = 'f-apercu-mail';
+                zone.className = 'seq-apercu';
+                var corpsF = document.getElementById('f-corps');
+                if (corpsF) corpsF.insertBefore(zone, corpsF.firstChild);
+              }
+              zone.hidden = false;
+              zone.innerHTML = '<div class="seq-ap-k">Brouillon ' + App.h(r.courriel.etape) +
+                ' — rien n\'est parti</div>' +
+                '<div class="seq-ap-s">' + App.h(r.courriel.sujet) + '</div>' +
+                '<pre>' + App.h(r.courriel.texte) + '</pre>';
+              zone.scrollIntoView({ block: 'nearest' });
+            }
+          })
           .catch(function (err) {
             cible.disabled = false;
             App.erreur(err);

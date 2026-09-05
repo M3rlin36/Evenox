@@ -1,9 +1,19 @@
 'use strict';
 /* Vérifie les routes du serveur de démo : session, pipeline (alertes,
-   renouvellement, post-événement), fiche client (interactions). */
+   renouvellement, post-événement), fiche client (interactions),
+   gabarits et séquence courriel. */
+
+var os = require('os');
+var path = require('path');
+process.env.EVENOX_COURRIELS_FICHIER = path.join(
+  os.tmpdir(), 'evenox-test-courriels-' + Date.now() + '.json'
+);
 
 var http = require('http');
 var assert = require('assert');
+var gabarits = require('./gabarits');
+var mailer = require('./mailer');
+var fixtures = require('./fixtures');
 var serverMod = require('./server');
 
 var app = serverMod.creerApp();
@@ -127,7 +137,109 @@ srv.listen(0, '127.0.0.1', function () {
       assert.ok(r.json.total >= 6);
     })
     .then(function () {
-      console.log('OK — 3 files, pipeline, fiche client, suivis.');
+      var etat = fixtures.etatInitial();
+      var marie = etat.dossiers['dos-marie'];
+      var bouchard = etat.dossiers['dos-bouchard'];
+      var restau = etat.dossiers['dos-restau'];
+      var fest = etat.dossiers['dos-festival'];
+      assert.strictEqual(gabarits.choisir(marie).id, 'j4');
+      assert.strictEqual(gabarits.choisir(bouchard).id, 'contrat');
+      assert.strictEqual(gabarits.choisir(restau).id, 'prospection');
+      assert.strictEqual(gabarits.choisir(fest).id, 'post_evenement');
+      var rendu = gabarits.rendre(marie);
+      assert.ok(rendu.sujet.indexOf('BQ-9012') !== -1, 'numéro Booqable du dossier');
+      assert.ok(rendu.texte.indexOf('17 octobre 2026') !== -1, 'date du dossier, pas inventée');
+      assert.ok(rendu.texte.indexOf('STOP') !== -1, 'désabonnement LCAP');
+      assert.ok(rendu.texte.indexOf('Alexandre Séguin') !== -1);
+      var j2 = gabarits.rendre(marie, { gabarit: 'j2' });
+      assert.ok(/1[\s\u00a0]?860/.test(j2.texte), 'montant du dossier dans J+2');
+      var j21 = gabarits.rendre(marie, { gabarit: 'j21' });
+      assert.strictEqual(j21.envoie, false);
+      var bloque = mailer.preparer(rendu, { mode: 'envoi' });
+      assert.strictEqual(bloque.code, 'envoi_client_bloque');
+      var testPrep = mailer.preparer(rendu, { mode: 'test', forcer_test: true });
+      assert.strictEqual(testPrep.destinataire, 'evenox.ca@gmail.com');
+      assert.strictEqual(testPrep.mode, 'envoi');
+    })
+    .then(function () { return req({ port: port, path: '/api/gabarits', cookie: cookie }); })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      var ids = r.json.gabarits.map(function (g) { return g.id; });
+      ['j2', 'j4', 'j7', 'j14', 'j21', 'j30', 'reponse', 'an_passe', 'prospection']
+        .forEach(function (id) { assert.ok(ids.indexOf(id) !== -1, 'gabarit ' + id); });
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/gabarits/j4/apercu?dossier=dos-marie', cookie: cookie,
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      assert.strictEqual(r.json.courriel.gabarit, 'j4');
+      assert.ok(r.json.courriel.texte.indexOf('Camille') !== -1);
+    })
+    .then(function () { return req({ port: port, path: '/api/sequence', cookie: cookie }); })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      assert.strictEqual(r.json.compte_test, 'evenox.ca@gmail.com');
+      var marie = r.json.candidats.filter(function (c) { return c.id === 'dos-marie'; })[0];
+      assert.ok(marie);
+      assert.strictEqual(marie.gabarit, 'j4');
+      var sp = r.json.exclus.filter(function (e) { return e.nom === 'SP Canada'; })[0];
+      assert.ok(sp);
+      assert.ok(/perdu/i.test(sp.raison));
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/sequence/test', method: 'POST', cookie: cookie,
+        body: { ids: ['dos-marie'] },
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      assert.strictEqual(r.json.courriel.destinataire, 'evenox.ca@gmail.com');
+      assert.ok(r.json.courriel.sujet.indexOf('[TEST]') === 0);
+      assert.ok(r.json.message.indexOf('aucun client') !== -1);
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/sequence/demarrer', method: 'POST', cookie: cookie,
+        body: { ids: ['dos-marie', 'dos-bouchard', 'dos-sp'] },
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      assert.strictEqual(r.json.brouillons.length, 2);
+      r.json.brouillons.forEach(function (b) {
+        assert.strictEqual(b.mode, 'brouillon');
+        assert.ok(b.destinataire_prevu.indexOf('@') !== -1);
+        assert.notStrictEqual(b.destinataire, undefined);
+      });
+      assert.ok(r.json.refuses.some(function (x) { return /perdu/i.test(x.raison); }));
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/dossier/dos-bouchard/brouillon', method: 'POST', cookie: cookie,
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      assert.ok(r.json.courriel.sujet);
+      assert.ok(r.json.courriel.texte.indexOf('Famille Bouchard') !== -1 ||
+        r.json.courriel.texte.indexOf('Bonjour') !== -1);
+      assert.strictEqual(r.json.courriel.mode, 'brouillon');
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/dossier/dos-juliana/brouillon', method: 'POST', cookie: cookie,
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 400);
+      assert.ok(/perdu/i.test(r.json.erreur));
+    })
+    .then(function () {
+      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence courriel.');
       srv.close();
       process.exit(0);
     })

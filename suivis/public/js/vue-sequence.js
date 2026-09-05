@@ -45,10 +45,13 @@ App.sequence = (function () {
       'Pause-Auto arrête tout pour ce dossier.</div>';
 
     html += '<div class="seq-etapes">' +
-      [['J+2', 'Brouillon'], ['J+4', 'Rappel'], ['J+7', 'Appel d\'abord'],
-       ['J+14', 'Dernier mail'], ['J+21', 'Pause'], ['J+30', 'On arrête']].map(function (e, i) {
-        return '<div class="seq-e' + (i === 2 ? ' fort' : '') + '"><b>' + e[0] + '</b><i>' + e[1] + '</i></div>';
+      [['j2', 'J+2', 'Premier suivi'], ['j4', 'J+4', 'Rappel'],
+       ['j7', 'J+7', 'Appel d\'abord'], ['j14', 'J+14', 'Dernier mail'],
+       ['j21', 'J+21', 'Pause'], ['j30', 'J+30', 'On arrête']].map(function (e, i) {
+        return '<button class="seq-e' + (i === 2 ? ' fort' : '') + '" type="button" data-apercu-gab="' + e[0] + '">' +
+          '<b>' + e[1] + '</b><i>' + e[2] + '</i></button>';
       }).join('') + '</div>';
+    html += '<div class="seq-apercu" id="seq-apercu" hidden></div>';
 
     // ── L'avertissement de tête ──
     if (!enMarche) {
@@ -117,8 +120,30 @@ App.sequence = (function () {
       '· Lien de désabonnement obligatoire sur chaque courriel (LCAP)<br>' +
       '· Le test part à <b>' + App.h(d.compte_test || 'votre boîte') + '</b> — aucun client touché</div>';
 
+    if (d.courriels && d.courriels.length) {
+      html += '<div class="vh"><h3>Courriels préparés</h3>' +
+        '<span class="cpt">' + d.courriels.length + ' dans cette session</span></div>';
+      html += '<div class="seq-mails">' + d.courriels.map(function (c) {
+        return '<div class="seq-mail" data-lire-mail="' + App.h(c.id) + '">' +
+          '<b>' + App.h(c.etape) + ' · ' + App.h(c.nom || '') + '</b>' +
+          '<i>' + App.h(c.mode === 'envoi' ? 'Envoyé à ' + c.destinataire : 'Brouillon — ' + (c.destinataire_prevu || c.destinataire)) +
+          ' · ' + App.h(c.sujet) + '</i></div>';
+      }).join('') + '</div>';
+    }
+
     corps.innerHTML = html;
     majCompte();
+  }
+
+  function montrerApercu(titre, sujet, texte, meta) {
+    var box = document.getElementById('seq-apercu');
+    if (!box) return;
+    box.hidden = false;
+    box.innerHTML = '<div class="seq-ap-k">' + App.h(titre || 'Aperçu') +
+      (meta ? ' <span>' + App.h(meta) + '</span>' : '') + '</div>' +
+      '<div class="seq-ap-s">' + App.h(sujet || '') + '</div>' +
+      '<pre>' + App.h(texte || '') + '</pre>';
+    box.scrollIntoView({ block: 'nearest' });
   }
 
   function candidat(c) {
@@ -126,8 +151,9 @@ App.sequence = (function () {
       '<input type="checkbox" data-cocher="' + App.h(c.id) + '">' +
       '<span class="n">' + App.h(c.nom) +
         '<i>' + App.h(c.contexte) + ' · ' + App.h(c.courriel) + '</i></span>' +
-      '<span class="e">' + App.h(c.relance_courte) +
-        '<i>' + App.h(App.argent(c.montant)) +
+      '<span class="e">' + App.h(c.gabarit_etape || c.relance_courte) +
+        '<i>' + App.h(c.gabarit_titre || '') +
+        (c.montant ? ' · ' + App.h(App.argent(c.montant)) : '') +
         (c.appel_dabord ? ' · appel d\'abord' : '') +
         (c.approbation_requise && !c.appel_dabord ? ' · à approuver' : '') +
         '</i></span></label>';
@@ -180,14 +206,48 @@ App.sequence = (function () {
         return;
       }
 
+      cible = e.target.closest('[data-apercu-gab]');
+      if (cible) {
+        var gid = cible.dataset.apercuGab;
+        var ids = idsCoches();
+        var dossier = ids[0] || (donnees.candidats[0] && donnees.candidats[0].id) || '';
+        App.api('/api/gabarits/' + encodeURIComponent(gid) + '/apercu' +
+          (dossier ? '?dossier=' + encodeURIComponent(dossier) : ''))
+          .then(function (r) {
+            montrerApercu(r.courriel.etape + ' — ' + r.courriel.titre, r.courriel.sujet,
+              r.courriel.texte, r.dossier.nom + ' · destinataire prévu ' + r.dossier.courriel);
+          })
+          .catch(function (err) { App.erreur(err); App.toast('Aperçu indisponible'); });
+        return;
+      }
+
+      cible = e.target.closest('[data-lire-mail]');
+      if (cible) {
+        var mail = (donnees.courriels || []).filter(function (c) {
+          return c.id === cible.dataset.lireMail;
+        })[0];
+        if (mail) {
+          montrerApercu(mail.etape + ' — ' + mail.nom, mail.sujet, mail.texte,
+            mail.mode === 'envoi' ? 'Envoyé à ' + mail.destinataire : 'Brouillon');
+        }
+        return;
+      }
+
       cible = e.target.closest('#btn-test');
       if (cible) {
         cible.disabled = true;
         cible.textContent = 'Envoi du test…';
         App.api('/api/sequence/test', { methode: 'POST', corps: { ids: idsCoches() } })
-          .then(function (r) { App.toast(r.message); })
-          .catch(function (err) { App.erreur(err); App.toast('Test non envoyé — ' + err.message); })
-          .then(function () { cible.disabled = false; cible.textContent = 'M\'envoyer un test'; });
+          .then(function (r) {
+            App.toast(r.message);
+            return charger().then(function () {
+              if (r.courriel) {
+                montrerApercu('Test envoyé — ' + r.courriel.etape, r.courriel.sujet,
+                  r.courriel.texte, 'à ' + r.courriel.destinataire);
+              }
+            });
+          })
+          .catch(function (err) { App.erreur(err); App.toast('Test non envoyé — ' + err.message); });
         return;
       }
 
