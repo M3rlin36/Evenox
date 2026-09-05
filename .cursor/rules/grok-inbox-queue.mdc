@@ -1,0 +1,26 @@
+---
+description: Grok email queue — Gmail labels are memory, never the chat
+globs:
+alwaysApply: true
+---
+
+# File courriels Grokbot
+
+Grokbot / Patron Evenox. Courriel = TRI (0 envoi). Jamais 11 travailleurs en parallèle.
+Libellés Gmail : `Grok-File` / `Grok-En-cours` / `Grok-Skip` / `Grok-Livraison` / `Grok-Acompte` / `Grok-Envoyé`. Jamais GROS.
+
+Gmail is the queue. The chat is not.
+
+Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).
+One run = one dossier. Never "I'll do the rest after".
+Empty queue query `label:NOX-À-traiter -label:NOX-Processed` → after catch-up, if still empty reply `QUEUE VIDE` and stop. Do not open Notion or Booqable.
+
+Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).
+Noise (Alarm.com, newsletters) → `NOX-Spam` (`Label_4`) + `NOX-Processed`.
+Catch-up ALWAYS (even if File is not empty): `CATCHUP_QUERY` / `newer_than:2d` headers, max 8, then `LEAD_NET_QUERY` (site + WeddingWire, 14d, unlabeled). Dual-write forgotten clients into File. One line `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` if Gmail search fails — never fake `0 oublié`. Slack DM Evenox. Never the 20k unread inbox.
+
+Until 10 September 2026: drafts only. Never send without Alexandre saying `envoie`.
+
+Never say « j'envoie » / « c'est parti ». After `send_message`, `get_thread` PLAIN_TEXT same turn. Paste `Parti.` + À + Objet + the mail body. Else `Pas parti. Le brouillon est encore là.` No Gmail IDs in the chat.
+
+Full playbook: `docs/grok-inbox-queue.md`.
