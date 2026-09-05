@@ -95,6 +95,21 @@ LEAD_QUERY = (
     f"-label:{LABEL_PROCESSED} -label:{LABEL_SPAM} -label:{LABEL_SKIP}"
 )
 
+# Safety net: unlabeled leads only. CATCHUP is cap 8 and can be all newsletters;
+# this query still finds site / WeddingWire leads behind that noise.
+LEAD_NET_QUERY = (
+    "in:inbox newer_than:14d "
+    "("
+    "(from:wordpress@evenox.ca OR from:vente@evenox.ca) "
+    "(subject:\"Nouveau lead\" OR subject:\"Nouvelle soumission\" "
+    "OR subject:\"Devis abandonne\") "
+    "OR from:weddingwire "
+    "OR subject:\"New Lead from WeddingWire\""
+    ") "
+    f"-label:{LABEL_PROCESSED} -label:{LABEL_SPAM} -label:{LABEL_SKIP} "
+    f"-label:{LABEL_FILE} -label:{LABEL_FILE_ALIAS}"
+)
+
 # Nate weekly report: list_labels totals only. Never scan threads for analytics.
 REPORT_LABELS = (
     LABEL_FILE,

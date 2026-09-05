@@ -30,6 +30,7 @@ NATE_TO_EVENOX = {
 HABITS = (
     "Watch only NEW mail for emergencies. Empty check = QUEUE VIDE / no actions.",
     "Morning catch-up even if File is full. Veille : 0 oublié or N rattrapés.",
+    "If catch-up or lead-net search fails: Veille : pas faite. Never fake 0 oublié.",
     "Everything else waits on a short weekday list (3×/jour, not every 15 min).",
     "Draft easy replies from Drive docs. Never send until Alexandre says envoie.",
     "Never say j'envoie. Paste Parti. + À + Objet + the mail body, or Pas parti.",

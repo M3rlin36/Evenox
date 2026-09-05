@@ -80,6 +80,14 @@ FILTER_SPECS: tuple[FilterSpec, ...] = (
         False,
         "Nate Quote / needs you.",
     ),
+    FilterSpec(
+        "weddingwire lead → file + quote",
+        "support@weddingwire.ca",
+        "New Lead",
+        (LABEL_FILE, LABEL_SOUMISSION),
+        False,
+        "Marketplace lead. CATCHUP cap 8 can hide this behind newsletters.",
+    ),
 )
 
 

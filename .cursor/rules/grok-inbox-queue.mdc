@@ -17,7 +17,7 @@ Empty queue query `label:NOX-À-traiter -label:NOX-Processed` → after catch-up
 
 Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).
 Noise (Alarm.com, newsletters) → `NOX-Spam` (`Label_4`) + `NOX-Processed`.
-Catch-up ALWAYS (even if File is not empty): `CATCHUP_QUERY` / `newer_than:2d` headers, max 8. Dual-write forgotten clients into File. One line `Veille : 0 oublié.` or `Veille : N rattrapé(s).` Never the 20k unread inbox.
+Catch-up ALWAYS (even if File is not empty): `CATCHUP_QUERY` / `newer_than:2d` headers, max 8, then `LEAD_NET_QUERY` (site + WeddingWire, 14d, unlabeled). Dual-write forgotten clients into File. One line `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` if Gmail search fails — never fake `0 oublié`. Slack DM Evenox. Never the 20k unread inbox.
 
 Until 10 September 2026: drafts only. Never send without Alexandre saying `envoie`.
 

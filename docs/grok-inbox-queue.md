@@ -49,7 +49,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 4. MCP `search_threads` : `label:Grok-File` (nom), pas `label:Label_19`.
 5. Ne jamais marquer lu.
 6. Jamais « j’envoie ». Preuve = coller le mail (`Parti.` + À + Objet + texte). Sinon `Pas parti. Le brouillon est encore là.` Pas d’ID. Pas aller dans Gmail.
-7. Matin : **veille**. Catch-up `newer_than:2d` même si File n’est pas vide. Une ligne `Veille : 0 oublié.` ou `Veille : N rattrapé(s).`
+7. Matin : **veille**. Catch-up `newer_than:2d` même si File n’est pas vide. Filet leads (site + WeddingWire) à part. Une ligne `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` si Gmail plante (jamais un faux 0).
 
 ## Requêtes cheap
 
@@ -58,6 +58,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 {label:Grok-En-cours label:NOX-En-cours} -label:NOX-Processed
 in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam
 in:inbox -label:NOX-Processed -label:NOX-Spam -label:Grok-File -label:NOX-À-traiter newer_than:2d
+in:inbox newer_than:14d (wordpress/vente Nouveau lead|Nouvelle soumission|Devis abandonne OR weddingwire) -label:Grok-File
 ```
 
 Découverte = sujet + expéditeur. Corps seulement après claim.
@@ -70,6 +71,7 @@ Découverte = sujet + expéditeur. Corps seulement après claim.
 - `from:(notifications@github.com)` → `NOX-Spam`, Skip Inbox
 - `from:(promo@promo.timhortons.ca)` → `NOX-Spam`, Skip Inbox
 - `from:(wordpress@evenox.ca) subject:(Nouveau lead)` → `Grok-File` + `Soumission` (rester inbox)
+- `from:(support@weddingwire.ca) subject:(New Lead)` → `Grok-File` + `Soumission` (rester inbox)
 
 ## Coût
 

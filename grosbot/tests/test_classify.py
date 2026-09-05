@@ -1,7 +1,7 @@
 from grosbot.classify import Decision, Kind, classify
 from grosbot.nate import HABITS, NATE_TO_EVENOX, VIDEO_URL
 from grosbot.queries import LABEL_BILLING, LABEL_SOUMISSION, LABEL_URGENT
-from grosbot.report import veille_line, waiting_vs_done, weekly_from_label_stats
+from grosbot.report import VEILLE_FAILED, veille_line, waiting_vs_done, weekly_from_label_stats
 from grosbot.filters import FILTER_SPECS, gmail_ui_recipe
 
 
@@ -81,6 +81,17 @@ def test_abandoned_quote_is_queued():
     assert result.kind is Kind.QUOTE
 
 
+def test_weddingwire_lead_is_queued():
+    result = classify(
+        sender="support@weddingwire.ca",
+        subject="New Lead from WeddingWire",
+        snippet="Melanie Test has contacted your business through WeddingWire",
+    )
+    assert result.decision is Decision.QUEUE
+    assert result.kind is Kind.QUOTE
+    assert result.queue_label == "Grok-File"
+
+
 def test_client_deposit_reply_is_emergency_or_billing():
     result = classify(
         sender="client@example.com",
@@ -114,6 +125,7 @@ def test_nate_mapping_covers_six_kinds():
     assert NATE_TO_EVENOX["Emergency"] == LABEL_URGENT
     assert "draft" in " ".join(HABITS).lower()
     assert "catch-up" in " ".join(HABITS).lower()
+    assert "pas faite" in " ".join(HABITS).lower()
     assert VIDEO_URL.endswith("4hKJ9X6rGFo")
 
 
@@ -145,3 +157,9 @@ def test_veille_line_is_one_line_no_ids():
     line = veille_line(["Jacqueline", "Dahlia"])
     assert line == "Veille : 2 rattrapé(s). Jacqueline, Dahlia."
     assert "ID" not in line
+
+
+def test_veille_line_failed_is_never_empty_ok():
+    assert veille_line(ok=False) == VEILLE_FAILED
+    assert veille_line(["Mélanie"], ok=False) == "Veille : pas faite."
+    assert veille_line(ok=False) != "Veille : 0 oublié."

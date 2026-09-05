@@ -93,6 +93,19 @@ _LEAD_SENDERS = (
     "mail.booqable.com",
 )
 
+_MARKET_SENDERS = (
+    "weddingwire",
+    "theknot.com",
+    "eventective",
+)
+
+_MARKET_SUBJECT_NEEDLES = (
+    "new lead",
+    "nouveau lead",
+    "has contacted",
+    "inquiry",
+)
+
 _BILLING_NEEDLES = (
     "dépôt",
     "depot",
@@ -213,6 +226,18 @@ def classify(
         return Classification(
             Decision.QUEUE,
             "site lead / abandoned quote",
+            LABEL_FILE,
+            kind=Kind.QUOTE,
+            type_label=LABEL_SOUMISSION,
+        )
+
+    if any(needle in sender_n for needle in _MARKET_SENDERS) and (
+        any(needle in subject_n for needle in _MARKET_SUBJECT_NEEDLES)
+        or "has contacted" in snippet_n
+    ):
+        return Classification(
+            Decision.QUEUE,
+            "marketplace lead",
             LABEL_FILE,
             kind=Kind.QUOTE,
             type_label=LABEL_SOUMISSION,

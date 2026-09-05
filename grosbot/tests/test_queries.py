@@ -10,6 +10,7 @@ from grosbot.queries import (
     LABEL_SKIP,
     LABEL_SCHEDULE,
     LABEL_URGENT,
+    LEAD_NET_QUERY,
     QUEUE_QUERY,
     TRIAGE_QUERY,
     URGENT_QUERY,
@@ -58,3 +59,12 @@ def test_catchup_is_the_triage_window_not_the_unread_pile():
     assert "newer_than:2d" in CATCHUP_QUERY
     assert "is:unread" not in CATCHUP_QUERY
     assert f"-label:{LABEL_FILE}" in CATCHUP_QUERY
+
+
+def test_lead_net_finds_unlabeled_leads_behind_newsletter_noise():
+    assert "is:unread" not in LEAD_NET_QUERY
+    assert "newer_than:14d" in LEAD_NET_QUERY
+    assert "wordpress@evenox.ca" in LEAD_NET_QUERY
+    assert "weddingwire" in LEAD_NET_QUERY
+    assert f"-label:{LABEL_FILE}" in LEAD_NET_QUERY
+    assert f"-label:{LABEL_FILE_ALIAS}" in LEAD_NET_QUERY

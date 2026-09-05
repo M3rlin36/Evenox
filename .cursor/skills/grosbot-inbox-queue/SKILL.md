@@ -38,27 +38,32 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 1. File : `{label:Grok-File label:NOX-À-traiter} -label:NOX-Processed -label:Grok-En-cours -label:NOX-En-cours`
 2. En cours : `{label:Grok-En-cours label:NOX-En-cours} -label:NOX-Processed`
 3. Urgent Nate (nouveau seulement) : `in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam`
-4. Triage / **veille** (max 8, **même si File n’est pas vide**) : `CATCHUP_QUERY` = inbox `newer_than:2d` sans File/Processed/Spam. En-têtes, `grosbot.classify` → File + type Nate, ou `NOX-Spam`. Une ligne `Veille : 0 oublié.` ou `Veille : N rattrapé(s). …`
-5. Leads site : `from:wordpress@evenox.ca newer_than:14d` (sujets Nouveau lead / Nouvelle soumission)
+4. Triage / **veille** (max 8, **même si File n’est pas vide**) : `CATCHUP_QUERY` = inbox `newer_than:2d` sans File/Processed/Spam. En-têtes, `grosbot.classify` → File + type Nate, ou `NOX-Spam`.
+5. **Filet leads** (toujours, à part) : `LEAD_NET_QUERY` = site + WeddingWire `newer_than:14d` **sans File**. Max 8. Ça rattrape un client caché derrière 8 pubs.
+6. Une ligne `Veille : 0 oublié.` / `Veille : N rattrapé(s). …` / **`Veille : pas faite.`** si Gmail plante. Jamais un faux `0 oublié`. Slack DM Evenox (`U0996M8QRFT`) si pas faite.
+7. Leads site : `from:wordpress@evenox.ca newer_than:14d` (sujets Nouveau lead / Nouvelle soumission)
 
-**Interdit :** `is:unread` seul. **Interdit :** relire l’inbox entière. **Interdit :** boucle 15/30 min. Sweep cheap 3×/jour. **Le matin (9h) : toujours la veille**, même si File est pleine. File vide = `QUEUE VIDE` et stop.
+**Interdit :** `is:unread` seul. **Interdit :** relire l’inbox entière. **Interdit :** boucle 15/30 min. Sweep cheap 3×/jour **tous les jours** (week-end inclus). **Le matin : toujours la veille**, même si File est pleine. File vide = `QUEUE VIDE` et stop.
 
 `search_threads` MCP matche le **nom** du libellé (`Grok-File`), pas `label:Label_19`.
 
 ## Run (ordre Nate)
 
-1. **Veille (toujours, même si File n’est pas vide)** : `CATCHUP_QUERY` (headers, max 8) → dual-write File ou Spam. Une ligne `Veille : …`. En-tête le plus récent > 2 j = faux positif Gmail, skip. Dernier message = SENT Evenox → déjà répondu, ne pas File.
-2. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
-3. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
-4. `claim_next` : 1 fil. Dual-write En-cours, retirer File + alias.
-5. Lire **tout** ce fil. Un message Alexandre = un dossier (Nom / Date / Client veut / Fait / Action).
-6. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
-7. Après `envoie` : `send_message` puis `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.
+1. **Veille (toujours, même si File n’est pas vide)** : `CATCHUP_QUERY` (headers, max 8) → dual-write File ou Spam. En-tête le plus récent > 2 j = faux positif Gmail, skip. Dernier message = SENT Evenox → déjà répondu, ne pas File.
+2. **Filet leads** : `LEAD_NET_QUERY` (headers, max 8). Dual-write File + `Soumission`. Ça ne dépend pas des 8 pubs du CATCHUP.
+3. Si `search_threads` plante : **retry 1 fois**. Encore down → `Veille : pas faite.` + Slack DM Evenox. **Interdit** de dire `0 oublié`.
+4. Une ligne `Veille : …`.
+5. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
+6. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
+7. `claim_next` : 1 fil. Dual-write En-cours, retirer File + alias.
+8. Lire **tout** ce fil. Un message Alexandre = un dossier (Nom / Date / Client veut / Fait / Action).
+9. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
+10. Après `envoie` : `send_message` puis `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.
    - Parti → coller `Parti.` + À + Objet + **le texte du mail**. C’est la preuve. Pas d’ID. Pas « va voir Gmail ».
    - Sinon → `Pas parti. Le brouillon est encore là.`
    - En silence : `Grok-Envoyé` seulement si Parti.
-8. Fermer un brouillon (sans envoi) : `NOX-Processed` + `Brouillon IA`. Retirer File **et** En-cours.
-9. S’il reste de la file : une ligne « file : N restants ». Stop.
+11. Fermer un brouillon (sans envoi) : `NOX-Processed` + `Brouillon IA`. Retirer File **et** En-cours.
+12. S’il reste de la file : une ligne « file : N restants ». Stop.
 
 ## Coût
 
@@ -66,7 +71,7 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 - Triage = règles, pas un LLM.
 - 1 brouillon / run. Le reste attend dans `Grok-File` (0 token).
 - Rapport vendredi = `list_labels` (`grosbot.report`), jamais un scan de fils.
-- Sweep cheap 3×/jour (`0 13,16,20 * * 1-5` UTC = 9h/12h/16h Montréal). Le 9h = routine **veille** (rattraper hier). Toujours, même si File n’est pas vide.
+- Sweep cheap 3×/jour **tous les jours** (`0 13,16,20 * * *` UTC = 9h/12h/16h Montréal). Veille + filet leads. Toujours, même si File n’est pas vide. Gmail down → `Veille : pas faite.` + Slack.
 
 ## n8n
 

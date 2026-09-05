@@ -46,10 +46,20 @@ def waiting_vs_done(stats: dict[str, dict[str, int]]) -> dict[str, int]:
     }
 
 
-def veille_line(names: list[str]) -> str:
-    """One line for Alexandre after the yesterday catch-up. No IDs."""
-    clean = [n.strip() for n in names if n and n.strip()]
+VEILLE_OK_EMPTY = "Veille : 0 oublié."
+VEILLE_FAILED = "Veille : pas faite."
+
+
+def veille_line(names: list[str] | None = None, *, ok: bool = True) -> str:
+    """One line for Alexandre after catch-up. No IDs.
+
+    Failed search must never look like a clean empty inbox. A fake
+    `0 oublié` is how a client stays forgotten when Gmail is down.
+    """
+    if not ok:
+        return VEILLE_FAILED
+    clean = [n.strip() for n in (names or []) if n and n.strip()]
     if not clean:
-        return "Veille : 0 oublié."
+        return VEILLE_OK_EMPTY
     shown = clean[:8]
     return f"Veille : {len(clean)} rattrapé(s). {', '.join(shown)}."
