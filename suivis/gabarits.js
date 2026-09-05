@@ -101,7 +101,8 @@ var CATALOGUE = {
     sujet: 'Suite — contrat Evenox{{suffixe_numero}}',
     texte:
       'Bonjour {{prenom}},\n\n' +
-      'Voici la suite : on prépare le contrat dès que vous confirmez.{{ligne_montant}}\n' +
+      'Voici la suite : on prépare le contrat dès que vous confirmez.\n\n' +
+      '{{ligne_montant}}' +
       'Répondez oui et je vous l\'envoie.\n\n' +
       'Au plaisir,\n',
   },
