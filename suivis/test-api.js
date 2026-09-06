@@ -257,7 +257,72 @@ srv.listen(0, '127.0.0.1', function () {
       });
     })
     .then(function () {
-      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence, cahier réel.');
+      delete process.env.GROK_STUB;
+      delete process.env.XAI_API_KEY;
+      return req({
+        port: port, path: '/api/dossier/dos-marie/grok', method: 'POST', cookie: cookie,
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 503, 'Grok sans clé → 503');
+      assert.strictEqual(r.json.code, 'grok_non_configure');
+      assert.ok(r.json.texte.indexOf('DOSSIER CLIENT') !== -1);
+      assert.ok(r.json.texte.indexOf('Camille') !== -1);
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/etat', cookie: cookie,
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.json.synchro.grok_ok, false);
+    })
+    .then(function () {
+      process.env.GROK_STUB = '1';
+      return req({
+        port: port, path: '/api/dossier/dos-marie/grok', method: 'POST', cookie: cookie,
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      assert.strictEqual(r.json.stub, true);
+      assert.strictEqual(r.json.modele, 'grok-stub');
+      assert.ok(r.json.suggestion.prochaine);
+      assert.ok(r.json.suggestion.sujet);
+      assert.ok(r.json.suggestion.corps.indexOf('Alexandre Séguin') !== -1);
+      assert.ok(r.json.suggestion.corps.indexOf('Camille') !== -1);
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/client/cli-an/grok', method: 'POST', cookie: cookie,
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      assert.ok(r.json.suggestion.corps);
+    })
+    .then(function () { return req({ port: port, path: '/api/etat', cookie: cookie }); })
+    .then(function (r) {
+      assert.strictEqual(r.json.synchro.grok_ok, true);
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/dossier/inconnu/grok', method: 'POST', cookie: cookie,
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 404);
+    })
+    .then(function () {
+      var grok = require('./grok');
+      var texte = grok.texteDossier({
+        dossier: { nom: 'Test', statut: 'quoted' },
+        materiel: [],
+        discussion: [],
+        infos: { manquantes: ['Date d\'événement'] },
+      });
+      assert.ok(texte.indexOf('N\'invente aucun article') !== -1);
+      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence, cahier réel, Grok.');
       srv.close();
       process.exit(0);
     })

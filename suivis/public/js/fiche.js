@@ -293,14 +293,10 @@ App.fiche = (function () {
         'data-nom="' + App.h(dos.nom) + '" data-num="' + App.h(dos.booqable_number || '') + '">' +
         '<b>Passer en réservée</b><i>Bloque l\'inventaire — confirmation</i></button>');
     }
-    // « Préparer pour Grok » — met un dossier lisible sur le presse-papiers.
-    // Volontairement une COPIE et non un envoi : Grok n'a pas d'API
-    // branchable ici, et un presse-papiers marche avec n'importe quelle IA,
-    // sans clé, sans dépendance, sans qu'aucune donnée client parte vers un
-    // service qu'on n'a pas choisi. C'est vous qui collez, donc vous voyez
-    // exactement ce qui sort.
+    // Grok propose le prochain geste et un brouillon. Rien ne part.
+    // Sans XAI_API_KEY, le bouton replie sur une copie presse-papiers.
     boutons.push('<button class="rc" type="button" data-grok="' + App.h(dos.id) + '">' +
-      '<b>Préparer pour Grok</b><i>Copie le dossier, prêt à coller</i></button>');
+      '<b>Demander à Grok</b><i>Propose le prochain geste — rien ne part</i></button>');
 
     boutons.push('<button class="rc" type="button" data-fermer-dossier="' + App.h(dos.id) + '">' +
       '<b>Classer le dossier</b><i>Choisir le motif de fermeture</i></button>');
@@ -535,26 +531,46 @@ App.fiche = (function () {
       cible = e.target.closest('[data-grok]');
       if (cible) {
         if (!donnees) { App.toast('Dossier pas encore chargé.'); return; }
-        var texte = dossierEnTexte(donnees);
-        App.copier(texte)
-          .then(function () {
-            App.toast('Dossier copié — collez-le dans Grok.');
+        var idGrok = cible.dataset.grok;
+        var lib = cible.querySelector('b');
+        var libAvant = lib ? lib.textContent : '';
+        cible.disabled = true;
+        if (lib) lib.textContent = 'Grok lit le dossier…';
+        App.api('/api/dossier/' + encodeURIComponent(idGrok) + '/grok', { methode: 'POST' })
+          .then(function (r) {
+            cible.disabled = false;
+            if (lib) lib.textContent = libAvant;
+            App.afficherSuggestionGrok(r);
+            App.toast(r.stub
+              ? 'Suggestion locale (stub) — à relire, rien n\'est parti.'
+              : 'Suggestion Grok — à relire, rien n\'est parti.');
           })
-          .catch(function () {
-            // navigator.clipboard échoue hors HTTPS et quand l'onglet n'a
-            // pas le focus. On ne laisse pas l'utilisateur devant un bouton
-            // muet : on lui montre le texte, à lui de le sélectionner.
-            App.toast('Copie refusée par le navigateur — le texte s\'affiche.');
-            var f = document.createElement('textarea');
-            f.className = 'grok-repli';
-            f.readOnly = true;
-            f.value = texte;
-            var bloc = document.createElement('div');
-            bloc.className = 'bloc';
-            bloc.innerHTML = '<div class="bloc-t">À copier pour Grok</div>';
-            bloc.appendChild(f);
-            document.getElementById('f-corps').prepend(bloc);
-            f.focus(); f.select();
+          .catch(function (err) {
+            cible.disabled = false;
+            if (lib) lib.textContent = libAvant;
+            var texte = (err.corps && err.corps.texte) || dossierEnTexte(donnees);
+            if (err.statut === 503) {
+              App.copier(texte)
+                .then(function () {
+                  App.toast('Grok pas encore branché — dossier copié, à coller.');
+                })
+                .catch(function () {
+                  App.toast('Grok pas branché — le texte s\'affiche.');
+                  var f = document.createElement('textarea');
+                  f.className = 'grok-repli';
+                  f.readOnly = true;
+                  f.value = texte;
+                  var bloc = document.createElement('div');
+                  bloc.className = 'bloc';
+                  bloc.innerHTML = '<div class="bloc-t">À copier pour Grok</div>';
+                  bloc.appendChild(f);
+                  document.getElementById('f-corps').prepend(bloc);
+                  f.focus(); f.select();
+                });
+              return;
+            }
+            App.erreur(err);
+            App.toast('Grok n\'a pas répondu — ' + err.message);
           });
         return;
       }

@@ -80,8 +80,8 @@ App.client = (function () {
     }
     html += '</div>';
     html += '<button class="rc" type="button" data-grok-client="' + App.h(c.id) + '" ' +
-      'style="width:100%;margin-top:8px"><b>Préparer pour Grok</b>' +
-      '<i>Copie ce qu\'il avait commandé, prêt à coller</i></button>';
+      'style="width:100%;margin-top:8px"><b>Demander à Grok</b>' +
+      '<i>Propose le prochain geste — rien ne part</i></button>';
     html += '</div>';
 
     // ── Toutes les interactions, tous dossiers confondus ──
@@ -267,9 +267,36 @@ App.client = (function () {
       if (g) {
         var brut = document.getElementById('f-corps').dataset.client;
         if (!brut) { App.toast('Client pas encore chargé.'); return; }
-        App.copier(clientEnTexte(JSON.parse(brut)))
-          .then(function () { App.toast('Client copié — collez-le dans Grok.'); })
-          .catch(function () { App.toast('Copie refusée par le navigateur.'); });
+        var lib = g.querySelector('b');
+        var libAvant = lib ? lib.textContent : '';
+        g.disabled = true;
+        if (lib) lib.textContent = 'Grok lit le client…';
+        App.api('/api/client/' + encodeURIComponent(g.dataset.grokClient) + '/grok', {
+          methode: 'POST',
+        })
+          .then(function (r) {
+            g.disabled = false;
+            if (lib) lib.textContent = libAvant;
+            App.afficherSuggestionGrok(r);
+            App.toast(r.stub
+              ? 'Suggestion locale (stub) — à relire, rien n\'est parti.'
+              : 'Suggestion Grok — à relire, rien n\'est parti.');
+          })
+          .catch(function (err) {
+            g.disabled = false;
+            if (lib) lib.textContent = libAvant;
+            var texte = (err.corps && err.corps.texte) || clientEnTexte(JSON.parse(brut));
+            if (err.statut === 503) {
+              App.copier(texte)
+                .then(function () {
+                  App.toast('Grok pas encore branché — client copié, à coller.');
+                })
+                .catch(function () { App.toast('Grok pas branché — copie refusée.'); });
+              return;
+            }
+            App.erreur(err);
+            App.toast('Grok n\'a pas répondu — ' + err.message);
+          });
       }
     });
   }

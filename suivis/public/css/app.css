@@ -777,6 +777,10 @@ button.pt.pl:hover{color:var(--purple);transform:none}
             font-size:.78rem;line-height:1.5;padding:12px;border-radius:9px;
             border:1.5px solid var(--purple-l2);background:var(--bg);color:var(--text);
             resize:vertical}
+.grok-sugg .grok-proch{font-size:.92rem;font-weight:700;margin:0 0 10px;color:var(--text)}
+.grok-sugg .grok-avis{margin:12px 0 0;padding:0 0 0 18px;color:var(--soft);font-size:.8rem}
+.grok-sugg .grok-avis li{margin:0 0 4px}
+.grok-sugg [data-copier-grok]{margin-top:14px}
 
 /* ── L'équipe : qui peut entrer ── */
 .eq-ok{display:none;background:rgba(26,127,107,.18);border:1px solid rgba(26,127,107,.45);

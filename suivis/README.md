@@ -40,6 +40,12 @@ Ouvrir http://localhost:3000/ — code **`1111`**.
 Les gabarits J+2…J+30, réponse, an passé et prospection sont branchés sur Relances auto et sur « Réponse pré-écrite ».  
 **M’envoyer un test** part seulement à `evenox.ca@gmail.com`. **Démarrer en brouillons** prépare les courriels — aucun client n’est écrit avant le 10 septembre 2026. Sans jeton Gmail (`GMAIL_REFRESH_TOKEN` + client id/secret), les courriels restent dans `data/courriels.json` et s’affichent dans l’écran Relances auto.
 
+**Grok** (xAI) se branche avec `XAI_API_KEY` (créer la clé sur [console.x.ai](https://console.x.ai)). Le bouton **Demander à Grok** sur une fiche propose le prochain geste et un brouillon — **rien n’est envoyé**. Sans clé, le bouton copie le dossier pour le coller ailleurs. Pour tester l’UI sans clé :
+
+```bash
+GROK_STUB=1 npm start
+```
+
 ```bash
 npm test
 ```
@@ -69,6 +75,6 @@ EVENOX_LIVRE=1 npm start
 
 `appliquer.js` lit uniquement le cahier du jour. Aujourd’hui : **personne en relance auto**. Les phrases « Dis » (Mélanie, Joëlle) deviennent des brouillons internes vers `evenox.ca@gmail.com`.
 
-Sur le VPS, copier aussi `gabarits.js` et `mailer.js` à côté du serveur, et brancher `POST /api/sequence/test`, `/demarrer`, `/dossier/:id/brouillon` comme dans `server.js`.
+Sur le VPS, copier aussi `gabarits.js`, `mailer.js` et `grok.js` à côté du serveur, et brancher `POST /api/sequence/test`, `/demarrer`, `/dossier/:id/brouillon`, `/dossier/:id/grok`, `/client/:id/grok` comme dans `server.js`. Ajouter `XAI_API_KEY` dans l’environnement du service.
 
 Règle déjà en vigueur : **aucun courriel client sans OUI jusqu’au 10 sept. 2026**.

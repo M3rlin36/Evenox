@@ -148,6 +148,7 @@ App.api = function (chemin, options) {
             'Le serveur a répondu ' + r.status + '. Rien n\'a été modifié.';
           var err = new Error(msg);
           err.statut = r.status;
+          err.corps = corps;
           throw err;
         }
         App.cacherBandeau();
@@ -355,6 +356,47 @@ App.copier = function (texte) {
     ok ? resoudre() : rejeter(new Error('copie refusée'));
   });
 };
+
+/** Panneau de suggestion Grok — à relire, jamais envoyé. */
+App.afficherSuggestionGrok = function (r) {
+  var zone = document.getElementById('f-grok');
+  if (!zone) {
+    zone = document.createElement('div');
+    zone.id = 'f-grok';
+    zone.className = 'seq-apercu grok-sugg';
+    var corps = document.getElementById('f-corps');
+    if (corps) corps.insertBefore(zone, corps.firstChild);
+  }
+  var s = (r && r.suggestion) || {};
+  var avis = (s.avertissements || []).map(function (a) {
+    return '<li>' + App.h(a) + '</li>';
+  }).join('');
+  zone.hidden = false;
+  zone.dataset.copie = (s.sujet ? s.sujet + '\n\n' : '') + (s.corps || '');
+  zone.innerHTML =
+    '<div class="seq-ap-k">Grok propose — à relire, rien ne part' +
+      (r && r.modele ? ' <span>' + App.h(r.modele) + '</span>' : '') +
+    '</div>' +
+    (s.prochaine ? '<div class="grok-proch">' + App.h(s.prochaine) + '</div>' : '') +
+    (s.sujet ? '<div class="seq-ap-s">' + App.h(s.sujet) + '</div>' : '') +
+    (s.corps ? '<pre>' + App.h(s.corps) + '</pre>' : '') +
+    (avis ? '<ul class="grok-avis">' + avis + '</ul>' : '') +
+    '<button class="btn" type="button" data-copier-grok>Copier le courriel</button>';
+  zone.scrollIntoView({ block: 'nearest' });
+};
+
+if (!window.__evenoxGrokCopie) {
+  window.__evenoxGrokCopie = true;
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copier-grok]');
+    if (!b) return;
+    var zone = document.getElementById('f-grok');
+    if (!zone) return;
+    App.copier(zone.dataset.copie || '')
+      .then(function () { App.toast('Courriel copié — rien n\'est parti.'); })
+      .catch(function () { App.toast('Copie refusée par le navigateur.'); });
+  });
+}
 
 /* ── Divers ──────────────────────────────────────────────── */
 

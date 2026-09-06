@@ -19,6 +19,7 @@ var crypto = require('crypto');
 var fixtures = require('./fixtures');
 var gabarits = require('./gabarits');
 var mailer = require('./mailer');
+var grok = require('./grok');
 var livre = require('./livre-du-jour');
 
 var PORT = Number(process.env.PORT) || 3000;
@@ -480,7 +481,11 @@ function api(app) {
       n_prospection: nProsp,
       nb_clients: Object.keys(etat.clients).length,
       sequence_mode: etat.sequenceMode,
-      synchro: { booqable_ok: true, gmail_ok: true },
+      synchro: {
+        booqable_ok: true,
+        gmail_ok: true,
+        grok_ok: grok.configure(),
+      },
       payees_non_reservees: alertesBooqable().length,
     });
   });
@@ -622,6 +627,60 @@ function api(app) {
     d.statut = 'won';
     journaliser(utilisateur(req).nom, 'Passé en réservée (démo, aucun courriel)', d);
     res.json({ message: 'Commande passée en réservée — démo locale, aucun courriel envoyé.' });
+  });
+
+  app.post('/api/dossier/:id/grok', exigerSession, function (req, res) {
+    var f = ficheDossier(req.params.id);
+    if (!f) { res.status(404).json({ erreur: 'Dossier introuvable.' }); return; }
+    grok.conseillerDossier(f, function (err, suggestion) {
+      if (err && err.code === 'grok_non_configure') {
+        res.status(503).json({
+          erreur: err.message,
+          code: 'grok_non_configure',
+          texte: grok.texteDossier(f),
+        });
+        return;
+      }
+      if (err) {
+        res.status(502).json({
+          erreur: String(err.message || err),
+          code: 'grok_echec',
+        });
+        return;
+      }
+      res.json({
+        suggestion: suggestion,
+        modele: grok.modele(),
+        stub: process.env.GROK_STUB === '1',
+      });
+    });
+  });
+
+  app.post('/api/client/:id/grok', exigerSession, function (req, res) {
+    var f = ficheClient(req.params.id);
+    if (!f) { res.status(404).json({ erreur: 'Client introuvable.' }); return; }
+    grok.conseillerClient(f, function (err, suggestion) {
+      if (err && err.code === 'grok_non_configure') {
+        res.status(503).json({
+          erreur: err.message,
+          code: 'grok_non_configure',
+          texte: grok.texteClient(f),
+        });
+        return;
+      }
+      if (err) {
+        res.status(502).json({
+          erreur: String(err.message || err),
+          code: 'grok_echec',
+        });
+        return;
+      }
+      res.json({
+        suggestion: suggestion,
+        modele: grok.modele(),
+        stub: process.env.GROK_STUB === '1',
+      });
+    });
   });
 
   app.post('/api/dossier/:id/brouillon', exigerSession, function (req, res) {
@@ -1020,6 +1079,9 @@ if (require.main === module) {
     console.log('Test courriel : ' + mailer.COMPTE_TEST +
       (mailer.gmailConfigure() ? ' (Gmail branché)' : ' (brouillons locaux — pas de jeton Gmail)'));
     console.log('Envoi client : ' + (mailer.envoiClientAutorise() ? 'autorisé' : 'bloqué jusqu\'au ' + mailer.ENVOI_CLIENT_DES_LE));
+    console.log('Grok : ' + (grok.configure()
+      ? (process.env.GROK_STUB === '1' ? 'stub local (GROK_STUB)' : grok.modele())
+      : 'pas branché — ajoutez XAI_API_KEY (console.x.ai)'));
   });
 }
 
