@@ -1,20 +1,20 @@
-# Aujourd’hui — 5 septembre 2026
+# Aujourd’hui — 6 septembre 2026
 
 Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
 **Qui doit bouger ?**
-**Commence par Vincent** — appelle (Repentigny, 23 sept).  
+**Commence par Mélanie** — appelle (Ste-Thérèse, 26 sept).  
 Puis Dahlia — oui ou non (500 $ TTC, 13 sept). Puis Joëlle — appelle (Radio-Canada, toujours pas de devis).  
 Mathieu : dépôt déjà payé. On n’écrit pas.
 
 ## C’est à toi — ce matin
 
-**Vincent Collin** — Repentigny — en premier · appelle · ce matin · 23 sept  
-1er anniversaire, 477 Notre-Dame #100. 10 tables cocktail + nappes, 12 chaises hautes, tapis rouge 10 pi, stanchions, photobooth 17 h–20 h.  
-**À faire :** appelle 438-498-9639. Ensuite le devis. Le dépôt garde le 23 sept.  
-**Dis :** Allô Vincent, Alexandre d’Évenox. J’ai votre demande pour le 23 septembre à Repentigny. Je vous envoie le devis ce matin — le dépôt garde la date.  
+**Mélanie Little** — Académie Ste-Thérèse — en premier · appelle · ce matin · 26 sept  
+18 ans de Daphnée. Arche organique blanc-argent-noir, 1+8 lumineux, fond argent, inscription, ballons chromés.  
+**À faire :** appelle 514-913-0509. Ensuite le devis. Le dépôt garde le 26 sept.  
+**Dis :** Allô Mélanie, Alexandre d’Évenox. J’ai votre demande pour le 26 septembre à l’Académie Ste-Thérèse. Je vous envoie le devis ce matin — le dépôt garde la date.  
 **Si pas de réponse :** texto le même message + envoie le devis.  
-**Objet :** Devis 23 septembre — Repentigny  
+**Objet :** Devis 26 septembre — Ste-Thérèse  
 Pas de commande Booqable.
 
 **Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
@@ -31,6 +31,12 @@ Retire le champagne. Max 500 $ TTC : mur de fleurs + 2 chiffres + livraison. 10 
 Pas de commande Booqable.
 
 ## Après
+
+**Vincent Collin** — Repentigny — après · appelle · 23 sept  
+Lead du 4 sept, toujours pas de devis.  
+**À faire :** appelle 438-498-9639. Ensuite le devis. Le dépôt garde le 23 sept.  
+**Objet :** Devis 23 septembre — Repentigny  
+Pas de commande Booqable.
 
 **Emilie Brien** — Festipod — après · elle a écrit · 17–19 sept  
 Ouverte à d’autres horaires. Pas 16 h–minuit × 3.  
@@ -67,4 +73,4 @@ Dépôt 300 $ le 12 août (Carolane). Soumission 1562. La date est gardée.
 **Dylan, Manon** — trop tôt (fin sept).  
 **Christina, Radiologix** — trop tôt (novembre).
 
-Réponds **OUI**, **NON** ou **sauf Vincent**.
+Réponds **OUI**, **NON** ou **sauf Mélanie**.
