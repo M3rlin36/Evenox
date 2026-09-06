@@ -2,3 +2,4 @@ node_modules/
 npm-debug.log
 data/courriels.json
 data/application-*.json
+vault/

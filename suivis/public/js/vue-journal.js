@@ -48,7 +48,8 @@ App.journal = (function () {
     }
 
     html += '<div class="note">On n\'agit pas d\'ici — on <b>vérifie</b>. ' +
-      'Pour travailler, retourne dans Soumissions, An passé ou Prospection.</div>';
+      'Pour travailler, retourne dans Soumissions, An passé ou Prospection.</div>' +
+      '<p><button class="btn" type="button" id="btn-obsidian">Écrire le cahier dans Obsidian</button></p>';
 
     corps.innerHTML = html;
   }
@@ -70,6 +71,19 @@ App.journal = (function () {
     document.getElementById('fait').addEventListener('click', function (e) {
       var cible = e.target.closest('[data-fiche-journal]');
       if (cible) App.fiche.ouvrir(cible.dataset.ficheJournal);
+      var btn = e.target.closest('#btn-obsidian');
+      if (btn) {
+        btn.disabled = true;
+        App.api('/api/obsidian/exporter', { methode: 'POST', corps: {} })
+          .then(function (r) {
+            App.toast(r.message || 'Cahier écrit dans Obsidian.');
+            return charger();
+          })
+          .catch(function (err) {
+            btn.disabled = false;
+            App.erreur(err);
+          });
+      }
     });
   }
 

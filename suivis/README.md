@@ -46,11 +46,22 @@ Les gabarits J+2…J+30, réponse, an passé et prospection sont branchés sur R
 GROK_STUB=1 npm start
 ```
 
+**Obsidian** : le bouton **Écrire le cahier dans Obsidian** (onglet Fait aujourd’hui) écrit des notes Markdown dans le vault (`OBSIDIAN_VAULT`, sinon `suivis/vault/`). Wikiliens `[[Nom]]`, rien n’est inventé, rien n’est envoyé aux clients. Dans Obsidian : *Open folder as vault* sur ce dossier — ou le dossier Drive **Obsidian — Contexte agents**. Couper : `OBSIDIAN_OFF=1`.
+
 ```bash
 npm test
 ```
 
 ## Déploiement sur le VPS
+
+Ce dépôt **n’a pas SSH** vers Hostinger. Le serveur Express + Booqable + Gmail vit seulement sur le VPS. Pour poser la mise à jour :
+
+```bash
+cd suivis
+./paquet-vps.sh
+```
+
+Puis, en SSH sur le VPS, copier le contenu de `/tmp/evenox-suivis-vps` (voir `A-COPIER.txt`). Relancer le service.
 
 Copier `public/js/*.js` et `public/css/app.css` par-dessus les fichiers déjà servis sous `/suivis/`. Ne pas déployer `server.js` : c’est uniquement la démo locale.
 
@@ -75,6 +86,6 @@ EVENOX_LIVRE=1 npm start
 
 `appliquer.js` lit uniquement le cahier du jour. Aujourd’hui : **personne en relance auto**. Les phrases « Dis » (Mélanie, Joëlle) deviennent des brouillons internes vers `evenox.ca@gmail.com`.
 
-Sur le VPS, copier aussi `gabarits.js`, `mailer.js` et `grok.js` à côté du serveur, et brancher `POST /api/sequence/test`, `/demarrer`, `/dossier/:id/brouillon`, `/dossier/:id/grok`, `/client/:id/grok` comme dans `server.js`. Ajouter `XAI_API_KEY` dans l’environnement du service.
+Sur le VPS, copier aussi `gabarits.js`, `mailer.js`, `grok.js` et `obsidian.js` à côté du serveur, et brancher `POST /api/sequence/test`, `/demarrer`, `/dossier/:id/brouillon`, `/dossier/:id/grok`, `/client/:id/grok`, `/obsidian/exporter` comme dans `server.js`. Ajouter `XAI_API_KEY` et `OBSIDIAN_VAULT` dans l’environnement du service.
 
 Règle déjà en vigueur : **aucun courriel client sans OUI jusqu’au 10 sept. 2026**.

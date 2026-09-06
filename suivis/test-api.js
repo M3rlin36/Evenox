@@ -5,8 +5,12 @@
 
 var os = require('os');
 var path = require('path');
+var fs = require('fs');
 process.env.EVENOX_COURRIELS_FICHIER = path.join(
   os.tmpdir(), 'evenox-test-courriels-' + Date.now() + '.json'
+);
+process.env.OBSIDIAN_VAULT = path.join(
+  os.tmpdir(), 'evenox-test-vault-' + Date.now()
 );
 
 var http = require('http');
@@ -322,7 +326,33 @@ srv.listen(0, '127.0.0.1', function () {
         infos: { manquantes: ['Date d\'événement'] },
       });
       assert.ok(texte.indexOf('N\'invente aucun article') !== -1);
-      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence, cahier réel, Grok.');
+    })
+    .then(function () { return req({ port: port, path: '/api/etat', cookie: cookie }); })
+    .then(function (r) {
+      assert.strictEqual(r.json.synchro.obsidian_ok, true);
+    })
+    .then(function () {
+      return req({
+        port: port, path: '/api/obsidian/exporter', method: 'POST', cookie: cookie, body: {},
+      });
+    })
+    .then(function (r) {
+      assert.strictEqual(r.status, 200);
+      assert.ok(r.json.n >= 2, 'index + au moins un dossier');
+      assert.ok(r.json.fichiers.indexOf('Suivis/Index.md') !== -1);
+      var index = fs.readFileSync(path.join(process.env.OBSIDIAN_VAULT, 'Suivis/Index.md'), 'utf8');
+      assert.ok(index.indexOf('[[') !== -1, 'wikiliens Obsidian');
+      assert.ok(index.indexOf('invente') === -1 || index.indexOf('Rien n') !== -1);
+      var obsidian = require('./obsidian');
+      var note = obsidian.noteDossier({
+        nom: 'Camille',
+        prochaine_action: 'Appeler',
+        montant: 0,
+      });
+      assert.ok(note.indexOf('Camille') !== -1);
+      assert.ok(note.indexOf('Appeler') !== -1);
+      assert.ok(!/Montant/.test(note), '0 $ n’est pas écrit comme un prix');
+      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence, cahier réel, Grok, Obsidian.');
       srv.close();
       process.exit(0);
     })

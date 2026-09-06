@@ -115,11 +115,13 @@
         var synchro = document.getElementById('etat-synchro');
         var okB = e.synchro.booqable_ok, okG = e.synchro.gmail_ok;
         var okK = e.synchro.grok_ok;
+        var okO = e.synchro.obsidian_ok;
         var ligne = okB && okG
           ? 'Booqable · Gmail synchronisés'
           : (!okB && !okG ? 'Aucune synchro récente'
             : (!okB ? 'Booqable : aucune synchro récente' : 'Gmail : rien reçu récemment'));
         if (okK) ligne += ' · Grok';
+        if (okO) ligne += ' · Obsidian';
         synchro.innerHTML =
           '<span class="' + (okB && okG ? 'pt-v' : 'pt-r') + '"></span> ' + ligne;
 

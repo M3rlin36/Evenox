@@ -21,6 +21,7 @@ var gabarits = require('./gabarits');
 var mailer = require('./mailer');
 var grok = require('./grok');
 var livre = require('./livre-du-jour');
+var obsidian = require('./obsidian');
 
 var PORT = Number(process.env.PORT) || 3000;
 var DEMO_CODE = String(process.env.DEMO_CODE || '1111');
@@ -485,6 +486,7 @@ function api(app) {
         booqable_ok: true,
         gmail_ok: true,
         grok_ok: grok.configure(),
+        obsidian_ok: obsidian.configure(),
       },
       payees_non_reservees: alertesBooqable().length,
     });
@@ -884,6 +886,32 @@ function api(app) {
     });
   });
 
+  app.post('/api/obsidian/exporter', exigerSession, function (req, res) {
+    try {
+      var dossiers = Object.keys(etat.dossiers).map(function (k) { return etat.dossiers[k]; })
+        .filter(function (d) { return d.statut !== 'lost' && d.statut !== 'deferred'; });
+      var resultat = obsidian.exporter({
+        jour: aujourdHui(),
+        dossiers: dossiers,
+        journal: etat.journal,
+      });
+      journaliser(utilisateur(req).nom,
+        'Cahier écrit dans Obsidian (' + resultat.n + ' notes)', null);
+      res.json({
+        message: resultat.n + ' notes écrites dans le vault. Rien n’est parti aux clients.',
+        vault: resultat.vault,
+        n: resultat.n,
+        fichiers: resultat.fichiers.map(function (f) { return f.relatif; }),
+      });
+    } catch (err) {
+      if (err.code === 'obsidian_off') {
+        res.status(503).json({ erreur: err.message, code: 'obsidian_off' });
+        return;
+      }
+      res.status(500).json({ erreur: String(err.message || err) });
+    }
+  });
+
   app.get('/api/calendrier', exigerSession, function (req, res) {
     var mois = String(req.query.mois || aujourdHui().slice(0, 7));
     var jours = {};
@@ -1082,6 +1110,9 @@ if (require.main === module) {
     console.log('Grok : ' + (grok.configure()
       ? (process.env.GROK_STUB === '1' ? 'stub local (GROK_STUB)' : grok.modele())
       : 'pas branché — ajoutez XAI_API_KEY (console.x.ai)'));
+    console.log('Obsidian : ' + (obsidian.configure()
+      ? obsidian.racine()
+      : 'coupé (OBSIDIAN_OFF=1)'));
   });
 }
 
