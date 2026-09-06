@@ -110,6 +110,32 @@ LEAD_NET_QUERY = (
     f"-label:{LABEL_FILE} -label:{LABEL_FILE_ALIAS}"
 )
 
+# Weekly unreplied sweep (7 days). Complements CATCHUP (2d). Still never
+# `is:unread`. Paginate. Classify with grosbot.classify. Last SENT Evenox
+# = already answered. Site leads without a SENT to the client = first contact.
+WEEKLY_WINDOW = "newer_than:7d"
+WEEKLY_INBOX_QUERY = (
+    f"in:inbox {WEEKLY_WINDOW} "
+    f"-label:{LABEL_PROCESSED} -label:{LABEL_SPAM} -label:{LABEL_SKIP} "
+    "-category:promotions -category:social -category:forums"
+)
+WEEKLY_LEAD_QUERY = (
+    f"in:inbox {WEEKLY_WINDOW} "
+    "("
+    "(from:wordpress@evenox.ca OR from:vente@evenox.ca) "
+    "(subject:\"Nouveau lead\" OR subject:\"Nouvelle soumission\" "
+    "OR subject:\"Devis abandonne\") "
+    "OR from:weddingwire "
+    "OR subject:\"New Lead from WeddingWire\" "
+    "OR from:support@booqable.com subject:\"webshop order\""
+    ") "
+    f"-label:{LABEL_PROCESSED} -label:{LABEL_SPAM} -label:{LABEL_SKIP}"
+)
+WEEKLY_DRAFT_QUERY = f"in:draft {WEEKLY_WINDOW}"
+DIGEST_TO = ACCOUNT_FROM
+# Monday 9h Montréal (EDT = UTC-4). Recurring timer on this Cloud Agent.
+WEEKLY_CRON_UTC = "0 13 * * 1"
+
 # Nate weekly report: list_labels totals only. Never scan threads for analytics.
 REPORT_LABELS = (
     LABEL_FILE,
