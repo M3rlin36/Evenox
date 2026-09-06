@@ -286,7 +286,7 @@ def _kind_from_text(blob: str, labels: set[str]) -> Kind:
 
 _CLIENT_SNIPPET = re.compile(
     r"\b(bonjour|merci|devis|soumission|d[ée]p[oô]t|acompte|livraison|"
-    r"horaire|tables?|chaises?|photobooth|événement|evenement)\b",
+    r"horaire|tables?|chaises?|photobooth|tapis|événement|evenement)\b",
     re.IGNORECASE,
 )
 
@@ -298,7 +298,7 @@ def _looks_like_client_reply(sender: str, snippet: str, subject: str) -> bool:
         return False
     promotional = any(
         x in sender
-        for x in ("promo@", "newsletter", "marketing@", "news@", "info@", "noreply")
+        for x in ("promo@", "newsletter", "marketing@", "news@", "noreply")
     )
     if promotional:
         return False

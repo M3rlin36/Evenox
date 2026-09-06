@@ -72,6 +72,7 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 - 1 brouillon / run. Le reste attend dans `Grok-File` (0 token).
 - Rapport vendredi = `list_labels` (`grosbot.report`), jamais un scan de fils.
 - Sweep cheap 3×/jour **tous les jours** (`0 13,16,20 * * *` UTC = 9h/12h/16h Montréal). Veille + filet leads. Toujours, même si File n’est pas vide. Gmail down → `Veille : pas faite.` + Slack.
+- Filet **7 jours** chaque lundi 9h Montréal (`0 13 * * 1` UTC) : `.cursor/skills/weekly-unreplied-digest/SKILL.md`. Digest à Alexandre. Brouillons Grok. 0 envoi client.
 
 ## n8n
 

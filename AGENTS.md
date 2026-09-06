@@ -36,6 +36,7 @@ Nate Herk ([vidéo Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)) : éti
 - MCP cherche `label:Grok-File` (nom), pas `label:Label_19`.
 - Ne jamais scanner `is:unread`. File vide = `QUEUE VIDE`. Pas de boucle 15/30 min.
 - Matin : routine **veille**. Catch-up `newer_than:2d` **même si File n’est pas vide**. Filet leads (site + WeddingWire) à part. Une ligne `Veille : 0 oublié.` / `N rattrapé(s).` / **`Veille : pas faite.`** si Gmail plante (jamais un faux 0). Slack DM Evenox.
+- Lundi 9h Montréal : filet **7 jours** (`.cursor/skills/weekly-unreplied-digest/SKILL.md`). Digest à `evenox.ca@gmail.com` + brouillons Grok. Jamais d’envoi client.
 - Laisser unread. Jamais d’envoi client sans le mot **envoie** d’Alexandre.
 - Jamais « j’envoie ». Après envoi : coller `Parti.` + À + Objet + le texte. Sinon `Pas parti. Le brouillon est encore là.` Pas d’ID.
 

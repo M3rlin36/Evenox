@@ -50,6 +50,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 5. Ne jamais marquer lu.
 6. Jamais « j’envoie ». Preuve = coller le mail (`Parti.` + À + Objet + texte). Sinon `Pas parti. Le brouillon est encore là.` Pas d’ID. Pas aller dans Gmail.
 7. Matin : **veille**. Catch-up `newer_than:2d` même si File n’est pas vide. Filet leads (site + WeddingWire) à part. Une ligne `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` si Gmail plante (jamais un faux 0).
+8. Lundi 9h : filet 7 jours. Digest interne + brouillons Grok. Skill `weekly-unreplied-digest`.
 
 ## Requêtes cheap
 

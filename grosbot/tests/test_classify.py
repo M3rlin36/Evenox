@@ -43,6 +43,16 @@ def test_google_ads_and_shopsante_are_ignored():
     assert shop.decision is Decision.IGNORE
 
 
+def test_real_client_at_info_address_is_queued():
+    result = classify(
+        sender="info@studio.example",
+        subject="Tapis brun pour un tapis rouge",
+        snippet="Bonjour, nous cherchons un tapis beige pour un événement.",
+    )
+    assert result.decision is Decision.QUEUE
+    assert result.kind is Kind.NEEDS_YOU
+
+
 def test_newsletter_is_ignored():
     result = classify(
         sender="CostcoNews@digital.costco.ca",
