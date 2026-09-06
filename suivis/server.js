@@ -19,6 +19,7 @@ var crypto = require('crypto');
 var fixtures = require('./fixtures');
 var gabarits = require('./gabarits');
 var mailer = require('./mailer');
+var livre = require('./livre-du-jour');
 
 var PORT = Number(process.env.PORT) || 3000;
 var DEMO_CODE = String(process.env.DEMO_CODE || '1111');
@@ -676,6 +677,38 @@ function api(app) {
   });
 
   app.get('/api/sequence', exigerSession, function (req, res) {
+    if (process.env.EVENOX_LIVRE === '1') {
+      var b = livre.bilan();
+      res.json({
+        mode: etat.sequenceMode,
+        livre: b.jour,
+        candidats: b.candidats.map(function (c) {
+          return {
+            id: c.id, nom: c.nom, courriel: c.courriel, montant: 0,
+            contexte: (c.date_evenement || 'sans date') +
+              (c.booqable_number ? ' · #' + c.booqable_number : ''),
+            relance_courte: c.prochaine_action || '',
+            gabarit: '', gabarit_etape: '—', gabarit_titre: 'Pas en séquence',
+            appel_dabord: true, approbation_requise: true,
+          };
+        }),
+        exclus: b.exclus.map(function (e) {
+          return {
+            nom: e.nom, raison: e.raison, detail: e.booqable_number || e.prochaine_action,
+            bonne_nouvelle: /d[eé]p[oô]t/i.test(e.raison),
+          };
+        }),
+        nb_exclus: b.exclus.length,
+        garde_fous: { max_par_jour: 8, seuil_approbation: 2000 },
+        compte_test: mailer.COMPTE_TEST,
+        gabarits: gabarits.liste(),
+        courriels: (etat.courriels || []).slice(0, 12).map(publicCourriel),
+        verdict: b.candidats.length
+          ? null
+          : 'Cahier du ' + b.jour + ' : aucun dossier n\'entre en relance auto.',
+      });
+      return;
+    }
     var candidats = etat.sequenceCandidats.map(function (id) {
       var d = dossierDe(id);
       if (!d) return null;

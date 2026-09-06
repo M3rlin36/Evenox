@@ -52,6 +52,9 @@ App.sequence = (function () {
           '<b>' + e[1] + '</b><i>' + e[2] + '</i></button>';
       }).join('') + '</div>';
     html += '<div class="seq-apercu" id="seq-apercu" hidden></div>';
+    if (d.verdict) {
+      html += '<div class="pourquoi"><b>Cahier réel.</b> ' + App.h(d.verdict) + '</div>';
+    }
 
     // ── L'avertissement de tête ──
     if (!enMarche) {

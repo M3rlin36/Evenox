@@ -158,6 +158,14 @@ var CATALOGUE = {
       'Répondez à ce courriel ou joignez-moi au 514-559-1893.\n\n' +
       'Au plaisir,\n',
   },
+  dis: {
+    id: 'dis',
+    etape: 'Dis',
+    titre: 'Phrase déjà écrite — si pas de réponse',
+    envoie: true,
+    sujet: '{{sujet_dis}}',
+    texte: '{{dis}}\n\nAu plaisir,\n',
+  },
   post_evenement: {
     id: 'post_evenement',
     etape: 'J+7 post',
@@ -228,6 +236,8 @@ function variables(dossier, extra) {
       : 'Re: votre message',
     accroche: extra.accroche
       || (dossier.notes ? 'C\'est noté.\n\n' : ''),
+    dis: extra.dis || dossier.dis || '',
+    sujet_dis: extra.sujet_dis || dossier.sujet_dis || '',
   };
   return vars;
 }

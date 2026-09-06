@@ -165,7 +165,7 @@ srv.listen(0, '127.0.0.1', function () {
     .then(function (r) {
       assert.strictEqual(r.status, 200);
       var ids = r.json.gabarits.map(function (g) { return g.id; });
-      ['j2', 'j4', 'j7', 'j14', 'j21', 'j30', 'reponse', 'an_passe', 'prospection']
+      ['j2', 'j4', 'j7', 'j14', 'j21', 'j30', 'reponse', 'an_passe', 'prospection', 'dis']
         .forEach(function (id) { assert.ok(ids.indexOf(id) !== -1, 'gabarit ' + id); });
     })
     .then(function () {
@@ -239,7 +239,25 @@ srv.listen(0, '127.0.0.1', function () {
       assert.ok(/perdu/i.test(r.json.erreur));
     })
     .then(function () {
-      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence courriel.');
+      var livre = require('./livre-du-jour');
+      var appliquer = require('./appliquer');
+      var b = livre.bilan();
+      assert.strictEqual(b.candidats.length, 0, 'cahier réel : personne en séquence');
+      assert.ok(b.exclus.length >= 8, 'cahier réel : exclus nommés');
+      var mathieu = b.exclus.filter(function (e) { return e.nom === 'Mathieu Lacroix'; })[0];
+      assert.ok(mathieu && /d[eé]p[oô]t/i.test(mathieu.raison));
+      var sp = b.exclus.filter(function (e) { return e.nom === 'SP Canada'; })[0];
+      assert.ok(sp && /perdu/i.test(sp.raison));
+      var r = appliquer.rapport();
+      assert.strictEqual(r.envoi_client, false);
+      assert.ok(r.scripts_dis.length >= 2, 'phrases Dis de Mélanie et Joëlle');
+      r.scripts_dis.forEach(function (s) {
+        assert.strictEqual(s.destinataire_brouillon, 'evenox.ca@gmail.com');
+        assert.ok(s.texte.indexOf('dépôt garde la date') !== -1);
+      });
+    })
+    .then(function () {
+      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence, cahier réel.');
       srv.close();
       process.exit(0);
     })

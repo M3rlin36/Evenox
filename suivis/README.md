@@ -59,4 +59,16 @@ Côté API production, ajouter quand c’est prêt :
 | `filtres.*` | `GET /api/pipeline` | compteurs pour les chips |
 | `interactions` | `GET /api/client/:id` | `{ date, type, titre, detail, par, dossier_id }` |
 
+Pour appliquer le cahier réel (pas la démo) :
+
+```bash
+cd suivis
+node appliquer.js
+EVENOX_LIVRE=1 npm start
+```
+
+`appliquer.js` lit uniquement le cahier du jour. Aujourd’hui : **personne en relance auto**. Les phrases « Dis » (Mélanie, Joëlle) deviennent des brouillons internes vers `evenox.ca@gmail.com`.
+
+Sur le VPS, copier aussi `gabarits.js` et `mailer.js` à côté du serveur, et brancher `POST /api/sequence/test`, `/demarrer`, `/dossier/:id/brouillon` comme dans `server.js`.
+
 Règle déjà en vigueur : **aucun courriel client sans OUI jusqu’au 10 sept. 2026**.
