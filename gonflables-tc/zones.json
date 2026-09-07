@@ -1,0 +1,842 @@
+{
+  "J7A": [
+    "Rosemère",
+    2.7
+  ],
+  "J7E": [
+    "Sainte-Thérèse",
+    2.7
+  ],
+  "J7B": [
+    "Blainville",
+    5.3
+  ],
+  "H7L": [
+    "Laval (Sainte-Rose)",
+    6.1
+  ],
+  "J7G": [
+    "Boisbriand",
+    6.4
+  ],
+  "J6Z": [
+    "Lorraine",
+    7.4
+  ],
+  "J7H": [
+    "Boisbriand",
+    7.6
+  ],
+  "J7C": [
+    "Blainville",
+    8.6
+  ],
+  "J7P": [
+    "Saint-Eustache",
+    9.8
+  ],
+  "J6Y": [
+    "Terrebonne",
+    10.1
+  ],
+  "H7H": [
+    "Laval (Auteuil)",
+    10.3
+  ],
+  "H7P": [
+    "Laval (Fabreville)",
+    12.1
+  ],
+  "H7K": [
+    "Laval (Auteuil)",
+    13.1
+  ],
+  "H7T": [
+    "Laval (Chomedey)",
+    14.3
+  ],
+  "H7R": [
+    "Laval (Fabreville)",
+    14.4
+  ],
+  "H7J": [
+    "Laval (Saint-François)",
+    14.5
+  ],
+  "H7E": [
+    "Laval (Duvernay)",
+    15.0
+  ],
+  "J6X": [
+    "Terrebonne",
+    15.1
+  ],
+  "J7R": [
+    "Saint-Eustache",
+    15.2
+  ],
+  "H7S": [
+    "Laval (Chomedey)",
+    15.6
+  ],
+  "J7J": [
+    "Mirabel",
+    15.7
+  ],
+  "H7X": [
+    "Laval (Sainte-Dorothée)",
+    17.9
+  ],
+  "H7V": [
+    "Laval (Chomedey)",
+    18.4
+  ],
+  "H7M": [
+    "Laval (Vimont)",
+    18.7
+  ],
+  "H7W": [
+    "Laval (Chomedey)",
+    19.2
+  ],
+  "H7G": [
+    "Laval (Pont-Viau)",
+    19.4
+  ],
+  "J7L": [
+    "Mascouche",
+    19.5
+  ],
+  "H7Y": [
+    "Laval (Sainte-Dorothée)",
+    19.7
+  ],
+  "H7N": [
+    "Laval (Laval-des-Rapides)",
+    19.9
+  ],
+  "H4J": [
+    "Montréal (Ahuntsic-Cartierville)",
+    20.5
+  ],
+  "H3M": [
+    "Montréal (Ahuntsic-Cartierville)",
+    20.9
+  ],
+  "H2B": [
+    "Montréal (Ahuntsic-Cartierville)",
+    21.4
+  ],
+  "H2C": [
+    "Montréal (Ahuntsic-Cartierville)",
+    21.4
+  ],
+  "H7C": [
+    "Laval (Saint-Vincent-de-Paul)",
+    21.8
+  ],
+  "H1H": [
+    "Montréal (Montréal-Nord)",
+    22.1
+  ],
+  "J6W": [
+    "Terrebonne",
+    22.4
+  ],
+  "H2M": [
+    "Montréal (Ahuntsic-Cartierville)",
+    23.4
+  ],
+  "H4N": [
+    "Montréal (Saint-Laurent)",
+    23.4
+  ],
+  "H4S": [
+    "Montréal (Saint-Laurent)",
+    23.8
+  ],
+  "H1G": [
+    "Montréal (Montréal-Nord)",
+    24.1
+  ],
+  "H1Z": [
+    "Montréal (Villeray)",
+    24.1
+  ],
+  "H4K": [
+    "Montréal (Ahuntsic-Cartierville)",
+    24.1
+  ],
+  "H7B": [
+    "Laval (Saint-François)",
+    24.2
+  ],
+  "H2E": [
+    "Montréal (Villeray)",
+    24.5
+  ],
+  "H4L": [
+    "Montréal (Saint-Laurent)",
+    24.7
+  ],
+  "H3L": [
+    "Montréal (Ahuntsic-Cartierville)",
+    24.9
+  ],
+  "H8Y": [
+    "Montréal (Pierrefonds-Roxboro)",
+    25.4
+  ],
+  "H1R": [
+    "Montréal (Saint-Léonard)",
+    25.5
+  ],
+  "H3N": [
+    "Montréal (Villeray)",
+    26.0
+  ],
+  "H1P": [
+    "Montréal (Saint-Léonard)",
+    26.4
+  ],
+  "H2G": [
+    "Montréal (Rosemont)",
+    26.5
+  ],
+  "J7Z": [
+    "Saint-Jérôme",
+    26.5
+  ],
+  "H2P": [
+    "Montréal (Villeray)",
+    26.6
+  ],
+  "H2N": [
+    "Montréal (Ahuntsic-Cartierville)",
+    26.8
+  ],
+  "H2R": [
+    "Montréal (Villeray)",
+    27.5
+  ],
+  "H4R": [
+    "Montréal (Saint-Laurent)",
+    27.6
+  ],
+  "H7A": [
+    "Laval (Saint-François)",
+    27.6
+  ],
+  "H4M": [
+    "Montréal (Saint-Laurent)",
+    27.8
+  ],
+  "H9B": [
+    "Dollard-des-Ormeaux",
+    27.8
+  ],
+  "H4T": [
+    "Montréal (Saint-Laurent)",
+    28.2
+  ],
+  "H8Z": [
+    "Montréal (Pierrefonds-Roxboro)",
+    28.2
+  ],
+  "J7M": [
+    "Terrebonne",
+    28.6
+  ],
+  "J7K": [
+    "Mascouche",
+    28.7
+  ],
+  "H2S": [
+    "Montréal (Rosemont)",
+    29.1
+  ],
+  "J0N": [
+    "Oka",
+    29.2
+  ],
+  "H4P": [
+    "Mont-Royal",
+    29.3
+  ],
+  "J7Y": [
+    "Saint-Jérôme",
+    29.4
+  ],
+  "H1E": [
+    "Montréal (Rivière-des-Prairies)",
+    29.5
+  ],
+  "H9P": [
+    "Dorval",
+    30.0
+  ],
+  "H2A": [
+    "Montréal (Villeray)",
+    30.1
+  ],
+  "J6V": [
+    "Terrebonne",
+    30.5
+  ],
+  "H8T": [
+    "Montréal (Lachine)",
+    30.9
+  ],
+  "H9A": [
+    "Dollard-des-Ormeaux",
+    31.4
+  ],
+  "H9G": [
+    "Dollard-des-Ormeaux",
+    31.4
+  ],
+  "H1J": [
+    "Montréal (Anjou)",
+    31.5
+  ],
+  "H8S": [
+    "Montréal (Lachine)",
+    31.5
+  ],
+  "J7N": [
+    "Mirabel",
+    31.8
+  ],
+  "H9S": [
+    "Dorval",
+    32.0
+  ],
+  "H9R": [
+    "Pointe-Claire",
+    32.1
+  ],
+  "H1Y": [
+    "Montréal (Rosemont)",
+    32.3
+  ],
+  "H5B": [
+    "Montréal (Ville-Marie)",
+    32.3
+  ],
+  "H4A": [
+    "Montréal (Côte-des-Neiges)",
+    32.5
+  ],
+  "J5L": [
+    "Saint-Jérôme",
+    32.5
+  ],
+  "H1S": [
+    "Montréal (Saint-Léonard)",
+    32.7
+  ],
+  "H4W": [
+    "Côte-Saint-Luc",
+    32.7
+  ],
+  "H4V": [
+    "Montréal (Côte-des-Neiges)",
+    32.8
+  ],
+  "H1X": [
+    "Montréal (Rosemont)",
+    33.1
+  ],
+  "H1T": [
+    "Montréal (Rosemont)",
+    33.3
+  ],
+  "H9J": [
+    "Kirkland",
+    33.5
+  ],
+  "H1K": [
+    "Montréal (Anjou)",
+    33.9
+  ],
+  "J5M": [
+    "Saint-Lin",
+    34.1
+  ],
+  "H9H": [
+    "Kirkland",
+    34.2
+  ],
+  "H1M": [
+    "Montréal (Mercier)",
+    34.4
+  ],
+  "J4K": [
+    "Longueuil",
+    34.5
+  ],
+  "H4B": [
+    "Montréal (Côte-des-Neiges)",
+    34.6
+  ],
+  "J5J": [
+    "Sainte-Sophie",
+    34.6
+  ],
+  "H4X": [
+    "Montréal-Ouest",
+    34.8
+  ],
+  "H4C": [
+    "Montréal (Le Sud-Ouest)",
+    34.9
+  ],
+  "J4P": [
+    "Saint-Lambert",
+    35.0
+  ],
+  "J4H": [
+    "Longueuil",
+    35.2
+  ],
+  "H1W": [
+    "Montréal (Mercier)",
+    35.9
+  ],
+  "H1N": [
+    "Montréal (Mercier)",
+    36.0
+  ],
+  "H8N": [
+    "Montréal (LaSalle)",
+    36.1
+  ],
+  "H9W": [
+    "Beaconsfield",
+    36.1
+  ],
+  "J5Z": [
+    "Repentigny",
+    36.1
+  ],
+  "J5K": [
+    "Saint-Colomban",
+    36.2
+  ],
+  "H0M": [
+    "Montréal (Rivière-des-Prairies)",
+    36.3
+  ],
+  "H4G": [
+    "Montréal (Verdun)",
+    36.3
+  ],
+  "H1V": [
+    "Montréal (Mercier)",
+    36.5
+  ],
+  "J6A": [
+    "Repentigny",
+    36.5
+  ],
+  "H1L": [
+    "Montréal (Mercier)",
+    36.6
+  ],
+  "H4H": [
+    "Montréal (Verdun)",
+    37.4
+  ],
+  "H5A": [
+    "Montréal (Ville-Marie)",
+    37.6
+  ],
+  "H4E": [
+    "Montréal (Le Sud-Ouest)",
+    38.2
+  ],
+  "H4Z": [
+    "Montréal (Ville-Marie)",
+    38.6
+  ],
+  "J5Y": [
+    "Repentigny",
+    39.5
+  ],
+  "H9K": [
+    "Montréal (Pierrefonds-Roxboro)",
+    39.7
+  ],
+  "H8R": [
+    "Kahnawà:ke",
+    39.8
+  ],
+  "H8P": [
+    "LaSalle",
+    40.0
+  ],
+  "H1A": [
+    "Montréal (Rivière-des-Prairies)",
+    null
+  ],
+  "H1B": [
+    "Montréal-Est",
+    null
+  ],
+  "H1C": [
+    "Montréal (Rivière-des-Prairies)",
+    null
+  ],
+  "H2H": [
+    "Montréal (Le Plateau-Mont-Royal)",
+    null
+  ],
+  "H2J": [
+    "Montréal (Le Plateau-Mont-Royal)",
+    null
+  ],
+  "H2K": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H2L": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H2T": [
+    "Montréal (Le Plateau-Mont-Royal)",
+    null
+  ],
+  "H2V": [
+    "Montréal (Outremont)",
+    null
+  ],
+  "H2W": [
+    "Montréal (Le Plateau-Mont-Royal)",
+    null
+  ],
+  "H2X": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H2Y": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H2Z": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H3A": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H3B": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H3C": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H3E": [
+    "Montréal (Verdun)",
+    null
+  ],
+  "H3G": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H3H": [
+    "Montréal (Ville-Marie)",
+    null
+  ],
+  "H3J": [
+    "Montréal (Le Sud-Ouest)",
+    null
+  ],
+  "H3K": [
+    "Montréal (Le Sud-Ouest)",
+    null
+  ],
+  "H3P": [
+    "Mont-Royal",
+    null
+  ],
+  "H3R": [
+    "Mont-Royal",
+    null
+  ],
+  "H3S": [
+    "Montréal (Côte-des-Neiges)",
+    null
+  ],
+  "H3T": [
+    "Montréal (Côte-des-Neiges)",
+    null
+  ],
+  "H3V": [
+    "Montréal (Côte-des-Neiges)",
+    null
+  ],
+  "H3W": [
+    "Montréal (Côte-des-Neiges)",
+    null
+  ],
+  "H3X": [
+    "Hampstead",
+    null
+  ],
+  "H3Y": [
+    "Westmount",
+    null
+  ],
+  "H3Z": [
+    "Westmount",
+    null
+  ],
+  "H9X": [
+    "Sainte-Anne-de-Bellevue",
+    null
+  ],
+  "J0J": [
+    "Montérégie-Est (Bedford)",
+    null
+  ],
+  "J0L": [
+    "Montérégie-Nord (Saint-Antoine-Sur-Richelieu)",
+    null
+  ],
+  "J0P": [
+    "Vaudreuil-Soulanges (Coteau-du-Lac)",
+    null
+  ],
+  "J0R": [
+    "Lanaudière-Sud (Prévost)",
+    null
+  ],
+  "J0S": [
+    "Montérégie-Ouest (Saint-Anicet)",
+    null
+  ],
+  "J2N": [
+    "Farnham",
+    null
+  ],
+  "J2R": [
+    "Saint-Hyacinthe",
+    null
+  ],
+  "J2S": [
+    "Saint-Hyacinthe",
+    null
+  ],
+  "J2T": [
+    "Saint-Hyacinthe",
+    null
+  ],
+  "J2W": [
+    "Saint-Luc",
+    null
+  ],
+  "J2X": [
+    "Saint-Jean-sur-Richelieu",
+    null
+  ],
+  "J2Y": [
+    "Saint-Jean-sur-Richelieu",
+    null
+  ],
+  "J3A": [
+    "Saint-Jean-sur-Richelieu",
+    null
+  ],
+  "J3B": [
+    "Saint-Jean-sur-Richelieu",
+    null
+  ],
+  "J3E": [
+    "Sainte-Julie",
+    null
+  ],
+  "J3G": [
+    "Beloeil",
+    null
+  ],
+  "J3H": [
+    "Beloeil",
+    null
+  ],
+  "J3L": [
+    "Chambly",
+    null
+  ],
+  "J3M": [
+    "Marieville",
+    null
+  ],
+  "J3N": [
+    "Saint-Basile-Le-Grand",
+    null
+  ],
+  "J3R": [
+    "Sorel",
+    null
+  ],
+  "J3V": [
+    "Saint-Bruno",
+    null
+  ],
+  "J3X": [
+    "Varennes",
+    null
+  ],
+  "J3Y": [
+    "Saint-Hubert",
+    null
+  ],
+  "J3Z": [
+    "Saint-Hubert",
+    null
+  ],
+  "J4B": [
+    "Boucherville",
+    null
+  ],
+  "J4G": [
+    "Longueuil",
+    null
+  ],
+  "J4J": [
+    "Longueuil",
+    null
+  ],
+  "J4L": [
+    "Longueuil",
+    null
+  ],
+  "J4M": [
+    "Longueuil",
+    null
+  ],
+  "J4N": [
+    "Longueuil",
+    null
+  ],
+  "J4R": [
+    "Saint-Lambert",
+    null
+  ],
+  "J4S": [
+    "Saint-Lambert",
+    null
+  ],
+  "J4T": [
+    "Saint-Hubert",
+    null
+  ],
+  "J4V": [
+    "Greenfield Park",
+    null
+  ],
+  "J4W": [
+    "Brossard",
+    null
+  ],
+  "J4X": [
+    "Brossard",
+    null
+  ],
+  "J4Y": [
+    "Brossard",
+    null
+  ],
+  "J4Z": [
+    "Brossard",
+    null
+  ],
+  "J5A": [
+    "Saint-Constant",
+    null
+  ],
+  "J5B": [
+    "Delson",
+    null
+  ],
+  "J5C": [
+    "Sainte-Catherine",
+    null
+  ],
+  "J5R": [
+    "La Prairie",
+    null
+  ],
+  "J5T": [
+    "Lavaltrie",
+    null
+  ],
+  "J6E": [
+    "Joliette",
+    null
+  ],
+  "J6J": [
+    "Châteauguay",
+    null
+  ],
+  "J6K": [
+    "Châteauguay",
+    null
+  ],
+  "J6N": [
+    "Beauharnois",
+    null
+  ],
+  "J6R": [
+    "Mercier",
+    null
+  ],
+  "J6S": [
+    "Salaberry-de-Valleyfield",
+    null
+  ],
+  "J6T": [
+    "Salaberry-de-Valleyfield",
+    null
+  ],
+  "J7T": [
+    "Vaudreuil-Dorion",
+    null
+  ],
+  "J7V": [
+    "Vaudreuil-Dorion",
+    null
+  ],
+  "J7W": [
+    "Pincourt",
+    null
+  ],
+  "J7X": [
+    "Valleyfield",
+    null
+  ],
+  "J8A": [
+    "Saint-Hippolyte",
+    null
+  ],
+  "J8B": [
+    "Sainte-Adèle",
+    null
+  ],
+  "J8C": [
+    "Sainte-Agathe-Des-Monts",
+    null
+  ],
+  "J8G": [
+    "Chatham",
+    null
+  ],
+  "J8H": [
+    "Lachute",
+    null
+  ]
+}
