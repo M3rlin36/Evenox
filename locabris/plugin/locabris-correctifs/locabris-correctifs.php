@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Locabris Correctifs
  * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
- * Version: 1.7.0
+ * Version: 1.7.1
  * Author: Evenox
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
-define('LOCABRIS_FIX_VER', '1.7.0');
+define('LOCABRIS_FIX_VER', '1.7.1');
 
 function locabris_fix_page_slug()
 {
@@ -155,7 +155,9 @@ add_action('wp_head', function () {
         . '.woocommerce-page .page-description .et_pb_code{display:none!important}'
         . '.locabris-fix.single-product .summary.entry-summary:empty{display:none}'
         . '.loca-fiche .loca-woo-cart .button{background:#0E2C4F;color:#fff;font-family:Raleway,sans-serif;font-weight:800;border:0;border-radius:8px;padding:14px 22px}'
-        . 'a[href*="/accessoires/"],a[href*="/418-2/"]{display:none!important}';
+        . 'a[href*="/accessoires/"],a[href*="/418-2/"]{display:none!important}'
+        . 'iframe[src*="list-manage"],iframe[src*="chimpstatic"],iframe[src*="mailchimp"],'
+        . '#PopupSignupForm_0,[id*="PopupSignupForm"],.mc-modal,.mc-banner{display:none!important}';
     $footer = LOCABRIS_FIX_DIR . 'modules/shop-footer.css';
     if (is_readable($footer)) {
         $css .= file_get_contents($footer);
@@ -206,9 +208,28 @@ function locabris_fix_maybe_strip_home_navy_tile($html)
     return locabris_fix_strip_home_navy_tile($html);
 }
 
+function locabris_fix_chrome_html($html)
+{
+    if (!is_string($html) || $html === '') {
+        return $html;
+    }
+    $html = str_replace(
+        array('Tempo Simple', 'Tempo Double'),
+        array('Abris simples', 'Abris doubles'),
+        $html
+    );
+    $html = preg_replace('/<script\b[^>]*\bid=["\']mcjs["\'][^>]*>.*?<\/script>/is', '', $html);
+    return $html;
+}
+
 add_filter('the_content', 'locabris_fix_maybe_strip_home_navy_tile', 9999);
 add_filter('et_builder_render_layout', 'locabris_fix_maybe_strip_home_navy_tile', 9999);
 add_filter('litespeed_buffer_after', 'locabris_fix_maybe_strip_home_navy_tile', 20);
+add_filter('litespeed_buffer_after', 'locabris_fix_chrome_html', 25);
+
+add_action('template_redirect', function () {
+    ob_start('locabris_fix_chrome_html');
+}, 2);
 
 add_action('wp', function () {
     if (!is_front_page()) {
@@ -489,43 +510,66 @@ add_action('wp_footer', function () {
         });
       };
       hideHref(\'a[href*="/accessoires/"], a[href*="/418-2/"]\');
-      document.querySelectorAll("a").forEach(function(a){
-        var t=(a.textContent||"").replace(/\\s+/g," ").trim();
-        if(t==="Tempo Simple")a.textContent="Abris simples";
-        if(t==="Tempo Double")a.textContent="Abris doubles";
-      });
+      var relabel=function(){
+        document.querySelectorAll("[data-et-multi-view]").forEach(function(el){
+          var raw=el.getAttribute("data-et-multi-view")||"";
+          if(raw.indexOf("Tempo Simple")===-1 && raw.indexOf("Tempo Double")===-1)return;
+          el.setAttribute("data-et-multi-view", raw.replace(/Tempo Simple/g,"Abris simples").replace(/Tempo Double/g,"Abris doubles"));
+        });
+        var walk=function(n){
+          if(n.nodeType===3){
+            if(n.nodeValue.indexOf("Tempo Simple")===-1 && n.nodeValue.indexOf("Tempo Double")===-1)return;
+            n.nodeValue=n.nodeValue.replace(/Tempo Simple/g,"Abris simples").replace(/Tempo Double/g,"Abris doubles");
+          }else if(n.nodeType===1 && !/^(SCRIPT|STYLE|TEXTAREA)$/.test(n.tagName)){
+            for(var i=0;i<n.childNodes.length;i++) walk(n.childNodes[i]);
+          }
+        };
+        walk(document.body);
+      };
+      relabel();
       document.querySelectorAll(\'a[href*="soumission-location-tempo"]\').forEach(function(a){
         var li=a.closest("li");
         if(!li)return;
-        var sub=li.querySelector(":scope > ul");
-        if(sub)sub.remove();
+        var kids=li.children;
+        for(var i=0;i<kids.length;i++){
+          if(kids[i].tagName==="UL")kids[i].remove();
+        }
         li.classList.remove("menu-item-has-children","mega-menu");
       });
       var hideRabais=function(){
-        var all=document.body?document.body.querySelectorAll("a,button,div,span"):[];
+        if(!document.body)return;
+        var mc=document.getElementById("mcjs");
+        if(mc)mc.remove();
+        document.querySelectorAll("iframe,[id*=\\"PopupSignupForm\\"],.mc-modal,.mc-banner").forEach(function(el){
+          var src=el.src||"";
+          if(el.tagName==="IFRAME" && !/chimpstatic|list-manage|mailchimp/i.test(src))return;
+          el.style.setProperty("display","none","important");
+        });
+        var all=document.body.querySelectorAll("a,button,div,span,p");
         for(var i=0;i<all.length;i++){
           var el=all[i];
           var t=(el.innerText||"").replace(/\\s+/g," ").trim();
-          if(t.indexOf("OBTENEZ VOTRE RABAIS")===-1)continue;
-          if(t.length>60)continue;
+          if(t.indexOf("OBTENEZ VOTRE RABAIS")===-1 && t.indexOf("OBTENIR MON CODE PROMO")===-1)continue;
           var box=el;
-          for(var k=0;k<5 && box && box!==document.body;k++){
+          var fixed=null;
+          for(var k=0;k<10 && box && box!==document.body;k++){
             var pos=window.getComputedStyle(box).position;
-            if(pos==="fixed"||pos==="sticky")break;
+            if(pos==="fixed"||pos==="sticky"){fixed=box;break;}
             box=box.parentElement;
           }
-          if(box&&box!==document.body)box.style.setProperty("display","none","important");
-          else el.style.setProperty("display","none","important");
+          if(fixed)fixed.style.setProperty("display","none","important");
         }
       };
-      hideRabais();
-      setTimeout(hideRabais,800);
-      setTimeout(hideRabais,2500);
+      var polish=function(){relabel();hideRabais();};
+      polish();
+      setTimeout(polish,400);
+      setTimeout(polish,1200);
+      setTimeout(polish,3000);
       if(window.MutationObserver){
         var timer=null;
         new MutationObserver(function(){
           if(timer)clearTimeout(timer);
-          timer=setTimeout(hideRabais,80);
+          timer=setTimeout(polish,80);
         }).observe(document.body,{childList:true,subtree:true});
       }
     });
