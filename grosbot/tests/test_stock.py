@@ -10,7 +10,8 @@ from grosbot.stock import (
 def test_clear_products_from_client_mail():
     assert has_clear_products("10 tables cocktail + nappes") is True
     assert has_clear_products("merci pour le lien de dépôt") is False
-    assert "tables" in extract_needles("10 tables cocktail + photobooth")
+    assert "table" in extract_needles("10 tables cocktail + photobooth")
+    assert "tabouret" in extract_needles("12 tabourets de bar")
 
 
 def test_parse_store_keeps_catalog_price_never_invents():

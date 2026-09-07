@@ -21,8 +21,8 @@ BOOQABLE_HOST = "https://evenox.booqable.com"
 
 _ITEM = re.compile(
     r"\b(?:tables?|chaises?|nappes?|photobooth|chapiteau|gonflable|"
-    r"tapis|poteaux?|stanchions?|cocktail|popcorn|arche|ballons?|"
-    r"marquee|fleurs?|nappes?)\b",
+    r"tapis|poteaux?|stanchions?|cocktail|popcorn|arche|arches|"
+    r"tabourets?|pliantes?|ballons?|marquee|fleurs?)\b",
     re.IGNORECASE,
 )
 
@@ -43,6 +43,8 @@ def extract_needles(text: str) -> tuple[str, ...]:
     seen: list[str] = []
     for match in _ITEM.finditer(text or ""):
         word = match.group(0).casefold()
+        if word.endswith("s") and len(word) > 4:
+            word = word[:-1]
         if word not in seen:
             seen.append(word)
     return tuple(seen)
