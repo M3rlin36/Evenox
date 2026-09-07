@@ -1,26 +1,43 @@
 # Cerveau Evenox — courriels
 
-Outil de rédaction pour Alexandre (Grokbot / agent / humain).  
-Un courriel client = un dossier. Brouillon seulement. Rien ne part sans fil Gmail réel + « envoie » d’Alexandre.
+Outil de rédaction pour Alexandre (Grok / Grokbot / agent / humain).  
+Un courriel client = un dossier. Analyse visible ici d’abord. Rien ne part sans fil Gmail réel + « envoie » d’Alexandre.
+
+**Grok :** coller / charger [`GROK.md`](GROK.md) — prompt unique.
 
 ## En 30 secondes
 
-1. Ouvre `checklist-dossier.md` et coche la séquence (Gmail → doublon → calendrier → terrain → Booqable).
-2. Lis `regles.md` si tu hésites (prix, dépôt, envoi, municipal).
-3. Compte les trous. **0 à 2** → prends 1–3 questions dans `questions-predeterminees.md`. **3 et plus, ou contradiction** → propose un appel (sauf interdit municipal).
-4. Copie le gabarit dans `gabarits-reponses.md`. Remplace les `[CROCHETS]`.
-5. Montre le brouillon ici, auto-portant. Prix = Booqable seulement, sinon rien ou `[PRIX À CONFIRMER]`.
+1. Lis le fil de **HAUT en BAS**. Haut = demande active (à traiter, à chiffrer). Bas = historique périmé.
+2. Extraire **De / À / signature** avant de conclure « pas d’email ».
+3. Ouvre `checklist-dossier.md`. Comprendre **avant** Booqable, `/suivis/`, ou un mail client.
+4. Compte les trous (arbre ci-dessous). Coche les **drapeaux**.
+5. Note interne : **lu / déduit / inventé**. Inventé = jamais dans le mail ni Booqable.
+6. Copie le gabarit dans `gabarits-reponses.md`. Remplace les `[CROCHETS]`.
+7. Montre le brouillon ici. Prix = devis Booqable seulement. **Aucun prix dans un mail de questions.**
+
+## Arbre
+
+| Trous | Action |
+| --- | --- |
+| **0** — date+jour OK, lieu/accès tenables, format+quantités cohérents, fenêtre livr.→cueillette, pas de contradiction | Devis automatique. Analyse ici. Attendre `crée` / `envoie`. |
+| **1–2** | Questions, **sans prix**. Banque : `questions-predeterminees.md`. |
+| **3+** ou contradiction terrain | Appel **514-559-1893**. |
+| Municipal + pièce jointe | Questions **écrites**. Pas d’appel à l’émetteur si le document l’interdit. |
+
+Pas d’écriture Booqable / suivis sans `envoie` ou `crée` d’Alexandre.
 
 ## Choix du gabarit
 
 | Situation | Gabarit |
 | --- | --- |
+| 0 trou, on sait | Devis auto + F si déjà parti |
 | Premier mail, trop de trous (Mélanie) | A — incomplet → appel |
-| Premier mail assez clair (Alpinea, 5 à 7) | B — 2–3 questions |
+| Premier mail 1–2 trous (Alpinea, 5 à 7) | B — questions sans prix |
 | Suivi avec pièges terrain (Cardin) | C — contradictions |
 | Devis / SEAO / PJ ≠ mailing (DT-2026-41) | D — municipal |
 | Silence après notre mail | E — relance |
 | Devis déjà parti | F — en attente |
+| Client conteste dépôt / NET / livraison | Bloc contestation — question, pas récitation |
 
 ## Style (validé en tests)
 
@@ -31,6 +48,16 @@ Un courriel client = un dossier. Brouillon seulement. Rien ne part sans fil Gmai
 - Document municipal qui interdit de parler à l’émetteur : on n’offre pas d’appeler cette personne.
 - Signature : voir `regles.md`.
 
+## Règles à ne pas rater
+
+- Ne jamais chiffrer le **bas** si une relance est en **haut**.
+- Pas de dossier/devis Booqable avant d’avoir compris.
+- Jamais de prix ferme si la portée est incertaine ou périmée. Pas de « sous 2 000 $ » / « dans votre budget » sur une vieille enveloppe.
+- Ne pas nommer un produit que le client n’a pas nommé.
+- Tout total a une **ventilation** (lignes). Sinon pas de total client.
+- Client qui **conteste** une règle → question, pas récitation.
+- Taxes / signature / dépôt 20 % : seulement au service d’un dossier **vrai**.
+
 ## Sources
 
 | Source | Sert à |
@@ -38,7 +65,7 @@ Un courriel client = un dossier. Brouillon seulement. Rien ne part sans fil Gmai
 | Gmail `evenox.ca@gmail.com` | Ce que le client a écrit. Mémoire du dossier. |
 | Booqable | Prix, stock, n° devis, lien dépôt. Seule source officielle. |
 | Calendrier réel | Date + jour de semaine. Sans année = on demande. |
-| Ce dossier `/workspace/cerveau/` | Ton, questions, gabarits. |
+| Ce dossier `/workspace/cerveau/` | Ton, questions, gabarits. `GROK.md` = prompt Grok. |
 
 Gmail = brouillon interne sourcé. Jamais inventer. Jamais envoyer depuis ici.
 
@@ -52,7 +79,8 @@ Gmail = brouillon interne sourcé. Jamais inventer. Jamais envoyer depuis ici.
 
 ## Fichiers
 
+- `GROK.md` — **prompt unique à coller dans Grok**.
 - `questions-predeterminees.md` — banque, 1 question vs appel.
 - `gabarits-reponses.md` — textes à coller + exemples remplis.
 - `checklist-dossier.md` — ordre de traitement.
-- `regles.md` — toujours / jamais.
+- `regles.md` — toujours / jamais / drapeaux.

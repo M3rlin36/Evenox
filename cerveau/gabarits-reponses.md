@@ -1,7 +1,9 @@
 # Gabarits de réponses — Evenox
 
 Variables entre `[CROCHETS]`. Enlever un crochet plutôt que d’inventer.  
-**Aucun prix dans ces textes** sauf un chiffre déjà sorti de Booqable et montré à Alexandre.
+**Aucun prix dans ces textes** sauf un chiffre déjà sorti de Booqable, ventilé en lignes, et montré à Alexandre.  
+Mail de questions = **zéro montant**. Ne pas nommer un produit que le client n’a pas écrit.  
+Ne pas signer / envoyer sans validation Alexandre.
 
 Signature à coller telle quelle :
 
@@ -18,8 +20,8 @@ www.evenox.ca
 
 ## A — Premier courriel incomplet → appel
 
-**Quand :** Mélanie-style. Date ou année absente, lieu flou, items vagues, plus de 2 trous terrain.  
-**Pas :** « je ne peux pas envoyer de soumission ».
+**Quand :** Mélanie-style. **3+ trous** ou contradiction. Date ou année absente, lieu flou, items vagues.  
+**Pas :** « je ne peux pas envoyer de soumission ». **Pas de prix.**
 
 ```
 Objet : [Party / location] — [mois ou événement]
@@ -67,9 +69,11 @@ www.evenox.ca
 
 ---
 
-## B — Premier courriel assez complet → 2–3 questions max
+## B — Premier courriel 1–2 trous → questions sans prix
 
-**Quand :** Alpinea / 5 à 7. On a date (avec année), lieu, items. Il reste 1–3 points terrain ou format.
+**Quand :** Alpinea / 5 à 7. On a date (avec année), lieu, items. Il reste **1 ou 2** points terrain ou format.  
+**Si 0 trou :** pas ce gabarit — devis automatique (analyse ici, `crée`, puis F si déjà parti).  
+**Aucun montant** dans ce mail. Pas de « sous X $ » / « dans votre budget ».
 
 ```
 Objet : [Événement] — [date courte]
@@ -80,13 +84,12 @@ J’espère que vous allez bien.
 
 C’est noté pour le [jour] [date année] à [lieu / ville] : [items repris en une phrase].
 
-Deux précisions pour caler le devis :
+[Une ou deux précisions] pour caler le devis :
 
 1. [Question banque — ex. sol gazon ou asphalte ?]
 2. [Question banque — ex. livraison le [jour] et cueillette le [jour] ?]
-[3. optionnelle]
 
-Dès que c’est confirmé, je vous prépare la soumission (prix Booqable, dépôt 20 % pour bloquer la date).
+Dès que c’est confirmé, je vous prépare la soumission. Un dépôt de 20 % bloque la date une fois le devis accepté.
 
 Alexandre Séguin, DSC
 Evenox
@@ -96,7 +99,7 @@ Sainte-Thérèse, QC J7E 4L1
 www.evenox.ca
 ```
 
-**Si 4e question apparaît :** supprimer le 3 et ajouter « Si c’est plus simple, on se parle au 514-559-1893. »
+**Si 3e question apparaît :** passer à l’appel (gabarit A), sauf municipal interdit.
 
 **Exemple rempli — Alpinea / Johanne, 70 + 8 chaises, mariage, Saint-Donat**
 
@@ -124,7 +127,7 @@ Sainte-Thérèse, QC J7E 4L1
 www.evenox.ca
 ```
 
-Note interne : > 40 km = devis. Vérifier année et jour de semaine. Ancrage seulement si chapiteau/gonflable. Pas de prix chaise tapé.
+Note interne : > 40 km = devis. Vérifier année et jour de semaine. Ancrage seulement si chapiteau/gonflable. Pas de prix chaise tapé. Lu / déduit / inventé. Ne pas ajouter un modèle de chaise non nommé.
 
 **Exemple rempli — 5 à 7 Blainville, 120 personnes**
 
@@ -157,7 +160,7 @@ www.evenox.ca
 ## C — Suivi avec contradictions terrain
 
 **Quand :** Cardin / Laverdière. Le client a déjà écrit. Date vs calendrier, sous-sol + chapiteau, gonflable 8 pi, 3 jours, tables du lieu.  
-**Ouverture :** directe, pas de merci.
+**Ouverture :** directe, pas de merci. **Pas de prix.** Le haut du fil gagne.
 
 ```
 Objet : Re : [sujet du fil]
@@ -297,13 +300,14 @@ Sainte-Thérèse, QC J7E 4L1
 www.evenox.ca
 ```
 
-Interne : checklist terrain quand même (saison décembre, ancrage, durée marché, équipement de la ville). Prix = Booqable. NET ville = demander à Alexandre avant d’écrire NET 30.
+Interne : checklist terrain quand même (saison décembre, ancrage, durée marché, équipement de la ville). Prix = Booqable, après compréhension + `crée`. NET ville = demander à Alexandre avant d’écrire NET 30. Extraire De / À / signature. Drapeaux si PJ ≠ courriel.
 
 ---
 
 ## E — Relance
 
-**Quand :** on a déjà écrit, pas de réponse. LCAP / fil réel seulement. Pas de relance si dépôt payé et rien à faire.
+**Quand :** on a déjà écrit, pas de réponse. LCAP / fil réel seulement. Pas de relance si dépôt payé et rien à faire.  
+**Le haut est la relance.** Ne pas rechiffrer un vieux message du bas. Pas de nouvel enveloppe / « sous X $ ».
 
 ```
 Objet : Re : [même sujet]
@@ -340,7 +344,7 @@ Dès que j’ai [la question unique encore ouverte], je sors le devis.
 
 ## F — Devis envoyé, en attente
 
-**Quand :** PDF / lien Booqable déjà parti. On n’ajoute pas de prix. On n’invente pas un lien.
+**Quand :** PDF / lien Booqable déjà parti (dossier **vrai**, ventilation déjà sur le devis). On n’ajoute pas de prix. On n’invente pas un lien.
 
 ```
 Objet : Re : soumission [n°] — [événement]
@@ -393,12 +397,45 @@ Ne pas coller le bloc appel. Signature seulement.
 
 ---
 
+## G — Client conteste une règle (dépôt, NET, livraison)
+
+**Quand :** le client refuse le dépôt, demande NET 60 / NET 30, ou veut la livraison gratuite.  
+**Pas :** réciter la règle comme si c’était déjà réglé. **Pas de prix.** Drapeau interne.
+
+```
+Objet : Re : [sujet du fil]
+
+Bonjour [Prénom],
+
+Je reviens sur [événement] du [date].
+
+Vous indiquez [ce qu’il conteste, repris en ses mots : pas de dépôt / NET / livraison offerte].
+
+Comment voulez-vous procéder de votre côté ?
+
+[Une seule question, ou appel 514-559-1893 si 3+ points.]
+
+Alexandre Séguin, DSC
+Evenox
+215 Bd René-A.-Robert
+Sainte-Thérèse, QC J7E 4L1
+514-559-1893
+www.evenox.ca
+```
+
+Interne : drapeau NET 60 / sans dépôt / livraison gratuite. Alexandre tranche. Ne pas écrire « le dépôt de 20 % est obligatoire » ni « NET 60 n’existe pas » dans le mail.
+
+---
+
 ## Ce qu’on ne met jamais dans un gabarit
 
-- Un montant de chaise, table, nappe, km, chauffage.
+- Un montant de chaise, table, nappe, km, chauffage — surtout dans un mail de questions.
+- Un total sans ventilation (lignes).
+- « sous 2 000 $ » / « dans votre budget » repris d’un vieux mail du bas.
+- Un nom de produit / modèle que le client n’a pas écrit.
 - « Merci pour le résumé. »
 - « Je ne peux pas envoyer de soumission. »
-- NET 60. NET 30 sans OK Alexandre.
+- NET 60. NET 30 sans OK Alexandre. Récitation d’une règle contestée.
 - « Les piquets tiennent sur l’asphalte. »
 - « Votre chum / la voirie couvre l’assurance. »
 - Forfaits site Express / photobooth combo.

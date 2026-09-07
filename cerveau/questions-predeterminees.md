@@ -1,21 +1,24 @@
 # Banque de questions prédéterminées
 
-Règle d’emploi : **une question par trou**. Maximum 2–3 dans le mail.  
-Dès qu’il faut 4 points ou qu’il y a contradiction : **appeler 514-559-1893**, sauf si un devis municipal interdit de parler à l’émetteur.
+Règle d’emploi : **une question par trou**. Maximum **2** dans le mail.  
+**0 trou** → pas de question : devis auto (après compréhension + `crée`).  
+**1–2 trous** → questions **sans prix**.  
+**3+ ou contradiction** → **appeler 514-559-1893**, sauf si un devis municipal interdit de parler à l’émetteur.
 
-Formulations validées : faits + questions. Pas de « on ne peut pas », pas de « je ne peux pas envoyer de soumission ».
+Formulations validées : faits + questions. Pas de « on ne peut pas », pas de « je ne peux pas envoyer de soumission ».  
+Ne pas nommer un produit que le client n’a pas nommé. Pas de montant dans ces questions.
 
 ---
 
 ## Identité / facturation
 
 ### Qui facture ?
-- **Quand :** organisme, ville, comité, ou prénom seul (Alpinea vs municipal).
+- **Quand :** organisme, ville, comité, ou prénom seul (Alpinea vs municipal). Changement d’entité dans le fil → **DRAPEAU**.
 - **1 question :** « La facture est au nom de [organisme / prénom], c’est bien ça ? »
 - **Trop → appel :** « Il y a plusieurs interlocuteurs et une facturation à clarifier. On peut se parler au 514-559-1893, 10 minutes suffisent. »
 
 ### Téléphone de contact terrain
-- **Quand :** livraison, chapiteau, gonflable, soirée.
+- **Quand :** livraison, chapiteau, gonflable, soirée. Tél invalide ou manquant → **DRAPEAU**.
 - **1 question :** « Quel numéro joindre le jour de l’installation ? »
 - **Trop → appel :** regrouper avec accès et horaire au téléphone.
 
@@ -179,8 +182,8 @@ Interne : chapiteau = réserver 7 jours d’avance. Météo la veille → pop-up
 - **Trop → appel :** 8 pi + sous-sol + chapiteau.
 
 ### Jeux géants
-- **Quand :** « jeux », « animations », sans modèle.
-- **1 question :** « Vous visez des jeux géants (Jenga, connect, etc.) ou un gonflable ? »
+- **Quand :** « jeux », « animations », sans modèle. **Ne pas nommer un modèle.**
+- **1 question :** « Vous visez des jeux géants ou un gonflable ? Lesquels avez-vous en tête ? »
 - **Trop → appel :** liste d’animations + surface + âge des enfants inconnus.
 
 ### Âge / usage
@@ -212,24 +215,27 @@ Interne : chapiteau = réserver 7 jours d’avance. Météo la veille → pop-up
 ## Argent (budget, dépôt, NET, livraison)
 
 ### Budget
-- **Quand :** lead vague, party Noël, « autour de ».
+- **Quand :** lead vague, party Noël, « autour de ». Enveloppe du **haut** seulement. Une enveloppe du **bas** est périmée.
 - **1 question :** « Vous avez une enveloppe approximative pour la location (hors taxes) ? »
+- **Jamais :** « on reste sous 2 000 $ » / « dans votre budget » repris d’un vieux mail. Pas de prix ferme si la portée a changé.
 - **Trop → appel :** budget + date + lieu + items tous vides.
 
 ### Dépôt
-- **Quand :** devis prêt, date proche, stock limité.
+- **Quand :** devis prêt, date proche, stock limité. Dossier **vrai** seulement.
 - **1 question :** « Un dépôt de 20 % bloque la date. Je vous envoie le lien Booqable ? »
+- **Si le client conteste :** ne pas réciter. « Vous préférez procéder comment pour retenir la date ? » + **DRAPEAU**.
 - **Trop → appel :** conditions d’organisme (bon de commande, NET).
 
 ### NET
-- **Quand :** ville, commission scolaire, gros OBNL demande NET 30 / 60.
+- **Quand :** ville, commission scolaire, gros OBNL demande NET 30 / 60. **DRAPEAU** dès NET 60.
 - **1 question :** « Vous fonctionnez sur bon de commande. Le paiement est à combien de jours ? »  
-  Interne : **NET 60 inexistant. NET 30 = gros organisme + OK Alexandre.**
+  Interne : **NET 60 inexistant. NET 30 = gros organisme + OK Alexandre.** Si le client **conteste** : question, pas récitation.
 - **Trop → appel :** Alexandre appelle, on ne négocie pas NET 60 dans le mail.
 
 ### Livraison vs cueillette
 - **Quand :** toujours, dès qu’on ignore le mode.
 - **1 question :** « Vous préférez la cueillette à Sainte-Thérèse, ou la livraison à [ville] ? »
+- **Si le client demande la livraison gratuite :** « Vous voulez qu’on inclue la livraison à [ville] au devis — comment voyez-vous ça de votre côté ? » Pas de verdict « c’est payant » comme si c’était réglé.
 - **Trop → appel :** Saint-Donat / > 40 km + horaire + accès.
 
 ### Distance (interne, pas un prix au client)
@@ -241,11 +247,19 @@ Interne : chapiteau = réserver 7 jours d’avance. Météo la veille → pop-up
 ## Mini-arbre (à coller en tête de run)
 
 ```
-Trous = 0          → devis Booqable + gabarit B ou F (0–1 question)
-Trous = 1 ou 2     → gabarit B, questions de cette banque
+Trous = 0          → devis automatique (analyse ici, attendre crée / envoie)
+Trous = 1 ou 2     → gabarit B, questions de cette banque, SANS PRIX
 Trous ≥ 3          → gabarit A (appel 514-559-1893)
 Contradiction      → gabarit C
-Municipal + PJ     → gabarit D (appeler seulement si le document le permet)
-Silence après nous → gabarit E
+Municipal + PJ     → gabarit D, questions écrites (appeler seulement si le document le permet)
+Silence après nous → gabarit E (ne pas chiffrer le bas)
 Devis déjà parti   → gabarit F
+Contestation       → gabarit G (question, pas récitation)
 ```
+
+## Identité du fil (avant « pas d’email »)
+
+### De / À / signature
+- **Quand :** toujours, avant de conclure qu’il n’y a pas de courriel.
+- **1 question :** (interne) extraire De, À, signature. Si manquants → **DRAPEAU**, pas « pas d’email ».
+- **Trop → appel :** plusieurs expéditeurs / changement d’entité.
