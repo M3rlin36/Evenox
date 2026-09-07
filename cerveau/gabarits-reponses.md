@@ -251,23 +251,27 @@ www.evenox.ca
 
 ### D2 — Devis interdit de parler à l’émetteur
 
-```
-Objet : [N° dossier] — précisions écrites
+**À :** Direction de l’approvisionnement (jamais Karine / loisirs seuls).  
+**Cc :** l’émetteur du courriel.  
+**Interne avant envoi :** le produit passe-t-il le devis (OIQ, charges, superficie) ? Si non : demander une structure d’ingénierie **ou** préparer un déclin. Ne pas promettre de soumission.
 
-Bonjour [Service / Titre],
+```
+Objet : [N° dossier] — questions écrites
+
+Bonjour,
 
 J’espère que vous allez bien.
 
-Soumission pour le dossier [n°], selon le document [titre exact].
+Questions écrites sur le [n° / titre], pour caler le dossier :
 
-Merci de confirmer par écrit :
+1. On suit le courriel ([A]) ou le devis ([B]) ?
+2. [Produit vs norme devis — ex. structure avec attestation OIQ, ou le format demandé ?]
+3. [Accès / ancrage / électricité — choix, pas de prix]
 
-1. [Contradiction dates ou quantités — formuler comme un choix, pas une négation.]
-2. [Le lieu fournit déjà quel équipement, le cas échéant.]
+Dès que l’approvisionnement tranche, on verra s’il y a matière à devis.
 
-Nous déposerons la soumission sur [SEAO / courriel officiel du devis] à la réception de cette confirmation.
-
-Alexandre Séguin, DSC
+Alexandre Séguin
+Directeur du Service à la Clientèle
 Evenox
 215 Bd René-A.-Robert
 Sainte-Thérèse, QC J7E 4L1
@@ -275,32 +279,7 @@ Sainte-Thérèse, QC J7E 4L1
 www.evenox.ca
 ```
 
-Note : pas de « appelez-moi ». Le 514 reste dans la signature seulement.
-
-**Exemple rempli — Marché de Noël DT-2026-41**
-
-```
-Objet : DT-2026-41 — Marché de Noël
-
-Bonjour [Titre / Prénom],
-
-J’espère que vous allez bien.
-
-Nous avons le dossier DT-2026-41 : le courriel du [date] et la pièce [nom du PDF].
-
-Pour [dates d’occupation / quantités de tables / lieu d’installation], le courriel indique [A] et le document indique [B]. Quelle version a préséance ?
-
-[Si le devis interdit l’appel à l’émetteur : s’arrêter ici. Sinon :] Je peux aussi clarifier ça au 514-559-1893.
-
-Alexandre Séguin, DSC
-Evenox
-215 Bd René-A.-Robert
-Sainte-Thérèse, QC J7E 4L1
-514-559-1893
-www.evenox.ca
-```
-
-Interne : checklist terrain quand même (saison décembre, ancrage, durée marché, équipement de la ville). Prix = Booqable, après compréhension + `crée`. NET ville = demander à Alexandre avant d’écrire NET 30. Extraire De / À / signature. Drapeaux si PJ ≠ courriel.
+Note : pas d’appel. Le 514 reste dans la signature. Pas de prix. Le devis gouverne le budget.
 
 ---
 

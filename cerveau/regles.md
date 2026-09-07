@@ -56,7 +56,9 @@ www.evenox.ca
 - Envoyer sans **fil Gmail réel** + mot **envoie** d’Alexandre sur **ce** texte.
 - Écrire Booqable / `/suivis/` sans `envoie` ou `crée`.
 - Deviner l’année d’une date.
-- Proposer d’appeler l’émetteur d’un devis municipal si le document l’interdit.
+- Proposer d’appeler **ou d’écrire À** l’émetteur d’un devis municipal si le document l’interdit (approvisionnement = À, émetteur = Cc).
+- Promettre une soumission si le produit est disqualifié par le devis (chapiteau 10 × 10 vs charge neige / vent / OIQ).
+- Titre « DSC » dans un courriel à une ville ou un organisme.
 - NET 60. NET 30 seulement gros organisme **et** OK Alexandre.
 - Dire que les piquets tiennent sur asphalte, dalle, béton, patinoire.
 - Traiter un tiers (« chum », voirie, locateur) comme l’assurance Evenox.

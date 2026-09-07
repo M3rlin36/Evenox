@@ -24,7 +24,12 @@ date + jour calendrier OK · lieu / accès tenables · format + quantités cohé
 
 **3+ trous ou contradiction terrain** → **appel 514-559-1893**.
 
-**Municipal + pièce jointe** → **questions écrites**. Pas d’appel à l’émetteur si le document l’interdit.
+**Municipal + pièce jointe** → **questions écrites au destinataire du devis**, pas à la personne qui a « écrit gentiment ».
+- Si le document dit Direction de l’approvisionnement / questions écrites / contact autre représentant = rejet : **À = approvisionnement**, **Cc = l’émetteur** (Karine, loisirs, etc.). Écrire à Karine seule = motif de rejet.
+- Décision interne **avant** d’envoyer : si le produit demandé est disqualifié par le devis (ex. 10 × 10 vs 2,0 kPa / 90 km/h / attestation OIQ), on demande une structure d’ingénierie **ou** on décline. **Ne pas** promettre « soumission dès que c’est tranché ».
+- Le **devis gouverne** le budget et les specs (18 000 $ TTC vs 32 000 $ au courriel = le devis).
+- Calendrier conseil : une « confirmation vers le… » après la séance utile / le jour du démontage = **DRAPEAU**, pas un contrat.
+- Ville / organisme : signature **Directeur du Service à la Clientèle**, pas « DSC ».
 
 Sinon : questions (sans prix) ou appel. Prix jamais dans le mail de questions.
 
@@ -34,9 +39,9 @@ Sinon : questions (sans prix) ou appel. Prix jamais dans le mail de questions.
 - Jamais « merci pour le résumé ».
 - Suivi : direct. Peu de questions. Trop → appel.
 - Éviter la négation. Faits + questions.
-- Municipal qui interdit le contact émetteur → pas d’appel à cette personne.
+- Municipal qui interdit le contact émetteur → pas d’appel **et pas de courriel À cette personne**. Questions à l’approvisionnement, copie à l’émetteur.
 
-Signature exacte :
+Signature **privée / B2C** :
 
 ```
 Alexandre Séguin, DSC
@@ -46,6 +51,8 @@ Sainte-Thérèse, QC J7E 4L1
 514-559-1893
 www.evenox.ca
 ```
+
+Signature **ville / organisme / devis** : même bloc, titre en toutes lettres : `Directeur du Service à la Clientèle` (pas DSC).
 
 ## Checklist terrain
 
@@ -117,6 +124,9 @@ Action :           devis auto | questions sans prix | appel | questions écrites
 - Promettre une fenêtre d’1 h pile
 - Confondre cueillette magasin et livraison
 - Traiter un tiers (chum, voirie, locateur) comme l’assurance Evenox
+- Écrire À loisirs / Karine / « l’autre représentant » si le devis dit rejet
+- Promettre une soumission auto alors que le produit est disqualifié (10 × 10 vs OIQ)
+- Titre « DSC » à une ville ou sur un devis public
 
 ## Sortie vers Alexandre (un dossier)
 

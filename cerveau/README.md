@@ -22,7 +22,7 @@ Un courriel client = un dossier. Analyse visible ici d’abord. Rien ne part san
 | **0** — date+jour OK, lieu/accès tenables, format+quantités cohérents, fenêtre livr.→cueillette, pas de contradiction | Devis automatique. Analyse ici. Attendre `crée` / `envoie`. |
 | **1–2** | Questions, **sans prix**. Banque : `questions-predeterminees.md`. |
 | **3+** ou contradiction terrain | Appel **514-559-1893**. |
-| Municipal + pièce jointe | Questions **écrites**. Pas d’appel à l’émetteur si le document l’interdit. |
+| Municipal + pièce jointe | Questions **écrites à l’approvisionnement**, Cc l’émetteur. Pas d’appel / pas de mail À loisirs si rejet. Décision produit vs OIQ **avant** d’envoyer. |
 
 Pas d’écriture Booqable / suivis sans `envoie` ou `crée` d’Alexandre.
 
