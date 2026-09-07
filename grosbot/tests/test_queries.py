@@ -66,5 +66,7 @@ def test_lead_net_finds_unlabeled_leads_behind_newsletter_noise():
     assert "newer_than:14d" in LEAD_NET_QUERY
     assert "wordpress@evenox.ca" in LEAD_NET_QUERY
     assert "weddingwire" in LEAD_NET_QUERY
+    assert "webshop order" in LEAD_NET_QUERY
+    assert "support@booqable.com" in LEAD_NET_QUERY
     assert f"-label:{LABEL_FILE}" in LEAD_NET_QUERY
     assert f"-label:{LABEL_FILE_ALIAS}" in LEAD_NET_QUERY

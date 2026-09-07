@@ -71,6 +71,26 @@ def test_wordpress_password_reset_is_ignored():
     assert result.decision is Decision.IGNORE
 
 
+def test_booqable_webshop_order_is_queued():
+    result = classify(
+        sender="support@booqable.com",
+        subject="You have a new webshop order from Sebastien Test",
+        snippet="Nintendo Switch 1 $0.00 Ramassage en magasin",
+    )
+    assert result.decision is Decision.QUEUE
+    assert result.kind is Kind.QUOTE
+    assert result.queue_label == "Grok-File"
+
+
+def test_client_evenement_accent_is_queued():
+    result = classify(
+        sender="client@hotmail.com",
+        subject="Evenement 14 novembre",
+        snippet="J'aimerais visiter vos installations pour un évènement le 14 novembre",
+    )
+    assert result.decision is Decision.QUEUE
+
+
 def test_abandoned_quote_is_queued():
     result = classify(
         sender="vente@evenox.ca",
@@ -134,6 +154,20 @@ def test_filter_recipes_skip_inbox_for_alarm():
     recipe = gmail_ui_recipe(alarm)
     assert "Skip Inbox" in recipe
     assert "NOX-Spam" in recipe
+
+
+def test_lead_filters_dual_write_file_alias_not_n8n_triples():
+    lead = next(s for s in FILTER_SPECS if "wordpress lead" in s.name)
+    ww = next(s for s in FILTER_SPECS if "weddingwire" in s.name)
+    shop = next(s for s in FILTER_SPECS if "webshop" in s.name)
+    assert "NOX-À-traiter" in lead.add_labels
+    assert "Grok-File" in lead.add_labels
+    assert "NOX-À-traiter" in ww.add_labels
+    assert "Grok-File" in shop.add_labels
+    assert "NOX-À-traiter" in shop.add_labels
+    names = " ".join(s.name for s in FILTER_SPECS)
+    assert "soumission" not in names
+    assert "abandon" not in names
 
 
 def test_weekly_report_uses_label_totals_not_unread_scan():

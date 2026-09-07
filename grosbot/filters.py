@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from grosbot.queries import LABEL_FILE, LABEL_SOUMISSION, LABEL_SPAM
+from grosbot.queries import LABEL_FILE, LABEL_FILE_ALIAS, LABEL_SOUMISSION, LABEL_SPAM
 
 
 @dataclass(frozen=True)
@@ -60,34 +60,29 @@ FILTER_SPECS: tuple[FilterSpec, ...] = (
         "wordpress lead → file + quote",
         "wordpress@evenox.ca",
         "Nouveau lead",
-        (LABEL_FILE, LABEL_SOUMISSION),
+        (LABEL_FILE, LABEL_FILE_ALIAS, LABEL_SOUMISSION),
         False,
-        "Nate Quote label. Stay in inbox. Dual-write Grok-File in the agent.",
-    ),
-    FilterSpec(
-        "wordpress soumission → file + quote",
-        "wordpress@evenox.ca",
-        "Nouvelle soumission",
-        (LABEL_FILE, LABEL_SOUMISSION),
-        False,
-        "Nate Quote label.",
-    ),
-    FilterSpec(
-        "abandoned quote → file",
-        "vente@evenox.ca",
-        "Devis abandonne",
-        (LABEL_FILE, LABEL_SOUMISSION),
-        False,
-        "Nate Quote / needs you.",
+        "Nate Quote. Dual-write File. Stay inbox. n8n does not write Grok-File.",
     ),
     FilterSpec(
         "weddingwire lead → file + quote",
         "support@weddingwire.ca",
         "New Lead",
-        (LABEL_FILE, LABEL_SOUMISSION),
+        (LABEL_FILE, LABEL_FILE_ALIAS, LABEL_SOUMISSION),
         False,
         "Marketplace lead. CATCHUP cap 8 can hide this behind newsletters.",
     ),
+    FilterSpec(
+        "booqable webshop → file + quote",
+        "support@booqable.com",
+        "webshop order",
+        (LABEL_FILE, LABEL_FILE_ALIAS, LABEL_SOUMISSION),
+        False,
+        "Webshop order is a Quote. Dual-write File. Stay inbox.",
+    ),
+    # Do NOT Gmail-filter "Nouvelle soumission" / "Devis abandonne":
+    # n8n already creates those as extra threads. Filet + claim closes them.
+    # Auto-File would triple Grok-File for one person.
 )
 
 

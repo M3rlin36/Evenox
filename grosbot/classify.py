@@ -78,6 +78,8 @@ _LEAD_SUBJECT_NEEDLES = (
     "devis abandonne",
     "devis abandonné",
     "panier",
+    "webshop order",
+    "new webshop order",
 )
 
 _CLIENT_SUBJECT_NEEDLES = (
@@ -91,6 +93,7 @@ _LEAD_SENDERS = (
     "wordpress@evenox.ca",
     "vente@evenox.ca",
     "mail.booqable.com",
+    "support@booqable.com",
 )
 
 _MARKET_SENDERS = (
@@ -284,9 +287,11 @@ def _kind_from_text(blob: str, labels: set[str]) -> Kind:
     return Kind.NEEDS_YOU
 
 
+# è (grave) ≠ é (aigu). « évènement » (Paola) ne matchait pas év[ée]nement.
 _CLIENT_SNIPPET = re.compile(
-    r"\b(bonjour|merci|devis|soumission|d[ée]p[oô]t|acompte|livraison|"
-    r"horaire|tables?|chaises?|photobooth|événement|evenement)\b",
+    r"\b(?:bonjour|merci|devis|soumission|d[ée]p[oô]t|acompte|livraison|"
+    r"horaire|tables?|chaises?|photobooth|visite(?:r|s)?|showroom|"
+    r"év[eéè]nement|evenement)\b",
     re.IGNORECASE,
 )
 
