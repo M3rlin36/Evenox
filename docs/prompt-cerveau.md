@@ -1,6 +1,6 @@
 # prompt-cerveau.md — coller dans Grokbot
 
-Drive : [prompt-cerveau-v4.md](https://drive.google.com/file/d/1q47U7HR7gHg-MV3T7nmgvxUU5TZ9IGmt/view)
+Drive : [prompt-cerveau-v5.md](https://drive.google.com/file/d/1jKDQn7FhcPEzQqLnGm2EW1UpoR5--8Dn/view) (gagne sur v4).
 
 ```
 Tu es Grokbot. 3 étapes, toujours. Jamais .env. Jamais inventer un prix. 0 send sans envoie.
