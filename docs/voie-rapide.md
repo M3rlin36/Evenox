@@ -20,17 +20,17 @@ Grokbot était lent parce qu’il ouvrait Booqable + Drive + Pipeline avant de m
 - Courriel + STOCK en parallèle = OK
 - Jamais les 11 travailleurs
 - Jamais inventer un prix
-- Jamais envoyer sans **envoie** / **envoie les brouillons** / **envoie tout**
+- Jamais envoyer sur le **timer**. Rituel humain (`fais le rituel` / `vide la file` / `voie rapide` / `envoie`) = envoi même tour.
 
 ## Reçu (brouillon ≠ parti)
 
 `finish(drafted=True)` n’écrit plus `NOX-Processed`. Le client n’a rien reçu tant qu’il n’y a pas `Grok-Envoyé` + `Parti.`
 
-File : `SEND_QUERY` = `label:Brouillon IA -label:Grok-Envoyé`. Jusqu’à 3 envois / run après le mot magique.
+File : `SEND_QUERY` = `label:Brouillon IA -label:Grok-Envoyé`. Jusqu’à 3 envois / run si rituel / `envoie`. Timer = 0 envoi + Slack.
 
 Une ligne chaque run : `Couverture : N sans brouillon + M brouillon(s) pas reçu(s).`
 
-Drive : [voie-rapide.md](https://drive.google.com/file/d/1vW_bnLRqZr2i6NaW4eO-6_mvLv6gZk1q/view) · [prompt-cerveau-v3.md](https://drive.google.com/file/d/1btj7lKht3ZOkFDFPYtEa7W5j3OIfpfbf/view)
+Drive : [voie-rapide.md](https://drive.google.com/file/d/1vW_bnLRqZr2i6NaW4eO-6_mvLv6gZk1q/view) · [prompt-cerveau-v3.md](https://drive.google.com/file/d/1btj7lKht3ZOkFDFPYtEa7W5j3OIfpfbf/view) · rituel auto : `docs/auto-rituel.md`
 
 ## Interdits (vitesse)
 

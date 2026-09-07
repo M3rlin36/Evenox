@@ -45,6 +45,7 @@ def test_coverage_line_counts_undelivered_drafts():
 
 def test_send_go_batch_words():
     assert is_send_go("envoie") is True
+    assert is_send_go("envoie-les") is True
     assert is_send_go("envoie les brouillons") is True
     assert is_send_go("envoie tout") is True
     assert is_send_go("tu peux les envoyer") is True

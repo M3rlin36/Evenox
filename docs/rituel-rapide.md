@@ -1,34 +1,32 @@
-# Rituel rapide — plusieurs mails, tous partis
+# Rituel — une phrase, tout part
 
-C’est ça qui bloque d’habitude : Grokbot ouvre Booqable / Drive, ou il dit « j’envoie » sans `send_message`.
+Tu n’as plus à enchaîner 4 messages. Une phrase lance le pipeline.
 
-## Les 4 phrases (dans l’ordre)
+## Toi
 
-1. `vide la file` — brouillons, **pas** de PDF
-2. Si ça ouvre Booqable ou « je prépare le devis » → `voie rapide` ou `débloque`
-3. `envoie les brouillons` — le mot exact, pas « ok » / « go » / « envoie-les »
-4. Compte les `Parti.` Si un `Pas parti.` → `renvoie les pas parti`
-
-Fini seulement si la ligne dit `Couverture : 0 trou` **et** autant de `Parti.` que de brouillons lus.
-
-## Si ça bloque
-
-| Symptôme | Tu dis |
+| Tu dis | Ce que je fais |
 |---|---|
-| Il cherche un PDF / ouvre Booqable | `voie rapide` |
-| Il reste coincé sur 1 dossier | `débloque` |
-| Il relit Drive | `voie rapide` |
+| `fais le rituel` | débloque + brouillons + envoi + retry + Couverture |
+| `vide la file` | pareil, jusqu’à 8 claims |
+| `voie rapide` / `débloque` | pareil (arrête Booqable / Drive) |
+| `envoie` | envoie les `Brouillon IA` déjà là + 1 retry |
 
-## Si ça n’envoie pas
+`ok` / `go` = rien.
 
-| Symptôme | Tu fais |
-|---|---|
-| « j’envoie » sans coller le mail | `renvoie les pas parti` |
-| `Pas parti. Le brouillon est encore là.` | `envoie [Prénom]` une fois |
-| Tu as dit « ok » / « go » | Re-dis `envoie les brouillons` |
+## Le timer (sans toi)
 
-Sans le mot **envoie**, rien ne part. Un brouillon Gmail n’est pas un envoi.
+3×/jour (9 h / 12 h / 16 h Montréal) : brouillons seulement. Slack : « N prêts. Réponds `envoie`. »
+Le timer **n’envoie pas**.
 
-## Avant (une fois)
+## Si ça bloque encore
 
-Recoller [prompt-cerveau-v3.md](https://drive.google.com/file/d/1btj7lKht3ZOkFDFPYtEa7W5j3OIfpfbf/view) dans Grokbot. L’ancien prompt attend le PDF et s’arrête à 1 dossier.
+| Symptôme | Automatique | Toi si besoin |
+|---|---|---|
+| Booqable / Drive / PDF | `voie rapide` les coupe | `fais le rituel` |
+| En-cours coincé | `release_stuck` au début | `débloque` |
+| « j’envoie » sans coller le mail | interdit | `renvoie les pas parti` |
+| `Pas parti.` | 1 retry dans le même tour | `envoie [Prénom]` |
+
+Fini seulement si `Couverture : 0 trou` **et** autant de `Parti.` que de brouillons lus.
+
+Avant (une fois) : recoller [prompt-cerveau.md](prompt-cerveau.md) dans Grokbot. L’ancien prompt attend le PDF et s’arrête à 1 dossier.

@@ -18,7 +18,7 @@ Drive voie rapide : `docs/voie-rapide.md` — gagne sur `process.md` section E. 
 2. Ne pas nettoyer le vieux tas unread (~20k). La valeur = le prochain urgent ne reste pas assis.
 3. Six types client : Emergency, Needs you, Quote, Schedule, Billing, Ignore.
 4. Trois habitudes : watch du **nouveau** courrier pour l’urgent ; le reste attend une liste weekday courte ; draft les réponses faciles à partir des docs.
-5. Brouillons jusqu’à confiance. Chez Evenox : jamais `send_message` sans le mot **envoie** (verrou jusqu’au 10 sept 2026).
+5. Brouillons jusqu’à confiance. Chez Evenox : timer = 0 `send_message`. Rituel humain (`fais le rituel` / `vide la file` / `envoie`) = envoi même tour (verrou timer jusqu’au 10 sept 2026).
 6. Laisser unread. L’humain voit encore le fil.
 7. Check vide = « no actions » / `QUEUE VIDE`. Stop.
 8. Feedback loop (bike method) : corriger un mauvais libellé, mettre à jour le skill.
@@ -83,7 +83,7 @@ Pas de filtre sur `Nouvelle soumission` / `Devis abandonne` (triples n8n). Filet
 
 Cher = 20k unread, 15 fils ouverts, 8 brouillons, tout oublier.
 
-Pas cher = 1 recherche file + 1 recherche `SEND_QUERY`. Vide des deux → stop. Plein → 3 RAPIDE + envois après `envoie`. Rapport = `list_labels`.
+Pas cher = 1 recherche file + 1 recherche `SEND_QUERY`. Vide des deux → stop. Plein → 3 RAPIDE + envois si rituel / `envoie`. Timer = Slack, 0 envoi. Rapport = `list_labels`.
 
 n8n « Évenox — Canal courriel » crée déjà des devis / brouillons. Si `Brouillon IA` est déjà là : montrer le brouillon vivant, ne pas dupliquer. Brouillon ≠ reçu.
 
@@ -97,6 +97,6 @@ Gagne sur `process.md` section E. Ne pas relire Drive à chaque run. Ne pas atte
 | **LENT** | Items clairs + date + **pas** de n° devis | STOCK **en parallèle**, jamais bloquant. Cloud : pas de `BOOQABLE_API_TOKEN` → une ligne à Alex, ne pas ouvrir Booqable. |
 | **INTERNE** | `Nouvelle soumission` / `Devis abandonne` | `close_interne` : `NOX-Processed`, 0 mail. Pas Skip. Pas `Brouillon IA`. |
 
-Caps : 3 RAPIDE / run, 1 LENT / run, 1 En-cours à la fois. Courriel + STOCK en parallèle = OK. Jamais les 11. Jamais inventer un prix. Jamais envoyer sans **envoie**.
+Caps : 3 RAPIDE / run, 1 LENT / run, 1 En-cours à la fois. Courriel + STOCK en parallèle = OK. Jamais les 11. Jamais inventer un prix. Timer = 0 envoi. Rituel / `envoie` = envoi même tour. Voir `docs/auto-rituel.md`.
 
 Code : `grosbot/lane.py`. Prompt UI : `docs/prompt-cerveau.md`.

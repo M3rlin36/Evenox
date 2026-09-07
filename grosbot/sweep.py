@@ -2,6 +2,9 @@
 
 A run may cap at 3 RAPIDE drafts. The *system* is not done while
 Coverage.holes > 0. Next timer (9h / 12h / 16h) continues.
+
+Human rituel words send in the same turn (`grosbot.rituel`).
+The cheap timer drafts only.
 """
 
 from __future__ import annotations
@@ -10,13 +13,14 @@ from grosbot.coverage import coverage_of, is_reply_all, sweep_closed
 from grosbot.queue import MAX_CLAIMS_PER_RUN, MAX_DRAFTS_PER_RUN
 
 SWEEP_ORDER = (
+    "release_stuck En-cours",
     "veille CATCHUP_QUERY",
     "filet LEAD_NET_QUERY",
     "filet UNANSWERED_QUERY (14j, max 20, classify)",
-    "fermer En-cours",
     "close_interne n8n",
     "claim_next RAPIDE/LENT",
-    "SEND_QUERY si envoie",
+    "SEND_QUERY si rituel / envoie (jamais si timer)",
+    "retry Pas parti une fois si rituel / envoie",
     "coverage_line — interdit QUEUE VIDE s'il reste un trou",
 )
 

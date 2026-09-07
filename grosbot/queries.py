@@ -149,6 +149,7 @@ REPORT_LABELS = (
 # Batch send. Alexandre : « envoie » / « envoie les brouillons » / « envoie tout ».
 SEND_MAGIC = (
     "envoie",
+    "envoie-les",
     "envoie les brouillons",
     "envoie tout",
     "tu peux l'envoyer",
@@ -170,4 +171,21 @@ UNSTICK_MAGIC = (
     "débloque",
     "debloque",
     "voie rapide",
+)
+
+# Une phrase = rituel complet (débloque + brouillons + envoi + renvoi).
+# Pas « automatiser » dans une question longue — trop large.
+RITUEL_MAGIC = (
+    "fais le rituel",
+    "automatise",
+    "automatise la file",
+    "automatise cela",
+    "go file",
+)
+
+# Cheap timer 3×/jour. Jamais send_message. Marker obligatoire dans le prompt.
+TIMER_MARKER = "[grok-inbox-queue-cheap]"
+TIMER_MARKERS = (
+    "sweep cheap",
+    "timer inbox",
 )

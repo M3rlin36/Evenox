@@ -20,14 +20,16 @@ Un courriel client n’est clos que s’il a **un brouillon**, un **`Parti.`**, 
 4. Finir En-cours
 5. Internes n8n → `close_interne`
 6. Jusqu’à 3 RAPIDE (ou 8 si `réponds à tous`)
-7. Envois si mot magique
-8. `Couverture : …`. Trous restants = **pas fini**. Prochain timer (9 h / 12 h / 16 h Montréal).
+7. Envois si rituel / `envoie` (jamais si timer)
+8. 1 retry `Pas parti.` si rituel / `envoie`
+9. `Couverture : …`. Trous restants = **pas fini**. Prochain timer (9 h / 12 h / 16 h Montréal).
 
 `QUEUE VIDE` seulement si les trois trous = 0.
 
 ## Mots
 
-- `réponds à tous` / `vide la file` — rédiger jusqu’à 8 dossiers ce run
-- `envoie les brouillons` — les clients reçoivent
+- `fais le rituel` / `vide la file` / `voie rapide` — pipeline complet même tour (brouillons + envoi)
+- `envoie` / `envoie-les` — les `Brouillon IA` partent
+- Timer : brouillons + Slack, 0 envoi
 
-Verrou jusqu’au 10 sept 2026 : rien ne part sans `envoie`.
+Verrou timer jusqu’au 10 sept 2026 : un run sans toi n’envoie pas. Une phrase rituel = envoi.

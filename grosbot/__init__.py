@@ -9,6 +9,13 @@ from grosbot.coverage import (
     is_unstick,
     needs_reply,
 )
+from grosbot.rituel import (
+    is_full_rituel,
+    is_timer_run,
+    rituel_line,
+    should_auto_send,
+    slack_ready_line,
+)
 from grosbot.sweep import draft_cap_this_run, may_say_queue_empty
 from grosbot.filters import FILTER_SPECS, gmail_ui_recipe
 from grosbot.lane import Lane, partition_internes, pick_lane
@@ -54,9 +61,14 @@ __all__ = [
     "coverage_of",
     "draft_cap_this_run",
     "empty_run_message",
+    "is_full_rituel",
     "is_reply_all",
+    "is_timer_run",
     "may_say_queue_empty",
     "needs_reply",
+    "rituel_line",
+    "should_auto_send",
+    "slack_ready_line",
     "SentProof",
     "finish",
     "gmail_ui_recipe",
