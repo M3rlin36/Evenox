@@ -31,7 +31,20 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 
 ## Règle d’or
 
-**Étiqueter avant de promettre.** Dual-write `Grok-File` **et** `NOX-À-traiter`. Laisser unread. Un run = un dossier. Urgent / acompte avant un nouveau lead.
+**Étiqueter avant de promettre.** Dual-write `Grok-File` **et** `NOX-À-traiter`. Laisser unread. Un En-cours à la fois. Jusqu’à **3 voies RAPIDES** + **1 LENT** par run (claim → brouillon → close → next). Urgent / acompte avant un nouveau lead.
+
+**Brouillon ≠ reçu.** `finish` n’écrit plus `NOX-Processed`. Reçu = `Grok-Envoyé` + `Parti.` Le client n’a rien tant que ce n’est pas SENT.
+
+## Voie rapide (gagne sur process.md E)
+
+Défaut **RAPIDE**. Ne pas relire `process.md` / `entreprise.md` / `regles.md` à chaque run.
+
+- n8n `Nouveau lead` / `Brouillon IA` / lien `booqable.com` = RAPIDE. **0 clic Booqable.**
+- Brouillon Gmail **avant** le PDF. `[PRIX À CONFIRMER]` OK. Jamais inventer un prix.
+- STOCK seulement si items clairs **et** pas de n° devis, **en parallèle**, jamais bloquant.
+- Cloud : pas de `BOOQABLE_API_TOKEN` → une ligne à Alex, ne pas ouvrir Booqable.
+- Internes (`Nouvelle soumission` / `Devis abandonne`) : `close_interne` (Processed, 0 mail, pas Skip, pas Brouillon IA).
+- Courriel + STOCK en parallèle = OK. Jamais les 11. Jamais attendre le PDF.
 
 ## Requêtes autorisées (noms Gmail, pas Label_19)
 
@@ -55,21 +68,23 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 4. Une ligne `Veille : …`.
 5. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
 6. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
-7. `claim_next` : 1 fil. Dual-write En-cours, retirer File + alias.
-8. Lire **tout** ce fil. Un message Alexandre = un dossier (Nom / Date / Client veut / Fait / Action).
-9. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
-10. Après `envoie` : `send_message` puis `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.
-   - Parti → coller `Parti.` + À + Objet + **le texte du mail**. C’est la preuve. Pas d’ID. Pas « va voir Gmail ».
+7. Internes n8n (`Nouvelle soumission` / `Devis abandonne`) : `close_interne` (Processed, 0 mail).
+8. `claim_next` : jusqu’à 3 RAPIDE / 1 LENT. Dual-write En-cours, retirer File + alias.
+9. Voie RAPIDE : lire le fil, **brouillon Gmail tout de suite**. 0 Drive. 0 Booqable. 0 PDF. Si n8n / `Brouillon IA` / lien Booqable déjà là : montrer ça.
+10. Voie LENTE : brouillon avec `[PRIX À CONFIRMER]` **en parallèle** d’une ligne « Alex : crée le devis ». Interdit d’attendre le PDF.
+11. Fermer le brouillon : `Brouillon IA` seulement. **Pas** `NOX-Processed`. Le client n’a rien reçu.
+12. File `SEND_QUERY` (`label:Brouillon IA -label:Grok-Envoyé`) : jusqu’à 3 envois après `envoie` / `envoie les brouillons` / `envoie tout`.
+13. Après chaque envoi : `send_message` + `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.
+   - Parti → coller `Parti.` + À + Objet + **le texte du mail**. `Grok-Envoyé`.
    - Sinon → `Pas parti. Le brouillon est encore là.`
-   - En silence : `Grok-Envoyé` seulement si Parti.
-11. Fermer un brouillon (sans envoi) : `NOX-Processed` + `Brouillon IA`. Retirer File **et** En-cours.
-12. S’il reste de la file : une ligne « file : N restants ». Stop.
+14. Une ligne `Couverture : N sans brouillon + M brouillon(s) pas reçu(s).` Stop.
 
 ## Coût
 
 - Filtres Gmail (Alarm.com → `NOX-Spam`, Skip Inbox) = gratuit. MCP `create_filter` = 403 : recettes dans `grosbot/filters.py`.
 - Triage = règles, pas un LLM.
-- 1 brouillon / run. Le reste attend dans `Grok-File` (0 token).
+- 3 brouillons RAPIDE / run + 1 LENT. Puis jusqu’à 3 envois si `envoie`.
+- Un run qui s’arrête au brouillon a échoué : le client n’a rien reçu.
 - Rapport vendredi = `list_labels` (`grosbot.report`), jamais un scan de fils.
 - Sweep cheap 3×/jour **tous les jours** (`0 13,16,20 * * *` UTC = 9h/12h/16h Montréal). Veille + filet leads. Toujours, même si File n’est pas vide. Gmail down → `Veille : pas faite.` + Slack.
 

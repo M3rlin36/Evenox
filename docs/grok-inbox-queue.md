@@ -10,6 +10,7 @@ Skill Notion : [File d’attente courriels Grokbot](https://app.notion.com/p/3d1
 Cerveau : [répondre aux courriels](https://app.notion.com/p/3d131d285ea681bc9cb4e1756d622fb2)
 Drive : `file-attente.md` dans [Obsidian — Contexte agents](https://drive.google.com/drive/folders/155w3hoR-tyERqLAHwcoDQ5Yzq0fsbWbe) — [fichier](https://drive.google.com/file/d/1137MlVLRqS6cBXEelNuWxouu6dqOn4HZ/view)
 Drive process : `process.md` — [fichier](https://drive.google.com/file/d/10TG2m5s7ghPaDOS5cVBKQCaNXpCXIjSk/view) (Grokbot / Patron Evenox ; libellé Gmail `Grok-File`)
+Drive voie rapide : `docs/voie-rapide.md` — gagne sur `process.md` section E. Prompt à coller : `docs/prompt-cerveau.md`.
 
 ## Ce que Nate a dit (courriels seulement)
 
@@ -44,7 +45,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 ## Règle d'or
 
 1. Étiqueter **avant** de dire « je vais répondre ».
-2. Un run = **un** dossier. Urgent / acompte avant un nouveau lead.
+2. Un En-cours à la fois. Jusqu’à **3 RAPIDE + 1 LENT**. Urgent / acompte avant un nouveau lead. Brouillon ≠ reçu.
 3. File vide = une recherche, `QUEUE VIDE`, **stop**.
 4. MCP `search_threads` : `label:Grok-File` (nom), pas `label:Label_19`.
 5. Ne jamais marquer lu.
@@ -81,6 +82,20 @@ Pas de filtre sur `Nouvelle soumission` / `Devis abandonne` (triples n8n). Filet
 
 Cher = 20k unread, 15 fils ouverts, 8 brouillons, tout oublier.
 
-Pas cher = 1 recherche file. Vide → stop. Plein → 1 dossier. Rapport = `list_labels`.
+Pas cher = 1 recherche file + 1 recherche `SEND_QUERY`. Vide des deux → stop. Plein → 3 RAPIDE + envois après `envoie`. Rapport = `list_labels`.
 
-n8n « Évenox — Canal courriel » crée déjà des devis / brouillons. Si `Brouillon IA` est déjà là : montrer le brouillon vivant, ne pas dupliquer.
+n8n « Évenox — Canal courriel » crée déjà des devis / brouillons. Si `Brouillon IA` est déjà là : montrer le brouillon vivant, ne pas dupliquer. Brouillon ≠ reçu.
+
+## Voie rapide
+
+Gagne sur `process.md` section E. Ne pas relire Drive à chaque run. Ne pas attendre le PDF.
+
+| Voie | Signal | Action |
+|---|---|---|
+| **RAPIDE** (défaut) | `Nouveau lead` · `Brouillon IA` · lien `booqable.com` · WeddingWire · webshop · dépôt / horaire / visite | 0 clic Booqable. Brouillon Gmail **avant** le PDF. `[PRIX À CONFIRMER]` OK. |
+| **LENT** | Items clairs + date + **pas** de n° devis | STOCK **en parallèle**, jamais bloquant. Cloud : pas de `BOOQABLE_API_TOKEN` → une ligne à Alex, ne pas ouvrir Booqable. |
+| **INTERNE** | `Nouvelle soumission` / `Devis abandonne` | `close_interne` : `NOX-Processed`, 0 mail. Pas Skip. Pas `Brouillon IA`. |
+
+Caps : 3 RAPIDE / run, 1 LENT / run, 1 En-cours à la fois. Courriel + STOCK en parallèle = OK. Jamais les 11. Jamais inventer un prix. Jamais envoyer sans **envoie**.
+
+Code : `grosbot/lane.py`. Prompt UI : `docs/prompt-cerveau.md`.

@@ -4,7 +4,7 @@ Location événementielle.
 
 Le site et les agents Cursor vivent ici. L’opération (Pipeline, Cerveau / Grokbot, relances) vit dans Notion + Gmail.
 
-Grokbot / Cerveau = **Patron Evenox**. 3 directeurs dispatchent 11 travailleurs. Jamais 11 en parallèle. Description : `docs/patron-evenox.md`.
+Grokbot / Cerveau = **Patron Evenox**. 3 directeurs dispatchent 11 travailleurs. 2 workers Courriel+STOCK OK. Jamais 11. Description : `docs/patron-evenox.md`. Voie rapide : `docs/voie-rapide.md`.
 
 ## Grokbot — file courriels
 

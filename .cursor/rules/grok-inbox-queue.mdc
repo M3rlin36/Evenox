@@ -6,20 +6,28 @@ alwaysApply: true
 
 # File courriels Grokbot
 
-Grokbot / Patron Evenox. Courriel = TRI (0 envoi). Jamais 11 travailleurs en parallèle.
+Grokbot / Patron Evenox. Courriel = TRI. 2 travailleurs OK (Courriel + STOCK). Jamais les 11.
 Libellés Gmail : `Grok-File` / `Grok-En-cours` / `Grok-Skip` / `Grok-Livraison` / `Grok-Acompte` / `Grok-Envoyé`. Jamais GROS.
 
-Gmail is the queue. The chat is not.
+Gmail is the queue. The chat is not. A draft is not received.
+
+Voie rapide (gagne sur process.md E). Défaut RAPIDE. Ne pas relire Drive à chaque run.
+n8n Nouveau lead / Brouillon IA / lien booqable.com = RAPIDE, 0 clic Booqable.
+Brouillon Gmail AVANT le PDF. [PRIX À CONFIRMER] OK. Jamais inventer un prix.
+STOCK seulement si items clairs ET pas de n° devis, en parallèle, jamais bloquant.
+Cloud : pas de BOOQABLE_API_TOKEN → une ligne à Alex, ne pas ouvrir Booqable.
+Internes (Nouvelle soumission / Devis abandonne) : close_interne, 0 mail.
 
 Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).
-One run = one dossier. Never "I'll do the rest after".
-Empty queue query `label:NOX-À-traiter -label:NOX-Processed` → after catch-up, if still empty reply `QUEUE VIDE` and stop. Do not open Notion or Booqable.
+Up to 3 RAPIDE drafts + 1 LENT per run (claim → draft → close → next). Then send waiting `Brouillon IA` after `envoie` / `envoie les brouillons`.
+Empty draft queue after catch-up → still run `SEND_QUERY`. If both empty: `QUEUE VIDE`. Do not open Notion or Booqable. Never wait for a PDF.
 
 Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).
 Noise (Alarm.com, newsletters) → `NOX-Spam` (`Label_4`) + `NOX-Processed`.
 Catch-up ALWAYS (even if File is not empty): `CATCHUP_QUERY` / `newer_than:2d` headers, max 8, then `LEAD_NET_QUERY` (site + WeddingWire + webshop, 14d, unlabeled). Dual-write forgotten clients into File. One line `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` if Gmail search fails — never fake `0 oublié`. Slack DM Evenox. Never the 20k unread inbox.
 
-Until 10 September 2026: drafts only. Never send without Alexandre saying `envoie`.
+Until 10 September 2026: never send without Alexandre saying `envoie` / `envoie les brouillons` / `envoie tout`.
+A finished draft without SENT is a hole. Coverage line required.
 
 Never say « j'envoie » / « c'est parti ». After `send_message`, `get_thread` PLAIN_TEXT same turn. Paste `Parti.` + À + Objet + the mail body. Else `Pas parti. Le brouillon est encore là.` No Gmail IDs in the chat.
 
