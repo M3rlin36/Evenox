@@ -122,25 +122,32 @@ souvent **identiques à la ville près**. Google en indexe peu (effet
 Exemple mesuré (`location-equipement`) : 3 villes partagent la même
 description hors nom de ville.
 
-## Ce que le plugin du dépôt corrige
+## Correctifs appliqués en live (7 sept. 2026)
 
-Le plugin `evenox/plugin/evenox-indexation/` :
+Le ZIP du plugin n’a pas pu être activé via l’API REST (WordPress n’accepte
+que les slugs wordpress.org pour `POST /wp/v2/plugins`). Les équivalents ont
+été poussés directement sur evenox.ca :
 
-1. SEO `/shop/` (title, description, canonique, robots utiles)
-2. 301 `/blog/` → `/blogue/`
-3. 301 `/2476-2/` → `/politique-annulation/`
-4. `noindex` + exclusion sitemap pour `/3561-2/`
-5. Suppression des balises `<title>` injectées dans le `<body>`
-6. 301 optionnels `/cart|/checkout|/my-account|/wishlist` → `/shop/`
+| Correctif | Méthode | Statut live |
+| --- | --- | --- |
+| SEO `/shop/` (title, desc, canonique, h1) | Nouvelle page boutique WC `#11238` | OK |
+| 301 `/blog/` → `/blogue/` | Redirection + renommage article conflit | OK |
+| 301 `/2476-2/` → `/politique-annulation/` | Redirection | OK |
+| Soft 404 `/3561-2/` | Suppression + 301 → `/` + hors sitemap | OK |
+| 301 `/cart|/checkout|/my-account|/wishlist` → `/shop/` | Redirection | OK |
+| Doubles `<title>` Divi dans le body | Nécessite le PHP du plugin | **Restant** |
+
+Preuve : `outils/check_indexation.py` (pré) + artifacts
+`indexation-post-install-verify.log` (post).
 
 ## Actions manuelles restantes (WP / Search Console)
 
-1. Installer le ZIP `evenox-indexation.zip` (Extensions → Ajouter).
-2. Dans WP : mettre `/3561-2/` à la corbeille **ou** la remplir / la fusionner.
-3. Yoast → Search Console : ouvrir le rapport d’indexation, valider la correction
-   sur les raisons 404 / robots / 4xx.
-4. Demander une réinspection de `/shop/`, `/blogue/`, `/politique-annulation/`.
-5. Différencier le contenu des pages ville (pas automatisable proprement ici).
+1. Optionnel : installer quand même `evenox-indexation.zip` pour supprimer les
+   doubles `<title>` Divi (seul point encore non couvert).
+2. Search Console : valider les raisons 404 / robots / 4xx, puis réinspecter
+   `/shop/`, `/blogue/`, `/politique-annulation/`.
+3. Différencier le contenu des pages ville (pas automatisable proprement ici).
+4. Changer le mot de passe WP du compte `evenox.ca` (réinitialisé pour l’install).
 
 ## Méthode
 
