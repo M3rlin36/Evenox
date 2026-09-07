@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Locabris Correctifs
  * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
- * Version: 1.7.1
+ * Version: 1.7.2
  * Author: Evenox
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
-define('LOCABRIS_FIX_VER', '1.7.1');
+define('LOCABRIS_FIX_VER', '1.7.2');
 
 function locabris_fix_page_slug()
 {
@@ -167,6 +167,15 @@ add_action('wp_head', function () {
             . '.home div:has(> div[style*="background: #0E2C4F"][style*="aspect-ratio: 1"])'
             . '{display:none!important;height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}';
     }
+    if (is_page('location-abri-tempo-locabris')) {
+        $css .= '.et_pb_fullwidth_header_0{background-color:#0E2C4F!important;'
+            . 'background-image:linear-gradient(180deg,rgba(14,44,79,.62) 0%,rgba(14,44,79,.78) 48%,rgba(14,44,79,.94) 100%),'
+            . 'url(https://locabris.ca/wp-content/uploads/2025/07/1.png)!important}'
+            . '.et_pb_fullwidth_header_0 .et_pb_module_header,'
+            . '.et_pb_fullwidth_header_0 .et_pb_module_header strong,'
+            . '.et_pb_fullwidth_header_0 .et_pb_fullwidth_header_subhead'
+            . '{color:#FFFFFF!important;text-shadow:0 1px 16px rgba(14,44,79,.55)}';
+    }
     echo '<style id="locabris-correctifs">' . $css . '</style>';
 }, 20);
 
@@ -214,8 +223,22 @@ function locabris_fix_chrome_html($html)
         return $html;
     }
     $html = str_replace(
-        array('Tempo Simple', 'Tempo Double'),
-        array('Abris simples', 'Abris doubles'),
+        array(
+            'Tempo Simple',
+            'Tempo Double',
+            'Abris Simple',
+            'Abris Double',
+            'Locabris est le spécialiste en location d\'abris tempo dans la région de Laval et Montréal. Installation, Livraison et Service clé en main.',
+            'Locabris est le spécialiste en location d&#039;abris tempo dans la région de Laval et Montréal. Installation, Livraison et Service clé en main.',
+        ),
+        array(
+            'Abris simples',
+            'Abris doubles',
+            'Abris simples',
+            'Abris doubles',
+            'Vente et installation d\'abris d\'auto usagés. Laval, Blainville, Mirabel et Rive-Nord. Réponse le jour même.',
+            'Vente et installation d\'abris d\'auto usagés. Laval, Blainville, Mirabel et Rive-Nord. Réponse le jour même.',
+        ),
         $html
     );
     $html = preg_replace('/<script\b[^>]*\bid=["\']mcjs["\'][^>]*>.*?<\/script>/is', '', $html);
@@ -433,6 +456,21 @@ function locabris_fix_seo_desc($desc)
 add_filter('wpseo_title', 'locabris_fix_seo_title', 20);
 add_filter('pre_get_document_title', 'locabris_fix_seo_title', 20);
 add_filter('wpseo_metadesc', 'locabris_fix_seo_desc', 20);
+add_filter('wpseo_opengraph_title', 'locabris_fix_seo_title', 20);
+add_filter('wpseo_twitter_title', 'locabris_fix_seo_title', 20);
+add_filter('wpseo_opengraph_desc', 'locabris_fix_seo_desc', 20);
+add_filter('wpseo_twitter_description', 'locabris_fix_seo_desc', 20);
+add_filter('wpseo_schema_webpage', function ($data) {
+    if (!is_array($data)) {
+        return $data;
+    }
+    $current = isset($data['description']) ? $data['description'] : '';
+    $fixed   = locabris_fix_seo_desc($current);
+    if ($fixed !== '') {
+        $data['description'] = $fixed;
+    }
+    return $data;
+}, 20);
 
 add_filter('woocommerce_checkout_redirect_empty_cart', '__return_false');
 
@@ -518,8 +556,8 @@ add_action('wp_footer', function () {
         });
         var walk=function(n){
           if(n.nodeType===3){
-            if(n.nodeValue.indexOf("Tempo Simple")===-1 && n.nodeValue.indexOf("Tempo Double")===-1)return;
-            n.nodeValue=n.nodeValue.replace(/Tempo Simple/g,"Abris simples").replace(/Tempo Double/g,"Abris doubles");
+            if(n.nodeValue.indexOf("Tempo Simple")===-1 && n.nodeValue.indexOf("Tempo Double")===-1 && n.nodeValue.indexOf("Abris Simple")===-1 && n.nodeValue.indexOf("Abris Double")===-1)return;
+            n.nodeValue=n.nodeValue.replace(/Tempo Simple/g,"Abris simples").replace(/Tempo Double/g,"Abris doubles").replace(/Abris Simple/g,"Abris simples").replace(/Abris Double/g,"Abris doubles");
           }else if(n.nodeType===1 && !/^(SCRIPT|STYLE|TEXTAREA)$/.test(n.tagName)){
             for(var i=0;i<n.childNodes.length;i++) walk(n.childNodes[i]);
           }

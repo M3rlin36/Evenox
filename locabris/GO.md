@@ -1,6 +1,6 @@
 # Go — en ligne
 
-**Statut : plugin 1.7.1 — accessoires propres, boutique abris seulement, footer Abris, plus de rabais Mailchimp.**
+**Statut : plugin 1.7.2 — OG vente (plus location), hero lisible, menu Abris simples/doubles.**
 
 Plugin WordPress `Locabris Correctifs` : installer / écraser le zip, activer, vider LiteSpeed.
 

@@ -112,10 +112,16 @@ else:
         fail.append("plugin: page abris simples manquante")
     if "abri-double" not in php or "doubles.html" not in php:
         fail.append("plugin: page abris doubles manquante")
-    if "1.7.1" not in php:
-        fail.append("plugin: version 1.7.1 manquante")
+    if "1.7.2" not in php:
+        fail.append("plugin: version 1.7.2 manquante")
     if "locabris_fix_chrome_html" not in php or "mcjs" not in php:
         fail.append("plugin: réécriture footer Tempo / retrait Mailchimp manquant")
+    if "wpseo_opengraph_desc" not in php or "spécialiste en location" not in php:
+        fail.append("plugin: Open Graph / phrase location accueil manquants")
+    if "location-abri-tempo-locabris" not in php or "rgba(14,44,79,.62)" not in php:
+        fail.append("plugin: contraste hero nous-ne-louons-plus manquant")
+    if "Abris Simple" not in php:
+        fail.append("plugin: libellé menu Abris Simple manquant")
     if "accessoires.html" not in php or "locabris_fix_is_accessory" not in php:
         fail.append("plugin: page accessoires ou filtre boutique manquant")
     if "OBTENEZ VOTRE RABAIS" not in php or "Tempo Simple" not in php:
