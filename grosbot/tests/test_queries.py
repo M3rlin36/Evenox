@@ -12,6 +12,7 @@ from grosbot.queries import (
     LABEL_URGENT,
     LEAD_NET_QUERY,
     QUEUE_QUERY,
+    SEND_QUERY,
     TRIAGE_QUERY,
     URGENT_QUERY,
 )
@@ -21,6 +22,14 @@ def test_queue_query_covers_both_file_labels():
     assert LABEL_FILE in QUEUE_QUERY
     assert LABEL_FILE_ALIAS in QUEUE_QUERY
     assert "is:unread" not in QUEUE_QUERY
+    assert "Brouillon IA" in QUEUE_QUERY
+    assert "Grok-Envoyé" in QUEUE_QUERY
+
+
+def test_send_query_is_undelivered_drafts_not_unread():
+    assert "label:Brouillon IA" in SEND_QUERY
+    assert "-label:Grok-Envoyé" in SEND_QUERY
+    assert "is:unread" not in SEND_QUERY
 
 
 def test_triage_query_never_scans_all_unread():

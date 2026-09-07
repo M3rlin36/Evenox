@@ -11,6 +11,7 @@ from grosbot.queries import (
     LABEL_FILE_ALIAS,
     LABEL_IN_PROGRESS,
     LABEL_PROCESSED,
+    LABEL_SENT,
     LABEL_SPAM,
     REPORT_LABELS,
 )
@@ -37,10 +38,14 @@ def waiting_vs_done(stats: dict[str, dict[str, int]]) -> dict[str, int]:
     alias_n = stats.get(LABEL_FILE_ALIAS, {}).get("threads", 0)
     # Dual-write means the same threads may sit on both labels. Report the max.
     waiting = max(file_n, alias_n)
+    drafts = stats.get(LABEL_DRAFT_IA, {}).get("threads", 0)
+    sent = stats.get(LABEL_SENT, {}).get("threads", 0)
     return {
         "waiting": waiting,
         "in_progress": stats.get(LABEL_IN_PROGRESS, {}).get("threads", 0),
-        "drafts": stats.get(LABEL_DRAFT_IA, {}).get("threads", 0),
+        "drafts": drafts,
+        "undelivered": drafts,
+        "sent": sent,
         "done": stats.get(LABEL_PROCESSED, {}).get("threads", 0),
         "spam": stats.get(LABEL_SPAM, {}).get("threads", 0),
     }

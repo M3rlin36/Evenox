@@ -10,6 +10,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 from grosbot.classify import Classification, Decision, classify
+from grosbot.lane import Lane, partition_internes, pick_lane
 from grosbot.queries import (
     ACCOUNT_FROM,
     FILE_LABELS,
@@ -32,7 +33,9 @@ from grosbot.queries import (
 
 # Hard caps so a run cannot chew tokens on 20k unread threads.
 MAX_CLAIMS_PER_RUN = 8
-MAX_DRAFTS_PER_RUN = 1
+MAX_DRAFTS_PER_RUN = 3
+MAX_SLOW_DRAFTS_PER_RUN = 1
+MAX_SENDS_PER_RUN = 3
 MAX_IN_FLIGHT = 1
 
 # Nate: Emergency → money/billing → schedule → quotes → the rest.
@@ -213,16 +216,26 @@ def sort_queue(queued: list[Thread]) -> list[Thread]:
     return sorted(queued, key=key)
 
 
+def _lane_of(thread: Thread) -> Lane:
+    return pick_lane(
+        sender=thread.sender,
+        subject=thread.subject,
+        snippet=thread.snippet,
+        label_names=list(thread.labels),
+    )
+
+
 def claim_next(
     queued: list[Thread],
     in_progress: list[Thread],
     *,
     already_drafted_this_run: int = 0,
+    already_slow_this_run: int = 0,
 ) -> Thread:
-    """Pick the single thread Grokbot may draft now.
+    """Pick the next thread Grokbot may draft now.
 
     In-flight work always wins. Never start a second dossier while one is
-    labelled Grok-En-cours. Never draft more than MAX_DRAFTS_PER_RUN per run.
+    labelled Grok-En-cours. Up to 3 RAPIDE drafts / 1 LENT per run.
     """
     if already_drafted_this_run >= MAX_DRAFTS_PER_RUN:
         raise QueueError(
@@ -232,7 +245,7 @@ def claim_next(
     live = [
         t
         for t in in_progress
-        if LABEL_PROCESSED not in t.labels
+        if LABEL_PROCESSED not in t.labels and LABEL_DRAFT_IA not in t.labels
     ]
     if len(live) > MAX_IN_FLIGHT:
         raise QueueError(
@@ -240,7 +253,14 @@ def claim_next(
         )
     if live:
         return live[0]
-    ordered = sort_queue(queued)
+    _, rest = partition_internes(queued)
+    ordered = sort_queue(rest)
+    if already_slow_this_run >= MAX_SLOW_DRAFTS_PER_RUN:
+        ordered = [t for t in ordered if _lane_of(t) is not Lane.LENT]
+        if not ordered:
+            raise QueueError(
+                "cap voie lente : le reste LENT attend dans Grok-File."
+            )
     if not ordered:
         raise QueueError("file vide")
     return ordered[0]
@@ -257,20 +277,32 @@ def start(thread: Thread) -> QueueAction:
 
 
 def finish(thread: Thread, *, drafted: bool) -> QueueAction:
+    """Draft is not received. Do not stamp Processed until SENT or skip."""
     if drafted:
         return QueueAction(
             thread.id,
-            (LABEL_PROCESSED, LABEL_DRAFT_IA),
+            (LABEL_DRAFT_IA,),
             FILE_LABELS + IN_PROGRESS_LABELS,
             QueueState.DRAFTED,
-            "brouillon prêt. Pas parti.",
+            "brouillon prêt. Pas parti. Le client n'a rien reçu.",
         )
     return QueueAction(
         thread.id,
         (LABEL_SKIP, LABEL_PROCESSED),
-        FILE_LABELS + IN_PROGRESS_LABELS,
+        FILE_LABELS + IN_PROGRESS_LABELS + (LABEL_DRAFT_IA,),
         QueueState.SKIPPED,
         "skipped",
+    )
+
+
+def close_interne(thread: Thread) -> QueueAction:
+    """n8n internal triple. No client mail. Not a skip, not a draft."""
+    return QueueAction(
+        thread.id,
+        (LABEL_PROCESSED,),
+        FILE_LABELS + IN_PROGRESS_LABELS + (LABEL_DRAFT_IA,),
+        QueueState.DONE,
+        "n8n interne. 0 mail client.",
     )
 
 

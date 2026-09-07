@@ -112,13 +112,14 @@ def test_claim_refuses_second_draft_same_run():
         claim_next(queued, [], already_drafted_this_run=MAX_DRAFTS_PER_RUN)
 
 
-def test_finish_draft_marks_processed_and_clears_aliases():
+def test_finish_draft_clears_aliases_but_is_not_received():
     action = finish(_t("1", labels=(LABEL_IN_PROGRESS,)), drafted=True)
-    assert LABEL_PROCESSED in action.add_labels
+    assert LABEL_PROCESSED not in action.add_labels
     assert LABEL_IN_PROGRESS in action.remove_labels
     assert LABEL_IN_PROGRESS_ALIAS in action.remove_labels
     assert LABEL_FILE in action.remove_labels
     assert LABEL_FILE_ALIAS in action.remove_labels
+    assert "rien reçu" in action.reason
 
 
 def test_start_moves_both_file_labels_to_both_in_progress():

@@ -66,10 +66,19 @@ TRIAGE_QUERY = (
 CATCHUP_QUERY = TRIAGE_QUERY
 
 # Work queue. Gmail is the only list Grokbot may promise replies from.
+# Brouillon IA = déjà rédigé, pas encore reçu. Ne pas le redraft.
 QUEUE_QUERY = (
     f"{{label:{LABEL_FILE} label:{LABEL_FILE_ALIAS}}} "
     f"-label:{LABEL_PROCESSED} "
-    f"-label:{LABEL_IN_PROGRESS} -label:{LABEL_IN_PROGRESS_ALIAS}"
+    f"-label:{LABEL_IN_PROGRESS} -label:{LABEL_IN_PROGRESS_ALIAS} "
+    f"-label:{LABEL_DRAFT_IA} -label:{LABEL_SENT}"
+)
+
+# Clients n'ont rien reçu. Brouillon ≠ Parti. Inclut les vieux
+# NOX-Processed + Brouillon IA (l'ancien piège).
+SEND_QUERY = (
+    f"label:{LABEL_DRAFT_IA} "
+    f"-label:{LABEL_SENT} -label:{LABEL_SKIP} -label:{LABEL_SPAM}"
 )
 
 IN_PROGRESS_QUERY = (
@@ -124,4 +133,13 @@ REPORT_LABELS = (
     LABEL_DRAFT_IA,
     LABEL_SPAM,
     LABEL_PROCESSED,
+)
+
+# Batch send. Alexandre : « envoie » / « envoie les brouillons » / « envoie tout ».
+SEND_MAGIC = (
+    "envoie",
+    "envoie les brouillons",
+    "envoie tout",
+    "tu peux l'envoyer",
+    "tu peux les envoyer",
 )
