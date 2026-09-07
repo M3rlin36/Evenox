@@ -1,0 +1,248 @@
+{
+  "source": "gonflables-blob1.js + assistant-jeux/jw-widget.js (branche cursor/catalogue-conflits-6384, extraits live 28-29 aout 2026)",
+  "note_themes": "theme fille/garcon/mixte derive du nom du produit (filtre anniversaire). Aucun prix invente.",
+  "note_prescription": "On preselectionne le chateau le moins cher du theme. Pas de quantite inventee selon le nombre d enfants.",
+  "produits": [
+    {
+      "id": "jeux-gonflable-moyen-bouncer",
+      "nom": "Moyen Bouncer",
+      "prix": 120,
+      "groupe": "petits",
+      "role": "chateau",
+      "theme": "mixte"
+    },
+    {
+      "id": "jeux-gonflable-forteresse",
+      "nom": "Forteresse",
+      "prix": 100,
+      "groupe": "petits",
+      "role": "chateau",
+      "theme": "mixte"
+    },
+    {
+      "id": "jeu-gonflable-mini-princesse",
+      "nom": "Princesses",
+      "prix": 120,
+      "groupe": "petits",
+      "role": "chateau",
+      "theme": "fille"
+    },
+    {
+      "id": "jeu-gonflable-spiderman",
+      "nom": "Spiderman",
+      "prix": 120,
+      "groupe": "petits",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "jeux-gonflable-pat-patrouille-2",
+      "nom": "Pat Patrouille",
+      "prix": 140,
+      "groupe": "petits",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "piscine-a-balle-xl",
+      "nom": "Piscine à Balle XL",
+      "prix": 150,
+      "groupe": "petits",
+      "role": "chateau",
+      "theme": "mixte"
+    },
+    {
+      "id": "jeu-gonflable-minions",
+      "nom": "Minions",
+      "prix": 150,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "jeu-gonflable-pat-patrouille-xl",
+      "nom": "Pat Patrouille XL",
+      "prix": 150,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "jeux-gonflable-avengers",
+      "nom": "Avengers",
+      "prix": 180,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "jeux-gonflable-parcours-dobstacle",
+      "nom": "Parcours d’Obstacle",
+      "prix": 160,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "mixte"
+    },
+    {
+      "id": "jeux-gonflable-reine-des-neiges-co",
+      "nom": "Reine des Neiges XL",
+      "prix": 180,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "fille"
+    },
+    {
+      "id": "location-jeu-gonflable-princesse-x",
+      "nom": "Princesse XL",
+      "prix": 180,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "fille"
+    },
+    {
+      "id": "location-jeu-gonflable-licorne",
+      "nom": "Licorne",
+      "prix": 200,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "fille"
+    },
+    {
+      "id": "jeu-gonflable-spiderman-xl",
+      "nom": "Spiderman XL",
+      "prix": 200,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "location-jeu-gonflable-mario-bros",
+      "nom": "Mario Bros",
+      "prix": 200,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "location-jeu-gonflable-mickey-mous",
+      "nom": "Mickey Mouse",
+      "prix": 280,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "mixte"
+    },
+    {
+      "id": "jeu-gonflable-palmiers",
+      "nom": "Jeu Gonflable Palmiers",
+      "prix": 180,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "mixte"
+    },
+    {
+      "id": "jeu-gonflable-reine-des-neiges",
+      "nom": "Jeu Gonflable Reine des Neiges",
+      "prix": 200,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "fille"
+    },
+    {
+      "id": "jeux-gonflable-chateau-du-prince",
+      "nom": "Jeux Gonflable Château du Prince",
+      "prix": 100,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "jeux-gonflable-chateau-multicolore",
+      "nom": "Jeux Gonflable Château Multicolore",
+      "prix": 120,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "mixte"
+    },
+    {
+      "id": "jeux-gonflable-flash-mcqueen",
+      "nom": "Jeux Gonflable Flash McQueen",
+      "prix": 100,
+      "groupe": "xl",
+      "role": "chateau",
+      "theme": "garcon"
+    },
+    {
+      "id": "sucture-gonflable-bunker",
+      "nom": "Sucture Gonflable (Bunker)",
+      "prix": 25,
+      "groupe": "xl",
+      "role": "extra",
+      "theme": "mixte",
+      "note": "groupe xl dans le blob live ; traite comme extra (pas un chateau)"
+    },
+    {
+      "id": "soccer-dart-gonflable-geant",
+      "nom": "Soccer Dart Gonflable Géant",
+      "prix": 60,
+      "groupe": "sport",
+      "role": "sport",
+      "theme": "mixte"
+    },
+    {
+      "id": "jeux-gonflable-terrain-de-basket",
+      "nom": "Terrain de Basket",
+      "prix": 100,
+      "groupe": "sport",
+      "role": "sport",
+      "theme": "mixte"
+    },
+    {
+      "id": "dunk-tank",
+      "nom": "Dunk Tank",
+      "prix": 100,
+      "groupe": "sport",
+      "role": "sport",
+      "theme": "mixte"
+    },
+    {
+      "id": "laser-tag",
+      "nom": "Laser Tag",
+      "prix": 120,
+      "groupe": "sport",
+      "role": "sport",
+      "theme": "mixte"
+    },
+    {
+      "id": "pouf-poire-gonflable",
+      "nom": "Pouf Poire Gonflable",
+      "prix": 15,
+      "groupe": "extra",
+      "role": "extra",
+      "theme": "mixte"
+    },
+    {
+      "id": "divan-gonflable",
+      "nom": "Divan Gonflable",
+      "prix": 20,
+      "groupe": "extra",
+      "role": "extra",
+      "theme": "mixte"
+    },
+    {
+      "id": "ecran-gonflable-20-pieds",
+      "nom": "Écran Gonflable 20 pieds",
+      "prix": 60,
+      "groupe": "extra",
+      "role": "extra",
+      "theme": "mixte"
+    },
+    {
+      "id": "ecran-gonflable-16-pied",
+      "nom": "Écran Gonflable 16 pied",
+      "prix": 50,
+      "groupe": "extra",
+      "role": "extra",
+      "theme": "mixte"
+    }
+  ]
+}
