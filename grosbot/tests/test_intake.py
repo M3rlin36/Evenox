@@ -18,6 +18,7 @@ def test_quote_only_when_already_in_gmail():
 def test_price_line_never_invents():
     assert "0 clic" in draft_price_line(snippet="https://evenox.booqable.com/x")
     assert draft_price_line(subject="Nouveau lead") == "[PRIX À CONFIRMER]"
+    assert "catalogue" in draft_price_line(snippet="10 tables cocktail")
 
 
 def test_arrival_is_draft_then_validate_never_send():
@@ -41,8 +42,15 @@ def test_arrival_is_draft_then_validate_never_send():
     )
     assert spam is Arrival.SPAM
     assert interne is Arrival.INTERNE
+    lookup = decide_arrival(
+        sender="client@example.com",
+        subject="RE: Votre devis Evenox",
+        snippet="Bonjour, 10 tables cocktail et un photobooth",
+    )
     assert quoted is Arrival.DRAFT_QUOTE
+    assert lookup is Arrival.LOOKUP
     assert plain is Arrival.DRAFT
     assert needs_alex_validate(quoted) is True
+    assert needs_alex_validate(lookup) is True
     assert needs_alex_validate(plain) is True
     assert needs_alex_validate(spam) is False

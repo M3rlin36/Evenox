@@ -1,7 +1,8 @@
 """Two modes. Alexandre does not watch.
 
-WATCH (timer) : unstick + draft RAPIDE. Quote only if already in the
-thread. Slack « N à valider. Dis envoie. » Never send_message.
+WATCH (timer) : unstick + draft RAPIDE. Produits clairs →
+lookup_products (evenox.ca / Booqable). Slack + Grok
+« À valider. Dis envoie. » Preuve = message_link. Never send_message.
 
 GO (`envoie`) : leftover drafts + send + 1 retry, same turn.
 
@@ -21,10 +22,11 @@ WATCH_STEPS = (
     "filet LEAD_NET_QUERY",
     "filet UNANSWERED_QUERY",
     "close_interne n8n",
-    "claim + brouillon RAPIDE (0 Booqable, 0 Drive, 0 PDF)",
-    "devis seulement si déjà dans le fil",
+    "claim + brouillon RAPIDE (0 Drive, 0 PDF)",
+    "produits clairs → lookup_products (catalogue Booqable / evenox.ca)",
+    "devis officiel n8n seulement si déjà dans le fil — pas de token = pas de nouvel order",
     "0 send_message",
-    "Slack : N à valider. Dis envoie.",
+    "Slack + Grok : À valider. Dis envoie. (preuve message_link)",
     "coverage_line",
 )
 

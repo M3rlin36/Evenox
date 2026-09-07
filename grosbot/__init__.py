@@ -16,6 +16,14 @@ from grosbot.intake import (
     has_ready_quote,
     needs_alex_validate,
 )
+from grosbot.notify import NotifyProof, prove_slack_notify, validation_message
+from grosbot.stock import (
+    CatalogHit,
+    can_create_official_quote,
+    format_hits,
+    has_clear_products,
+    lookup_products,
+)
 from grosbot.rituel import (
     is_full_rituel,
     is_timer_run,
@@ -65,6 +73,14 @@ __all__ = [
     "classify",
     "close_interne",
     "Arrival",
+    "CatalogHit",
+    "NotifyProof",
+    "can_create_official_quote",
+    "format_hits",
+    "has_clear_products",
+    "lookup_products",
+    "prove_slack_notify",
+    "validation_message",
     "coverage_line",
     "coverage_of",
     "draft_cap_this_run",

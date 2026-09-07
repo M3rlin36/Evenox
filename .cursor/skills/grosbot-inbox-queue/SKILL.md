@@ -6,8 +6,8 @@ description: File Grokbot / Cerveau selon Nate Herk. Courriels, Grokbot, Dispatc
 # Grokbot — toujours ces 3 étapes
 
 1. **Courriel entre** → brouillon Gmail tout de suite (`decide_arrival`).
-2. **Devis** seulement si `evenox.booqable.com` / `devis #` est **déjà** dans le fil. Sinon `[PRIX À CONFIRMER]`. 0 clic Booqable.
-3. **Validation** → Slack `N à valider. Dis envoie.` **0 envoi** tant que Alexandre n’a pas dit `envoie`.
+2. **Produits clairs** → chercher dans le catalogue Booqable (`grosbot.stock.lookup_products`, evenox.ca). Prix catalogue seulement. 0 prix inventé. Devis officiel n8n si le lien est déjà dans le fil. Pas de `BOOQABLE_API_TOKEN` ici = pas de nouveau devis API.
+3. **Validation** → Slack **et** Grok. Première ligne Slack : `À valider. Dis envoie.` Preuve = `message_link`. Pas de lien = notif ratée, relancer. **0 envoi** tant que Alexandre n’a pas dit `envoie`.
 
 Timer 9 h / 12 h / 16 h = les 3 étapes. Toi = `envoie`. `ok` / `go` = 0.
 
@@ -47,7 +47,7 @@ Défaut **RAPIDE**. Ne pas relire `process.md` / `entreprise.md` / `regles.md` �
 
 - n8n `Nouveau lead` / `Brouillon IA` / lien `booqable.com` = RAPIDE. **0 clic Booqable.**
 - Brouillon Gmail **avant** le PDF. `[PRIX À CONFIRMER]` OK. Jamais inventer un prix.
-- STOCK seulement si items clairs **et** pas de n° devis, **en parallèle**, jamais bloquant.
+- STOCK : items clairs **et** pas de n° devis → `lookup_products` (evenox.ca / Booqable). Prix catalogue seulement. Jamais bloquant.
 - Cloud : pas de `BOOQABLE_API_TOKEN` → une ligne à Alex, ne pas ouvrir Booqable.
 - Internes (`Nouvelle soumission` / `Devis abandonne`) : `close_interne` (Processed, 0 mail, pas Skip, pas Brouillon IA).
 - Courriel + STOCK en parallèle = OK. Jamais les 11. Jamais attendre le PDF.
@@ -84,13 +84,13 @@ Défaut **RAPIDE**. Ne pas relire `process.md` / `entreprise.md` / `regles.md` �
 11. Fermer le brouillon : `Brouillon IA` seulement. **Pas** `NOX-Processed`. Le client n’a rien reçu.
 12. File `SEND_QUERY` seulement si `envoie` (`should_auto_send`). **Timer = 0 envoi.**
 13. Après chaque envoi : `send_message` + `get_thread` **même tour**. `Parti.` + À + Objet + texte, ou `Pas parti.` + 1 retry.
-14. Une ligne `rituel_line`. Timer : Slack `N à valider. Dis envoie.`
+14. Une ligne `rituel_line`. Timer : Slack **et** Grok. Première ligne Slack : `À valider. Dis envoie.` Preuve = `message_link`. Pas de lien = relancer.
 
 ## 2 modes
 
 Code : `grosbot/rituel.py`, `grosbot/intake.py`. Doc : `docs/auto-rituel.md`.
 
-- Timer = watch. Brouillon. Devis si `has_ready_quote`. Slack. **0 send_message.**
+- Timer = watch. Brouillon. Produits clairs → `lookup_products`. Devis officiel si `has_ready_quote`. Slack **et** Grok (`À valider. Dis envoie.` + `message_link`). **0 send_message.**
 - `envoie` = ça part. Le reste des mots (`vide la file`, etc.) marche encore, on ne les enseigne plus.
 - `ok` / `go` = 0. Une question longue ≠ envoi.
 

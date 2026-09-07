@@ -94,7 +94,7 @@ Gagne sur `process.md` section E. Ne pas relire Drive à chaque run. Ne pas atte
 | Voie | Signal | Action |
 |---|---|---|
 | **RAPIDE** (défaut) | `Nouveau lead` · `Brouillon IA` · lien `booqable.com` · WeddingWire · webshop · dépôt / horaire / visite | 0 clic Booqable. Brouillon Gmail **avant** le PDF. `[PRIX À CONFIRMER]` OK. |
-| **LENT** | Items clairs + date + **pas** de n° devis | STOCK **en parallèle**, jamais bloquant. Cloud : pas de `BOOQABLE_API_TOKEN` → une ligne à Alex, ne pas ouvrir Booqable. |
+| **LENT** | Items clairs + date + **pas** de n° devis | `lookup_products` (evenox.ca / Booqable) **en parallèle**. Prix catalogue seulement. Pas de token = pas de nouvel order. |
 | **INTERNE** | `Nouvelle soumission` / `Devis abandonne` | `close_interne` : `NOX-Processed`, 0 mail. Pas Skip. Pas `Brouillon IA`. |
 
 Caps : 3 RAPIDE / run, 1 LENT / run, 1 En-cours à la fois. Courriel + STOCK en parallèle = OK. Jamais les 11. Jamais inventer un prix. Timer = 0 envoi. Rituel / `envoie` = envoi même tour. Voir `docs/auto-rituel.md`.

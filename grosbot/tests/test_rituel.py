@@ -74,4 +74,6 @@ def test_rituel_line_is_short():
 def test_vide_la_file_still_raises_draft_cap():
     assert draft_cap_this_run("vide la file") > draft_cap_this_run("")
     assert "0 send_message" in WATCH_STEPS
+    assert "lookup_products" in " ".join(WATCH_STEPS)
+    assert "message_link" in " ".join(WATCH_STEPS)
     assert "send_message" in " ".join(GO_STEPS)

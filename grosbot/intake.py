@@ -11,6 +11,7 @@ from enum import Enum
 
 from grosbot.classify import Decision, classify
 from grosbot.lane import Lane, pick_lane
+from grosbot.stock import has_clear_products
 
 QUOTE_MARKERS = (
     "booqable.com",
@@ -45,6 +46,9 @@ def draft_price_line(
         labels=labels, subject=subject, snippet=snippet, body=body
     ):
         return "devis déjà dans le fil — 0 clic Booqable"
+    blob = f"{subject} {snippet} {body}"
+    if has_clear_products(blob):
+        return "catalogue Booqable — lookup_products, 0 prix inventé"
     return "[PRIX À CONFIRMER]"
 
 
@@ -54,6 +58,7 @@ class Arrival(str, Enum):
     SPAM = "spam"
     INTERNE = "interne"
     DRAFT_QUOTE = "draft_quote"
+    LOOKUP = "lookup"
     DRAFT = "draft"
 
 
@@ -88,8 +93,11 @@ def decide_arrival(
         labels=labels, subject=subject, snippet=snippet, body=body
     ):
         return Arrival.DRAFT_QUOTE
+    blob = f"{subject} {snippet} {body}"
+    if has_clear_products(blob):
+        return Arrival.LOOKUP
     return Arrival.DRAFT
 
 
 def needs_alex_validate(arrival: Arrival) -> bool:
-    return arrival in {Arrival.DRAFT, Arrival.DRAFT_QUOTE}
+    return arrival in {Arrival.DRAFT, Arrival.DRAFT_QUOTE, Arrival.LOOKUP}

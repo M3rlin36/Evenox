@@ -14,12 +14,12 @@ Gmail is the queue. The chat is not. A draft is not received.
 Voie rapide (gagne sur process.md E). Défaut RAPIDE. Ne pas relire Drive à chaque run.
 n8n Nouveau lead / Brouillon IA / lien booqable.com = RAPIDE, 0 clic Booqable.
 Brouillon Gmail AVANT le PDF. [PRIX À CONFIRMER] OK. Jamais inventer un prix.
-STOCK seulement si items clairs ET pas de n° devis, en parallèle, jamais bloquant.
-Cloud : pas de BOOQABLE_API_TOKEN → une ligne à Alex, ne pas ouvrir Booqable.
+STOCK si items clairs ET pas de n° devis : lookup_products (evenox.ca / Booqable), en parallèle, jamais bloquant.
+Cloud : pas de BOOQABLE_API_TOKEN → catalogue evenox.ca OK, pas de nouvel order API.
 Internes (Nouvelle soumission / Devis abandonne) : close_interne, 0 mail.
 
 Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).
-Up to 3 RAPIDE drafts + 1 LENT per run. Timer drafts + Slack `N à valider. Dis envoie.` `envoie` sends same turn. Quote only if already in the thread.
+Up to 3 RAPIDE drafts + 1 LENT per run. Timer drafts + Slack AND Grok `À valider. Dis envoie.` `envoie` sends same turn. Named products → lookup_products. Official quote only if already in the thread.
 After catch-up run `UNANSWERED_QUERY` (14d) then `SEND_QUERY` if `envoie`. `QUEUE VIDE` only if unlabeled + File + SEND are all empty. Do not open Notion or Booqable. Never wait for a PDF.
 
 Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).
@@ -27,6 +27,7 @@ Noise (Alarm.com, newsletters) → `NOX-Spam` (`Label_4`) + `NOX-Processed`.
 Catch-up ALWAYS (even if File is not empty): `CATCHUP_QUERY` / `newer_than:2d` headers, max 8, then `LEAD_NET_QUERY` (site + WeddingWire + webshop, 14d, unlabeled). Dual-write forgotten clients into File. One line `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` if Gmail search fails — never fake `0 oublié`. Slack DM Evenox. Never the 20k unread inbox.
 
 Until 10 September 2026: never send on the cheap timer. Only `envoie` sends. `ok` / `go` do not.
+Validation = Slack AND Grok. First Slack line `À valider. Dis envoie.` Proof = message_link. Relancer if missing.
 A finished draft without SENT is a hole. Coverage line required.
 
 Never say « j'envoie » / « c'est parti ». After `send_message`, `get_thread` PLAIN_TEXT same turn. Paste `Parti.` + À + Objet + the mail body. Else `Pas parti. Le brouillon est encore là.` No Gmail IDs in the chat.

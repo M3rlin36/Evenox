@@ -38,8 +38,8 @@ Nate Herk ([vidéo Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)) : éti
 - Ne pas relire `process.md` / `entreprise.md` / `regles.md` à chaque run. `docs/voie-rapide.md` gagne.
 - Cloud : pas de `BOOQABLE_API_TOKEN` → une ligne à Alex, ne pas ouvrir Booqable.
 - Brouillon ≠ reçu. `NOX-Processed` seulement après `Parti.` / skip / interne. File `SEND_QUERY`.
-- **2 modes** : timer = brouillons + Slack `N à valider. Dis envoie.` **0 envoi.** Toi = `envoie` → ça part.
-- Devis seulement si déjà dans le fil (`has_ready_quote`). Sinon `[PRIX À CONFIRMER]`. 0 clic Booqable.
+- **2 modes** : timer = brouillons + catalogue si produits + Slack **et** Grok `À valider. Dis envoie.` **0 envoi.** Toi = `envoie` → ça part.
+- Produits clairs → `lookup_products` (evenox.ca / Booqable). Devis officiel seulement si déjà dans le fil (`has_ready_quote`). 0 prix inventé. Pas de token = pas de nouvel order.
 - Filet 14 j `UNANSWERED_QUERY`. Interdit `QUEUE VIDE` s’il reste un trou. Une ligne `Couverture : …`.
 - MCP cherche `label:Grok-File` (nom), pas `label:Label_19`.
 - Ne jamais scanner `is:unread`. File vide = `QUEUE VIDE`. Pas de boucle 15/30 min.
