@@ -1,12 +1,16 @@
 # Go — en ligne
 
-**Statut : plugin 1.6.0 — kit soumission plus simple, même modèle Evenox.**
+**Statut : plugin 1.7.0 — accessoires propres, boutique abris seulement.**
 
 Plugin WordPress `Locabris Correctifs` : installer / écraser le zip, activer, vider LiteSpeed.
 
 Le front affiche maintenant :
 
-- Soumission = même modèle qu’Evenox, simplifié : 6 questions une à la fois (véhicules, projet, livraison, format, pose, extras). Une décision par écran, pas d’estimation en cours de route, panier à la fin.
+- Soumission = kit 6 questions
+- Accessoires = portes / ancrages / protecteurs, CTA soumission — plus de prix à 1 $
+- Boutique = abris seulement, photo type
+- Menu : accessoires retiré, Tempo → Abris, Soumission sans Contact/FAQ
+- Widget « OBTENEZ VOTRE RABAIS » masqué
 - Textes abris hivernaux, navy `#0E2C4F`, bleu `#1088B5`, Raleway
 - Contact = plus de succès au chargement
 - Boutique = plus de CSS en texte

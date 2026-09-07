@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Locabris Correctifs
  * Description: Modules corrigés + Yoast vente + 301 slugs, sans changer le branding Divi.
- * Version: 1.6.0
+ * Version: 1.7.0
  * Author: Evenox
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('LOCABRIS_FIX_DIR', plugin_dir_path(__FILE__));
 define('LOCABRIS_FIX_URL', plugin_dir_url(__FILE__));
-define('LOCABRIS_FIX_VER', '1.6.0');
+define('LOCABRIS_FIX_VER', '1.7.0');
 
 function locabris_fix_page_slug()
 {
@@ -31,6 +31,9 @@ function locabris_fix_page_slug()
     if (is_page('abri-double')) {
         return 'doubles';
     }
+    if (is_page(array('418-2', 'accessoires'))) {
+        return 'accessoires';
+    }
     return '';
 }
 
@@ -40,8 +43,9 @@ function locabris_fix_module($name)
         'soumission' => 'soumission.html',
         'contact'    => 'contact.html',
         'privacy'    => 'privacy.html',
-        'simples'    => 'simples.html',
-        'doubles'    => 'doubles.html',
+        'simples'     => 'simples.html',
+        'doubles'     => 'doubles.html',
+        'accessoires' => 'accessoires.html',
     );
     if (!isset($map[$name])) {
         return '';
@@ -150,7 +154,8 @@ add_action('wp_head', function () {
     $css = '.locabris-fix #main-content .et_builder_inner_content{visibility:hidden}'
         . '.woocommerce-page .page-description .et_pb_code{display:none!important}'
         . '.locabris-fix.single-product .summary.entry-summary:empty{display:none}'
-        . '.loca-fiche .loca-woo-cart .button{background:#0E2C4F;color:#fff;font-family:Raleway,sans-serif;font-weight:800;border:0;border-radius:8px;padding:14px 22px}';
+        . '.loca-fiche .loca-woo-cart .button{background:#0E2C4F;color:#fff;font-family:Raleway,sans-serif;font-weight:800;border:0;border-radius:8px;padding:14px 22px}'
+        . 'a[href*="/accessoires/"],a[href*="/418-2/"]{display:none!important}';
     $footer = LOCABRIS_FIX_DIR . 'modules/shop-footer.css';
     if (is_readable($footer)) {
         $css .= file_get_contents($footer);
@@ -237,7 +242,7 @@ add_action('wp_footer', function () {
     } elseif (function_exists('is_product') && is_product()) {
         $html = locabris_fix_product_html();
     } elseif (function_exists('is_shop') && is_shop()) {
-        $html = '<div style="max-width:1080px;margin:0 auto;padding:8px clamp(17px,2.3vw,31px) 0;font-family:Raleway,sans-serif;font-weight:600;font-size:16px;line-height:1.7;color:#5A6B75">Abris usagés vérifiés. Simple dès 250 $. Double dès 700 $. Installation 200 $ / 300 $ dans un rayon de 20 km.</div>';
+        $html = '<div style="max-width:1080px;margin:0 auto;padding:8px clamp(17px,2.3vw,31px) 0;font-family:Raleway,sans-serif;font-weight:600;font-size:16px;line-height:1.7;color:#5A6B75">Abris usagés vérifiés seulement. Simple dès 250 $. Double dès 700 $. Installation 200 $ / 300 $ dans un rayon de 20 km. Photo type : le format exact se confirme au téléphone.</div>';
     }
     if ($html === '') {
         return;
@@ -317,7 +322,7 @@ function locabris_fix_seo_title($title)
         return 'Abris d\'auto doubles à vendre — 16 à 20 pieds | Locabris';
     }
     if (is_page(array('418-2', 'accessoires'))) {
-        return 'Accessoires pour abri hivernal | Locabris';
+        return 'Portes et ancrages — sur demande | Locabris';
     }
     if (is_page('installation-abri-hivernale-laval-rive-nord')) {
         return 'On monte, on aligne, on ancre | Locabris';
@@ -377,7 +382,7 @@ function locabris_fix_seo_desc($desc)
         return 'Abris doubles usagés, 16 à 20 pieds. Vente et installation, Rive-Nord.';
     }
     if (is_page(array('418-2', 'accessoires'))) {
-        return 'Portes, ancrages et protecteurs de pavé pour votre abri.';
+        return 'Portes, ancrages et protecteurs : on les ajoute à ta soumission. Stock confirmé au téléphone.';
     }
     if (is_page('installation-abri-hivernale-laval-rive-nord')) {
         return 'Installation d\'abri d\'auto à Laval et sur la Rive-Nord. 200 $ simple, 300 $ double.';
@@ -410,6 +415,123 @@ add_filter('wpseo_metadesc', 'locabris_fix_seo_desc', 20);
 
 add_filter('woocommerce_checkout_redirect_empty_cart', '__return_false');
 
+function locabris_fix_is_accessory($product_id)
+{
+    $text = get_the_title($product_id) . ' ' . get_post_field('post_name', $product_id);
+    if (preg_match('/chevalier|protecteur|pocket|piquet|ancrage|porte[\s\-]?c[oô]t[eé]/i', $text)) {
+        return true;
+    }
+    if (!function_exists('wc_get_product')) {
+        return false;
+    }
+    $product = wc_get_product($product_id);
+    if (!$product) {
+        return false;
+    }
+    $price = (float) $product->get_price();
+    if ($price > 0 && $price < 50 && !preg_match('/\d+\s*x\s*\d+/', $text)) {
+        return true;
+    }
+    return false;
+}
+
+function locabris_fix_accessory_ids()
+{
+    $cached = get_transient('locabris_fix_acc_ids');
+    if (is_array($cached)) {
+        return $cached;
+    }
+    $ids = array();
+    $posts = get_posts(array(
+        'post_type'      => 'product',
+        'posts_per_page' => -1,
+        'fields'         => 'ids',
+        'post_status'    => 'publish',
+    ));
+    foreach ($posts as $id) {
+        if (locabris_fix_is_accessory((int) $id)) {
+            $ids[] = (int) $id;
+        }
+    }
+    set_transient('locabris_fix_acc_ids', $ids, 15 * MINUTE_IN_SECONDS);
+    return $ids;
+}
+
+add_action('woocommerce_product_query', function ($q) {
+    if (is_admin()) {
+        return;
+    }
+    $ids = locabris_fix_accessory_ids();
+    if (!$ids) {
+        return;
+    }
+    $already = $q->get('post__not_in');
+    if (!is_array($already)) {
+        $already = array();
+    }
+    $q->set('post__not_in', array_values(array_unique(array_merge($already, $ids))));
+});
+
+add_filter('woocommerce_product_is_visible', function ($visible, $id) {
+    if (locabris_fix_is_accessory((int) $id)) {
+        return false;
+    }
+    return $visible;
+}, 10, 2);
+
+add_action('wp_footer', function () {
+    echo '<script>
+    document.addEventListener("DOMContentLoaded",function(){
+      var hideHref=function(sel){
+        document.querySelectorAll(sel).forEach(function(a){
+          var box=a.closest("li")||a;
+          box.style.display="none";
+        });
+      };
+      hideHref(\'a[href*="/accessoires/"], a[href*="/418-2/"]\');
+      document.querySelectorAll("a").forEach(function(a){
+        var t=(a.textContent||"").replace(/\\s+/g," ").trim();
+        if(t==="Tempo Simple")a.textContent="Abris simples";
+        if(t==="Tempo Double")a.textContent="Abris doubles";
+      });
+      document.querySelectorAll(\'a[href*="soumission-location-tempo"]\').forEach(function(a){
+        var li=a.closest("li");
+        if(!li)return;
+        var sub=li.querySelector(":scope > ul");
+        if(sub)sub.remove();
+        li.classList.remove("menu-item-has-children","mega-menu");
+      });
+      var hideRabais=function(){
+        var all=document.body?document.body.querySelectorAll("a,button,div,span"):[];
+        for(var i=0;i<all.length;i++){
+          var el=all[i];
+          var t=(el.innerText||"").replace(/\\s+/g," ").trim();
+          if(t.indexOf("OBTENEZ VOTRE RABAIS")===-1)continue;
+          if(t.length>60)continue;
+          var box=el;
+          for(var k=0;k<5 && box && box!==document.body;k++){
+            var pos=window.getComputedStyle(box).position;
+            if(pos==="fixed"||pos==="sticky")break;
+            box=box.parentElement;
+          }
+          if(box&&box!==document.body)box.style.setProperty("display","none","important");
+          else el.style.setProperty("display","none","important");
+        }
+      };
+      hideRabais();
+      setTimeout(hideRabais,800);
+      setTimeout(hideRabais,2500);
+      if(window.MutationObserver){
+        var timer=null;
+        new MutationObserver(function(){
+          if(timer)clearTimeout(timer);
+          timer=setTimeout(hideRabais,80);
+        }).observe(document.body,{childList:true,subtree:true});
+      }
+    });
+    </script>';
+}, 20);
+
 function locabris_fix_redirect_map()
 {
     return array(
@@ -428,6 +550,10 @@ add_action('template_redirect', function () {
     $map  = locabris_fix_redirect_map();
     if (isset($map[$path])) {
         wp_redirect(home_url($map[$path]), 301);
+        exit;
+    }
+    if (function_exists('is_product') && is_product() && locabris_fix_is_accessory((int) get_the_ID())) {
+        wp_redirect(home_url('/accessoires/'), 302);
         exit;
     }
 }, 1);

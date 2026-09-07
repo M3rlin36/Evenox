@@ -19,6 +19,7 @@ shop = read("shop-description.html")
 fiche = read("product-abri.html")
 simples = read("simples.html")
 doubles = read("doubles.html")
+accessoires = read("accessoires.html")
 
 if 'split("").join(" ")' in soum or "split('').join(' ')" in soum:
     fail.append("soumission: split/join encore présent")
@@ -111,8 +112,21 @@ else:
         fail.append("plugin: page abris simples manquante")
     if "abri-double" not in php or "doubles.html" not in php:
         fail.append("plugin: page abris doubles manquante")
-    if "1.6.0" not in php:
-        fail.append("plugin: version 1.6.0 manquante")
+    if "1.7.0" not in php:
+        fail.append("plugin: version 1.7.0 manquante")
+    if "accessoires.html" not in php or "locabris_fix_is_accessory" not in php:
+        fail.append("plugin: page accessoires ou filtre boutique manquant")
+    if "OBTENEZ VOTRE RABAIS" not in php or "Tempo Simple" not in php:
+        fail.append("plugin: nettoyage menu / widget rabais manquant")
+    if "soumission-location-tempo" not in php or "menu-item-has-children" not in php:
+        fail.append("plugin: sous-menu soumission à retirer manquant")
+
+if "Portes et ancrages" not in accessoires or "soumission-location-tempo" not in accessoires:
+    fail.append("accessoires: page propre + CTA soumission manquants")
+if "$1" in accessoires or "Chevalier" in accessoires:
+    fail.append("accessoires: plus de prix jouets")
+if "Photo type" not in shop:
+    fail.append("boutique: mention photo type manquante")
 zpath = Path(__file__).resolve().parents[1] / "plugin" / "locabris-correctifs.zip"
 if not zpath.is_file() or zpath.stat().st_size < 1000:
     fail.append("zip plugin manquant")
@@ -122,4 +136,4 @@ if fail:
     for f in fail:
         print(" -", f)
     sys.exit(1)
-print("OK", len([soum, ctc, priv, shop, fiche, simples, doubles]), "modules + plugin")
+print("OK", len([soum, ctc, priv, shop, fiche, simples, doubles, accessoires]), "modules + plugin")

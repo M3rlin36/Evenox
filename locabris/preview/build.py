@@ -24,6 +24,7 @@ HEADER = """<!DOCTYPE html>
     <a href="soumission.html"{soumission}>Soumission Rapide</a>
     <a href="simples.html"{simples}>Abris simples</a>
     <a href="doubles.html"{doubles}>Abris doubles</a>
+    <a href="accessoires.html"{accessoires}>Accessoires</a>
     <a href="contact.html"{contact}>Contact</a>
     <a href="shop.html"{shop}>Boutique</a>
     <a href="product.html"{product}>Fiche abri</a>
@@ -44,7 +45,7 @@ FOOTER = """
     </div>
     <div>
       <h4>Catégories</h4>
-      <p><a href="shop.html">Tempo Simple</a><br><a href="shop.html">Tempo Double</a><br><a href="shop.html">Accessoires</a></p>
+      <p><a href="simples.html">Abris simples</a><br><a href="doubles.html">Abris doubles</a></p>
     </div>
     <div>
       <h4>Contact / Ressource</h4>
@@ -58,7 +59,7 @@ FOOTER = """
 
 
 def flags(active):
-    keys = ("soumission", "simples", "doubles", "contact", "shop", "product", "privacy")
+    keys = ("soumission", "simples", "doubles", "accessoires", "contact", "shop", "product", "privacy")
     return {k: ' aria-current="page"' if k == active else "" for k in keys}
 
 
@@ -85,6 +86,12 @@ write(
     "Abris doubles 16 à 20 pieds | Locabris",
     MOD.joinpath("doubles.html").read_text(encoding="utf-8"),
     "doubles",
+)
+write(
+    "accessoires.html",
+    "Portes et ancrages | Locabris",
+    MOD.joinpath("accessoires.html").read_text(encoding="utf-8"),
+    "accessoires",
 )
 write(
     "contact.html",
@@ -129,6 +136,7 @@ index = """
   <a class="chrome-card" href="soumission.html"><strong>Soumission</strong><span>Kit Evenox : 6 questions, stepper, panier, merci seulement après envoi.</span></a>
   <a class="chrome-card" href="simples.html"><strong>Abris simples</strong><span>Deux fiches : 11 pi et 12 pi, toutes les longueurs.</span></a>
   <a class="chrome-card" href="doubles.html"><strong>Abris doubles</strong><span>Trois fiches : 16, 18 et 20 pi, toutes les longueurs.</span></a>
+  <a class="chrome-card" href="accessoires.html"><strong>Accessoires</strong><span>Portes et ancrages, sans prix jouets. Pas dans le menu live.</span></a>
   <a class="chrome-card" href="contact.html"><strong>Contact</strong><span>Plus de « Message envoyé » au chargement.</span></a>
   <a class="chrome-card" href="shop.html"><strong>Boutique</strong><span>Description propre, plus de CSS en texte.</span></a>
   <a class="chrome-card" href="product.html"><strong>Fiche abri</strong><span>Photo, prix, inclus, bouton soumission.</span></a>
