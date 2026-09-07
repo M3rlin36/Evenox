@@ -20,7 +20,7 @@ Internes (Nouvelle soumission / Devis abandonne) : close_interne, 0 mail.
 
 Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).
 Up to 3 RAPIDE drafts + 1 LENT per run (claim → draft → close → next). Then send waiting `Brouillon IA` after `envoie` / `envoie les brouillons`.
-Empty draft queue after catch-up → still run `SEND_QUERY`. If both empty: `QUEUE VIDE`. Do not open Notion or Booqable. Never wait for a PDF.
+After catch-up run `UNANSWERED_QUERY` (14d) then `SEND_QUERY`. `QUEUE VIDE` only if unlabeled + File + SEND are all empty (`may_say_queue_empty`). Do not open Notion or Booqable. Never wait for a PDF.
 
 Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).
 Noise (Alarm.com, newsletters) → `NOX-Spam` (`Label_4`) + `NOX-Processed`.

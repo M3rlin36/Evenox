@@ -38,7 +38,9 @@ Nate Herk ([vidéo Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)) : éti
 - Ne pas relire `process.md` / `entreprise.md` / `regles.md` à chaque run. `docs/voie-rapide.md` gagne.
 - Cloud : pas de `BOOQABLE_API_TOKEN` → une ligne à Alex, ne pas ouvrir Booqable.
 - Brouillon ≠ reçu. `NOX-Processed` seulement après `Parti.` / skip / interne. File `SEND_QUERY`.
-- Mots d’envoi : `envoie` / `envoie les brouillons` / `envoie tout`. Une ligne `Couverture : …`.
+- Mots d’envoi : `envoie` / `envoie les brouillons` / `envoie tout`.
+- Mots file : `réponds à tous` / `vide la file` (jusqu’à 8 claims).
+- Filet 14 j `UNANSWERED_QUERY`. Interdit `QUEUE VIDE` s’il reste un trou. Une ligne `Couverture : …`.
 - MCP cherche `label:Grok-File` (nom), pas `label:Label_19`.
 - Ne jamais scanner `is:unread`. File vide = `QUEUE VIDE`. Pas de boucle 15/30 min.
 - Matin : routine **veille**. Catch-up `newer_than:2d` **même si File n’est pas vide**. Filet leads (site + WeddingWire) à part. Une ligne `Veille : 0 oublié.` / `N rattrapé(s).` / **`Veille : pas faite.`** si Gmail plante (jamais un faux 0). Slack DM Evenox.

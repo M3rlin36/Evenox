@@ -53,10 +53,12 @@ Défaut **RAPIDE**. Ne pas relire `process.md` / `entreprise.md` / `regles.md` �
 3. Urgent Nate (nouveau seulement) : `in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam`
 4. Triage / **veille** (max 8, **même si File n’est pas vide**) : `CATCHUP_QUERY` = inbox `newer_than:2d` sans File/Processed/Spam. En-têtes, `grosbot.classify` → File + type Nate, ou `NOX-Spam`.
 5. **Filet leads** (toujours, à part) : `LEAD_NET_QUERY` = site + WeddingWire + webshop Booqable `newer_than:14d` **sans File**. Max 8. Ça rattrape un client caché derrière 8 pubs.
-6. Une ligne `Veille : 0 oublié.` / `Veille : N rattrapé(s). …` / **`Veille : pas faite.`** si Gmail plante. Jamais un faux `0 oublié`. Slack DM Evenox (`U0996M8QRFT`) si pas faite.
-7. Leads site : `from:wordpress@evenox.ca newer_than:14d` (sujets Nouveau lead / Nouvelle soumission)
+6. **Filet 14 j tous courriels** : `UNANSWERED_QUERY` (inbox 14 j sans File / Processed / Spam / Sent / Brouillon IA). Max 20 en-têtes. `classify` → File ou `NOX-Spam`. C’est le filet « toutes les courriels vont être répondues ».
+7. Une ligne `Veille : 0 oublié.` / `Veille : N rattrapé(s). …` / **`Veille : pas faite.`** si Gmail plante. Jamais un faux `0 oublié`. Slack DM Evenox (`U0996M8QRFT`) si pas faite.
+8. Leads site : `from:wordpress@evenox.ca newer_than:14d` (sujets Nouveau lead / Nouvelle soumission)
 
-**Interdit :** `is:unread` seul. **Interdit :** relire l’inbox entière. **Interdit :** boucle 15/30 min. Sweep cheap 3×/jour **tous les jours** (week-end inclus). **Le matin : toujours la veille**, même si File est pleine. File vide = `QUEUE VIDE` et stop.
+**Interdit :** `is:unread` seul. **Interdit :** relire l’inbox entière. **Interdit :** boucle 15/30 min. Sweep cheap 3×/jour **tous les jours** (week-end inclus). **Le matin : toujours la veille**, même si File est pleine.
+**Interdit** de dire `QUEUE VIDE` s’il reste un trou : `UNANSWERED_QUERY` ou File sans brouillon ou `SEND_QUERY`. Seulement si `sweep_closed`.
 
 `search_threads` MCP matche le **nom** du libellé (`Grok-File`), pas `label:Label_19`.
 
@@ -64,12 +66,13 @@ Défaut **RAPIDE**. Ne pas relire `process.md` / `entreprise.md` / `regles.md` �
 
 1. **Veille (toujours, même si File n’est pas vide)** : `CATCHUP_QUERY` (headers, max 8) → dual-write File ou Spam. En-tête le plus récent > 2 j = faux positif Gmail, skip. Dernier message = SENT Evenox → déjà répondu, ne pas File.
 2. **Filet leads** : `LEAD_NET_QUERY` (headers, max 8). Dual-write File + `Soumission`. Site + WeddingWire + webshop. Ça ne dépend pas des 8 pubs du CATCHUP.
+2b. **Filet 14 j** : `UNANSWERED_QUERY` (max 20). `classify` → File ou Spam. Dernier = SENT Evenox → ne pas File (`needs_reply`).
 3. Si `search_threads` plante : **retry 1 fois**. Encore down → `Veille : pas faite.` + Slack DM Evenox. **Interdit** de dire `0 oublié`.
 4. Une ligne `Veille : …`.
 5. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
 6. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
 7. Internes n8n (`Nouvelle soumission` / `Devis abandonne`) : `close_interne` (Processed, 0 mail).
-8. `claim_next` : jusqu’à 3 RAPIDE / 1 LENT. Dual-write En-cours, retirer File + alias.
+8. `claim_next` : jusqu’à `draft_cap_this_run` (3, ou 8 si `réponds à tous` / `vide la file`). Dual-write En-cours, retirer File + alias.
 9. Voie RAPIDE : lire le fil, **brouillon Gmail tout de suite**. 0 Drive. 0 Booqable. 0 PDF. Si n8n / `Brouillon IA` / lien Booqable déjà là : montrer ça.
 10. Voie LENTE : brouillon avec `[PRIX À CONFIRMER]` **en parallèle** d’une ligne « Alex : crée le devis ». Interdit d’attendre le PDF.
 11. Fermer le brouillon : `Brouillon IA` seulement. **Pas** `NOX-Processed`. Le client n’a rien reçu.
@@ -77,7 +80,7 @@ Défaut **RAPIDE**. Ne pas relire `process.md` / `entreprise.md` / `regles.md` �
 13. Après chaque envoi : `send_message` + `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.
    - Parti → coller `Parti.` + À + Objet + **le texte du mail**. `Grok-Envoyé`.
    - Sinon → `Pas parti. Le brouillon est encore là.`
-14. Une ligne `Couverture : N sans brouillon + M brouillon(s) pas reçu(s).` Stop.
+14. `coverage_line`. S’il reste des trous : « Pas fini. Prochain sweep. » **Pas** `QUEUE VIDE`. Slack Evenox si `UNANSWERED_QUERY` plante.
 
 ## Coût
 

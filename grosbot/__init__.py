@@ -1,7 +1,8 @@
 """Grokbot inbox queue — cheap, durable, drafts then received mail."""
 
 from grosbot.classify import Decision, Kind, classify
-from grosbot.coverage import coverage_line, coverage_of, is_send_go
+from grosbot.coverage import coverage_line, coverage_of, is_reply_all, is_send_go, needs_reply
+from grosbot.sweep import draft_cap_this_run, may_say_queue_empty
 from grosbot.filters import FILTER_SPECS, gmail_ui_recipe
 from grosbot.lane import Lane, partition_internes, pick_lane
 from grosbot.nate import HABITS, NATE_TO_EVENOX, VIDEO_URL
@@ -43,7 +44,11 @@ __all__ = [
     "close_interne",
     "coverage_line",
     "coverage_of",
+    "draft_cap_this_run",
     "empty_run_message",
+    "is_reply_all",
+    "may_say_queue_empty",
+    "needs_reply",
     "SentProof",
     "finish",
     "gmail_ui_recipe",

@@ -120,6 +120,17 @@ LEAD_NET_QUERY = (
     f"-label:{LABEL_FILE} -label:{LABEL_FILE_ALIAS}"
 )
 
+# Filet 14 jours : tout courriel inbox pas encore pris. Headers + classify.
+# Pas is:unread. Les pubs → NOX-Spam. Les clients → File. Max 20.
+UNANSWERED_QUERY = (
+    "in:inbox newer_than:14d "
+    f"-label:{LABEL_PROCESSED} -label:{LABEL_SPAM} -label:{LABEL_SKIP} "
+    f"-label:{LABEL_FILE} -label:{LABEL_FILE_ALIAS} "
+    f"-label:{LABEL_SENT} -label:{LABEL_DRAFT_IA} "
+    f"-label:{LABEL_IN_PROGRESS} -label:{LABEL_IN_PROGRESS_ALIAS}"
+)
+MAX_UNANSWERED_HEADERS = 20
+
 # Nate weekly report: list_labels totals only. Never scan threads for analytics.
 REPORT_LABELS = (
     LABEL_FILE,
@@ -142,4 +153,12 @@ SEND_MAGIC = (
     "envoie tout",
     "tu peux l'envoyer",
     "tu peux les envoyer",
+)
+
+# Alexandre : vider la file (jusqu’au cap claims), pas seulement 3 RAPIDE.
+REPLY_ALL_MAGIC = (
+    "réponds à tous",
+    "reponds a tous",
+    "réponds à tout",
+    "vide la file",
 )

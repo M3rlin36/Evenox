@@ -34,7 +34,8 @@ HABITS = (
     "Everything else waits on a short weekday list (3×/jour, not every 15 min).",
     "Draft RAPIDE first. Never wait for a Booqable PDF. 3 RAPIDE / 1 LENT per run.",
     "A draft is not received. After envoie / envoie les brouillons, paste Parti. or Pas parti.",
-    "Never say j'envoie. Coverage line until queued + undelivered drafts are 0.",
+    "Never say j'envoie. Coverage line until unlabeled + queued + undelivered = 0.",
+    "Never say QUEUE VIDE while UNANSWERED_QUERY, File, or SEND_QUERY still has holes.",
 )
 
 # Nate: highest value is not cleaning 5k/20k unread. Next emergency must not sit.

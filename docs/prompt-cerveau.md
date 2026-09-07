@@ -18,7 +18,9 @@ Internes n8n (Nouvelle soumission / Devis abandonne) = Processed, 0 mail. Un mai
 
 Brouillon ≠ reçu. Après le brouillon : Brouillon IA seulement, PAS NOX-Processed.
 File SEND : label:Brouillon IA -label:Grok-Envoyé. Après envoie / envoie les brouillons / envoie tout : send_message + get_thread même tour. Coller Parti. + À + Objet + le texte, ou Pas parti. Le brouillon est encore là. Jamais « j’envoie ».
-Une ligne Couverture : N sans brouillon + M brouillon(s) pas reçu(s). Tant que M ou N > 0, des clients n’ont rien reçu.
+Filet 14 j UNANSWERED_QUERY (max 20) : classify → File ou Spam. Interdit QUEUE VIDE s’il reste un trou.
+réponds à tous / vide la file = jusqu’à 8 brouillons ce run.
+Une ligne Couverture. Tant qu’il reste un trou, pas fini. Prochain sweep.
 
 1 dossier montré :
 Nom

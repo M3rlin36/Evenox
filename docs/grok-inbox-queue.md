@@ -60,6 +60,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam
 in:inbox -label:NOX-Processed -label:NOX-Spam -label:Grok-File -label:NOX-À-traiter newer_than:2d
 in:inbox newer_than:14d (wordpress/vente Nouveau lead|Nouvelle soumission|Devis abandonne OR weddingwire OR booqable webshop) -label:Grok-File
+in:inbox newer_than:14d -label:NOX-Processed -label:NOX-Spam -label:Grok-File -label:Brouillon IA -label:Grok-Envoyé
 ```
 
 Découverte = sujet + expéditeur. Corps seulement après claim.

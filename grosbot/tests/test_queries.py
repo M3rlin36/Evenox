@@ -11,9 +11,11 @@ from grosbot.queries import (
     LABEL_SCHEDULE,
     LABEL_URGENT,
     LEAD_NET_QUERY,
+    MAX_UNANSWERED_HEADERS,
     QUEUE_QUERY,
     SEND_QUERY,
     TRIAGE_QUERY,
+    UNANSWERED_QUERY,
     URGENT_QUERY,
 )
 
@@ -79,3 +81,13 @@ def test_lead_net_finds_unlabeled_leads_behind_newsletter_noise():
     assert "support@booqable.com" in LEAD_NET_QUERY
     assert f"-label:{LABEL_FILE}" in LEAD_NET_QUERY
     assert f"-label:{LABEL_FILE_ALIAS}" in LEAD_NET_QUERY
+
+
+def test_unanswered_query_is_14d_not_unread_pile():
+    assert "is:unread" not in UNANSWERED_QUERY
+    assert "newer_than:14d" in UNANSWERED_QUERY
+    assert "in:inbox" in UNANSWERED_QUERY
+    assert f"-label:{LABEL_FILE}" in UNANSWERED_QUERY
+    assert "-label:Grok-Envoyé" in UNANSWERED_QUERY
+    assert "-label:Brouillon IA" in UNANSWERED_QUERY
+    assert MAX_UNANSWERED_HEADERS == 20
