@@ -1,5 +1,7 @@
 # prompt-cerveau.md — coller dans Grokbot (rituel auto)
 
+Drive v4 : [prompt-cerveau-v4.md](https://drive.google.com/file/d/1q47U7HR7gHg-MV3T7nmgvxUU5TZ9IGmt/view) (gagne sur v3).
+
 Sans ce collage, Grokbot relit Drive, attend le PDF, et s’arrête au brouillon. Les clients ne reçoivent rien.
 
 ```

@@ -114,7 +114,7 @@ def rituel_line(text: str, *, drafted: int, sent_ok: int, sent_fail: int) -> str
     if is_timer_run(text):
         return (
             f"Timer : {drafted} brouillon(s) / cap {cap}. "
-            f"{slack_ready_line(drafted)}. 0 envoi."
+            f"{slack_ready_line(drafted)} 0 envoi."
         )
     if should_auto_send(text):
         return (

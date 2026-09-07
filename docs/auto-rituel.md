@@ -1,5 +1,7 @@
 # Comment Grokbot automatise le rituel
 
+Drive : [auto-rituel.md](https://drive.google.com/file/d/1If264hIuC5wTn87oIrj_rT3UGLaN3Hdf/view) · [prompt-cerveau-v4.md](https://drive.google.com/file/d/1q47U7HR7gHg-MV3T7nmgvxUU5TZ9IGmt/view)
+
 Toi, tu ne tapes plus 4 phrases. Moi (Grokbot / cet agent) je fais le pipeline.
 
 ## Ce que je fais tout seul

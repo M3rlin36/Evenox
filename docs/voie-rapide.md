@@ -30,7 +30,7 @@ File : `SEND_QUERY` = `label:Brouillon IA -label:Grok-Envoyé`. Jusqu’à 3 env
 
 Une ligne chaque run : `Couverture : N sans brouillon + M brouillon(s) pas reçu(s).`
 
-Drive : [voie-rapide.md](https://drive.google.com/file/d/1vW_bnLRqZr2i6NaW4eO-6_mvLv6gZk1q/view) · [prompt-cerveau-v3.md](https://drive.google.com/file/d/1btj7lKht3ZOkFDFPYtEa7W5j3OIfpfbf/view) · rituel auto : `docs/auto-rituel.md`
+Drive : [voie-rapide.md](https://drive.google.com/file/d/1vW_bnLRqZr2i6NaW4eO-6_mvLv6gZk1q/view) · [prompt-cerveau-v4.md](https://drive.google.com/file/d/1q47U7HR7gHg-MV3T7nmgvxUU5TZ9IGmt/view) · [auto-rituel.md](https://drive.google.com/file/d/1If264hIuC5wTn87oIrj_rT3UGLaN3Hdf/view)
 
 ## Interdits (vitesse)
 
