@@ -1,0 +1,18 @@
+/* Locabris — jetons extraits du site live. Ne pas inventer. */
+:root {
+  --navy: #0E2C4F;
+  --blue: #1088B5;
+  --ice: #D9EDF7;
+  --ice-2: #E7F3F8;
+  --ink: #121212;
+  --mid: #35454E;
+  --body: #5A6B75;
+  --mute: #7A8B95;
+  --hint: #9BAAB3;
+  --line: #E6EBEF;
+  --field-line: #D7E0E6;
+  --field: #FBFCFD;
+  --hero-blue: #6E9DBC;
+  --hero-sub: #C3D5E2;
+  --font: Raleway, sans-serif;
+}
