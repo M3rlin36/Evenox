@@ -11,6 +11,15 @@ Devis seulement si le lien / le n° est **déjà** dans le fil (n8n). Sinon `[PR
 Slack : `N à valider. Dis envoie.`
 **0 envoi.**
 
+## Encore auto (sans toi)
+
+- Courriel entre → `decide_arrival` : spam / interne / brouillon / brouillon+devis
+- Devis seulement si le lien Booqable est déjà dans le fil (n8n). Sinon `[PRIX À CONFIRMER]`
+- Internes n8n fermés, 0 mail
+- Pubs (GitHub, Ads, Notion, Alarm) → Spam
+- Slack : `N à valider. Dis envoie.`
+- Timer 3×/jour. Tu ne regardes pas Gmail.
+
 ## 2. Toi
 
 `envoie` → ça part. `Parti.` ou `Pas parti.` + 1 retry.

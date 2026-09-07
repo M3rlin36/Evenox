@@ -9,7 +9,13 @@ from grosbot.coverage import (
     is_unstick,
     needs_reply,
 )
-from grosbot.intake import draft_price_line, has_ready_quote
+from grosbot.intake import (
+    Arrival,
+    decide_arrival,
+    draft_price_line,
+    has_ready_quote,
+    needs_alex_validate,
+)
 from grosbot.rituel import (
     is_full_rituel,
     is_timer_run,
@@ -58,11 +64,14 @@ __all__ = [
     "claim_next",
     "classify",
     "close_interne",
+    "Arrival",
     "coverage_line",
     "coverage_of",
     "draft_cap_this_run",
+    "decide_arrival",
     "draft_price_line",
     "has_ready_quote",
+    "needs_alex_validate",
     "empty_run_message",
     "is_full_rituel",
     "is_reply_all",

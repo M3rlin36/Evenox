@@ -8,7 +8,7 @@ description: File Grokbot / Cerveau selon Nate Herk. Courriels, Grokbot, Dispatc
 **Seul** (timer 9 h / 12 h / 16 h) : étiquette + brouillon RAPIDE. Devis seulement si déjà dans le fil. Slack `N à valider. Dis envoie.` **0 envoi.**
 **Toi** : `envoie` → ça part (`Parti.` / `Pas parti.`).
 
-Alexandre ne surveille pas. 0 Booqable, 0 Drive, 0 PDF. `ok` / `go` = 0.
+Alexandre ne surveille pas. Courriel entre → `decide_arrival` (brouillon ; devis si déjà dans le fil). 0 Booqable, 0 Drive, 0 PDF. `ok` / `go` = 0.
 
 Vidéo Nate : https://www.youtube.com/watch?v=4hKJ9X6rGFo
 

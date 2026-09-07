@@ -56,6 +56,8 @@ _IGNORE_SENDER_NEEDLES = (
     "hydro-quebec@",
     "hydro.qc.ca",
     "ads-noreply@google.com",
+    "notify@updates.notion.com",
+    "updates.notion.com",
     "news.railway.app",
     "skool.com",
     "wecookmeals",

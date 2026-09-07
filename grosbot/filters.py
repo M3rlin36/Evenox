@@ -57,6 +57,22 @@ FILTER_SPECS: tuple[FilterSpec, ...] = (
         "Nate ignore promotional.",
     ),
     FilterSpec(
+        "google ads → spam",
+        "ads-noreply@google.com",
+        None,
+        (LABEL_SPAM,),
+        True,
+        "Ads reports are not client mail.",
+    ),
+    FilterSpec(
+        "notion updates → spam",
+        "notify@updates.notion.com",
+        None,
+        (LABEL_SPAM,),
+        True,
+        "Notion pings are not client mail.",
+    ),
+    FilterSpec(
         "wordpress lead → file + quote",
         "wordpress@evenox.ca",
         "Nouveau lead",

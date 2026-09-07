@@ -1,4 +1,10 @@
-from grosbot.intake import draft_price_line, has_ready_quote
+from grosbot.intake import (
+    Arrival,
+    decide_arrival,
+    draft_price_line,
+    has_ready_quote,
+    needs_alex_validate,
+)
 from grosbot.queries import LABEL_DRAFT_IA
 
 
@@ -12,3 +18,31 @@ def test_quote_only_when_already_in_gmail():
 def test_price_line_never_invents():
     assert "0 clic" in draft_price_line(snippet="https://evenox.booqable.com/x")
     assert draft_price_line(subject="Nouveau lead") == "[PRIX À CONFIRMER]"
+
+
+def test_arrival_is_draft_then_validate_never_send():
+    spam = decide_arrival(
+        sender="notifications@github.com",
+        subject="[Evenox] push",
+    )
+    interne = decide_arrival(
+        sender="vente@evenox.ca",
+        subject="Nouvelle soumission — 12",
+    )
+    quoted = decide_arrival(
+        sender="wordpress@evenox.ca",
+        subject="Nouveau lead",
+        snippet="voir evenox.booqable.com/orders/9",
+    )
+    plain = decide_arrival(
+        sender="client@example.com",
+        subject="RE: Votre devis Evenox",
+        snippet="Bonjour, merci pour le devis",
+    )
+    assert spam is Arrival.SPAM
+    assert interne is Arrival.INTERNE
+    assert quoted is Arrival.DRAFT_QUOTE
+    assert plain is Arrival.DRAFT
+    assert needs_alex_validate(quoted) is True
+    assert needs_alex_validate(plain) is True
+    assert needs_alex_validate(spam) is False

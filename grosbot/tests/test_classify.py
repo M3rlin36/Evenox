@@ -30,6 +30,14 @@ def test_hydro_quebec_promo_is_ignored():
     assert result.decision is Decision.IGNORE
 
 
+def test_notion_updates_are_ignored():
+    result = classify(
+        sender="notify@updates.notion.com",
+        subject="Cerveau a été modifié",
+    )
+    assert result.decision is Decision.IGNORE
+
+
 def test_google_ads_and_shopsante_are_ignored():
     ads = classify(
         sender="ads-noreply@google.com",
