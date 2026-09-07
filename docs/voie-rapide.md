@@ -20,7 +20,7 @@ Grokbot était lent parce qu’il ouvrait Booqable + Drive + Pipeline avant de m
 - Courriel + STOCK en parallèle = OK
 - Jamais les 11 travailleurs
 - Jamais inventer un prix
-- Jamais envoyer sur le **timer**. Rituel humain (`fais le rituel` / `vide la file` / `voie rapide` / `envoie`) = envoi même tour.
+- Timer = brouillon, 0 envoi. Toi = `envoie`. Devis seulement s’il est déjà dans le fil.
 
 ## Reçu (brouillon ≠ parti)
 

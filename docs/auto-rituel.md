@@ -1,56 +1,28 @@
-# Comment Grokbot automatise le rituel
+# Système courriels — 2 modes
 
 Drive : [auto-rituel.md](https://drive.google.com/file/d/1If264hIuC5wTn87oIrj_rT3UGLaN3Hdf/view) · [prompt-cerveau-v4.md](https://drive.google.com/file/d/1q47U7HR7gHg-MV3T7nmgvxUU5TZ9IGmt/view)
 
-Toi, tu ne tapes plus 4 phrases. Moi (Grokbot / cet agent) je fais le pipeline.
+Tu ne surveilles pas. Un mot : `envoie`.
 
-## Ce que je fais tout seul
+## 1. Seul (timer 9 h / 12 h / 16 h)
 
-| Déclencheur | Brouillons | Envoi | Slack |
-|---|---|---|---|
-| Timer 9 h / 12 h / 16 h Montréal (`[grok-inbox-queue-cheap]`) | oui, jusqu’à 3 RAPIDE | **non** | « N brouillon(s) prêt(s). Réponds `envoie les brouillons`. » |
-| `fais le rituel` / `vide la file` / `réponds à tous` / `voie rapide` / `débloque` / `automatise` | oui (8 si vide la file) | **oui, même tour** | seulement s’il reste un `Pas parti.` |
-| `envoie` / `envoie-les` / `envoie les brouillons` | non (déjà là) | oui + 1 retry | non |
+Courriel entre → étiquette → brouillon RAPIDE (0 Booqable, 0 Drive, 0 PDF).
+Devis seulement si le lien / le n° est **déjà** dans le fil (n8n). Sinon `[PRIX À CONFIRMER]`.
+Slack : `N à valider. Dis envoie.`
+**0 envoi.**
 
-Timer = préparation. Une phrase à toi = tout part.
+## 2. Toi
 
-## Pipeline (même tour)
+`envoie` → ça part. `Parti.` ou `Pas parti.` + 1 retry.
 
-1. `release_stuck` — En-cours coincé → File
-2. Veille 2 j + filet leads + filet 14 j
-3. Internes n8n → Processed, 0 mail
-4. Jusqu’à 3 brouillons RAPIDE (0 Booqable, 0 Drive, 0 PDF)
-5. Si rituel / `envoie` : `send_message` + `prove_sent` (max 3)
-6. Si `Pas parti.` : un retry
-7. Une ligne `Couverture` + `Rituel : N brouillon(s), X Parti., Y Pas parti.`
+`ok` / `go` = rien. Hold Sylvie = rien.
 
-Hold Sylvie = 0 envoi tant que tu n’as pas dit `lève hold Sylvie`.
-Jamais inventer un prix. Jamais « j’envoie » sans coller `Parti.`
-
-## Ce que tu fais encore (1 mot)
-
-- Après le timer : `envoie` (ou `envoie les brouillons`)
-- Si un mail n’est pas parti : `renvoie les pas parti`
-- Pour tout faire d’un coup, sans attendre le timer : `fais le rituel`
-
-`ok` / `go` n’envoient toujours rien.
-
-## Pourquoi le timer n’envoie pas
-
-Le verrou tient jusqu’au 10 sept 2026 : un run sans toi ne doit pas blaster ~50 fils. Le timer prépare. Ta phrase `envoie` ou `fais le rituel` part.
-
-Après le 10 sept : on pourra passer le timer en envoi auto **RAPIDE Type A / Nouveau lead n8n seulement**. Pas avant.
-
-## Prompt timer (Cursor Automation)
-
-Cron : `0 13,16,20 * * *` UTC = 9 h / 12 h / 16 h Montréal, week-end inclus.
+## Prompt timer
 
 ```
 [grok-inbox-queue-cheap]
-Charge .cursor/skills/grosbot-inbox-queue/SKILL.md et grosbot/rituel.py.
-TIMER : brouillons seulement. INTERDIT send_message. INTERDIT « j’envoie ».
-Ordre : release_stuck → CATCHUP_QUERY → LEAD_NET_QUERY → UNANSWERED_QUERY → close_interne → jusqu’à 3 RAPIDE (0 Booqable, 0 Drive, 0 PDF).
-Brouillon IA seulement, pas NOX-Processed.
-Slack DM Evenox U0996M8QRFT avec slack_ready_line(N).
-Couverture. Si Gmail plante : Veille : pas faite. + Slack. Jamais un faux 0 oublié.
+WATCH. 0 send_message.
+release_stuck → CATCHUP → LEAD_NET → UNANSWERED → close_interne → 3 RAPIDE.
+Devis seulement si déjà dans le fil. Slack : N à valider. Dis envoie.
+Gmail down → Veille : pas faite. + Slack. Jamais un faux 0.
 ```

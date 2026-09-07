@@ -1,10 +1,11 @@
-"""One trigger runs the whole inbox ritual.
+"""Two modes. Alexandre does not watch.
 
-Alexandre should not type four phrases. A human rituel word =
-unstick → draft → send → retry Pas parti → coverage, same turn.
+WATCH (timer) : unstick + draft RAPIDE. Quote only if already in the
+thread. Slack « N à valider. Dis envoie. » Never send_message.
 
-The cheap timer never send_message. It drafts, then Slack-pings
-so a later `envoie` can fire. Hold Sylvie is still 0 send.
+GO (`envoie`) : leftover drafts + send + 1 retry, same turn.
+
+Hold Sylvie is still 0 send.
 """
 
 from __future__ import annotations
@@ -14,31 +15,34 @@ from grosbot.queries import RITUEL_MAGIC, TIMER_MARKER, TIMER_MARKERS
 from grosbot.queue import MAX_SENDS_PER_RUN
 from grosbot.sweep import draft_cap_this_run
 
-RITUEL_STEPS = (
+WATCH_STEPS = (
     "release_stuck En-cours",
     "veille CATCHUP_QUERY",
     "filet LEAD_NET_QUERY",
     "filet UNANSWERED_QUERY",
     "close_interne n8n",
+    "claim + brouillon RAPIDE (0 Booqable, 0 Drive, 0 PDF)",
+    "devis seulement si déjà dans le fil",
+    "0 send_message",
+    "Slack : N à valider. Dis envoie.",
+    "coverage_line",
+)
+
+GO_STEPS = (
+    "release_stuck En-cours",
+    "veille + filets + close_interne",
     "claim + brouillon RAPIDE (0 Booqable, 0 Drive, 0 PDF)",
     "SEND_QUERY + send_message + prove_sent",
     "retry Pas parti une fois",
     "coverage_line",
 )
 
-TIMER_STEPS = (
-    "release_stuck En-cours",
-    "veille CATCHUP_QUERY",
-    "filet LEAD_NET_QUERY",
-    "filet UNANSWERED_QUERY",
-    "close_interne n8n",
-    "claim + brouillon RAPIDE (0 Booqable, 0 Drive, 0 PDF)",
-    "0 send_message",
-    "Slack DM Evenox : slack_ready_line",
-    "coverage_line",
-)
+# Old names — tests + older docs.
+RITUEL_STEPS = GO_STEPS
+TIMER_STEPS = WATCH_STEPS
 
 SLACK_EVENNOX = "U0996M8QRFT"
+SLACK_VALIDATE_CHANNEL = "D0996M8TJ0H"
 
 
 def _blob(text: str) -> str:
@@ -56,7 +60,7 @@ def _matches(text: str, magics: tuple[str, ...]) -> bool:
 
 
 def is_timer_run(text: str) -> bool:
-    """Cheap 3×/day sweep. Drafts only. Never send."""
+    """Cheap 3×/day watch. Drafts only. Never send."""
     raw = text or ""
     if TIMER_MARKER in raw.casefold():
         return True
@@ -65,7 +69,7 @@ def is_timer_run(text: str) -> bool:
 
 
 def is_full_rituel(text: str) -> bool:
-    """One human phrase = the whole pipeline, including send."""
+    """Legacy aliases still flush + send. Advertised word is envoie."""
     if is_timer_run(text):
         return False
     if _matches(text, RITUEL_MAGIC):
@@ -74,55 +78,45 @@ def is_full_rituel(text: str) -> bool:
 
 
 def should_auto_send(text: str) -> bool:
-    """Send in this same turn. Timer is always locked."""
+    """Only a human GO. Timer is always locked."""
     if is_timer_run(text):
         return False
     return is_send_go(text) or is_full_rituel(text)
 
 
 def should_retry_pas_parti(text: str) -> bool:
-    """Retry failed sends once in the same turn."""
     return should_auto_send(text)
 
 
 def send_cap_this_run(text: str = "") -> int:
-    """Always the hard send cap. Timer sends 0."""
     if is_timer_run(text) or not should_auto_send(text):
         return 0
     return MAX_SENDS_PER_RUN
 
 
 def slack_ready_line(n_drafts: int) -> str:
-    """Timer / leftover drafts. One exact reply from Alexandre."""
+    """Watch ping. One word back."""
     if n_drafts <= 0:
-        return "0 brouillon en attente. Rien à envoyer."
-    return (
-        f"{n_drafts} brouillon(s) prêt(s). "
-        "Réponds `envoie les brouillons` (un mot : envoie)."
-    )
+        return "0 à valider."
+    return f"{n_drafts} à valider. Dis `envoie`."
 
 
 def rituel_steps(text: str) -> tuple[str, ...]:
     if is_timer_run(text):
-        return TIMER_STEPS
-    return RITUEL_STEPS
+        return WATCH_STEPS
+    if should_auto_send(text):
+        return GO_STEPS
+    return WATCH_STEPS
 
 
 def rituel_line(text: str, *, drafted: int, sent_ok: int, sent_fail: int) -> str:
-    """One line after the pipeline. Never claim send on a timer."""
+    """One line. Never claim send on a watch run."""
     cap = draft_cap_this_run(text)
     if is_timer_run(text):
         return (
-            f"Timer : {drafted} brouillon(s) / cap {cap}. "
+            f"Veille : {drafted} brouillon(s) / cap {cap}. "
             f"{slack_ready_line(drafted)} 0 envoi."
         )
     if should_auto_send(text):
-        return (
-            f"Rituel : {drafted} brouillon(s), "
-            f"{sent_ok} Parti., {sent_fail} Pas parti. "
-            f"Cap send {MAX_SENDS_PER_RUN}."
-        )
-    return (
-        f"Brouillons : {drafted} / cap {cap}. "
-        "Pas d’envoi (dis `envoie` ou `fais le rituel`)."
-    )
+        return f"{sent_ok} Parti., {sent_fail} Pas parti."
+    return f"{drafted} brouillon(s) / cap {cap}. Dis `envoie`."

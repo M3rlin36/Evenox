@@ -19,14 +19,14 @@ Cloud : pas de BOOQABLE_API_TOKEN → une ligne à Alex, ne pas ouvrir Booqable.
 Internes (Nouvelle soumission / Devis abandonne) : close_interne, 0 mail.
 
 Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).
-Up to 3 RAPIDE drafts + 1 LENT per run (claim → draft → close → next). Human rituel (`fais le rituel` / `vide la file` / `voie rapide`) sends those drafts same turn. Timer `[grok-inbox-queue-cheap]` drafts only + Slack ping.
-After catch-up run `UNANSWERED_QUERY` (14d) then `SEND_QUERY` if `should_auto_send`. `QUEUE VIDE` only if unlabeled + File + SEND are all empty (`may_say_queue_empty`). Do not open Notion or Booqable. Never wait for a PDF.
+Up to 3 RAPIDE drafts + 1 LENT per run. Timer drafts + Slack `N à valider. Dis envoie.` `envoie` sends same turn. Quote only if already in the thread.
+After catch-up run `UNANSWERED_QUERY` (14d) then `SEND_QUERY` if `envoie`. `QUEUE VIDE` only if unlabeled + File + SEND are all empty. Do not open Notion or Booqable. Never wait for a PDF.
 
 Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).
 Noise (Alarm.com, newsletters) → `NOX-Spam` (`Label_4`) + `NOX-Processed`.
 Catch-up ALWAYS (even if File is not empty): `CATCHUP_QUERY` / `newer_than:2d` headers, max 8, then `LEAD_NET_QUERY` (site + WeddingWire + webshop, 14d, unlabeled). Dual-write forgotten clients into File. One line `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` if Gmail search fails — never fake `0 oublié`. Slack DM Evenox. Never the 20k unread inbox.
 
-Until 10 September 2026: never send on the cheap timer. Human rituel words (`fais le rituel` / `vide la file` / `voie rapide` / `envoie`) = implicit send same turn. `ok` / `go` still do not send.
+Until 10 September 2026: never send on the cheap timer. Only `envoie` sends. `ok` / `go` do not.
 A finished draft without SENT is a hole. Coverage line required.
 
 Never say « j'envoie » / « c'est parti ». After `send_message`, `get_thread` PLAIN_TEXT same turn. Paste `Parti.` + À + Objet + the mail body. Else `Pas parti. Le brouillon est encore là.` No Gmail IDs in the chat.

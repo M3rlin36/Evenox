@@ -8,7 +8,7 @@ Décide. 3 directeurs (Ventes, Ops, Acquisition) dispatchent 11 travailleurs. **
 
 Kit : Booqable=STOCK (seul API/prix/PDF) ; Soumission=DEVIS (PDF Booqable seulement, 0 détail tapé) ; Livraisons=ROUTE ; Courriel=TRI (0 envoi) ; Relance=skill ; Ads=Google Ads ; SITE=evenox.ca.
 
-Client demande un prix = devis Booqable dans le système (Pipeline Notion + stock). Timer = 0 envoi. Rituel / `envoie` = go. Brief lun–ven 9h. Alertes chaud → Twilio. Style ultra-court. Jamais `.env`.
+Client demande un prix = devis Booqable dans le système. Timer = brouillon, 0 envoi. `envoie` = go. Brief lun–ven 9h. Alertes chaud → Twilio. Style ultra-court. Jamais `.env`.
 
 Texte à coller dans Grokbot : `docs/patron-evenox.md`.
 
@@ -38,14 +38,13 @@ Nate Herk ([vidéo Grokbot](https://www.youtube.com/watch?v=4hKJ9X6rGFo)) : éti
 - Ne pas relire `process.md` / `entreprise.md` / `regles.md` à chaque run. `docs/voie-rapide.md` gagne.
 - Cloud : pas de `BOOQABLE_API_TOKEN` → une ligne à Alex, ne pas ouvrir Booqable.
 - Brouillon ≠ reçu. `NOX-Processed` seulement après `Parti.` / skip / interne. File `SEND_QUERY`.
-- **Rituel auto** (`grosbot/rituel.py`) : `fais le rituel` / `vide la file` / `voie rapide` / `débloque` = débloque + brouillons + envoi + 1 retry **même tour**.
-- Timer `[grok-inbox-queue-cheap]` : brouillons seulement + Slack `slack_ready_line`. **0 send_message**.
-- Mots d’envoi seul : `envoie` / `envoie-les` / `envoie les brouillons` / `envoie tout`. `ok` / `go` = 0 envoi.
+- **2 modes** : timer = brouillons + Slack `N à valider. Dis envoie.` **0 envoi.** Toi = `envoie` → ça part.
+- Devis seulement si déjà dans le fil (`has_ready_quote`). Sinon `[PRIX À CONFIRMER]`. 0 clic Booqable.
 - Filet 14 j `UNANSWERED_QUERY`. Interdit `QUEUE VIDE` s’il reste un trou. Une ligne `Couverture : …`.
 - MCP cherche `label:Grok-File` (nom), pas `label:Label_19`.
 - Ne jamais scanner `is:unread`. File vide = `QUEUE VIDE`. Pas de boucle 15/30 min.
 - Matin : routine **veille**. Catch-up `newer_than:2d` **même si File n’est pas vide**. Filet leads (site + WeddingWire) à part. Une ligne `Veille : 0 oublié.` / `N rattrapé(s).` / **`Veille : pas faite.`** si Gmail plante (jamais un faux 0). Slack DM Evenox.
-- Laisser unread. Jamais d’envoi client sans rituel / **envoie**. Timer = 0 envoi.
+- Laisser unread. Timer = 0 envoi. Toi = **envoie**.
 - Jamais « j’envoie ». Après envoi : coller `Parti.` + À + Objet + le texte. Sinon `Pas parti. Le brouillon est encore là.` Pas d’ID.
 
 Triage cheap : `python -m pytest grosbot/tests`.

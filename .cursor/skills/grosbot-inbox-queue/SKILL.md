@@ -3,9 +3,14 @@ name: grosbot-inbox-queue
 description: File Grokbot / Cerveau selon Nate Herk. Courriels, Grokbot, Dispatch inbox, ou quand Alexandre dit que Grokbot oublie des mails.
 ---
 
-# Grokbot — ne pas oublier un courriel (Nate Herk)
+# Grokbot — 2 modes (simple)
 
-Vidéo : https://www.youtube.com/watch?v=4hKJ9X6rGFo
+**Seul** (timer 9 h / 12 h / 16 h) : étiquette + brouillon RAPIDE. Devis seulement si déjà dans le fil. Slack `N à valider. Dis envoie.` **0 envoi.**
+**Toi** : `envoie` → ça part (`Parti.` / `Pas parti.`).
+
+Alexandre ne surveille pas. 0 Booqable, 0 Drive, 0 PDF. `ok` / `go` = 0.
+
+Vidéo Nate : https://www.youtube.com/watch?v=4hKJ9X6rGFo
 
 Nom canon : **Grokbot** / **Grok**. Libellés Gmail : `Grok-File`, `Grok-En-cours`, `Grok-Skip`, `Grok-Livraison`, `Grok-Acompte`, `Grok-Envoyé`. Jamais GROS.
 
@@ -69,40 +74,34 @@ Défaut **RAPIDE**. Ne pas relire `process.md` / `entreprise.md` / `regles.md` �
 2b. **Filet 14 j** : `UNANSWERED_QUERY` (max 20). `classify` → File ou Spam. Dernier = SENT Evenox → ne pas File (`needs_reply`).
 3. Si `search_threads` plante : **retry 1 fois**. Encore down → `Veille : pas faite.` + Slack DM Evenox. **Interdit** de dire `0 oublié`.
 4. Une ligne `Veille : …`.
-5. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**, ou `release_stuck` si rituel / timer / `débloque`.
+5. Toujours `release_stuck` sur un En-cours coincé, puis urgent / claim.
 6. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
 7. Internes n8n (`Nouvelle soumission` / `Devis abandonne`) : `close_interne` (Processed, 0 mail).
 8. `claim_next` : jusqu’à `draft_cap_this_run` (3, ou 8 si `réponds à tous` / `vide la file`). Dual-write En-cours, retirer File + alias.
 9. Voie RAPIDE : lire le fil, **brouillon Gmail tout de suite**. 0 Drive. 0 Booqable. 0 PDF. Si n8n / `Brouillon IA` / lien Booqable déjà là : montrer ça.
 10. Voie LENTE : brouillon avec `[PRIX À CONFIRMER]` **en parallèle** d’une ligne « Alex : crée le devis ». Interdit d’attendre le PDF.
 11. Fermer le brouillon : `Brouillon IA` seulement. **Pas** `NOX-Processed`. Le client n’a rien reçu.
-12. File `SEND_QUERY` (`label:Brouillon IA -label:Grok-Envoyé`) : jusqu’à 3 envois si `should_auto_send` (`fais le rituel` / `vide la file` / `voie rapide` / `envoie` / `envoie-les`). **Timer = 0 envoi.**
-13. Après chaque envoi : `send_message` + `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.
-   - Parti → coller `Parti.` + À + Objet + **le texte du mail**. `Grok-Envoyé`.
-   - Sinon → `Pas parti. Le brouillon est encore là.` Puis **1 retry** si rituel / envoie.
-14. `coverage_line` + `rituel_line`. S’il reste des trous : « Pas fini. Prochain sweep. » **Pas** `QUEUE VIDE`. Slack Evenox si `UNANSWERED_QUERY` plante. Timer : Slack `slack_ready_line(N)`.
+12. File `SEND_QUERY` seulement si `envoie` (`should_auto_send`). **Timer = 0 envoi.**
+13. Après chaque envoi : `send_message` + `get_thread` **même tour**. `Parti.` + À + Objet + texte, ou `Pas parti.` + 1 retry.
+14. Une ligne `rituel_line`. Timer : Slack `N à valider. Dis envoie.`
 
-## Rituel auto (toi tu ne tapes plus 4 phrases)
+## 2 modes
 
-Code : `grosbot/rituel.py`. Doc : `docs/auto-rituel.md`.
+Code : `grosbot/rituel.py`, `grosbot/intake.py`. Doc : `docs/auto-rituel.md`.
 
-- Humain `fais le rituel` / `vide la file` / `réponds à tous` / `voie rapide` / `débloque` / `automatise` = pipeline **complet même tour** (unstick + draft + send + retry).
-- Timer `[grok-inbox-queue-cheap]` = brouillons seulement + Slack « N prêts. Réponds `envoie`. » **INTERDIT send_message.**
-- `ok` / `go` = 0 envoi. Une question « comment automatiser » ≠ rituel.
+- Timer = watch. Brouillon. Devis si `has_ready_quote`. Slack. **0 send_message.**
+- `envoie` = ça part. Le reste des mots (`vide la file`, etc.) marche encore, on ne les enseigne plus.
+- `ok` / `go` = 0. Une question longue ≠ envoi.
 
-## Si ça bloque / si ça n’envoie pas
+## Si ça bloque
 
-- `voie rapide` / `débloque` / `fais le rituel` : arrêter Booqable/Drive/PDF. `release_stuck` sur En-cours. Brouillons **puis envoi**.
-- `renvoie les pas parti` : même chose que `envoie les brouillons` sur les `Pas parti.`
-- Jamais `update_draft` (ça casse le fil). `create_draft` + `replyToMessageId`.
-- « j’envoie » sans `Parti.` = échec. Retry une fois, puis `Pas parti.`
+Arrêter Booqable/Drive/PDF tout seul. `release_stuck`. Jamais `update_draft`. « j’envoie » sans `Parti.` = échec.
 
 ## Coût
 
 - Filtres Gmail (Alarm.com → `NOX-Spam`, Skip Inbox) = gratuit. MCP `create_filter` = 403 : recettes dans `grosbot/filters.py`.
 - Triage = règles, pas un LLM.
-- 3 brouillons RAPIDE / run + 1 LENT. Puis jusqu’à 3 envois si rituel / `envoie`. Timer = 0 envoi.
-- Un run rituel qui s’arrête au brouillon a échoué : le client n’a rien reçu.
+- 3 brouillons RAPIDE / run + 1 LENT. Envois seulement après `envoie`. Timer = 0 envoi.
 - Rapport vendredi = `list_labels` (`grosbot.report`), jamais un scan de fils.
 - Sweep cheap 3×/jour **tous les jours** (`0 13,16,20 * * *` UTC = 9h/12h/16h Montréal). Veille + filet leads. Toujours, même si File n’est pas vide. Gmail down → `Veille : pas faite.` + Slack.
 

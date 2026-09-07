@@ -26,10 +26,9 @@ Un courriel client n’est clos que s’il a **un brouillon**, un **`Parti.`**, 
 
 `QUEUE VIDE` seulement si les trois trous = 0.
 
-## Mots
+## 2 modes
 
-- `fais le rituel` / `vide la file` / `voie rapide` — pipeline complet même tour (brouillons + envoi)
-- `envoie` / `envoie-les` — les `Brouillon IA` partent
-- Timer : brouillons + Slack, 0 envoi
+- Timer : brouillons + Slack `N à valider. Dis envoie.` 0 envoi
+- Toi : `envoie` — ça part
 
-Verrou timer jusqu’au 10 sept 2026 : un run sans toi n’envoie pas. Une phrase rituel = envoi.
+Verrou timer jusqu’au 10 sept 2026.

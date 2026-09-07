@@ -19,7 +19,7 @@ Grokbot / Patron Evenox. Décide ; 3 directeurs (Ventes, Ops, Acquisition) dispa
 - Matin : routine **veille** (`newer_than:2d`, max 8) **même si File n’est pas vide**. Filet leads à part. `Veille : pas faite.` si Gmail plante — jamais un faux `0 oublié`.
 - n8n ≠ File. 1 personne = 1 mail client sur `Nouveau lead`. Internes (`Nouvelle soumission` / `Devis abandonne`) = Processed au claim. Playbook situations = Cerveau.
 - Client demande un prix = devis Booqable dans le système. Brouillon **avant** le PDF. Jamais un chiffre inventé.
-- Brouillon ≠ reçu. Timer = 0 envoi. Rituel (`fais le rituel` / `vide la file` / `voie rapide`) ou `envoie` = envoi même tour. Verrou timer jusqu’au 10 sept 2026.
+- Brouillon ≠ reçu. Timer = 0 envoi. `envoie` = ça part. Verrou timer jusqu’au 10 sept 2026.
 - Après `envoie` : coller `Parti.` + À + Objet + le texte du mail. Sinon `Pas parti. Le brouillon est encore là.` Jamais « j’envoie ». Pas d’ID.
 - Brief lun–ven 9h. Alertes chaud → Twilio. Pipeline = Notion.
 - Style ultra-court. Jamais lire ni mentionner `.env`.
