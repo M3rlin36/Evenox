@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evenox.ca/cerveau/extraction.v1.json",
+  "title": "Extraction dossier Evenox",
+  "description": "Contrat machine. À chaque courriel, Grok copie examples[0], remplit, montre à Alexandre. n8n consomme le même objet. Inventé = jamais dans brouillon.texte ni Booqable. Prix seulement si action=devis_auto et uniquement sur le devis, jamais dans le mail de questions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "fil",
+    "provenance",
+    "drapeaux",
+    "trous",
+    "nb_trous",
+    "on_sait",
+    "action",
+    "destinataire",
+    "brouillon",
+    "devis",
+    "attente_alexandre"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "fil": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gmail_thread_id", "message_id_haut", "de", "a", "date_courriel", "objet", "client_veut", "municipal", "hold", "deja_repondu"],
+      "properties": {
+        "gmail_thread_id": { "type": ["string", "null"] },
+        "message_id_haut": { "type": ["string", "null"] },
+        "de": { "type": ["string", "null"], "description": "Expéditeur du haut. Extraire avant « pas d'email »." },
+        "a": { "type": ["string", "null"], "description": "Destinataire(s) du mail reçu." },
+        "signature_vue": { "type": ["string", "null"] },
+        "date_courriel": { "type": ["string", "null"], "description": "Date d'écriture du mail client. Ancre calendrier. Pas now()." },
+        "objet": { "type": ["string", "null"] },
+        "client_veut": { "type": "string", "description": "Demande active du HAUT seulement." },
+        "municipal": { "type": "boolean" },
+        "pj_interdit_contact_emetteur": { "type": "boolean" },
+        "hold": { "type": "boolean" },
+        "deja_repondu": { "type": "boolean" },
+        "brouillon_vivant_id": { "type": ["string", "null"] }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lu", "deduit", "invente"],
+      "properties": {
+        "lu": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Noir sur blanc dans le haut ou la PJ. Seul droit d'aller au client / Booqable sans question."
+        },
+        "deduit": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Inférence. Droit d'aller au client seulement sous forme de question."
+        },
+        "invente": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Comblé pour faire joli. Jamais mail. Jamais Booqable."
+        }
+      }
+    },
+    "drapeaux": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "tel_invalide",
+          "net_60",
+          "net_30_sans_ok",
+          "quasi_oui_95",
+          "changement_entite",
+          "sans_depot",
+          "hold",
+          "pj_vs_courriel",
+          "annee_absente",
+          "jour_vs_calendrier",
+          "portee_perimee",
+          "produit_non_nomme",
+          "total_sans_lignes",
+          "contestation_regle",
+          "oiq_disqualifie",
+          "confirmation_conseil"
+        ]
+      }
+    },
+    "trous": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Points manquants du HAUT. 0 = on sait. 1–2 = questions. 3+ = appel."
+    },
+    "nb_trous": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "on_sait": {
+      "type": "boolean",
+      "description": "true seulement si 0 trou : date+jour OK, lieu/accès tenables, format+quantités, fenêtre livr.→cueillette, pas de contradiction, portée = haut."
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "devis_auto",
+        "questions_sans_prix",
+        "appel",
+        "questions_ecrites_municipal",
+        "relance",
+        "devis_deja_parti",
+        "contestation",
+        "hold",
+        "silence"
+      ]
+    },
+    "gabarit": {
+      "type": ["string", "null"],
+      "enum": ["A", "B", "C", "D1", "D2", "E", "F", "G", null]
+    },
+    "destinataire": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["a", "cc"],
+      "properties": {
+        "a": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Municipal + PJ interdit : Direction de l'approvisionnement, jamais Karine/loisirs seuls."
+        },
+        "cc": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Municipal + PJ interdit : l'émetteur du courriel."
+        }
+      }
+    },
+    "brouillon": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["objet", "texte", "contient_prix", "signature"],
+      "properties": {
+        "objet": { "type": "string" },
+        "texte": { "type": "string", "description": "Texte complet à coller. 0 $ si questions / appel / municipal. Pas de produit non nommé." },
+        "contient_prix": { "type": "boolean" },
+        "signature": {
+          "type": "string",
+          "enum": ["dsc", "directeur_service_clientele"]
+        }
+      }
+    },
+    "devis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["oui", "attendre_cree"],
+      "properties": {
+        "oui": { "type": "boolean", "description": "true seulement si action=devis_auto et on_sait." },
+        "attendre_cree": { "type": "boolean", "description": "Toujours true tant qu'Alexandre n'a pas tapé crée." },
+        "produits_nommes_client": { "type": "array", "items": { "type": "string" } },
+        "notes_internes": { "type": ["string", "null"] }
+      }
+    },
+    "decision_oiq": {
+      "type": ["string", "null"],
+      "enum": ["ok", "demander_structure", "decliner", "na", null],
+      "description": "Municipal : trancher AVANT envoi. Si disqualifié : demander_structure ou decliner. Jamais promettre une soumission."
+    },
+    "attente_alexandre": {
+      "type": "string",
+      "enum": ["envoie", "cree", "envoie_et_cree", "leve_hold", "aucune"]
+    },
+    "gmail_draft_id": { "type": ["string", "null"] }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "action": { "const": "devis_auto" } } },
+      "then": {
+        "properties": {
+          "on_sait": { "const": true },
+          "nb_trous": { "const": 0 },
+          "devis": {
+            "type": "object",
+            "properties": { "oui": { "const": true }, "attendre_cree": { "const": true } }
+          },
+          "attente_alexandre": { "enum": ["cree", "envoie_et_cree"] }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "action": { "const": "questions_sans_prix" } } },
+      "then": {
+        "properties": {
+          "brouillon": { "type": "object", "properties": { "contient_prix": { "const": false } } },
+          "devis": { "type": "object", "properties": { "oui": { "const": false } } },
+          "attente_alexandre": { "const": "envoie" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "action": { "const": "appel" } } },
+      "then": {
+        "properties": {
+          "brouillon": { "type": "object", "properties": { "contient_prix": { "const": false } } },
+          "devis": { "type": "object", "properties": { "oui": { "const": false } } }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "action": { "const": "questions_ecrites_municipal" } } },
+      "then": {
+        "properties": {
+          "brouillon": {
+            "type": "object",
+            "properties": {
+              "contient_prix": { "const": false },
+              "signature": { "const": "directeur_service_clientele" }
+            }
+          },
+          "devis": { "type": "object", "properties": { "oui": { "const": false } } }
+        }
+      }
+    }
+  ],
+  "examples": [
+    {
+      "version": 1,
+      "fil": {
+        "gmail_thread_id": null,
+        "message_id_haut": null,
+        "de": null,
+        "a": null,
+        "signature_vue": null,
+        "date_courriel": null,
+        "objet": null,
+        "client_veut": "",
+        "municipal": false,
+        "pj_interdit_contact_emetteur": false,
+        "hold": false,
+        "deja_repondu": false,
+        "brouillon_vivant_id": null
+      },
+      "provenance": { "lu": [], "deduit": [], "invente": [] },
+      "drapeaux": [],
+      "trous": [],
+      "nb_trous": 0,
+      "on_sait": false,
+      "action": "questions_sans_prix",
+      "gabarit": "B",
+      "destinataire": { "a": [], "cc": [] },
+      "brouillon": {
+        "objet": "",
+        "texte": "",
+        "contient_prix": false,
+        "signature": "dsc"
+      },
+      "devis": {
+        "oui": false,
+        "attendre_cree": true,
+        "produits_nommes_client": [],
+        "notes_internes": null
+      },
+      "decision_oiq": "na",
+      "attente_alexandre": "envoie",
+      "gmail_draft_id": null
+    }
+  ]
+}

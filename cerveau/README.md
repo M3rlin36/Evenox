@@ -3,7 +3,7 @@
 Outil de rédaction pour Alexandre (Grok / Grokbot / agent / humain).  
 Un courriel client = un dossier. Analyse visible ici d’abord. Rien ne part sans fil Gmail réel + « envoie » d’Alexandre.
 
-**Grok :** coller / charger [`GROK.md`](GROK.md) — prompt unique. Chemin le plus rapide = section du même nom, juste après Posture.
+**Démarrage Grok :** coller [`GROK.md`](GROK.md) + suivre [`PROCESSUS.md`](PROCESSUS.md). Remplir [`extraction.json`](extraction.json). Chemin le plus rapide = section du même nom dans `GROK.md`, juste après Posture.
 
 ## Plus vite
 
@@ -86,7 +86,10 @@ Gmail = brouillon interne sourcé. Jamais inventer. Jamais envoyer depuis ici.
 
 ## Fichiers
 
-- `GROK.md` — **prompt unique à coller dans Grok**. **Chemin le plus rapide** = juste après Posture.
+- `GROK.md` — **prompt unique à coller dans Grok**. Exécute `PROCESSUS.md` + `extraction.json` à chaque mail. **Chemin le plus rapide** = juste après Posture.
+- `PROCESSUS.md` — SOP minute par minute, cases à cocher, qui fait quoi.
+- `extraction.json` — contrat machine (schéma + squelette). Grok remplit une instance par dossier.
+- `n8n-hooks.md` — contrat d’événements (Gmail → Grok → brouillon, jamais send).
 - `questions-predeterminees.md` — banque, 1 question vs appel.
 - `gabarits-reponses.md` — textes à coller + exemples remplis.
 - `checklist-dossier.md` — ordre de traitement. **SKIP** si 3+ trous.
