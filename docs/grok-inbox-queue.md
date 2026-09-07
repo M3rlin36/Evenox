@@ -58,20 +58,24 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 {label:Grok-En-cours label:NOX-En-cours} -label:NOX-Processed
 in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam
 in:inbox -label:NOX-Processed -label:NOX-Spam -label:Grok-File -label:NOX-À-traiter newer_than:2d
-in:inbox newer_than:14d (wordpress/vente Nouveau lead|Nouvelle soumission|Devis abandonne OR weddingwire) -label:Grok-File
+in:inbox newer_than:14d (wordpress/vente Nouveau lead|Nouvelle soumission|Devis abandonne OR weddingwire OR booqable webshop) -label:Grok-File
 ```
 
 Découverte = sujet + expéditeur. Corps seulement après claim.
 
 ## Filtres Gmail (MCP 403)
 
-`create_filter` / `list_filters` = 403 sur cet agent. Recettes dans `grosbot/filters.py`. À coller dans Gmail → Paramètres → Filtres :
+`create_filter` / `list_filters` = souvent 403. Recettes dans `grosbot/filters.py`. À coller dans Gmail → Paramètres → Filtres si MCP refuse :
 
 - `from:(notifications@alarm.com)` → `NOX-Spam`, Skip Inbox
 - `from:(notifications@github.com)` → `NOX-Spam`, Skip Inbox
 - `from:(promo@promo.timhortons.ca)` → `NOX-Spam`, Skip Inbox
-- `from:(wordpress@evenox.ca) subject:(Nouveau lead)` → `Grok-File` + `Soumission` (rester inbox)
-- `from:(support@weddingwire.ca) subject:(New Lead)` → `Grok-File` + `Soumission` (rester inbox)
+- `from:(CostcoNews@digital.costco.ca)` → `NOX-Spam`, Skip Inbox
+- `from:(wordpress@evenox.ca) subject:(Nouveau lead)` → `Grok-File` + `NOX-À-traiter` + `Soumission` (rester inbox)
+- `from:(support@weddingwire.ca) subject:(New Lead)` → `Grok-File` + `NOX-À-traiter` + `Soumission` (rester inbox)
+- `from:(support@booqable.com) subject:(webshop order)` → `Grok-File` + `NOX-À-traiter` + `Soumission` (rester inbox)
+
+Pas de filtre sur `Nouvelle soumission` / `Devis abandonne` (triples n8n). Filet + claim : Processed les internes, mail client sur `Nouveau lead` seulement. MCP `create_filter` = 403 : coller à la main dans Gmail.
 
 ## Coût
 

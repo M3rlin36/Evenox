@@ -39,7 +39,7 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 2. En cours : `{label:Grok-En-cours label:NOX-En-cours} -label:NOX-Processed`
 3. Urgent Nate (nouveau seulement) : `in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam`
 4. Triage / **veille** (max 8, **même si File n’est pas vide**) : `CATCHUP_QUERY` = inbox `newer_than:2d` sans File/Processed/Spam. En-têtes, `grosbot.classify` → File + type Nate, ou `NOX-Spam`.
-5. **Filet leads** (toujours, à part) : `LEAD_NET_QUERY` = site + WeddingWire `newer_than:14d` **sans File**. Max 8. Ça rattrape un client caché derrière 8 pubs.
+5. **Filet leads** (toujours, à part) : `LEAD_NET_QUERY` = site + WeddingWire + webshop Booqable `newer_than:14d` **sans File**. Max 8. Ça rattrape un client caché derrière 8 pubs.
 6. Une ligne `Veille : 0 oublié.` / `Veille : N rattrapé(s). …` / **`Veille : pas faite.`** si Gmail plante. Jamais un faux `0 oublié`. Slack DM Evenox (`U0996M8QRFT`) si pas faite.
 7. Leads site : `from:wordpress@evenox.ca newer_than:14d` (sujets Nouveau lead / Nouvelle soumission)
 
@@ -50,7 +50,7 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 ## Run (ordre Nate)
 
 1. **Veille (toujours, même si File n’est pas vide)** : `CATCHUP_QUERY` (headers, max 8) → dual-write File ou Spam. En-tête le plus récent > 2 j = faux positif Gmail, skip. Dernier message = SENT Evenox → déjà répondu, ne pas File.
-2. **Filet leads** : `LEAD_NET_QUERY` (headers, max 8). Dual-write File + `Soumission`. Ça ne dépend pas des 8 pubs du CATCHUP.
+2. **Filet leads** : `LEAD_NET_QUERY` (headers, max 8). Dual-write File + `Soumission`. Site + WeddingWire + webshop. Ça ne dépend pas des 8 pubs du CATCHUP.
 3. Si `search_threads` plante : **retry 1 fois**. Encore down → `Veille : pas faite.` + Slack DM Evenox. **Interdit** de dire `0 oublié`.
 4. Une ligne `Veille : …`.
 5. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
@@ -73,9 +73,17 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 - Rapport vendredi = `list_labels` (`grosbot.report`), jamais un scan de fils.
 - Sweep cheap 3×/jour **tous les jours** (`0 13,16,20 * * *` UTC = 9h/12h/16h Montréal). Veille + filet leads. Toujours, même si File n’est pas vide. Gmail down → `Veille : pas faite.` + Slack.
 
-## n8n
+## n8n + doublons
 
 Le flux « Évenox — Canal courriel » crée déjà devis Booqable + brouillons. Grokbot **complète** la file, il ne reconstruit pas n8n.
+
+n8n n’écrit **pas** `Grok-File`. Filet + filtre Gmail `Nouveau lead` / WeddingWire = le trou.
+
+1 personne = souvent 3 fils (`Nouveau lead` + `Nouvelle soumission` + `Devis abandonne`). **Un** mail client, sur le `Nouveau lead`. En claim : `NOX-Processed` sur les deux internes (même nom). 0 mail à `vente@`. `update_draft` casse le fil → `create_draft` + `replyToMessageId`.
+
+## Situations (réponse)
+
+Voir Cerveau. Extra après dépôt = accusé + stock réel, 0 prix tapé. Dernier = SENT Evenox → silence. Hold = 0 envoi. `Brouillon IA` déjà là = celui-là.
 
 ## Preuve (simple)
 
