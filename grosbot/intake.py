@@ -11,7 +11,6 @@ from enum import Enum
 
 from grosbot.classify import Decision, classify
 from grosbot.lane import Lane, pick_lane
-from grosbot.queries import LABEL_DRAFT_IA
 
 QUOTE_MARKERS = (
     "booqable.com",
@@ -26,12 +25,11 @@ def has_ready_quote(
     labels: list[str] | tuple[str, ...] = (),
     subject: str = "",
     snippet: str = "",
+    body: str = "",
 ) -> bool:
-    """True only when the quote is already in Gmail, not in our head."""
-    names = {x.casefold() for x in labels}
-    if LABEL_DRAFT_IA.casefold() in names:
-        return True
-    blob = f"{subject} {snippet}".casefold()
+    """True only when Booqable already left a quote in Gmail."""
+    del labels  # labels never prove a devis; only a link / n° does
+    blob = f"{subject} {snippet} {body}".casefold()
     return any(marker in blob for marker in QUOTE_MARKERS)
 
 
@@ -40,9 +38,12 @@ def draft_price_line(
     labels: list[str] | tuple[str, ...] = (),
     subject: str = "",
     snippet: str = "",
+    body: str = "",
 ) -> str:
     """What the Gmail draft may say about money."""
-    if has_ready_quote(labels=labels, subject=subject, snippet=snippet):
+    if has_ready_quote(
+        labels=labels, subject=subject, snippet=snippet, body=body
+    ):
         return "devis déjà dans le fil — 0 clic Booqable"
     return "[PRIX À CONFIRMER]"
 
@@ -61,9 +62,10 @@ def decide_arrival(
     sender: str = "",
     subject: str = "",
     snippet: str = "",
+    body: str = "",
     labels: list[str] | tuple[str, ...] = (),
 ) -> Arrival:
-    """Courriel entre → brouillon. Devis seulement si déjà là. 0 envoi."""
+    """Courriel entre → brouillon. Devis seulement si déjà dans Booqable. 0 envoi."""
     result = classify(
         sender=sender,
         subject=subject,
@@ -82,7 +84,9 @@ def decide_arrival(
         is Lane.INTERNE
     ):
         return Arrival.INTERNE
-    if has_ready_quote(labels=labels, subject=subject, snippet=snippet):
+    if has_ready_quote(
+        labels=labels, subject=subject, snippet=snippet, body=body
+    ):
         return Arrival.DRAFT_QUOTE
     return Arrival.DRAFT
 

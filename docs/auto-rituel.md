@@ -2,7 +2,7 @@
 
 Drive : [auto-rituel.md](https://drive.google.com/file/d/1If264hIuC5wTn87oIrj_rT3UGLaN3Hdf/view) · [prompt-cerveau-v4.md](https://drive.google.com/file/d/1q47U7HR7gHg-MV3T7nmgvxUU5TZ9IGmt/view)
 
-Tu ne surveilles pas. Un mot : `envoie`.
+Toujours : courriel → brouillon → devis si déjà dans Booqable → tu valides (`envoie`).
 
 ## 1. Seul (timer 9 h / 12 h / 16 h)
 

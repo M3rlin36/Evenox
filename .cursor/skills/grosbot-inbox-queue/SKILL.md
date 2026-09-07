@@ -3,12 +3,13 @@ name: grosbot-inbox-queue
 description: File Grokbot / Cerveau selon Nate Herk. Courriels, Grokbot, Dispatch inbox, ou quand Alexandre dit que Grokbot oublie des mails.
 ---
 
-# Grokbot — 2 modes (simple)
+# Grokbot — toujours ces 3 étapes
 
-**Seul** (timer 9 h / 12 h / 16 h) : étiquette + brouillon RAPIDE. Devis seulement si déjà dans le fil. Slack `N à valider. Dis envoie.` **0 envoi.**
-**Toi** : `envoie` → ça part (`Parti.` / `Pas parti.`).
+1. **Courriel entre** → brouillon Gmail tout de suite (`decide_arrival`).
+2. **Devis** seulement si `evenox.booqable.com` / `devis #` est **déjà** dans le fil. Sinon `[PRIX À CONFIRMER]`. 0 clic Booqable.
+3. **Validation** → Slack `N à valider. Dis envoie.` **0 envoi** tant que Alexandre n’a pas dit `envoie`.
 
-Alexandre ne surveille pas. Courriel entre → `decide_arrival` (brouillon ; devis si déjà dans le fil). 0 Booqable, 0 Drive, 0 PDF. `ok` / `go` = 0.
+Timer 9 h / 12 h / 16 h = les 3 étapes. Toi = `envoie`. `ok` / `go` = 0.
 
 Vidéo Nate : https://www.youtube.com/watch?v=4hKJ9X6rGFo
 
