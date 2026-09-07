@@ -44,7 +44,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 ## Règle d'or
 
 1. Étiqueter **avant** de dire « je vais répondre ».
-2. Un run = **un** dossier. Urgent / acompte avant un nouveau lead.
+2. Un run = **un** dossier. **Un prénom dans le chat.** Interdit de lister la file. `file : N restants` sans noms. Urgent / acompte avant un nouveau lead.
 3. File vide = une recherche, `QUEUE VIDE`, **stop**.
 4. MCP `search_threads` : `label:Grok-File` (nom), pas `label:Label_19`.
 5. Ne jamais marquer lu.

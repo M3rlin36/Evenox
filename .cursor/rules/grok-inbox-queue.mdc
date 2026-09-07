@@ -12,7 +12,7 @@ Libellés Gmail : `Grok-File` / `Grok-En-cours` / `Grok-Skip` / `Grok-Livraison`
 Gmail is the queue. The chat is not.
 
 Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).
-One run = one dossier. Never "I'll do the rest after".
+One run = one dossier. **One first name in the chat.** Never a list. `file : N restants` with no names. Never "I'll do the rest after".
 Empty queue query `label:NOX-À-traiter -label:NOX-Processed` → after catch-up, if still empty reply `QUEUE VIDE` and stop. Do not open Notion or Booqable.
 
 Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).

@@ -31,7 +31,7 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 
 ## Règle d’or
 
-**Étiqueter avant de promettre.** Dual-write `Grok-File` **et** `NOX-À-traiter`. Laisser unread. Un run = un dossier. Urgent / acompte avant un nouveau lead.
+**Étiqueter avant de promettre.** Dual-write `Grok-File` **et** `NOX-À-traiter`. Laisser unread. Un run = un dossier. **Un nom dans le chat.** Le reste = `Grok-File` (0 token). Interdit de lister 5 dossiers. Urgent / acompte avant un nouveau lead.
 
 ## Requêtes autorisées (noms Gmail, pas Label_19)
 
@@ -56,14 +56,14 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 5. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
 6. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
 7. `claim_next` : 1 fil. Dual-write En-cours, retirer File + alias.
-8. Lire **tout** ce fil. Un message Alexandre = un dossier (Nom / Date / Client veut / Fait / Action).
-9. Brouillon seulement. Jamais d’envoi sans **envoie**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
+8. Lire **tout** ce fil. Un message Alexandre = **un** dossier (Nom / Date / Client veut / Fait / Action). **0 autre prénom.**
+9. Brouillon seulement. Jamais d’envoi sans **envoie [Prénom]**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
 10. Après `envoie` : `send_message` puis `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.
    - Parti → coller `Parti.` + À + Objet + **le texte du mail**. C’est la preuve. Pas d’ID. Pas « va voir Gmail ».
    - Sinon → `Pas parti. Le brouillon est encore là.`
    - En silence : `Grok-Envoyé` seulement si Parti.
 11. Fermer un brouillon (sans envoi) : `NOX-Processed` + `Brouillon IA`. Retirer File **et** En-cours.
-12. S’il reste de la file : une ligne « file : N restants ». Stop.
+12. S’il reste de la file : une ligne `file : N restants`. **Pas de noms.** Stop.
 
 ## Coût
 
@@ -83,7 +83,7 @@ n8n n’écrit **pas** `Grok-File`. Filet + filtre Gmail `Nouveau lead` / Weddin
 
 ## Situations (réponse)
 
-Voir Cerveau. Extra après dépôt = accusé + stock réel, 0 prix tapé. Dernier = SENT Evenox → silence. Hold = 0 envoi. `Brouillon IA` déjà là = celui-là.
+Voir Cerveau. Extra après dépôt = accusé + stock réel, 0 prix tapé. Dernier = SENT Evenox → silence. Hold = 0 envoi. `Brouillon IA` déjà là = celui-là. **Un prénom dans le chat.** `file : N restants` sans noms.
 
 ## Preuve (simple)
 

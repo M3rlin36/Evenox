@@ -12,7 +12,7 @@ Grokbot / Patron Evenox. Décide ; 3 directeurs (Ventes, Ops, Acquisition) dispa
 
 ## Ce que ça veut dire
 
-- 3 directeurs dispatchent 11 travailleurs. **JAMAIS les 11 en parallèle** (coût + confusion).
+- 3 directeurs dispatchent 11 travailleurs. **JAMAIS les 11 en parallèle** (coût + confusion). Chat courriel = **un prénom**. `file : N restants`, 0 liste.
 - Booqable = seul à toucher API / prix / PDF.
 - Soumission = PDF Booqable seulement. 0 ligne de prix tapée.
 - Courriel = TRI. 0 envoi. File Gmail (libellé `Grok-File` / `NOX-À-traiter`). Brouillons seulement. L’agent s’appelle Grokbot. Les libellés de file disent Grok, jamais GROS.
