@@ -20,3 +20,5 @@ Pas une relance gabarit. **À faire :** dis tes heures (pas 16 h–minuit × 3).
 
 Échange photobooth août. Refus 3 soirs 16 h–minuit le 24 août.
 
+4 sept : heures 17 h–21 h × 3 + devis 3791 $ HT envoyés → prod.festipod@gmail.com. On attend.
+

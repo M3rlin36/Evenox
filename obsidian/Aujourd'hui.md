@@ -1,20 +1,20 @@
-# Aujourd’hui — 6 septembre 2026
+# Aujourd’hui — 7 septembre 2026
 
 Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
 **Qui doit bouger ?**
-**Commence par Mélanie** — appelle (Ste-Thérèse, 26 sept).  
+**Commence par Paola** — appelle (Laval, 14 nov).  
 Puis Dahlia — oui ou non (500 $ TTC, 13 sept). Puis Joëlle — appelle (Radio-Canada, toujours pas de devis).  
 Mathieu : dépôt déjà payé. On n’écrit pas.
 
 ## C’est à toi — ce matin
 
-**Mélanie Little** — Académie Ste-Thérèse — en premier · appelle · ce matin · 26 sept  
-18 ans de Daphnée. Arche organique blanc-argent-noir, 1+8 lumineux, fond argent, inscription, ballons chromés.  
-**À faire :** appelle 514-913-0509. Ensuite le devis. Le dépôt garde le 26 sept.  
-**Dis :** Allô Mélanie, Alexandre d’Évenox. J’ai votre demande pour le 26 septembre à l’Académie Ste-Thérèse. Je vous envoie le devis ce matin — le dépôt garde la date.  
+**Paola Pierdant** — Laval — en premier · appelle · ce matin · 14 nov  
+15 ans. Elle veut visiter les installations. Forfait tout inclus. Lead du 6 sept, jamais contactée.  
+**À faire :** appelle 514-602-0326. Ensuite le devis. Le dépôt garde le 14 nov.  
+**Dis :** Allô Paola, Alexandre d’Évenox. J’ai votre demande pour le 14 novembre à Laval. Je vous envoie le devis ce matin — le dépôt garde la date.  
 **Si pas de réponse :** texto le même message + envoie le devis.  
-**Objet :** Devis 26 septembre — Ste-Thérèse  
+**Objet :** Devis 14 novembre — Laval  
 Pas de commande Booqable.
 
 **Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
@@ -32,22 +32,17 @@ Pas de commande Booqable.
 
 ## Après
 
+**Mélanie Little** — Académie Ste-Thérèse — après · appelle · 26 sept  
+Lead du 5 sept, toujours pas de devis.  
+**À faire :** appelle 514-913-0509. Ensuite le devis. Le dépôt garde le 26 sept.  
+**Objet :** Devis 26 septembre — Ste-Thérèse  
+Pas de commande Booqable.
+
 **Vincent Collin** — Repentigny — après · appelle · 23 sept  
 Lead du 4 sept, toujours pas de devis.  
 **À faire :** appelle 438-498-9639. Ensuite le devis. Le dépôt garde le 23 sept.  
 **Objet :** Devis 23 septembre — Repentigny  
 Pas de commande Booqable.
-
-**Emilie Brien** — Festipod — après · elle a écrit · 17–19 sept  
-Ouverte à d’autres horaires. Pas 16 h–minuit × 3.  
-**À faire :** dis tes heures. Ensuite le devis. Le dépôt garde le 17 sept.  
-**Objet :** Devis 17 septembre — Festipod  
-[Booqable #1758](https://evenox.booqable.com/orders/fcc556d7-09b2-4d3a-963a-d1b678be0cf9)
-
-**Justine Theriault** — Empreinte — après · 1er déc  
-2 estimés dus depuis le 24 août.  
-**À faire :** envoie les 2 estimés. Le dépôt garde le 1er déc.  
-[Booqable #1759](https://evenox.booqable.com/orders/346349ed-30db-4037-bead-6c0b690279aa)
 
 **Annie Paquette** — MindCore — après · elle a écrit · 5 déc  
 Salle seulement, livrer le jour même.  
@@ -63,6 +58,8 @@ Dépôt 300 $ le 12 août (Carolane). Soumission 1562. La date est gardée.
 
 ## On attend
 
+**Emilie** — 17–19 sept. Heures + devis envoyés le 4 sept.  
+**Justine** — 1er déc. 2 estimés envoyés le 4 sept.  
 **Chana** — 8 oct. Tu lui as écrit le 3 sept.  
 **Catherine** — 3 sept. Lettres 4 pieds, elle confirme.
 
@@ -73,4 +70,4 @@ Dépôt 300 $ le 12 août (Carolane). Soumission 1562. La date est gardée.
 **Dylan, Manon** — trop tôt (fin sept).  
 **Christina, Radiologix** — trop tôt (novembre).
 
-Réponds **OUI**, **NON** ou **sauf Mélanie**.
+Réponds **OUI**, **NON** ou **sauf Paola**.
