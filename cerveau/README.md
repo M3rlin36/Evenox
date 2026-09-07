@@ -3,25 +3,32 @@
 Outil de rédaction pour Alexandre (Grok / Grokbot / agent / humain).  
 Un courriel client = un dossier. Analyse visible ici d’abord. Rien ne part sans fil Gmail réel + « envoie » d’Alexandre.
 
-**Grok :** coller / charger [`GROK.md`](GROK.md) — prompt unique.
+**Grok :** coller / charger [`GROK.md`](GROK.md) — prompt unique. Chemin le plus rapide = section du même nom, juste après Posture.
+
+## Plus vite
+
+1. Une passe HAUT (De/À/signature + demande). Compter les trous. **Stop dès que tu peux répondre.**
+2. 0 trou → devis + mail en parallèle. 1–2 → gabarit questions, mail **avant** Booqable. 3+ → **1 phrase** + appel, pas 9 questions.
+3. Municipal + PJ interdit contact → 1 mail **À approvisionnement**, **Cc émetteur**. OIQ interne en même temps. Pas DSC. Pas de promesse si disqualifié.
+4. Ne pas bloquer le brouillon : tout Obsidian, catalogue, 10 Gmail, bas du fil, devis « au cas où ».
+5. Templates : coller, crochets, stop. Déjà répondu / brouillon vivant = ne pas recommencer.
 
 ## En 30 secondes
 
 1. Lis le fil de **HAUT en BAS**. Haut = demande active (à traiter, à chiffrer). Bas = historique périmé.
 2. Extraire **De / À / signature** avant de conclure « pas d’email ».
-3. Ouvre `checklist-dossier.md`. Comprendre **avant** Booqable, `/suivis/`, ou un mail client.
-4. Compte les trous (arbre ci-dessous). Coche les **drapeaux**.
-5. Note interne : **lu / déduit / inventé**. Inventé = jamais dans le mail ni Booqable.
-6. Copie le gabarit dans `gabarits-reponses.md`. Remplace les `[CROCHETS]`.
-7. Montre le brouillon ici. Prix = devis Booqable seulement. **Aucun prix dans un mail de questions.**
+3. Compte les trous (10 s). Checklist : **SKIP** si 3+ — haut de `checklist-dossier.md`. Pas 21 cases avant le mail.
+4. Coche les **drapeaux** qui sautent aux yeux. Note : **lu / déduit / inventé**. Inventé = jamais mail ni Booqable.
+5. Copie le gabarit dans `gabarits-reponses.md`. Remplace les `[CROCHETS]`. Stop. Pas de réécriture.
+6. Montre le brouillon ici. Prix = devis Booqable seulement. **Aucun prix dans un mail de questions.** Brouillon n’attend pas Booqable s’il n’y a pas de devis à faire.
 
 ## Arbre
 
 | Trous | Action |
 | --- | --- |
-| **0** — date+jour OK, lieu/accès tenables, format+quantités cohérents, fenêtre livr.→cueillette, pas de contradiction | Devis automatique. Analyse ici. Attendre `crée` / `envoie`. |
-| **1–2** | Questions, **sans prix**. Banque : `questions-predeterminees.md`. |
-| **3+** ou contradiction terrain | Appel **514-559-1893**. |
+| **0** — date+jour OK, lieu/accès tenables, format+quantités cohérents, fenêtre livr.→cueillette, pas de contradiction | Devis automatique. Analyse ici. Attendre `crée` / `envoie`. Devis + mail **en parallèle**. |
+| **1–2** | Questions, **sans prix**. Banque : `questions-predeterminees.md`. Mail **avant** Booqable. |
+| **3+** ou contradiction terrain | **1 phrase** + appel **514-559-1893**. Pas 9 questions. |
 | Municipal + pièce jointe | Questions **écrites à l’approvisionnement**, Cc l’émetteur. Pas d’appel / pas de mail À loisirs si rejet. Décision produit vs OIQ **avant** d’envoyer. |
 
 Pas d’écriture Booqable / suivis sans `envoie` ou `crée` d’Alexandre.
@@ -79,8 +86,8 @@ Gmail = brouillon interne sourcé. Jamais inventer. Jamais envoyer depuis ici.
 
 ## Fichiers
 
-- `GROK.md` — **prompt unique à coller dans Grok**.
+- `GROK.md` — **prompt unique à coller dans Grok**. **Chemin le plus rapide** = juste après Posture.
 - `questions-predeterminees.md` — banque, 1 question vs appel.
 - `gabarits-reponses.md` — textes à coller + exemples remplis.
-- `checklist-dossier.md` — ordre de traitement.
-- `regles.md` — toujours / jamais / drapeaux.
+- `checklist-dossier.md` — ordre de traitement. **SKIP** si 3+ trous.
+- `regles.md` — toujours / jamais / drapeaux. Brouillon client n’attend pas Booqable s’il n’y a pas de devis à faire.

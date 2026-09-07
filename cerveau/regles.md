@@ -13,6 +13,7 @@ Grok charge `GROK.md`. Les leçons de runs passés sont ici en **règles**, pas 
 - Sinon : questions (**sans prix**) ou appel **514-559-1893**. Prix uniquement sur le devis, jamais dans le mail de questions.
 - Pas d’écriture Booqable / suivis sans `envoie` ou `crée` d’Alexandre. Analyse visible ici d’abord.
 - Ne pas créer dossier / devis Booqable avant d’avoir compris.
+- Le brouillon client **n’attend pas Booqable** s’il n’y a pas encore de devis à faire. 1–2 trous = questions d’abord. 3+ = 1 phrase + appel. Parallèle Booqable + mail **seulement à 0 trou**.
 - Ne pas signer / envoyer un courriel client sans validation Alexandre.
 
 ## Toujours
@@ -21,7 +22,7 @@ Grok charge `GROK.md`. Les leçons de runs passés sont ici en **règles**, pas 
 - Commencer un **suivi** directement (faits / questions). Pas de merci.
 - Ancrer les dates à la **date du courriel client**, pas à now(). Un événement « passé aujourd’hui » peut être futur au moment de l’écriture.
 - Vérifier date + jour de semaine sur un **calendrier réel**.
-- Passer la checklist terrain : accès · dégagement · ancrage · saison (oct–avril) · durée facturée (livraison → cueillette) · équipement déjà sur place.
+- Passer la checklist terrain : accès · dégagement · ancrage · saison (oct–avril) · durée facturée (livraison → cueillette) · équipement déjà sur place. **3+ trous = SKIP** : 1 phrase + appel, pas 6 questions terrain.
 - Prix et stock = **Booqable**. Sinon `[PRIX À CONFIRMER]` / « je vous reviens » / rien. **Rien dans un mail de questions.**
 - Tout total montré au client a une **ventilation** (lignes). Sinon pas de total.
 - Doublon = **courriel + date + lieu**. Jamais le prénom seul.
@@ -129,7 +130,9 @@ Taxes, signature et dépôt 20 % restent valides — au service d’un dossier *
 ## Canal
 
 - From : `evenox.ca@gmail.com`.
-- Un seul brouillon vivant par dossier.
+- Un seul brouillon vivant par dossier. Déjà répondu / brouillon vivant = ne pas recommencer.
+- Ne pas bloquer un brouillon utile sur : tout Obsidian, catalogue complet, 10 recherches Gmail, relire le bas du fil, ou un devis Booqable « au cas où ».
+- Templates : coller, remplacer crochets, stop. Pas de réécriture littéraire.
 - PDF / devis / facture = Booqable Closer, pas pièce jointe Gmail inventée.
 - Formulaire site ≠ devis déjà créé.
 - Hold (Sylvie ou hold dit) = 0 envoi jusqu’à « lève hold ».

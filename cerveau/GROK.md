@@ -14,15 +14,32 @@ Comprendre **avant** d’écrire dans Booqable, `/suivis/`, ou un courriel clien
 Pas d’écriture Booqable / suivis sans `envoie` ou `crée` d’Alexandre.
 Pas de signature ni d’envoi client sans validation Alexandre sur **ce** texte.
 
+## Chemin le plus rapide
+
+Le client reçoit une réponse utile **le plus vite possible**. Ce n’est PAS « tout analyser ». **Stop dès que tu peux répondre.**
+
+**0–10 s** — Une seule passe sur le **HAUT** : De / À / signature + demande active. Bas = ne pas relire.
+**10 s** — Compter les trous. Anti-doublon : déjà répondu / brouillon vivant = stop, ne pas recommencer.
+**Tout de suite** — brancher :
+- **0 trou** → devis auto. **Parallèle** : Booqable + brouillon. Prix seulement sur le devis.
+- **1–2 trous** → gabarit questions **sans prix**. Coller, remplacer crochets, stop. Le mail **part avant** Booqable. Brouillon immédiat. Envoyer dès `envoie`.
+- **3+ / contradiction terrain** → **1 phrase** + appel **514-559-1893**. Pas une liste de 9 questions. Pas la checklist 21 points.
+- **Municipal + PJ qui interdit le contact** → 1 mail **À = approvisionnement**, **Cc = émetteur**. Décision OIQ interne **en même temps**, pas après 3 allers-retours. Pas DSC. Pas de promesse de soumission si produit disqualifié.
+
+**Ne jamais bloquer** le brouillon client sur : tout Obsidian, catalogue complet, 10 recherches Gmail, relire le bas du fil, ou un devis Booqable « au cas où ».
+**Parallèle seulement si 0 trou.** S’il y a des trous : le mail de questions part, Booqable attend.
+
 ## Arbre (une seule branche)
+
+Ordre = **Chemin le plus rapide**. Stop dès que tu peux répondre.
 
 **0 trou** — on sait ce que le client veut :
 date + jour calendrier OK · lieu / accès tenables · format + quantités cohérents · fenêtre livraison → cueillette · pas de contradiction terrain  
-→ **devis automatique**. Analyse ici. Attendre `crée` / `envoie`. Prix **uniquement** sur le devis Booqable.
+→ **devis automatique**. Analyse ici. Attendre `crée` / `envoie`. Prix **uniquement** sur le devis Booqable. Parallèle devis + mail.
 
-**1–2 trous** → **questions, sans prix**. Aucun montant dans le mail.
+**1–2 trous** → **questions, sans prix**. Aucun montant dans le mail. Mail **avant** Booqable.
 
-**3+ trous ou contradiction terrain** → **appel 514-559-1893**.
+**3+ trous ou contradiction terrain** → **1 phrase** + appel **514-559-1893**. Pas une liste de 9 questions.
 
 **Municipal + pièce jointe** → **questions écrites au destinataire du devis**, pas à la personne qui a « écrit gentiment ».
 - Si le document dit Direction de l’approvisionnement / questions écrites / contact autre représentant = rejet : **À = approvisionnement**, **Cc = l’émetteur** (Karine, loisirs, etc.). Écrire à Karine seule = motif de rejet.
@@ -103,7 +120,7 @@ Action :           devis auto | questions sans prix | appel | questions écrites
 ## Canal
 
 - From : `evenox.ca@gmail.com`. Fil Gmail réel.
-- Un seul brouillon vivant par dossier.
+- Un seul brouillon vivant par dossier. Déjà répondu / brouillon vivant = ne pas recommencer.
 - Hold = 0 envoi jusqu’à « lève hold ».
 - Internes n8n = 0 mail client.
 - `ok` / `go` / « fais la soumission » ≠ `envoie`.

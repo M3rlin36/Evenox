@@ -3,6 +3,19 @@
 Cocher dans l’ordre. Si une case bloquante est vide, on n’invente pas : question, appel, ou « je vous reviens ».  
 Pas d’écriture Booqable / `/suivis/` / mail client sans `envoie` ou `crée` d’Alexandre. Analyse ici d’abord.
 
+## Vitesse — SKIP dès que tu peux répondre
+
+Une passe HAUT + De/À/signature. Compter les trous (10 s). **Pas de checklist 21 points avant le mail.**
+
+| Trous | Quoi cocher | SKIP |
+| --- | --- | --- |
+| **0** | A (canal + anti-doublon) → E → **G + I en parallèle** | Bas du fil, catalogue « au cas où », 10 Gmail |
+| **1–2** | A → H (B) → I (gabarit, crochets, stop) | **G** Booqable. Le mail de questions **part avant** tout devis |
+| **3+ / contradiction** | A (De/À/signature + anti-doublon) → H (A ou C) → I (**1 phrase** + appel) | **B, C, D, E, F, G.** Pas une liste de 9 questions |
+| **Municipal + PJ interdit** | A (PJ + De/À) → H (D) → I (À approvisionnement, Cc émetteur) | **G** tant qu’il n’y a pas de devis à faire. OIQ interne **en même temps** |
+
+Ne jamais bloquer le brouillon client sur : tout Obsidian, catalogue complet, 10 recherches Gmail, relire le bas, devis Booqable « au cas où ».
+
 ## A. Canal (avant de rédiger)
 
 - [ ] Fil Gmail réel trouvé (`evenox.ca@gmail.com`), **tout le fil lu de HAUT en BAS**.
@@ -14,6 +27,8 @@ Pas d’écriture Booqable / `/suivis/` / mail client sans `envoie` ou `crée` d
 - [ ] Pièces jointes ouvertes (devis, addenda, plans). Comparées au corps du courriel.
 
 ## B. Fiche (extraire, `?` si inconnu)
+
+**SKIP si 3+ trous** — 1 phrase + appel, pas une fiche 10 lignes.
 
 Étiqueter chaque fait : **lu** / **déduit** / **inventé**. Inventé = stop, ne va nulle part.
 
@@ -30,12 +45,16 @@ Pas d’écriture Booqable / `/suivis/` / mail client sans `envoie` ou `crée` d
 
 ## C. Calendrier
 
+**SKIP si 3+ trous.**
+
 - [ ] Jour de semaine = date réelle.
 - [ ] Année écrite par le client, ou demandée.
 - [ ] « Passé / futur » jugé à la date **du courriel**, pas à maintenant.
 - [ ] Si 3 jours sur place : dates de livraison et de cueillette nommées.
 
-## D. Couche physique (obligatoire)
+## D. Couche physique (obligatoire) — **SKIP si 3+ trous**
+
+Ces cases *sont* les trous. Trois « à demander » et plus → **1 phrase + appel** (gabarit A ou C), sauf interdit municipal. **Pas une liste de 9 questions.**
 
 Cocher **connu** ou **à demander**. Trois « à demander » et plus → appel (gabarit A ou C), sauf interdit municipal.
 
@@ -58,6 +77,8 @@ Pièges vus en test :
 
 ## E. On sait ? (avant Booqable)
 
+**SKIP si 1+ trou** — on ne sait pas, donc pas Booqable. Le brouillon client n’attend pas un devis « au cas où ».
+
 0 trou seulement si **tout** ceci est vrai :
 
 - [ ] Date + jour calendrier OK
@@ -70,6 +91,8 @@ Pièges vus en test :
 Sinon on ne crée pas le dossier / devis. On ne chiffre pas.
 
 ## F. Drapeaux
+
+**SKIP si 3+ trous**, sauf le drapeau qui saute aux yeux (PJ ≠ courriel, municipal, hold).
 
 Cocher tout doute. Un seul suffit pour l’afficher à Alexandre.
 
@@ -88,6 +111,8 @@ Cocher tout doute. Un seul suffit pour l’afficher à Alexandre.
 
 ## G. Booqable (seulement après « on sait » + `crée` / `envoie`)
 
+**SKIP s’il y a des trous.** Le brouillon client **n’attend pas Booqable** s’il n’y a pas encore de devis à faire. Parallèle devis + mail **seulement à 0 trou**.
+
 - [ ] Alexandre a dit `crée` ou `envoie` — sinon **stop**, analyse seulement.
 - [ ] Produits cherchés (catalogue / `lookup_products`). Aucun prix de tête. Aucun produit non nommé par le client.
 - [ ] Stock à la date.
@@ -97,11 +122,11 @@ Cocher tout doute. Un seul suffit pour l’afficher à Alexandre.
 
 ## H. Décision (une seule)
 
-- [ ] **0** — 0 trou, on sait → devis automatique (analyse ici, attendre `crée`).
-- [ ] **A** — 3+ trous → appel.
-- [ ] **B** — 1–2 trous → questions **sans prix**.
-- [ ] **C** — contradictions terrain → faits + 1 question ou appel.
-- [ ] **D** — municipal / PJ vs courriel → quel document gagne ; pas d’appel interdit ; questions écrites.
+- [ ] **0** — 0 trou, on sait → devis automatique (analyse ici, attendre `crée`). G + I en parallèle.
+- [ ] **A** — 3+ trous → **1 phrase** + appel. SKIP B–G.
+- [ ] **B** — 1–2 trous → questions **sans prix**. Mail **avant** Booqable.
+- [ ] **C** — contradictions terrain → **1 phrase** ou appel. Pas une liste.
+- [ ] **D** — municipal / PJ vs courriel → À approvisionnement, Cc émetteur ; pas d’appel interdit. OIQ interne **en même temps**.
 - [ ] **E** — relance (le haut est une relance : ne pas rechiffrer le bas).
 - [ ] **F** — devis déjà envoyé, on attend.
 - [ ] **Contestation** — le client pousse sur dépôt / NET / livraison : question, pas récitation.
@@ -110,6 +135,8 @@ Si plus de 2 questions nécessaires **et** ce n’est pas un devis qui interdit 
 Si devis municipal interdit le contact émetteur : gabarit D, questions écrites seulement.
 
 ## I. Rédaction
+
+**Stop dès que le texte répond.** 3+ = **1 phrase** + appel. 1–2 = coller gabarit, crochets, stop. Pas de réécriture littéraire.
 
 - [ ] Gabarit copié, `[CROCHETS]` remplaçés. Rien d’inventé laissé entre crochets vers le client (soit on sait, soit on enlève).
 - [ ] Ouverture : premier = « J’espère que vous allez bien. » / suivi = direct.
