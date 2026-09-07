@@ -15,6 +15,7 @@ from grosbot.queries import (
     LABEL_SPAM,
     REPLY_ALL_MAGIC,
     SEND_MAGIC,
+    UNSTICK_MAGIC,
 )
 
 
@@ -95,6 +96,14 @@ def needs_reply(*, last_sender: str, labels: list[str] | tuple[str, ...] = ()) -
     if sender == ACCOUNT_FROM or sender.endswith("@evenox.ca"):
         return False
     return True
+
+
+def is_unstick(text: str) -> bool:
+    """Stop waiting on Booqable / Drive / a stuck En-cours."""
+    blob = (text or "").strip().casefold()
+    if not blob:
+        return False
+    return any(blob == m or blob.startswith(m + " ") for m in UNSTICK_MAGIC)
 
 
 def is_send_go(text: str) -> bool:

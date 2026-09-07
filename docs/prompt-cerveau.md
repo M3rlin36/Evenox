@@ -31,4 +31,7 @@ Action : une phrase
 Puis le brouillon.
 
 Hold = 0 envoi. PDF = Booqable Closer, pas PJ Gmail. Form ≠ devis auto.
+
+SI ÇA BLOQUE : arrête Booqable/Drive/PDF. Dis « voie rapide » ou « débloque » → release_stuck En-cours, 0 PDF, montrer les brouillons.
+SI ÇA N’ENVOIE PAS : « j’envoie » = échec. create_draft + replyToMessageId (jamais update_draft). Après envoie : prove_sent même tour. Pas de Parti. → « renvoie les pas parti ».
 ```

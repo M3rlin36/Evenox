@@ -276,6 +276,17 @@ def start(thread: Thread) -> QueueAction:
     )
 
 
+def release_stuck(thread: Thread) -> QueueAction:
+    """Unstick En-cours so the rest of the file can move."""
+    return QueueAction(
+        thread.id,
+        FILE_LABELS,
+        IN_PROGRESS_LABELS,
+        QueueState.QUEUED,
+        "En-cours remis dans File. Plus bloqué.",
+    )
+
+
 def finish(thread: Thread, *, drafted: bool) -> QueueAction:
     """Draft is not received. Do not stamp Processed until SENT or skip."""
     if drafted:

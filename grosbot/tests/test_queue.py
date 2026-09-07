@@ -20,6 +20,7 @@ from grosbot.queue import (
     Thread,
     claim_next,
     finish,
+    release_stuck,
     is_unproven_send_claim,
     mark_sent,
     promised_threads,
@@ -120,6 +121,13 @@ def test_finish_draft_clears_aliases_but_is_not_received():
     assert LABEL_FILE in action.remove_labels
     assert LABEL_FILE_ALIAS in action.remove_labels
     assert "rien reçu" in action.reason
+
+
+def test_release_stuck_puts_en_cours_back_on_file():
+    action = release_stuck(_t("1", labels=(LABEL_IN_PROGRESS,)))
+    assert LABEL_FILE in action.add_labels
+    assert LABEL_IN_PROGRESS in action.remove_labels
+    assert "Plus bloqué" in action.reason
 
 
 def test_start_moves_both_file_labels_to_both_in_progress():

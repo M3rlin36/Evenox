@@ -4,6 +4,7 @@ from grosbot.coverage import (
     draft_is_not_received,
     is_reply_all,
     is_send_go,
+    is_unstick,
     needs_reply,
     still_owed,
     sweep_closed,
@@ -47,7 +48,11 @@ def test_send_go_batch_words():
     assert is_send_go("envoie les brouillons") is True
     assert is_send_go("envoie tout") is True
     assert is_send_go("tu peux les envoyer") is True
+    assert is_send_go("renvoie les pas parti") is True
     assert is_send_go("skip") is False
+    assert is_unstick("débloque") is True
+    assert is_unstick("voie rapide") is True
+    assert is_unstick("envoie") is False
     assert is_send_go("fais la soumission") is False
 
 

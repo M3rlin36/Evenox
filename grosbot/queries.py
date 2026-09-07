@@ -153,6 +153,8 @@ SEND_MAGIC = (
     "envoie tout",
     "tu peux l'envoyer",
     "tu peux les envoyer",
+    "renvoie les pas parti",
+    "renvoie les brouillons",
 )
 
 # Alexandre : vider la file (jusqu’au cap claims), pas seulement 3 RAPIDE.
@@ -161,4 +163,11 @@ REPLY_ALL_MAGIC = (
     "reponds a tous",
     "réponds à tout",
     "vide la file",
+)
+
+# Alexandre : ça bloque (Booqable / Drive / En-cours coincé).
+UNSTICK_MAGIC = (
+    "débloque",
+    "debloque",
+    "voie rapide",
 )

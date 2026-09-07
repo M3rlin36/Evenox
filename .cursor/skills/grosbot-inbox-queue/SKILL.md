@@ -82,6 +82,13 @@ Défaut **RAPIDE**. Ne pas relire `process.md` / `entreprise.md` / `regles.md` �
    - Sinon → `Pas parti. Le brouillon est encore là.`
 14. `coverage_line`. S’il reste des trous : « Pas fini. Prochain sweep. » **Pas** `QUEUE VIDE`. Slack Evenox si `UNANSWERED_QUERY` plante.
 
+## Si ça bloque / si ça n’envoie pas
+
+- `voie rapide` / `débloque` : arrêter Booqable/Drive/PDF. `release_stuck` sur En-cours. Montrer les brouillons.
+- `renvoie les pas parti` : même chose que `envoie les brouillons` sur les `Pas parti.`
+- Jamais `update_draft` (ça casse le fil). `create_draft` + `replyToMessageId`.
+- « j’envoie » sans `Parti.` = échec. Retry une fois, puis `Pas parti.`
+
 ## Coût
 
 - Filtres Gmail (Alarm.com → `NOX-Spam`, Skip Inbox) = gratuit. MCP `create_filter` = 403 : recettes dans `grosbot/filters.py`.

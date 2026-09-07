@@ -1,7 +1,14 @@
 """Grokbot inbox queue — cheap, durable, drafts then received mail."""
 
 from grosbot.classify import Decision, Kind, classify
-from grosbot.coverage import coverage_line, coverage_of, is_reply_all, is_send_go, needs_reply
+from grosbot.coverage import (
+    coverage_line,
+    coverage_of,
+    is_reply_all,
+    is_send_go,
+    is_unstick,
+    needs_reply,
+)
 from grosbot.sweep import draft_cap_this_run, may_say_queue_empty
 from grosbot.filters import FILTER_SPECS, gmail_ui_recipe
 from grosbot.lane import Lane, partition_internes, pick_lane
@@ -16,6 +23,7 @@ from grosbot.queue import (
     claim_next,
     close_interne,
     empty_run_message,
+    release_stuck,
     finish,
     is_unproven_send_claim,
     mark_sent,
@@ -53,6 +61,8 @@ __all__ = [
     "finish",
     "gmail_ui_recipe",
     "is_send_go",
+    "is_unstick",
+    "release_stuck",
     "is_unproven_send_claim",
     "mark_sent",
     "partition_internes",
