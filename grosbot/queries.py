@@ -64,6 +64,11 @@ TRIAGE_QUERY = (
 # Morning catch-up: SAME query. Must run even when Grok-File is not empty,
 # otherwise yesterday's unlabeled client mail is literally forgotten.
 CATCHUP_QUERY = TRIAGE_QUERY
+CATCHUP_PAGE_SIZE = 8
+# Gmail returns old threads that still have a message matching newer_than:2d
+# (or ignores the date). Skip header>2d without labelling Skip (a later client
+# reply on that thread must still hit CATCHUP). Paginate past the stale 8.
+CATCHUP_MAX_PAGES = 3
 
 # Work queue. Gmail is the only list Grokbot may promise replies from.
 QUEUE_QUERY = (
@@ -91,7 +96,7 @@ LEAD_QUERY = (
     "in:inbox newer_than:14d "
     "(from:wordpress@evenox.ca OR from:vente@evenox.ca) "
     "(subject:\"Nouveau lead\" OR subject:\"Nouvelle soumission\" "
-    "OR subject:\"Devis abandonne\") "
+    "OR subject:\"Devis abandonne\" OR subject:\"EN COURS\") "
     f"-label:{LABEL_PROCESSED} -label:{LABEL_SPAM} -label:{LABEL_SKIP}"
 )
 
@@ -102,13 +107,22 @@ LEAD_NET_QUERY = (
     "("
     "(from:wordpress@evenox.ca OR from:vente@evenox.ca) "
     "(subject:\"Nouveau lead\" OR subject:\"Nouvelle soumission\" "
-    "OR subject:\"Devis abandonne\") "
+    "OR subject:\"Devis abandonne\" OR subject:\"EN COURS\") "
     "OR from:weddingwire "
     "OR subject:\"New Lead from WeddingWire\" "
     "OR (from:support@booqable.com subject:\"webshop order\")"
     ") "
     f"-label:{LABEL_PROCESSED} -label:{LABEL_SPAM} -label:{LABEL_SKIP} "
     f"-label:{LABEL_FILE} -label:{LABEL_FILE_ALIAS}"
+)
+
+# Draft/thread that lost both File and En-cours. Claim dropped File, then
+# En-cours fell off → invisible to QUEUE_QUERY and IN_PROGRESS_QUERY.
+ORPHAN_QUERY = (
+    f"in:inbox newer_than:14d label:{LABEL_DRAFT_IA} "
+    f"-label:{LABEL_PROCESSED} -label:{LABEL_SPAM} -label:{LABEL_SKIP} "
+    f"-label:{LABEL_FILE} -label:{LABEL_FILE_ALIAS} "
+    f"-label:{LABEL_IN_PROGRESS} -label:{LABEL_IN_PROGRESS_ALIAS}"
 )
 
 # Nate weekly report: list_labels totals only. Never scan threads for analytics.

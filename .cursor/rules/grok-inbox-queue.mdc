@@ -15,9 +15,9 @@ Before promising a reply, label the thread `NOX-À-traiter` (`Label_22`).
 One run = one dossier. **One first name in the chat.** Never a list. `file : N restants` with no names. Never "I'll do the rest after".
 Empty queue query `label:NOX-À-traiter -label:NOX-Processed` → after catch-up, if still empty reply `QUEUE VIDE` and stop. Do not open Notion or Booqable.
 
-Claim with `NOX-En-cours` (`Label_23`). Finish with `NOX-Processed` (`Label_5`).
+Claim with `NOX-En-cours` (`Label_23`) **and keep** `Grok-File` / `NOX-À-traiter`. Finish with `NOX-Processed` (`Label_5`).
 Noise (Alarm.com, newsletters) → `NOX-Spam` (`Label_4`) + `NOX-Processed`.
-Catch-up ALWAYS (even if File is not empty): `CATCHUP_QUERY` / `newer_than:2d` headers, max 8, then `LEAD_NET_QUERY` (site + WeddingWire + webshop, 14d, unlabeled). Dual-write forgotten clients into File. One line `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` if Gmail search fails — never fake `0 oublié`. Slack DM Evenox. Never the 20k unread inbox.
+Catch-up ALWAYS (even if File is not empty): `CATCHUP_QUERY` / `newer_than:2d` headers, page 8, max 3 pages (skip header>2d without Grok-Skip), then `LEAD_NET_QUERY` (site + WeddingWire + webshop + EN COURS, 14d, unlabeled), then `ORPHAN_QUERY` (Brouillon IA that lost File and En-cours). Dual-write forgotten clients into File. Claim keeps File labels. One line `Veille : 0 oublié.` / `N rattrapé(s).` / `Veille : pas faite.` if Gmail search fails — never fake `0 oublié`. Slack DM Evenox. Never the 20k unread inbox.
 
 Until 10 September 2026: drafts only. Never send without Alexandre saying `envoie`.
 

@@ -1,4 +1,5 @@
 import pytest
+from datetime import datetime, timezone
 
 from grosbot.queries import (
     LABEL_AUTO_REPLIED,
@@ -20,6 +21,7 @@ from grosbot.queue import (
     Thread,
     claim_next,
     finish,
+    is_stale_catchup_header,
     is_unproven_send_claim,
     mark_sent,
     promised_threads,
@@ -121,12 +123,13 @@ def test_finish_draft_marks_processed_and_clears_aliases():
     assert LABEL_FILE_ALIAS in action.remove_labels
 
 
-def test_start_moves_both_file_labels_to_both_in_progress():
+def test_start_keeps_file_labels_so_en_cours_drop_cannot_orphan():
     action = start(_t("1", labels=(LABEL_FILE, LABEL_FILE_ALIAS)))
     assert LABEL_IN_PROGRESS in action.add_labels
     assert LABEL_IN_PROGRESS_ALIAS in action.add_labels
-    assert LABEL_FILE in action.remove_labels
-    assert LABEL_FILE_ALIAS in action.remove_labels
+    assert LABEL_FILE not in action.remove_labels
+    assert LABEL_FILE_ALIAS not in action.remove_labels
+    assert action.remove_labels == ()
 
 
 def test_finish_draft_is_not_a_send():
@@ -247,6 +250,13 @@ def test_mark_sent_stamps_grok_envoye_after_proof():
     assert LABEL_AUTO_REPLIED in action.add_labels
     assert LABEL_DRAFT_IA in action.remove_labels
     assert LABEL_IN_PROGRESS in action.remove_labels
+
+
+def test_stale_catchup_header_skips_without_needing_skip_label():
+    now = datetime(2026, 9, 8, 19, 0, tzinfo=timezone.utc)
+    assert is_stale_catchup_header("2026-08-05T18:29:43Z", now=now) is True
+    assert is_stale_catchup_header("2026-09-08T13:26:27Z", now=now) is False
+    assert is_stale_catchup_header("", now=now) is False
 
 
 def test_j_envoie_without_proof_block_is_banned():

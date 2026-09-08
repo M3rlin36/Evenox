@@ -61,6 +61,10 @@ _IGNORE_SENDER_NEEDLES = (
     "wecookmeals",
     "tiktok.com",
     "shopsante.",
+    "bark.com",
+    "cmail.bark.com",
+    "email.openai.com",
+    "judge.me",
 )
 
 _IGNORE_SUBJECT_NEEDLES = (
@@ -80,6 +84,7 @@ _LEAD_SUBJECT_NEEDLES = (
     "panier",
     "webshop order",
     "new webshop order",
+    "en cours 0",
 )
 
 _CLIENT_SUBJECT_NEEDLES = (
@@ -303,7 +308,7 @@ def _looks_like_client_reply(sender: str, snippet: str, subject: str) -> bool:
         return False
     promotional = any(
         x in sender
-        for x in ("promo@", "newsletter", "marketing@", "news@", "info@", "noreply")
+        for x in ("promo@", "newsletter", "marketing@", "news@", "noreply")
     )
     if promotional:
         return False

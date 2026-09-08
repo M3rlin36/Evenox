@@ -44,7 +44,7 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 ## Règle d'or
 
 1. Étiqueter **avant** de dire « je vais répondre ».
-2. Un run = **un** dossier. **Un prénom dans le chat.** Interdit de lister la file. `file : N restants` sans noms. Urgent / acompte avant un nouveau lead.
+2. Un run = **un** dossier. **Un prénom dans le chat.** Interdit de lister la file. `file : N restants` sans noms. Urgent / acompte avant un nouveau lead. Claim = En-cours **sans retirer File** (sinon En-cours qui tombe = dossier orphelin).
 3. File vide = une recherche, `QUEUE VIDE`, **stop**.
 4. MCP `search_threads` : `label:Grok-File` (nom), pas `label:Label_19`.
 5. Ne jamais marquer lu.
@@ -58,10 +58,11 @@ Les synonymes Grok/NOX restent. Chaque mutation de file écrit **les deux**. Can
 {label:Grok-En-cours label:NOX-En-cours} -label:NOX-Processed
 in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam
 in:inbox -label:NOX-Processed -label:NOX-Spam -label:Grok-File -label:NOX-À-traiter newer_than:2d
-in:inbox newer_than:14d (wordpress/vente Nouveau lead|Nouvelle soumission|Devis abandonne OR weddingwire OR booqable webshop) -label:Grok-File
+in:inbox newer_than:14d (wordpress/vente Nouveau lead|Nouvelle soumission|Devis abandonne|EN COURS OR weddingwire OR booqable webshop) -label:Grok-File
+in:inbox newer_than:14d label:Brouillon IA -File -En-cours -Processed -Spam -Skip
 ```
 
-Découverte = sujet + expéditeur. Corps seulement après claim.
+Découverte = sujet + expéditeur. Corps seulement après claim. CATCHUP : 3 pages max, skip en-tête > 2 j **sans** `Grok-Skip`.
 
 ## Filtres Gmail (MCP 403)
 

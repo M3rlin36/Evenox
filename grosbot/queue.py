@@ -7,6 +7,7 @@ drafts until the human says send, never clean the old unread mountain.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from enum import Enum
 
 from grosbot.classify import Classification, Decision, classify
@@ -247,12 +248,19 @@ def claim_next(
 
 
 def start(thread: Thread) -> QueueAction:
+    """Claim without removing File.
+
+    En-cours labels have dropped twice (Paola). If File is removed on claim,
+    the thread vanishes from both QUEUE_QUERY and IN_PROGRESS_QUERY.
+    QUEUE_QUERY already excludes En-cours, so keeping File is safe while
+    claimed — and the dossier falls back into File if En-cours disappears.
+    """
     return QueueAction(
         thread.id,
         IN_PROGRESS_LABELS,
-        FILE_LABELS,
+        (),
         QueueState.IN_PROGRESS,
-        "claimed for this run",
+        "claimed for this run; File stays until Processed",
     )
 
 
@@ -474,6 +482,32 @@ def is_unproven_send_claim(text: str) -> bool:
         return False
     lowered = text.casefold()
     return any(phrase in lowered for phrase in UNPROVEN_SEND_PHRASES)
+
+
+def is_stale_catchup_header(
+    latest_iso: str,
+    *,
+    now: datetime | None = None,
+    max_age_days: int = 2,
+) -> bool:
+    """True when CATCHUP should skip this thread without labelling Skip.
+
+    Do not Grok-Skip: a later client reply on the same thread must still
+    appear in CATCHUP. Paginate to the next page instead.
+    """
+    if not latest_iso:
+        return False
+    stamp = latest_iso.strip()
+    try:
+        dt = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    clock = now or datetime.now(timezone.utc)
+    if clock.tzinfo is None:
+        clock = clock.replace(tzinfo=timezone.utc)
+    return (clock - dt) > timedelta(days=max_age_days)
 
 
 def cap_triage(threads: list[Thread]) -> list[Thread]:

@@ -39,7 +39,8 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 2. En cours : `{label:Grok-En-cours label:NOX-En-cours} -label:NOX-Processed`
 3. Urgent Nate (nouveau seulement) : `in:inbox label:NOX-URGENT newer_than:2d -label:NOX-Processed -label:NOX-Spam`
 4. Triage / **veille** (max 8, **même si File n’est pas vide**) : `CATCHUP_QUERY` = inbox `newer_than:2d` sans File/Processed/Spam. En-têtes, `grosbot.classify` → File + type Nate, ou `NOX-Spam`.
-5. **Filet leads** (toujours, à part) : `LEAD_NET_QUERY` = site + WeddingWire + webshop Booqable `newer_than:14d` **sans File**. Max 8. Ça rattrape un client caché derrière 8 pubs.
+5. **Filet leads** (toujours, à part) : `LEAD_NET_QUERY` = site + WeddingWire + webshop Booqable + `EN COURS` `newer_than:14d` **sans File**. Max 8. Ça rattrape un client caché derrière 8 pubs.
+5b. **Orphelins** : `ORPHAN_QUERY` = `Brouillon IA` sans File ni En-cours (14 j). Dual-write File. C’est le trou « En-cours tombé ».
 6. Une ligne `Veille : 0 oublié.` / `Veille : N rattrapé(s). …` / **`Veille : pas faite.`** si Gmail plante. Jamais un faux `0 oublié`. Slack DM Evenox (`U0996M8QRFT`) si pas faite.
 7. Leads site : `from:wordpress@evenox.ca newer_than:14d` (sujets Nouveau lead / Nouvelle soumission)
 
@@ -49,13 +50,13 @@ Grokbot n’a **pas** de mémoire. La file, c’est Gmail. Nate : étiqueter, un
 
 ## Run (ordre Nate)
 
-1. **Veille (toujours, même si File n’est pas vide)** : `CATCHUP_QUERY` (headers, max 8) → dual-write File ou Spam. En-tête le plus récent > 2 j = faux positif Gmail, skip. Dernier message = SENT Evenox → déjà répondu, ne pas File.
+1. **Veille (toujours, même si File n’est pas vide)** : `CATCHUP_QUERY` (headers, page 8, **jusqu’à 3 pages**). Dual-write File ou Spam. En-tête le plus récent > 2 j = faux positif Gmail, **skip sans `Grok-Skip`** (une vraie réponse client plus tard doit encore matcher), passer à la page suivante. Dernier message = SENT Evenox → déjà répondu, ne pas File.
 2. **Filet leads** : `LEAD_NET_QUERY` (headers, max 8). Dual-write File + `Soumission`. Site + WeddingWire + webshop. Ça ne dépend pas des 8 pubs du CATCHUP.
 3. Si `search_threads` plante : **retry 1 fois**. Encore down → `Veille : pas faite.` + Slack DM Evenox. **Interdit** de dire `0 oublié`.
 4. Une ligne `Veille : …`.
 5. S’il reste un `Grok-En-cours` / `NOX-En-cours` : **finir celui-là**.
 6. Urgent query. S’il y a un `NOX-URGENT` non processed : c’est le dossier.
-7. `claim_next` : 1 fil. Dual-write En-cours, retirer File + alias.
+7. `claim_next` : 1 fil. Dual-write En-cours. **Ne pas retirer File** : si En-cours tombe, le dossier reste dans File. File query exclut déjà En-cours.
 8. Lire **tout** ce fil. Un message Alexandre = **un** dossier (Nom / Date / Client veut / Fait / Action). **0 autre prénom.**
 9. Brouillon seulement. Jamais d’envoi sans **envoie [Prénom]**. Si `Brouillon IA` existe déjà : montrer celui-là, pas un 2e.
 10. Après `envoie` : `send_message` puis `get_thread` PLAIN_TEXT **même tour**. `prove_sent`.

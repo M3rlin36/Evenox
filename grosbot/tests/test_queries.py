@@ -1,16 +1,21 @@
 from grosbot.queries import (
+    CATCHUP_MAX_PAGES,
+    CATCHUP_PAGE_SIZE,
     CATCHUP_QUERY,
     LABEL_AUTO_REPLIED,
     LABEL_BILLING,
+    LABEL_DRAFT_IA,
     LABEL_FILE,
     LABEL_FILE_ALIAS,
     LABEL_IDS,
     LABEL_IN_PROGRESS,
+    LABEL_IN_PROGRESS_ALIAS,
     LABEL_SENT,
     LABEL_SKIP,
     LABEL_SCHEDULE,
     LABEL_URGENT,
     LEAD_NET_QUERY,
+    ORPHAN_QUERY,
     QUEUE_QUERY,
     TRIAGE_QUERY,
     URGENT_QUERY,
@@ -68,5 +73,20 @@ def test_lead_net_finds_unlabeled_leads_behind_newsletter_noise():
     assert "weddingwire" in LEAD_NET_QUERY
     assert "webshop order" in LEAD_NET_QUERY
     assert "support@booqable.com" in LEAD_NET_QUERY
+    assert "EN COURS" in LEAD_NET_QUERY
     assert f"-label:{LABEL_FILE}" in LEAD_NET_QUERY
     assert f"-label:{LABEL_FILE_ALIAS}" in LEAD_NET_QUERY
+
+
+def test_catchup_paginates_past_stale_headers():
+    assert CATCHUP_PAGE_SIZE == 8
+    assert CATCHUP_MAX_PAGES == 3
+
+
+def test_orphan_query_finds_drafts_that_lost_file_and_en_cours():
+    assert LABEL_DRAFT_IA in ORPHAN_QUERY
+    assert f"-label:{LABEL_FILE}" in ORPHAN_QUERY
+    assert f"-label:{LABEL_FILE_ALIAS}" in ORPHAN_QUERY
+    assert f"-label:{LABEL_IN_PROGRESS}" in ORPHAN_QUERY
+    assert f"-label:{LABEL_IN_PROGRESS_ALIAS}" in ORPHAN_QUERY
+    assert "is:unread" not in ORPHAN_QUERY

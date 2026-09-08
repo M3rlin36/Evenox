@@ -91,6 +91,38 @@ def test_client_evenement_accent_is_queued():
     assert result.decision is Decision.QUEUE
 
 
+def test_bark_and_openai_promo_are_ignored():
+    bark = classify(
+        sender="team@cmail.bark.com",
+        subject="One Day Deal | Get 50% off Alexandre",
+    )
+    openai = classify(
+        sender="noreply@email.openai.com",
+        subject="4 nouveaux styles d’image à essayer",
+    )
+    assert bark.decision is Decision.IGNORE
+    assert openai.decision is Decision.IGNORE
+
+
+def test_info_at_client_domain_is_queued():
+    result = classify(
+        sender="info@studiosaela.ca",
+        subject="Tapis brun pour un tapis rouge",
+        snippet="Bonjour, Nous sommes à la recherche d'un tapis rouge pour notre soirée",
+    )
+    assert result.decision is Decision.QUEUE
+
+
+def test_vente_en_cours_zero_is_queued_as_quote():
+    result = classify(
+        sender="vente@evenox.ca",
+        subject="EN COURS 0 $ - Maude Champagne",
+        snippet="Devis de 0 $ laisse en plan.",
+    )
+    assert result.decision is Decision.QUEUE
+    assert result.kind is Kind.QUOTE
+
+
 def test_abandoned_quote_is_queued():
     result = classify(
         sender="vente@evenox.ca",
