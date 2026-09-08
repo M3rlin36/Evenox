@@ -1,0 +1,17 @@
+{
+  "name": "evenox-suivis",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Frontend + serveur de démo du pipeline Suivis Évenox. La production vit sur le VPS Hostinger (evenoxpos.cloud/suivis/).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-api.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
