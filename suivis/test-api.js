@@ -352,7 +352,15 @@ srv.listen(0, '127.0.0.1', function () {
       assert.ok(note.indexOf('Camille') !== -1);
       assert.ok(note.indexOf('Appeler') !== -1);
       assert.ok(!/Montant/.test(note), '0 $ n’est pas écrit comme un prix');
-      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence, cahier réel, Grok, Obsidian.');
+      var greffe = require('./greffe-routes');
+      var cartes = greffe.dossiersDepuisEtat({
+        colonnes: [{ statut: 'quoted', cartes: [{ id: 'd1', nom: 'Rachel', montant: 100 }] }],
+      }, { liste: [] });
+      assert.strictEqual(cartes.length, 1);
+      assert.strictEqual(cartes[0].nom, 'Rachel');
+      var journalBtn = fs.readFileSync(path.join(__dirname, 'greffe-prod/vue-journal.js'), 'utf8');
+      assert.ok(journalBtn.indexOf('Écrire le cahier dans Obsidian') !== -1);
+      console.log('OK — 3 files, pipeline, fiche, gabarits, séquence, cahier réel, Grok, Obsidian, greffe prod.');
       srv.close();
       process.exit(0);
     })

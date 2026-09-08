@@ -86,6 +86,13 @@ EVENOX_LIVRE=1 npm start
 
 `appliquer.js` lit uniquement le cahier du jour. Aujourd’hui : **personne en relance auto**. Les phrases « Dis » (Mélanie, Joëlle) deviennent des brouillons internes vers `evenox.ca@gmail.com`.
 
-Sur le VPS, copier aussi `gabarits.js`, `mailer.js`, `grok.js` et `obsidian.js` à côté du serveur, et brancher `POST /api/sequence/test`, `/demarrer`, `/dossier/:id/brouillon`, `/dossier/:id/grok`, `/client/:id/grok`, `/obsidian/exporter` comme dans `server.js`. Ajouter `XAI_API_KEY` et `OBSIDIAN_VAULT` dans l’environnement du service.
+L’écran **Fait aujourd’hui** (cahier + bouton Obsidian + rail Grok) se pose sur le VPS avec la **greffe**, pas en remplaçant le serveur Booqable :
+
+```bash
+cd suivis
+bash install-vps.sh /chemin/vers/le/service
+```
+
+`greffe-prod/` = les JS live + le cahier. `greffe-routes.js` ajoute `POST /api/obsidian/exporter`, `/dossier/:id/grok`, `/client/:id/grok`. Optionnel : `XAI_API_KEY`, `OBSIDIAN_VAULT`.
 
 Règle déjà en vigueur : **aucun courriel client sans OUI jusqu’au 10 sept. 2026**.

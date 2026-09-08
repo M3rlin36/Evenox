@@ -1,35 +1,35 @@
 #!/usr/bin/env bash
-# Prépare le dossier à copier sur le VPS Hostinger.
-# Ce script n'a pas SSH. Il construit le paquet. Alexandre le pose.
+# Prépare le paquet à poser sur le VPS : greffe (fichiers live + cahier Grok/Obsidian).
+# Ne copie PAS le server.js de démo.
 
 set -euo pipefail
 cd "$(dirname "$0")"
 DEST="${1:-/tmp/evenox-suivis-vps}"
 rm -rf "$DEST"
-mkdir -p "$DEST/public/js" "$DEST/public/css"
+mkdir -p "$DEST/greffe-prod"
 
-cp public/js/*.js "$DEST/public/js/"
-cp public/css/app.css "$DEST/public/css/"
-cp grok.js gabarits.js mailer.js livre-du-jour.js appliquer.js obsidian.js "$DEST/"
+cp greffe-prod/*.js "$DEST/greffe-prod/"
+cp grok.js obsidian.js greffe-routes.js install-vps.sh "$DEST/"
 
 cat > "$DEST/A-COPIER.txt" <<'TXT'
-Sur le VPS (SSH), depuis le dossier du service suivis :
+C’est l’écran « Fait aujourd’hui / Journal » de la démo, greffé
+sur le site live — pas un remplacement du serveur Booqable.
 
-  1. Copier public/js/* et public/css/app.css par-dessus les fichiers servis sous /suivis/
-  2. Copier grok.js gabarits.js mailer.js obsidian.js à côté du serveur Express
-  3. Brancher les routes comme dans server.js :
-       POST /api/dossier/:id/grok
-       POST /api/client/:id/grok
-       POST /api/obsidian/exporter
-  4. Environnement du service :
-       XAI_API_KEY=…          (console.x.ai)
-       OBSIDIAN_VAULT=…       (dossier ouvert dans Obsidian, ou Drive File Stream)
-  5. Relancer le service Express / pm2 / systemd
-  6. Ouvrir le même dossier dans Obsidian (Open folder as vault)
-     ou le dossier Drive « Obsidian — Contexte agents »
+Sur le VPS (Terminal Hostinger ou SSH), depuis ce dossier :
 
-Le code Express + Booqable + Gmail du VPS n’est pas dans GitHub.
-Ne pas remplacer le serveur de production par server.js (démo).
+  bash install-vps.sh
+  # ou : bash install-vps.sh /chemin/vers/le/service/suivis
+
+Ensuite :
+  - Journal → bouton « Écrire le cahier dans Obsidian »
+  - Rail : · Grok · Obsidian quand les modules sont là
+  - Fiche : « Demander à Grok » (sans XAI_API_KEY = copie)
+
+Environnement optionnel :
+  XAI_API_KEY=…        (console.x.ai)
+  OBSIDIAN_VAULT=…     (coffre Obsidian ou Drive File Stream)
+
+Ne pas copier server.js de la démo par-dessus la production.
 TXT
 
 echo "Paquet prêt : $DEST"
