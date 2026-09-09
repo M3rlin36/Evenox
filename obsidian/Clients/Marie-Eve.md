@@ -1,23 +1,27 @@
-# Marie-Eve — jeux géants
+# Marie-Eve Grondin — jeux géants
 
 - Courriel : grondinmarie87@gmail.com
-- Téléphone : aucun
-- Événement : 30 octobre 2026
-- Lieu : non précisé
+- Téléphone : 514-219-4362
+- Événement : 30 octobre 2026, 18 h 30–22 h
+- Lieu : Centre Récréatif de Repentigny, 740 rue Pontbriand, Repentigny
 - Dépôt : non
-- Conversation : lead site 7 sept 21 h 41 (Toronto)
+- Conversation : elle a écrit le 9 sept 6 h 21 (Toronto)
 
-## Demande
+## Elle a écrit
 
-Configurateur jeux géants. 30 invités. Livraison. Intérieur, soirée pour des cadets de 9–12 ans. Aucun article choisi. Devis abandonné 110 $ (panier vide — ne pas reprendre ce chiffre).
+Adresse pour la soumission. Elle présente le devis à son équipe.
 
-Pas une relance. Pas de téléphone : envoie le devis.
+35–50 cadets 9–12 ans, intérieur, un adulte par station. Alexandre a déjà proposé Basket Pong + Jenga + Puissance 4 + lancer, dimensionné sur 50.
 
-**Objet :** Devis 30 octobre — jeux géants
+Soumission #1847 prête à approuver le 8 sept (avant l’adresse). Envoyer le devis avec l’adresse. Pas de prix inventé.
 
-Pas de commande Booqable. Pas de prix inventé. Pas sur Pipeline (créer après envoi réel).
+Pas une relance. **À faire :** envoie le devis. Le dépôt garde le 30 oct.
+
+[Booqable #1847](https://evenox.booqable.com/orders?q=1847)
+
+Pipeline : https://app.notion.com/3d531d285ea681bb8a11f084b0709795
 
 ## Fil
 
 - Lead : https://mail.google.com/mail/u/0/#inbox/1a07eadcb3a4f931
-- Abandon : https://mail.google.com/mail/u/0/#inbox/1a07eb4c50317307
+- Conversation : https://mail.google.com/mail/u/0/#inbox/1a08187a2b701c57
