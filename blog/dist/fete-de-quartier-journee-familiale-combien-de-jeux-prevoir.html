@@ -1,0 +1,182 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+.evx-blog{font-family:'Poppins',sans-serif!important;color:#1a1a2e;line-height:1.75;font-size:1.02rem}
+.evx-blog h2{font-family:'Poppins',sans-serif!important;font-size:1.7rem;font-weight:800;color:#1a1a2e;margin:44px 0 16px}
+.evx-blog h3{font-family:'Poppins',sans-serif!important;font-size:1.15rem;font-weight:700;margin:0 0 6px}
+.evx-blog p{margin:0 0 16px}
+.evx-badge{display:inline-block;background:#5E17EB;color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:999px;margin-bottom:14px;text-transform:uppercase}
+.evx-answer{background:#faf9ff;border-left:5px solid #5E17EB;border-radius:0 16px 16px 0;padding:22px 26px;margin:0 0 28px;font-size:1.08rem}
+.evx-answer strong{color:#5E17EB}
+.evx-img{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;border-radius:20px;margin:8px 0 28px}
+.evx-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0 28px}
+.evx-card{background:#fff;border:1px solid #f0eef5;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(94,23,235,.06)}
+.evx-price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0 28px}
+.evx-price{background:#fff;border:1px solid #f0eef5;border-radius:16px;padding:22px;text-align:center;box-shadow:0 4px 18px rgba(94,23,235,.06)}
+.evx-price.pop{border:2px solid #5E17EB;position:relative}
+.evx-price.pop::before{content:'POPULAIRE';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#5E17EB;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:3px 12px;border-radius:999px}
+.evx-price .amt{display:block;font-size:1.9rem;font-weight:800;color:#5E17EB;margin:6px 0 2px}
+.evx-price .per{font-size:.85rem;color:#666}
+.evx-check{list-style:none;padding:0;margin:14px 0 26px}
+.evx-check li{padding:7px 0 7px 34px;position:relative}
+.evx-check li::before{content:'✓';position:absolute;left:0;top:6px;width:24px;height:24px;background:#5E17EB;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+.evx-blog table{width:100%;border-collapse:collapse;margin:16px 0 28px;font-size:.95rem}
+.evx-blog th,.evx-blog td{border:1px solid #f0eef5;padding:10px 12px;text-align:left;vertical-align:top}
+.evx-blog th{background:#faf9ff;font-weight:700}
+.evx-faq{margin:18px 0 30px}
+.evx-faq details{background:#fff;border:1px solid #f0eef5;border-radius:14px;margin-bottom:10px;overflow:hidden}
+.evx-faq summary{cursor:pointer;font-weight:700;padding:16px 20px;list-style:none;position:relative;padding-right:44px}
+.evx-faq summary::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#5E17EB;font-size:1.4rem;font-weight:600}
+.evx-faq details[open] summary::after{content:'–'}
+.evx-faq details p{padding:0 20px 16px;margin:0;color:#444}
+.evx-cta{background:#5E17EB;border-radius:22px;padding:40px 32px;text-align:center;margin:40px 0 10px}
+.evx-cta h2{color:#fff;margin:0 0 8px;font-size:1.6rem}
+.evx-cta p{color:#e9e0ff;margin:0 0 20px}
+.evx-btn{display:inline-block;background:#fff;color:#5E17EB!important;font-weight:700;padding:14px 30px;border-radius:999px;text-decoration:none!important;margin:0 6px 8px}
+.evx-btn.ghost{background:transparent;color:#fff!important;border:2px solid #fff}
+@media(max-width:767px){.evx-cards,.evx-price-grid{grid-template-columns:1fr}}
+.et_post_meta_wrapper > img,#left-area img.wp-post-image{display:none!important}
+#left-area h1.entry-title,#main-content h1.entry-title{font-family:'Poppins',sans-serif!important;font-weight:800!important;font-size:2.2rem!important;color:#1a1a2e!important;line-height:1.25!important;text-transform:none!important;text-align:center!important}
+#left-area .post-meta,#main-content .post-meta{font-family:'Poppins',sans-serif!important;font-size:.9rem!important;text-align:center!important;display:block}
+#sidebar{display:none!important}
+#left-area{width:100%!important;padding-right:0!important;float:none!important}
+#main-content .container:before{display:none!important}
+#comment-wrap .comment-reply-title,#comment-wrap #reply-title{font-family:'Poppins',sans-serif!important;font-weight:800!important;font-size:1.5rem!important;color:#1a1a2e!important}
+#commentform textarea,#commentform input[type=text],#commentform input[type=email],#commentform input[type=url]{border:1px solid #f0eef5!important;border-radius:12px!important;background:#faf9ff!important;font-family:'Poppins',sans-serif!important}
+#commentform .form-submit .submit,#commentform input[type=submit]{background:#5E17EB!important;color:#fff!important;border:none!important;border-radius:999px!important;padding:12px 30px!important;font-family:'Poppins',sans-serif!important;font-weight:700!important;cursor:pointer}
+#comment-wrap .form-submit .submit:hover{background:#4A11C0!important}
+#comment-wrap p,#comment-wrap label{font-family:'Poppins',sans-serif!important}
+@media(max-width:767px){.evx-blog .evx-btn{display:flex!important;width:100%!important;max-width:280px!important;min-height:44px!important;padding:11px 16px!important;font-size:.9rem!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;margin:0 auto 10px!important;}.evx-blog .evx-cta{padding:30px 18px!important;}.evx-blog .evx-cta h2{font-size:1.35rem!important;}.evx-blog h2{font-size:1.4rem!important;}.evx-blog .evx-answer{padding:18px 18px!important;font-size:1rem!important;}.evx-blog .evx-img{border-radius:14px!important;}}
+.evx-related{background:#faf9ff;border-left:5px solid #5E17EB;border-radius:0 16px 16px 0;padding:18px 24px;margin:28px 0}.evx-related b{display:block;margin-bottom:8px;color:#1a1a2e}.evx-related ul{margin:0;padding-left:20px}.evx-related li{margin:5px 0}.evx-related a{color:#5E17EB;font-weight:600}
+.evx-next{font-family:'Poppins',sans-serif;background:linear-gradient(150deg,#0d0a1a 0%,#2a1063 60%,#5E17EB 100%);color:#fff;border-radius:18px;padding:38px 32px;margin:48px 0 12px;text-align:center}
+.evx-next .evx-next-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#d7c6ff;margin-bottom:14px}
+.evx-next h3{font-family:'Poppins',sans-serif!important;color:#fff!important;font-size:1.5rem;font-weight:800;line-height:1.25;margin:0 0 12px!important}
+.evx-next p{color:#e3d8ff!important;font-size:1rem;line-height:1.6;max-width:560px;margin:0 auto 24px!important}
+.evx-next .evx-next-btn{display:inline-block;background:#fff;color:#5E17EB!important;font-weight:700;font-size:.98rem;padding:15px 34px;border-radius:99px;text-decoration:none!important;transition:transform .15s ease}
+.evx-next .evx-next-btn:hover{transform:translateY(-2px)}
+@media(max-width:600px){.evx-next{padding:30px 20px;margin:36px 0 10px}.evx-next h3{font-size:1.25rem}}
+</style>
+
+<div class="evx-blog">
+<span class="evx-badge">Guide comités et municipalités</span>
+<div class="evx-answer"><strong>Prévois une station de jeu par 40 participants présents en même temps, réparties en trois zones : 2 à 6 ans, 7 à 12 ans, ados et adultes.</strong> Pour 200 personnes, ça donne 5 stations (1 gonflable, 3 jeux géants, 1 machine à friandises) pour environ 700 $ à 1 100 $ livraison incluse. Pour 500 personnes, 12 stations et 2 000 $ à 3 000 $. Pour 1 000 personnes, 25 stations et 4 500 $ à 6 500 $.</div>
+<!-- IMAGE À AJOUTER : Journée familiale municipale avec jeu gonflable, jeux géants et machine à barbe à papa dans un parc (format 16:9, classe evx-img) -->
+<h2>La règle de base : une station par 40 participants</h2>
+<p>La plupart des fêtes de quartier ratées ne manquent pas de jeux. Elles manquent de <strong>débit</strong>. Un jeu gonflable accueille 6 à 8 enfants aux 5 minutes; un jeu géant occupe 2 à 4 personnes pendant 10 minutes; une machine à barbe à papa sert un cône à la minute. Si tu as 300 personnes sur le site et 3 stations, tu as des files de 30 minutes et des parents qui partent à 14 h.</p>
+<p>La règle qui fonctionne : <strong>une station par 40 personnes présentes en même temps</strong>. Attention au mot « en même temps » : une fête de 4 heures qui attire 600 personnes au total n'en a rarement plus de 300 sur place à un moment donné. Compte sur 50 % de l'achalandage total comme pointe.</p>
+
+<h2>Les trois zones d'âge (et pourquoi tu ne les mélanges pas)</h2>
+<div class="evx-cards">
+<div class="evx-card"><h3>Zone 2 à 6 ans</h3><p>Petit gonflable ou piscine à balles, tic-tac-toe géant, serpents et échelles géant, tente tipi. Proche des toilettes et de l'ombre. Les parents restent à côté.</p></div>
+<div class="evx-card"><h3>Zone 7 à 12 ans</h3><p>Gonflable XL avec glissade, soccer dart, mini dunk tank, course en sac, terrain de basket gonflable. C'est la zone la plus achalandée : mets-y 40 % des stations.</p></div>
+<div class="evx-card"><h3>Zone ados et adultes</h3><p>Jenga géant, cornhole, pong géant, Guess Who géant, table de Mississippi, arcade. C'est ce qui retient les parents et fait durer la fête.</p></div>
+<div class="evx-card"><h3>Zone gourmandise</h3><p>Popcorn, barbe à papa, slush. Une station par 150 participants, au centre du site, jamais collée au gonflable (mains collantes).</p></div>
+</div>
+<p>Séparer les zones n'est pas qu'une question de sécurité (un enfant de 3 ans dans un gonflable avec des 10 ans, c'est la blessure classique). C'est aussi ce qui permet aux familles de circuler sans se perdre.</p>
+
+<h2>La grille : 200, 500 et 1 000 participants</h2>
+<table>
+<thead><tr><th></th><th>200 personnes</th><th>500 personnes</th><th>1 000 personnes</th></tr></thead>
+<tbody>
+<tr><td>Pointe estimée sur le site</td><td>100 à 120</td><td>250 à 300</td><td>500 à 600</td></tr>
+<tr><td>Stations totales</td><td>5</td><td>12</td><td>25</td></tr>
+<tr><td>Jeux gonflables</td><td>1</td><td>3</td><td>6</td></tr>
+<tr><td>Jeux géants et interactifs</td><td>3</td><td>7</td><td>15</td></tr>
+<tr><td>Machines à friandises</td><td>1</td><td>2</td><td>4</td></tr>
+<tr><td>Surveillants requis (bénévoles)</td><td>4</td><td>9</td><td>18</td></tr>
+<tr><td>Circuits électriques 15 A</td><td>3</td><td>7</td><td>14</td></tr>
+<tr><td>Budget location, livraison incluse</td><td>700 $ à 1 100 $</td><td>2 000 $ à 3 000 $</td><td>4 500 $ à 6 500 $</td></tr>
+</tbody>
+</table>
+<p>Ces budgets sont calculés avec les prix Évenox : jeux géants <strong>dès 20 $</strong> (tic-tac-toe 20 $, jenga et cornhole 40 $, Connect 4 80 $, pong géant et Guess Who 150 $), gonflables <strong>de 100 $ à 280 $</strong>, machines à popcorn et barbe à papa <strong>dès 50 $</strong>, slush dès 100 $. Le <a href="/forfait-jeux-premium/">Forfait Jeux Premium</a> (6 jeux géants, livraison, installation et guide de tournoi) est à 599 $ et couvre à lui seul la zone ados et adultes d'une fête de 200 personnes.</p>
+
+<h2>Le budget complet d'une fête de quartier (pas juste les jeux)</h2>
+<p>Les jeux représentent habituellement 40 à 50 % du budget total. Pour une fête de 500 personnes, un budget réaliste ressemble à ceci :</p>
+<ul>
+<li><strong>Jeux et animations :</strong> 2 000 $ à 3 000 $</li>
+<li><strong>Nourriture (hot-dogs, jus, eau) :</strong> 1 000 $ à 1 500 $, ou commandites locales</li>
+<li><strong>Chapiteaux, tables et chaises :</strong> 400 $ à 800 $</li>
+<li><strong>Sonorisation et micro :</strong> 100 $ à 300 $ (haut-parleur amplifié dès 60 $)</li>
+<li><strong>Toilettes chimiques (1 par 100 personnes) :</strong> 150 $ à 250 $ chacune</li>
+<li><strong>Génératrice si le parc n'a pas d'électricité :</strong> 150 $ à 400 $</li>
+<li><strong>Assurance événement du comité (si la Ville l'exige) :</strong> 150 $ à 400 $</li>
+</ul>
+<p>Total : <strong>4 000 $ à 6 500 $</strong> pour 500 personnes, soit 8 $ à 13 $ par participant. C'est le chiffre à présenter au conseil municipal ou à l'assemblée du comité.</p>
+
+<h2>L'échéancier de 8 semaines</h2>
+<ul class="evx-check">
+<li><strong>Semaine 8 :</strong> date, site, budget approuvé. Demande d'autorisation à la Ville (parc, électricité, stationnement).</li>
+<li><strong>Semaine 7 :</strong> réservation des jeux avec dépôt de 20 %. Les fins de semaine de juin et de la fête nationale partent en premier.</li>
+<li><strong>Semaine 6 :</strong> certificat d'assurance du fournisseur transmis à la Ville. Commandites approchées (épicerie, caisse, pharmacie du quartier).</li>
+<li><strong>Semaine 4 :</strong> plan du site dessiné (zones, électricité, toilettes, premiers soins). Recrutement des bénévoles : 1 par station + 3 flottants.</li>
+<li><strong>Semaine 2 :</strong> confirmation de l'heure de livraison. Affiches, page Facebook, courriel du quartier.</li>
+<li><strong>Semaine 1 :</strong> vérification météo, plan B activé ou non, rappel aux bénévoles avec leur poste.</li>
+<li><strong>Jour J :</strong> livraison 2 heures avant l'ouverture. Tour du site avec le fournisseur. Ouverture.</li>
+</ul>
+
+<h2>Le plan B pluie : décide-le à la semaine 4, pas le matin même</h2>
+<p>Trois options, à choisir d'avance et à écrire dans le plan :</p>
+<ol>
+<li><strong>Repli intérieur.</strong> Gymnase d'école, salle communautaire, aréna. Les jeux géants, l'arcade, le photobooth et les machines à friandises déménagent sans problème. Les gonflables aussi, si le plafond fait 14 pieds ou plus. Chez Évenox, la relocalisation dans un endroit couvert se demande avec 24 heures d'avis.</li>
+<li><strong>Report à une date de pluie.</strong> Annonce-la dès le départ sur les affiches. Une alerte d'Environnement Canada donne droit au report sans frais avec un avis écrit de 24 heures.</li>
+<li><strong>On tient sous chapiteau.</strong> Fonctionne pour une averse, pas pour un orage. Prévois des chapiteaux 10 x 10 avec murs latéraux pour la zone gourmandise et la zone 2 à 6 ans.</li>
+</ol>
+
+<h2>Les cinq erreurs qu'on voit chaque été</h2>
+<ul>
+<li><strong>Tout brancher sur la même prise.</strong> Un souffleur = un circuit 15 A. Deux souffleurs sur une prise, et tout s'arrête devant 40 enfants.</li>
+<li><strong>Pas de surveillant assigné par station.</strong> « Tout le monde surveille » veut dire personne ne surveille.</li>
+<li><strong>Le gonflable à côté de la barbe à papa.</strong> Résultat : une structure collante à nettoyer et une facture de nettoyage.</li>
+<li><strong>Oublier l'ombre et l'eau.</strong> Un point d'eau gratuit et un chapiteau ombragé par zone. Ça évite les malaises et ça retient les familles.</li>
+<li><strong>Réserver en mai pour juin.</strong> Les fins de semaine de la fête nationale et de la fête du Canada sont réservées dès mars.</li>
+</ul>
+<p>Pour un comité ou une municipalité, on prépare une soumission complète avec plan de site, fiches techniques, certificat d'assurance et facture conforme pour la reddition de comptes. Un seul contact, de la soumission au ramassage. Détails sur la page <a href="/livraison-corporative/">livraison corporative et municipale</a>.</p>
+<h2>Questions fréquentes</h2>
+<div class="evx-faq">
+<details>
+<summary>Combien de jeux gonflables faut-il pour une fête de quartier?</summary>
+<p>Compte une station de jeu (gonflable, jeu géant ou machine à friandises) par 40 participants présents en même temps, dont environ un gonflable par 100 personnes de pointe. Pour une fête de 500 personnes avec une pointe de 250 à 300, prévois 3 gonflables, 7 jeux géants et 2 machines à friandises.</p>
+</details>
+<details>
+<summary>Quel budget prévoir pour une journée familiale de 500 personnes?</summary>
+<p>Entre 4 000 $ et 6 500 $ au total, soit 8 $ à 13 $ par participant. Les jeux et animations représentent 2 000 $ à 3 000 $; le reste couvre la nourriture, les chapiteaux et le mobilier, la sonorisation, les toilettes chimiques, la génératrice et l'assurance du comité si la Ville l'exige.</p>
+</details>
+<details>
+<summary>Combien de bénévoles faut-il pour surveiller les jeux?</summary>
+<p>Un surveillant adulte par station en tout temps, plus 3 bénévoles flottants pour les pauses, les premiers soins et l'accueil. Pour 12 stations, prévois 15 bénévoles par bloc de 2 heures, ou demande des animateurs au fournisseur pour les gonflables.</p>
+</details>
+<details>
+<summary>Que faire s'il pleut le jour de la fête de quartier?</summary>
+<p>Décide ton plan B à la semaine 4 : repli dans un gymnase ou une salle communautaire, report à une date de pluie annoncée d'avance, ou maintien sous chapiteaux pour une simple averse. Chez Évenox, une alerte d'Environnement Canada donne droit à un report sans frais avec un avis écrit de 24 heures, et une relocalisation à l'intérieur se demande aussi 24 heures d'avance.</p>
+</details>
+<details>
+<summary>Combien de temps à l'avance réserver les jeux pour une fête municipale?</summary>
+<p>Six à huit semaines minimum, et dès mars pour les fins de semaine de juin, de la fête nationale et de la fête du Canada. La réservation se confirme avec un dépôt de 20 %, et le certificat d'assurance est fourni tout de suite pour ta demande de permis à la Ville.</p>
+</details>
+<details>
+<summary>Est-ce qu'Évenox livre et installe pour les municipalités?</summary>
+<p>Oui. Livraison, installation, ancrage, test, démontage et ramassage sont inclus, avec un seul contact du début à la fin. Les municipalités et organismes publics ont des conditions adaptées, une facture conforme et le certificat d'assurance avec assuré additionnel sur demande. On dessert la Rive-Nord, Laval et Montréal.</p>
+</details>
+</div>
+<div class="evx-related"><b>Pour aller plus loin</b>
+<ul>
+<li><a href="https://evenox.ca/assurance-permis-securite-jeu-gonflable-ville-ecole-entreprise/">Assurance, permis et sécurité pour un jeu gonflable</a></li>
+<li><a href="https://evenox.ca/forfait-jeux-premium/">Forfait Jeux Premium : 6 jeux géants livrés</a></li>
+<li><a href="https://evenox.ca/livraison-corporative/">Livraison corporative et municipale</a></li>
+<li><a href="https://evenox.ca/location-machine-popcorn-barbe-a-papa-slush-portions-prix/">Machines à friandises : portions et prix</a></li>
+</ul>
+</div>
+<div class="evx-cta">
+<h2>Ton plan de site et ta soumission en 24 h</h2>
+<p>Envoie-nous le nombre de participants attendus, le site et la date. On te propose la bonne combinaison de stations, avec plan de site, fiches techniques et certificat d'assurance joints. 514-559-1893.</p>
+<p><a class="evx-btn" href="https://evenox.ca/contact/">Demander une soumission</a><a class="evx-btn ghost" href="https://evenox.ca/jeux-rive-nord/">Voir tous les jeux</a></p>
+</div>
+<div class="evx-next">
+<span class="evx-next-eyebrow">La suite logique</span>
+<h3>Avant de déposer ta demande à la Ville</h3>
+<p>Certificat d'assurance, ancrage, vent, supervision, électricité : la liste exacte de ce que le service des loisirs va exiger, et comment y répondre en 10 minutes.</p>
+<p><a class="evx-next-btn" href="https://evenox.ca/assurance-permis-securite-jeu-gonflable-ville-ecole-entreprise/">Lire le guide assurance et permis</a></p>
+</div>
+</div>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien de jeux gonflables faut-il pour une fête de quartier?","acceptedAnswer":{"@type":"Answer","text":"Compte une station de jeu (gonflable, jeu géant ou machine à friandises) par 40 participants présents en même temps, dont environ un gonflable par 100 personnes de pointe. Pour une fête de 500 personnes avec une pointe de 250 à 300, prévois 3 gonflables, 7 jeux géants et 2 machines à friandises."}},{"@type":"Question","name":"Quel budget prévoir pour une journée familiale de 500 personnes?","acceptedAnswer":{"@type":"Answer","text":"Entre 4 000 $ et 6 500 $ au total, soit 8 $ à 13 $ par participant. Les jeux et animations représentent 2 000 $ à 3 000 $; le reste couvre la nourriture, les chapiteaux et le mobilier, la sonorisation, les toilettes chimiques, la génératrice et l'assurance du comité si la Ville l'exige."}},{"@type":"Question","name":"Combien de bénévoles faut-il pour surveiller les jeux?","acceptedAnswer":{"@type":"Answer","text":"Un surveillant adulte par station en tout temps, plus 3 bénévoles flottants pour les pauses, les premiers soins et l'accueil. Pour 12 stations, prévois 15 bénévoles par bloc de 2 heures, ou demande des animateurs au fournisseur pour les gonflables."}},{"@type":"Question","name":"Que faire s'il pleut le jour de la fête de quartier?","acceptedAnswer":{"@type":"Answer","text":"Décide ton plan B à la semaine 4 : repli dans un gymnase ou une salle communautaire, report à une date de pluie annoncée d'avance, ou maintien sous chapiteaux pour une simple averse. Chez Évenox, une alerte d'Environnement Canada donne droit à un report sans frais avec un avis écrit de 24 heures, et une relocalisation à l'intérieur se demande aussi 24 heures d'avance."}},{"@type":"Question","name":"Combien de temps à l'avance réserver les jeux pour une fête municipale?","acceptedAnswer":{"@type":"Answer","text":"Six à huit semaines minimum, et dès mars pour les fins de semaine de juin, de la fête nationale et de la fête du Canada. La réservation se confirme avec un dépôt de 20 %, et le certificat d'assurance est fourni tout de suite pour ta demande de permis à la Ville."}},{"@type":"Question","name":"Est-ce qu'Évenox livre et installe pour les municipalités?","acceptedAnswer":{"@type":"Answer","text":"Oui. Livraison, installation, ancrage, test, démontage et ramassage sont inclus, avec un seul contact du début à la fin. Les municipalités et organismes publics ont des conditions adaptées, une facture conforme et le certificat d'assurance avec assuré additionnel sur demande. On dessert la Rive-Nord, Laval et Montréal."}}]}</script>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://evenox.ca/"},{"@type":"ListItem","position":2,"name":"Blogue","item":"https://evenox.ca/blogue/"},{"@type":"ListItem","position":3,"name":"Fête de quartier ou journée familiale : combien de jeux prévoir selon le nombre de participants","item":"https://evenox.ca/fete-de-quartier-journee-familiale-combien-de-jeux-prevoir/"}]}</script>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"Article","headline":"Fête de quartier ou journée familiale : combien de jeux prévoir selon le nombre de participants","description":"Grille de calcul pour une fête de quartier ou une journée familiale : nombre de jeux selon les participants, zones par âge, budget de 200 à 1 000 personnes, plan B pluie et échéancier de 8 semaines.","inLanguage":"fr-CA","author":{"@type":"Organization","name":"Évenox"},"publisher":{"@type":"Organization","name":"Évenox","url":"https://evenox.ca"},"mainEntityOfPage":"https://evenox.ca/fete-de-quartier-journee-familiale-combien-de-jeux-prevoir/"}</script>

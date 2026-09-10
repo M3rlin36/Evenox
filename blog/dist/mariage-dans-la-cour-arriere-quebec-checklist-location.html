@@ -1,0 +1,195 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+.evx-blog{font-family:'Poppins',sans-serif!important;color:#1a1a2e;line-height:1.75;font-size:1.02rem}
+.evx-blog h2{font-family:'Poppins',sans-serif!important;font-size:1.7rem;font-weight:800;color:#1a1a2e;margin:44px 0 16px}
+.evx-blog h3{font-family:'Poppins',sans-serif!important;font-size:1.15rem;font-weight:700;margin:0 0 6px}
+.evx-blog p{margin:0 0 16px}
+.evx-badge{display:inline-block;background:#5E17EB;color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:999px;margin-bottom:14px;text-transform:uppercase}
+.evx-answer{background:#faf9ff;border-left:5px solid #5E17EB;border-radius:0 16px 16px 0;padding:22px 26px;margin:0 0 28px;font-size:1.08rem}
+.evx-answer strong{color:#5E17EB}
+.evx-img{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;border-radius:20px;margin:8px 0 28px}
+.evx-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0 28px}
+.evx-card{background:#fff;border:1px solid #f0eef5;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(94,23,235,.06)}
+.evx-price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0 28px}
+.evx-price{background:#fff;border:1px solid #f0eef5;border-radius:16px;padding:22px;text-align:center;box-shadow:0 4px 18px rgba(94,23,235,.06)}
+.evx-price.pop{border:2px solid #5E17EB;position:relative}
+.evx-price.pop::before{content:'POPULAIRE';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#5E17EB;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:3px 12px;border-radius:999px}
+.evx-price .amt{display:block;font-size:1.9rem;font-weight:800;color:#5E17EB;margin:6px 0 2px}
+.evx-price .per{font-size:.85rem;color:#666}
+.evx-check{list-style:none;padding:0;margin:14px 0 26px}
+.evx-check li{padding:7px 0 7px 34px;position:relative}
+.evx-check li::before{content:'✓';position:absolute;left:0;top:6px;width:24px;height:24px;background:#5E17EB;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+.evx-blog table{width:100%;border-collapse:collapse;margin:16px 0 28px;font-size:.95rem}
+.evx-blog th,.evx-blog td{border:1px solid #f0eef5;padding:10px 12px;text-align:left;vertical-align:top}
+.evx-blog th{background:#faf9ff;font-weight:700}
+.evx-faq{margin:18px 0 30px}
+.evx-faq details{background:#fff;border:1px solid #f0eef5;border-radius:14px;margin-bottom:10px;overflow:hidden}
+.evx-faq summary{cursor:pointer;font-weight:700;padding:16px 20px;list-style:none;position:relative;padding-right:44px}
+.evx-faq summary::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#5E17EB;font-size:1.4rem;font-weight:600}
+.evx-faq details[open] summary::after{content:'–'}
+.evx-faq details p{padding:0 20px 16px;margin:0;color:#444}
+.evx-cta{background:#5E17EB;border-radius:22px;padding:40px 32px;text-align:center;margin:40px 0 10px}
+.evx-cta h2{color:#fff;margin:0 0 8px;font-size:1.6rem}
+.evx-cta p{color:#e9e0ff;margin:0 0 20px}
+.evx-btn{display:inline-block;background:#fff;color:#5E17EB!important;font-weight:700;padding:14px 30px;border-radius:999px;text-decoration:none!important;margin:0 6px 8px}
+.evx-btn.ghost{background:transparent;color:#fff!important;border:2px solid #fff}
+@media(max-width:767px){.evx-cards,.evx-price-grid{grid-template-columns:1fr}}
+.et_post_meta_wrapper > img,#left-area img.wp-post-image{display:none!important}
+#left-area h1.entry-title,#main-content h1.entry-title{font-family:'Poppins',sans-serif!important;font-weight:800!important;font-size:2.2rem!important;color:#1a1a2e!important;line-height:1.25!important;text-transform:none!important;text-align:center!important}
+#left-area .post-meta,#main-content .post-meta{font-family:'Poppins',sans-serif!important;font-size:.9rem!important;text-align:center!important;display:block}
+#sidebar{display:none!important}
+#left-area{width:100%!important;padding-right:0!important;float:none!important}
+#main-content .container:before{display:none!important}
+#comment-wrap .comment-reply-title,#comment-wrap #reply-title{font-family:'Poppins',sans-serif!important;font-weight:800!important;font-size:1.5rem!important;color:#1a1a2e!important}
+#commentform textarea,#commentform input[type=text],#commentform input[type=email],#commentform input[type=url]{border:1px solid #f0eef5!important;border-radius:12px!important;background:#faf9ff!important;font-family:'Poppins',sans-serif!important}
+#commentform .form-submit .submit,#commentform input[type=submit]{background:#5E17EB!important;color:#fff!important;border:none!important;border-radius:999px!important;padding:12px 30px!important;font-family:'Poppins',sans-serif!important;font-weight:700!important;cursor:pointer}
+#comment-wrap .form-submit .submit:hover{background:#4A11C0!important}
+#comment-wrap p,#comment-wrap label{font-family:'Poppins',sans-serif!important}
+@media(max-width:767px){.evx-blog .evx-btn{display:flex!important;width:100%!important;max-width:280px!important;min-height:44px!important;padding:11px 16px!important;font-size:.9rem!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;margin:0 auto 10px!important;}.evx-blog .evx-cta{padding:30px 18px!important;}.evx-blog .evx-cta h2{font-size:1.35rem!important;}.evx-blog h2{font-size:1.4rem!important;}.evx-blog .evx-answer{padding:18px 18px!important;font-size:1rem!important;}.evx-blog .evx-img{border-radius:14px!important;}}
+.evx-related{background:#faf9ff;border-left:5px solid #5E17EB;border-radius:0 16px 16px 0;padding:18px 24px;margin:28px 0}.evx-related b{display:block;margin-bottom:8px;color:#1a1a2e}.evx-related ul{margin:0;padding-left:20px}.evx-related li{margin:5px 0}.evx-related a{color:#5E17EB;font-weight:600}
+.evx-next{font-family:'Poppins',sans-serif;background:linear-gradient(150deg,#0d0a1a 0%,#2a1063 60%,#5E17EB 100%);color:#fff;border-radius:18px;padding:38px 32px;margin:48px 0 12px;text-align:center}
+.evx-next .evx-next-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#d7c6ff;margin-bottom:14px}
+.evx-next h3{font-family:'Poppins',sans-serif!important;color:#fff!important;font-size:1.5rem;font-weight:800;line-height:1.25;margin:0 0 12px!important}
+.evx-next p{color:#e3d8ff!important;font-size:1rem;line-height:1.6;max-width:560px;margin:0 auto 24px!important}
+.evx-next .evx-next-btn{display:inline-block;background:#fff;color:#5E17EB!important;font-weight:700;font-size:.98rem;padding:15px 34px;border-radius:99px;text-decoration:none!important;transition:transform .15s ease}
+.evx-next .evx-next-btn:hover{transform:translateY(-2px)}
+@media(max-width:600px){.evx-next{padding:30px 20px;margin:36px 0 10px}.evx-next h3{font-size:1.25rem}}
+</style>
+
+<div class="evx-blog">
+<span class="evx-badge">Guide mariage 2026</span>
+<div class="evx-answer"><strong>Un mariage de 60 à 100 invités dans la cour arrière coûte entre 5 000 $ et 9 000 $ en location et logistique, avant le traiteur.</strong> Les six postes à prévoir : abri (chapiteau), mobilier et vaisselle, électricité, toilettes, éclairage et décor, plan B pluie. Ce qui coûte plus cher que prévu : l'électricité et les toilettes. Ce qui coûte moins cher : le décor, si tu prends un forfait clé en main.</div>
+<!-- IMAGE À AJOUTER : Réception de mariage sous chapiteau dans une cour arrière avec lettres lumineuses, tables nappées et guirlandes (format 16:9, classe evx-img) -->
+<h2>Pourquoi la cour arrière séduit (et pourquoi ça dérape)</h2>
+<p>Une salle de réception sur la Rive-Nord ou à Laval demande 2 000 $ à 6 000 $ de location, impose un traiteur, un horaire de fin et un menu. La cour arrière donne la liberté totale : ta date, ton traiteur, ta musique jusqu'à l'heure permise par la Ville, et un lieu qui a du sens pour vous deux.</p>
+<p>Le piège, c'est que la salle faisait six choses sans que tu t'en rendes compte : elle t'abritait, te fournissait des tables et des chaises, de l'électricité, des toilettes, de l'éclairage et une solution en cas de pluie. Dans la cour, ces six postes deviennent ta responsabilité. Voici comment les régler un par un.</p>
+
+<h2>1. L'abri : chapiteau ou pas?</h2>
+<p>La réponse courte : <strong>oui, toujours</strong>. Pas pour la pluie, pour le soleil de 15 h en juillet et pour l'humidité de 22 h en septembre. La taille dépend du nombre d'invités assis :</p>
+<table>
+<thead><tr><th>Invités assis</th><th>Surface nécessaire</th><th>Solution</th><th>Prix indicatif</th></tr></thead>
+<tbody>
+<tr><td>Jusqu'à 30</td><td>300 pi²</td><td>3 chapiteaux 10 x 10 jumelés, murs latéraux</td><td>150 $ à 250 $</td></tr>
+<tr><td>30 à 60</td><td>600 à 900 pi²</td><td>Chapiteau à poteaux 20 x 40</td><td>600 $ à 900 $</td></tr>
+<tr><td>60 à 100</td><td>1 200 à 1 500 pi²</td><td>Chapiteau 30 x 50 ou 40 x 40</td><td>1 300 $ à 1 800 $</td></tr>
+<tr><td>100 à 150</td><td>1 800 à 2 400 pi²</td><td>Chapiteau 40 x 60, plancher recommandé</td><td>2 000 $ à 3 000 $</td></tr>
+</tbody>
+</table>
+<p>La règle : <strong>15 pi² par invité assis</strong>, plus 200 pi² pour la piste de danse et 100 pi² pour le buffet ou le bar. Les chapiteaux 10 x 10 avec murs latéraux (50 $ chacun chez Évenox) sont parfaits pour le bar, le coin photo et la zone enfants; pour la salle à manger de plus de 30 personnes, il te faut un chapiteau à poteaux d'un spécialiste. On coordonne l'installation du mobilier et du décor avec sa livraison.</p>
+<p>Vérifie la cour avant de réserver : un chapiteau 30 x 50 demande un terrain de 40 x 60 dégagé, plat, sans fils aériens, et l'accès d'un camion.</p>
+
+<h2>2. Mobilier et vaisselle : la formule qui marche</h2>
+<p>Une chaise par invité, une table de 6 à 8, plus les tables d'appoint (buffet, gâteau, cadeaux, DJ). Pour 100 invités, ça fait 100 chaises, 14 à 16 tables de repas et 4 tables d'appoint. Les <a href="/prix-location-tables-chaises-quebec/">forfaits mobilier Évenox</a> vont de 449 $ (24 places) à 1 049 $ (100 places), nappes, livraison et placement selon ton plan de salle inclus.</p>
+<ul class="evx-check">
+<li><strong>Chaises :</strong> pliante blanche pour la cérémonie et le repas, ou Chiavari pour un look plus habillé.</li>
+<li><strong>Tables cocktail avec nappe et tabourets</strong> (48 $ l'ensemble) pour le cocktail : 1 par 8 invités.</li>
+<li><strong>Vaisselle, verres, ustensiles :</strong> à louer si le traiteur ne les fournit pas. Demande-le par écrit au traiteur, c'est la source d'oubli numéro un.</li>
+<li><strong>Bar :</strong> table de 8 pi avec nappe, deux glacières, et un point d'eau.</li>
+</ul>
+
+<h2>3. Électricité : le poste qu'on sous-estime toujours</h2>
+<p>Un DJ, l'éclairage du chapiteau, deux réchauds du traiteur, une machine à café, un photobooth et une machine à slush : ça ne rentre pas sur les deux prises extérieures de la maison. Compte les circuits :</p>
+<ul>
+<li><strong>DJ et sonorisation :</strong> 1 circuit 15 A dédié</li>
+<li><strong>Éclairage du chapiteau (DEL) :</strong> 1 circuit</li>
+<li><strong>Traiteur (réchauds, cafetière, réfrigération) :</strong> 2 à 3 circuits, à confirmer avec lui</li>
+<li><strong>Photobooth, machines à friandises :</strong> 1 circuit chacun</li>
+</ul>
+<p>Au-delà de 3 ou 4 circuits, deux options : faire passer des rallonges de calibre 12 depuis le panneau (avec un électricien, 300 $ à 600 $) ou louer une <strong>génératrice silencieuse de 5 000 à 7 000 W</strong> (200 $ à 400 $ la journée). Décide-le à la visite technique, huit semaines avant.</p>
+
+<h2>4. Toilettes : une par 50 invités</h2>
+<p>Ta salle de bain de maison ne survivra pas à 100 invités et 5 heures de bar. La règle : <strong>une toilette par 50 invités</strong>, dont une accessible. Une roulotte de toilettes de luxe (2 à 3 cabines, lavabo, éclairage) coûte 800 $ à 1 500 $ pour la journée; les cabines chimiques standards, 150 $ à 250 $ chacune. Place-les à 50 pieds du chapiteau, éclairées, avec un chemin dégagé.</p>
+
+<h2>5. Éclairage et décor : là où le clé en main fait gagner</h2>
+<p>C'est le poste qui transforme une cour en lieu de réception, et c'est celui où les couples perdent le plus de temps à comparer 15 fournisseurs. Ce qui fonctionne dans une cour :</p>
+<ul class="evx-check">
+<li><strong>Guirlandes lumineuses</strong> (10 $ la guirlande) sous le chapiteau et entre les arbres : l'effet le plus fort pour le prix.</li>
+<li><strong>Lettres lumineuses géantes</strong> : les initiales des mariés ou LOVE (280 $), placées au fond de la piste de danse.</li>
+<li><strong>Mur de fleurs</strong> (200 $) pour le coin photo, à l'ombre.</li>
+<li><strong>Étincelles froides</strong> pour l'entrée et la première danse : sécuritaires sous chapiteau, mais dis-le au fournisseur du chapiteau.</li>
+<li><strong>Tapis rouge et poteaux</strong> pour l'allée de la cérémonie.</li>
+<li><strong>Photobooth avec préposé</strong> (dès 599 $) : il occupe les invités pendant les photos de couple.</li>
+</ul>
+<p>Le <a href="/forfait-mariage-signature/">Forfait Mariage Signature</a> regroupe lettres lumineuses, initiales, mur floral, deux moments d'étincelles, photobooth premium avec préposé, livraison, installation et démontage pour <strong>1 899 $</strong>. Une seule livraison, une seule équipe, une seule facture. C'est exactement ce que la cour arrière demande : moins de fournisseurs à coordonner le jour même.</p>
+
+<h2>6. Le plan B pluie : décidé huit semaines avant</h2>
+<p>Trois choix, et un seul se prend le matin même :</p>
+<ol>
+<li><strong>Chapiteau avec murs latéraux et plancher.</strong> C'est ton plan A qui devient ton plan B. Coût supplémentaire : 300 $ à 800 $. Le seul plan qui n'annule rien.</li>
+<li><strong>Cérémonie déplacée sous le chapiteau de la réception.</strong> Fonctionne si le chapiteau a 20 % de surface en plus.</li>
+<li><strong>Salle de secours réservée</strong> (salle communautaire, restaurant). Coûte un dépôt et beaucoup de stress. À éviter si les options 1 ou 2 sont possibles.</li>
+</ol>
+
+<h2>Le budget complet, 80 invités</h2>
+<table>
+<thead><tr><th>Poste</th><th>Fourchette</th></tr></thead>
+<tbody>
+<tr><td>Chapiteau 30 x 50 avec murs, éclairage de base</td><td>1 300 $ à 1 800 $</td></tr>
+<tr><td>Mobilier 100 places, nappes, livraison et placement</td><td>1 049 $</td></tr>
+<tr><td>Tables cocktail, bar, tables d'appoint</td><td>250 $ à 400 $</td></tr>
+<tr><td>Électricité (électricien ou génératrice)</td><td>300 $ à 600 $</td></tr>
+<tr><td>Toilettes (2 cabines ou 1 roulotte)</td><td>400 $ à 1 500 $</td></tr>
+<tr><td>Décor, éclairage, photobooth (Forfait Mariage Signature)</td><td>1 899 $</td></tr>
+<tr><td>Plancher de danse ou scène 4 x 8 par panneau</td><td>300 $ à 800 $</td></tr>
+<tr><td><strong>Total logistique et location</strong></td><td><strong>5 500 $ à 8 000 $</strong></td></tr>
+</tbody>
+</table>
+<p>Ajoute le traiteur (60 $ à 120 $ par personne), le DJ et le photographe. Tu arrives à 15 000 $ à 22 000 $ pour 80 invités, contre 20 000 $ à 30 000 $ en salle pour un niveau comparable. L'économie est réelle, à condition que la logistique soit prise en charge par des gens qui font ça chaque fin de semaine.</p>
+
+<h2>Les permis et le voisinage</h2>
+<ul>
+<li><strong>Bruit :</strong> la plupart des villes de la Rive-Nord tolèrent la musique extérieure jusqu'à 23 h; certaines exigent un permis de bruit pour un événement privé. Un appel à la Ville règle ça en 5 minutes.</li>
+<li><strong>Chapiteau de plus de 600 pi² :</strong> plusieurs municipalités demandent un permis de structure temporaire. Le fournisseur de chapiteau le sait; demande-lui.</li>
+<li><strong>Feux et étincelles :</strong> les étincelles froides ne sont pas des feux d'artifice, mais préviens le voisin.</li>
+<li><strong>Stationnement :</strong> 100 invités, c'est 40 voitures. Prévois une navette depuis un stationnement public ou une entente avec les voisins. Une lettre dans les boîtes aux lettres deux semaines avant, avec une bouteille de vin, achète beaucoup de patience.</li>
+</ul>
+<h2>Questions fréquentes</h2>
+<div class="evx-faq">
+<details>
+<summary>Combien coûte un mariage dans la cour arrière au Québec?</summary>
+<p>Pour 60 à 100 invités, compte 5 000 $ à 9 000 $ de location et logistique (chapiteau, mobilier, électricité, toilettes, éclairage, décor et photobooth), plus le traiteur à 60 $ à 120 $ par personne, le DJ et le photographe. Le total tourne autour de 15 000 $ à 22 000 $ pour 80 invités, contre 20 000 $ à 30 000 $ en salle pour un niveau comparable.</p>
+</details>
+<details>
+<summary>Quelle grandeur de chapiteau pour 100 invités?</summary>
+<p>Compte 15 pi² par invité assis, plus 200 pi² pour la piste de danse et 100 pi² pour le buffet : environ 1 800 pi², soit un chapiteau 30 x 60 ou 40 x 40. Le terrain doit offrir 10 pi de dégagement de chaque côté, être plat, sans fils aériens, et accessible pour un camion.</p>
+</details>
+<details>
+<summary>Combien de toilettes faut-il pour un mariage extérieur?</summary>
+<p>Une toilette par 50 invités, dont une accessible. Pour 100 invités, deux cabines chimiques (150 $ à 250 $ chacune) ou une roulotte de toilettes avec lavabo (800 $ à 1 500 $). Place-les à environ 50 pieds du chapiteau, sur un chemin éclairé.</p>
+</details>
+<details>
+<summary>Faut-il une génératrice pour un mariage dans la cour?</summary>
+<p>Souvent, oui. DJ, éclairage, réchauds du traiteur, photobooth et machines à friandises demandent 4 à 6 circuits de 15 A, alors qu'une maison offre habituellement 2 prises extérieures. Une génératrice silencieuse de 5 000 à 7 000 W (200 $ à 400 $) ou des rallonges de calibre 12 installées par un électricien règlent le problème. Décide-le lors de la visite technique, huit semaines avant.</p>
+</details>
+<details>
+<summary>Que faire s'il pleut le jour du mariage dans la cour?</summary>
+<p>Le seul plan B qui n'annule rien : un chapiteau avec murs latéraux et plancher, réservé dès le départ. La cérémonie se déplace sous le chapiteau de la réception si celui-ci a 20 % de surface en plus. Une salle de secours réservée en parallèle coûte un dépôt et beaucoup de stress; c'est l'option de dernier recours.</p>
+</details>
+<details>
+<summary>Qu'est-ce qu'Évenox fournit pour un mariage dans la cour arrière?</summary>
+<p>Le mobilier (forfaits de 449 $ à 1 049 $ avec nappes, livraison et placement), les tables cocktail, le bar, les chapiteaux 10 x 10, l'éclairage, les lettres lumineuses, le mur de fleurs, les étincelles froides, le photobooth avec préposé, la scène et les machines à friandises. Le Forfait Mariage Signature à 1 899 $ regroupe le décor et le photobooth en une seule livraison. On dessert la Rive-Nord, Laval et Montréal.</p>
+</details>
+</div>
+<div class="evx-related"><b>Pour aller plus loin</b>
+<ul>
+<li><a href="https://evenox.ca/forfait-mariage-signature/">Forfait Mariage Signature à 1 899 $</a></li>
+<li><a href="https://evenox.ca/prix-location-tables-chaises-quebec/">Combien coûte la location de tables et chaises au Québec?</a></li>
+<li><a href="https://evenox.ca/prix-location-lettres-lumineuses-quebec/">Combien coûte la location de lettres lumineuses géantes?</a></li>
+<li><a href="https://evenox.ca/photobooth-classique-ou-videobooth-360-lequel-choisir/">Photobooth classique ou vidéobooth 360 : lequel choisir?</a></li>
+</ul>
+</div>
+<div class="evx-cta">
+<h2>Une visite technique, puis une seule soumission</h2>
+<p>Envoie-nous ton adresse, ta date et ton nombre d'invités. On valide la cour, on te propose la configuration mobilier, décor et photobooth, et on coordonne avec ton fournisseur de chapiteau. Réponse en moins de 24 h. 514-559-1893.</p>
+<p><a class="evx-btn" href="https://evenox.ca/mariage/">Demander une soumission mariage</a><a class="evx-btn ghost" href="https://evenox.ca/forfait-mariage-signature/">Voir le Forfait Mariage Signature</a></p>
+</div>
+<div class="evx-next">
+<span class="evx-next-eyebrow">La suite logique</span>
+<h3>Ton mobilier pour 24 à 100 invités, livré et placé</h3>
+<p>Chaises, tables, nappes, livraison et placement selon ton plan de salle : les forfaits mobilier vont de 449 $ à 1 049 $, tout inclus.</p>
+<p><a class="evx-next-btn" href="https://evenox.ca/prix-location-tables-chaises-quebec/">Voir les prix du mobilier</a></p>
+</div>
+</div>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un mariage dans la cour arrière au Québec?","acceptedAnswer":{"@type":"Answer","text":"Pour 60 à 100 invités, compte 5 000 $ à 9 000 $ de location et logistique (chapiteau, mobilier, électricité, toilettes, éclairage, décor et photobooth), plus le traiteur à 60 $ à 120 $ par personne, le DJ et le photographe. Le total tourne autour de 15 000 $ à 22 000 $ pour 80 invités, contre 20 000 $ à 30 000 $ en salle pour un niveau comparable."}},{"@type":"Question","name":"Quelle grandeur de chapiteau pour 100 invités?","acceptedAnswer":{"@type":"Answer","text":"Compte 15 pi² par invité assis, plus 200 pi² pour la piste de danse et 100 pi² pour le buffet : environ 1 800 pi², soit un chapiteau 30 x 60 ou 40 x 40. Le terrain doit offrir 10 pi de dégagement de chaque côté, être plat, sans fils aériens, et accessible pour un camion."}},{"@type":"Question","name":"Combien de toilettes faut-il pour un mariage extérieur?","acceptedAnswer":{"@type":"Answer","text":"Une toilette par 50 invités, dont une accessible. Pour 100 invités, deux cabines chimiques (150 $ à 250 $ chacune) ou une roulotte de toilettes avec lavabo (800 $ à 1 500 $). Place-les à environ 50 pieds du chapiteau, sur un chemin éclairé."}},{"@type":"Question","name":"Faut-il une génératrice pour un mariage dans la cour?","acceptedAnswer":{"@type":"Answer","text":"Souvent, oui. DJ, éclairage, réchauds du traiteur, photobooth et machines à friandises demandent 4 à 6 circuits de 15 A, alors qu'une maison offre habituellement 2 prises extérieures. Une génératrice silencieuse de 5 000 à 7 000 W (200 $ à 400 $) ou des rallonges de calibre 12 installées par un électricien règlent le problème. Décide-le lors de la visite technique, huit semaines avant."}},{"@type":"Question","name":"Que faire s'il pleut le jour du mariage dans la cour?","acceptedAnswer":{"@type":"Answer","text":"Le seul plan B qui n'annule rien : un chapiteau avec murs latéraux et plancher, réservé dès le départ. La cérémonie se déplace sous le chapiteau de la réception si celui-ci a 20 % de surface en plus. Une salle de secours réservée en parallèle coûte un dépôt et beaucoup de stress; c'est l'option de dernier recours."}},{"@type":"Question","name":"Qu'est-ce qu'Évenox fournit pour un mariage dans la cour arrière?","acceptedAnswer":{"@type":"Answer","text":"Le mobilier (forfaits de 449 $ à 1 049 $ avec nappes, livraison et placement), les tables cocktail, le bar, les chapiteaux 10 x 10, l'éclairage, les lettres lumineuses, le mur de fleurs, les étincelles froides, le photobooth avec préposé, la scène et les machines à friandises. Le Forfait Mariage Signature à 1 899 $ regroupe le décor et le photobooth en une seule livraison. On dessert la Rive-Nord, Laval et Montréal."}}]}</script>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://evenox.ca/"},{"@type":"ListItem","position":2,"name":"Blogue","item":"https://evenox.ca/blogue/"},{"@type":"ListItem","position":3,"name":"Mariage dans la cour arrière au Québec : la checklist location complète","item":"https://evenox.ca/mariage-dans-la-cour-arriere-quebec-checklist-location/"}]}</script>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"Article","headline":"Mariage dans la cour arrière au Québec : la checklist location complète","description":"Chapiteau, mobilier, électricité, éclairage, toilettes, décor, plan B pluie : la checklist complète pour un mariage dans la cour arrière au Québec, avec les vrais prix et ce qui coûte plus cher que prévu.","inLanguage":"fr-CA","author":{"@type":"Organization","name":"Évenox"},"publisher":{"@type":"Organization","name":"Évenox","url":"https://evenox.ca"},"mainEntityOfPage":"https://evenox.ca/mariage-dans-la-cour-arriere-quebec-checklist-location/"}</script>

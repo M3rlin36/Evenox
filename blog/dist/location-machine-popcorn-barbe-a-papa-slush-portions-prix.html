@@ -1,0 +1,184 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+.evx-blog{font-family:'Poppins',sans-serif!important;color:#1a1a2e;line-height:1.75;font-size:1.02rem}
+.evx-blog h2{font-family:'Poppins',sans-serif!important;font-size:1.7rem;font-weight:800;color:#1a1a2e;margin:44px 0 16px}
+.evx-blog h3{font-family:'Poppins',sans-serif!important;font-size:1.15rem;font-weight:700;margin:0 0 6px}
+.evx-blog p{margin:0 0 16px}
+.evx-badge{display:inline-block;background:#5E17EB;color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:999px;margin-bottom:14px;text-transform:uppercase}
+.evx-answer{background:#faf9ff;border-left:5px solid #5E17EB;border-radius:0 16px 16px 0;padding:22px 26px;margin:0 0 28px;font-size:1.08rem}
+.evx-answer strong{color:#5E17EB}
+.evx-img{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;border-radius:20px;margin:8px 0 28px}
+.evx-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0 28px}
+.evx-card{background:#fff;border:1px solid #f0eef5;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(94,23,235,.06)}
+.evx-price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0 28px}
+.evx-price{background:#fff;border:1px solid #f0eef5;border-radius:16px;padding:22px;text-align:center;box-shadow:0 4px 18px rgba(94,23,235,.06)}
+.evx-price.pop{border:2px solid #5E17EB;position:relative}
+.evx-price.pop::before{content:'POPULAIRE';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#5E17EB;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:3px 12px;border-radius:999px}
+.evx-price .amt{display:block;font-size:1.9rem;font-weight:800;color:#5E17EB;margin:6px 0 2px}
+.evx-price .per{font-size:.85rem;color:#666}
+.evx-check{list-style:none;padding:0;margin:14px 0 26px}
+.evx-check li{padding:7px 0 7px 34px;position:relative}
+.evx-check li::before{content:'✓';position:absolute;left:0;top:6px;width:24px;height:24px;background:#5E17EB;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+.evx-blog table{width:100%;border-collapse:collapse;margin:16px 0 28px;font-size:.95rem}
+.evx-blog th,.evx-blog td{border:1px solid #f0eef5;padding:10px 12px;text-align:left;vertical-align:top}
+.evx-blog th{background:#faf9ff;font-weight:700}
+.evx-faq{margin:18px 0 30px}
+.evx-faq details{background:#fff;border:1px solid #f0eef5;border-radius:14px;margin-bottom:10px;overflow:hidden}
+.evx-faq summary{cursor:pointer;font-weight:700;padding:16px 20px;list-style:none;position:relative;padding-right:44px}
+.evx-faq summary::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#5E17EB;font-size:1.4rem;font-weight:600}
+.evx-faq details[open] summary::after{content:'–'}
+.evx-faq details p{padding:0 20px 16px;margin:0;color:#444}
+.evx-cta{background:#5E17EB;border-radius:22px;padding:40px 32px;text-align:center;margin:40px 0 10px}
+.evx-cta h2{color:#fff;margin:0 0 8px;font-size:1.6rem}
+.evx-cta p{color:#e9e0ff;margin:0 0 20px}
+.evx-btn{display:inline-block;background:#fff;color:#5E17EB!important;font-weight:700;padding:14px 30px;border-radius:999px;text-decoration:none!important;margin:0 6px 8px}
+.evx-btn.ghost{background:transparent;color:#fff!important;border:2px solid #fff}
+@media(max-width:767px){.evx-cards,.evx-price-grid{grid-template-columns:1fr}}
+.et_post_meta_wrapper > img,#left-area img.wp-post-image{display:none!important}
+#left-area h1.entry-title,#main-content h1.entry-title{font-family:'Poppins',sans-serif!important;font-weight:800!important;font-size:2.2rem!important;color:#1a1a2e!important;line-height:1.25!important;text-transform:none!important;text-align:center!important}
+#left-area .post-meta,#main-content .post-meta{font-family:'Poppins',sans-serif!important;font-size:.9rem!important;text-align:center!important;display:block}
+#sidebar{display:none!important}
+#left-area{width:100%!important;padding-right:0!important;float:none!important}
+#main-content .container:before{display:none!important}
+#comment-wrap .comment-reply-title,#comment-wrap #reply-title{font-family:'Poppins',sans-serif!important;font-weight:800!important;font-size:1.5rem!important;color:#1a1a2e!important}
+#commentform textarea,#commentform input[type=text],#commentform input[type=email],#commentform input[type=url]{border:1px solid #f0eef5!important;border-radius:12px!important;background:#faf9ff!important;font-family:'Poppins',sans-serif!important}
+#commentform .form-submit .submit,#commentform input[type=submit]{background:#5E17EB!important;color:#fff!important;border:none!important;border-radius:999px!important;padding:12px 30px!important;font-family:'Poppins',sans-serif!important;font-weight:700!important;cursor:pointer}
+#comment-wrap .form-submit .submit:hover{background:#4A11C0!important}
+#comment-wrap p,#comment-wrap label{font-family:'Poppins',sans-serif!important}
+@media(max-width:767px){.evx-blog .evx-btn{display:flex!important;width:100%!important;max-width:280px!important;min-height:44px!important;padding:11px 16px!important;font-size:.9rem!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;margin:0 auto 10px!important;}.evx-blog .evx-cta{padding:30px 18px!important;}.evx-blog .evx-cta h2{font-size:1.35rem!important;}.evx-blog h2{font-size:1.4rem!important;}.evx-blog .evx-answer{padding:18px 18px!important;font-size:1rem!important;}.evx-blog .evx-img{border-radius:14px!important;}}
+.evx-related{background:#faf9ff;border-left:5px solid #5E17EB;border-radius:0 16px 16px 0;padding:18px 24px;margin:28px 0}.evx-related b{display:block;margin-bottom:8px;color:#1a1a2e}.evx-related ul{margin:0;padding-left:20px}.evx-related li{margin:5px 0}.evx-related a{color:#5E17EB;font-weight:600}
+.evx-next{font-family:'Poppins',sans-serif;background:linear-gradient(150deg,#0d0a1a 0%,#2a1063 60%,#5E17EB 100%);color:#fff;border-radius:18px;padding:38px 32px;margin:48px 0 12px;text-align:center}
+.evx-next .evx-next-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#d7c6ff;margin-bottom:14px}
+.evx-next h3{font-family:'Poppins',sans-serif!important;color:#fff!important;font-size:1.5rem;font-weight:800;line-height:1.25;margin:0 0 12px!important}
+.evx-next p{color:#e3d8ff!important;font-size:1rem;line-height:1.6;max-width:560px;margin:0 auto 24px!important}
+.evx-next .evx-next-btn{display:inline-block;background:#fff;color:#5E17EB!important;font-weight:700;font-size:.98rem;padding:15px 34px;border-radius:99px;text-decoration:none!important;transition:transform .15s ease}
+.evx-next .evx-next-btn:hover{transform:translateY(-2px)}
+@media(max-width:600px){.evx-next{padding:30px 20px;margin:36px 0 10px}.evx-next h3{font-size:1.25rem}}
+</style>
+
+<div class="evx-blog">
+<span class="evx-badge">Guide gourmandises 2026</span>
+<div class="evx-answer"><strong>Compte 1,5 portion par invité pour un événement de 3 heures : une machine à popcorn ou à barbe à papa suffit jusqu'à 150 personnes, une machine à slush à 2 saveurs jusqu'à 100 verres par remplissage.</strong> Chez Évenox, popcorn et barbe à papa se louent 50 $, la slush dès 100 $ par saveur et la crème molle 200 $, livraison, installation et premières portions incluses. Les forfaits clé en main couvrent 50, 100 ou 500 personnes avec toutes les recharges.</div>
+<!-- IMAGE À AJOUTER : Machine à barbe à papa et machine à popcorn installées sur une table nappée lors d'une fête d'enfants (format 16:9, classe evx-img) -->
+<h2>Les prix, machine par machine</h2>
+<table>
+<thead><tr><th>Machine</th><th>Prix par jour</th><th>Portions à l'heure</th><th>Électricité</th><th>Idéal pour</th></tr></thead>
+<tbody>
+<tr><td>Popcorn (chaudron 8 oz)</td><td>50 $</td><td>80 à 100 sacs</td><td>Prise 120 V standard</td><td>Cinéma en plein air, fête d'école, 5 à 7</td></tr>
+<tr><td>Barbe à papa</td><td>50 $ (70 $ avec sucre et cônes)</td><td>50 à 60 cônes</td><td>Prise 120 V standard</td><td>Fête d'enfants, fête de quartier, kiosque</td></tr>
+<tr><td>Slush (2 bols)</td><td>dès 100 $ par saveur</td><td>100 verres par remplissage</td><td>Circuit dédié recommandé</td><td>Bal, fête d'été, événement corporatif</td></tr>
+<tr><td>Crème molle</td><td>200 $</td><td>60 à 80 cornets</td><td>Circuit dédié 15 A</td><td>Mariage, gala, journée d'appréciation</td></tr>
+<tr><td>Fontaine de chocolat</td><td>100 $</td><td>En continu, 40 à 60 personnes</td><td>Prise 120 V standard</td><td>Shower, réception, table à desserts</td></tr>
+<tr><td>Machine à hot-dogs</td><td>50 $</td><td>60 à 80 hot-dogs</td><td>Prise 120 V standard</td><td>Fête de quartier, tournoi, BBQ d'entreprise</td></tr>
+</tbody>
+</table>
+<p>Tous les prix incluent la livraison dans la zone de base, le branchement, un test et un tour de cinq minutes pour t'expliquer le fonctionnement. Chaque machine arrive avec ses premières portions (environ 20 par station). Détails sur la page <a href="/location-machines-gourmandises/">machines à gourmandises</a>.</p>
+
+<h2>La règle des quantités : 1,5 portion par invité</h2>
+<p>Pour un événement de 2 à 4 heures, la plupart des invités reprennent une fois. Les enfants reprennent deux fois. La formule qui évite d'en manquer ou d'en jeter :</p>
+<ul class="evx-check">
+<li><strong>Adultes majoritaires :</strong> 1,2 portion par personne</li>
+<li><strong>Familles :</strong> 1,5 portion par personne</li>
+<li><strong>Enfants majoritaires (école, fête d'enfants) :</strong> 2 portions par enfant</li>
+</ul>
+<table>
+<thead><tr><th>Invités</th><th>Popcorn (sacs)</th><th>Barbe à papa (cônes)</th><th>Slush (verres 8 oz)</th><th>Crème molle (cornets)</th></tr></thead>
+<tbody>
+<tr><td>30</td><td>45</td><td>45</td><td>45</td><td>40</td></tr>
+<tr><td>50</td><td>75</td><td>75</td><td>75</td><td>60</td></tr>
+<tr><td>100</td><td>150</td><td>150</td><td>150</td><td>120</td></tr>
+<tr><td>200</td><td>300</td><td>300</td><td>300 (2 machines)</td><td>240 (2 machines)</td></tr>
+<tr><td>500</td><td>750 (2 machines)</td><td>750 (2 machines)</td><td>750 (4 machines)</td><td>600 (4 machines)</td></tr>
+</tbody>
+</table>
+
+<h2>Ce que ça coûte en recharges</h2>
+<p>Les recharges sont là où les fournisseurs se distinguent. Chez Évenox :</p>
+<ul>
+<li><strong>Popcorn :</strong> grains 5 $ le sac, sacs jetables 32 oz 25 $ le paquet. Compte environ 0,35 $ par portion servie.</li>
+<li><strong>Barbe à papa :</strong> sucre aromatisé 10 $, cônes 10 $. Environ 0,40 $ par cône.</li>
+<li><strong>Slush :</strong> sirop 35 $ la bouteille (environ 50 verres), verres 6 $ le paquet, pailles jumbo 4 $. Environ 1 $ par verre.</li>
+<li><strong>Crème molle :</strong> mélange 2 L 15 $ (environ 25 cornets), cornets 5 $ le paquet. Environ 0,80 $ par cornet.</li>
+</ul>
+<p>Pour 100 invités, une station popcorn complète revient donc à environ <strong>100 $</strong>, une station barbe à papa à <strong>110 $</strong>, un bar à slush 2 saveurs à <strong>300 $</strong>. C'est moins cher que n'importe quel service de desserts, et c'est l'attraction dont les gens parlent le lendemain.</p>
+
+<h2>Les forfaits clé en main : quand tu ne veux pas calculer</h2>
+<div class="evx-price-grid">
+<div class="evx-price"><strong>Popcorn 50 ou 100 personnes</strong><span class="amt">Clé en main</span><span class="per">Machine, grains, huile, sacs, livraison, installation, ramassage</span></div>
+<div class="evx-price"><strong>Barbe à papa 50 personnes</strong><span class="amt">Clé en main</span><span class="per">Machine, sucre, cônes, livraison, installation, ramassage</span></div>
+<div class="evx-price pop"><strong>Slush 50, 100 ou 500 personnes</strong><span class="amt">Clé en main</span><span class="per">Machine(s), sirops, verres, pailles, livraison, installation, ramassage</span></div>
+<div class="evx-price"><strong>Sugar Rush</strong><span class="amt">800 $</span><span class="per">Plusieurs stations gourmandes pour un grand événement, tout inclus</span></div>
+</div>
+<p>Les forfaits sont calculés sur la règle des 1,5 portion par invité. Tu donnes le nombre de personnes, on livre ce qu'il faut, ni plus ni moins. Voir la page <a href="/location-machines-gourmandises/">machines à gourmandises</a> pour les prix à jour de chaque forfait.</p>
+
+<h2>Avec ou sans opérateur?</h2>
+<p><strong>Sans opérateur</strong>, c'est la norme : les machines sont simples, on te montre le fonctionnement en cinq minutes et on laisse les consignes écrites. Un bénévole ou un ado de 14 ans gère une machine à popcorn ou à barbe à papa sans problème. C'est parfait pour une fête d'enfants, une fête de quartier ou une école.</p>
+<p><strong>Avec opérateur</strong>, c'est ce qu'on recommande pour un événement corporatif, un gala ou un mariage : personne dans ton équipe ne veut passer la soirée derrière la machine à slush en chemise. L'opérateur se réserve à la demande et gère le service, les recharges et la propreté de la station.</p>
+
+<h2>Électricité et emplacement : les deux détails qui gâchent tout</h2>
+<ul>
+<li><strong>Popcorn, barbe à papa, chocolat, hot-dogs :</strong> une prise 120 V standard, à moins de 50 pieds. Deux machines sur la même prise, ça passe. Trois, non.</li>
+<li><strong>Slush et crème molle :</strong> ce sont des compresseurs. Un <strong>circuit dédié de 15 A</strong> chacun, sinon le disjoncteur saute quand la cafetière du traiteur démarre. Dans un gymnase ou une salle, demande au concierge quelle prise est seule sur son circuit.</li>
+<li><strong>La slush prend 1 h 30 à 2 h à geler</strong> après le remplissage. On la livre et on la met en marche d'avance; ne la débranche jamais « pour faire de la place ».</li>
+<li><strong>Emplacement :</strong> une table de 6 pieds nappée par machine, à l'ombre, à l'écart des jeux gonflables (mains collantes) et près d'une poubelle. La barbe à papa n'aime pas le vent : sous chapiteau ou à l'intérieur.</li>
+</ul>
+
+<h2>Quelle machine pour quel événement</h2>
+<ul class="evx-check">
+<li><strong>Fête d'enfants à la maison (15 à 30 enfants) :</strong> barbe à papa. Une seule machine, 70 $ avec les recharges, et c'est l'activité de la fête.</li>
+<li><strong>Fête d'école ou bal de 6e année (75 à 150 élèves) :</strong> bar à slush 2 saveurs + popcorn. Débit élevé, peu de supervision.</li>
+<li><strong>Cinéma en plein air ou soirée de quartier :</strong> popcorn, évidemment, avec la machine placée à l'entrée.</li>
+<li><strong>5 à 7 d'entreprise ou journée d'appréciation :</strong> crème molle avec opérateur, ou bar à slush avec des saveurs adultes. C'est ce qui fait sortir les gens de leur bureau.</li>
+<li><strong>Mariage ou gala :</strong> crème molle ou fontaine de chocolat à la table à desserts, avec opérateur.</li>
+<li><strong>Fête de quartier de 500 personnes :</strong> une station gourmande par 150 participants, réparties sur le site, jamais côte à côte.</li>
+</ul>
+<h2>Questions fréquentes</h2>
+<div class="evx-faq">
+<details>
+<summary>Combien coûte la location d'une machine à barbe à papa au Québec?</summary>
+<p>Chez Évenox, la machine à barbe à papa se loue 50 $ par jour, ou 70 $ avec le sucre aromatisé et les cônes inclus. La livraison dans la zone de base, le branchement, un test et les consignes d'utilisation sont compris. Compte environ 0,40 $ par cône supplémentaire en recharge.</p>
+</details>
+<details>
+<summary>Combien de portions de popcorn prévoir pour 100 personnes?</summary>
+<p>Environ 150 sacs, selon la règle de 1,5 portion par invité pour un événement de 2 à 4 heures. Une machine à popcorn de 8 oz produit 80 à 100 sacs à l'heure, donc une seule machine suffit jusqu'à 150 personnes. Les grains se vendent 5 $ le sac et les sacs 32 oz 25 $ le paquet.</p>
+</details>
+<details>
+<summary>Quelle électricité faut-il pour une machine à slush?</summary>
+<p>Un circuit dédié de 15 ampères, parce que la machine à slush fonctionne avec un compresseur. Sur une prise partagée avec une cafetière ou un réchaud, le disjoncteur saute. Prévois aussi 1 h 30 à 2 h de gel après le remplissage : on la livre et on la démarre d'avance.</p>
+</details>
+<details>
+<summary>Est-ce que quelqu'un vient opérer la machine?</summary>
+<p>Par défaut, non : on installe, on teste et on t'explique le fonctionnement en cinq minutes, avec les consignes écrites. Un bénévole gère une machine à popcorn ou à barbe à papa facilement. Pour un événement corporatif, un gala ou un mariage, un opérateur est disponible sur demande.</p>
+</details>
+<details>
+<summary>Combien de verres de slush donne une machine?</summary>
+<p>Une machine à 2 bols donne environ 100 verres de 8 oz par remplissage, soit 50 par saveur. Une bouteille de sirop (35 $) fait environ 50 verres. Pour 150 invités, prévois une machine et 3 bouteilles de sirop; pour 300 invités, deux machines.</p>
+</details>
+<details>
+<summary>Est-ce que la livraison des machines est incluse?</summary>
+<p>Oui, dans la zone de base autour de Sainte-Thérèse. Au-delà, la livraison est de 100 $ jusqu'à 10 km, puis 7 $ du kilomètre jusqu'à 40 km. Elle comprend le branchement, le test, les consignes et le ramassage. On dessert la Rive-Nord, Laval et Montréal.</p>
+</details>
+</div>
+<div class="evx-related"><b>Pour aller plus loin</b>
+<ul>
+<li><a href="https://evenox.ca/location-machines-gourmandises/">Location de machines à gourmandises : tous les forfaits</a></li>
+<li><a href="https://evenox.ca/organiser-fete-enfants-maison-budget-checklist/">Organiser une fête d'enfants à la maison : budget et checklist</a></li>
+<li><a href="https://evenox.ca/fete-de-quartier-journee-familiale-combien-de-jeux-prevoir/">Fête de quartier : combien de jeux prévoir</a></li>
+<li><a href="https://evenox.ca/bal-des-finissants-6e-annee-idees-budget-comite-de-parents/">Bal des finissants de 6e année : idées et budget</a></li>
+</ul>
+</div>
+<div class="evx-cta">
+<h2>Dis-nous combien de personnes, on livre le reste</h2>
+<p>Nombre d'invités, date et adresse : on te confirme la machine, les quantités et le prix tout inclus en moins de 24 h. Livraison, installation et ramassage compris. 514-559-1893.</p>
+<p><a class="evx-btn" href="https://evenox.ca/location-machines-gourmandises/">Voir les machines à gourmandises</a><a class="evx-btn ghost" href="https://evenox.ca/contact/">Demander une soumission</a></p>
+</div>
+<div class="evx-next">
+<span class="evx-next-eyebrow">La suite logique</span>
+<h3>Tu organises une fête d'enfants à la maison?</h3>
+<p>Budget réel poste par poste, checklist du mois précédent jusqu'au jour J, et les 3 choses qui font vraiment la différence pour les enfants.</p>
+<p><a class="evx-next-btn" href="https://evenox.ca/organiser-fete-enfants-maison-budget-checklist/">Lire le guide fête d'enfants</a></p>
+</div>
+</div>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte la location d'une machine à barbe à papa au Québec?","acceptedAnswer":{"@type":"Answer","text":"Chez Évenox, la machine à barbe à papa se loue 50 $ par jour, ou 70 $ avec le sucre aromatisé et les cônes inclus. La livraison dans la zone de base, le branchement, un test et les consignes d'utilisation sont compris. Compte environ 0,40 $ par cône supplémentaire en recharge."}},{"@type":"Question","name":"Combien de portions de popcorn prévoir pour 100 personnes?","acceptedAnswer":{"@type":"Answer","text":"Environ 150 sacs, selon la règle de 1,5 portion par invité pour un événement de 2 à 4 heures. Une machine à popcorn de 8 oz produit 80 à 100 sacs à l'heure, donc une seule machine suffit jusqu'à 150 personnes. Les grains se vendent 5 $ le sac et les sacs 32 oz 25 $ le paquet."}},{"@type":"Question","name":"Quelle électricité faut-il pour une machine à slush?","acceptedAnswer":{"@type":"Answer","text":"Un circuit dédié de 15 ampères, parce que la machine à slush fonctionne avec un compresseur. Sur une prise partagée avec une cafetière ou un réchaud, le disjoncteur saute. Prévois aussi 1 h 30 à 2 h de gel après le remplissage : on la livre et on la démarre d'avance."}},{"@type":"Question","name":"Est-ce que quelqu'un vient opérer la machine?","acceptedAnswer":{"@type":"Answer","text":"Par défaut, non : on installe, on teste et on t'explique le fonctionnement en cinq minutes, avec les consignes écrites. Un bénévole gère une machine à popcorn ou à barbe à papa facilement. Pour un événement corporatif, un gala ou un mariage, un opérateur est disponible sur demande."}},{"@type":"Question","name":"Combien de verres de slush donne une machine?","acceptedAnswer":{"@type":"Answer","text":"Une machine à 2 bols donne environ 100 verres de 8 oz par remplissage, soit 50 par saveur. Une bouteille de sirop (35 $) fait environ 50 verres. Pour 150 invités, prévois une machine et 3 bouteilles de sirop; pour 300 invités, deux machines."}},{"@type":"Question","name":"Est-ce que la livraison des machines est incluse?","acceptedAnswer":{"@type":"Answer","text":"Oui, dans la zone de base autour de Sainte-Thérèse. Au-delà, la livraison est de 100 $ jusqu'à 10 km, puis 7 $ du kilomètre jusqu'à 40 km. Elle comprend le branchement, le test, les consignes et le ramassage. On dessert la Rive-Nord, Laval et Montréal."}}]}</script>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://evenox.ca/"},{"@type":"ListItem","position":2,"name":"Blogue","item":"https://evenox.ca/blogue/"},{"@type":"ListItem","position":3,"name":"Machines à popcorn, barbe à papa et slush : combien de portions prévoir et combien ça coûte","item":"https://evenox.ca/location-machine-popcorn-barbe-a-papa-slush-portions-prix/"}]}</script>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"Article","headline":"Machines à popcorn, barbe à papa et slush : combien de portions prévoir et combien ça coûte","description":"Location de machine à popcorn, barbe à papa, slush ou crème molle au Québec : prix (dès 50 $), portions par heure, quantités selon le nombre d'invités, électricité requise et forfaits clé en main.","inLanguage":"fr-CA","author":{"@type":"Organization","name":"Évenox"},"publisher":{"@type":"Organization","name":"Évenox","url":"https://evenox.ca"},"mainEntityOfPage":"https://evenox.ca/location-machine-popcorn-barbe-a-papa-slush-portions-prix/"}</script>

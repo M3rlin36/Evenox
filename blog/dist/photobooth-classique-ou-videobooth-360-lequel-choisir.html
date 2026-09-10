@@ -1,0 +1,173 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+.evx-blog{font-family:'Poppins',sans-serif!important;color:#1a1a2e;line-height:1.75;font-size:1.02rem}
+.evx-blog h2{font-family:'Poppins',sans-serif!important;font-size:1.7rem;font-weight:800;color:#1a1a2e;margin:44px 0 16px}
+.evx-blog h3{font-family:'Poppins',sans-serif!important;font-size:1.15rem;font-weight:700;margin:0 0 6px}
+.evx-blog p{margin:0 0 16px}
+.evx-badge{display:inline-block;background:#5E17EB;color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:999px;margin-bottom:14px;text-transform:uppercase}
+.evx-answer{background:#faf9ff;border-left:5px solid #5E17EB;border-radius:0 16px 16px 0;padding:22px 26px;margin:0 0 28px;font-size:1.08rem}
+.evx-answer strong{color:#5E17EB}
+.evx-img{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;border-radius:20px;margin:8px 0 28px}
+.evx-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0 28px}
+.evx-card{background:#fff;border:1px solid #f0eef5;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(94,23,235,.06)}
+.evx-price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0 28px}
+.evx-price{background:#fff;border:1px solid #f0eef5;border-radius:16px;padding:22px;text-align:center;box-shadow:0 4px 18px rgba(94,23,235,.06)}
+.evx-price.pop{border:2px solid #5E17EB;position:relative}
+.evx-price.pop::before{content:'POPULAIRE';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#5E17EB;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:3px 12px;border-radius:999px}
+.evx-price .amt{display:block;font-size:1.9rem;font-weight:800;color:#5E17EB;margin:6px 0 2px}
+.evx-price .per{font-size:.85rem;color:#666}
+.evx-check{list-style:none;padding:0;margin:14px 0 26px}
+.evx-check li{padding:7px 0 7px 34px;position:relative}
+.evx-check li::before{content:'✓';position:absolute;left:0;top:6px;width:24px;height:24px;background:#5E17EB;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+.evx-blog table{width:100%;border-collapse:collapse;margin:16px 0 28px;font-size:.95rem}
+.evx-blog th,.evx-blog td{border:1px solid #f0eef5;padding:10px 12px;text-align:left;vertical-align:top}
+.evx-blog th{background:#faf9ff;font-weight:700}
+.evx-faq{margin:18px 0 30px}
+.evx-faq details{background:#fff;border:1px solid #f0eef5;border-radius:14px;margin-bottom:10px;overflow:hidden}
+.evx-faq summary{cursor:pointer;font-weight:700;padding:16px 20px;list-style:none;position:relative;padding-right:44px}
+.evx-faq summary::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#5E17EB;font-size:1.4rem;font-weight:600}
+.evx-faq details[open] summary::after{content:'–'}
+.evx-faq details p{padding:0 20px 16px;margin:0;color:#444}
+.evx-cta{background:#5E17EB;border-radius:22px;padding:40px 32px;text-align:center;margin:40px 0 10px}
+.evx-cta h2{color:#fff;margin:0 0 8px;font-size:1.6rem}
+.evx-cta p{color:#e9e0ff;margin:0 0 20px}
+.evx-btn{display:inline-block;background:#fff;color:#5E17EB!important;font-weight:700;padding:14px 30px;border-radius:999px;text-decoration:none!important;margin:0 6px 8px}
+.evx-btn.ghost{background:transparent;color:#fff!important;border:2px solid #fff}
+@media(max-width:767px){.evx-cards,.evx-price-grid{grid-template-columns:1fr}}
+.et_post_meta_wrapper > img,#left-area img.wp-post-image{display:none!important}
+#left-area h1.entry-title,#main-content h1.entry-title{font-family:'Poppins',sans-serif!important;font-weight:800!important;font-size:2.2rem!important;color:#1a1a2e!important;line-height:1.25!important;text-transform:none!important;text-align:center!important}
+#left-area .post-meta,#main-content .post-meta{font-family:'Poppins',sans-serif!important;font-size:.9rem!important;text-align:center!important;display:block}
+#sidebar{display:none!important}
+#left-area{width:100%!important;padding-right:0!important;float:none!important}
+#main-content .container:before{display:none!important}
+#comment-wrap .comment-reply-title,#comment-wrap #reply-title{font-family:'Poppins',sans-serif!important;font-weight:800!important;font-size:1.5rem!important;color:#1a1a2e!important}
+#commentform textarea,#commentform input[type=text],#commentform input[type=email],#commentform input[type=url]{border:1px solid #f0eef5!important;border-radius:12px!important;background:#faf9ff!important;font-family:'Poppins',sans-serif!important}
+#commentform .form-submit .submit,#commentform input[type=submit]{background:#5E17EB!important;color:#fff!important;border:none!important;border-radius:999px!important;padding:12px 30px!important;font-family:'Poppins',sans-serif!important;font-weight:700!important;cursor:pointer}
+#comment-wrap .form-submit .submit:hover{background:#4A11C0!important}
+#comment-wrap p,#comment-wrap label{font-family:'Poppins',sans-serif!important}
+@media(max-width:767px){.evx-blog .evx-btn{display:flex!important;width:100%!important;max-width:280px!important;min-height:44px!important;padding:11px 16px!important;font-size:.9rem!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;margin:0 auto 10px!important;}.evx-blog .evx-cta{padding:30px 18px!important;}.evx-blog .evx-cta h2{font-size:1.35rem!important;}.evx-blog h2{font-size:1.4rem!important;}.evx-blog .evx-answer{padding:18px 18px!important;font-size:1rem!important;}.evx-blog .evx-img{border-radius:14px!important;}}
+.evx-related{background:#faf9ff;border-left:5px solid #5E17EB;border-radius:0 16px 16px 0;padding:18px 24px;margin:28px 0}.evx-related b{display:block;margin-bottom:8px;color:#1a1a2e}.evx-related ul{margin:0;padding-left:20px}.evx-related li{margin:5px 0}.evx-related a{color:#5E17EB;font-weight:600}
+.evx-next{font-family:'Poppins',sans-serif;background:linear-gradient(150deg,#0d0a1a 0%,#2a1063 60%,#5E17EB 100%);color:#fff;border-radius:18px;padding:38px 32px;margin:48px 0 12px;text-align:center}
+.evx-next .evx-next-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#d7c6ff;margin-bottom:14px}
+.evx-next h3{font-family:'Poppins',sans-serif!important;color:#fff!important;font-size:1.5rem;font-weight:800;line-height:1.25;margin:0 0 12px!important}
+.evx-next p{color:#e3d8ff!important;font-size:1rem;line-height:1.6;max-width:560px;margin:0 auto 24px!important}
+.evx-next .evx-next-btn{display:inline-block;background:#fff;color:#5E17EB!important;font-weight:700;font-size:.98rem;padding:15px 34px;border-radius:99px;text-decoration:none!important;transition:transform .15s ease}
+.evx-next .evx-next-btn:hover{transform:translateY(-2px)}
+@media(max-width:600px){.evx-next{padding:30px 20px;margin:36px 0 10px}.evx-next h3{font-size:1.25rem}}
+</style>
+
+<div class="evx-blog">
+<span class="evx-badge">Comparatif 2026</span>
+<div class="evx-answer"><strong>Le photobooth classique est fait pour les souvenirs imprimés et les grands groupes; le vidéobooth 360 est fait pour l'effet wow et les réseaux sociaux.</strong> Mariage, gala ou fête familiale de 80 invités et plus : classique. Lancement, 5 à 7, sweet 16 ou soirée dansante : 360. Budget serré et gros volume : classique. Chez Évenox, les deux débutent à 599 $ pour 2 heures avec préposé, et le duo Signature (les deux formats, 3 heures) est à 1 798 $.</div>
+<!-- IMAGE À AJOUTER : Invités devant un photobooth classique avec toile de fond et préposé Évenox lors d'un mariage (format 16:9, classe evx-img) -->
+<h2>La vraie différence en une phrase</h2>
+<p>Un <strong>photobooth classique</strong>, c'est une caméra haute résolution, un écran tactile, une toile de fond et un préposé : tes invités se placent, la photo se prend, et ils repartent avec une impression ou un lien de galerie. Un <strong>vidéobooth 360</strong>, c'est une plateforme sur laquelle montent 2 à 4 personnes pendant qu'une caméra tourne autour d'eux : le résultat est une vidéo au ralenti de 15 à 30 secondes, partagée par code QR en deux minutes.</p>
+<p>Les deux font sourire tout le monde. Mais ils ne servent pas au même objectif, et c'est là que la plupart des gens se trompent en réservant.</p>
+
+<h2>Comparatif côte à côte</h2>
+<table>
+<thead><tr><th>Critère</th><th>Photobooth classique</th><th>Vidéobooth 360</th></tr></thead>
+<tbody>
+<tr><td>Résultat</td><td>Photos (impressions + galerie en ligne)</td><td>Vidéo ralenti 15 à 30 s, partage par QR</td></tr>
+<tr><td>Temps par groupe</td><td>Environ 10 à 15 secondes</td><td>Environ 2 minutes (montée, prise, descente)</td></tr>
+<tr><td>Invités par heure</td><td>120 à 150 personnes</td><td>60 à 90 personnes</td></tr>
+<tr><td>Personnes par prise</td><td>1 à 8</td><td>2 à 4</td></tr>
+<tr><td>Espace requis</td><td>8 pi x 8 pi</td><td>10 pi x 10 pi, plafond de 8 pi minimum</td></tr>
+<tr><td>Préposé inclus</td><td>Oui</td><td>Oui (technicien obligatoire)</td></tr>
+<tr><td>Souvenir physique</td><td>Oui, impression sur place</td><td>Non, numérique seulement</td></tr>
+<tr><td>Effet sur les réseaux sociaux</td><td>Bon</td><td>Excellent</td></tr>
+<tr><td>Prix Évenox (2 h)</td><td>599 $</td><td>799 $</td></tr>
+</tbody>
+</table>
+<p>Le chiffre à retenir, c'est le <strong>débit</strong>. Avec 150 invités et un 360 loué 2 heures, environ la moitié de tes invités ne passeront jamais dessus. Le classique, lui, aura servi tout le monde deux fois.</p>
+
+<h2>Quand choisir le photobooth classique</h2>
+<ul class="evx-check">
+<li><strong>Mariage de 80 invités et plus.</strong> Les impressions servent de cadeau aux invités et de livre d'or. C'est le format qui vieillit le mieux.</li>
+<li><strong>Gala, soirée reconnaissance, party de Noël corporatif.</strong> Les gens veulent une photo d'équipe propre, avec le logo, sans attendre en ligne.</li>
+<li><strong>Fête familiale multigénérationnelle.</strong> Grand-maman ne montera pas sur une plateforme qui tourne. Elle va s'asseoir devant une toile de fond.</li>
+<li><strong>Événement où tu veux un souvenir physique.</strong> Baptême, shower, retraite, 50<sup>e</sup> anniversaire.</li>
+<li><strong>Budget de 600 $ à 1 000 $.</strong> Tu couvres 2 à 4 heures et tout le monde passe.</li>
+</ul>
+<p>Le classique se décline aussi en <strong>photobooth miroir</strong> chez certains fournisseurs : même principe, écran plus grand, prix plus élevé. Si on te le propose, pose la question du débit et des impressions avant de payer la différence.</p>
+
+<h2>Quand choisir le vidéobooth 360</h2>
+<ul class="evx-check">
+<li><strong>Lancement de produit, activation de marque, soirée médias.</strong> La vidéo circule sur Instagram et TikTok le soir même, avec ton branding en superposition.</li>
+<li><strong>Sweet 16, bal de finissants, 30<sup>e</sup> anniversaire.</strong> Le public veut du contenu à partager, pas une impression à coller sur le frigo.</li>
+<li><strong>5 à 7 d'équipe ou soirée dansante.</strong> Le 360 devient l'attraction centrale de la piste, surtout après 21 h.</li>
+<li><strong>Groupe de 30 à 80 personnes.</strong> Tout le monde passe au moins une fois en 2 heures.</li>
+<li><strong>Tu as déjà un photographe.</strong> Le 360 ne fait pas double emploi; il ajoute un format que le photographe ne fera pas.</li>
+</ul>
+
+<h2>Le cas où tu prends les deux</h2>
+<p>Mariage de 120 invités et plus, gala de plus de 150 personnes, événement corporatif avec plusieurs générations : le <strong>duo Signature</strong> (photobooth 3 h + vidéobooth 360 3 h) règle le débat. Le classique prend le volume pendant le cocktail et le souper; le 360 prend le relais sur la piste de danse.</p>
+<div class="evx-price-grid">
+<div class="evx-price"><strong>Photobooth Animation</strong><span class="amt">599 $</span><span class="per">2 h · préposé · photos illimitées · galerie en ligne</span></div>
+<div class="evx-price"><strong>Vidéobooth 360</strong><span class="amt">799 $</span><span class="per">2 h · technicien · vidéos HD · partage QR instantané</span></div>
+<div class="evx-price pop"><strong>Duo Signature</strong><span class="amt">1 798 $</span><span class="per">Photobooth 3 h + 360 3 h · livraison et installation incluses</span></div>
+<div class="evx-price"><strong>Options</strong><span class="amt">+100 $ à +200 $</span><span class="per">Mur d'étincelles +100 $ · impressions illimitées +179 $ · mur de fleurs +200 $</span></div>
+</div>
+<p>Les forfaits 3 heures sont à 799 $ (classique) et 1 099 $ (360); les forfaits 4 heures à 999 $ et 1 499 $. Taxes en sus. Tous incluent le préposé, la livraison, l'installation et le démontage. Détails sur la page <a href="/location-photobooth-rive-nord/">photobooth Rive-Nord</a> et sur la page <a href="/photobooth-360/">vidéobooth 360</a>.</p>
+
+<h2>Les 5 questions à poser avant de réserver (peu importe le fournisseur)</h2>
+<ol>
+<li><strong>Le préposé est-il inclus?</strong> Un booth sans préposé, c'est un booth qui plante à 22 h sans que personne le sache.</li>
+<li><strong>Combien d'impressions?</strong> « Illimitées » veut dire illimitées. « 100 impressions » pour 150 invités, c'est 50 déçus.</li>
+<li><strong>La galerie en ligne est-elle livrée, et en combien de temps?</strong> Chez Évenox, sous 48 heures.</li>
+<li><strong>Quel espace et quel plafond?</strong> Le 360 exige 10 pi x 10 pi et 8 pi de hauteur libre. Vérifie ta salle avant, pas le jour même.</li>
+<li><strong>La livraison est-elle comprise?</strong> Un « 499 $ » qui devient 700 $ avec livraison et installation, ce n'est pas 499 $.</li>
+</ol>
+
+<h2>Le piège du « 360 parce que c'est nouveau »</h2>
+<p>Soyons honnêtes : le 360 est spectaculaire, et c'est souvent ce qu'on demande en premier. Mais on a vu des mariages de 180 invités où le 360 a servi 70 personnes et où les tantes attendaient en ligne. Le bon réflexe : <strong>compte tes invités, regarde l'heure de la piste de danse, et choisis le format en fonction du débit.</strong> Si tu hésites encore, écris-nous avec le nombre d'invités et l'horaire : on te répond avec une recommandation claire, pas trois options.</p>
+<h2>Questions fréquentes</h2>
+<div class="evx-faq">
+<details>
+<summary>Quelle est la différence entre un photobooth et un photobooth 360?</summary>
+<p>Le photobooth classique prend des photos devant une toile de fond, avec impression sur place et galerie en ligne. Le vidéobooth 360 filme 2 à 4 personnes au ralenti sur une plateforme rotative et partage la vidéo par code QR. Le classique sert plus de monde à l'heure; le 360 produit du contenu fait pour les réseaux sociaux.</p>
+</details>
+<details>
+<summary>Combien coûte un vidéobooth 360 au Québec?</summary>
+<p>Chez Évenox, le vidéobooth 360 est à 799 $ pour 2 heures, 1 099 $ pour 3 heures et 1 499 $ pour 4 heures, taxes en sus. Le technicien, la livraison, l'installation et le partage instantané par code QR sont inclus. Le photobooth classique débute à 599 $ pour 2 heures.</p>
+</details>
+<details>
+<summary>Combien de personnes peuvent passer au 360 en une heure?</summary>
+<p>Environ 60 à 90 personnes, par groupes de 2 à 4, puisque chaque passage prend environ 2 minutes. Un photobooth classique passe 120 à 150 personnes à l'heure. Pour un événement de plus de 100 invités, prévois 3 heures de 360 ou combine les deux formats.</p>
+</details>
+<details>
+<summary>Le photobooth 360 imprime-t-il des photos?</summary>
+<p>Non. Le 360 produit des vidéos numériques partagées par code QR et dans une galerie en ligne. Si tu veux un souvenir imprimé, choisis le photobooth classique ou le duo Signature à 1 798 $ qui combine les deux formats pendant 3 heures.</p>
+</details>
+<details>
+<summary>Quel espace faut-il pour un vidéobooth 360?</summary>
+<p>Prévois un espace de 10 pi x 10 pi avec un plafond d'au moins 8 pi, une prise électrique standard à proximité et un plancher plat. Pour un photobooth classique, 8 pi x 8 pi suffisent. Évenox valide l'emplacement avec toi avant l'événement.</p>
+</details>
+<details>
+<summary>Est-ce que le 360 convient à un mariage?</summary>
+<p>Oui, surtout pour la piste de danse en soirée. Pour un mariage de 80 invités et plus, on recommande toutefois le photobooth classique comme base, pour les impressions et le débit, et le 360 en complément. C'est exactement ce que fait le duo Signature.</p>
+</details>
+</div>
+<div class="evx-related"><b>Pour aller plus loin</b>
+<ul>
+<li><a href="https://evenox.ca/combien-coute-la-location-dun-photobooth-au-quebec/">Combien coûte la location d'un photobooth au Québec?</a></li>
+<li><a href="https://evenox.ca/location-photobooth-rive-nord/">Location de photobooth sur la Rive-Nord</a></li>
+<li><a href="https://evenox.ca/photobooth-360/">Vidéobooth 360 : forfaits et détails</a></li>
+<li><a href="https://evenox.ca/forfait-mariage-signature/">Forfait Mariage Signature</a></li>
+</ul>
+</div>
+<div class="evx-cta">
+<h2>On te dit lequel prendre</h2>
+<p>Envoie-nous le nombre d'invités, la date et l'horaire de ta soirée. Réponse en moins de 24 h avec une recommandation claire et un prix tout inclus. 514-559-1893.</p>
+<p><a class="evx-btn" href="https://evenox.ca/location-photobooth-rive-nord/">Voir les forfaits photobooth</a><a class="evx-btn ghost" href="https://evenox.ca/photobooth-360/">Voir le vidéobooth 360</a></p>
+</div>
+<div class="evx-next">
+<span class="evx-next-eyebrow">La suite logique</span>
+<h3>Ton mariage au complet, en un seul forfait</h3>
+<p>Photobooth premium avec préposé, lettres lumineuses, mur floral et étincelles froides : le Forfait Mariage Signature à 1 899 $ est tout inclus, livraison et coordination avec la salle comprises.</p>
+<p><a class="evx-next-btn" href="https://evenox.ca/forfait-mariage-signature/">Voir le Forfait Mariage Signature</a></p>
+</div>
+</div>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quelle est la différence entre un photobooth et un photobooth 360?","acceptedAnswer":{"@type":"Answer","text":"Le photobooth classique prend des photos devant une toile de fond, avec impression sur place et galerie en ligne. Le vidéobooth 360 filme 2 à 4 personnes au ralenti sur une plateforme rotative et partage la vidéo par code QR. Le classique sert plus de monde à l'heure; le 360 produit du contenu fait pour les réseaux sociaux."}},{"@type":"Question","name":"Combien coûte un vidéobooth 360 au Québec?","acceptedAnswer":{"@type":"Answer","text":"Chez Évenox, le vidéobooth 360 est à 799 $ pour 2 heures, 1 099 $ pour 3 heures et 1 499 $ pour 4 heures, taxes en sus. Le technicien, la livraison, l'installation et le partage instantané par code QR sont inclus. Le photobooth classique débute à 599 $ pour 2 heures."}},{"@type":"Question","name":"Combien de personnes peuvent passer au 360 en une heure?","acceptedAnswer":{"@type":"Answer","text":"Environ 60 à 90 personnes, par groupes de 2 à 4, puisque chaque passage prend environ 2 minutes. Un photobooth classique passe 120 à 150 personnes à l'heure. Pour un événement de plus de 100 invités, prévois 3 heures de 360 ou combine les deux formats."}},{"@type":"Question","name":"Le photobooth 360 imprime-t-il des photos?","acceptedAnswer":{"@type":"Answer","text":"Non. Le 360 produit des vidéos numériques partagées par code QR et dans une galerie en ligne. Si tu veux un souvenir imprimé, choisis le photobooth classique ou le duo Signature à 1 798 $ qui combine les deux formats pendant 3 heures."}},{"@type":"Question","name":"Quel espace faut-il pour un vidéobooth 360?","acceptedAnswer":{"@type":"Answer","text":"Prévois un espace de 10 pi x 10 pi avec un plafond d'au moins 8 pi, une prise électrique standard à proximité et un plancher plat. Pour un photobooth classique, 8 pi x 8 pi suffisent. Évenox valide l'emplacement avec toi avant l'événement."}},{"@type":"Question","name":"Est-ce que le 360 convient à un mariage?","acceptedAnswer":{"@type":"Answer","text":"Oui, surtout pour la piste de danse en soirée. Pour un mariage de 80 invités et plus, on recommande toutefois le photobooth classique comme base, pour les impressions et le débit, et le 360 en complément. C'est exactement ce que fait le duo Signature."}}]}</script>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://evenox.ca/"},{"@type":"ListItem","position":2,"name":"Blogue","item":"https://evenox.ca/blogue/"},{"@type":"ListItem","position":3,"name":"Photobooth classique ou vidéobooth 360 : lequel choisir pour ton événement?","item":"https://evenox.ca/photobooth-classique-ou-videobooth-360-lequel-choisir/"}]}</script>
+<script type="application/ld+json" data-evx="1">{"@context":"https://schema.org","@type":"Article","headline":"Photobooth classique ou vidéobooth 360 : lequel choisir pour ton événement?","description":"Photobooth classique ou vidéobooth 360? Comparatif clair : impressions, débit d'invités, espace, prix (599 $ à 1 499 $) et quel format choisir selon ton événement.","inLanguage":"fr-CA","author":{"@type":"Organization","name":"Évenox"},"publisher":{"@type":"Organization","name":"Évenox","url":"https://evenox.ca"},"mainEntityOfPage":"https://evenox.ca/photobooth-classique-ou-videobooth-360-lequel-choisir/"}</script>
