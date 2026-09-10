@@ -1,28 +1,20 @@
 # Audrey Jenkins — CRAAQ
 
 - Courriel : ajenkins@craaq.qc.ca
-- Téléphone : 418-523-5411
-- Événement : 20 octobre 2026
-- Lieu : 1634, rue Notre-Dame Centre, Trois-Rivières QC G9A 6B2
+- Téléphone : 418-523-5411 poste 533
+- Événement : 19–20 octobre 2026
+- Lieu : Centre des congrès, 1634 rue Notre-Dame Centre, Trois-Rivières QC G9A 6B2
 - Dépôt : non
-- Conversation : lead site 8 sept 17 h 19 (Toronto)
+- Conversation : elle a écrit le 9 sept 15 h 40 (Toronto)
 
-## Demande
+## Elle a écrit
 
-Événement corporatif, 350 personnes. Chiffres lumineux 5 et 0. Pas de ramassage à l’entrepôt. Elle demande la déco / ballons comme sur les photos.
+Chiffres 5 et 0 seulement. Livraison seulement (elle branche). Arriver le 19 oct 16–17 h. Fin le 20 oct ~18 h 30. Intérieur. Pas de ballons pour l’instant. ~350 personnes.
 
-Pas une relance. Appelle d’abord (418-523-5411), ensuite le devis.
+Alexandre a déjà posé les questions. Pas une relance. **À faire :** envoie le devis. Le dépôt garde le 19 oct. Pas de prix inventé.
 
-**Dis :** Allô Audrey, Alexandre d’Évenox. J’ai votre demande pour le 20 octobre à Trois-Rivières. Je vous envoie le devis ce matin — le dépôt garde la date.
-
-**Si pas de réponse :** texto le même message + envoie le devis.
-
-**Objet :** Devis 20 octobre — Trois-Rivières
-
-Pas de commande Booqable. Pas de prix inventé. Pas sur Pipeline (créer après envoi réel).
+[Booqable #1850](https://evenox.booqable.com/orders?q=1850)
 
 ## Fil
 
-- Lead : https://mail.google.com/mail/u/0/#inbox/1a082e4242a5e30a
-- Soumission : https://mail.google.com/mail/u/0/#inbox/1a082e424f31f172
-- Abandon : https://mail.google.com/mail/u/0/#inbox/1a082eac3f95d645
+- Questions + réponses : https://mail.google.com/mail/u/0/#inbox/1a086ab003aed3c2
