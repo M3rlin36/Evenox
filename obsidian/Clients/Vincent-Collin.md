@@ -10,18 +10,16 @@
 
 ## Demande
 
-1er anniversaire des nouveaux locaux.
+1er anniversaire des nouveaux locaux (MV Medico Esthétique).
 10 tables cocktail + nappes, 12 chaises hautes noires métal, tapis rouge 10 pi + stanchions, photobooth 17 h–20 h, 4 poteaux + 2 cordes rouges.
 
-Pas une relance. Appelle d’abord (438-498-9639), ensuite le devis.
+## 10 sept 2026
 
-**Dis :** Allô Vincent, Alexandre d’Évenox. J’ai votre demande pour le 23 septembre à Repentigny. Je vous envoie le devis ce matin — le dépôt garde la date.
+Devis envoyé. Vincent a accepté. Alexandre a envoyé le lien de dépôt 20 %, puis un correctif de lien. Dépôt non reçu.
 
-**Si pas de réponse :** texto le même message + envoie le devis.
+Pas une relance. **À faire :** on attend le dépôt. On n’écrit pas. Le dépôt garde le 23 sept.
 
-**Objet :** Devis 23 septembre — Repentigny
-
-Pas de commande Booqable. Pas de prix inventé.
+Pas de prix inventé.
 
 ## Fil
 

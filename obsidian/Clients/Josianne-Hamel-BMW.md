@@ -11,9 +11,13 @@
 
 10 tables cocktail, 3 chaises par table (30), 3 portemanteaux. Nappes à confirmer (10).
 
-Alexandre a déjà demandé les précisions. Pas une relance. **À faire :** envoie le devis. Le dépôt garde le 21 oct. Pas de prix inventé.
+## 10 sept 2026
 
-Pas de commande Booqable.
+Devis envoyé. Elle a demandé des chaises au lieu des tabourets, puis « qu’est-ce que vous avez comme chaises hautes ? ». Alexandre a répondu (~15 h 41 Toronto) : tabourets métal ou chaises hautes métal, dites ce que vous préférez. Dernier mot = Alexandre.
+
+Pas une relance. **À faire :** on attend. On n’écrit pas. Le dépôt garde le 21 oct.
+
+Pas de commande Booqable. Pas de prix inventé.
 
 ## Fil
 

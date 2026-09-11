@@ -11,15 +11,13 @@
 
 Noël corpo. 200 invités, 100–150 attendus. Cocktail debout. Thème « Retour à la maison ». Budget global 52 000 $ HT pour tout l’événement (traiteur, bar, DJ, vestiaire, déco, signalétique, paramédics, coordination) — pas un prix Évenox. Visite technique avant proposition finale. Brief + Drive joints.
 
-Pas une relance. Appelle d’abord (438-340-8449), ensuite le devis. Pas de prix inventé.
+## 10 sept 2026
 
-**Dis :** Allô Éléonore, Alexandre d’Évenox. J’ai votre demande pour le 19 ou 26 novembre à Montréal. Je vous envoie le devis ce matin — le dépôt garde la date.
+Alexandre a écrit (~22 h 50 Toronto) : mobilier / déco / aménagement seulement. 3 questions : 19 ou 26 nov, adresse, fenêtre de visite. Elle n’a pas répondu.
 
-**Si pas de réponse :** texto le même message + envoie le devis.
+Pas une relance. **À faire :** on attend. On n’écrit pas.
 
-**Objet :** Devis 19 novembre — Montréal
-
-Pas de commande Booqable. Pas sur Pipeline (créer après envoi réel).
+Pas de commande Booqable. Pas de prix inventé.
 
 ## Fil
 

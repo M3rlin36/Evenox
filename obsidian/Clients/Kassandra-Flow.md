@@ -11,9 +11,13 @@
 
 Lettres lumineuses K et J. Livrer 16–17 h, récupérer 22–23 h. Elle demande les détails ou la facture pour payer le dépôt.
 
-Pas une relance. **À faire :** envoie le lien de dépôt. Le dépôt garde le 23 sept. Pas de prix inventé.
+## 10 sept 2026
 
-Pas de commande Booqable.
+Alexandre a envoyé le PDF Booqable (~22 h 50 Toronto). Dépôt non reçu.
+
+Pas une relance. **À faire :** on attend le dépôt. On n’écrit pas. Le dépôt garde le 23 sept.
+
+Pas de commande Booqable. Pas de prix inventé.
 
 ## Fil
 

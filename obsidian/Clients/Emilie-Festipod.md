@@ -22,3 +22,9 @@ Pas une relance gabarit. **À faire :** dis tes heures (pas 16 h–minuit × 3).
 
 4 sept : heures 17 h–21 h × 3 + devis 3791 $ HT envoyés → prod.festipod@gmail.com. On attend.
 
+## 11 sept 2026 — J+7
+
+Silence depuis le 4 sept. Event 17–19 sept. Tél 514-567-5657.
+
+Pas un courriel. Si OUI : **appelle**, n’écris pas. « je garde le 17 sept ? »
+

@@ -9,7 +9,7 @@
 
 ## Déjà fait
 
-Mississippi + Connect 4 géant. Livrer 10 sept ~16 h 30, reprise 11 sept matin.
+Mississippi + Connect 4 géant. Livré 10 sept ~16 h 30, reprise 11 sept.
 Elle a demandé l’assurance. Alexandre a ajouté l’assurance au devis #1848. Elle a demandé le lien de dépôt. Paiement reçu.
 
 **À faire :** rien. On n’écrit pas.
