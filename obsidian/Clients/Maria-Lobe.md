@@ -12,7 +12,11 @@
 Plus de tabourets. 40 chaises. Ajouter 4 nappes noires pour les tables bistro.
 Livrer le 17 vers 16 h, récupérer le 18 vers 16 h 30. Factures à payables@lobe.ca.
 
-Pas une relance. **À faire :** envoie le devis à jour. Le dépôt garde le 17 sept. Pas de prix inventé.
+## 11 sept 2026
+
+Elle a demandé 100 chaises, puis rappelé ce message. Ensuite : **60 chaises**.
+
+Pas une relance. **À faire :** envoie le devis à jour (60 chaises). Le dépôt garde le 17 sept. Pas de prix inventé.
 
 [Booqable #1849](https://evenox.booqable.com/orders?q=1849)
 

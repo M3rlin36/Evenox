@@ -11,11 +11,12 @@
 
 Lettres lumineuses K et J. Livrer 16–17 h, récupérer 22–23 h. Elle demande les détails ou la facture pour payer le dépôt.
 
-## 10 sept 2026
+## 10–11 sept 2026
 
-Alexandre a envoyé le PDF Booqable (~22 h 50 Toronto). Dépôt non reçu.
+Alexandre a envoyé le PDF Booqable (10 sept ~22 h 50 Toronto).
+11 sept 10 h 22 : elle demande l’adresse de facturation au 5955 rue St-Laurent, bureau 204, Lévis. Livraison inchangée : 360 Rue Saint-Jacques, Montréal.
 
-Pas une relance. **À faire :** on attend le dépôt. On n’écrit pas. Le dépôt garde le 23 sept.
+Pas une relance. **À faire :** mets l’adresse de facturation. Le dépôt garde le 23 sept. Pas de prix inventé.
 
 Pas de commande Booqable. Pas de prix inventé.
 

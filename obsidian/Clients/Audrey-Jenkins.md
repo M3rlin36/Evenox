@@ -11,7 +11,11 @@
 
 Chiffres 5 et 0 seulement. Livraison seulement (elle branche). Arriver le 19 oct 16–17 h. Fin le 20 oct ~18 h 30. Intérieur. Pas de ballons pour l’instant. ~350 personnes.
 
-Alexandre a déjà posé les questions. Pas une relance. **À faire :** envoie le devis. Le dépôt garde le 19 oct. Pas de prix inventé.
+## 11 sept 2026
+
+Alexandre a envoyé le devis #1850. Elle a confirmé : « Je vous confirme avoir bien reçu le devis. »
+
+Pas une relance. **À faire :** on attend. On n’écrit pas. Le dépôt garde le 19 oct.
 
 [Booqable #1850](https://evenox.booqable.com/orders?q=1850)
 
