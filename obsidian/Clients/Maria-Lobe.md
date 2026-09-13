@@ -16,6 +16,8 @@ Livrer le 17 vers 16 h, récupérer le 18 vers 16 h 30. Factures à payables@lob
 
 Elle a demandé 100 chaises, puis rappelé ce message. Ensuite : **60 chaises**.
 
+13 sept : devis 60 chaises toujours pas envoyé.
+
 Pas une relance. **À faire :** envoie le devis à jour (60 chaises). Le dépôt garde le 17 sept. Pas de prix inventé.
 
 [Booqable #1849](https://evenox.booqable.com/orders?q=1849)

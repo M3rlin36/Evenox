@@ -14,7 +14,9 @@ Event 10 h 30–16 h. Récupérer à partir de 16 h.
 
 Fil : https://mail.google.com/mail/u/0/#inbox/1a0693422fdd7dc0
 
-Pas une relance. **À faire :** oui ou non pour 500 $ TTC. Ne pas inventer le prix.
+13 sept : event aujourd’hui. Alexandre n’a pas tranché.
+
+Pas une relance. **À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 13 sept. Ne pas inventer le prix.
 
 ## Pipeline / Suivis
 

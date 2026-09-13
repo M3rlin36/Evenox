@@ -11,6 +11,8 @@
 
 Le lien de dépôt est bloqué par la sécurité informatique. Elle veut payer par téléphone.
 
+13 sept : toujours pas de dépôt. Pas de numéro dans Gmail ni Pipeline.
+
 Pas une relance. **À faire :** prends le dépôt par téléphone. Le dépôt garde le 14 sept. Pas de prix inventé.
 
 [Booqable #1353](https://evenox.booqable.com/orders?q=1353)

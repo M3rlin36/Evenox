@@ -1,30 +1,35 @@
-# Aujourd’hui — 12 septembre 2026
+# Aujourd’hui — 13 septembre 2026
 
 Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
 **Qui doit bouger ?**
-**Commence par Sophie** — prends le dépôt par téléphone (Daubigny, 14 sept).  
-Puis Dahlia — oui ou non (500 $ TTC, demain). Puis Maria — 60 chaises (Lobe, 17 sept).  
+**Commence par Rosemarie** — envoie le lien de paiement (chiffres 1 et 6, livrés).  
+Puis Dahlia — oui ou non (500 $ TTC, aujourd’hui). Puis Sophie — prends le dépôt par téléphone (Daubigny, demain).  
 Aucun courriel client ce matin. Portes + dettes.
 
 ## C’est à toi — ce matin
 
-**Sophie Thivierge** — Daubigny — en premier · elle a écrit · ce matin · 14–15 sept · soumission 1353  
+**Rosemarie Colannino** — en premier · elle a écrit · ce matin · livré 10 sept · commande 1558  
+Elle a écrit hier : merci pour la livraison des 1 et 6. Pas de facture finale. Elle veut le lien carte, ou un virement. Dépôt 50 $ déjà payé.  
+**À faire :** envoie le lien de paiement.  
+[Booqable #1558](https://evenox.booqable.com/orders?q=1558)
+
+**Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
+Retire le champagne. Max 500 $ TTC : mur de fleurs + 2 chiffres + livraison. 10 h 30–16 h. Aujourd’hui.  
+**À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 13 sept.  
+[Booqable #1826](https://evenox.booqable.com/orders?q=1826)
+
+**Sophie Thivierge** — Daubigny — ce matin · elle a écrit · 14–15 sept · soumission 1353  
 Le lien de dépôt est bloqué par sa sécurité. Elle veut payer par téléphone. 298,94 $ TTC. Ramassage Sainte-Thérèse.  
 **À faire :** prends le dépôt par téléphone. Le dépôt garde le 14 sept.  
 [Booqable #1353](https://evenox.booqable.com/orders?q=1353)
 
-**Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
-Retire le champagne. Max 500 $ TTC : mur de fleurs + 2 chiffres + livraison. 10 h 30–16 h. Demain.  
-**À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 13 sept.  
-[Booqable #1826](https://evenox.booqable.com/orders?q=1826)
+## Après
 
-**Maria Leon** — Clinic Lobe — ce matin · elle a écrit · 17–18 sept · devis 1849  
-Hier : 60 chaises (pas 100, pas 40). 4 cocktail + 4 nappes noires. Livrer le 17 vers 16 h, récupérer le 18 vers 16 h 30.  
+**Maria Leon** — Clinic Lobe — après · elle a écrit · 17–18 sept · devis 1849  
+11 sept : 60 chaises (pas 100, pas 40). 4 cocktail + 4 nappes noires. Livrer le 17 vers 16 h, récupérer le 18 vers 16 h 30.  
 **À faire :** envoie le devis à jour. Le dépôt garde le 17 sept.  
 [Booqable #1849](https://evenox.booqable.com/orders?q=1849)
-
-## Après
 
 **Kassandra Blouin** — Flow — après · elle a écrit · 23 sept  
 PDF reçu. Facturation : 5955 rue St-Laurent, bureau 204, Lévis. Livraison : 360 Saint-Jacques, Montréal.  
@@ -82,7 +87,7 @@ Dépôt 300 $ le 12 août (Carolane). Soumission 1562. La date est gardée.
 
 ## On attend
 
-**Audrey** — CRAAQ 19–20 oct. Devis #1850 reçu hier.  
+**Audrey** — CRAAQ 19–20 oct. Devis #1850 reçu vendredi.  
 **Éléonore** — Nouvlr. 3 questions envoyées le 10 sept.  
 **Josianne** — Hamel BMW 21 oct. Dernier mot : toi (tabourets ou chaises hautes).  
 **Vincent** — Repentigny 23–24 sept. Devis accepté. Lien de dépôt envoyé.  
@@ -100,4 +105,4 @@ Dépôt 300 $ le 12 août (Carolane). Soumission 1562. La date est gardée.
 **Dylan, Manon** — trop tôt (fin sept).  
 **Christina, Radiologix** — trop tôt (novembre).
 
-Réponds **OUI**, **NON** ou **sauf Sophie**.
+Réponds **OUI**, **NON** ou **sauf Rosemarie**.
