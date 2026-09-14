@@ -1,30 +1,38 @@
-# Aujourd’hui — 13 septembre 2026
+# Aujourd’hui — 14 septembre 2026
 
 Page : https://app.notion.com/p/3d031d285ea681309e1afbc591262304
 
 **Qui doit bouger ?**
-**Commence par Rosemarie** — envoie le lien de paiement (chiffres 1 et 6, livrés).  
-Puis Dahlia — oui ou non (500 $ TTC, aujourd’hui). Puis Sophie — prends le dépôt par téléphone (Daubigny, demain).  
+**Commence par Julien** — appelle 514-206-4036 (6 tables picnic, week-end prochain).  
+Puis Sophie — prends le dépôt par téléphone (Daubigny, aujourd’hui). Puis Dahlia — oui ou non (500 $ TTC, aujourd’hui).  
 Aucun courriel client ce matin. Portes + dettes.
 
 ## C’est à toi — ce matin
 
-**Rosemarie Colannino** — en premier · elle a écrit · ce matin · livré 10 sept · commande 1558  
-Elle a écrit hier : merci pour la livraison des 1 et 6. Pas de facture finale. Elle veut le lien carte, ou un virement. Dépôt 50 $ déjà payé.  
-**À faire :** envoie le lien de paiement.  
-[Booqable #1558](https://evenox.booqable.com/orders?q=1558)
-
-**Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
-Retire le champagne. Max 500 $ TTC : mur de fleurs + 2 chiffres + livraison. 10 h 30–16 h. Aujourd’hui.  
-**À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 13 sept.  
-[Booqable #1826](https://evenox.booqable.com/orders?q=1826)
+**Julien Fréchette** — La Pimenterie — en premier · appelle · ce matin · 19–20 sept  
+Il a écrit hier : 6 tables picnic pour le week-end prochain.  
+**À faire :** appelle 514-206-4036. Ensuite le devis. Le dépôt garde le 19 sept.  
+**Dis :** Allô Julien, Alexandre d’Évenox. J’ai votre demande pour 6 tables picnic le week-end prochain. Je vous envoie le devis ce matin — le dépôt garde la date.  
+**Si pas de réponse :** texto le même message + envoie le devis.  
+**Objet :** Devis 19 septembre — tables picnic  
+Pas de commande Booqable.
 
 **Sophie Thivierge** — Daubigny — ce matin · elle a écrit · 14–15 sept · soumission 1353  
-Le lien de dépôt est bloqué par sa sécurité. Elle veut payer par téléphone. 298,94 $ TTC. Ramassage Sainte-Thérèse.  
+Le lien de dépôt est bloqué par sa sécurité. Elle veut payer par téléphone. 298,94 $ TTC. Ramassage Sainte-Thérèse. Aujourd’hui.  
 **À faire :** prends le dépôt par téléphone. Le dépôt garde le 14 sept.  
 [Booqable #1353](https://evenox.booqable.com/orders?q=1353)
 
+**Dahlia** — ce matin · elle a écrit · 13–14 sept · devis 1082 $  
+Retire le champagne. Max 500 $ TTC : mur de fleurs + 2 chiffres + livraison. 10 h 30–16 h. Aujourd’hui, dernier jour.  
+**À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 14 sept.  
+[Booqable #1826](https://evenox.booqable.com/orders?q=1826)
+
 ## Après
+
+**Rosemarie Colannino** — après · elle a écrit · livré 10 sept · commande 1558  
+Merci pour la livraison des 1 et 6. Pas de facture finale. Elle veut le lien carte, ou un virement. Dépôt 50 $ déjà payé.  
+**À faire :** envoie le lien de paiement.  
+[Booqable #1558](https://evenox.booqable.com/orders?q=1558)
 
 **Maria Leon** — Clinic Lobe — après · elle a écrit · 17–18 sept · devis 1849  
 11 sept : 60 chaises (pas 100, pas 40). 4 cocktail + 4 nappes noires. Livrer le 17 vers 16 h, récupérer le 18 vers 16 h 30.  
@@ -105,4 +113,4 @@ Dépôt 300 $ le 12 août (Carolane). Soumission 1562. La date est gardée.
 **Dylan, Manon** — trop tôt (fin sept).  
 **Christina, Radiologix** — trop tôt (novembre).
 
-Réponds **OUI**, **NON** ou **sauf Rosemarie**.
+Réponds **OUI**, **NON** ou **sauf Julien**.

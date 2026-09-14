@@ -16,6 +16,8 @@ Fil : https://mail.google.com/mail/u/0/#inbox/1a0693422fdd7dc0
 
 13 sept : event aujourd’hui. Alexandre n’a pas tranché.
 
+14 sept : dernier jour. Alexandre n’a toujours pas tranché.
+
 Pas une relance. **À faire :** oui ou non pour 500 $ TTC. Le dépôt garde le 13 sept. Ne pas inventer le prix.
 
 ## Pipeline / Suivis

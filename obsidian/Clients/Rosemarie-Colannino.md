@@ -11,6 +11,8 @@
 
 Merci d’avoir livré les 1 à 6 à l’avance. Pas reçu la facture pour le paiement final. Elle veut le lien carte, ou un virement.
 
+14 sept : lien de paiement toujours pas envoyé.
+
 Pas une relance. **À faire :** envoie le lien de paiement.
 
 [Booqable #1558](https://evenox.booqable.com/orders?q=1558)
