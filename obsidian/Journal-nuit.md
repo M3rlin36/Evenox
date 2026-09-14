@@ -1,0 +1,133 @@
+# Journal nuit — améliorer le suivi
+
+Chaque passage : 1 question internet, 1 trou chez nous, 1 ajout. Pas de CRM.
+
+## Tick 1 — 4 sept 2026 ~22 h Toronto
+
+**Question :** qu’est-ce qui ferme plus de dépôts en location événementielle ?
+
+**Déjà en place ailleurs :** devis le jour même. Relance J+2 / J+4 avec « je garde la date ? » (pas « just checking in »). 3–4 touches puis stop. Réponse client = on arrête. Corporatif : « vous le refaites ? » 8–12 semaines avant leur saison. Trier par $ × jours avant l’event. Lead inbound : plus vite on répond, plus on close (souvent dans l’heure).
+
+**Ce qui cloche chez nous :** « on n’écrit pas » cachait la dette d’Alexandre (Emilie, Justine). Les nouveaux leads site n’arrivaient pas sur Aujourd’hui. Joëlle Radio-Canada a demandé ce soir — 40 tables, 21 sept — et n’était pas sur la page.
+
+**Ajout :** section **C’est à toi**. Ligne **Commence par**. Joëlle en premier. Étiquette **en premier**.
+
+## Tick 2 — 3 sept 2026 22 h 15 Toronto
+
+**Question :** comment les closers formulent le prochain pas après un devis ?
+
+**Déjà en place ailleurs :** une action seulement. Le dépôt = la date est gardée. Lien de paiement dans le devis. Pas « just checking in ».
+
+**Ce qui cloche chez nous :** les fiches disaient quoi s’est passé, pas quoi faire. Emilie 5591 $ sans « envoie le devis ». Joëlle sans « le dépôt garde le 21 sept ».
+
+**Ajout :** ligne **À faire** sur chaque fiche. Gabarit `devis-premier.md`. Aucun nouveau lead Gmail. Pas de courriel à Alexandre.
+
+## Tick 3 — 3 sept 2026 23 h 00 Toronto
+
+**Question :** un lead site le soir, on écrit ou on appelle le matin ?
+
+**Déjà en place ailleurs :** appel d’abord (surtout inbound). Le voicemail seul perd le lead. Courriel de devis ensuite. Le dépôt garde la date.
+
+**Ce qui cloche chez nous :** Joëlle a un numéro (438-342-8309) et un avis « appeler dans l’heure ». La fiche disait seulement « envoie le devis ». Le timer matin demandait encore des numéros (1 3 7).
+
+**Ajout :** Joëlle = **appelle** + numéro. Règle skill : inbound avec téléphone → appel d’abord. Timer matin corrigé (OUI / NON / sauf). Pas de nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 4 — 3 sept 2026 23 h 45 Toronto
+
+**Question :** qu’est-ce qu’on dit dans les 30 premières secondes d’un appel inbound ?
+
+**Déjà en place ailleurs :** date + lieu d’abord (oui/non dispo). Une prochaine étape. Le dépôt garde la date. Pas de catalogue au téléphone.
+
+**Ce qui cloche chez nous :** Joëlle dit « appelle » sans les mots. Le gabarit appel-j7 est pour une relance silencieuse, pas un lead du soir.
+
+**Ajout :** ligne **Dis :** sur Joëlle. Gabarit `appel-inbound.md`. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 5 — 4 sept 2026 00 h 30 Toronto
+
+**Question :** si le lead ne répond pas au rappel du matin, on attend ou on écrit ?
+
+**Déjà en place ailleurs :** message + devis (ou texto) tout de suite. Attendre un 2e appel le lendemain perd le lead.
+
+**Ce qui cloche chez nous :** Joëlle a Dis, mais rien si elle ne décroche pas. Le devis resterait dans la poche.
+
+**Ajout :** **Si pas de réponse :** même message + envoie le devis. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 6 — 4 sept 2026 01 h 15 Toronto
+
+**Question :** combien de noms sur la liste du matin pour closer ?
+
+**Déjà en place ailleurs :** huddle court. 2–3 dossiers qui bougent aujourd’hui. Le reste après. Trop de noms = on n’en fait aucun.
+
+**Ce qui cloche chez nous :** C’est à toi mélangeait Joëlle (ce soir) avec Justine et Annie (décembre). Un enfant ne voit plus qui d’abord.
+
+**Ajout :** **ce matin** (Joëlle, Emilie, Dahlia) et **Après** (Justine, Annie). Max 3 ce matin. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 7 — 4 sept 2026 02 h 00 Toronto
+
+**Question :** quel objet de courriel fait ouvrir un premier devis ?
+
+**Déjà en place ailleurs :** la date dans l’objet (`Devis 21 septembre — Radio-Canada`). Pas « Devis Evenox », pas « following up ». Le client sait ce que c’est sans ouvrir.
+
+**Ce qui cloche chez nous :** Joëlle et Emilie disent « envoie le devis » sans objet. Le gabarit disait encore « Devis — événement du date ».
+
+**Ajout :** ligne **Objet :** sur Joëlle et Emilie seulement. Gabarit : `Devis [date] — [événement]`. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 8 — 4 sept 2026 02 h 45 Toronto
+
+**Question :** un client écrit avec un budget : on dit quoi ?
+
+**Déjà en place ailleurs :** un vrai oui/non sur le montant + ce qu’elle garde. Une prochaine étape (le dépôt garde la date). Pas « réponds », pas une grille de prix.
+
+**Ce qui cloche chez nous :** Dahlia disait « réponds à ce qu’elle a écrit ». Elle a pourtant écrit : 500 $ TTC, plus de champagne, 13 sept 10 h 30–16 h. Le lien Booqable pointait #921 ; elle a répondu au devis **1826**.
+
+**Ajout :** Dahlia = **oui ou non pour 500 $ TTC**. Booqable #1826. Règle skill : budget → oui/non. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 9 — 4 sept 2026 03 h 30 Toronto
+
+**Question :** l’an passé doit-il rester sur la liste du matin ?
+
+**Déjà en place ailleurs :** huddle = ce qui bouge aujourd’hui. An passé seulement dans la fenêtre 8–12 semaines. Le reste = trop tôt, une ligne, pas une revue.
+
+**Ce qui cloche chez nous :** Notion avait 5 fiches An passé (Linq + Dylan + Manon + Christina + Radiologix). Un enfant n’arrive plus à Joëlle.
+
+**Ajout :** An passé = Linq (**fenêtre**) + 2 lignes **trop tôt**. Skill : trop tôt groupé. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 10 — 4 sept 2026 04 h 15 Toronto
+
+**Question :** les 3 premières lignes d’un huddle du matin, on y met qui ?
+
+**Déjà en place ailleurs :** les 2–3 dossiers live, un verbe chacun. Pas seulement le plus gros $. L’event le plus proche reste visible.
+
+**Ce qui cloche chez nous :** « Qui doit bouger » disait Joëlle puis Emilie. Dahlia (13 sept, elle a écrit) n’était pas en haut.
+
+**Ajout :** les 3 **ce matin** en haut — appelle / envoie / oui ou non. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 11 — 4 sept 2026 05 h 00 Toronto
+
+**Question :** si le lead ne décroche pas, courriel seulement ou texto aussi ?
+
+**Déjà en place ailleurs :** le même message en SMS tout de suite, plus le devis. Le courriel seul reste non lu. 73 % des gens raccrochent au voicemail.
+
+**Ce qui cloche chez nous :** Joëlle a un cellulaire (438) et « Si pas de réponse » = devis par courriel seulement.
+
+**Ajout :** **Si pas de réponse :** texto le même message + devis. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 12 — 4 sept 2026 05 h 45 Toronto
+
+**Question :** on n’a pas leurs heures : on envoie le devis quand même ?
+
+**Déjà en place ailleurs :** proposer tes heures, pas le devis du contrat refusé. Un choix clair. Ensuite seulement le chiffre.
+
+**Ce qui cloche chez nous :** Emilie = « envoie le devis 5591 $ ». Alexandre a déjà dit non (16 h–minuit × 3, 24 août). Elle a écrit le 25 août : ouverte à d’autres horaires. On lui doit les heures.
+
+**Ajout :** Emilie = **dis tes heures**, ensuite le devis. Aucun nouveau lead. Pas de courriel à Alexandre.
+
+## Tick 13 — 4 sept 2026 06 h 30 Toronto
+
+**Question :** après l’inbound, on prend le plus gros $ ou la date la plus proche ?
+
+**Déjà en place ailleurs :** inbound d’abord. Ensuite l’event / le oui-non le plus proche. Un plus gros $ plus loin attend.
+
+**Ce qui cloche chez nous :** Emilie (heures, 17 sept) était avant Dahlia (oui/non 500 $, 13 sept).
+
+**Ajout :** ordre **ce matin** = Joëlle, Dahlia, Emilie. Aucun nouveau lead. Pas de courriel à Alexandre.
