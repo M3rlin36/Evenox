@@ -150,8 +150,8 @@ Ce qu'on valide, et rien d'autre : le **CPC réel** par canal, le **taux de conv
 
 Limite assumée : Meta demande environ 50 conversions/semaine par ensemble pour sortir de l'apprentissage. À 26 $/jour et 89 $ de CPA, on obtient environ 2 achats/semaine — on n'en sortira pas. D'où **un seul ensemble, jamais fragmenté**, et un repli sur AddToCart si moins d'un achat par semaine après 2 semaines (section 4).
 
-**Variante 1 200 $/mois** (650/400/100 + 50) : environ 767 clics, 10,4 commandes, 4 349 $ HT, ROAS 3,8x. Signal plus mince, même calendrier.
-**Variante 800 $/mois** (450/300/50) : environ 516 clics, 7,0 commandes, 2 927 $ HT, ROAS 3,7x. Verdict repoussé à 10-12 semaines, donc mi-décembre : on rate les partys de bureau.
+**Variante 1 200 $/mois** (650/400/100 + 50) : environ 767 clics, 10,4 commandes, 4 368 $ HT, ROAS 3,8x. Signal plus mince, même calendrier.
+**Variante 800 $/mois** (450/300/50) : environ 516 clics, 7,0 commandes, 2 940 $ HT, ROAS 3,7x. Verdict repoussé à 10-12 semaines, donc mi-décembre : on rate les partys de bureau.
 
 ### 1.7 Critères de verdict — semaine du 23 novembre (V3, V4)
 
