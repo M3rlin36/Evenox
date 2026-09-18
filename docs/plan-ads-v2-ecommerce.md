@@ -751,7 +751,7 @@ Même squelette : on remplace les titres 1, 2, 4, 5 et la description 1. Les tit
 | `Tables-chaises-vaisselle` | Location tables et chaises (26) | Forfait mobilier dès 649 $ (26) | Chaise pliante dès 2 $ (22) | Tables et chaises Rive-Nord (27) | Forfait dès 649 $, taxes en sus. Livraison incluse jusqu'à 20 km. (65) |
 | `Marque Évenox` | Évenox, location événement (26) | Évenox : prix affichés (22) | Site officiel Évenox (20) | Évenox Sainte-Thérèse (21) | Site officiel. Prix affichés, réservation en ligne, dépôt de 20 % par carte. (76) |
 
-Exception 1 : sur `Tables-chaises-vaisselle`, la description 3 (barème à 100 $) contredit le forfait mobilier livré gratuitement jusqu'à 20 km. Supprimer la description 3 pour ce groupe et n'en garder que trois. Exception 2 : sur `Forfaits corpo`, tout passe au vouvoiement, donc le titre 6 devient « Réservez votre date » (20) et la description 4 sort de la rotation.
+Exception 1 : sur `Tables-chaises-vaisselle`, la description 3 (barème à 100 $) contredit le forfait mobilier livré gratuitement jusqu'à 20 km. Supprimer la description 3 pour ce groupe et n'en garder que trois. Exception 2 : sur `Forfaits corpo`, tout passe au vouvoiement, donc le titre 6 devient « Réservez votre date » (19) et la description 4 sort de la rotation.
 
 ### 5.5 Trois scripts de vidéo courte
 
