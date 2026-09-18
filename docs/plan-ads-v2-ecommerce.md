@@ -105,7 +105,7 @@ On garde le modèle : il connaît déjà tes prix ou peut les deviner. Ce qu'il 
 
 ### 1.4 Le tunnel e-commerce chiffré — toutes valeurs hypothèse
 
-Base : conversion 1,5 % (V2), panier 420 $ HT (V1), perte clic → session de 10 %. CPC Meta 1,20 $ et Google 3,50 $ retenus comme milieux des ordres de grandeur 0,80-1,50 $ et 2-5 $, **à valider en semaine 2**.
+Base : conversion 1,5 % (V2), panier 420 $ HT (V1), livraison comprise (définition de la valeur en section 7), perte clic → session de 10 %. CPC Meta 1,20 $ et Google 3,50 $ retenus comme milieux des ordres de grandeur 0,80-1,50 $ et 2-5 $, **à valider en semaine 2**.
 
 | Étape (mensuel) | Meta froid | Google Recherche | Retargeting | Total |
 |---|---|---|---|---|
@@ -1042,7 +1042,9 @@ Sur Google, ne colle pas ça dans chaque annonce : **Paramètres de la campagne 
 
 **ROAS = valeur HT des réservations payées attribuées aux pubs ÷ dépense pub de la même période.**
 
-- **Valeur** : total hors taxes de la commande (matériel et installation), au moment où le dépôt de 20 % est encaissé et la réservation confirmée dans Booqable. Pas le dépôt, pas les taxes. **La livraison est exclue** : c'est un coût refacturé qui gonflerait le ROAS sans marge.
+- **Valeur envoyée aux plateformes** : le total hors taxes de la commande tel que la caisse Booqable le transmet, livraison comprise, taxes exclues. C'est la seule valeur qu'on peut envoyer sans développement sur mesure, donc c'est celle qui sert aux enchères et aux règles automatiques. Jamais le dépôt de 20 %, jamais un montant taxes incluses.
+- **Deuxième lecture, dans le Sheet seulement** : une colonne « ROAS hors livraison », où tu soustrais la ligne de livraison de chaque commande, visible dans Booqable. La livraison est un coût refacturé : elle gonfle le revenu sans ajouter de marge. C'est ce deuxième chiffre qui décide d'augmenter un budget, pas celui des plateformes. Sur un LOVE livré à Laval, l'écart est réel : 450 $ envoyés à Meta, 280 $ de vraie valeur.
+- Les tableaux des sections 1 et 4 raisonnent sur le total de la commande, livraison comprise, donc sur la même base que les plateformes. Le panier de 420 $ (V1) est un total de commande, pas un montant net de livraison.
 - **Fenêtre** : Meta 7 jours après clic, 1 jour après vue. Google 30 jours après clic, dernier clic pour la lecture hebdomadaire. La date qui compte est celle du paiement du dépôt, pas celle de l'événement.
 - **Exclusions** : commandes annulées ou remboursées (déduites le lundi suivant), groupe `Marque Évenox` (suivi à part, il ne finance pas le verdict du froid), commandes prises au comptoir ou au téléphone sans clic publicitaire, commandes test.
 - **Pas de double comptage** : une seule action de conversion Purchase, une seule étiquette, un seul compte Google Ads. Jamais la même commande en conversion web ET hors connexion; le `transaction_id` sert de clé. **On n'additionne jamais Meta et Google** : chacun s'attribue le même clic. Le total des réservations vient de Booqable.
