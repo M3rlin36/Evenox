@@ -11,7 +11,7 @@ Cette version remplace la v1. La v1 avait été écrite sur une prémisse fausse
 3. **Le vrai levier de revenu.** Les forfaits corporatifs de 1 195 $ à 2 495 $. Il faut 119 commandes de lettres pour faire 50 000 $ dans un mois, contre 25 forfaits corporatifs. Les pubs poussent les lettres pour attirer, le configurateur et la page des forfaits pour monter le panier.
 4. **Le budget.** 1 500 $ par mois pendant 8 semaines, soit 3 000 $ : 800 $ sur Meta en froid, 500 $ sur Google Recherche, 150 $ en reciblage de paniers abandonnés, 50 $ de réserve.
 5. **Le résultat attendu, en hypothèses à valider.** Environ 27 réservations payées, environ 11 300 $ de revenu hors taxes, pour un retour de 3,8 fois la dépense.
-6. **Les seuils.** Coût cible par réservation payée : 105 $. Alerte au-dessus de 140 $ sur sept jours. Pause d'un ensemble ou d'un groupe au-dessus de 200 $ après 200 $ dépensés. Retour sur dépense visé entre 4 et 5 fois, correction obligatoire sous 3 fois.
+6. **Les seuils.** Coût cible par réservation payée : 105 $. Alerte au-dessus de 140 $ sur sept jours. Pause d'un ensemble ou d'un groupe au-dessus de 200 $ après 200 $ dépensés, mais en simple avertissement jusqu'au 18 octobre, parce qu'à 26 $ par jour ce seuil tombe au huitième jour et couperait une campagne parfaitement normale (section 4). Retour sur dépense visé entre 4 et 5 fois, correction obligatoire sous 3 fois.
 7. **Le problème numéro un, avant toute dépense.** Ton marquage est éclaté : le pixel Meta est sur la boutique mais pas sur le site qui reçoit les clics, et deux comptes Google Ads différents sont installés sur les deux domaines. Tant que ce n'est pas réparé, tu paieras à l'aveugle.
 8. **Le problème numéro deux.** Aucune bannière de consentement, alors que des balises collectent déjà. C'est un risque légal et ça se règle en une heure.
 9. **Le problème numéro trois.** Une note interne dans le code dit que le sélecteur de lettres ne s'affiche pas sur la page produit. Si c'est vrai, personne ne peut choisir ses lettres et chaque dollar de pub est perdu.
@@ -23,7 +23,7 @@ Cette version remplace la v1. La v1 avait été écrite sur une prémisse fausse
 
 | Terme | En une phrase | Valeur Évenox |
 |---|---|---|
-| CPA | Coût par réservation payée : dépense divisée par le nombre de commandes. | Cible 105 $, alerte 140 $, pause 200 $ |
+| CPA | Coût par réservation payée : dépense divisée par le nombre de commandes. | Cible 105 $, alerte 140 $, pause 200 $ (coupure active seulement à partir du 19 octobre, section 4) |
 | ROAS | Retour sur dépense publicitaire : revenu hors taxes des commandes attribuées aux pubs divisé par la dépense. | Cible 4 à 5 fois, correction sous 3 fois |
 | Panier moyen | Valeur moyenne d'une commande, hors taxes. | Hypothèse 420 $ pondéré, à remplacer par l'export Booqable |
 | Taux de conversion | Part des visites qui deviennent une commande payée. | Cible 1,5 %, fourchette 0,8 à 2,5 % |
@@ -164,7 +164,7 @@ Lecture sur les 8 semaines complètes, en réservations payées attribuées. Si 
 | Retargeting | 300 $ | ≥ 4 réserv., CPA ≤ 75 $, ROAS ≥ 5,6x | 2-3 réserv., ROAS 2,8-4,2x | ≤ 1 réserv., ROAS ≤ 1,4x |
 | **Ensemble** | **3 000 $** | **≥ 27 réserv., ≥ 11 300 $ HT, ROAS ≥ 3,8x** | **18 à 26 réserv., ROAS 2,5-3,6x** | **≤ 17 réserv., ROAS ≤ 2,4x** |
 
-Deux drapeaux forcent un CORRIGER quel que soit le chiffre : plus de 30 % de termes de recherche hors sujet sur Google, ou une fréquence Meta supérieure à 4 sur 7 jours. Le groupe « Marque Évenox » est exclu du calcul : c'est de la défense de marque. Les règles de pause en cours de route (CPA > 200 $ après 200 $ dépensés, ou 200 $ sans réservation) s'appliquent avant, aux lundis du 12 octobre, 26 octobre et 9 novembre.
+Deux drapeaux forcent un CORRIGER quel que soit le chiffre : plus de 30 % de termes de recherche hors sujet sur Google, ou une fréquence Meta supérieure à 4 sur 7 jours. Le groupe « Marque Évenox » est exclu du calcul : c'est de la défense de marque. Les règles de pause en cours de route (CPA > 200 $ après 200 $ dépensés, ou 200 $ sans réservation) s'appliquent avant, aux lundis du 12 octobre, 26 octobre et 9 novembre. Sur le froid, elles n'envoient qu'un avertissement jusqu'au 18 octobre et ne coupent qu'à partir du 19, pour la raison expliquée en section 4; sur le retargeting, elles coupent dès le premier jour.
 
 GO = on monte à 2 500 $/mois sur le canal gagnant. CORRIGER = même budget, on change créas, pages ou mots-clés, relecture 4 semaines plus tard. STOP = on coupe et on remet ce budget sur le canal qui tient.
 
@@ -1367,7 +1367,7 @@ C'est le jour qui décide. Si le revenu ne remonte pas au bon endroit, on ne pub
 | 10 h 15, 45 min | Charger les 9 pubs, textes et UTM | Meta > Publicité > Destination > Paramètres d'URL | 9 pubs nommées, `utm_content` conforme à la convention |
 | 11 h 00, 30 min | `EVX_META_RETARGETING` à 5 $ par jour et ses audiences | Meta > Audiences > Audience personnalisée > Site web | Panier 7 jours et vues 30 jours créées, taille notée |
 | 13 h 00, 105 min | `EVX_GOOGLE_RECH_LOCATION`, 6 groupes, 16,50 $ par jour, 40 km, assets et UTM | Google Ads `AW-16529262834` > Campagnes > Nouvelle > Ventes > Recherche | Partenaires de recherche décochés, modèle de suivi validé par « Tester » |
-| 14 h 45, 30 min | Règles automatiques : pause si CPA dépasse 200 $ après 200 $ dépensés | Meta > Règles; Google Ads > Outils > Règles | Deux règles actives, avis à evenox.ca@gmail.com |
+| 14 h 45, 30 min | Règles automatiques de la section 4. Sur le froid, créer les règles de coupure avec l'action Notification, pas Désactiver : le seuil de 200 $ tombe au jour 8 et couperait pour du bruit. Rappel d'agenda au lundi 19 octobre pour les basculer en Désactiver. Sur le retargeting, l'action est Désactiver dès maintenant | Meta > Règles; Google Ads > Outils > Règles | Règles actives, avis à evenox.ca@gmail.com, rappel du 19 octobre créé |
 | 15 h 15, 45 min | Tableau de bord « EVX – Suivi ads » | Google Sheets, onglets Semaine, Termes, Commandes, Go-NoGo, Bogues | CPA et ROAS calculés sur la valeur HT, pas sur le dépôt |
 
 ### Samedi 26 — revue go / no-go, courriels, alertes (3 h 30)
