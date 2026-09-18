@@ -2,6 +2,63 @@
 
 Préparé pour Alexandre Séguin · 17 septembre 2026 · version 1.0 · budget test 1 500 $/mois · fenêtre 21 septembre → 22 novembre 2026
 
+## Données confirmées le 18 septembre 2026 (relevé sur evenox.ca)
+
+Ce bloc remplace les hypothèses correspondantes du plan. Tout ce qui suit a été lu directement sur le site public, pas supposé.
+
+**Écart majeur à trancher avant d'exécuter les sections 3, 5, 6, 7 et 10.** Le plan a été écrit sur la prémisse « aucun prix affiché, soumission en 24 h, tunnel lead → devis → dépôt ». Le site fait l'inverse : les prix sont affichés, le configurateur et la boutique Booqable prennent la réservation en ligne 24 h sur 24, avec 20 % payés par carte à la réservation. Conséquence : l'événement à optimiser n'est plus « Lead » mais l'achat avec sa valeur, la page à pousser est le configurateur et les pages produit plutôt qu'une nouvelle page à formulaire, et le ROAS se lit directement dans les plateformes au lieu d'être recollé à la main depuis Booqable. Recommandation : garder le tunnel actuel (prix affichés, réservation en ligne) et refaire les sections concernées sur cette base; le budget, les seuils de CPL devenus CPA et le calendrier restent valables.
+
+### Stack réel
+
+| Élément | Constat |
+|---|---|
+| CMS et thème | WordPress avec Divi (confirmé) |
+| Boutique | WooCommerce + boutique Booqable intégrée (evenox.booqableshop.com), groupe produit `marquee-letter` |
+| Plugins actifs repérés | Yoast SEO, Jetpack, Mailchimp for WooCommerce, Google Listings and Ads, recherche Ajax WooCommerce, plugin maison de relance de panier |
+| Google Ads | Balise `AW-16776285171` déjà posée, plus un conteneur `GTM-PP2W2TX9` : le compte existe, il n'y a rien à créer (Site Kit devient inutile) |
+| Pixel Meta | Absent de l'accueil, de la page lettres, du configurateur et de la page contact : c'est le seul marquage à poser |
+| Bannière de consentement (Loi 25) | Absente. Seule l'interface technique WP Consent API est présente. Les balises Google tournent donc sans consentement : à corriger avant la première piastre de pub |
+
+### Prix et conditions publiés
+
+| Élément | Valeur affichée |
+|---|---|
+| Lettre illuminée | 70,00 $ par lettre pour 48 h; 3 jours × 1,5; 1 semaine × 2; 4 semaines × 4; aucun rabais de quantité |
+| Chiffre lumineux | 70,00 $ par chiffre, même barème |
+| Exemples publiés | LOVE 280,00 $ (4 lettres), OH BABY 420,00 $ (6 lettres) |
+| Livraison à la carte | 100,00 $ jusqu'à 10 km, puis 7,00 $ du kilomètre jusqu'à 40 km; au-delà, soumission sur mesure |
+| Livraison des forfaits tables et chaises | Incluse jusqu'à 20 km, 100,00 $ de 20 à 30 km, 200,00 $ de 30 à 40 km |
+| Ramassage | Gratuit, 215 boul. René-A.-Robert, local 100, Sainte-Thérèse |
+| Réservation | 20 % du total à la réservation, solde au ramassage, carte de crédit en ligne seulement (conforme à H2) |
+| Forfaits existants | Corporatif de 1 195 $ à 2 495 $, mariage dès 899 $, tables et chaises dès 649 $ |
+
+Le panier lettres seules se recalcule donc sans hypothèse : un mot de 4 lettres livré à Laval revient à 280 $ plus 100 $ à 170 $ de livraison, soit 380 $ à 450 $. L'hypothèse H1 de 450 $ tient; celle de 550 $ pondéré tient aussi dès qu'un jeu ou du mobilier s'ajoute au panier.
+
+### Inventaire réel (publié sur les pages produit)
+
+Lettres : 27 modèles, 58 pièces au total.
+
+| Exemplaires | Caractères |
+|---|---|
+| 5 | A |
+| 4 | M, O, R |
+| 3 | B, I, S |
+| 2 | C, D, E, F, G, H, L, N, P, T, V, Z |
+| 1 seul | &, J, K, Q, U, W, X, Y |
+
+Chiffres : 0 × 3, 1 × 3, 2 × 4, 3 × 2, 4 × 1, 5 × 3, 6 × 2, 7 × 1, 8 × 1, 9 × 1.
+
+Ce que ça autorise pour les créas de la section 5 : LOVE, MERCI, EMMA, NOEL, PARIS, GALA, BABY, BRAVO et 2027 sont tous montables. WOW est impossible (un seul W), comme 44, 77, 88 et 99 (un seul 4, 7, 8 et 9). Aucune lettre accentuée n'existe : NOËL s'écrit NOEL en créa.
+
+Plafond de stock : avec 5 A, 4 M, 4 O et 4 R, plusieurs mots courants peuvent tourner le même week-end, mais les 8 caractères uniques (&, J, K, Q, U, W, X, Y) bloquent un mot dès qu'un autre client l'a réservé. La règle « stock plein » des paliers se lit donc dans le calendrier Booqable, caractère par caractère, pas en nombre de sets.
+
+### Deux points à vérifier toi-même
+
+1. **Sélecteur de lettres sur la page produit.** Une note interne dans le code de `/product/lettre-illuminee-marquee-letter/` indique que le composant Booqable ne rend aucun sélecteur sur ce groupe de 27 variantes et qu'un contournement a été posé. La note n'est pas visible par le client, mais si le sélecteur ne s'affiche pas, personne ne peut choisir ses lettres et chaque dollar de pub est perdu. Ouvre la page sur ton téléphone et essaie d'ajouter deux lettres au panier.
+2. **Balise Google sans consentement.** Tant qu'il n'y a pas de bannière, le marquage Google déjà en place collecte sans consentement préalable (Loi 25).
+
+---
+
 ## Comment lire ce document
 
 - Sections 1–2 : pourquoi ce plan (lettres, Meta + Google, budget, ROAS, offre).
@@ -2100,11 +2157,9 @@ Chaque lundi, tu envoies le lien du Sheet à ton admin secondaire : ça te force
 
 ## Questions bloquantes pour affiner
 
-Réponds à ces 8 questions (une ligne chacune suffit) et je recalibre tous les chiffres marqués « hypothèse » : plafond de stock, panier, taux de close, seuils de verdict et calendrier.
+Trois questions sont déjà réglées par le relevé du 18 septembre (voir le bloc en tête de document); elles restent listées avec ce qu'il manque encore. Réponds aux autres (une ligne chacune suffit) et je recalibre tous les chiffres marqués « hypothèse » : plafond de stock, panier, taux de close, seuils de verdict et calendrier.
 
-1. **Combien de sets de lettres complets et de jeux de chiffres as-tu, avec le nombre d'exemplaires par caractère (deux « 2 » pour « 2027 », deux « M » pour « EMMA »), et as-tu des lettres accentuées (É, Ë) ou des symboles (cœur, &)?**
-   Pourquoi ça change le plan : c'est le plafond de réservations par week-end (règle « stock plein » des paliers +20 %), et ça décide quels mots peuvent être promis en créa (NOËL, LÉA, A ♥ M) et si le forfait est plafonné à 4 ou 5 pièces.
-   Hypothèse utilisée en attendant : nombre de sets inconnu (exemple illustratif de 3 sets, H9); aucune créa n'utilise d'accent ni de symbole; seuls les mots photographiés sur le set réel avant le 23 septembre sont produits.
+1. ~~Inventaire des lettres et des chiffres~~ — **RÉPONDU** le 18 septembre : 58 lettres en 27 modèles et 10 chiffres, détail dans le bloc « Données confirmées » en tête de document. Reste à confirmer : combien de caractères sont déjà réservés sur les six prochains samedis (Booqable, calendrier), parce que c'est ça, et non le nombre de pièces, qui déclenche la règle « stock plein » des paliers.
 
 2. **Quel est le panier moyen HT réel des 12 derniers mois dans Booqable (lettres seules, mix lettres + jeux/mobilier) et la part du CA week-end vs semaine, avec l'historique 2025 par semaine?**
    Pourquoi ça change le plan : le panier fixe le ROAS implicite (0,28 × panier ÷ 40 $), le calcul inverse des 50 k$ et la lecture de la saisonnalité de la fenêtre (H11).
@@ -2114,13 +2169,9 @@ Réponds à ces 8 questions (une ligne chacune suffit) et je recalibre tous les 
    Pourquoi ça change le plan : s'il est déjà ≥ 45 %, on allège les relances J+5/J+10; s'il est < 25 %, on revoit le devis avant de dépenser 1 $ en pubs; il fixe aussi le seuil GO (close ≥ 30 %).
    Hypothèse utilisée en attendant : lead → devis 80 % (H4), devis → dépôt 35 % (H5), donc lead → dépôt ≈ 28 %.
 
-4. **Le site evenox.ca est-il bien sous WordPress + Divi, quels plugins sont déjà actifs (formulaire, bannière de consentement Loi 25, SEO, cache), quelles pages jeux et mobilier existent (URL exactes), et existe-t-il déjà un Pixel Meta, un compte Google Ads ou une fiche Google Business Profile (sous quel courriel)?**
-   Pourquoi ça change le plan : ça décide si Fluent Forms, Complianz, PixelYourSite et Site Kit s'installent tels quels ou si on garde l'existant, si un compte Google Ads doit être nettoyé avant le 28 septembre, et où atterrissent les groupes Google « Jeux géants » et « Tables-chaises-vaisselle ».
-   Hypothèse utilisée en attendant : WordPress + Divi, page /lettres-illuminees créée de zéro, comptes neufs; les groupes Jeux et Mobilier pointent vers /lettres-illuminees#jeux et #mobilier.
+4. ~~Site, plugins et comptes~~ — **RÉPONDU** : WordPress avec Divi, WooCommerce plus boutique Booqable, balise Google Ads déjà en place, aucun pixel Meta, aucune bannière de consentement (bloc en tête de document). Reste à confirmer : qui détient le compte Google Ads `AW-16776285171` et le conteneur `GTM-PP2W2TX9`, et si des campagnes y tournent déjà (à nettoyer avant le 28 septembre).
 
-5. **Quels sont tes frais de livraison réels par zone (Rive-Nord, Laval, Montréal, Rive-Sud, jusqu'à 60 km) et le ramassage à l'entrepôt du 215 René-A.-Robert est-il vraiment offert aux clients (jours et heures)?**
-   Pourquoi ça change le plan : ça écrit la section « Zones et tarification » de la page, l'annonce des frais dans Google pour Montréal/Rive-Sud, l'option « Ramassage » du formulaire et le choix fiche Google hybride (adresse affichée) ou zones de service seulement.
-   Hypothèse utilisée en attendant : ramassage inclus à Sainte-Thérèse (vendredi 13 h–18 h, retour lundi 9 h–12 h), livraison à la porte avec frais selon l'adresse, rien au-delà de 60 km (H12); aucun montant affiché, « soumission en 24 h ».
+5. ~~Frais de livraison et ramassage~~ — **RÉPONDU** : 100 $ jusqu'à 10 km, puis 7 $ du kilomètre jusqu'à 40 km, au-delà soumission; ramassage gratuit à Sainte-Thérèse. Reste à confirmer : les heures du comptoir pour le ramassage du vendredi et le retour du lundi.
 
 6. **Quel minimum de commande veux-tu appliquer (jamais affiché), confirmes-tu les conditions par défaut (solde à J-7, devis valide 30 jours, délai minimal 5 jours, dépôt transférable 12 mois, report/annulation), et ton forfait Booqable permet-il les champs personnalisés, les tags de commande et une demande de paiement partiel de 20 % (Booqable Payments/Stripe)?**
    Pourquoi ça change le plan : sans ces valeurs, le script de qualification (section 8), les FAQ 3, 5 à 8 de la page et le process de dépôt restent en [à confirmer]; sans les fonctions Booqable, tout le tracking passe en mode repli (note SRC=… et dépôt par virement Interac).
