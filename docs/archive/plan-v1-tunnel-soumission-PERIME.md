@@ -1,3 +1,7 @@
+> **PÉRIMÉ — ne pas exécuter.** Cette v1 a été écrite sur une prémisse fausse : un tunnel de demande de soumission sans prix affichés. Le relevé du 18 septembre 2026 sur evenox.ca a montré que le site vend en ligne avec ses prix publiés et un dépôt de 20 % par carte. Le plan à suivre est `docs/plan-ads-v2-ecommerce.md`. Ce fichier est conservé pour l'historique et pour les parties encore valables : angles créatifs, brief de tournage, structure de campagne, garde-fous.
+
+---
+
 # Évenox — Plan d'exécution ads : lettres illuminées en tête d'affiche (Meta + Google, 8 semaines)
 
 Préparé pour Alexandre Séguin · 17 septembre 2026 · version 1.0 · budget test 1 500 $/mois · fenêtre 21 septembre → 22 novembre 2026
