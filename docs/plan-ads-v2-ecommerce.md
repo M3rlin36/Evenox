@@ -861,6 +861,7 @@ utm_source=google&utm_medium=cpc&utm_campaign=recherche_lettres&utm_content=lett
 
 ```html
 <script>
+/* 1. Calendrier de réservation en français */
 (function () {
   var cfg = { locale: 'fr' };
   Object.defineProperty(window, 'booqableOptions', {
@@ -868,6 +869,40 @@ utm_source=google&utm_medium=cpc&utm_campaign=recherche_lettres&utm_content=lett
     get: function () { return cfg; },
     set: function (v) { cfg = Object.assign(v || {}, { locale: 'fr' }); }
   });
+})();
+
+/* 2. Liste des lettres en ordre alphabétique (corrige le V placé avant le U) */
+(function () {
+  var enAttente = false;
+  function trier() {
+    enAttente = false;
+    var listes = document.querySelectorAll('select');
+    for (var i = 0; i < listes.length; i++) {
+      var s = listes[i];
+      var opts = Array.prototype.slice.call(s.options);
+      var lettres = opts.filter(function (o) { return /^[A-Z&]$/.test((o.textContent || '').trim()); });
+      if (lettres.length < 20) continue;
+      var autres = opts.filter(function (o) { return lettres.indexOf(o) === -1; });
+      var triees = lettres.slice().sort(function (a, b) {
+        var x = (a.textContent || '').trim(), y = (b.textContent || '').trim();
+        if (x === '&') return 1;
+        if (y === '&') return -1;
+        return x.localeCompare(y, 'fr');
+      });
+      var ok = true;
+      for (var j = 0; j < lettres.length; j++) { if (lettres[j] !== triees[j]) { ok = false; break; } }
+      if (ok) continue;
+      var valeur = s.value;
+      autres.concat(triees).forEach(function (o) { s.appendChild(o); });
+      s.value = valeur;
+    }
+  }
+  function planifier() { if (!enAttente) { enAttente = true; setTimeout(trier, 120); } }
+  function demarrer() {
+    planifier();
+    try { new MutationObserver(planifier).observe(document.body || document.documentElement, { childList: true, subtree: true }); } catch (e) {}
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', demarrer); } else { demarrer(); }
 })();
 </script>
 ```
@@ -886,7 +921,13 @@ utm_source=google&utm_medium=cpc&utm_campaign=recherche_lettres&utm_content=lett
 
 **Comment vérifier que c'est réglé.** Ouvre la page, ajoute une lettre, va aux dates : la durée proposée doit afficher « 2 jours » d'entrée de jeu, et la ligne de prix doit rester « 2 Jours 70,00 $ ».
 
-**Détail mineur trouvé au passage.** Dans la liste des 27 lettres, le V est placé avant le U. Sans conséquence commerciale, mais ça se corrige en deux minutes dans l'ordre des variantes.
+3. **Le V est placé avant le U dans la liste des lettres. Cause trouvée et correctif testé.**
+
+**La cause.** Chaque variante porte un poids de tri dans Booqable. Les tiens vont de 1 pour le A à 26 pour l'esperluette, mais deux valeurs sont décalées : le V porte 21 et le U porte 22, alors que le W porte lui aussi 22. La liste sort donc dans l'ordre T, V, U, W.
+
+**Le correctif permanent, dans Booqable.** Renumérote les poids à partir du U : U vaut 21, V vaut 22, W vaut 23, X vaut 24, Y vaut 25, Z vaut 26 et l'esperluette 27. Deux minutes, et c'est corrigé partout, boutique hébergée comprise.
+
+**Le correctif immédiat, déjà dans le code ci-dessus.** La deuxième partie du bloc remet la liste en ordre alphabétique dans la page. Testé sur ta vraie page le 19 septembre : l'ordre ressort A jusqu'à Z puis l'esperluette, et le choix d'une lettre envoie toujours le bon identifiant de produit à Booqable. Il ne change que l'ordre d'affichage, jamais les valeurs, donc il ne peut pas fausser une commande. Si tu fais le correctif permanent dans Booqable, cette partie du code devient inutile et peut être retirée.
 
 **Ce qui reste à confirmer, 60 secondes sur ton téléphone.** Je n'ai pas pu mener le parcours jusqu'au paiement en pilotage automatique : le choix de l'heure et le bouton « Apply » n'ont pas répondu à mes clics simulés, ce qui arrive souvent avec ce genre de fenêtre et ne prouve rien contre ton site. Fais-le à la main une fois : choisis une lettre, une date, une heure, va jusqu'à l'écran de paiement et vérifie que la lettre choisie suit bien jusqu'au bout. C'est le seul point du parcours que je n'ai pas pu valider moi-même.
 
@@ -1359,7 +1400,7 @@ Le fil conducteur de la semaine, c'est le marquage. Deux comptes Google Ads, auc
 | 10 h 30, 30 min | Accès et double authentification, Google, Meta, Booqable | Admin > Accès et sécurité; Meta > Paramètres d'entreprise > Personnes | Alexandre administrateur partout, 2FA « Activée » sur trois captures |
 | 11 h 00, 20 min | Garde-fous de dépense | Meta > Paramètres de paiement > Limite de dépense du compte = 1 000 $ (cumulative, rappel d'agenda au 26 octobre pour la porter à 2 000 $); Google Ads > Campagne > Paramètres > date de fin = 22 novembre, budget quotidien 16,50 $ | Limite Meta enregistrée, rappel créé, date de fin Google visible dans les paramètres de campagne |
 | 11 h 20, 40 min | Vérification du domaine evenox.ca dans Meta | Paramètres d'entreprise > Sécurité de la marque > Domaines; balise dans Divi > Intégration | Pastille verte « Vérifié » à côté d'evenox.ca |
-| 13 h 00, 20 min | Poser le correctif de langue du calendrier, déjà écrit et testé (section 6.2) : d'abord essayer le réglage de langue dans Booqable, sinon coller le code fourni dans l'en-tête du site. Puis aligner la durée de location par défaut sur 48 heures au lieu d'une journée | Booqable > réglages de la boutique; sinon WordPress > Divi > Options du thème > Intégration > en-tête | Le calendrier affiche « Durée », « Sélectionner vos dates », « DIM LUN MAR », « Annuler » et « Appliquer », sans un seul mot anglais; la durée proposée par défaut est de 2 jours |
+| 13 h 00, 20 min | Poser le bloc de code de la section 6.2, qui règle d'un coup la langue du calendrier et l'ordre alphabétique des lettres. Puis, dans Booqable : aligner la durée de location par défaut sur 48 heures, et renuméroter les poids de tri à partir du U pour rendre l'ordre permanent | WordPress > Divi > Options du thème > Intégration > en-tête; puis réglages Booqable | Le calendrier affiche « Durée », « Sélectionner vos dates », « DIM LUN MAR », « Annuler », « Appliquer », sans un mot anglais; la liste des lettres va de A à Z puis l'esperluette, avec le U avant le V; la durée proposée par défaut est de 2 jours |
 | 13 h 30, 15 min | Une commande test complète à la main sur ton téléphone, du choix de la lettre jusqu'à l'écran de paiement, pour valider le seul maillon que l'automatisation n'a pas pu confirmer | Ton téléphone, en navigation privée | La lettre choisie apparaît bien sur l'écran de paiement, au bon prix |
 | 14 h 00, 60 min | Journal des bogues, classés bloquant, gênant, cosmétique | Google Sheet « EVX – Suivi ads », onglet `Bogues` | Une ligne par bogue, aucune sans date de correction |
 | 19 h 00, 90 min | Séance photo au comptoir : mur allumé, LOVE, un prénom, 2027 | Téléphone 4K vertical 9:16, plafonniers éteints | 40 photos et 12 clips dans `creas/2026-09-21/` |
