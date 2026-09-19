@@ -874,7 +874,19 @@ utm_source=google&utm_medium=cpc&utm_campaign=recherche_lettres&utm_content=lett
 
 **Comment vérifier que c'est réglé.** Ouvre la page des lettres, ajoute une lettre au panier, va jusqu'aux dates. Tu dois lire « Durée », « Sélectionner vos dates », les jours « DIM LUN MAR MER JEU VEN SAM », « septembre 2026 », et les boutons « Annuler » et « Appliquer ». S'il reste un seul mot anglais, c'est que le code est posé trop tard dans la page.
 
-2. **La durée par défaut est « 1 jour » alors que la page vend 48 heures.** Le client lit « 70,00 $ pour 48 h » sur la fiche, puis la fenêtre lui propose une journée. Soit le tarif affiché ne correspond plus à ce qu'il réserve, soit il croit payer deux jours pour un. Ce défaut-là ne se corrige pas par le code ci-dessus : c'est un réglage de durée de location dans Booqable, à aligner sur la durée de base de 48 heures. C'est la seule chose qui reste à faire dans le tableau de bord Booqable sur ce sujet.
+2. **La durée par défaut est « 1 jour » alors que ta fiche vend 48 heures. Diagnostic fait le 19 septembre; celui-là ne se corrige que dans Booqable.**
+
+**Ce que j'ai mesuré.** Quand la page crée un panier, Booqable le renvoie avec `charge_length: 86400`, soit 86 400 secondes, un jour, et l'étiquette « 1 jour ». En parallèle, ta fiche produit est configurée avec un prix de structure de 70,00 $ portant l'étiquette « 2 Jours ». Autrement dit : ton produit est tarifé par tranche de deux jours, mais le panier démarre à un jour.
+
+**Pourquoi je ne peux pas le corriger par le site.** Contrairement à la langue, cette valeur n'existe nulle part dans le code chargé par ton site : elle vient du serveur de Booqable, à la création du panier. J'ai vérifié les scripts de la boutique, `charge_length` ne s'y trouve pas. Il n'y a donc aucun réglage à poser dans WordPress, et forcer la durée par un script qui modifierait le panier à chaque chargement écraserait le choix du client qui vient justement d'en sélectionner un autre. Ce serait un correctif qui casse plus qu'il ne répare.
+
+**Bonne nouvelle : rien n'est à construire.** La liste des durées proposées contient déjà 1 jour, 2 jours, 3 jours, 4 jours, 5 jours, 1 semaine, 1 mois et l'heure. Seul le choix par défaut est à changer, de 1 jour vers 2 jours, dans les réglages de location de ton compte Booqable.
+
+**Ce que ça coûte en attendant.** Le client qui laisse le défaut réserve une journée et paie le tarif de la tranche de deux jours, puisque c'est la seule tranche de base. Il perd une journée de location pour le même prix, et il peut se demander si le « 48 h » annoncé dans la pub est honnête. Ce n'est pas une perte de revenu pour toi, c'est une perte de confiance au moment du paiement.
+
+**Comment vérifier que c'est réglé.** Ouvre la page, ajoute une lettre, va aux dates : la durée proposée doit afficher « 2 jours » d'entrée de jeu, et la ligne de prix doit rester « 2 Jours 70,00 $ ».
+
+**Détail mineur trouvé au passage.** Dans la liste des 27 lettres, le V est placé avant le U. Sans conséquence commerciale, mais ça se corrige en deux minutes dans l'ordre des variantes.
 
 **Ce qui reste à confirmer, 60 secondes sur ton téléphone.** Je n'ai pas pu mener le parcours jusqu'au paiement en pilotage automatique : le choix de l'heure et le bouton « Apply » n'ont pas répondu à mes clics simulés, ce qui arrive souvent avec ce genre de fenêtre et ne prouve rien contre ton site. Fais-le à la main une fois : choisis une lettre, une date, une heure, va jusqu'à l'écran de paiement et vérifie que la lettre choisie suit bien jusqu'au bout. C'est le seul point du parcours que je n'ai pas pu valider moi-même.
 
