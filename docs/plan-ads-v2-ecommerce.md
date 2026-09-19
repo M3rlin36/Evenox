@@ -847,8 +847,34 @@ utm_source=google&utm_medium=cpc&utm_campaign=recherche_lettres&utm_content=lett
 
 **Deux défauts réels trouvés pendant ce test, à corriger avant de payer du trafic.**
 
-1. **Le calendrier est en anglais.** Sur une page entièrement française, la fenêtre de réservation affiche « Duration », « 1 day », « Select your dates: », les jours « SUN MON TUE WED THU FRI SAT » et le bouton « Apply ». Seuls « Annuler » et les onglets sont en français. C'est un problème double : la Charte de la langue française exige le français, et c'est l'écran exact où le client décide, donc chaque hésitation coûte une commande. À régler dans les paramètres de langue de la boutique Booqable, ou par une traduction des libellés si Booqable ne fournit pas le français.
-2. **La durée par défaut est « 1 day » alors que la page vend 48 heures.** Le client lit « 70,00 $ pour 48 h » sur la fiche, puis la fenêtre lui propose une journée. Soit le tarif affiché ne correspond plus, soit il croit payer deux jours pour un. À aligner sur la durée de base de 48 heures.
+1. **Le calendrier est en anglais. Correctif trouvé, testé et prêt à coller le 19 septembre.** Sur une page entièrement française, la fenêtre de réservation affichait « Duration », « 1 day », « Select your dates: », les jours « SUN MON TUE WED THU FRI SAT » et le bouton « Apply ». C'est l'écran exact où le client décide de payer, et le français y est une obligation légale.
+
+**La cause.** Le script de Booqable choisit sa langue ainsi : `lng: window.booqableOptions?.locale || window.locale`, avec l'anglais en repli. Or l'objet posé sur tes pages ne contient que `company` et `storeProvider`, sans `locale`. Booqable retombe donc sur l'anglais. Les traductions françaises existent pourtant et sont complètes : le fichier `fr` compte 4 107 entrées, dont « Durée », « Sélectionner vos dates », « Appliquer » et « Annuler ».
+
+**À ne pas utiliser : `fr-CA`.** Ce fichier ne compte que 380 entrées sur 4 107. Tout ce qui manque retombe en anglais, donc tu obtiendrais un calendrier moitié français moitié anglais, pire que maintenant. C'est `fr` qu'il faut.
+
+**Deux façons de corriger, dans l'ordre de préférence.**
+
+*Voie A, la propre.* Dans le tableau de bord Booqable, règle la langue de la boutique sur le français. Le module WordPress posera alors `locale` tout seul, et la boutique hébergée passe au français en même temps. À essayer en premier : c'est un réglage, pas du code.
+
+*Voie B, si la voie A n'existe pas dans ton forfait.* Colle ce code dans WordPress, sous Divi puis Options du thème puis Intégration, dans la case « Ajouter du code à l'en-tête ». Il a été testé sur ta vraie page le 19 septembre : le calendrier est ressorti entièrement en français, sans aucun mot anglais, et la configuration Booqable est restée intacte. Il est écrit pour fonctionner quel que soit l'ordre de chargement des scripts.
+
+```html
+<script>
+(function () {
+  var cfg = { locale: 'fr' };
+  Object.defineProperty(window, 'booqableOptions', {
+    configurable: true,
+    get: function () { return cfg; },
+    set: function (v) { cfg = Object.assign(v || {}, { locale: 'fr' }); }
+  });
+})();
+</script>
+```
+
+**Comment vérifier que c'est réglé.** Ouvre la page des lettres, ajoute une lettre au panier, va jusqu'aux dates. Tu dois lire « Durée », « Sélectionner vos dates », les jours « DIM LUN MAR MER JEU VEN SAM », « septembre 2026 », et les boutons « Annuler » et « Appliquer ». S'il reste un seul mot anglais, c'est que le code est posé trop tard dans la page.
+
+2. **La durée par défaut est « 1 jour » alors que la page vend 48 heures.** Le client lit « 70,00 $ pour 48 h » sur la fiche, puis la fenêtre lui propose une journée. Soit le tarif affiché ne correspond plus à ce qu'il réserve, soit il croit payer deux jours pour un. Ce défaut-là ne se corrige pas par le code ci-dessus : c'est un réglage de durée de location dans Booqable, à aligner sur la durée de base de 48 heures. C'est la seule chose qui reste à faire dans le tableau de bord Booqable sur ce sujet.
 
 **Ce qui reste à confirmer, 60 secondes sur ton téléphone.** Je n'ai pas pu mener le parcours jusqu'au paiement en pilotage automatique : le choix de l'heure et le bouton « Apply » n'ont pas répondu à mes clics simulés, ce qui arrive souvent avec ce genre de fenêtre et ne prouve rien contre ton site. Fais-le à la main une fois : choisis une lettre, une date, une heure, va jusqu'à l'écran de paiement et vérifie que la lettre choisie suit bien jusqu'au bout. C'est le seul point du parcours que je n'ai pas pu valider moi-même.
 
@@ -1321,7 +1347,7 @@ Le fil conducteur de la semaine, c'est le marquage. Deux comptes Google Ads, auc
 | 10 h 30, 30 min | Accès et double authentification, Google, Meta, Booqable | Admin > Accès et sécurité; Meta > Paramètres d'entreprise > Personnes | Alexandre administrateur partout, 2FA « Activée » sur trois captures |
 | 11 h 00, 20 min | Garde-fous de dépense | Meta > Paramètres de paiement > Limite de dépense du compte = 1 000 $ (cumulative, rappel d'agenda au 26 octobre pour la porter à 2 000 $); Google Ads > Campagne > Paramètres > date de fin = 22 novembre, budget quotidien 16,50 $ | Limite Meta enregistrée, rappel créé, date de fin Google visible dans les paramètres de campagne |
 | 11 h 20, 40 min | Vérification du domaine evenox.ca dans Meta | Paramètres d'entreprise > Sécurité de la marque > Domaines; balise dans Divi > Intégration | Pastille verte « Vérifié » à côté d'evenox.ca |
-| 13 h 00, 30 min | Le sélecteur de lettres a déjà été testé le 19 septembre et il fonctionne (section 6.2). Deux corrections à faire à la place : passer le calendrier de réservation en français et aligner la durée par défaut sur 48 heures au lieu d'une journée | Booqable > Paramètres de la boutique > Langue et durées de location | Le calendrier affiche « Durée », « Sélectionnez vos dates » et « Appliquer » en français; la durée proposée par défaut est de 2 jours |
+| 13 h 00, 20 min | Poser le correctif de langue du calendrier, déjà écrit et testé (section 6.2) : d'abord essayer le réglage de langue dans Booqable, sinon coller le code fourni dans l'en-tête du site. Puis aligner la durée de location par défaut sur 48 heures au lieu d'une journée | Booqable > réglages de la boutique; sinon WordPress > Divi > Options du thème > Intégration > en-tête | Le calendrier affiche « Durée », « Sélectionner vos dates », « DIM LUN MAR », « Annuler » et « Appliquer », sans un seul mot anglais; la durée proposée par défaut est de 2 jours |
 | 13 h 30, 15 min | Une commande test complète à la main sur ton téléphone, du choix de la lettre jusqu'à l'écran de paiement, pour valider le seul maillon que l'automatisation n'a pas pu confirmer | Ton téléphone, en navigation privée | La lettre choisie apparaît bien sur l'écran de paiement, au bon prix |
 | 14 h 00, 60 min | Journal des bogues, classés bloquant, gênant, cosmétique | Google Sheet « EVX – Suivi ads », onglet `Bogues` | Une ligne par bogue, aucune sans date de correction |
 | 19 h 00, 90 min | Séance photo au comptoir : mur allumé, LOVE, un prénom, 2027 | Téléphone 4K vertical 9:16, plafonniers éteints | 40 photos et 12 clips dans `creas/2026-09-21/` |
