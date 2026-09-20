@@ -20,7 +20,7 @@ Cette version remplace la v1. La v1 avait été écrite sur une prémisse fausse
 10. **La contrainte de stock.** Elle n'est pas en nombre de sets mais par caractère : huit lettres et quatre chiffres n'existent qu'en un seul exemplaire. Le calendrier Booqable est la seule vérité.
 11. **La discipline.** Une heure chaque lundi dans le tableau de bord, aucune modification de campagne en dehors du lundi, et rien qui monte de plus de 20 % à la fois.
 12. **Le verdict.** La semaine du 23 novembre, sur trois chiffres : retour sur dépense, coût par réservation, panier moyen réel.
-13. **La condition de départ, ajoutée le 20 septembre.** Cinq défauts de la boutique sont chiffrés dans `docs/audit-boutique-2026-09-20.md`, dont deux bloquants : les forfaits n'ont pas de prix fixe (le Party de Bureau se vend 320,50 $ sous son prix annoncé) et ils demandent jusqu'à 13 menus déroulants avant de pouvoir payer. **1 h 20 de corrections dans Booqable avant la première piastre.** Tant qu'elles ne sont pas faites, les pubs restent sur les forfaits de lettres (240 $ à 450 $), jamais sur une page de forfait tout inclus.
+13. **La condition de départ, ajoutée le 20 septembre.** Cinq défauts de la boutique sont chiffrés dans `docs/audit-boutique-2026-09-20.md`, dont deux bloquants : les forfaits n'ont pas de prix fixe (le Party de Bureau se vend 320,50 $ sous son prix annoncé) et ils demandent jusqu'à 13 menus déroulants avant de pouvoir payer. **1 h 50 de corrections dans Booqable avant la première piastre.** Tant qu'elles ne sont pas faites, les pubs restent sur les forfaits de lettres (240 $ à 450 $), jamais sur une page de forfait tout inclus.
 
 ## Lexique express
 
@@ -112,7 +112,7 @@ La règle de rentabilité du plan est constante : **on ne paie pas plus du quart
 
 **Conclusion : le plan n'échoue pas sur la publicité, il échoue sur le panier.** Envoyer du trafic payant vers la boutique dans son état actuel revient à acheter des commandes de 147 $ à 110 $ pièce. Ce n'est pas un problème de créas, de mots-clés ni de budget.
 
-### 0.3 La condition de départ — 1 h 20 avant la première piastre
+### 0.3 La condition de départ — 1 h 50 avant la première piastre
 
 L'audit de la boutique a trouvé deux blocages qui expliquent le panier de 146,73 $ :
 
@@ -139,7 +139,18 @@ C'est le geste le plus rentable du plan : **le même clic qui rapportait 70 $ su
 | Écrire à la base clients | **482 courriels de clients passés**, réachat actuel 3,2 % | 1 h | Les partys de bureau se décident en octobre et novembre |
 | Corriger les 78 commandes sans téléphone | 15 % des commandes | — | Sans téléphone, pas de relance ni de confirmation de livraison |
 
-### 0.5 Ce qui manque encore
+### 0.5 Deux contradictions entre ce que tu publies et ce que la boutique fait
+
+Relevé le 20 septembre. Dans les deux cas, **la publicité et les pages sont cohérentes entre elles** — c'est Booqable qui n'applique pas la politique publiée. Ne touche pas aux pubs : corrige Booqable.
+
+| Ce que tu publies sur evenox.ca | Ce que la boutique fait | Preuve | Correction |
+|---|---|---|---|
+| FAQ : « Un dépôt de 20 % confirme la réservation. Le solde y est porté le jour de l'événement. » | **91 % des commandes en ligne sont payées à 100 % au passage en caisse** (198 sur 218). Seules 17 s'arrêtent à 15-30 %. | Export Booqable, colonne `amount_paid` sur `grand_total_with_tax` | Booqable → *Paramètres* → *Paiements* : choisir explicitement « 20 % à la réservation » ou retirer la phrase de la FAQ et des pubs. **Une pub qui promet 20 % et une caisse qui prend 100 %, c'est un panier abandonné garanti.** *10 min* |
+| Page Livraison et FAQ : « 100 $ jusqu'à 10 km, puis 7 $ du kilomètre jusqu'à 40 km » | Le catalogue actif facture **Livraison aller simple 120 $ + Ramassage du matériel 120 $ + Installation de 60 $ à 400 $**. L'ancienne grille au kilomètre est archivée. | Catalogue Booqable, produits `service` actifs | Décider laquelle des deux grilles est la bonne, puis aligner l'autre. Le client qui lit 100 $ sur la page et paie 240 $ à la caisse annule. *20 min* |
+
+Tant que ces deux points ne sont pas tranchés, la promesse écrite dans les pubs de la section 5 ne peut pas être tenue par la caisse.
+
+### 0.6 Ce qui manque encore
 
 | Donnée | Où la prendre | Temps |
 |---|---|---|
@@ -211,7 +222,7 @@ Et le revenu, selon l'état de la boutique :
 
 Sur 8 semaines : environ 1 950 clics et 26 à 27 réservations dans les trois cas, mais **3 880 $ en scénario A, 7 390 $ en B, 11 090 $ en C**.
 
-Trois lectures. Un : **le scénario A n'est pas une option**, c'est la raison des 1 h 20 de corrections de la section 0.3. Deux : **le 1,6x de Google est un plancher** — à 3 % de conversion avec un panier de 600 $, il fait 3,9 commandes, 2 322 $ et 4,6x. Trois : **le retargeting est sous-évalué**, un panier abandonné convertit 2 à 3 fois mieux. Upside non compté, volontairement.
+Trois lectures. Un : **le scénario A n'est pas une option**, c'est la raison des 1 h 50 de corrections de la section 0.3. Deux : **le 1,6x de Google est un plancher** — à 3 % de conversion avec un panier de 600 $, il fait 3,9 commandes, 2 322 $ et 4,6x. Trois : **le retargeting est sous-évalué**, un panier abandonné convertit 2 à 3 fois mieux. Upside non compté, volontairement.
 
 ### 1.5 Calcul inverse : ce que les pubs peuvent réellement ajouter (V8 recalibré)
 
@@ -228,7 +239,7 @@ Même 5 000 $ de revenu, mais **3 764 $ de pub dans le premier cas et 894 $ dans
 
 L'horizon des 50 000 $/mois, pour mémoire : il faut ajouter 29 100 $ au rythme actuel. À 420 $ de panier, c'est 69 commandes de plus par mois, environ 7 650 $ de pub, ROAS 3,8x. **Ce n'est pas un mur de budget, c'est un mur de stock** : 69 commandes de plus par mois sur 58 pièces avec 8 caractères uniques (V9), les fins de semaine de juin ne passent pas. Le chemin réaliste reste le corporatif : 25 forfaits à 2 000 $ font le mois, et un forfait consomme une fin de semaine, pas dix.
 
-**Le levier no 1 est le panier, pas le volume de clics.** Passer de 146,73 $ à 280 $ divise ta facture publicitaire par 1,9 à revenu égal. Les 1 h 20 de corrections de la section 0.3 valent plus que tout doublement de budget.
+**Le levier no 1 est le panier, pas le volume de clics.** Passer de 146,73 $ à 280 $ divise ta facture publicitaire par 1,9 à revenu égal. Les 1 h 50 de corrections de la section 0.3 valent plus que tout doublement de budget.
 
 ### 1.6 Pourquoi 1 500 $ par mois pendant 8 semaines (V5)
 

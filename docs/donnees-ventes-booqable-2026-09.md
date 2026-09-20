@@ -89,7 +89,7 @@ Contre l'ensemble des commandes confirmées (tous canaux) :
 
 ---
 
-## 4. Paiement : le dépôt de 20 % n'existe pas dans les faits
+## 4. Paiement : 91 % des commandes en ligne sont payées à 100 %
 
 | Champ mesuré | Résultat |
 |---|---|
@@ -100,7 +100,14 @@ Contre l'ensemble des commandes confirmées (tous canaux) :
 | Commandes hors webshop payées à 0 % | 14 % |
 | Commandes avec un dépôt Booqable configuré | 19 sur 519 (3,7 %) |
 
-**Conséquence directe sur le marquage :** l'événement `Purchase` doit porter la **valeur totale hors taxes de la commande**, et c'est bien ce qui est encaissé dans 91 % des cas en ligne. Le plan avait raison sur la valeur à envoyer, mais pour la mauvaise raison : ce n'est pas « 20 % encaissés, 100 % déclarés », c'est **100 % encaissés**. L'argent rentre au complet au clic. Ton délai de paiement en ligne est excellent ; c'est ton hors-ligne qui traîne (14 % à 0 % payé).
+Une précision sur le champ `deposit_type` : dans Booqable il désigne le **dépôt de garantie** (bris, usure), pas l'acompte de réservation. Qu'il soit à `none` ne prouve donc rien sur les 20 %. Ce qui le prouve, c'est le rapport `amount_paid / grand_total_with_tax` : **198 commandes en ligne sur 218 sont à 100 %**, et seulement 17 s'arrêtent entre 15 % et 30 %.
+
+**Deux conséquences.**
+
+1. **Sur le marquage :** l'événement `Purchase` doit porter la **valeur totale hors taxes de la commande**, et c'est bien ce qui est encaissé dans 91 % des cas. Le plan avait raison sur la valeur à envoyer.
+2. **Sur la publicité :** ta FAQ promet « un dépôt de 20 % confirme la réservation, le solde le jour de l'événement », et les textes de pub du plan reprennent cette promesse. **La caisse, elle, demande le montant complet.** Un client attiré par « 20 % pour réserver » qui voit 540 $ à payer abandonne. À trancher dans Booqable → *Paramètres* → *Paiements* avant la première campagne.
+
+Ton délai de paiement en ligne est par ailleurs excellent ; c'est ton hors-ligne qui traîne (14 % des commandes à 0 % payé).
 
 ---
 

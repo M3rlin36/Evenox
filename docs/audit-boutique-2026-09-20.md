@@ -2,7 +2,7 @@
 
 Relevé fait sur `evenox.booqableshop.com` et `evenox.ca` avec un navigateur, format téléphone, en français. Catalogue tiré de l'API Booqable publique : 1 347 fiches, **513 variantes de produits actives et visibles** réparties en 270 groupes, **105 forfaits actifs**, 17 collections, 369 articles dans « All products ».
 
-Cet audit répond à une seule question : **si je mets 1 500 $ de pub le mois prochain, où va se perdre l'argent ?** Réponse : dans les forfaits. Voici les cinq défauts, du plus coûteux au moins coûteux.
+Cet audit répond à une seule question : **si je mets 1 500 $ de pub le mois prochain, où va se perdre l'argent ?** Réponse : dans les forfaits. Voici les six défauts, du plus coûteux au moins coûteux.
 
 ---
 
@@ -100,6 +100,12 @@ Dans les 27 variantes de `Marquee Letter`, l'ordre est `… S, T, V, U, W, X, Y,
 
 ---
 
+## Défaut no 6 — La fenêtre de dates du panier est encore en anglais
+
+Le correctif de langue (section 6.2 du plan) n'étant pas encore collé, la fenêtre qui s'ouvre au panier affiche toujours `1 Day`, `Clear` et `Apply` au lieu de « 1 jour », « Effacer » et « Appliquer ». Le reste de la page est en français : l'effet est celui d'un site à moitié traduit, au moment exact où le client choisit ses dates. Le même bloc de code règle ça et l'ordre des lettres.
+
+---
+
 ## Ce que le catalogue contient vraiment
 
 ### Produits d'appel (les lettres)
@@ -151,7 +157,7 @@ Ces quatre forfaits de lettres sont **corrects, chiffrés, dégressifs et sans m
 
 ---
 
-## Ordre d'exécution — 1 h 20, avant la première piastre de pub
+## Ordre d'exécution — 1 h 50, avant la première piastre de pub
 
 | # | Geste | Où | Temps | Gain |
 |---|---|---|---|---|
@@ -160,5 +166,7 @@ Ces quatre forfaits de lettres sont **corrects, chiffrés, dégressifs et sans m
 | 3 | Région Canada (français) | Booqable → Paramètres → Société | 10 min | Prix en `2 495,00 $` au lieu de `$2,495.00` |
 | 4 | Coller le bloc de correctifs langue + ordre des lettres | Booqable → Boutique en ligne → Code personnalisé | 5 min | Calendrier en français, lettres en ordre alphabétique |
 | 5 | Corriger la description du Party de Bureau | Booqable → Produits → Description | 10 min | Elle promet « 5 jeux géants » que le forfait ne contient pas |
+| 6 | Trancher : dépôt de 20 % ou paiement complet | Booqable → Paramètres → Paiements | 10 min | La FAQ promet 20 %, la caisse encaisse 100 % dans 91 % des cas |
+| 7 | Trancher : grille au kilomètre ou grille fixe | Booqable → Produits (services) et page Livraison | 20 min | La page annonce 100 $ à 10 km, la caisse facture 120 $ + 120 $ |
 
 **Tant que les points 1 et 2 ne sont pas faits, aucune campagne ne pointe vers une page de forfait.** Les pubs restent sur les forfaits de lettres (240 $ à 450 $), qui eux fonctionnent.
