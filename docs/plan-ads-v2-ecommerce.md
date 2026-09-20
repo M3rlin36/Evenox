@@ -2,32 +2,35 @@
 
 Préparé pour Alexandre Séguin · 18 septembre 2026 · version 2.0 · budget test 1 500 $/mois · fenêtre du 21 septembre au 22 novembre 2026
 
-Cette version remplace la v1. La v1 avait été écrite sur une prémisse fausse : un tunnel de soumission sans prix affichés. Le relevé du 18 septembre sur evenox.ca a montré l'inverse. Tout ce qui suit est bâti sur ton vrai modèle : prix publiés, configurateur, réservation en ligne, dépôt de 20 % par carte.
+Cette version remplace la v1. La v1 avait été écrite sur une prémisse fausse : un tunnel de soumission sans prix affichés. Le relevé du 18 septembre sur evenox.ca a montré l'inverse. Tout ce qui suit est bâti sur ton vrai modèle : prix publiés, configurateur, réservation en ligne, paiement par carte.
+
+**Recalibré le 20 septembre** sur deux sources mesurées, à lire avant d'exécuter quoi que ce soit : `docs/donnees-ventes-booqable-2026-09.md` (615 commandes réelles) et `docs/audit-boutique-2026-09-20.md` (relevé du catalogue et des forfaits en direct). Les chiffres de ces deux documents remplacent les hypothèses correspondantes ci-dessous.
 
 ## Résumé exécutif
 
 1. **Le modèle.** Tu vends déjà en ligne avec tes prix affichés. Les pubs ne cherchent donc pas des demandes de soumission : elles cherchent des réservations payées. On optimise sur l'achat et sa valeur, pas sur un formulaire.
 2. **Le produit d'appel.** Les lettres illuminées, à 70 $ la lettre pour 48 heures. Un LOVE à 280 $ se décide vite et se photographie bien. C'est l'aimant, pas la destination.
-3. **Le vrai levier de revenu.** Les forfaits corporatifs de 1 195 $ à 2 495 $. Il faut 119 commandes de lettres pour faire 50 000 $ dans un mois, contre 25 forfaits corporatifs. Les pubs poussent les lettres pour attirer, le configurateur et la page des forfaits pour monter le panier.
+3. **Le vrai levier de revenu, mesuré.** Ton panier moyen en ligne est de **146,73 $ hors taxes**, contre **417,47 $ hors ligne** et **618,85 $ en livraison**. Les forfaits corporatifs de 1 195 $ à 2 495 $ existent et sont bookables, mais ils exigent jusqu'à **13 menus déroulants** avant l'ajout au panier : c'est pour ça qu'il s'en vend 4 par an au-dessus de 2 500 $. Le levier n'est pas le volume de clics, c'est le panier.
 4. **Le budget.** 1 500 $ par mois pendant 8 semaines, soit 3 000 $ : 800 $ sur Meta en froid, 500 $ sur Google Recherche, 150 $ en reciblage de paniers abandonnés, 50 $ de réserve.
-5. **Le résultat attendu, en hypothèses à valider.** Environ 27 réservations payées, environ 11 300 $ de revenu hors taxes, pour un retour de 3,8 fois la dépense.
-6. **Les seuils.** Coût cible par réservation payée : 105 $. Alerte au-dessus de 140 $ sur sept jours. Pause d'un ensemble ou d'un groupe au-dessus de 200 $ après 200 $ dépensés, mais en simple avertissement jusqu'au 18 octobre, parce qu'à 26 $ par jour ce seuil tombe au huitième jour et couperait une campagne parfaitement normale (section 4). Retour sur dépense visé entre 4 et 5 fois, correction obligatoire sous 3 fois.
+5. **Le résultat attendu, recalculé sur le panier réel.** Environ 26 réservations payées sur 8 semaines dans les trois cas, mais un revenu qui dépend entièrement du panier : **3 880 $ et 1,3 fois la dépense** si la boutique reste telle quelle, **7 390 $ et 2,5 fois** si les pubs pointent vers les forfaits de lettres, **11 090 $ et 3,8 fois** si la livraison est poussée. Le travail publicitaire est le même dans les trois cas ; seul l'état de la boutique change le résultat.
+6. **Les seuils, liés au panier et non fixés d'avance.** La règle est constante : **coût cible par réservation = panier moyen divisé par 4**, alerte à panier ÷ 3, pause à panier ÷ 2. Au panier de 420 $ visé, ça donne 105 $ / 140 $ / 200 $ — les chiffres utilisés dans tout ce document. Au panier de 280 $ du scénario intermédiaire : 70 $ / 93 $ / 140 $. **Au panier de 146,73 $ mesuré aujourd'hui : 37 $**, un seuil qu'aucune campagne Meta ou Google ne tient dans ce marché. La pause reste en simple avertissement jusqu'au 18 octobre, parce qu'à 26 $ par jour elle tomberait au huitième jour et couperait une campagne normale (section 4).
 7. **Le problème numéro un, avant toute dépense.** Ton marquage est éclaté : le pixel Meta est sur la boutique mais pas sur le site qui reçoit les clics, et deux comptes Google Ads différents sont installés sur les deux domaines. Tant que ce n'est pas réparé, tu paieras à l'aveugle.
 8. **Le problème numéro deux.** Aucune bannière de consentement, alors que des balises collectent déjà. C'est un risque légal et ça se règle en une heure.
 9. **Le problème numéro trois.** Une note interne dans le code dit que le sélecteur de lettres ne s'affiche pas sur la page produit. Si c'est vrai, personne ne peut choisir ses lettres et chaque dollar de pub est perdu.
 10. **La contrainte de stock.** Elle n'est pas en nombre de sets mais par caractère : huit lettres et quatre chiffres n'existent qu'en un seul exemplaire. Le calendrier Booqable est la seule vérité.
 11. **La discipline.** Une heure chaque lundi dans le tableau de bord, aucune modification de campagne en dehors du lundi, et rien qui monte de plus de 20 % à la fois.
 12. **Le verdict.** La semaine du 23 novembre, sur trois chiffres : retour sur dépense, coût par réservation, panier moyen réel.
+13. **La condition de départ, ajoutée le 20 septembre.** Cinq défauts de la boutique sont chiffrés dans `docs/audit-boutique-2026-09-20.md`, dont deux bloquants : les forfaits n'ont pas de prix fixe (le Party de Bureau se vend 320,50 $ sous son prix annoncé) et ils demandent jusqu'à 13 menus déroulants avant de pouvoir payer. **1 h 20 de corrections dans Booqable avant la première piastre.** Tant qu'elles ne sont pas faites, les pubs restent sur les forfaits de lettres (240 $ à 450 $), jamais sur une page de forfait tout inclus.
 
 ## Lexique express
 
 | Terme | En une phrase | Valeur Évenox |
 |---|---|---|
-| CPA | Coût par réservation payée : dépense divisée par le nombre de commandes. | Cible 105 $, alerte 140 $, pause 200 $ (coupure active seulement à partir du 19 octobre, section 4) |
+| CPA | Coût par réservation payée : dépense divisée par le nombre de commandes. | Règle : panier ÷ 4 en cible, ÷ 3 en alerte, ÷ 2 en pause. À 420 $ de panier : 105 $ / 140 $ / 200 $. Coupure active seulement à partir du 19 octobre (section 4) |
 | ROAS | Retour sur dépense publicitaire : revenu hors taxes des commandes attribuées aux pubs divisé par la dépense. | Cible 4 à 5 fois, correction sous 3 fois |
-| Panier moyen | Valeur moyenne d'une commande, hors taxes. | Hypothèse 420 $ pondéré, à remplacer par l'export Booqable |
-| Taux de conversion | Part des visites qui deviennent une commande payée. | Cible 1,5 %, fourchette 0,8 à 2,5 % |
-| Purchase | Événement envoyé aux plateformes quand une commande est payée, avec sa valeur. | C'est l'événement d'optimisation des campagnes |
+| Panier moyen | Valeur moyenne d'une commande, hors taxes. | **Mesuré** : 146,73 $ en ligne, 300,35 $ tous canaux, 618,85 $ en livraison. Cible du plan : 420 $ |
+| Taux de conversion | Part des visites qui deviennent une commande payée. | Cible 1,5 %, fourchette 0,8 à 2,5 %. **Toujours non mesuré** : GA4 le donne en 5 minutes (section 11) |
+| Purchase | Événement envoyé aux plateformes quand une commande est payée, avec sa valeur. | C'est l'événement d'optimisation des campagnes. En ligne, 91 % des commandes sont payées à 100 % au passage en caisse : la valeur envoyée est bien le total encaissé |
 | AddToCart | Événement envoyé quand un article entre au panier. | Sert au reciblage et de repli si les achats sont trop rares |
 | Pixel Meta | Code qui rapporte à Meta ce qui se passe sur tes pages. | Un seul, le 1276015686903486, sur les deux domaines |
 | Balise Google Ads | Code qui rapporte les conversions à Google. | Un seul compte à retenir entre les deux installés |
@@ -55,9 +58,14 @@ Cette version remplace la v1. La v1 avait été écrite sur une prémisse fausse
 | Boutique | evenox.booqableshop.com |
 | UTM | utm_source meta ou google · utm_medium paid_social ou cpc · utm_campaign lettres_froid, lettres_retarg, recherche_lettres, recherche_forfaits, recherche_jeux, recherche_mobilier · utm_content nom de la pub ou du groupe · utm_term mot-clé Google |
 | Tableau de bord | Google Sheet « EVX – Suivi ads », routine du lundi de 1 h |
+| Panier moyen mesuré (12 mois) | 325,20 $ HT tous canaux · 146,73 $ en ligne · 417,47 $ hors ligne · 618,85 $ en livraison · 204,07 $ en ramassage |
+| Chiffre d'affaires mesuré | 168 453 $ HT sur 12 mois · rythme de 20 892 $ HT par mois sur les 6 derniers mois |
+| Délai d'achat mesuré | médiane 10 jours, 5 jours en ligne · 45 % des commandes à 7 jours ou moins de l'événement |
+| Grille de livraison en vigueur | Ramassage au comptoir 0 $ · Livraison aller simple 120 $ · Ramassage du matériel 120 $ · Installation 60 $ / 150 $ / 200 $ / 400 $ selon le nombre d'articles |
 
 ## Sommaire
 
+0. Recalibrage du 20 septembre : ce que les vraies ventes changent
 1. Raisonnement : pourquoi ce plan
 2. Offre et positionnement
 3. Prérequis avant la première piastre
@@ -72,6 +80,76 @@ Cette version remplace la v1. La v1 avait été écrite sur une prémisse fausse
 
 ---
 
+## 0. Recalibrage du 20 septembre : ce que les vraies ventes changent
+
+Deux relevés ont été faits le 20 septembre : l'export de tes 615 commandes Booqable et un passage au navigateur sur toute la boutique. Cette section remplace les hypothèses V1, V2, V4, V6 et V8 du plan. Les détails complets sont dans `docs/donnees-ventes-booqable-2026-09.md` et `docs/audit-boutique-2026-09-20.md`.
+
+### 0.1 Ce qui était supposé contre ce qui est mesuré
+
+| Élément | Plan v2 supposait | Mesuré le 20 septembre | Effet |
+|---|---|---|---|
+| Panier moyen (V1) | 420 $ HT | **325,20 $** tous canaux sur 12 mois | Le calcul de rentabilité change |
+| Panier des commandes en ligne | 420 $ HT | **146,73 $** sur 6 mois | Décisif : c'est ce que les pubs achètent aujourd'hui |
+| Panier en livraison | non mesuré | **618,85 $**, 30 % des commandes, 56 % du CA | C'est la cible réelle des campagnes |
+| Panier en ramassage | non mesuré | **204,07 $**, 70 % des commandes | Ce que la boutique vend seule |
+| Chiffre d'affaires (V8) | objectif 50 000 $/mois | **20 892 $ HT/mois** sur 6 mois | L'objectif du test devient +5 000 $/mois |
+| Dépôt à la commande (V7) | 20 % par carte | **100 % encaissé** dans 91 % des commandes en ligne | La valeur Purchase reste le total, confirmé |
+| Délai d'achat | non mesuré | médiane **10 jours**, 45 % à 7 jours ou moins | Fenêtre de conversion à 7 jours suffisante |
+| Réachat | non mesuré | **3,2 %** | Une pub doit être rentable dès la première commande |
+| Durée de location | 48 h par défaut | **53 % à 1 jour, 34 % à 2 jours** | La durée par défaut à 2 jours est la bonne |
+| Taux de conversion (V2) | 1,5 % | **toujours non mesuré** | Seule hypothèse encore ouverte, GA4 la donne en 5 min |
+
+### 0.2 Le chiffre qui décide de tout
+
+La règle de rentabilité du plan est constante : **on ne paie pas plus du quart du panier pour acquérir une commande.**
+
+| Type de commande | Panier moyen mesuré | Coût maximal par commande | Le plan tient-il ? |
+|---|---|---|---|
+| Commande en ligne, boutique actuelle | 146,73 $ | 37 $ | **Non.** Aucun canal payant ne descend à 37 $ dans ce marché |
+| Commande moyenne tous canaux | 325,20 $ | 81 $ | Tout juste |
+| Commande cible du plan | 420,00 $ | 105 $ | Oui, c'est la base de tous les tableaux qui suivent |
+| Commande en livraison | 618,85 $ | 155 $ | Oui, largement |
+
+**Conclusion : le plan n'échoue pas sur la publicité, il échoue sur le panier.** Envoyer du trafic payant vers la boutique dans son état actuel revient à acheter des commandes de 147 $ à 110 $ pièce. Ce n'est pas un problème de créas, de mots-clés ni de budget.
+
+### 0.3 La condition de départ — 1 h 20 avant la première piastre
+
+L'audit de la boutique a trouvé deux blocages qui expliquent le panier de 146,73 $ :
+
+1. **Les forfaits n'ont pas de prix fixe.** Leur prix est la somme de leurs composantes, donc il dérive. Le Party de Bureau annoncé 1 995 $ s'affiche à 1 674,50 $, le Gala Signature annoncé 2 495 $ s'affiche à 2 174,91 $. Un écart de 320 $ entre la pub et la page, et un motif de refus chez Google Ads.
+2. **Un forfait exige jusqu'à 13 menus déroulants avant de pouvoir payer**, dont huit fois « quelle lettre ? » dans une liste de 27. Sur téléphone, personne ne va au bout. Ça se voit dans les ventes : 4 commandes au-dessus de 2 500 $ en 12 mois.
+
+L'ordre d'exécution complet est dans l'audit. Tant que les points 1 et 2 ne sont pas faits : **aucune campagne ne pointe vers une page de forfait tout inclus.** Les pubs pointent vers les forfaits de lettres, qui eux sont corrects, chiffrés et sans menu à remplir :
+
+| Forfait de lettres | Prix | Prix par lettre |
+|---|---|---|
+| 4 lettres lumineuses | 240 $ | 60 $ |
+| 6 lettres lumineuses | 330 $ | 55 $ |
+| 8 lettres lumineuses | 400 $ | 50 $ |
+| 10 lettres lumineuses | 450 $ | 45 $ |
+| Package Marquee LOVE | 280 $ (2 jours) | 70 $ |
+
+C'est le geste le plus rentable du plan : **le même clic qui rapportait 70 $ sur la fiche d'une lettre en rapporte 240 $ à 450 $ sur un forfait de lettres.**
+
+### 0.4 Ce qui rapporte sans publicité, à faire la même semaine
+
+| Action | Matière | Temps | Valeur |
+|---|---|---|---|
+| Relancer les devis non confirmés | **96 commandes en statut Draft, 63 315 $ HT, panier moyen 673,57 $** | 3 h | À 15 % de récupération : 9 500 $. Plus que les 8 semaines de test publicitaire |
+| Écrire à la base clients | **482 courriels de clients passés**, réachat actuel 3,2 % | 1 h | Les partys de bureau se décident en octobre et novembre |
+| Corriger les 78 commandes sans téléphone | 15 % des commandes | — | Sans téléphone, pas de relance ni de confirmation de livraison |
+
+### 0.5 Ce qui manque encore
+
+| Donnée | Où la prendre | Temps |
+|---|---|---|
+| Sessions du site sur 6 mois, pour le taux de conversion réel (V2) | GA4 `G-BCHQ23SBRF` → Acquisition → Vue d'ensemble | 5 min |
+| Marge brute réelle par commande, pour valider la règle du quart | Ton coût : livraison, installation, main-d'œuvre, amortissement | 15 min |
+| Part du chiffre qui vient des lettres | Booqable → Exports → **Lignes de commande**, pas l'export de commandes | 5 min |
+| Numéro de la balise Google Ads active | Google Ads → Objectifs → Balise. `692-562-9727` est un numéro de **compte**, pas la balise `AW-` demandée en section 7 | 2 min |
+
+---
+
 ## 1. Raisonnement : pourquoi ce plan
 
 ### 1.1 Pourquoi les lettres illuminées en tête d'affiche
@@ -80,7 +158,7 @@ Cette version remplace la v1. La v1 avait été écrite sur une prémisse fausse
 
 **Le prix d'entrée est bas et lisible.** 70,00 $ la lettre pour 48 h, LOVE à 280 $, OH BABY à 420 $ : ça se met dans une pub sans gêne. Un « à partir de 1 195 $ » corporatif, non — il demande une conversation. Et la réservation ne coûte que 20 % au clic, environ 56 $ sur un LOVE (V7).
 
-**Surtout : c'est la porte d'entrée, pas la destination.** Le client vient pour LOVE et tombe sur le configurateur : jeux dès 40 $, déco dès 30 $, photobooth dès 599 $, tables et chaises, plus la livraison (100 $ à 10 km, 170 $ à 20 km, 240 $ à 30 km). Le panier double ou triple sans une piastre de pub de plus. Les lettres sont l'hameçon; le configurateur et les forfaits sont le repas (sections 2 et 6).
+**Surtout : c'est la porte d'entrée, pas la destination.** Le client vient pour LOVE et tombe sur le configurateur : jeux dès 40 $, déco dès 30 $, photobooth dès 600 $, tables et chaises, plus la logistique (livraison aller simple 120 $, ramassage du matériel 120 $, installation de 60 $ à 400 $ selon le nombre d'articles). Le panier double ou triple sans une piastre de pub de plus. Les lettres sont l'hameçon; le configurateur et les forfaits sont le repas (sections 2 et 6).
 
 ### 1.2 Ce que le prix affiché change — et ce qu'il coûte
 
@@ -103,9 +181,11 @@ On garde le modèle : il connaît déjà tes prix ou peut les deviner. Ce qu'il 
 
 **Retargeting léger, sur les paniers abandonnés.** 150 $/mois, pas plus : le site a déjà un plugin maison de relance de panier (`evenox-relance-panier`). Le courriel de rappel coûte 0 $, le clic Meta 0,90 $. La pub ne couvre que ceux que le courriel n'atteint pas — panier sans adresse, vue produit sans ajout. Payer davantage, ce serait payer deux fois le même rappel. Audiences : panier 7 jours, vues produit 30 jours.
 
-### 1.4 Le tunnel e-commerce chiffré — toutes valeurs hypothèse
+### 1.4 Le tunnel e-commerce chiffré — le panier décide de tout
 
-Base : conversion 1,5 % (V2), panier 420 $ HT (V1), livraison comprise (définition de la valeur en section 7), perte clic → session de 10 %. CPC Meta 1,20 $ et Google 3,50 $ retenus comme milieux des ordres de grandeur 0,80-1,50 $ et 2-5 $, **à valider en semaine 2**.
+Base : conversion 1,5 % (V2, **toujours non mesurée**), perte clic → session de 10 %, livraison comprise dans la valeur (définition en section 7). CPC Meta 1,20 $ et Google 3,50 $ retenus comme milieux des ordres de grandeur 0,80-1,50 $ et 2-5 $, **à valider en semaine 2**.
+
+Le volume de commandes est le même dans les trois colonnes de droite. Seul le panier change — et c'est lui qui décide si la campagne gagne ou perd de l'argent.
 
 | Étape (mensuel) | Meta froid | Google Recherche | Retargeting | Total |
 |---|---|---|---|---|
@@ -118,29 +198,37 @@ Base : conversion 1,5 % (V2), panier 420 $ HT (V1), livraison comprise (définit
 | Sessions (90 % des clics) | 600 | 129 | 150 | 879 |
 | Conversion (V2) | 1,5 % | 1,5 % | 1,5 % | 1,5 % |
 | Commandes payées | 9,0 | 1,9 | 2,3 | 13,2 |
-| Panier HT (V1) | 420 $ | 420 $ | 420 $ | 420 $ |
-| Revenu HT | 3 780 $ | 798 $ | 966 $ | 5 544 $ |
 | CPA | 89 $ | 263 $ | 65 $ | 110 $ |
-| ROAS | 4,7x | 1,6x | 6,4x | **3,8x** |
 
-Sur 8 semaines : environ 1 950 clics, 26 à 27 réservations, 11 100 $ HT — l'attendu V6.
+Et le revenu, selon l'état de la boutique :
 
-Deux lectures. Un : **le 1,6x de Google est un plancher** — à 3 % de conversion avec un panier de 600 $, il fait 3,9 commandes, 2 322 $ et 4,6x. Deux : **le retargeting est sous-évalué**, un panier abandonné convertit 2 à 3 fois mieux. Upside non compté, volontairement.
+| Scénario | Panier | Revenu mensuel HT | ROAS | Verdict |
+|---|---|---|---|---|
+| **A — boutique inchangée** (pubs vers les fiches produit) | 146,73 $ mesuré | 1 940 $ | **1,3x** | Perd de l'argent. À ne pas lancer |
+| **B — pubs vers les forfaits de lettres** (240 $ à 450 $) | 280 $ visé | 3 696 $ | **2,5x** | Rentable si ta marge dépasse 40 % |
+| **C — livraison poussée en plus** | 420 $ visé | 5 544 $ | **3,8x** | La cible du plan |
+| Repère : panier livré déjà mesuré chez toi | 618,85 $ | 8 169 $ | 5,6x | Ce que fait déjà ta livraison hors ligne |
 
-### 1.5 Calcul inverse : à quoi ressemblent 50 000 $ par mois (V8)
+Sur 8 semaines : environ 1 950 clics et 26 à 27 réservations dans les trois cas, mais **3 880 $ en scénario A, 7 390 $ en B, 11 090 $ en C**.
 
-| Panier moyen | Commandes/mois | Commandes/sem. | Sessions à 1,5 % | Clics à 1,49 $ | Dépense à CPA 105 $ |
+Trois lectures. Un : **le scénario A n'est pas une option**, c'est la raison des 1 h 20 de corrections de la section 0.3. Deux : **le 1,6x de Google est un plancher** — à 3 % de conversion avec un panier de 600 $, il fait 3,9 commandes, 2 322 $ et 4,6x. Trois : **le retargeting est sous-évalué**, un panier abandonné convertit 2 à 3 fois mieux. Upside non compté, volontairement.
+
+### 1.5 Calcul inverse : ce que les pubs peuvent réellement ajouter (V8 recalibré)
+
+Ton rythme mesuré est de **20 892 $ HT par mois** sur les 6 derniers mois, 14 459 $ sur 12 mois. Viser 50 000 $/mois, c'est viser un facteur 2,4 — un horizon, pas l'objectif du test. **L'objectif du test est d'ajouter 5 000 $ HT par mois.** Voici ce que ça coûte selon le panier.
+
+| Panier | Commandes/mois à trouver | Sessions à 1,5 % | Clics | Dépense à 1,49 $ le clic | ROAS |
 |---|---|---|---|---|---|
-| 420 $ (lettres seules) | 119 | 27,5 | 7 937 | 8 818 | 12 500 $ |
-| 600 $ (panier mixte) | 83 | 19,2 | 5 556 | 6 173 | 8 750 $ |
-| 1 000 $ (gros mixte) | 50 | 11,5 | 3 333 | 3 704 | 5 250 $ |
-| 2 000 $ (forfait corpo) | **25** | 5,8 | 1 667 | 1 852 | 2 625 $ |
+| 146,73 $ (boutique actuelle) | 34,1 | 2 273 | 2 526 | 3 764 $ | **1,3x** |
+| 280 $ (forfaits de lettres) | 17,9 | 1 193 | 1 326 | 1 976 $ | **2,5x** |
+| 420 $ (cible du plan) | 11,9 | 793 | 881 | 1 313 $ | **3,8x** |
+| 618,85 $ (panier livré mesuré) | 8,1 | 540 | 600 | 894 $ | **5,6x** |
 
-Même 50 000 $, mais **119 commandes de lettres contre 25 forfaits corporatifs**, et 4,8 fois moins de clics achetés. La ligne 420 $ est irréaliste : 27 commandes par semaine sur 58 pièces avec 8 caractères uniques (V9), c'est un mur de stock avant d'être un mur de budget.
+Même 5 000 $ de revenu, mais **3 764 $ de pub dans le premier cas et 894 $ dans le dernier**. Le panier fait un écart de 4,2 fois sur la facture publicitaire, à revenu identique.
 
-Nuance : le 1,5 % ne tient pas sur du corporatif, où l'achat passe souvent par un appel. Compte 250 $ à 400 $ de CPA (hypothèse) : 25 forfaits à 300 $, c'est 7 500 $ de pub pour 50 000 $, soit 6,7x — mieux que les 12 500 $ de la ligne 420 $. Cible à terme (V8) : les pubs portent la moitié du chiffre, 25 000 $/mois à 600 $ de panier, environ 42 commandes, environ 4 400 $ de dépense, ROAS environ 5,7x. Le reste vient de la fiche Google, du référencement, des références et du corporatif direct.
+L'horizon des 50 000 $/mois, pour mémoire : il faut ajouter 29 100 $ au rythme actuel. À 420 $ de panier, c'est 69 commandes de plus par mois, environ 7 650 $ de pub, ROAS 3,8x. **Ce n'est pas un mur de budget, c'est un mur de stock** : 69 commandes de plus par mois sur 58 pièces avec 8 caractères uniques (V9), les fins de semaine de juin ne passent pas. Le chemin réaliste reste le corporatif : 25 forfaits à 2 000 $ font le mois, et un forfait consomme une fin de semaine, pas dix.
 
-**Le levier no 1 est le panier, pas le volume de clics.** Passer de 420 $ à 600 $ vaut mieux que doubler le budget.
+**Le levier no 1 est le panier, pas le volume de clics.** Passer de 146,73 $ à 280 $ divise ta facture publicitaire par 1,9 à revenu égal. Les 1 h 20 de corrections de la section 0.3 valent plus que tout doublement de budget.
 
 ### 1.6 Pourquoi 1 500 $ par mois pendant 8 semaines (V5)
 
@@ -150,8 +238,8 @@ Ce qu'on valide, et rien d'autre : le **CPC réel** par canal, le **taux de conv
 
 Limite assumée : Meta demande environ 50 conversions/semaine par ensemble pour sortir de l'apprentissage. À 26 $/jour et 89 $ de CPA, on obtient environ 2 achats/semaine — on n'en sortira pas. D'où **un seul ensemble, jamais fragmenté**, et un repli sur AddToCart si moins d'un achat par semaine après 2 semaines (section 4).
 
-**Variante 1 200 $/mois** (650/400/100 + 50) : environ 767 clics, 10,4 commandes, 4 368 $ HT, ROAS 3,8x. Signal plus mince, même calendrier.
-**Variante 800 $/mois** (450/300/50) : environ 516 clics, 7,0 commandes, 2 940 $ HT, ROAS 3,7x. Verdict repoussé à 10-12 semaines, donc mi-décembre : on rate les partys de bureau.
+**Variante 1 200 $/mois** (650/400/100 + 50) : environ 767 clics, 10,4 commandes. Revenu 1 526 $ / 2 912 $ / 4 368 $ selon le scénario A / B / C de la section 1.4, soit 1,3x / 2,5x / 3,8x. Signal plus mince, même calendrier.
+**Variante 800 $/mois** (450/300/50) : environ 516 clics, 7,0 commandes. Revenu 1 027 $ / 1 960 $ / 2 940 $, soit 1,3x / 2,5x / 3,7x. Verdict repoussé à 10-12 semaines, donc mi-décembre : on rate les partys de bureau.
 
 ### 1.7 Critères de verdict — semaine du 23 novembre (V3, V4)
 
@@ -163,6 +251,16 @@ Lecture sur les 8 semaines complètes, en réservations payées attribuées. Si 
 | Google Recherche | 1 000 $ | ≥ 10 réserv., CPA ≤ 105 $, ROAS ≥ 4,0x | 8-9 réserv., ROAS 3,3-3,8x | ≤ 7 réserv., ROAS < 3,0x |
 | Retargeting | 300 $ | ≥ 4 réserv., CPA ≤ 75 $, ROAS ≥ 5,6x | 2-3 réserv., ROAS 2,8-4,2x | ≤ 1 réserv., ROAS ≤ 1,4x |
 | **Ensemble** | **3 000 $** | **≥ 27 réserv., ≥ 11 300 $ HT, ROAS ≥ 3,8x** | **18 à 26 réserv., ROAS 2,5-3,6x** | **≤ 17 réserv., ROAS ≤ 2,4x** |
+
+Ce tableau est écrit pour le **scénario C** de la section 1.4 : panier de 420 $, corrections de la boutique faites. Si tu lances avec un panier plus bas, lis le verdict sur la ligne correspondante, jamais sur celle d'en dessus.
+
+| Scénario de départ | Panier | CPA cible / alerte / pause | Revenu GO sur 8 semaines | ROAS GO |
+|---|---|---|---|---|
+| A — boutique inchangée | 146,73 $ | 37 $ / 49 $ / 73 $ | 3 960 $ | 1,3x — **ne pas lancer** |
+| B — pubs vers les forfaits de lettres | 280 $ | 70 $ / 93 $ / 140 $ | 7 560 $ | 2,5x |
+| **C — livraison poussée (base du plan)** | **420 $** | **105 $ / 140 $ / 200 $** | **11 300 $** | **3,8x** |
+
+Le nombre de réservations attendu ne bouge pas d'un scénario à l'autre : **27 sur 8 semaines**. Seul le revenu change. Si tu obtiens 27 réservations à 1,3x, la publicité a fait son travail et c'est la boutique qui a échoué — la correction est en section 0.3, pas dans les campagnes.
 
 Deux drapeaux forcent un CORRIGER quel que soit le chiffre : plus de 30 % de termes de recherche hors sujet sur Google, ou une fréquence Meta supérieure à 4 sur 7 jours. Le groupe « Marque Évenox » est exclu du calcul : c'est de la défense de marque. Les règles de pause en cours de route (CPA > 200 $ après 200 $ dépensés, ou 200 $ sans réservation) s'appliquent avant, aux lundis du 12 octobre, 26 octobre et 9 novembre. Sur le froid, elles n'envoient qu'un avertissement jusqu'au 18 octobre et ne coupent qu'à partir du 19, pour la raison expliquée en section 4; sur le retargeting, elles coupent dès le premier jour.
 
@@ -1511,7 +1609,7 @@ Chaque forfait a sa propre page avec bouton « Réserver cette date » et compos
 
 | Page | Contenu |
 |---|---|
-| `/forfait-5-a-7-equipe/` | Forfait corporatif d'entrée, 1 195 $, valeur détaillée de 1 340 $, livraison et installation comprises |
+| `/forfait-5-a-7-equipe/` | Forfait corporatif d'entrée, 1 195 $, valeur détaillée de 1 340 $, livraison et installation comprises |
 | `/forfait-gala-signature/` | Forfait gala |
 | `/forfait-decor-wow/` | Forfait décor |
 | `/forfait-mobilier-evenement/`, `/forfait-mobilier-grande-salle/`, `/forfait-mobilier-reception/` | Forfaits mobilier par taille de salle |
