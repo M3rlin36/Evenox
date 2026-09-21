@@ -1,5 +1,8 @@
 # Article #1 — prêt à publier
 
+> ⚠️ **À valider avant publication :** les fourchettes de prix de cet article sont des
+> estimations de marché. **Remplace-les par tes tarifs réels** avant la mise en ligne.
+
 **URL suggérée :** `/prix-party-de-bureau-entreprise-quebec/`
 **Titre SEO (Yoast) :** Prix d'un party de bureau au Québec (2026) | Évenox
 **Meta description :** De 45 $ à 120 $ par employé : les vrais prix d'un party de bureau au Québec en 2026, poste par poste, et les forfaits clé en main livrés et installés dès 899 $.
