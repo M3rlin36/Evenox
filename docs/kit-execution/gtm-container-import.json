@@ -1,0 +1,495 @@
+{
+ "exportFormatVersion": 2,
+ "exportTime": "2026-09-22 00:00:00",
+ "containerVersion": {
+  "path": "accounts/0/containers/0/versions/0",
+  "accountId": "0",
+  "containerId": "0",
+  "containerVersionId": "0",
+  "container": {
+   "path": "accounts/0/containers/0",
+   "accountId": "0",
+   "containerId": "0",
+   "name": "Evenox - import kit",
+   "publicId": "GTM-PP2W2TX9",
+   "usageContext": [
+    "WEB"
+   ]
+  },
+  "tag": [
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "1",
+    "name": "GA4 - Config",
+    "type": "googtag",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "tagId",
+      "value": "G-REMPLIR"
+     }
+    ],
+    "firingTriggerId": [
+     "2147479553"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "2",
+    "name": "GA4 - generate_lead (merci)",
+    "type": "gaawe",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "eventName",
+      "value": "generate_lead"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "measurementIdOverride",
+      "value": "G-REMPLIR"
+     }
+    ],
+    "firingTriggerId": [
+     "10"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "3",
+    "name": "Google Ads - Conversion Soumission",
+    "type": "awct",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "conversionId",
+      "value": "16776285171"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "conversionLabel",
+      "value": "LIBELLE-REMPLIR"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "conversionValue",
+      "value": "1"
+     },
+     {
+      "type": "TEMPLATE",
+      "key": "currencyCode",
+      "value": "CAD"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "enableConversionLinker",
+      "value": "true"
+     }
+    ],
+    "firingTriggerId": [
+     "10"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "4",
+    "name": "Google Ads - Conversion Linker",
+    "type": "gclidw",
+    "parameter": [
+     {
+      "type": "BOOLEAN",
+      "key": "enableCrossDomain",
+      "value": "false"
+     }
+    ],
+    "firingTriggerId": [
+     "2147479553"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "5",
+    "name": "Google Ads - Remarketing (toutes pages)",
+    "type": "sp",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "conversionId",
+      "value": "16776285171"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "enableConversionLinker",
+      "value": "true"
+     }
+    ],
+    "firingTriggerId": [
+     "2147479553"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "6",
+    "name": "Meta Pixel - Base + PageView",
+    "type": "html",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "html",
+      "value": "<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','META-PIXEL-ID-REMPLIR');fbq('track','PageView');</script>"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "supportDocumentWrite",
+      "value": "false"
+     }
+    ],
+    "firingTriggerId": [
+     "2147479553"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "7",
+    "name": "Meta Pixel - ViewContent (pages produits)",
+    "type": "html",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "html",
+      "value": "<script>fbq('track','ViewContent',{content_name:document.title,content_category:location.pathname});</script>"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "supportDocumentWrite",
+      "value": "false"
+     }
+    ],
+    "firingTriggerId": [
+     "11"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "setupTag": [
+     {
+      "tagName": "Meta Pixel - Base + PageView"
+     }
+    ],
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "8",
+    "name": "Meta Pixel - FormStart",
+    "type": "html",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "html",
+      "value": "<script>fbq('trackCustom','FormStart',{page:location.pathname});</script>"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "supportDocumentWrite",
+      "value": "false"
+     }
+    ],
+    "firingTriggerId": [
+     "12"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "setupTag": [
+     {
+      "tagName": "Meta Pixel - Base + PageView"
+     }
+    ],
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "9",
+    "name": "Meta Pixel - Lead (merci)",
+    "type": "html",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "html",
+      "value": "<script>fbq('track','Lead',{content_name:'soumission'});</script>"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "supportDocumentWrite",
+      "value": "false"
+     }
+    ],
+    "firingTriggerId": [
+     "10"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "setupTag": [
+     {
+      "tagName": "Meta Pixel - Base + PageView"
+     }
+    ],
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "10",
+    "name": "OAIQ (ChatGPT Ads) - lead sur merci",
+    "type": "html",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "html",
+      "value": "<script>try{if(window.oaiq){window.oaiq('measure','lead',{event_id:window.evxOaiqEventId||undefined});}}catch(e){}</script>"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "supportDocumentWrite",
+      "value": "false"
+     }
+    ],
+    "firingTriggerId": [
+     "10"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "blockingTriggerId": [
+     "13"
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "tagId": "11",
+    "name": "EVX - UTM vers cookie + champs caches",
+    "type": "html",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "html",
+      "value": "<script>/* voir evx-utm-champs-caches.js : coller le contenu ici */</script>"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "supportDocumentWrite",
+      "value": "false"
+     }
+    ],
+    "firingTriggerId": [
+     "2147479553"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "blockingTriggerId": [
+     "13"
+    ]
+   }
+  ],
+  "trigger": [
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "triggerId": "10",
+    "name": "CE - conversion_lead (merci, 1x/session)",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+     {
+      "type": "EQUALS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{_event}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "conversion_lead"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "triggerId": "11",
+    "name": "PV - pages produits",
+    "type": "PAGEVIEW",
+    "filter": [
+     {
+      "type": "MATCH_REGEX",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{Page Path}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "^/(location-|jeux-|decoration-|mur-decoratif|photobooth-|friandises-|equipement|ustensile|chapiteaux)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "triggerId": "12",
+    "name": "Form start - premier focus champ ef-form",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+     {
+      "type": "EQUALS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{_event}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "evx_form_start"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "triggerId": "13",
+    "name": "Exclusion - trafic interne",
+    "type": "PAGEVIEW",
+    "filter": [
+     {
+      "type": "EQUALS",
+      "parameter": [
+       {
+        "type": "TEMPLATE",
+        "key": "arg0",
+        "value": "{{evx_interne}}"
+       },
+       {
+        "type": "TEMPLATE",
+        "key": "arg1",
+        "value": "1"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "variable": [
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "variableId": "1",
+    "name": "evx_interne",
+    "type": "k",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "name",
+      "value": "evx_interne"
+     },
+     {
+      "type": "BOOLEAN",
+      "key": "decodeCookie",
+      "value": "false"
+     }
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "variableId": "2",
+    "name": "cookie utm_source",
+    "type": "k",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "name",
+      "value": "evx_utm_source"
+     }
+    ]
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "variableId": "3",
+    "name": "cookie utm_campaign",
+    "type": "k",
+    "parameter": [
+     {
+      "type": "TEMPLATE",
+      "key": "name",
+      "value": "evx_utm_campaign"
+     }
+    ]
+   }
+  ],
+  "builtInVariable": [
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "type": "PAGE_PATH",
+    "name": "Page Path"
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "type": "EVENT",
+    "name": "Event"
+   },
+   {
+    "accountId": "0",
+    "containerId": "0",
+    "type": "PAGE_URL",
+    "name": "Page URL"
+   }
+  ]
+ }
+}
