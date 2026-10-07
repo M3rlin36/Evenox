@@ -1,0 +1,25 @@
+Campaign report
+"January 1, 2024 - October 7, 2026"
+Account,Customer ID,Month,Campaign,Campaign type,Cost,Impr.,Clicks,Conversions,Conv. value
+Evenox,123-456-7890,January 2025,Search - Corporate,Search,"CA$280.69","1,276",116,3.5,--
+Evenox,123-456-7890,February 2025,Search - Corporate,Search,"CA$263.49","1,199",109,3.3,--
+Evenox,123-456-7890,March 2025,Search - Corporate,Search,"CA$278.22","1,265",115,3.4,--
+Evenox,123-456-7890,April 2025,Search - Corporate,Search,"CA$326.66","1,496",136,4.1,--
+Evenox,123-456-7890,May 2025,Search - Corporate,Search,"CA$242.34","1,100",100,3.0,--
+Evenox,123-456-7890,June 2025,Search - Corporate,Search,"CA$306.49","1,397",127,3.8,--
+Evenox,123-456-7890,July 2025,Search - Corporate,Search,"CA$292.85","1,342",122,3.7,--
+Evenox,123-456-7890,August 2025,Search - Corporate,Search,"CA$242.17","1,100",100,3.0,--
+Evenox,123-456-7890,September 2025,Search - Corporate,Search,"CA$279.78","1,276",116,3.5,--
+Evenox,123-456-7890,October 2025,Search - Corporate,Search,"CA$314.87","1,441",131,3.9,--
+Evenox,123-456-7890,November 2025,Search - Corporate,Search,"CA$602.94","2,761",251,7.5,--
+Evenox,123-456-7890,December 2025,Search - Corporate,Search,"CA$495.43","2,266",206,6.2,--
+Evenox,123-456-7890,January 2026,Search - Corporate,Search,"CA$358.21","1,639",149,4.5,--
+Evenox,123-456-7890,February 2026,Search - Corporate,Search,"CA$334.60","1,529",139,4.2,--
+Evenox,123-456-7890,March 2026,Search - Corporate,Search,"CA$356.60","1,628",148,4.4,--
+Evenox,123-456-7890,April 2026,Search - Corporate,Search,"CA$252.57","1,155",105,3.1,--
+Evenox,123-456-7890,May 2026,Search - Corporate,Search,"CA$271.87","1,243",113,3.4,--
+Evenox,123-456-7890,June 2026,Search - Corporate,Search,"CA$244.75","1,111",101,3.0,--
+Evenox,123-456-7890,July 2026,Search - Corporate,Search,"CA$333.48","1,518",138,4.1,--
+Evenox,123-456-7890,August 2026,Search - Corporate,Search,"CA$272.45","1,243",113,3.4,--
+Evenox,123-456-7890,September 2026,Search - Corporate,Search,"CA$255.55","1,166",106,3.2,--
+Total: Account,,,,,"CA$6,606.03",--,--,--,--

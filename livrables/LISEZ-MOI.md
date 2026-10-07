@@ -16,3 +16,5 @@ Commence par le **compte rendu** : « Évenox — Compte rendu Google Ads et pla
 | 10 | `FICHE-GOOGLE-BUSINESS.md` | Optimisation de ta fiche Google (canal gratuit n° 1) | Toi |
 | 11 | `recherche/` | Les rapports de recherche (environ 1 060 sources), la vérification des faits et les 2 relectures critiques | Référence |
 | 12 | `scripts/` | Les générateurs. Si un prix change : `python3 -I scripts/build_google_ads.py` après avoir rempli `PRIX` | Référence |
+| 13 | `donnees/exports-google-ads/README.md` + `scripts/analyse_exports_google_ads.py` | Dépose tes exports Google Ads (depuis 2024), lance le script : audit automatique (compte à garder, gaspillage, négatifs, vrais CPC) | Toi, puis moi |
+| 14 | `IMPORT-CONVERSIONS-HORS-LIGNE.md` + `scripts/export_conversions_hors_ligne.py` | Le vendredi : export Notion → fichier prêt à importer dans Google Ads (leads qualifiés et réservations) | Toi |
