@@ -140,10 +140,12 @@ Ta livraison s'arrête à 40 km de Sainte-Thérèse (FAQ). Sans grille de transp
 | 1. Hausse des CPC max. sur les mots-clés rentables | Part d'impressions perdue (classement) > 30 % et CPA dans la cible | +20 %/semaine | CPA +25 % |
 | 2. Demand Gen en prospection (segments basés sur des recherches Google : « party de bureau », « mariage 2027 ») | Conversions vérifiées depuis 3 semaines | 40 à 60 $/jour | 0 lead qualifié après 1 500 $ |
 | 3. Microsoft Ads (import de la campagne Google) | Après 30 jours de Search stable | 15 à 20 $/jour | CPA > 1,5 fois Google |
-| 4. Demand Gen remarketing + liste clients (Customer Match dès 100 contacts) | Bannière Loi 25 en ligne depuis 3 semaines | 20 à 40 $/jour | 0 lead qualifié après 1 000 $ |
+| 4. Demand Gen remarketing (visiteurs du site) | Bannière Loi 25 en ligne depuis 3 semaines et au moins 100 visiteurs consentants. La liste clients ne sert qu'en exclusion tant que le compte n'a pas dépensé plus de 50 000 $ US au total (règle de Google), et son envoi demande un avis juridique (Loi 25) | 20 à 40 $/jour | 0 lead qualifié après 1 000 $ |
 | 5. Réserve pour janvier à mars (saison des réservations de mariages) | — | Le non-dépensé | — |
 
 ---
+
+Le détail des leviers 2 à 4 (audiences, textes, visuels, réglages, étapes) est dans `LEVIERS-DEMAND-GEN-MICROSOFT.md`.
 
 ## 8. Calendrier des plafonds (la dépense réelle suivra la demande)
 
