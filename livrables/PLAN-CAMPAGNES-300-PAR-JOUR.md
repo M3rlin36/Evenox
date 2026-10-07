@@ -39,7 +39,7 @@ L'article 58 de la Charte de la langue française exige que le français soit **
 Ta grille de transport pour Québec et Lévis n'est pas fixée. Sans elle, on ne sait pas si un lead de Québec est rentable. Active cette campagne quand la grille est publiée sur le site.
 
 ### Pourquoi Demand Gen est en pause
-Le remarketing exige une **bannière de consentement Loi 25** (opt-in pour les témoins publicitaires), et ton site n'en a pas. Sans bannière, c'est illégal ; sans consentement, la liste reste vide. Active Demand Gen quand la bannière est en ligne, avec la règle d'arrêt : 0 lead qualifié après 1 500 $ dépensés = on coupe.
+Le remarketing a besoin de listes d'audience bâties uniquement à partir des visiteurs qui ont consenti. La bannière Loi 25 (bloquant 2b) doit donc être en ligne depuis 2 à 3 semaines avant que la liste soit utilisable. Active Demand Gen quand la bannière est en ligne, avec la règle d'arrêt : 0 lead qualifié après 1 500 $ dépensés = on coupe.
 
 ---
 
@@ -66,6 +66,7 @@ Le remarketing exige une **bannière de consentement Loi 25** (opt-in pour les t
 |---|---|---|---|
 | 1 | **Choisir UN compte Google Ads** (AW-16529262834 ou AW-16776285171) et UN GA4. Retirer l'autre balise du site. | Toi (ou moi avec l'accès) | Jour 1 |
 | 2 | **Conversion « Demande de soumission » qui fonctionne** : balise Google via GTM, déclenchée sur l'envoi réussi du formulaire, comptage « Une seule », catégorie « Envoi de formulaire pour prospects », **principale**. Ajouter les conversions avancées pour les prospects et un champ caché GCLID. **Test : 1 faux lead doit apparaître dans Google Ads.** | Pigiste GTM | Jours 1 à 3 |
+| 2b | **Bannière Loi 25** (CookieYes ou Complianz : certifiés Google, en français, compatibles WordPress + GTM). Boutons « Accepter » et « Refuser » de même apparence, mode consentement Google en **basic** (balises bloquées tant que la personne n'a pas accepté). Retirer le pixel OpenAI. Guide détaillé : `GUIDE-TRACKING-LOI25.md`. | Pigiste | Jours 1 et 2 |
 | 3 | **Prix identiques entre annonce et page.** Le site affiche photobooth dès 599 $ et Signature 799 $ ; ton Notion dit 650 / 825 / 1 095 / 1 495 $. Le mobilier est à 1 195 / 1 995 / 2 495 $ sur le site et à 850 / 1 100 / 1 400 / 2 900 $ dans Notion. Choisis UNE grille, mets-la sur le site, et je régénère les annonces en une commande. | Toi | Jour 2 |
 | 4 | **Formulaire qui filtre** : type d'événement, date, ville, nombre d'invités, budget (paliers), adresse de salle **facultative**, reCAPTCHA. | Pigiste | Jours 2 à 4 |
 | 5 | **Réponse en moins de 2 heures ouvrables** à chaque lead, avec le statut mis à jour dans Notion : Nouveau, Qualifié, Soumission envoyée, Gagné, Perdu. | Toi | Dès le jour 1 du lancement |
