@@ -22,7 +22,7 @@ On les active seulement quand un faux lead apparaît dans Google Ads. Au départ
 | # | Campagne | Au lancement | Budget plafond/jour | CPC max. | Groupes d'annonces (URL) |
 |---|---|---|---|---|---|
 | 1 | **S-FR \| Marque** | À activer | 10 $ | 2,50 $ | Marque Évenox (accueil) |
-| 2 | **S-FR \| Corporatif & Fêtes** | À activer | 170 $ | 4,00 $ | Fête de Noël d'entreprise (/forfaits-corporatif/) · Team building (/team-building-activitecorpo/) · Photobooth corporatif (/location-photobooth-montreal/) · Lettres lumineuses corporatif (/lettres-lumineuses/) |
+| 2 | **S-FR \| Corporatif & Fêtes** | À activer | 170 $ | 4,00 $ | Fête de Noël d'entreprise (/forfaits-corporatif/) · Team building (/team-building-activitecorpo/) · Photobooth corporatif (/location-photobooth-montreal/) · Lettres lumineuses corporatif (/forfaits-corporatif/) |
 | 3 | **S-FR \| Événements privés** | À activer | 120 $ | 3,00 $ | Lettres lumineuses · Lettres lumineuses mariage · Photobooth · Photobooth mariage · Vidéobooth 360 (/photobooth-360/) · Décor mariage (/forfaits-mariage/) |
 | 4 | S-EN \| Corporate Montréal | Reste en pause | 30 $ | 5,00 $ | Holiday party · Photo booth · Marquee letters |
 
