@@ -232,8 +232,8 @@ Ensuite, programmer une relance la veille de la date de décision annoncée.
 
 | Moment | Canal | Message |
 |---|---|---|
-| Lendemain, 10 h | Texto | « Bonjour {{PRENOM}}, merci d'avoir choisi Évenox pour votre {{TYPE}}! Si tout s'est bien passé, un avis Google de 30 secondes nous aide énormément : [lien court de l'avis]. Si quelque chose n'était pas parfait, dites-le-moi directement. » |
-| J+3 (si pas d'avis) | Courriel | Le même message + les photos de l'événement (galerie) + le lien WeddingWire (mariage) ou le lien Yelp (corporatif). |
+| Lendemain, 10 h | Texto | « Bonjour {{PRENOM}}, merci d'avoir choisi Évenox pour votre {{TYPE}}! Votre avis, qu'il soit positif ou non, nous aide à nous améliorer et aide d'autres organisateurs à choisir : [lien court de l'avis]. Merci! » (voir `fiches-annuaires.md`, modèle A) |
+| J+3 (si pas d'avis) | Courriel | Le même message + les photos de l'événement (galerie) + le lien WeddingWire (mariage). Ne jamais solliciter d'avis Yelp (interdit par Yelp). |
 | J+300 (corporatif) | Courriel | « Votre party de l'an dernier : on remet ça? Je peux retenir la même date cette année. » |
 
 Ne jamais offrir de compensation contre un avis, ni filtrer les clients insatisfaits avant de leur demander un avis (règles de Google). Demander à tous les clients.
