@@ -1,0 +1,350 @@
+# -*- coding: utf-8 -*-
+"""Génère les fichiers d'import Google Ads Editor pour Évenox (300 $/jour).
+
+Usage : python3 -I build_google_ads.py
+Sortie : ../google-ads-editor/*.csv  (UTF-8 avec BOM, importables via
+Google Ads Editor > Compte > Importer > À partir d'un fichier)
+
+Tout ce qui doit être confirmé avant lancement est dans CONFIG.
+"""
+import csv
+import os
+import re
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(HERE, "..", "google-ads-editor")
+os.makedirs(OUT, exist_ok=True)
+
+# Textes d'annonces vérifiés (agent créatif) : on réutilise la liste AG.
+_src = open(os.path.join(HERE, "adcopy_source.py"), encoding="utf-8").read()
+_src = _src.split("# ----------------------------------------------------------- render")[0]
+_ns = {}
+exec(_src, _ns)
+AG = {g["name"]: g for g in _ns["AG"]}
+
+# ---------------------------------------------------------------- CONFIG
+# Pages de destination : URL existantes aujourd'hui. Remplacer par les pages
+# dédiées dès qu'elles sont en ligne (voir PLAN, section Pages).
+URL = {
+    "home": "https://evenox.ca/",
+    "corpo": "https://evenox.ca/nos-forfaits-tout-inclus",
+    "lettres": "https://evenox.ca/configurateur",
+    "photobooth": "https://evenox.ca/location-photobooth-montreal",
+    "mobilier": "https://evenox.ca/nos-forfaits-tout-inclus",
+    "mariage": "https://evenox.ca/nos-forfaits-tout-inclus",
+}
+
+BUDGET = {  # $ CAD / jour — total actif = 300
+    "S-FR | Marque": 10,
+    "S-FR | Corporatif & Fêtes": 165,
+    "S-FR | Produits vedettes": 80,
+    "S-FR | Mariage": 45,
+    # Préparées en pause (budget pris sur Corporatif à l'activation)
+    "S-EN | Corporate Montréal": 30,
+    "S-FR | Québec-Lévis (test)": 20,
+}
+PAUSED = {"S-EN | Corporate Montréal", "S-FR | Québec-Lévis (test)"}
+
+LIMITS = dict(h=30, d=90, path=15)
+
+# ---------------------------------------------------------------- COPIES
+def copy_from(name, lang="fr"):
+    g = AG[name]
+    return dict(h=list(g[f"h_{lang}"]), d=list(g[f"d_{lang}"]),
+                path=g[f"path_{lang}"])
+
+LETTRES_GEN = dict(
+    h=["Location lettres lumineuses", "Lettres géantes de 4 pi",
+       "Votre message en lumière", "Initiales, logo, chiffres",
+       "Location haut de gamme", "Installation clé en main",
+       "Montréal, Laval, Rive-Nord", "Mariages et entreprises",
+       "Soumission en 24 h", "Note Google 4,8/5", "Plus de 1 000 événements",
+       "Livrées, montées, reprises", "Un décor qui fait parler",
+       "Service premium sans tracas", "Réservez vos lettres 4 pi"],
+    d=["Lettres lumineuses de 4 pi livrées et installées par notre équipe. Soumission en 24 h.",
+       "Initiales, logo, LOVE ou chiffres : un décor lumineux pour mariages et galas.",
+       "Montréal, Laval, Rive-Nord, Laurentides et Québec. Plus de 1 000 événements réalisés.",
+       "Location haut de gamme, sans tracas. Surclassement offert selon forfait."],
+    path=("lettres", "lumineuses"),
+)
+PHOTOBOOTH_GEN = dict(
+    h=["Location photobooth", "Borne photo à louer", "Forfaits 650 $ à 1 495 $",
+       "Impressions personnalisées", "Partage numérique instantané",
+       "Mariages, galas, fêtes", "Installation clé en main",
+       "Préposé inclus selon forfait", "Soumission en 24 h",
+       "Montréal, Laval, Rive-Nord", "Note Google 4,8/5",
+       "Plus de 1 000 événements", "Forfait Legend 1 495 $",
+       "Un photobooth élégant", "Réservez votre photobooth"],
+    d=["Photobooth Signature 650 $, Prestige 825 $, Iconic 1 095 $ ou Legend 1 495 $.",
+       "Impressions personnalisées et partage numérique pour mariages, galas et fêtes.",
+       "Livraison, installation et préposé inclus selon forfait. Soumission détaillée en 24 h.",
+       "Montréal, Laval, Rive-Nord, Laurentides et Québec. Accessoire bonus offert selon forfait."],
+    path=("photobooth", "forfaits"),
+)
+MOBILIER_MARIAGE = copy_from("Mobilier lounge/cocktail événement")
+MOBILIER_MARIAGE["h"][7] = "Lounge pour votre mariage"
+MOBILIER_MARIAGE["h"][13] = "Cocktail de mariage élégant"
+MOBILIER_MARIAGE["path"] = ("mobilier", "mariage")
+
+# Épinglage partiel : {index du titre (0-based): position}
+PIN_H1 = {0: 1}
+PIN_PRICE2 = {2: 2}   # 3e titre (ligne de prix) en position 2
+PIN_LOUNGE = {1: 2}   # "Forfait lounge 850 $" en position 2
+
+# ---------------------------------------------------------------- KEYWORDS
+# (texte, type) ; P = expression, E = exact
+def P(*k): return [(x, "Phrase") for x in k]
+def E(*k): return [(x, "Exact") for x in k]
+
+STRUCTURE = [
+  # ------------------------------------------------------------ MARQUE
+  dict(campaign="S-FR | Marque", adgroup="Marque Évenox", url=URL["home"],
+       copy=copy_from("Brand Évenox"), pins=PIN_H1,
+       kw=E("evenox", "évenox", "evenox location", "evenox sainte-thérèse",
+            "evenox photobooth", "evenox lettres lumineuses")
+          + P("evenox", "évenox")),
+  # ------------------------------------------------------- CORPORATIF
+  dict(campaign="S-FR | Corporatif & Fêtes", adgroup="Fête de Noël d'entreprise",
+       url=URL["corpo"], copy=copy_from("Party de Noël corporatif"), pins=PIN_H1,
+       kw=P("party de noël entreprise", "party de bureau", "party des fêtes entreprise",
+            "fête de noël entreprise", "party de noël corporatif",
+            "décoration party de bureau", "location party de bureau",
+            "animation party de bureau", "décor party de noël",
+            "réception des fêtes entreprise", "party de noël employés")
+          + E("party de bureau montréal", "party de bureau laval",
+              "party de noël entreprise", "décoration party de bureau")),
+  dict(campaign="S-FR | Corporatif & Fêtes", adgroup="Lettres lumineuses corporatif",
+       url=URL["lettres"], copy=copy_from("Lettres lumineuses corporatif"), pins=PIN_H1,
+       kw=P("lettres lumineuses corporatif", "lettres lumineuses entreprise",
+            "lettres lumineuses logo", "lettres géantes événement corporatif",
+            "location lettres lumineuses gala", "décoration gala corporatif",
+            "décor événement corporatif", "décor activation de marque",
+            "décoration lancement de produit")
+          + E("lettres lumineuses entreprise", "décoration gala corporatif")),
+  dict(campaign="S-FR | Corporatif & Fêtes", adgroup="Photobooth corporatif",
+       url=URL["photobooth"], copy=copy_from("Photobooth corporatif"), pins=PIN_PRICE2,
+       kw=P("photobooth corporatif", "photobooth entreprise",
+            "location photobooth événement corporatif", "photobooth party de bureau",
+            "borne photo entreprise", "photobooth activation de marque",
+            "photobooth gala", "photobooth party de noël")
+          + E("photobooth corporatif", "photobooth entreprise")),
+  dict(campaign="S-FR | Corporatif & Fêtes", adgroup="Mobilier corporatif",
+       url=URL["mobilier"], copy=copy_from("Mobilier lounge/cocktail événement"),
+       pins=PIN_LOUNGE,
+       kw=P("location mobilier événement corporatif", "location mobilier lounge corporatif",
+            "location mobilier cocktail entreprise", "location tables hautes cocktail",
+            "location mobilier 5 à 7", "location mobilier gala",
+            "location mobilier lancement de produit", "location mobilier congrès")
+          + E("location mobilier événement corporatif")),
+  # -------------------------------------------------------- PRODUITS
+  dict(campaign="S-FR | Produits vedettes", adgroup="Lettres lumineuses",
+       url=URL["lettres"], copy=LETTRES_GEN, pins=PIN_H1,
+       kw=P("location lettres lumineuses", "lettres lumineuses à louer",
+            "location lettres géantes", "location lettres géantes lumineuses",
+            "location chiffres lumineux", "lettres lumineuses 4 pieds",
+            "location lettres lumineuses montréal", "location lettres lumineuses laval")
+          + E("location lettres lumineuses", "location lettres géantes")),
+  dict(campaign="S-FR | Produits vedettes", adgroup="Photobooth",
+       url=URL["photobooth"], copy=PHOTOBOOTH_GEN, pins=PIN_PRICE2,
+       kw=P("location photobooth", "photobooth à louer", "location borne photo",
+            "location photobooth montréal", "location photobooth laval",
+            "location photobooth rive-nord", "prix location photobooth")
+          + E("location photobooth", "location photobooth montréal",
+              "location photobooth laval")),
+  dict(campaign="S-FR | Produits vedettes", adgroup="Mobilier lounge et cocktail",
+       url=URL["mobilier"], copy=copy_from("Mobilier lounge/cocktail événement"),
+       pins=PIN_LOUNGE,
+       kw=P("location mobilier événementiel", "location mobilier lounge",
+            "location mobilier événement", "location mobilier cocktail",
+            "location sofa événement", "location mobilier réception")
+          + E("location mobilier lounge", "location mobilier événementiel")),
+  # --------------------------------------------------------- MARIAGE
+  dict(campaign="S-FR | Mariage", adgroup="Lettres lumineuses mariage",
+       url=URL["lettres"], copy=copy_from("Lettres lumineuses mariage"), pins=PIN_H1,
+       kw=P("lettres lumineuses mariage", "location lettres lumineuses mariage",
+            "location lettres love", "location lettres mr et mrs",
+            "initiales lumineuses mariage", "lettres géantes mariage",
+            "décoration lumineuse mariage")
+          + E("lettres lumineuses mariage", "location lettres love")),
+  dict(campaign="S-FR | Mariage", adgroup="Photobooth mariage",
+       url=URL["photobooth"], copy=copy_from("Photobooth mariage"), pins=PIN_PRICE2,
+       kw=P("photobooth mariage", "location photobooth mariage", "borne photo mariage",
+            "location borne photo mariage", "photobooth mariage prix")
+          + E("photobooth mariage", "location photobooth mariage")),
+  dict(campaign="S-FR | Mariage", adgroup="Mobilier lounge mariage",
+       url=URL["mariage"], copy=MOBILIER_MARIAGE, pins=PIN_LOUNGE,
+       kw=P("location mobilier lounge mariage", "location lounge mariage",
+            "location mobilier mariage", "location décor lounge mariage",
+            "location mobilier cocktail mariage")
+          + E("location lounge mariage")),
+  # ------------------------------------------- EN (PAUSE — Loi 96)
+  dict(campaign="S-EN | Corporate Montréal", adgroup="Holiday party (EN)",
+       url=URL["corpo"], copy=copy_from("Party de Noël corporatif", "en"), pins=PIN_H1,
+       kw=P("office holiday party rentals", "corporate holiday party montreal",
+            "office christmas party decor", "corporate event rentals montreal")
+          + E("corporate event rentals montreal")),
+  dict(campaign="S-EN | Corporate Montréal", adgroup="Marquee letters (EN)",
+       url=URL["lettres"], copy=copy_from("Lettres lumineuses corporatif", "en"),
+       pins=PIN_H1,
+       kw=P("marquee letter rental montreal", "light up letters rental",
+            "marquee letters rental", "giant light up letters rental")),
+  dict(campaign="S-EN | Corporate Montréal", adgroup="Photo booth (EN)",
+       url=URL["photobooth"], copy=copy_from("Photobooth corporatif", "en"),
+       pins=PIN_PRICE2,
+       kw=P("photo booth rental montreal", "corporate photo booth",
+            "photo booth rental laval", "branded photo booth rental")),
+  dict(campaign="S-EN | Corporate Montréal", adgroup="Lounge furniture (EN)",
+       url=URL["mobilier"], copy=copy_from("Mobilier lounge/cocktail événement", "en"),
+       pins=PIN_LOUNGE,
+       kw=P("lounge furniture rental montreal", "cocktail furniture rental",
+            "event furniture rental montreal", "corporate furniture rental event")),
+  # ------------------------------------- QUÉBEC-LÉVIS (PAUSE — test)
+  dict(campaign="S-FR | Québec-Lévis (test)", adgroup="Corporatif Québec",
+       url=URL["corpo"], copy=copy_from("Party de Noël corporatif"), pins=PIN_H1,
+       kw=P("party de bureau québec", "party de noël entreprise québec",
+            "location photobooth québec", "location lettres lumineuses québec",
+            "location mobilier événement québec", "party de bureau lévis")),
+]
+
+# ---------------------------------------------------------------- NÉGATIFS
+NEG_COMPTE = [
+  # Emplois
+  "emploi", "emplois", "offre d'emploi", "carrière", "embauche", "salaire", "stage",
+  "job d'été", "temps partiel", "recrutement", "job", "jobs", "hiring", "career",
+  # Chasseurs d'aubaines
+  "pas cher", "pas chère", "moins cher", "bon marché", "aubaine", "rabais", "solde",
+  "code promo", "coupon", "gratuit", "gratuite", "liquidation", "prix de gros",
+  "cheap", "cheapest", "free", "discount", "groupon",
+  # Achat / usagé
+  "à vendre", "acheter", "achat", "usagé", "usagée", "d'occasion", "seconde main",
+  "kijiji", "marketplace", "lespac", "amazon", "walmart", "costco", "canadian tire",
+  "ikea", "dollarama", "fabricant", "grossiste", "for sale", "buy", "used", "wholesale",
+  # DIY / informationnel
+  "diy", "faire soi-même", "fait maison", "comment faire", "comment monter",
+  "bricolage", "tutoriel", "pinterest", "modèle", "gabarit", "à imprimer",
+  "c'est quoi", "définition", "wikipedia", "cours", "formation", "pdf", "youtube",
+  "how to", "template", "printable",
+  # Hors offre (stratégie premium)
+  "jeux gonflables", "jeu gonflable", "château gonflable", "structure gonflable",
+  "bouncy castle", "bounce house", "costume", "déguisement", "robe", "limousine",
+  "location auto", "camion", "outil", "échafaudage", "tente de camping", "camping",
+  "location de salle", "salle à louer", "chaise de bureau", "photomaton",
+  "passeport", "application", "logiciel", "photographe",
+  # Géo hors zone (France)
+  "france", "paris", "mayenne", "laval france",
+]
+NEG_PRODUITS = ["entreprise", "corporatif", "corporate", "employés", "party de bureau",
+                "mariage", "wedding", "noces", "gala"]       # → vers campagnes dédiées
+NEG_HORS_QUEBEC_VILLE = ["québec", "quebec city", "lévis", "levis"]
+NEG_MARQUE = ["evenox", "évenox"]
+
+# ---------------------------------------------------------------- BUILD
+errors = []
+
+def check_copy(where, c):
+    if len(c["h"]) != 15 or len(set(c["h"])) != 15:
+        errors.append(f"{where}: 15 titres uniques requis")
+    if len(c["d"]) != 4:
+        errors.append(f"{where}: 4 descriptions requises")
+    for s in c["h"]:
+        if len(s) > LIMITS["h"]:
+            errors.append(f"{where}: titre trop long ({len(s)}) {s}")
+    for s in c["d"]:
+        if len(s) > LIMITS["d"]:
+            errors.append(f"{where}: description trop longue ({len(s)}) {s}")
+    for s in c["path"]:
+        if len(s) > LIMITS["path"]:
+            errors.append(f"{where}: chemin trop long {s}")
+    for s in c["h"] + c["d"]:
+        low = s.lower()
+        if "%" in s or "à partir de" in low or re.search(r"dès\s*\d", low) or "starting at" in low:
+            errors.append(f"{where}: règle de marque violée : {s}")
+
+def write(name, header, rows):
+    path = os.path.join(OUT, name)
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        w = csv.writer(f)
+        w.writerow(header)
+        w.writerows(rows)
+    return path
+
+campaigns = []
+for c, b in BUDGET.items():
+    is_brand = "Marque" in c
+    campaigns.append([
+        c, "Search", "Google search", f"{b:.2f}", "Daily",
+        "Maximize clicks" if is_brand else "Maximize conversions",
+        "2.50" if is_brand else "",
+        "Paused" if c in PAUSED else "Enabled",
+    ])
+write("1_campagnes.csv",
+      ["Campaign", "Campaign Type", "Networks", "Budget", "Budget type",
+       "Bid Strategy Type", "Maximum CPC bid limit", "Campaign Status"], campaigns)
+
+adgroups, keywords, ads = [], [], []
+for s in STRUCTURE:
+    check_copy(s["adgroup"], s["copy"])
+    adgroups.append([s["campaign"], s["adgroup"], "Enabled"])
+    for kw, mt in s["kw"]:
+        keywords.append([s["campaign"], s["adgroup"], kw, mt, "Enabled"])
+    row = [s["campaign"], s["adgroup"], "Responsive search ad", s["url"],
+           s["copy"]["path"][0], s["copy"]["path"][1]]
+    for i in range(15):
+        row += [s["copy"]["h"][i], str(s["pins"].get(i, ""))]
+    row += s["copy"]["d"]
+    row += ["Enabled"]
+    ads.append(row)
+
+write("2_groupes_annonces.csv", ["Campaign", "Ad Group", "Ad Group Status"], adgroups)
+write("3_mots_cles.csv", ["Campaign", "Ad Group", "Keyword", "Criterion Type", "Status"],
+      keywords)
+hdr = ["Campaign", "Ad Group", "Ad type", "Final URL", "Path 1", "Path 2"]
+for i in range(1, 16):
+    hdr += [f"Headline {i}", f"Headline {i} position"]
+hdr += [f"Description {i}" for i in range(1, 5)] + ["Status"]
+write("4_annonces_rsa.csv", hdr, ads)
+
+negs = []
+for c in BUDGET:
+    for k in NEG_COMPTE:
+        negs.append([c, k, "Negative Phrase"])
+    if "Marque" not in c:
+        for k in NEG_MARQUE:
+            negs.append([c, k, "Negative Phrase"])
+    if c == "S-FR | Produits vedettes":
+        for k in NEG_PRODUITS:
+            negs.append([c, k, "Negative Phrase"])
+    if "Québec-Lévis" not in c:
+        for k in NEG_HORS_QUEBEC_VILLE:
+            negs.append([c, k, "Negative Phrase"])
+write("5_mots_cles_negatifs.csv", ["Campaign", "Keyword", "Criterion Type"], negs)
+
+# Éléments (assets) : liens annexes, accroches
+sl = []
+for c in BUDGET:
+    data = _ns["SITELINKS_EN"] if c.startswith("S-EN") else _ns["SITELINKS_FR"]
+    for t, d1, d2 in data:
+        sl.append([c, t, d1, d2, URL["home"]])
+write("6_liens_annexes.csv",
+      ["Campaign", "Sitelink text", "Description line 1", "Description line 2",
+       "Final URL"], sl)
+co = []
+for c in BUDGET:
+    data = _ns["CALLOUTS_EN"] if c.startswith("S-EN") else _ns["CALLOUTS_FR"]
+    for t in data:
+        co.append([c, t])
+write("7_accroches.csv", ["Campaign", "Callout text"], co)
+
+# Résumé
+n_kw = len(keywords)
+print(f"Campagnes : {len(campaigns)} | Groupes : {len(adgroups)} | Mots-clés : {n_kw} "
+      f"| Annonces : {len(ads)} | Négatifs : {len(negs)}")
+active = sum(b for c, b in BUDGET.items() if c not in PAUSED)
+print(f"Budget actif : {active} $/jour")
+if active != 300:
+    errors.append(f"Budget actif = {active}, attendu 300")
+if errors:
+    print("ERREURS :\n" + "\n".join(errors))
+    sys.exit(1)
+print("OK : limites de caractères et règles de marque respectées")

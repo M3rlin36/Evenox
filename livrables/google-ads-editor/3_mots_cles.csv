@@ -1,0 +1,127 @@
+﻿Campaign,Ad Group,Keyword,Criterion Type,Status
+S-FR | Marque,Marque Évenox,evenox,Exact,Enabled
+S-FR | Marque,Marque Évenox,évenox,Exact,Enabled
+S-FR | Marque,Marque Évenox,evenox location,Exact,Enabled
+S-FR | Marque,Marque Évenox,evenox sainte-thérèse,Exact,Enabled
+S-FR | Marque,Marque Évenox,evenox photobooth,Exact,Enabled
+S-FR | Marque,Marque Évenox,evenox lettres lumineuses,Exact,Enabled
+S-FR | Marque,Marque Évenox,evenox,Phrase,Enabled
+S-FR | Marque,Marque Évenox,évenox,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,party de noël entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,party de bureau,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,party des fêtes entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,fête de noël entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,party de noël corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,décoration party de bureau,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,location party de bureau,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,animation party de bureau,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,décor party de noël,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,réception des fêtes entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,party de noël employés,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,party de bureau montréal,Exact,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,party de bureau laval,Exact,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,party de noël entreprise,Exact,Enabled
+S-FR | Corporatif & Fêtes,Fête de Noël d'entreprise,décoration party de bureau,Exact,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,lettres lumineuses corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,lettres lumineuses entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,lettres lumineuses logo,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,lettres géantes événement corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,location lettres lumineuses gala,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,décoration gala corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,décor événement corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,décor activation de marque,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,décoration lancement de produit,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,lettres lumineuses entreprise,Exact,Enabled
+S-FR | Corporatif & Fêtes,Lettres lumineuses corporatif,décoration gala corporatif,Exact,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,photobooth corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,photobooth entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,location photobooth événement corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,photobooth party de bureau,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,borne photo entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,photobooth activation de marque,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,photobooth gala,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,photobooth party de noël,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,photobooth corporatif,Exact,Enabled
+S-FR | Corporatif & Fêtes,Photobooth corporatif,photobooth entreprise,Exact,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier événement corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier lounge corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier cocktail entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location tables hautes cocktail,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier 5 à 7,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier gala,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier lancement de produit,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier congrès,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier événement corporatif,Exact,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,location lettres lumineuses,Phrase,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,lettres lumineuses à louer,Phrase,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,location lettres géantes,Phrase,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,location lettres géantes lumineuses,Phrase,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,location chiffres lumineux,Phrase,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,lettres lumineuses 4 pieds,Phrase,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,location lettres lumineuses montréal,Phrase,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,location lettres lumineuses laval,Phrase,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,location lettres lumineuses,Exact,Enabled
+S-FR | Produits vedettes,Lettres lumineuses,location lettres géantes,Exact,Enabled
+S-FR | Produits vedettes,Photobooth,location photobooth,Phrase,Enabled
+S-FR | Produits vedettes,Photobooth,photobooth à louer,Phrase,Enabled
+S-FR | Produits vedettes,Photobooth,location borne photo,Phrase,Enabled
+S-FR | Produits vedettes,Photobooth,location photobooth montréal,Phrase,Enabled
+S-FR | Produits vedettes,Photobooth,location photobooth laval,Phrase,Enabled
+S-FR | Produits vedettes,Photobooth,location photobooth rive-nord,Phrase,Enabled
+S-FR | Produits vedettes,Photobooth,prix location photobooth,Phrase,Enabled
+S-FR | Produits vedettes,Photobooth,location photobooth,Exact,Enabled
+S-FR | Produits vedettes,Photobooth,location photobooth montréal,Exact,Enabled
+S-FR | Produits vedettes,Photobooth,location photobooth laval,Exact,Enabled
+S-FR | Produits vedettes,Mobilier lounge et cocktail,location mobilier événementiel,Phrase,Enabled
+S-FR | Produits vedettes,Mobilier lounge et cocktail,location mobilier lounge,Phrase,Enabled
+S-FR | Produits vedettes,Mobilier lounge et cocktail,location mobilier événement,Phrase,Enabled
+S-FR | Produits vedettes,Mobilier lounge et cocktail,location mobilier cocktail,Phrase,Enabled
+S-FR | Produits vedettes,Mobilier lounge et cocktail,location sofa événement,Phrase,Enabled
+S-FR | Produits vedettes,Mobilier lounge et cocktail,location mobilier réception,Phrase,Enabled
+S-FR | Produits vedettes,Mobilier lounge et cocktail,location mobilier lounge,Exact,Enabled
+S-FR | Produits vedettes,Mobilier lounge et cocktail,location mobilier événementiel,Exact,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,lettres lumineuses mariage,Phrase,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,location lettres lumineuses mariage,Phrase,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,location lettres love,Phrase,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,location lettres mr et mrs,Phrase,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,initiales lumineuses mariage,Phrase,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,lettres géantes mariage,Phrase,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,décoration lumineuse mariage,Phrase,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,lettres lumineuses mariage,Exact,Enabled
+S-FR | Mariage,Lettres lumineuses mariage,location lettres love,Exact,Enabled
+S-FR | Mariage,Photobooth mariage,photobooth mariage,Phrase,Enabled
+S-FR | Mariage,Photobooth mariage,location photobooth mariage,Phrase,Enabled
+S-FR | Mariage,Photobooth mariage,borne photo mariage,Phrase,Enabled
+S-FR | Mariage,Photobooth mariage,location borne photo mariage,Phrase,Enabled
+S-FR | Mariage,Photobooth mariage,photobooth mariage prix,Phrase,Enabled
+S-FR | Mariage,Photobooth mariage,photobooth mariage,Exact,Enabled
+S-FR | Mariage,Photobooth mariage,location photobooth mariage,Exact,Enabled
+S-FR | Mariage,Mobilier lounge mariage,location mobilier lounge mariage,Phrase,Enabled
+S-FR | Mariage,Mobilier lounge mariage,location lounge mariage,Phrase,Enabled
+S-FR | Mariage,Mobilier lounge mariage,location mobilier mariage,Phrase,Enabled
+S-FR | Mariage,Mobilier lounge mariage,location décor lounge mariage,Phrase,Enabled
+S-FR | Mariage,Mobilier lounge mariage,location mobilier cocktail mariage,Phrase,Enabled
+S-FR | Mariage,Mobilier lounge mariage,location lounge mariage,Exact,Enabled
+S-EN | Corporate Montréal,Holiday party (EN),office holiday party rentals,Phrase,Enabled
+S-EN | Corporate Montréal,Holiday party (EN),corporate holiday party montreal,Phrase,Enabled
+S-EN | Corporate Montréal,Holiday party (EN),office christmas party decor,Phrase,Enabled
+S-EN | Corporate Montréal,Holiday party (EN),corporate event rentals montreal,Phrase,Enabled
+S-EN | Corporate Montréal,Holiday party (EN),corporate event rentals montreal,Exact,Enabled
+S-EN | Corporate Montréal,Marquee letters (EN),marquee letter rental montreal,Phrase,Enabled
+S-EN | Corporate Montréal,Marquee letters (EN),light up letters rental,Phrase,Enabled
+S-EN | Corporate Montréal,Marquee letters (EN),marquee letters rental,Phrase,Enabled
+S-EN | Corporate Montréal,Marquee letters (EN),giant light up letters rental,Phrase,Enabled
+S-EN | Corporate Montréal,Photo booth (EN),photo booth rental montreal,Phrase,Enabled
+S-EN | Corporate Montréal,Photo booth (EN),corporate photo booth,Phrase,Enabled
+S-EN | Corporate Montréal,Photo booth (EN),photo booth rental laval,Phrase,Enabled
+S-EN | Corporate Montréal,Photo booth (EN),branded photo booth rental,Phrase,Enabled
+S-EN | Corporate Montréal,Lounge furniture (EN),lounge furniture rental montreal,Phrase,Enabled
+S-EN | Corporate Montréal,Lounge furniture (EN),cocktail furniture rental,Phrase,Enabled
+S-EN | Corporate Montréal,Lounge furniture (EN),event furniture rental montreal,Phrase,Enabled
+S-EN | Corporate Montréal,Lounge furniture (EN),corporate furniture rental event,Phrase,Enabled
+S-FR | Québec-Lévis (test),Corporatif Québec,party de bureau québec,Phrase,Enabled
+S-FR | Québec-Lévis (test),Corporatif Québec,party de noël entreprise québec,Phrase,Enabled
+S-FR | Québec-Lévis (test),Corporatif Québec,location photobooth québec,Phrase,Enabled
+S-FR | Québec-Lévis (test),Corporatif Québec,location lettres lumineuses québec,Phrase,Enabled
+S-FR | Québec-Lévis (test),Corporatif Québec,location mobilier événement québec,Phrase,Enabled
+S-FR | Québec-Lévis (test),Corporatif Québec,party de bureau lévis,Phrase,Enabled

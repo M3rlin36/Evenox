@@ -1,0 +1,7 @@
+﻿Campaign,Campaign Type,Networks,Budget,Budget type,Bid Strategy Type,Maximum CPC bid limit,Campaign Status
+S-FR | Marque,Search,Google search,10.00,Daily,Maximize clicks,2.50,Enabled
+S-FR | Corporatif & Fêtes,Search,Google search,165.00,Daily,Maximize conversions,,Enabled
+S-FR | Produits vedettes,Search,Google search,80.00,Daily,Maximize conversions,,Enabled
+S-FR | Mariage,Search,Google search,45.00,Daily,Maximize conversions,,Enabled
+S-EN | Corporate Montréal,Search,Google search,30.00,Daily,Maximize conversions,,Paused
+S-FR | Québec-Lévis (test),Search,Google search,20.00,Daily,Maximize conversions,,Paused
