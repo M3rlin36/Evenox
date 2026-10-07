@@ -1,0 +1,274 @@
+<title>Evenox · ChatGPT Ads et plan 300 $</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column (~760px) with wide tables in scroll boxes; a budget bar drawn to scale as the visual anchor. */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1b26; --muted:#5d5a6b; --line:#dedbe4;
+  --accent:#6b3fa0; --accent-soft:#efe8f7; --gold:#a8792a;
+  --ok:#2f7a4f; --warn:#a86414; --crit:#b23a3a;
+  --c1:#6b3fa0; --c2:#2e6fb0; --c3:#b0547a; --c4:#2f8a7a; --c5:#a8792a; --c6:#7b7790;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15141b; --surface:#1e1d26; --ink:#ecebf2; --muted:#a9a6b8; --line:#33313f;
+  --accent:#b993e6; --accent-soft:#2a2238; --gold:#d6aa5c;
+  --ok:#6cc392; --warn:#e2a35a; --crit:#ec8080;
+  --c1:#a77fdc; --c2:#6aa6e0; --c3:#dc8cad; --c4:#5fc0ad; --c5:#d6aa5c; --c6:#9c98b0;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15141b; --surface:#1e1d26; --ink:#ecebf2; --muted:#a9a6b8; --line:#33313f;
+  --accent:#b993e6; --accent-soft:#2a2238; --gold:#d6aa5c;
+  --ok:#6cc392; --warn:#e2a35a; --crit:#ec8080;
+  --c1:#a77fdc; --c2:#6aa6e0; --c3:#dc8cad; --c4:#5fc0ad; --c5:#d6aa5c; --c6:#9c98b0;
+  color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.6}
+.wrap{max-width:780px;margin:0 auto;padding-inline:16px;padding-block:40px 80px;display:grid;gap:44px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,6vw,44px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:26px;font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+section{display:grid;gap:16px;min-width:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.lede{font-size:19px;color:var(--muted);max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.summary{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:grid;gap:12px}
+.summary ul{margin:0;padding-left:20px;display:grid;gap:8px}
+ul,ol{margin:0;padding-left:22px;display:grid;gap:6px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font-weight:700;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;background:var(--accent-soft)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);white-space:nowrap}
+.pill{display:inline-block;font-family:var(--mono);font-size:11.5px;padding:2px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.p-off{color:var(--ok)} .p-likely{color:var(--warn)} .p-est{color:var(--muted)}
+code{font-family:var(--mono);font-size:.88em;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+/* budget bar */
+.bar{display:flex;height:42px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.bar span{display:block;height:100%}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 20px}
+.legend div{display:flex;align-items:baseline;gap:10px;min-width:0}
+.sw{width:12px;height:12px;border-radius:3px;flex:none;transform:translateY(1px)}
+.legend b{font-family:var(--mono);font-variant-numeric:tabular-nums;margin-left:auto;padding-left:8px}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.callout{border-left:3px solid var(--accent);padding:4px 0 4px 16px;color:var(--ink)}
+.steps{display:grid;gap:14px}
+.step{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start}
+.step .when{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:2px}
+@media (max-width:520px){.step{grid-template-columns:1fr;gap:4px}}
+.decisions li{padding-left:4px}
+.decisions li::marker{color:var(--crit);font-weight:700}
+.small{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<div class="wrap">
+
+<header style="display:grid;gap:14px">
+  <div class="eyebrow">Compte rendu · Evenox · Location événementielle clé en main</div>
+  <h1>ChatGPT Ads et plan de campagnes à 300 $ par jour</h1>
+  <p class="lede">Ce que ChatGPT Ads permet vraiment au Québec en octobre 2026, ce que ça change pour Evenox, et les 6 campagnes à lancer.</p>
+  <div class="meta"><span>7 octobre 2026</span><span>862 sources</span><span>Branche GitHub claude/chatgpt-ads-plan</span></div>
+</header>
+
+<section class="summary" aria-labelledby="s0">
+  <h2 id="s0" style="font-size:20px">L'essentiel</h2>
+  <ul>
+    <li><strong>ChatGPT Ads est ouvert aux entreprises canadiennes en libre-service, dès 25 $ CA par jour par campagne.</strong> On peut cibler la province de Québec, pas une ville.</li>
+    <li><strong>C'est un canal de test.</strong> Clic de 4 à 9 $ CA, taux de clic autour de 0,7 à 1 % (environ 6 % sur Google), peu de volume. Aucune pub pour les abonnés Plus, Business et Enterprise, où se trouvent beaucoup d'organisateurs corporatifs.</li>
+    <li><strong>Le levier le plus rentable est d'être recommandé gratuitement par ChatGPT</strong> : avis, Bing Places, Yelp, répertoires et pages claires.</li>
+    <li><strong>Le budget va surtout sur Google Search (corporatif d'abord) et Meta</strong>, en 6 campagnes maximum.</li>
+    <li><strong>Avant d'augmenter le budget :</strong> corriger le formulaire, installer le suivi des conversions conforme à la Loi 25 et corriger 3 erreurs dans tes pubs Google actuelles.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="s1">
+  <div class="eyebrow">1 · ChatGPT Ads</div>
+  <h2 id="s1">Ce qui est confirmé</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Élément</th><th>Réalité en octobre 2026</th><th>Fiabilité</th></tr></thead>
+    <tbody>
+      <tr><td>Accès au Canada</td><td>Libre-service sur ads.openai.com, entreprise enregistrée au Canada, facturation en CAD. Le « minimum de 50 000 $ » qui circule date d'avant mai 2026.</td><td><span class="pill p-off">Officiel</span></td></tr>
+      <tr><td>Budget minimum</td><td>25 $ CA par jour par campagne, aucun minimum total. Le budget est une moyenne sur 7 jours.</td><td><span class="pill p-off">Officiel</span></td></tr>
+      <tr><td>Qui voit les pubs</td><td>Adultes connectés en Free et Go seulement. Jamais Plus, Pro, Business, Enterprise, Edu ni moins de 18 ans.</td><td><span class="pill p-off">Officiel</span></td></tr>
+      <tr><td>Format</td><td>Une carte « Commandité » sous la réponse : nom, logo, titre de 50 caractères, description de 100, image carrée, lien.</td><td><span class="pill p-off">Officiel</span></td></tr>
+      <tr><td>Ciblage</td><td>Pas de mots-clés : des descriptions en langage naturel des conversations visées. Géographie : pays ou province, pas de ville ni de rayon au Canada. Pas de ciblage par langue.</td><td><span class="pill p-off">Officiel</span></td></tr>
+      <tr><td>Enchères</td><td>Au CPM, au clic (OpenAI suggère 3 à 5 $ US) ou aux conversions (bêta ouverte). La pertinence pèse dans l'enchère.</td><td><span class="pill p-off">Officiel</span></td></tr>
+      <tr><td>Suivi</td><td>Pixel et Conversions API. Le consentement est activé par défaut : pour la Loi 25, appeler <code>oaiq("consent", false)</code> avant le chargement.</td><td><span class="pill p-off">Officiel</span></td></tr>
+      <tr><td>Traduction automatique</td><td>Option qui traduit et réécrit l'annonce, active par défaut selon des tests. À désactiver pour la Loi 96.</td><td><span class="pill p-likely">Probable</span></td></tr>
+      <tr><td>Interdits au Canada</td><td>Santé, finance, juridique, logement, emploi. Alcool interdit dans l'annonce et sur la page d'atterrissage.</td><td><span class="pill p-off">Officiel</span></td></tr>
+    </tbody>
+  </table></div>
+  <h3>Nouveautés des 90 derniers jours</h3>
+  <p>Enchères aux conversions, budgets calculés sur 7 jours, audiences à partir de listes clients, 1 G$ de revenus annualisés en moins de 200 jours, pubs conversationnelles « Sponsored Agents » (test aux États-Unis), pubs pendant la génération d'images (test aux États-Unis fin octobre), intégrations HubSpot et Shopify.</p>
+  <h3>Résultats terrain</h3>
+  <ul>
+    <li>Canada : taux de clic de 0,65 %, clic de 4,42 à 4,88 $ CA, zéro lead B2B qualifié pour une agence ontarienne.</li>
+    <li>Même client : conversion de 0,9 % sur ChatGPT contre 5,95 % sur Google.</li>
+    <li>Les services locaux et les services à gros prix ont les meilleurs retours. Le B2B pur obtient souvent zéro lead sous 2 500 $ de budget.</li>
+    <li>Une grosse partie des clics ChatGPT n'apparaît pas dans Google Analytics. Il faut mesurer avec le pixel OpenAI, le formulaire et le CRM.</li>
+  </ul>
+  <h3>Les autres pubs dans l'IA au Canada</h3>
+  <ul>
+    <li><strong>Microsoft Copilot :</strong> inclus automatiquement avec Microsoft Ads.</li>
+    <li><strong>Google AI Overviews :</strong> en anglais seulement au Canada.</li>
+    <li><strong>Google AI Mode :</strong> États-Unis seulement. Perplexity a arrêté la pub. Pas de pub dans Gemini ni dans Meta AI.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="s2">
+  <div class="eyebrow">2 · Impact pour Evenox</div>
+  <h2 id="s2">Ton créneau et ce qui te freine</h2>
+  <ol>
+    <li><strong>Le corporatif clé en main est libre.</strong> Diva (Laval) domine Google avec 74 annonces axées mariage et « aucun minimum ». Personne ne vend aux entreprises une seule facture, la livraison, l'installation, le démontage et une réponse garantie.</li>
+    <li><strong>Les gens posent déjà la question à ChatGPT</strong> : « party des Fêtes clé en main pour 80 employés à Laval », « combien coûte un 5 à 7 corporatif ». Être la réponse coûte moins cher que d'acheter la place en dessous.</li>
+    <li><strong>Laval et la Rive-Nord sont les marchés les plus faciles à gagner</strong> dans les réponses de l'IA. Evenox est absent des listes de référence de Laval.</li>
+  </ol>
+  <div class="tbl"><table>
+    <thead><tr><th>Problème constaté</th><th>Correctif</th></tr></thead>
+    <tbody>
+      <tr><td>Le formulaire ne demande ni budget, ni nombre d'invités, ni type d'événement</td><td>Formulaire en 5 étapes qui oriente chaque lead selon son budget</td></tr>
+      <tr><td>Une pub Google affiche « Learn more | » en anglais</td><td>Retirer le texte automatique (Loi 96)</td></tr>
+      <tr><td>Bouton « Demande de Soumision »</td><td>Corriger la faute</td></tr>
+      <tr><td>Annonceur Google vérifié au nom d'Alexandre Séguin</td><td>Vérifier au nom de l'entreprise</td></tr>
+      <tr><td>Adresse Gmail, profil Facebook personnel</td><td>Courriel @evenox.ca, page Facebook Entreprise</td></tr>
+      <tr><td>Livraison « incluse » sur certaines pages, « 100 $ + 7 $/km » ailleurs</td><td>Une seule politique (décision à prendre)</td></tr>
+      <tr><td>4,8 ou 4,9 étoiles, 500+ ou 1 000+ événements, deux témoignages identiques</td><td>Uniformiser partout</td></tr>
+      <tr><td>24 pages de villes presque identiques</td><td>Contenu propre à chaque ville</td></tr>
+      <tr><td>Absent de Bing Places, Yelp vide, WeddingWire à 0 avis</td><td>Plan de 30 jours pour être recommandé par ChatGPT</td></tr>
+      <tr><td>Pixels sans bannière de consentement conforme</td><td>Bannière Loi 25 et Consent Mode v2</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="s3">
+  <div class="eyebrow">3 · Plan de campagnes</div>
+  <h2 id="s3">300 $ par jour, 6 campagnes</h2>
+  <p>Une campagne doit générer environ 30 conversions par mois pour que l'algorithme apprenne. Avec un coût par lead de 40 à 120 $, 300 $ par jour en supporte 6 au maximum. Pas de Performance Max, Demand Gen ni LinkedIn pour l'instant : leurs minimums sont trop élevés pour ce budget.</p>
+  <div style="display:grid;gap:8px">
+    <div class="bar" role="img" aria-label="Répartition de 300 $ par jour : Google corporatif 100, Meta 80, Google mariage 60, ChatGPT 30, Microsoft 20, marque 10">
+      <span style="width:33.333%;background:var(--c1)"></span>
+      <span style="width:26.667%;background:var(--c2)"></span>
+      <span style="width:20%;background:var(--c3)"></span>
+      <span style="width:10%;background:var(--c4)"></span>
+      <span style="width:6.667%;background:var(--c5)"></span>
+      <span style="width:3.333%;background:var(--c6)"></span>
+    </div>
+    <div class="scale"><span>0 $</span><span>150 $</span><span>300 $</span></div>
+  </div>
+  <div class="legend">
+    <div><span class="sw" style="background:var(--c1)"></span>Google Search · Corporatif<b>100 $</b></div>
+    <div><span class="sw" style="background:var(--c2)"></span>Meta · Leads<b>80 $</b></div>
+    <div><span class="sw" style="background:var(--c3)"></span>Google Search · Mariage et privé<b>60 $</b></div>
+    <div><span class="sw" style="background:var(--c4)"></span>ChatGPT Ads · Test Québec<b>30 $</b></div>
+    <div><span class="sw" style="background:var(--c5)"></span>Microsoft Ads (Bing et Copilot)<b>20 $</b></div>
+    <div><span class="sw" style="background:var(--c6)"></span>Google Search · Marque<b>10 $</b></div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Campagne</th><th>Ce qu'elle fait</th></tr></thead>
+    <tbody>
+      <tr><td>Google Corporatif</td><td>Party des Fêtes, 5 à 7, gala, consolidation d'équipe, cabine 360, activation de marque. Capte les entreprises qui cherchent maintenant.</td></tr>
+      <tr><td>Meta Leads</td><td>Une seule campagne : prospection autour de Sainte-Thérèse, Laval et Montréal, plus reciblage. Formulaire de 8 questions qui qualifie.</td></tr>
+      <tr><td>Google Mariage et privé</td><td>Forfaits décor à 899, 1 449 et 1 899 $, chapiteaux, mobilier, cabine photo en option.</td></tr>
+      <tr><td>ChatGPT Ads</td><td>Province de Québec, 3 groupes (Fêtes corporatives, gala et activation, mariage), 9 annonces, traduction automatique désactivée.</td></tr>
+      <tr><td>Microsoft Ads</td><td>Import des campagnes Google (14, 4 et 2 $), enchères ajustées selon le profil LinkedIn des chercheurs.</td></tr>
+      <tr><td>Google Marque</td><td>Protège le nom Evenox, exclut « Evenko ».</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Bascule selon la saison</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Période</th><th class="num">Corporatif</th><th class="num">Mariage</th><th>Pourquoi</th></tr></thead>
+    <tbody>
+      <tr><td>Octobre à mi-décembre</td><td class="num">100 $</td><td class="num">60 $</td><td>Les dates des party des Fêtes partent</td></tr>
+      <tr><td>Mi-décembre à mai</td><td class="num">50 $</td><td class="num">110 $</td><td>Les couples réservent leurs fournisseurs de décembre à mai</td></tr>
+      <tr><td>Juin à septembre</td><td class="num">80 $</td><td class="num">80 $</td><td>Événements d'été et réservations des Fêtes</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Au Québec, 54 % des mariages ont lieu de juillet à octobre (Institut de la statistique du Québec, 2025).</p>
+</section>
+
+<section aria-labelledby="s4">
+  <div class="eyebrow">4 · Objectifs et règles</div>
+  <h2 id="s4">Ce qu'on vise et quand on coupe</h2>
+  <p class="callout">Ces chiffres sont une hypothèse de départ, pas une promesse. On les remplace par tes vrais chiffres après 30 jours.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Indicateur</th><th class="num">Cible</th></tr></thead>
+    <tbody>
+      <tr><td>Coût par lead, tous les leads</td><td class="num">40 à 90 $</td></tr>
+      <tr><td>Part des leads qualifiés</td><td class="num">40 % et plus</td></tr>
+      <tr><td>Coût par lead qualifié</td><td class="num">150 $ et moins</td></tr>
+      <tr><td>Taux de signature des leads qualifiés</td><td class="num">25 % et plus</td></tr>
+      <tr><td>Panier moyen</td><td class="num">1 500 $ et plus</td></tr>
+      <tr><td>Par mois</td><td class="num">≈ 60 qualifiés, ≈ 15 contrats</td></tr>
+    </tbody>
+  </table></div>
+  <div class="steps">
+    <div class="step"><div class="when">Jour 7</div><p>Vérifier que chaque conversion remonte dans Google, Meta, OpenAI et le CRM. Sinon, pause et correction.</p></div>
+    <div class="step"><div class="when">Jour 14</div><p>Groupe d'annonces à plus de 150 $ par lead qualifié : couper les mots-clés et annonces perdants. ChatGPT sous 0,4 % de taux de clic : réécrire les titres et les descriptions de conversations.</p></div>
+    <div class="step"><div class="when">Jour 30</div><p>Campagne sans lead qualifié ou à plus de 300 $ par lead qualifié : réduire de 30 % et déplacer vers la meilleure. ChatGPT avec moins de 2 leads qualifiés : pause, les 30 $ vont au Google Corporatif.</p></div>
+    <div class="step"><div class="when">Augmenter</div><p>Au plus +20 % par semaine sur une campagne sous 100 $ par lead qualifié avec 25 % de signature. Le total reste à 300 $ : chaque hausse est prise sur la campagne la moins performante du mois.</p></div>
+    <div class="step"><div class="when">Google</div><p>Passer en coût par acquisition cible seulement après 30 conversions qualifiées en 30 jours.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="s5">
+  <div class="eyebrow">5 · Déploiement</div>
+  <h2 id="s5">Dans quel ordre</h2>
+  <div class="steps">
+    <div class="step"><div class="when">Semaine 0</div><p>Corriger les 3 erreurs des pubs actuelles. Installer la bannière Loi 25 et les pixels sous consentement. Mettre en ligne le formulaire qualifiant et les pages /corporatif et /mariage. Choisir la politique de livraison. Créer le courriel @evenox.ca et la page Facebook Entreprise.</p></div>
+    <div class="step"><div class="when">Semaine 1</div><p>Lancer Google Corporatif, Google Marque et Meta. Créer le compte ads.openai.com.</p></div>
+    <div class="step"><div class="when">Semaine 2</div><p>Ajouter Google Mariage, Microsoft et ChatGPT Ads.</p></div>
+    <div class="step"><div class="when">En continu</div><p>Rappeler chaque lead en moins de 5 minutes : la première entreprise qui répond gagne jusqu'à la moitié des réservations. Suivre le plan de 30 jours pour être recommandé par ChatGPT. Passer de 52 à 80 avis Google en 30 jours.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="s6">
+  <div class="eyebrow">6 · À toi de trancher</div>
+  <h2 id="s6">7 décisions avant le lancement</h2>
+  <ol class="decisions">
+    <li><strong>Une seule politique de livraison.</strong> Recommandé : livraison, installation et démontage inclus dans les forfaits de 1 195 $ et plus, dans un rayon de 40 km.</li>
+    <li><strong>Ton vrai nombre d'avis Google</strong>, pour remplacer « [N] avis » dans les annonces, et confirmer la note de 4,8.</li>
+    <li><strong>Un seul chiffre d'événements</strong> : 500+ ou 1 000+.</li>
+    <li><strong>Permission écrite de RBC, PwC et Desjardins</strong> pour les nommer dans les pubs. Sinon on retire ce titre.</li>
+    <li><strong>Les promesses doivent être vraies :</strong> soumission en 24 h, rappel en 15 minutes, facturation net 30, prix de la cabine vidéo 360.</li>
+    <li><strong>Créer les pages /evenement-prive, /soumission et /realisations</strong>, ou mettre le groupe « Événement privé » en pause.</li>
+    <li><strong>Vendre les forfaits décor pour les fêtes de 40 et 50 ans</strong> : oui ou non.</li>
+  </ol>
+</section>
+
+<section aria-labelledby="s7">
+  <div class="eyebrow">7 · Livrables</div>
+  <h2 id="s7">Ce qui est prêt dans ton dépôt GitHub</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Dossier</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td><code>campagnes/google-ads</code></td><td>CSV pour Google Ads Editor : 3 campagnes en pause, 14 groupes, 240 mots-clés, 220 négatifs, 14 annonces, extensions</td></tr>
+      <tr><td><code>campagnes/microsoft-ads</code></td><td>Procédure d'import et ciblage LinkedIn</td></tr>
+      <tr><td><code>campagnes/meta-ads</code></td><td>Structure, formulaire qualifiant, 8 concepts d'annonces</td></tr>
+      <tr><td><code>campagnes/chatgpt-ads</code></td><td>Campagne test, 40 descriptions de conversations, 9 annonces, réglages, règles</td></tr>
+      <tr><td><code>operations</code></td><td>Pages d'atterrissage, formulaire, scripts de suivi, installation du suivi, 25 correctifs, plan pour être recommandé par ChatGPT</td></tr>
+      <tr><td><code>recherche</code></td><td>Les 7 dossiers de recherche et le journal complet des sources</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="s8">
+  <div class="eyebrow">8 · Sources</div>
+  <h2 id="s8">862 sources, et leurs limites</h2>
+  <p>Documents officiels (OpenAI, Google, Microsoft, Meta, Institut de la statistique du Québec, gouvernement du Québec), études de référence, presse spécialisée, agences, Reddit, LinkedIn et X, environ 85 vidéos YouTube, et les vraies annonces Google des concurrents.</p>
+  <ul>
+    <li><strong>Instagram :</strong> aucun contenu exploitable, la plateforme exige une connexion.</li>
+    <li><strong>YouTube :</strong> titres, chaînes et descriptions seulement. Les vidéos et transcriptions étaient bloquées.</li>
+    <li><strong>Centre d'aide OpenAI :</strong> lu par les extraits des moteurs de recherche. La documentation développeur a été lue en entier.</li>
+    <li><strong>Pubs Facebook des concurrents :</strong> la bibliothèque publicitaire de Meta exige une connexion, à vérifier à la main.</li>
+    <li>Plusieurs études de cas ChatGPT Ads viennent d'agences qui vendent ce service. Elles sont marquées comme telles.</li>
+  </ul>
+  <p class="small">Prochaine étape : envoie-moi les exports des 30 à 90 derniers jours de ta campagne Google actuelle et le nombre de contrats signés par source. Je te dis quoi couper, garder et augmenter.</p>
+</section>
+
+</div>
