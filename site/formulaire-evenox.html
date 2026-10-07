@@ -1,0 +1,687 @@
+<!-- Évenox : formulaire de qualification multi-étapes (v2026-10). Coller tel quel dans un module Divi « Code ». Réglages : objet CONFIG plus bas, ou window.EVENOX_FORM_CONFIG défini avant ce bloc. Voir site/README.md. -->
+<div class="evxq" id="evxq-root" lang="fr-CA">
+  <noscript><p class="evxq-noscript">Pour obtenir votre soumission, appelez-nous au <a href="tel:+15145591893">514-559-1893</a> ou écrivez à <a href="mailto:info@evenox.ca">info@evenox.ca</a>.</p></noscript>
+</div>
+<style>
+.evxq{--evxq-ink:#1d1d1f;--evxq-muted:#5c5c63;--evxq-line:#d8d4cc;--evxq-surface:#ffffff;--evxq-soft:#f6f3ee;--evxq-sel:#f1ebe0;--evxq-accent:#1d1d1f;--evxq-accent-ink:#ffffff;--evxq-gold:#a07a45;--evxq-err:#b3261e;--evxq-err-bg:#fdf0ef;--evxq-ok:#1e6b3a;--evxq-focus:#2a5bd7;--evxq-radius:14px;box-sizing:border-box;max-width:640px;margin:0 auto;color:var(--evxq-ink);font-family:inherit;font-size:16px;line-height:1.5;text-align:left;-webkit-text-size-adjust:100%}
+.evxq *,.evxq *::before,.evxq *::after{box-sizing:border-box}
+.evxq .evxq-panel{background:var(--evxq-surface);border:1px solid var(--evxq-line);border-radius:var(--evxq-radius);padding:20px 16px 18px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05)}
+@media (min-width:600px){.evxq .evxq-panel{padding:28px 28px 24px}}
+.evxq p{margin:0;padding:0}
+.evxq a{color:var(--evxq-ink);text-decoration:underline;text-underline-offset:2px}
+.evxq a:focus-visible,.evxq button:focus-visible{outline:3px solid var(--evxq-focus);outline-offset:2px}
+.evxq .evxq-sr{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.evxq .evxq-forfait{display:flex;align-items:center;gap:8px;margin:0 0 14px;padding:10px 12px;border-radius:10px;background:var(--evxq-sel);border:1px solid #e3d8c4;font-size:15px}
+.evxq .evxq-forfait::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:var(--evxq-gold)}
+.evxq .evxq-progress{margin:0 0 18px}
+.evxq .evxq-progress-txt{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--evxq-muted)}
+.evxq .evxq-bar{height:6px;margin-top:8px;border-radius:99px;background:#ece8e1;overflow:hidden}
+.evxq .evxq-bar span{display:block;height:100%;width:20%;border-radius:99px;background:linear-gradient(90deg,var(--evxq-gold),#c9a46c);transition:width .3s ease}
+.evxq .evxq-h{margin:0 0 4px;padding:0;font-family:inherit;font-size:22px;line-height:1.25;font-weight:700;color:var(--evxq-ink);outline:none}
+@media (min-width:600px){.evxq .evxq-h{font-size:26px}}
+.evxq .evxq-lede{color:var(--evxq-muted);font-size:15px;margin:0 0 18px}
+.evxq .evxq-field{border:0;margin:0 0 20px;padding:0;min-width:0}
+.evxq .evxq-label,.evxq legend.evxq-label{display:block;float:none;width:100%;margin:0 0 4px;padding:0;font-size:16px;font-weight:600;color:var(--evxq-ink);line-height:1.35}
+.evxq .evxq-opt-tag{font-weight:400;color:var(--evxq-muted);font-size:14px}
+.evxq .evxq-hint{font-size:14px;color:var(--evxq-muted);margin:0 0 10px}
+.evxq .evxq-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.evxq .evxq-cards.evxq-c1{grid-template-columns:1fr}
+.evxq .evxq-cards.evxq-c3m{grid-template-columns:1fr 1fr 1fr}
+.evxq .evxq-c3m .evxq-card{padding:10px 8px;gap:8px}
+@media (min-width:600px){.evxq .evxq-cards.evxq-c3{grid-template-columns:1fr 1fr 1fr}}
+.evxq .evxq-opt{position:relative;min-width:0}
+.evxq .evxq-opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.evxq .evxq-card{display:flex;align-items:center;gap:10px;height:100%;min-height:52px;margin:0;padding:10px 12px;border:1.5px solid var(--evxq-line);border-radius:12px;background:var(--evxq-surface);color:var(--evxq-ink);font-size:15px;font-weight:500;line-height:1.3;cursor:pointer;transition:border-color .15s,background-color .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent}
+.evxq .evxq-card:hover{border-color:#a9a39a}
+.evxq .evxq-card.evxq-tall{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:6px;min-height:92px}
+.evxq .evxq-ico{flex:0 0 auto;width:26px;height:26px;color:var(--evxq-gold)}
+.evxq .evxq-ico svg{display:block;width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.evxq .evxq-box{flex:0 0 auto;width:18px;height:18px;border:1.5px solid #8d877e;border-radius:50%;background:#fff;position:relative}
+.evxq .evxq-opt input[type=checkbox]+.evxq-card .evxq-box{border-radius:5px}
+.evxq .evxq-opt input:checked+.evxq-card{border-color:var(--evxq-ink);background:var(--evxq-sel);box-shadow:inset 0 0 0 1px var(--evxq-ink)}
+.evxq .evxq-opt input:checked+.evxq-card .evxq-box{border-color:var(--evxq-ink);background:var(--evxq-ink)}
+.evxq .evxq-opt input:checked+.evxq-card .evxq-box::after{content:"";position:absolute;left:5px;top:1.5px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.evxq .evxq-opt input:focus-visible+.evxq-card{outline:3px solid var(--evxq-focus);outline-offset:2px}
+.evxq .evxq-field.is-invalid .evxq-card{border-color:var(--evxq-err)}
+.evxq .evxq-input{display:block;width:100%;min-height:50px;margin:0;padding:12px 14px;border:1.5px solid var(--evxq-line);border-radius:12px;background:#fff;color:var(--evxq-ink);font-family:inherit;font-size:16px;line-height:1.3;box-shadow:none;-webkit-appearance:none;appearance:none}
+.evxq textarea.evxq-input{min-height:72px;resize:vertical}
+.evxq input[type=date].evxq-input{min-height:50px}
+.evxq .evxq-input::placeholder{color:#8a857d;opacity:1}
+.evxq .evxq-input:focus{outline:3px solid var(--evxq-focus);outline-offset:1px;border-color:var(--evxq-ink)}
+.evxq .evxq-input[aria-invalid=true]{border-color:var(--evxq-err);background:var(--evxq-err-bg)}
+.evxq .evxq-row{display:grid;grid-template-columns:1fr;gap:0 12px}
+@media (min-width:520px){.evxq .evxq-row{grid-template-columns:1fr 1fr}}
+.evxq .evxq-check{display:flex;align-items:flex-start;gap:10px;margin:10px 0 0;font-size:15px;line-height:1.45;cursor:pointer;font-weight:400}
+.evxq .evxq-check input{flex:0 0 auto;width:20px;height:20px;margin:2px 0 0;accent-color:var(--evxq-ink);cursor:pointer}
+.evxq .evxq-check input:focus-visible{outline:3px solid var(--evxq-focus);outline-offset:2px}
+.evxq .evxq-consents{margin:6px 0 18px;padding:14px;border-radius:12px;background:var(--evxq-soft);border:0}
+.evxq .evxq-consents .evxq-check{font-size:14px;color:#3b3b40}
+.evxq .evxq-consents .evxq-check+.evxq-check{margin-top:12px}
+.evxq .evxq-err{margin:8px 0 0;color:var(--evxq-err);font-size:14px;font-weight:600}
+.evxq .evxq-err[hidden]{display:none}
+.evxq .evxq-err::before{content:"! ";}
+.evxq .evxq-note{margin:10px 0 0;padding:10px 12px;border-radius:10px;background:#fff6e5;border:1px solid #f0d9a8;font-size:14px}
+.evxq .evxq-note[hidden],.evxq [hidden]{display:none!important}
+.evxq .evxq-suggest{margin:8px 0 0;font-size:14px}
+.evxq .evxq-suggest button{margin:0;padding:0;border:0;background:none;color:var(--evxq-focus);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer}
+.evxq .evxq-alert{margin:0 0 16px;padding:12px 14px;border-radius:10px;background:var(--evxq-err-bg);border:1px solid #f1c7c3;color:var(--evxq-err);font-size:15px;font-weight:600}
+.evxq .evxq-msg{margin:14px 0 0;padding:14px;border-radius:12px;border:1px solid #f1c7c3;background:var(--evxq-err-bg);color:#5a1a15;font-size:15px}
+.evxq .evxq-nav{display:flex;flex-direction:column-reverse;gap:10px;margin-top:8px}
+@media (min-width:520px){.evxq .evxq-nav{flex-direction:row;justify-content:space-between;align-items:center}}
+.evxq .evxq-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;margin:0;padding:12px 22px;border:1.5px solid var(--evxq-accent);border-radius:12px;background:var(--evxq-accent);color:var(--evxq-accent-ink);font-family:inherit;font-size:16px;font-weight:700;line-height:1.2;letter-spacing:0;text-transform:none;text-decoration:none;cursor:pointer;transition:transform .1s,opacity .15s;width:100%}
+@media (min-width:520px){.evxq .evxq-btn{width:auto}}
+.evxq .evxq-btn:hover{opacity:.92}
+.evxq .evxq-btn:active{transform:translateY(1px)}
+.evxq .evxq-btn[disabled]{opacity:.6;cursor:progress}
+.evxq .evxq-btn.evxq-ghost{background:transparent;color:var(--evxq-ink);border-color:var(--evxq-line);font-weight:600}
+.evxq .evxq-btn.evxq-next{margin-left:auto}
+.evxq .evxq-btn::after{content:none}
+.evxq .evxq-legal{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--evxq-muted)}
+.evxq .evxq-req-note{font-size:13px;color:var(--evxq-muted);margin:0 0 16px}
+.evxq .evxq-hp{position:absolute!important;left:-9999px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.evxq .evxq-thanks .evxq-h{margin-bottom:10px}
+.evxq .evxq-thanks p+p,.evxq .evxq-thanks p+.evxq-actions,.evxq .evxq-thanks .evxq-actions+p{margin-top:12px}
+.evxq .evxq-actions{display:flex;flex-wrap:wrap;gap:10px}
+.evxq .evxq-badge{display:inline-block;margin:0 0 10px;padding:4px 10px;border-radius:99px;background:var(--evxq-sel);font-size:13px;font-weight:600;color:#5a4526}
+.evxq .evxq-noscript{padding:16px;border:1px solid var(--evxq-line);border-radius:12px}
+@media (prefers-reduced-motion:reduce){.evxq *{transition:none!important}}
+</style>
+<script>
+(function () {
+  'use strict';
+  var root = document.getElementById('evxq-root');
+  if (!root || root.getAttribute('data-evxq-ready')) { return; }
+  root.setAttribute('data-evxq-ready', '1');
+  /* ===================== RÉGLAGES ===================== */
+  var CONFIG = {
+    endpoint: '',                         /* URL du webhook (Make, Zapier, REST WordPress). Vide = message de repli, rien n'est envoyé. */
+    contentType: 'application/json',      /* 'text/plain' évite la requête préalable CORS (Zapier) ; le corps reste du JSON. */
+    redirect: true,                       /* true = redirige vers la page de remerciement de la route ; false = remerciement affiché sur place. */
+    boutiqueUrl: 'https://evenox.booqableshop.com/',
+    merciAppelUrl: '/merci-appel/',
+    merciSoumissionUrl: '/merci-soumission/',
+    merciBoutiqueUrl: '/merci-boutique/',
+    merciHorsZoneUrl: '/merci-hors-zone/',
+    calendlyUrl: '',                      /* ex. https://calendly.com/evenox/appel-decouverte-15-min */
+    politiqueUrl: '/politique-de-confidentialite/',
+    realisationsUrl: '/realisations/',
+    telephone: '514-559-1893',
+    courriel: 'info@evenox.ca',
+    responsable: 'Alexandre Séguin',
+    typeParDefaut: '',                    /* ex. 'prive' sur /evenement-prive/ ; vide = aucune présélection */
+    formId: 'evx_qualification',
+    consentVersion: 'v2026-10',
+    valeurs: { A: 400, B: 150, C: 0, D: 0 },
+    delaiRedirection: 1500,               /* ms laissées à GTM avant la redirection */
+    delaiEnvoi: 15000,                    /* ms avant d'abandonner l'envoi */
+    fuseau: 'America/Toronto',
+    heuresGarde: { 1: [8.5, 20], 2: [8.5, 20], 3: [8.5, 20], 4: [8.5, 20], 5: [8.5, 20], 6: [9, 17] },
+    getConsent: null                      /* facultatif : function () { return { ad_storage: 'granted', ... }; } */
+  };
+  var OV = window.EVENOX_FORM_CONFIG;
+  if (OV && typeof OV === 'object') { for (var ok in OV) { if (Object.prototype.hasOwnProperty.call(OV, ok)) { CONFIG[ok] = OV[ok]; } } }
+  /* ===================== DONNÉES ===================== */
+  var IC = {
+    party: '<path d="M4 20l5-13 8 8-13 5z"/><path d="M14 3v2.5M19.5 9H22M16.5 6.5l2-2M9.5 12.5l2 2"/>',
+    glass: '<path d="M7 3h10l-1.2 7.2a3.8 3.8 0 0 1-7.6 0L7 3z"/><path d="M12 14v7M8 21h8M7.6 6.5h8.8"/>',
+    star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+    building: '<path d="M3 21h18M5 21V9l7-5 7 5v12M9.5 21v-5h5v5M9 11h.01M15 11h.01"/>',
+    rings: '<circle cx="9" cy="14.5" r="5"/><circle cx="15" cy="14.5" r="5"/><path d="M10 5.5L12 3l2 2.5-2 2z"/>',
+    gift: '<path d="M4 11h16v10H4zM3 7h18v4H3zM12 7v14"/><path d="M12 7C10.5 3.5 7 3.5 7 5.5S10 7 12 7zM12 7c1.5-3.5 5-3.5 5-1.5S14 7 12 7z"/>'
+  };
+  var TYPES = [
+    { v: 'corpo_party', l: 'Party de bureau / des Fêtes', seg: 'corpo', ic: 'party' },
+    { v: 'corpo_5a7', l: '5 à 7 ou team building', seg: 'corpo', ic: 'glass' },
+    { v: 'corpo_gala', l: 'Gala, remise de prix ou lancement', seg: 'corpo', ic: 'star' },
+    { v: 'muni_ecole', l: 'Événement municipal ou scolaire', seg: 'corpo', ic: 'building' },
+    { v: 'mariage', l: 'Mariage', seg: 'mariage', ic: 'rings' },
+    { v: 'prive', l: 'Autre événement privé : anniversaire, shower…', seg: 'prive', ic: 'gift' }
+  ];
+  var VILLES = ['Sainte-Thérèse', 'Blainville', 'Boisbriand', 'Rosemère', 'Lorraine', 'Bois-des-Filion', 'Mirabel', 'Saint-Eustache', 'Deux-Montagnes', 'Terrebonne', 'Saint-Jérôme', 'Laval', 'Montréal – centre-ville', 'Montréal – autres arrondissements', 'Longueuil / Rive-Sud', 'Autre (plus de 40 km)'];
+  var HORS_ZONE = 'Autre (plus de 40 km)';
+  var LIEUX = [
+    { v: 'bureaux', l: "Bureaux de l'entreprise" }, { v: 'salle', l: 'Salle de réception ou hôtel' },
+    { v: 'exterieur', l: 'Extérieur ou chapiteau' }, { v: 'domicile', l: 'Domicile' }, { v: 'inconnu', l: 'Je ne sais pas encore' }
+  ];
+  var INVITES = [{ v: 'lt30', l: 'Moins de 30' }, { v: '30_74', l: '30 à 74' }, { v: '75_149', l: '75 à 149' }, { v: '150p', l: '150 et plus' }];
+  var BUDGETS = [
+    { v: 'lt600', l: 'Moins de 600 $' }, { v: '600_999', l: '600 à 999 $' }, { v: '1000_2499', l: '1 000 à 2 499 $' },
+    { v: '2500_4999', l: '2 500 à 4 999 $' }, { v: '5000p', l: '5 000 $ et plus' }, { v: 'inconnu', l: 'Je ne sais pas encore' }
+  ];
+  var SERVICES = ['Décor et lettres lumineuses', 'Photobooth ou vidéobooth 360', 'Jeux géants ou animation', 'Mobilier (tables, chaises)', 'Chapiteau', 'Machines gourmandes', 'Je veux un forfait tout inclus'];
+  var CLIENTS = [
+    { v: 'entreprise', l: 'Entreprise' }, { v: 'organisme', l: 'Municipalité, école ou OBNL' },
+    { v: 'particulier', l: 'Particulier ou couple' }, { v: 'agence', l: 'Planificateur ou agence' }
+  ];
+  /* Valeurs = libellés exacts de la feuille Listes du CRM (crm-kpi-evenox.xlsx). */
+  var ROLES = [{ v: 'Je décide', l: 'Je décide' }, { v: "Je recommande, quelqu'un d'autre approuve", l: "Je recommande, quelqu'un d'autre approuve" }, { v: 'Je compare des options pour un comité', l: 'Je compare des options pour un comité' }];
+  var ECHEANCES = [{ v: 'Cette semaine', l: 'Cette semaine' }, { v: "D'ici 30 jours", l: "D'ici 30 jours" }, { v: "Plus tard / je m'informe", l: "Plus tard / je m'informe" }];
+  var CANAUX = [{ v: 'appel', l: 'Appel' }, { v: 'texto', l: 'Texto' }, { v: 'courriel', l: 'Courriel' }];
+  var FORFAITS = {
+    '5a7': { t: 'corpo_5a7', n: '5 à 7 (1 195 $)' }, party: { t: 'corpo_party', n: 'Party de bureau (1 995 $)' },
+    gala: { t: 'corpo_gala', n: 'Gala Signature (2 495 $)' }, decorwow: { t: null, n: 'Décor WOW (899 $)' },
+    soireesignature: { t: null, n: 'Soirée Signature (1 449 $)' }, mariagesignature: { t: 'mariage', n: 'Mariage Signature (1 899 $)' }
+  };
+  var TYPE_PARAM = { corpo: 'corpo_party', mariage: 'mariage', prive: 'prive', muni: 'muni_ecole' };
+  var ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'oppref', 'forfait', 'v'];
+  var HIDDEN = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'oppref', 'fbp', 'landing_page', 'referrer', 'forfait_presel', 'variante_hero', 'event_id', 'route', 'lead_score', 'consent_state'];
+  var STEPS = [
+    { t: "Quel type d'événement organisez-vous?", s: 'Votre événement', lede: 'Pour vous proposer les bons forfaits dès le départ.' },
+    { t: 'Quand et où?', s: 'Date et lieu', lede: 'Pour vérifier la disponibilité de votre date et calculer la livraison.' },
+    { t: 'Pour combien de personnes, et quel budget?', s: 'Invités et budget', lede: 'Une fourchette suffit : elle nous permet de vous proposer 3 options adaptées.' },
+    { t: 'Qui organise?', s: 'Vous', lede: 'Pour envoyer la proposition à la bonne personne, au bon rythme.' },
+    { t: 'Où vous envoyer votre proposition?', s: 'Coordonnées', lede: 'Vos coordonnées servent uniquement à répondre à cette demande.' }
+  ];
+  var TYPO = { 'gmial.com': 'gmail.com', 'gmal.com': 'gmail.com', 'gmai.com': 'gmail.com', 'gamil.com': 'gmail.com', 'gnail.com': 'gmail.com', 'gmaill.com': 'gmail.com', 'gmail.co': 'gmail.com', 'gmail.con': 'gmail.com', 'gmail.cm': 'gmail.com', 'gmail.ca': 'gmail.com', 'hotmial.com': 'hotmail.com', 'hotmal.com': 'hotmail.com', 'hotmai.com': 'hotmail.com', 'hotnail.com': 'hotmail.com', 'hotmail.co': 'hotmail.com', 'hotmail.con': 'hotmail.com', 'yahooo.com': 'yahoo.com', 'yaho.com': 'yahoo.com', 'yahoo.co': 'yahoo.com', 'yahoo.con': 'yahoo.com', 'outlok.com': 'outlook.com', 'outloo.com': 'outlook.com', 'outlook.co': 'outlook.com', 'iclod.com': 'icloud.com', 'icloud.co': 'icloud.com', 'videotron.com': 'videotron.ca', 'videotrom.ca': 'videotron.ca', 'videotron.qc.ca': 'videotron.ca', 'sympatico.com': 'sympatico.ca' };
+  /* ===================== OUTILS ===================== */
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function isoDay(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function stamp(d) { return isoDay(d) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()); }
+  function daysUntil(str) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str || ''); if (!m) { return null; }
+    var t = new Date(); t.setHours(0, 0, 0, 0);
+    return Math.round((new Date(+m[1], +m[2] - 1, +m[3]) - t) / 86400000);
+  }
+  function uuid() {
+    try { if (window.crypto && crypto.randomUUID) { return crypto.randomUUID(); } } catch (e) { /* contexte non sécurisé */ }
+    var b = new Uint8Array(16);
+    if (window.crypto && crypto.getRandomValues) { crypto.getRandomValues(b); } else { for (var i = 0; i < 16; i++) { b[i] = Math.floor(Math.random() * 256); } }
+    b[6] = (b[6] & 15) | 64; b[8] = (b[8] & 63) | 128;
+    var h = []; for (var j = 0; j < 16; j++) { h.push((b[j] + 256).toString(16).slice(1)); }
+    return h.slice(0, 4).join('') + '-' + h.slice(4, 6).join('') + '-' + h.slice(6, 8).join('') + '-' + h.slice(8, 10).join('') + '-' + h.slice(10).join('');
+  }
+  function norm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[\s–—-]+/g, ' ').trim(); }
+  function digits(s) { return String(s || '').replace(/\D/g, ''); }
+  function phone10(s) { var d = digits(s); if (d.length === 11 && d.charAt(0) === '1') { d = d.slice(1); } return d; }
+  function fmtPhone(s) {
+    var d = digits(s); if (d.length > 10 && d.charAt(0) === '1') { d = d.slice(1); } d = d.slice(0, 10);
+    if (!d) { return ''; } if (d.length < 4) { return '(' + d; } if (d.length < 7) { return '(' + d.slice(0, 3) + ') ' + d.slice(3); }
+    return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+  }
+  function telHref() { var d = phone10(CONFIG.telephone); return 'tel:+1' + d; }
+  function telLink() { return '<a href="' + telHref() + '">' + esc(CONFIG.telephone) + '</a>'; }
+  function mailLink() { return '<a href="mailto:' + esc(CONFIG.courriel) + '">' + esc(CONFIG.courriel) + '</a>'; }
+  function addParams(url, p) {
+    var q = []; for (var k in p) { if (p[k] !== '' && p[k] != null) { q.push(encodeURIComponent(k) + '=' + encodeURIComponent(p[k])); } }
+    if (!q.length) { return url; } var h = ''; var i = url.indexOf('#'); if (i > -1) { h = url.slice(i); url = url.slice(0, i); }
+    return url + (url.indexOf('?') > -1 ? '&' : '?') + q.join('&') + h;
+  }
+  function dl(o) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(o); }
+  function getCookie(n) { var m = document.cookie.match(new RegExp('(?:^|; )' + n.replace(/[.$?*|{}()[\]\\/+^]/g, '\\$&') + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; }
+  function typeInfo(v) { for (var i = 0; i < TYPES.length; i++) { if (TYPES[i].v === v) { return TYPES[i]; } } return null; }
+  function labelOf(list, v) { for (var i = 0; i < list.length; i++) { if (list[i].v === v) { return list[i].l; } } return v || ''; }
+  /* Paramètres de l'URL : ?a=b et aussi #soumission?forfait=gala (ancres des pages d'atterrissage). */
+  function urlParams() {
+    var out = {}; var add = function (qs) { try { new URLSearchParams(qs).forEach(function (v, k) { if (v !== '') { out[k] = v; } }); } catch (e) { /* ignore */ } };
+    add(location.search); var h = location.hash || ''; var i = h.indexOf('?'); if (i > -1) { add(h.slice(i + 1)); }
+    return out;
+  }
+  /* État du consentement (Consent Mode v2) : lu dans les commandes gtag('consent', ...) du dataLayer. Refusé par défaut. */
+  function getConsent() {
+    var s = { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+    var L = window.dataLayer || [];
+    for (var i = 0; i < L.length; i++) {
+      var it = L[i];
+      if (!it || typeof it !== 'object' || typeof it.length !== 'number' || it[0] !== 'consent') { continue; }
+      if (it[1] !== 'default' && it[1] !== 'update') { continue; }
+      var o = it[2]; if (!o || typeof o !== 'object') { continue; }
+      if (it[1] === 'default' && o.region) { var r = [].concat(o.region).join(',').toUpperCase(); if (r.indexOf('CA') === -1) { continue; } }
+      for (var k in s) { if (o[k] === 'granted' || o[k] === 'denied') { s[k] = o[k]; } }
+    }
+    if (typeof CONFIG.getConsent === 'function') {
+      try { var c = CONFIG.getConsent() || {}; for (var k2 in s) { if (c[k2] === 'granted' || c[k2] === 'denied') { s[k2] = c[k2]; } } } catch (e) { /* ignore */ }
+    }
+    return s;
+  }
+  /* Attribution : sessionStorage pendant la visite (même clé que le script du <head>) ; témoin evx_attr de 90 jours seulement si ad_storage = granted. */
+  function readAttr() {
+    var d = {};
+    try { d = JSON.parse(sessionStorage.getItem('evx_attr') || '{}') || {}; } catch (e) { d = {}; }
+    if (window.evxAttr && typeof window.evxAttr === 'object') { for (var w in window.evxAttr) { if (d[w] == null) { d[w] = window.evxAttr[w]; } } }
+    var c = getCookie('evx_attr');
+    if (c) { try { var cj = JSON.parse(c); for (var ck in cj) { if (d[ck] == null || d[ck] === '') { d[ck] = cj[ck]; } } } catch (e) { /* ignore */ } }
+    var p = urlParams();
+    ATTR_KEYS.forEach(function (k) { if (p[k]) { d[k] = p[k]; } });
+    if (!d.landing_page) { d.landing_page = location.pathname; d.referrer = document.referrer || ''; }
+    try { sessionStorage.setItem('evx_attr', JSON.stringify(d)); } catch (e) { /* navigation privée */ }
+    window.evxAttr = d;
+    return d;
+  }
+  function persistAttr(consent) {
+    if (consent.ad_storage !== 'granted') { return; }
+    try {
+      document.cookie = 'evx_attr=' + encodeURIComponent(JSON.stringify(state.attr)) + '; max-age=7776000; path=/; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
+    } catch (e) { /* ignore */ }
+  }
+  /* ===================== ROUTAGE ET POINTAGE (formulaire-qualification.md §3 et §7) ===================== */
+  function computeRoute(d) {
+    var b = d.budget, t = d.type_evenement, c = d.type_client;
+    var mp = t === 'mariage' || t === 'prive';
+    if (d.ville === HORS_ZONE && (b === 'lt600' || b === '600_999' || b === '1000_2499')) { return 'D'; }
+    if (b === 'lt600' || (b === '600_999' && !mp)) { return 'C'; }
+    if (b === '2500_4999' || b === '5000p' || c === 'entreprise' || c === 'organisme' || c === 'agence') { return 'A'; }
+    if (b === '1000_2499' || (b === '600_999' && mp)) { return 'B'; }
+    if (b === 'inconnu') {
+      if (c === 'entreprise' || c === 'organisme') { return 'A'; }
+      if (d.nb_invites === '75_149' || d.nb_invites === '150p') { return 'A'; }
+      return 'B';
+    }
+    return 'B';
+  }
+  function computeScore(d) {
+    var s = 0;
+    s += ({ '5000p': 40, '2500_4999': 30, '1000_2499': 15, '600_999': 10, inconnu: 10, lt600: 0 })[d.budget] || 0;
+    s += ({ entreprise: 20, agence: 20, organisme: 15, particulier: 5 })[d.type_client] || 0;
+    s += ({ '150p': 15, '75_149': 12, '30_74': 6, lt30: 0 })[d.nb_invites] || 0;
+    var j = daysUntil(d.date_evenement);
+    if (j !== null && j >= 0) { s += j < 10 ? 8 : (j <= 90 ? 10 : 5); }
+    s += ({ 'Je décide': 10, "Je recommande, quelqu'un d'autre approuve": 6, 'Je compare des options pour un comité': 4 })[d.role_decision] || 0;
+    s += ({ 'Cette semaine': 5, "D'ici 30 jours": 3 })[d.echeance_decision] || 0;
+    return Math.min(100, s);
+  }
+  function offHours() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: CONFIG.fuseau, weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+      var o = {}; parts.forEach(function (p) { o[p.type] = p.value; });
+      var wd = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[o.weekday];
+      var h = (+o.hour % 24) + (+o.minute / 60); var plage = CONFIG.heuresGarde[wd];
+      return !(plage && h >= plage[0] && h < plage[1]);
+    } catch (e) { return false; }
+  }
+  /* ===================== GABARIT ===================== */
+  function ico(k) { return '<span class="evxq-ico" aria-hidden="true"><svg viewBox="0 0 24 24">' + IC[k] + '</svg></span>'; }
+  function cards(name, opts, o) {
+    o = o || {};
+    var type = o.multi ? 'checkbox' : 'radio';
+    var h = '<fieldset class="evxq-field" data-name="' + name + '" id="evxq-f-' + name + '"' + (o.hidden ? ' hidden' : '') + '>';
+    h += '<legend class="' + (o.srLegend ? 'evxq-sr' : 'evxq-label') + '">' + o.legend + (o.optional ? ' <span class="evxq-opt-tag">(facultatif)</span>' : '') + '</legend>';
+    if (o.hint !== undefined) { h += '<p class="evxq-hint" id="evxq-' + name + '-hint">' + o.hint + '</p>'; }
+    h += '<div class="evxq-cards ' + (o.cols || '') + '">';
+    opts.forEach(function (op, i) {
+      var v = typeof op === 'string' ? op : op.v, l = typeof op === 'string' ? op : op.l;
+      var id = 'evxq-' + name + '-' + i;
+      h += '<div class="evxq-opt"><input type="' + type + '" id="' + id + '" name="' + name + '" value="' + esc(v) + '"' + (o.def === v ? ' checked' : '') + (o.hint !== undefined ? ' aria-describedby="evxq-' + name + '-hint"' : '') + '>';
+      h += '<label for="' + id + '" class="evxq-card' + (op.ic ? ' evxq-tall' : '') + '">' + (op.ic ? ico(op.ic) : '<span class="evxq-box" aria-hidden="true"></span>') + '<span>' + esc(l) + '</span></label></div>';
+    });
+    h += '</div><p class="evxq-err" id="evxq-' + name + '-err" hidden></p></fieldset>';
+    return h;
+  }
+  function text(name, label, attrs, o) {
+    o = o || {};
+    var h = '<div class="evxq-field" data-name="' + name + '" id="evxq-f-' + name + '"' + (o.hidden ? ' hidden' : '') + '>';
+    h += '<label class="evxq-label" for="evxq-' + name + '">' + label + (o.optional ? ' <span class="evxq-opt-tag">(facultatif)</span>' : '') + '</label>';
+    var desc = [];
+    if (o.hint) { h += '<p class="evxq-hint" id="evxq-' + name + '-hint">' + o.hint + '</p>'; desc.push('evxq-' + name + '-hint'); }
+    var tag = o.textarea ? 'textarea' : 'input';
+    h += '<' + tag + ' class="evxq-input" id="evxq-' + name + '" name="' + name + '" ' + attrs + (desc.length ? ' aria-describedby="' + desc.join(' ') + '"' : '') + '>' + (o.textarea ? '</textarea>' : '');
+    h += (o.after || '') + '<p class="evxq-err" id="evxq-' + name + '-err" hidden></p></div>';
+    return h;
+  }
+  function stepHead(i) {
+    return '<h3 class="evxq-h" id="evxq-h-' + i + '" tabindex="-1">' + STEPS[i - 1].t + '</h3><p class="evxq-lede">' + STEPS[i - 1].lede + '</p>';
+  }
+  function build() {
+    var html = '<div class="evxq-panel">';
+    html += '<p class="evxq-forfait" id="evxq-forfait" hidden></p>';
+    html += '<div class="evxq-progress" id="evxq-progress"><p class="evxq-progress-txt" id="evxq-progress-txt" aria-live="polite">Étape 1 de 5 · Votre événement</p><div class="evxq-bar" aria-hidden="true"><span id="evxq-bar"></span></div></div>';
+    html += '<form id="evxq-form" novalidate autocomplete="on" aria-describedby="evxq-req-note">';
+    html += '<p class="evxq-req-note" id="evxq-req-note">Tous les champs sont obligatoires, sauf mention « facultatif ».</p>';
+    html += '<div class="evxq-alert" id="evxq-alert" role="alert" tabindex="-1" hidden></div>';
+    /* Étape 1 */
+    html += '<section class="evxq-step" data-step="1" aria-labelledby="evxq-h-1">' + stepHead(1);
+    html += cards('type_evenement', TYPES, { legend: "Type d'événement", cols: 'evxq-c3', srLegend: true }) + '</section>';
+    /* Étape 2 */
+    var vl = VILLES.map(function (v) { return '<option value="' + esc(v) + '"></option>'; }).join('');
+    html += '<section class="evxq-step" data-step="2" aria-labelledby="evxq-h-2" hidden>' + stepHead(2);
+    html += text('date_evenement', "Date de l'événement", 'type="date" min="' + isoDay(new Date()) + '"', {
+      hint: 'Pour vérifier tout de suite la disponibilité.',
+      after: '<label class="evxq-check" for="evxq-date_flexible"><input type="checkbox" id="evxq-date_flexible" name="date_flexible" value="oui"> <span>Ma date n\'est pas encore fixée</span></label><p class="evxq-note" id="evxq-date-note" role="status" hidden></p>'
+    });
+    html += text('ville', 'Ville de l\'événement', 'type="text" list="evxq-villes" autocomplete="off" autocapitalize="words" placeholder="Commencez à taper, ex. Laval"', {
+      hint: 'Nous livrons de Sainte-Thérèse : la ville nous permet de calculer la livraison exacte. Plus loin? Choisissez « Autre (plus de 40 km) ».',
+      after: '<datalist id="evxq-villes">' + vl + '</datalist>'
+    });
+    html += cards('type_lieu', LIEUX, { legend: 'Type de lieu' }) + '</section>';
+    /* Étape 3 */
+    html += '<section class="evxq-step" data-step="3" aria-labelledby="evxq-h-3" hidden>' + stepHead(3);
+    html += cards('nb_invites', INVITES, { legend: "Nombre d'invités", hint: 'Pour prévoir la quantité de matériel et le personnel.' });
+    html += cards('budget', BUDGETS, { legend: 'Budget approximatif (avant taxes)', hint: '' });
+    html += cards('services', SERVICES, { legend: 'Ce qui vous intéresse', multi: true, optional: true, cols: 'evxq-c1' }) + '</section>';
+    /* Étape 4 */
+    html += '<section class="evxq-step" data-step="4" aria-labelledby="evxq-h-4" hidden>' + stepHead(4);
+    html += cards('type_client', CLIENTS, { legend: 'Vous êtes' });
+    html += text('entreprise', "Nom de l'entreprise ou de l'organisation", 'type="text" autocomplete="organization"', { hidden: true });
+    html += cards('role_decision', ROLES, { legend: 'Votre rôle dans la décision', cols: 'evxq-c1' });
+    html += cards('echeance_decision', ECHEANCES, { legend: 'Vous aimeriez décider', cols: 'evxq-c1' }) + '</section>';
+    /* Étape 5 */
+    html += '<section class="evxq-step" data-step="5" aria-labelledby="evxq-h-5" hidden>' + stepHead(5);
+    html += '<div class="evxq-row">' + text('prenom', 'Prénom', 'type="text" autocomplete="given-name" autocapitalize="words"') + text('nom', 'Nom', 'type="text" autocomplete="family-name" autocapitalize="words"') + '</div>';
+    html += text('courriel', 'Courriel', 'type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="nom@exemple.com"', { after: '<p class="evxq-suggest" id="evxq-suggest" aria-live="polite"></p>' });
+    html += text('telephone', 'Téléphone', 'type="tel" autocomplete="tel-national" inputmode="tel" placeholder="(514) 555-1234" maxlength="16"', { hint: '10 chiffres, ex. (514) 555-1234.' });
+    html += cards('canal_prefere', CANAUX, { legend: 'Comment préférez-vous être joint?', def: 'appel', cols: 'evxq-c3 evxq-c3m' });
+    html += text('message', 'Un détail à ajouter?', 'rows="2"', { textarea: true, optional: true });
+    html += '<fieldset class="evxq-consents"><legend class="evxq-sr">Consentements facultatifs</legend>';
+    html += '<label class="evxq-check" for="evxq-consent_marketing"><input type="checkbox" id="evxq-consent_marketing" name="consent_marketing" value="oui"> <span>J\'accepte de recevoir par courriel et par texto des idées, des nouveautés et des offres d\'Évenox inc. (215, boul. René-A.-Robert, Sainte-Thérèse, ' + esc(CONFIG.telephone) + '). Je peux me désabonner en tout temps. <span class="evxq-opt-tag">(facultatif)</span></span></label>';
+    html += '<label class="evxq-check" for="evxq-consent_mesure"><input type="checkbox" id="evxq-consent_mesure" name="consent_mesure" value="oui"> <span>J\'accepte qu\'Évenox transmette mon courriel et mon téléphone, sous forme chiffrée (hachée), à Google, Meta, Microsoft et OpenAI, uniquement pour mesurer l\'efficacité de ses publicités. Je peux retirer ce consentement en tout temps à ' + esc(CONFIG.courriel) + '. <span class="evxq-opt-tag">(facultatif)</span></span></label>';
+    html += '</fieldset></section>';
+    /* Champs cachés + pot de miel */
+    html += '<div class="evxq-hp" aria-hidden="true"><label for="evxq-site_web">Ne pas remplir</label><input type="text" id="evxq-site_web" name="site_web" tabindex="-1" autocomplete="off"></div>';
+    HIDDEN.forEach(function (k) { html += '<input type="hidden" name="' + k + '" id="evxq-hid-' + k + '" value="">'; });
+    /* Navigation */
+    html += '<div class="evxq-nav"><button type="button" class="evxq-btn evxq-ghost" id="evxq-prev" hidden>Précédent</button><button type="submit" class="evxq-btn evxq-next" id="evxq-next">Suivant</button></div>';
+    html += '<div id="evxq-msg" role="alert"></div>';
+    html += '<p class="evxq-legal" id="evxq-legal" hidden>Nous utilisons vos coordonnées uniquement pour répondre à votre demande et préparer votre soumission. Elles sont conservées dans nos outils (Google Workspace, HubSpot) hébergés au Canada ou aux États-Unis. Responsable de la protection des renseignements personnels : ' + esc(CONFIG.responsable) + ', ' + mailLink() + '. Voir notre <a href="' + esc(CONFIG.politiqueUrl) + '">politique de confidentialité</a>.</p>';
+    html += '</form><div class="evxq-thanks" id="evxq-thanks" hidden></div></div>';
+    root.innerHTML = html;
+  }
+  /* ===================== ÉTAT ===================== */
+  var state = { step: 1, started: false, sending: false, done: false, eventId: uuid(), attr: {}, preset: {} };
+  build();
+  var form = document.getElementById('evxq-form');
+  var $ = function (id) { return document.getElementById(id); };
+  function radio(name) { var c = form.querySelector('input[name="' + name + '"]:checked'); return c ? c.value : ''; }
+  function txt(name) { var e = form.elements[name]; return e && typeof e.value === 'string' ? e.value.trim() : ''; }
+  function checked(name) { var e = form.elements[name]; return !!(e && e.checked); }
+  function setHidden(k, v) { var e = $('evxq-hid-' + k); if (e) { e.value = v == null ? '' : String(v); } }
+  function canonVille(v) { var n = norm(v); if (!n) { return ''; } for (var i = 0; i < VILLES.length; i++) { if (norm(VILLES[i]) === n) { return VILLES[i]; } } return ''; }
+  function collect() {
+    return {
+      type_evenement: radio('type_evenement'), date_evenement: txt('date_evenement'), date_flexible: checked('date_flexible'),
+      ville: canonVille(txt('ville')), type_lieu: radio('type_lieu'), nb_invites: radio('nb_invites'), budget: radio('budget'),
+      services: Array.prototype.map.call(form.querySelectorAll('input[name="services"]:checked'), function (e) { return e.value; }),
+      type_client: radio('type_client'), entreprise: needsOrg() ? txt('entreprise') : '', role_decision: radio('role_decision'),
+      echeance_decision: radio('echeance_decision'), prenom: txt('prenom'), nom: txt('nom'), courriel: txt('courriel').toLowerCase(),
+      telephone: phone10(txt('telephone')), canal_prefere: radio('canal_prefere'), message: txt('message'),
+      consent_marketing: checked('consent_marketing'), consent_mesure: checked('consent_mesure')
+    };
+  }
+  function needsOrg() { var c = radio('type_client'); return c === 'entreprise' || c === 'organisme' || c === 'agence'; }
+  function segment() { var t = typeInfo(radio('type_evenement')); return t ? t.seg : ''; }
+  function refreshDynamic() {
+    var seg = segment();
+    var hint = $('evxq-budget-hint');
+    if (hint) {
+      if (seg === 'corpo') { hint.innerHTML = 'Repère : nos forfaits corporatifs clé en main vont de 1 195 $ à 2 495 $.'; }
+      else if (seg === 'mariage') { hint.innerHTML = 'Repère : forfaits décor de mariage de 899 $ à 1 899 $ ; cabine photo seule dès 599 $.'; }
+      else if (seg === 'prive') { hint.innerHTML = 'Repère : forfaits décor dès 899 $ ; cabine photo avec préposé seule dès 599 $. Pour de plus petites commandes, notre <a href="' + esc(CONFIG.boutiqueUrl) + '">boutique en ligne</a> est ouverte 24 h sur 24.'; }
+      else { hint.innerHTML = 'Une fourchette suffit. Elle nous permet de vous proposer 3 options adaptées.'; }
+    }
+    var org = $('evxq-f-entreprise'); if (org) { org.hidden = !needsOrg(); }
+    updateNav();
+  }
+  function submitLabel() {
+    var seg = segment();
+    return seg === 'corpo' ? 'Recevoir ma proposition' : (seg === 'mariage' ? 'Vérifier ma date' : 'Recevoir ma soumission');
+  }
+  function updateNav() {
+    $('evxq-prev').hidden = state.step === 1;
+    $('evxq-next').textContent = state.step === 5 ? submitLabel() : 'Suivant';
+    $('evxq-legal').hidden = state.step !== 5;
+  }
+  function dateNote() {
+    var n = $('evxq-date-note'); var j = daysUntil(txt('date_evenement'));
+    if (j !== null && j >= 0 && j < 10) { n.innerHTML = 'Date rapprochée : appelez-nous au ' + telLink() + ' pour une réponse immédiate.'; n.hidden = false; }
+    else { n.hidden = true; n.textContent = ''; }
+  }
+  /* ===================== PRÉSÉLECTION (?forfait=, ?type=, #soumission?forfait=) ===================== */
+  function contextType() { return (CONFIG.typeParDefaut === 'prive' || /prive/i.test(location.pathname)) ? 'prive' : 'mariage'; }
+  function selectType(v) { var e = form.querySelector('input[name="type_evenement"][value="' + v + '"]'); if (e) { e.checked = true; clearErr('type_evenement'); } }
+  function applyPreset(p) {
+    var t = '', f = (p.forfait || '').toLowerCase(), fi = FORFAITS[f];
+    if (p.type) { t = TYPE_PARAM[p.type] || (typeInfo(p.type) ? p.type : ''); }
+    if (fi) {
+      var ft = fi.t; if (!ft) { ft = (t === 'mariage' || t === 'prive') ? t : contextType(); }
+      t = ft; state.preset.forfait = f;
+      var b = $('evxq-forfait'); b.textContent = 'Forfait choisi : ' + fi.n; b.hidden = false;
+    }
+    if (!t && CONFIG.typeParDefaut && typeInfo(CONFIG.typeParDefaut)) { t = CONFIG.typeParDefaut; }
+    if (t && !state.done && state.step === 1) { selectType(t); }
+    setHidden('forfait_presel', state.preset.forfait || state.attr.forfait || '');
+    refreshDynamic();
+  }
+  /* ===================== ERREURS ===================== */
+  function fieldInputs(name) { return form.querySelectorAll('[name="' + name + '"]'); }
+  function clearErr(name) {
+    var f = $('evxq-f-' + name); if (!f) { return; }
+    f.classList.remove('is-invalid'); var e = $('evxq-' + name + '-err'); if (e) { e.hidden = true; e.textContent = ''; }
+    Array.prototype.forEach.call(fieldInputs(name), function (i) {
+      i.removeAttribute('aria-invalid');
+      var d = (i.getAttribute('aria-describedby') || '').split(' ').filter(function (x) { return x && x !== 'evxq-' + name + '-err'; }).join(' ');
+      if (d) { i.setAttribute('aria-describedby', d); } else { i.removeAttribute('aria-describedby'); }
+    });
+    var anyErr = form.querySelector('.evxq-step:not([hidden]) .is-invalid'); if (!anyErr) { $('evxq-alert').hidden = true; }
+  }
+  function showErrors(errs) {
+    errs.forEach(function (er) {
+      var f = $('evxq-f-' + er.name); f.classList.add('is-invalid');
+      var e = $('evxq-' + er.name + '-err'); e.textContent = er.msg; e.hidden = false;
+      Array.prototype.forEach.call(fieldInputs(er.name), function (i) {
+        i.setAttribute('aria-invalid', 'true');
+        var d = (i.getAttribute('aria-describedby') || '').split(' ').filter(Boolean);
+        if (d.indexOf(e.id) === -1) { d.push(e.id); } i.setAttribute('aria-describedby', d.join(' '));
+      });
+    });
+    var a = $('evxq-alert');
+    a.textContent = errs.length === 1 ? 'Un champ est à corriger : ' + errs[0].msg : errs.length + ' champs sont à corriger. Le premier est sélectionné.';
+    a.hidden = false;
+    var first = fieldInputs(errs[0].name)[0];
+    if (first) { first.focus(); }
+  }
+  function validate(step) {
+    var errs = [], d = collect();
+    var req = function (name, msg) { if (!radio(name)) { errs.push({ name: name, msg: msg }); } };
+    if (step === 1) { req('type_evenement', "Choisissez le type d'événement."); }
+    if (step === 2) {
+      var raw = txt('date_evenement');
+      if (!raw && !d.date_flexible) { errs.push({ name: 'date_evenement', msg: 'Indiquez la date, ou cochez « Ma date n\'est pas encore fixée ».' }); }
+      else if (raw) { var j = daysUntil(raw); if (j === null) { errs.push({ name: 'date_evenement', msg: 'Cette date est invalide. Format attendu : AAAA-MM-JJ.' }); } else if (j < 0) { errs.push({ name: 'date_evenement', msg: 'Cette date est passée. Choisissez une date à venir.' }); } }
+      if (!d.ville) { errs.push({ name: 'ville', msg: txt('ville') ? 'Choisissez une ville de la liste, ou « Autre (plus de 40 km) ».' : 'Indiquez la ville de l\'événement.' }); }
+      else { form.elements.ville.value = d.ville; }
+      req('type_lieu', 'Choisissez le type de lieu.');
+    }
+    if (step === 3) { req('nb_invites', "Choisissez le nombre d'invités."); req('budget', 'Choisissez une fourchette de budget (ou « Je ne sais pas encore »).'); }
+    if (step === 4) {
+      req('type_client', 'Indiquez qui organise.');
+      if (needsOrg() && !d.entreprise) { errs.push({ name: 'entreprise', msg: "Indiquez le nom de l'entreprise ou de l'organisation." }); }
+      req('role_decision', 'Indiquez votre rôle dans la décision.');
+      req('echeance_decision', 'Indiquez quand vous aimeriez décider.');
+    }
+    if (step === 5) {
+      if (!d.prenom) { errs.push({ name: 'prenom', msg: 'Indiquez votre prénom.' }); }
+      if (!d.nom) { errs.push({ name: 'nom', msg: 'Indiquez votre nom.' }); }
+      if (!d.courriel) { errs.push({ name: 'courriel', msg: 'Indiquez votre courriel.' }); }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.courriel)) { errs.push({ name: 'courriel', msg: 'Ce courriel semble incomplet, ex. nom@exemple.com.' }); }
+      if (!d.telephone) { errs.push({ name: 'telephone', msg: 'Indiquez votre numéro de téléphone.' }); }
+      else if (d.telephone.length !== 10 || !/^[2-9]\d{2}[2-9]/.test(d.telephone)) { errs.push({ name: 'telephone', msg: 'Le numéro doit compter 10 chiffres, ex. (514) 555-1234.' }); }
+      req('canal_prefere', 'Choisissez comment vous joindre.');
+    }
+    return errs;
+  }
+  /* ===================== NAVIGATION ===================== */
+  function go(n) {
+    state.step = n;
+    Array.prototype.forEach.call(form.querySelectorAll('.evxq-step'), function (s) { s.hidden = +s.getAttribute('data-step') !== n; });
+    $('evxq-alert').hidden = true; $('evxq-msg').innerHTML = '';
+    $('evxq-progress-txt').textContent = 'Étape ' + n + ' de 5 · ' + STEPS[n - 1].s;
+    $('evxq-bar').style.width = (n * 20) + '%';
+    updateNav();
+    var h = $('evxq-h-' + n); h.focus({ preventScroll: true });
+    var r = root.getBoundingClientRect(); if (r.top < 0 || r.top > window.innerHeight * 0.6) { try { root.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (e) { root.scrollIntoView(); } }
+    try { persistAttr(getConsent()); } catch (e) { /* ignore */ }
+  }
+  function formStart() {
+    if (state.started) { return; } state.started = true;
+    dl({ event: 'form_start', form_id: CONFIG.formId, page: location.pathname });
+  }
+  form.addEventListener('change', function (e) {
+    formStart();
+    var n = e.target.name;
+    if (n) { clearErr(n === 'date_flexible' ? 'date_evenement' : n); }
+    if (n === 'type_evenement' || n === 'type_client') { refreshDynamic(); }
+    if (n === 'date_evenement') { dateNote(); }
+  });
+  form.addEventListener('input', function (e) {
+    formStart();
+    var t = e.target;
+    if (t.name === 'telephone' && !(e.inputType && e.inputType.indexOf('delete') === 0)) { t.value = fmtPhone(t.value); }
+    if (t.name && t.type !== 'radio' && t.type !== 'checkbox') { clearErr(t.name); }
+    if (t.name === 'date_evenement') { dateNote(); }
+  });
+  form.elements.courriel.addEventListener('blur', function () {
+    var v = txt('courriel').toLowerCase(), box = $('evxq-suggest'), at = v.lastIndexOf('@');
+    box.innerHTML = '';
+    if (at < 1) { return; }
+    var fix = TYPO[v.slice(at + 1)]; if (!fix) { return; }
+    var sug = v.slice(0, at + 1) + fix;
+    box.innerHTML = 'Vouliez-vous dire <button type="button" id="evxq-suggest-btn">' + esc(sug) + '</button>?';
+    $('evxq-suggest-btn').addEventListener('click', function () { form.elements.courriel.value = sug; box.innerHTML = ''; form.elements.courriel.focus(); });
+  });
+  $('evxq-prev').addEventListener('click', function () { if (state.step > 1 && !state.sending) { go(state.step - 1); } });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (state.sending || state.done) { return; }
+    formStart();
+    var errs = validate(state.step);
+    if (errs.length) { showErrors(errs); return; }
+    dl({ event: 'form_step', form_id: CONFIG.formId, step: state.step, event_type: radio('type_evenement') });
+    if (state.step < 5) { go(state.step + 1); } else { send(); }
+  });
+  /* ===================== ENVOI ===================== */
+  function buildPayload(d, route, score, consent) {
+    var now = new Date(), j = daysUntil(d.date_evenement), a = state.attr;
+    var rapprochee = j !== null && j >= 0 && j < 10;
+    var hh = offHours();
+    var p = {
+      form_id: CONFIG.formId, event_id: state.eventId, date_heure_reception: stamp(now), submitted_at: now.toISOString(),
+      prenom: d.prenom, nom: d.nom, courriel: d.courriel, telephone: '+1' + d.telephone, telephone_affiche: fmtPhone(d.telephone),
+      entreprise: d.entreprise, type_client: d.type_client, type_evenement: d.type_evenement, type_evenement_libelle: (typeInfo(d.type_evenement) || {}).l || '',
+      date_evenement: d.date_evenement, date_flexible: d.date_flexible ? 'oui' : 'non', ville: d.ville, type_lieu: d.type_lieu, type_lieu_libelle: labelOf(LIEUX, d.type_lieu),
+      nb_invites: d.nb_invites, budget_declare: d.budget, services: d.services.join(' | '), canal_prefere: d.canal_prefere, message: d.message,
+      role_decision: d.role_decision, echeance_decision: d.echeance_decision,
+      route: route, lead_score: score, lead_qualifie: route === 'A' || route === 'B', lead_value: CONFIG.valeurs[route] || 0, currency: 'CAD',
+      temperature: (route === 'A' && d.echeance_decision === "Plus tard / je m'informe") ? 'Tiède' : '',
+      date_rapprochee: rapprochee ? 'oui' : 'non', appel_obligatoire: (rapprochee && (route === 'A' || route === 'B')) ? 'oui' : 'non', hors_heures: hh ? 'oui' : 'non',
+      etape: (route === 'C' || route === 'D') ? 'Disqualifié' : 'Nouveau',
+      raison_perte: route === 'D' ? 'Disqualifié – hors zone' : (route === 'C' ? 'Disqualifié – budget < seuil' : ''),
+      consent_marketing: d.consent_marketing ? 'oui' : 'non', consent_mesure: d.consent_mesure ? 'oui' : 'non',
+      date_consentement: stamp(now), consent_version: CONFIG.consentVersion, consent_url: location.href, consent_state: consent,
+      fbp: consent.ad_storage === 'granted' ? getCookie('_fbp') : '',
+      landing_page: a.landing_page || '', referrer: a.referrer || '', forfait_presel: state.preset.forfait || a.forfait || '', variante_hero: a.v || '',
+      page_url: location.href, user_agent: navigator.userAgent
+    };
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'oppref'].forEach(function (k) { p[k] = a[k] || ''; });
+    return p;
+  }
+  function msg(html) { var m = $('evxq-msg'); m.innerHTML = '<div class="evxq-msg">' + html + '</div>'; }
+  function busy(on) {
+    state.sending = on; var b = $('evxq-next');
+    b.disabled = on; b.setAttribute('aria-busy', on ? 'true' : 'false'); b.textContent = on ? 'Envoi en cours…' : submitLabel();
+    $('evxq-prev').disabled = on;
+  }
+  function send() {
+    var d = collect(), route = computeRoute(d), score = computeScore(d), consent = getConsent();
+    state.attr = readAttr();
+    persistAttr(consent);
+    setHidden('route', route); setHidden('lead_score', score); setHidden('consent_state', JSON.stringify(consent));
+    setHidden('fbp', consent.ad_storage === 'granted' ? getCookie('_fbp') : '');
+    var payload = buildPayload(d, route, score, consent);
+    if (txt('site_web')) { finish(payload, d, true); return; } /* pot de miel : robot, rien n'est envoyé ni mesuré */
+    if (!CONFIG.endpoint) {
+      msg('<strong>Votre demande n\'a pas pu être transmise :</strong> ce formulaire n\'est pas encore relié à notre système de réception. Pour obtenir votre soumission dès maintenant, appelez-nous ou textez-nous au ' + telLink() + ', ou écrivez à ' + mailLink() + '.');
+      if (window.console) { console.warn('[Évenox] CONFIG.endpoint est vide : aucune donnée envoyée. Voir site/README.md.', payload); }
+      return;
+    }
+    busy(true);
+    var ctl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctl) { ctl.abort(); } }, CONFIG.delaiEnvoi);
+    fetch(CONFIG.endpoint, {
+      method: 'POST', mode: 'cors', credentials: 'omit', keepalive: true,
+      headers: { 'Content-Type': CONFIG.contentType === 'text/plain' ? 'text/plain;charset=UTF-8' : 'application/json' },
+      body: JSON.stringify(payload), signal: ctl ? ctl.signal : undefined
+    }).then(function (res) {
+      clearTimeout(timer);
+      if (!res.ok) { throw new Error('HTTP ' + res.status); }
+      finish(payload, d, false);
+    }).catch(function (err) {
+      clearTimeout(timer); busy(false);
+      if (window.console) { console.error('[Évenox] Envoi du formulaire échoué :', err); }
+      msg('<strong>L\'envoi n\'a pas fonctionné.</strong> Vos réponses sont conservées : réessayez dans un instant. Si le problème continue, appelez-nous au ' + telLink() + ' ou écrivez à ' + mailLink() + '.');
+    });
+  }
+  function boutiqueLink(route) { return addParams(CONFIG.boutiqueUrl, { utm_source: 'formulaire', utm_medium: 'referral', utm_campaign: route === 'D' ? 'route_d' : 'route_c' }); }
+  function calendlyLink(d) {
+    if (!CONFIG.calendlyUrl) { return ''; }
+    return addParams(CONFIG.calendlyUrl, { name: (d.prenom + ' ' + d.nom).trim(), email: d.courriel, a1: (typeInfo(d.type_evenement) || {}).l || '', a2: d.date_evenement || 'Date à confirmer' });
+  }
+  function finish(p, d, bot) {
+    state.done = true; busy(false); state.sending = true;
+    var route = p.route, gone = false;
+    var urls = { A: CONFIG.merciAppelUrl, B: CONFIG.merciSoumissionUrl, C: CONFIG.merciBoutiqueUrl, D: CONFIG.merciHorsZoneUrl };
+    var target = CONFIG.redirect ? urls[route] : '';
+    var leave = function () { if (gone || !target) { return; } gone = true; location.href = target; };
+    try {
+      sessionStorage.setItem('evx_merci', JSON.stringify({ route: route, prenom: d.prenom, nom: d.nom, courriel: d.courriel, type_evenement: d.type_evenement, type_libelle: p.type_evenement_libelle, date_evenement: d.date_evenement, type_client: d.type_client, hors_heures: p.hors_heures, date_rapprochee: p.date_rapprochee, calendly: calendlyLink(d), boutique: (route === 'C' || route === 'D') ? boutiqueLink(route) : '' }));
+    } catch (e) { /* ignore */ }
+    if (!bot) {
+      var ev = { event: 'lead_submit', form_id: CONFIG.formId, lead_route: route, lead_qualifie: route === 'A' || route === 'B', lead_value: CONFIG.valeurs[route] || 0, currency: 'CAD', event_type: d.type_evenement, budget_band: d.budget, event_id: state.eventId };
+      if (d.consent_mesure) { ev.user_data = { email: d.courriel, phone_number: '+1' + d.telephone }; }
+      if (target) { ev.eventCallback = leave; ev.eventTimeout = CONFIG.delaiRedirection; }
+      dl(ev);
+    }
+    showThanks(route, d, p);
+    if (target) { setTimeout(leave, CONFIG.delaiRedirection + 300); }
+  }
+  function showThanks(route, d, p) {
+    var h = '', cal = calendlyLink(d), prenom = esc(d.prenom);
+    var rapprochee = p.date_rapprochee === 'oui';
+    if (route === 'A') {
+      h += '<p class="evxq-badge">Demande prioritaire</p><h3 class="evxq-h" tabindex="-1" id="evxq-thanks-h">Merci ' + prenom + ', votre demande est bien reçue.</h3>';
+      h += p.hors_heures === 'oui' ? '<p>Nos bureaux sont fermés en ce moment : nous vous appelons demain dès 9 h. Vous pouvez aussi choisir votre moment.</p>' : '<p>Un conseiller vous appelle dans les 15 prochaines minutes. Vous préférez choisir le moment de l\'appel?</p>';
+      if (cal) { h += '<div class="evxq-actions"><a class="evxq-btn" href="' + esc(cal) + '" target="_blank" rel="noopener">Choisir mon moment (15 min)</a></div>'; }
+      h += '<p>Vous recevez aussi un texto et un courriel de confirmation.</p>';
+    } else if (route === 'B') {
+      h += '<h3 class="evxq-h" tabindex="-1" id="evxq-thanks-h">Merci ' + prenom + '! Votre soumission arrive d\'ici 24 h.</h3>';
+      h += '<p>Vous recevrez 3 options avec des prix fermes. Nous vous appellerons aussi au cours de la journée ouvrable pour valider deux ou trois détails.</p>';
+      if (rapprochee) { h += '<p class="evxq-note">Date rapprochée : appelez-nous au ' + telLink() + ' pour une réponse immédiate.</p>'; }
+      h += '<div class="evxq-actions">' + (cal ? '<a class="evxq-btn" href="' + esc(cal) + '" target="_blank" rel="noopener">Réserver un appel de 15 min</a>' : '') + '<a class="evxq-btn evxq-ghost" href="' + esc(CONFIG.realisationsUrl) + '">Voir nos réalisations</a></div>';
+    } else if (route === 'C') {
+      h += '<h3 class="evxq-h" tabindex="-1" id="evxq-thanks-h">Merci ' + prenom + '! Votre projet est parfait pour notre boutique en ligne.</h3>';
+      h += '<p>Les prix et la disponibilité de votre date s\'affichent en direct, et le ramassage à notre entrepôt de Sainte-Thérèse est gratuit. Nous vous envoyons aussi quelques suggestions par courriel.</p>';
+      h += '<div class="evxq-actions"><a class="evxq-btn" href="' + esc(boutiqueLink('C')) + '">Voir la boutique en ligne</a></div>';
+      if (d.type_client === 'entreprise') { h += '<p>Besoin d\'un bon de commande? Écrivez-nous à ' + mailLink() + '.</p>'; }
+    } else {
+      h += '<h3 class="evxq-h" tabindex="-1" id="evxq-thanks-h">Merci ' + prenom + '! Votre lieu est hors de notre zone de livraison.</h3>';
+      h += '<p>Nous livrons et installons dans un rayon d\'environ 40 km de Sainte-Thérèse. Bonne nouvelle : vous pouvez réserver dans notre boutique en ligne et ramasser le matériel à notre entrepôt de Sainte-Thérèse.</p>';
+      h += '<div class="evxq-actions"><a class="evxq-btn" href="' + esc(boutiqueLink('D')) + '">Voir la boutique en ligne</a></div>';
+      h += '<p>Une question? Appelez-nous au ' + telLink() + '.</p>';
+    }
+    form.hidden = true; $('evxq-progress').hidden = true; $('evxq-forfait').hidden = true;
+    var t = $('evxq-thanks'); t.innerHTML = h; t.hidden = false; t.setAttribute('data-route', route);
+    var th = $('evxq-thanks-h'); if (th) { th.focus({ preventScroll: true }); }
+  }
+  /* ===================== DÉMARRAGE ===================== */
+  state.attr = readAttr();
+  setHidden('event_id', state.eventId);
+  HIDDEN.forEach(function (k) { if (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'oppref', 'landing_page', 'referrer'].indexOf(k) > -1) { setHidden(k, state.attr[k] || ''); } });
+  setHidden('variante_hero', state.attr.v || '');
+  var c0 = getConsent(); setHidden('consent_state', JSON.stringify(c0)); setHidden('fbp', c0.ad_storage === 'granted' ? getCookie('_fbp') : ''); persistAttr(c0);
+  applyPreset(urlParams());
+  /* Liens internes « #soumission?forfait=... » : présélection sans rechargement, défilement vers le formulaire. */
+  function onHash() {
+    if (!/^#soumission\?/i.test(location.hash)) { return; }
+    var p = urlParams(); if (p.forfait || p.type) { applyPreset(p); }
+    try { root.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (e) { root.scrollIntoView(); }
+  }
+  window.addEventListener('hashchange', onHash);
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="#soumission?"]') : null;
+    if (!a || a.host !== location.host || a.pathname !== location.pathname) { return; }
+    e.preventDefault(); e.stopPropagation();
+    try { history.replaceState(null, '', a.hash); } catch (er) { location.hash = a.hash; return; }
+    onHash();
+  }, true);
+  if (/^#soumission\?/i.test(location.hash)) { setTimeout(onHash, 50); }
+  window.EvenoxForm = { computeRoute: computeRoute, computeScore: computeScore, getConsent: getConsent, config: CONFIG, eventId: function () { return state.eventId; } };
+})();
+</script>
