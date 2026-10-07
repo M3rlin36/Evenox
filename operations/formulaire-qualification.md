@@ -1,7 +1,7 @@
 # Formulaire de qualification multi-étapes — spécification
 
 > Remplace le formulaire actuel (nom, courriel, téléphone, date, adresse, message), qui ne filtre rien.
-> Utilisé sur : `/corporatif-cle-en-main/`, `/mariage-cle-en-main/` et, à terme, `/contact/` et les pages de services.
+> Utilisé sur : `/corporatif/` et ses sous-pages, les sous-pages `/mariage/...` (mêmes URL que les annonces, voir campagnes/google-ads/README.md), `/soumission` et, à terme, `/contact/` et les pages de services.
 > Outil recommandé : **Gravity Forms** (licence Elite : pages multiples, logique conditionnelle, champs cachés remplis par paramètre, webhooks) ou **Fluent Forms Pro** (moins cher, fonctions équivalentes). Le module Contact de Divi ne fait ni les étapes ni le routage.
 
 ---
@@ -46,13 +46,13 @@
 | Champ | Type | Options (valeur) | Obligatoire |
 |---|---|---|---|
 | `nb_invites` | Cartes | Moins de 30 (`lt30`) · 30 à 74 (`30_74`) · 75 à 149 (`75_149`) · 150 et plus (`150p`) | Oui |
-| `budget` | Cartes | Moins de 1 000 $ (`lt1000`) · 1 000 à 2 499 $ (`1000_2499`) · 2 500 à 4 999 $ (`2500_4999`) · 5 000 $ et plus (`5000p`) · Je ne sais pas encore (`inconnu`) | Oui |
+| `budget` | Cartes | Moins de 600 $ (`lt600`) · 600 à 999 $ (`600_999`) · 1 000 à 2 499 $ (`1000_2499`) · 2 500 à 4 999 $ (`2500_4999`) · 5 000 $ et plus (`5000p`) · Je ne sais pas encore (`inconnu`) | Oui |
 | `services` | Cases multiples | Décor et lettres lumineuses · Photobooth ou vidéobooth 360 · Jeux géants ou animation · Mobilier (tables, chaises) · Chapiteau · Machines gourmandes · Je veux un forfait tout inclus | Non |
 
 **Micro-texte sous le budget (selon le type) :**
 - Corporatif : « Repère : nos forfaits corporatifs clé en main vont de 1 195 $ à 2 495 $. »
-- Mariage : « Repère : forfaits décor de mariage de 899 $ à 1 899 $ ; photobooth seul dès 599 $. »
-- Privé : « Repère : service clé en main à partir de 599 $. Pour de plus petites commandes, notre boutique en ligne est ouverte 24 h sur 24. »
+- Mariage : « Repère : forfaits décor de mariage de 899 $ à 1 899 $ ; cabine photo seule dès 599 $. »
+- Privé : « Repère : forfaits décor dès 899 $ ; cabine photo avec préposé seule dès 599 $. Pour de plus petites commandes, notre boutique en ligne est ouverte 24 h sur 24. »
 
 ### Étape 4 de 5 — Vous
 **Titre :** Qui organise?
@@ -96,14 +96,14 @@ L'ordre d'évaluation compte : **la première règle vraie gagne**.
 
 | Priorité | Condition | Route | Action immédiate | Page de confirmation |
 |---|---|---|---|---|
-| 1 | `ville` = « Autre (plus de 40 km) » ET `budget` ∈ {`lt1000`, `1000_2499`} | **D — Hors zone** | Courriel automatique « hors zone » avec le lien de la boutique (ramassage possible) ; ligne dans le CRM, étape « Disqualifié – hors zone » | `/merci-hors-zone/` |
-| 2 | `budget` = `lt1000` | **C — Boutique** | Courriel automatique avec 3 suggestions de la boutique selon le type, et code de bienvenue facultatif ; pas d'appel | `/merci-boutique/` : « Votre projet est parfait pour notre boutique en ligne », bouton vers Booqable (`?utm_source=formulaire&utm_medium=redirect&utm_campaign=lt1000`) |
+| 1 | `ville` = « Autre (plus de 40 km) » ET `budget` ∈ {`lt600`, `600_999`, `1000_2499`} | **D — Hors zone** | Courriel automatique « hors zone » avec le lien de la boutique (ramassage possible) ; ligne dans le CRM, étape « Disqualifié – hors zone » | `/merci-hors-zone/` |
+| 2 | `budget` = `lt600`, OU `budget` = `600_999` ET `type_evenement` ∉ {`mariage`, `prive`} | **C — Boutique** | Courriel automatique avec 3 suggestions de la boutique selon le type, et code de bienvenue facultatif ; pas d'appel | `/merci-boutique/` : « Votre projet est parfait pour notre boutique en ligne », bouton vers Booqable (`?utm_source=formulaire&utm_medium=referral&utm_campaign=route_c`) |
 | 3 | `budget` ∈ {`2500_4999`, `5000p`} OU `type_client` ∈ {`entreprise`, `organisme`, `agence`} | **A — Appel prioritaire** | Texto et courriel instantanés au prospect ; **alerte texto au téléphone de garde** (« 🔥 LEAD A ») ; appel dans les 15 min (heures d'ouverture) | `/merci-appel/` : calendrier Calendly intégré, « Choisissez votre moment ou attendez notre appel dans les 15 minutes » |
-| 4 | `budget` = `1000_2499` | **B — Soumission** | Texto et courriel instantanés au prospect ; soumission écrite (3 options) en moins de 24 h ; appel au cours de la même journée ouvrable | `/merci-soumission/` : « Votre soumission arrive d'ici 24 h », lien Calendly facultatif |
+| 4 | `budget` = `1000_2499`, OU `budget` = `600_999` ET `type_evenement` ∈ {`mariage`, `prive`} (forfaits décor dès 899 $, cabine photo dès 599 $) | **B — Soumission** | Texto et courriel instantanés au prospect ; soumission écrite (3 options) en moins de 24 h ; appel au cours de la même journée ouvrable | `/merci-soumission/` : « Votre soumission arrive d'ici 24 h », lien Calendly facultatif |
 | 5 | `budget` = `inconnu` | Sous-règle | `type_client` = entreprise ou organisme → **A** · `nb_invites` ∈ {`75_149`, `150p`} → **A** · `type_evenement` = mariage → **B** · sinon → **B** | Selon la route |
 
 **Cas particuliers :**
-- Entreprise avec `budget` = `lt1000` : la règle 2 s'applique d'abord (boutique), car l'objectif est de filtrer. La page `/merci-boutique/` ajoute toutefois, pour `type_client` = entreprise : « Besoin d'un bon de commande? Écrivez-nous à {{COURRIEL}}. »
+- Entreprise avec un budget de moins de 1 000 $ (`lt600` ou `600_999`) : la règle 2 s'applique d'abord (boutique), car l'objectif est de filtrer. La page `/merci-boutique/` ajoute toutefois, pour `type_client` = entreprise : « Besoin d'un bon de commande? Écrivez-nous à {{COURRIEL}}. »
 - `echeance_decision` = « Plus tard / je m'informe » sur la route A : garder la route A, mais marquer le lead « Tiède » dans le CRM (relance au lieu d'un appel insistant).
 - Date dans moins de 10 jours : toujours appeler, peu importe la route (sauf C et D).
 
@@ -223,7 +223,7 @@ window.dataLayer.push({
 
 | Critère | Points |
 |---|---|
-| Budget 5 000 $ et plus / 2 500–4 999 $ / 1 000–2 499 $ / inconnu / moins de 1 000 $ | 40 / 30 / 15 / 10 / 0 |
+| Budget 5 000 $ et plus / 2 500–4 999 $ / 1 000–2 499 $ / 600–999 $ / inconnu / moins de 600 $ | 40 / 30 / 15 / 10 / 10 / 0 |
 | Type de client : entreprise ou agence / organisme / particulier | 20 / 15 / 5 |
 | Invités : 150 et plus / 75–149 / 30–74 / moins de 30 | 15 / 12 / 6 / 0 |
 | Date dans 10 à 90 jours / plus de 90 jours / moins de 10 jours | 10 / 5 / 8 |

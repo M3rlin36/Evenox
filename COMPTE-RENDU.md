@@ -66,7 +66,7 @@
 
 ---
 
-## 4. Le plan de campagnes — 300 $/jour (~9 000 $/mois)
+## 4. Le plan de campagnes — 300 $/jour (~9 100 $/mois)
 
 **Règle de base :** une campagne doit pouvoir générer ~30 conversions/mois pour que l'algorithme apprenne. Au coût par lead attendu (40–120 $ CA), 300 $/jour supporte **6 campagnes maximum**. Plus = argent dispersé, aucune campagne n'apprend. Pas de Performance Max, Demand Gen ni LinkedIn pour l'instant (minimums trop élevés pour ce budget).
 
@@ -78,7 +78,7 @@
 | 2 | **Meta — Leads** (1 campagne consolidée, formulaire « intention élevée » + reciblage) | **80** | Créer la demande avec tes réalisations en visuel |
 | 3 | **Google Search — Mariage & privé haut de gamme** | **60** | Décor (899 / 1 449 / 1 899 $), chapiteaux, photobooth |
 | 4 | **ChatGPT Ads — Test** (Québec, 3 groupes : Fêtes corpo, gala/activation, mariage) | **30** | Tester tôt, avant les concurrents |
-| 5 | **Microsoft Ads** (import Google + ciblage profils LinkedIn : RH, adjoint(e)s, marketing) | **20** | Bing + Copilot, clics 20–40 % moins chers |
+| 5 | **Microsoft Ads** (import Google : Corporatif 14 $, Mariage 4 $, Marque 2 $ + ajustements profils LinkedIn : RH, adjoint(e)s, marketing) | **20** | Bing + Copilot, clics 20–40 % moins chers |
 | 6 | **Google Search — Marque** (Evenox + fautes, exclure « Evenko ») | **10** | Protéger ton nom |
 
 ### Bascule saisonnière (sans créer de nouvelles campagnes)
@@ -96,19 +96,20 @@ Mariages au Québec : ~22 700 en 2025, **54 % entre juillet et octobre** (ISQ).
 | Indicateur | Cible |
 |---|---|
 | Coût par lead (tous) | 40–90 $ |
-| % leads qualifiés (budget ≥ 1 000 $, date dispo, zone) | ≥ 40 % |
+| % leads qualifiés (routes A et B du formulaire : budget ≥ 1 000 $, ou ≥ 600 $ pour un mariage ou un événement privé, dans la zone) | ≥ 40 % |
 | Coût par lead **qualifié** | ≤ 150 $ |
 | Taux de signature des qualifiés | ≥ 25 % |
 | Panier moyen | ≥ 1 500 $ |
-| → ordre de grandeur mensuel | 100–150 leads, 40–60 qualifiés, **10–15 contrats** |
+| → ordre de grandeur mensuel | 120–150 leads, ≈ 60 qualifiés (9 100 $ ÷ 150 $), **≈ 15 contrats** (25 %) |
 
 ### Règles couper / augmenter
 
 - **Jour 7 :** vérifier que chaque conversion remonte (Google, Meta, OpenAI, CRM). Si non → pause et correction.
-- **Jour 14 :** groupe d'annonces avec CPL qualifié > 150 $ → couper les mots-clés/annonces perdants ; ChatGPT avec CTR < 0,5 % → réécrire les context hints.
-- **Jour 30 :** campagne sans contrat signé → réallouer son budget vers la meilleure campagne. **ChatGPT sans aucun lead qualifié → pause, les 30 $ vont au Google Corporatif.**
+- **Jour 14 :** groupe d'annonces avec CPL qualifié > 150 $ → couper les mots-clés/annonces perdants ; ChatGPT avec CTR < 0,4 % sur un groupe → réécrire les titres et resserrer les context hints.
+- **Jour 30 :** campagne sans aucun lead qualifié, ou avec un coût par lead qualifié > 300 $ (2 × la cible) → réduire de 30 % et réallouer vers la meilleure campagne (les contrats signés se jugent à 60–90 jours, surtout en mariage). **ChatGPT avec moins de 2 leads qualifiés, ou un coût par lead qualifié > 2 × celui de Google Search (≈ 900 $ dépensés) → pause, les 30 $ vont au Google Corporatif.**
 - **Augmenter :** +20 %/semaine max sur une campagne dont le CPL qualifié < 100 $ et le taux de signature ≥ 25 %.
 - **Google :** passer en tCPA seulement après 30 conversions qualifiées sur 30 jours.
+- **Le total reste à 300 $/jour.** Toute hausse (y compris ChatGPT jusqu'à 60 $) est financée par la campagne qui a le pire coût par lead qualifié ce mois-là — jamais par un budget supplémentaire tant que l'objectif n'est pas atteint.
 
 ---
 
@@ -117,16 +118,26 @@ Mariages au Québec : ~22 700 en 2025, **54 % entre juillet et octobre** (ISQ).
 **Semaine 0 — avant toute hausse de budget (3–5 jours)**
 1. Corriger « Learn more », « Soumision », nom de l'annonceur Google.
 2. Bannière de consentement Loi 25 + Consent Mode v2 + pixels (Google, Meta, Microsoft UET, OpenAI) conditionnés au consentement.
-3. Formulaire multi-étapes qualifiant + événement « lead_qualifié » distinct de « lead_tous ».
+3. Formulaire multi-étapes qualifiant + événement `lead_qualifie` distinct de `lead_tous` (mêmes noms dans GA4, Google Ads et Microsoft ; `Lead` chez Meta, `lead_created` chez OpenAI).
 4. Pages d'atterrissage /corporatif et /mariage (textes prêts dans `operations/`).
 5. Décider la politique de livraison unique.
 6. Courriel @evenox.ca, Page Facebook Entreprise.
 
 **Semaine 1 :** lancer Google Corporatif + Marque + Meta. Créer le compte ads.openai.com (vérification d'entreprise).
 **Semaine 2 :** ajouter Google Mariage, Microsoft (import), ChatGPT Ads.
-**En continu :** rappel en < 5 minutes sur chaque lead (la 1re entreprise qui répond gagne jusqu'à 50 % des réservations), plan GEO 30 jours, avis Google (objectif 150+).
+**En continu :** rappel en < 5 minutes sur chaque lead (la 1re entreprise qui répond gagne jusqu'à 50 % des réservations), plan GEO 30 jours, avis Google (de 52 à 80+ en 30 jours, 120+ en 90 jours : `operations/geo-chatgpt.md`).
 
 ---
+
+## 5 bis. Tes décisions avant le lancement (rien ne part sans elles)
+
+1. **Politique de livraison unique** (recommandé : livraison, installation et démontage inclus dans les forfaits ≥ 1 195 $, rayon 40 km). Les lignes `[LIVRAISON]` des documents en dépendent.
+2. **Remplacer « [N] avis Google »** dans les annonces par ton vrai nombre d'avis (sinon le texte « [N] » partirait tel quel). Confirmer la note 4,8/5 sur ta fiche Google.
+3. **Un seul chiffre d'événements** : 500+ ou 1 000+, partout.
+4. **Permission écrite de RBC, PwC, Desjardins** pour les nommer dans les pubs — sinon on retire ce titre.
+5. **Promesses à confirmer** : soumission en 24 h, rappel en 15 min, net 30, cabine vidéo 360 (599 $ ou 799 $), livraison boutique offerte dès 200 $.
+6. **Pages à créer ou groupe à mettre en pause** : /evenement-prive, /soumission, /realisations.
+7. **Forfaits décor pour les 40/50 ans** : oui ou non (sinon le groupe « Événement privé » est mis en pause).
 
 ## 6. Les fichiers prêts à déployer
 

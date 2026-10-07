@@ -1,7 +1,7 @@
 # Meta Ads : campagne Leads Evenox (Facebook + Instagram)
 
 > Toute la copie est en français québécois, conforme à la Loi 96. Le vouvoiement s'applique partout. On dit « soumission » et « haut de gamme ».
-> Les éléments entre crochets `[N]` sont des **placeholders à remplacer** avant la mise en ligne. `[N] avis Google` désigne le nombre réel d'avis Google, à vérifier.
+> Les éléments entre crochets `[N]` sont des **placeholders à remplacer** avant la mise en ligne. `[N] avis Google` désigne le nombre réel d'avis Google, à vérifier. La note « 4,8/5 » doit aussi être vérifiée sur la fiche Google (le site affiche parfois 4,9).
 > **Prix et livraison (vérifiés) :** les forfaits mariage sont des forfaits **déco** à 899 $ / 1 449 $ / 1 899 $ (Mariage Signature). Les montants de 599 $ et 999 $ sont des forfaits de **cabine photo**. Ne jamais écrire « livraison incluse » ni « installation incluse » : le site est contradictoire (la page /livraison/ indique 100 $ pour les 10 premiers km, puis 7 $/km, et 50 $/h d'installation). Il faut écrire « par notre équipe » ou « clé en main ». **Le client doit harmoniser ces informations sur le site.**
 
 ## 1. Structure
@@ -13,7 +13,7 @@
 | Optimisation | « Prospects ». Passer à **« Prospects de conversion » (Conversion leads)** une fois que l'intégration CRM et la Conversions API renvoient les étapes « soumission qualifiée » (environ 200 prospects/mois requis ; sinon rester sur « Prospects ») |
 | Stratégie d'enchère | Volume le plus élevé pendant 14 jours, puis **plafond de coût par résultat** ≈ CPL observé x 1,2 si la qualité baisse |
 | Ensembles de publicités | 2 : **A. Prospection Advantage+** et **B. Reciblage** (voir ci-dessous) |
-| Calendrier | Diffusion continue. Pondération créative **corporatif ≈ 70 % jusqu'au 10 décembre**, puis mariage ≈ 70 % du 26 décembre à mars (saison des réservations de mariage) |
+| Calendrier | Diffusion continue. Pondération créative **corporatif ≈ 70 % jusqu'au 15 décembre**, puis mariage ≈ 70 % du 16 décembre à mai (fiançailles des Fêtes et réservations de mariage), comme la bascule saisonnière de COMPTE-RENDU.md |
 
 Répartition indicative (CBO) : environ 80 % pour la prospection et environ 20 % pour le reciblage. Si Meta sous-alimente le reciblage, ajouter une **dépense minimale de 12 $/jour** sur l'ensemble B.
 
@@ -69,12 +69,13 @@ Répartition indicative (CBO) : environ 80 % pour la prospection et environ 20 %
    - Autre
 3. **Date prévue de l'événement** (champ date). Si la date n'est pas connue, choisir un mois approximatif.
 4. **Nombre d'invités** (choix multiples) : moins de 30 · 30 à 74 · 75 à 150 · plus de 150
-5. **Budget prévu pour la location et l'installation** (choix multiples)
+5. **Budget prévu pour la location et l'installation** (choix multiples, mêmes fourchettes que le formulaire du site, `operations/formulaire-qualification.md`)
    - Moins de 600 $
-   - 600 $ à 1 199 $
-   - 1 200 $ à 2 499 $
-   - 2 500 $ à 5 000 $
-   - Plus de 5 000 $
+   - 600 $ à 999 $
+   - 1 000 $ à 2 499 $
+   - 2 500 $ à 4 999 $
+   - 5 000 $ et plus
+   - Je ne sais pas encore
 6. **Ville de l'événement** (choix multiples) : Montréal · Laval · Rive-Nord (Sainte-Thérèse, Blainville, Mirabel, Saint-Eustache, Terrebonne…) · Rive-Sud / Longueuil · Autre
 7. **Nom de l'entreprise** (réponse courte, facultative). La logique conditionnelle l'affiche seulement si la réponse à Q1 est « Mon entreprise ».
 8. **Champs préremplis :** prénom, nom, courriel, téléphone. Pour les entreprises, ajouter le **courriel professionnel** et le **titre du poste**.
@@ -94,11 +95,13 @@ Case de consentement facultative : « J'accepte de recevoir des idées et offres
 
 | Statut | Critère | Traitement |
 |---|---|---|
-| **A, chaud** | Entreprise + budget de 1 200 $ et plus, **ou** mariage + budget de 600 $ et plus, **et** date à moins de 120 jours | Appel en moins de 2 h ouvrables |
-| **B** | Budget de 600 $ à 1 199 $ (privé) ou date lointaine | Courriel + appel en moins de 24 h |
-| **C, filtré** | Budget de moins de 600 $ ou ville « Autre » | Courriel automatique poli qui oriente vers les forfaits ; aucun appel |
+| **A, chaud** | Budget de 2 500 $ et plus, **ou** entreprise avec un budget de 1 000 $ et plus (ou « Je ne sais pas encore ») | Appel en moins de 15 minutes (heures d'ouverture), comme la route A du site |
+| **B** | Privé ou mariage avec un budget de 600 $ à 2 499 $ (ou « Je ne sais pas encore ») | Soumission écrite en moins de 24 h + appel le jour même |
+| **C, filtré** | Budget de moins de 600 $, entreprise avec un budget de moins de 1 000 $, ou ville « Autre » avec un budget de moins de 2 500 $ | Courriel automatique poli qui oriente vers la boutique ; aucun appel |
 
-- Renvoyer les statuts à Meta par **Conversions API (CRM)** : `Lead` → `QualifiedLead` (A ou B) → `Purchase` (contrat signé, avec la valeur).
+Ces règles reprennent les routes A, B et C (+ D hors zone) du formulaire du site, pour qu'un « lead qualifié » ait la même définition sur toutes les plateformes.
+
+- Renvoyer les statuts à Meta par **Conversions API (CRM)** : `lead_qualifie` (A ou B) puis `depot_paye` (dépôt payé, avec la valeur), les mêmes noms d'étapes que dans `operations/tracking-setup.md` (section 4).
 
 ## 3. Mesure
 
@@ -116,7 +119,7 @@ Case de consentement facultative : « J'accepte de recevoir des idées et offres
 > Formats : 9:16 pour Reels et Stories, 4:5 pour le fil. Ajouter des sous-titres français incrustés, parce que la vidéo est le plus souvent regardée sans son. Logo discret en fin de vidéo.
 
 ### Concept 1 : « Le party des Fêtes réglé » (corporatif, T4)
-- **Texte principal :** Votre party des Fêtes, sans courir les fournisseurs. Mobilier lounge, décor, cabine photo et jeux géants : notre équipe livre, installe et démonte. Forfaits corporatifs dès 1 195 $, facturation net 30. Les dates de décembre partent vite.
+- **Texte principal :** Votre party des Fêtes, sans courir les fournisseurs. Mobilier de salon, décor, cabine photo et jeux géants : notre équipe livre, installe et démonte. Forfaits corporatifs dès 1 195 $, facturation net 30. Les dates de décembre partent vite.
 - **Titre :** Party des Fêtes clé en main
 - **Description :** Dès 1 195 $ · net 30
 - **Bouton :** Obtenir une soumission
@@ -134,16 +137,16 @@ Case de consentement facultative : « J'accepte de recevoir des idées et offres
 - **Titre :** Forfait Gala dès 2 495 $
 - **Description :** 75 à 150 invités
 - **Bouton :** Obtenir une soumission
-- **Brief visuel :** Carrousel de 5 cartes : entrée avec lettres lumineuses, tables dressées, salon lounge, cabine photo 360 en action, photo de groupe. Chaque carte porte une légende courte.
+- **Brief visuel :** Carrousel de 5 cartes : entrée avec lettres lumineuses, tables dressées, coin salon, cabine photo 360 en action, photo de groupe. Chaque carte porte une légende courte.
 
-### Concept 4 : « Cabine photo 360 brandée » (corporatif et activation)
+### Concept 4 : « Cabine photo 360 à vos couleurs » (corporatif et activation)
 - **Texte principal :** Vos invités repartent avec une vidéo 360 à vos couleurs, prête à partager. Cabine photo 360 avec préposé, habillage personnalisé et partage instantané, pour vos lancements, galas et 5 à 7.
 - **Titre :** Cabine photo 360 à vos couleurs
 - **Description :** Avec préposé
 - **Bouton :** Obtenir une soumission
-- **Brief visuel :** Reel vertical tourné **depuis la plateforme 360** lors d'un vrai événement corporatif. Montrer d'abord le logo du client fictif sur l'habillage. Obtenir l'autorisation des personnes filmées.
+- **Brief visuel :** Reel vertical tourné **depuis la plateforme 360** lors d'un vrai événement corporatif. Montrer d'abord l'habillage au logo du client (autorisation écrite du client requise ; sinon, habillage au logo Evenox). Ne jamais présenter un faux client. Obtenir l'autorisation des personnes filmées.
 
-### Concept 5 : « Mariage clé en main » (mariage, de janvier à mars)
+### Concept 5 : « Mariage clé en main » (mariage, de mi-décembre à mai)
 - **Texte principal :** Arche florale, lettres lumineuses, chaises Chiavari et éclairage d'ambiance : votre décor de mariage est livré, installé avant l'arrivée des invités, puis repris le lendemain. Forfaits déco mariage à 899 $, 1 449 $ et 1 899 $ (Mariage Signature), ou sur mesure.
 - **Titre :** Votre décor de mariage, installé
 - **Description :** Décor dès 899 $
@@ -166,7 +169,7 @@ Case de consentement facultative : « J'accepte de recevoir des idées et offres
 
 ### Concept 8 : « Dernières dates » (urgence, à adapter selon la saison)
 - **Texte principal (T4) :** Il reste quelques vendredis et samedis en décembre pour les party de bureau. Réservez votre date dès maintenant : on s'occupe du mobilier, du décor, de la cabine photo et des jeux.
-- **Texte principal (de janvier à mars) :** Les samedis de juin à septembre 2027 se réservent dès maintenant. Bloquez votre date de mariage avec Evenox : décor, chapiteau et mobilier livrés et montés.
+- **Texte principal (de mi-décembre à mai) :** Les samedis de juillet à octobre 2027 se réservent dès maintenant. Bloquez votre date de mariage avec Evenox : décor, chapiteau et mobilier livrés et montés.
 - **Titre :** Dates de décembre limitées / Été 2027 : dates limitées
 - **Description :** Réservez votre date
 - **Bouton :** Obtenir une soumission

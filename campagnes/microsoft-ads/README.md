@@ -26,17 +26,17 @@ Total : 20 $/jour. Ne pas dépasser avant 60 jours de données.
    - **Ciblage géographique :** importer. Vérifier ensuite l'option « Personnes **dans** vos zones ciblées », car l'import peut basculer vers « dans ou intéressées par ».
    - **Mots clés négatifs et listes partagées :** importer.
    - **Annonces RSA, liens annexes, accroches et extraits :** importer.
-   - **Pages de destination :** importer. Ajouter le suffixe d'URL `utm_source=bing&utm_medium=cpc&utm_campaign={CampaignName}`. Activer aussi l'auto-tagging MSCLKID.
+   - **Pages de destination :** importer. Ajouter un suffixe d'URL **par campagne**, selon la convention de `operations/tracking-setup.md` (section 7) : `utm_source=bing&utm_medium=cpc&utm_campaign=msft_corpo` (Corporatif), `msft_mariage` (Mariage) ou `msft_marque` (Marque), plus `&utm_term={keyword}`. Ne pas utiliser `{CampaignName}` : il produirait « SRCH | Corporatif | FR », avec espaces et barres verticales. Activer aussi l'auto-tagging MSCLKID.
    - **Import planifié :** **désactivé**. Les budgets et les ajustements LinkedIn sont propres à Microsoft et seraient écrasés.
 3. **Langue :** vérifier que chaque groupe d'annonces est en **français**. Microsoft fixe la langue au niveau de l'annonce ou du groupe. Une annonce marquée anglais ne sert pas aux utilisateurs dont la langue est le français.
 4. **Réseau :** choisir « Réseau de recherche Bing, AOL et Yahoo : **réseau détenu et exploité uniquement** » pour les 30 premiers jours. Exclure les **partenaires de syndication** et le **Microsoft Audience Network**, qui sont activés par défaut à l'import. Les réévaluer après 30 jours.
 5. **Suivi :**
    - Installer la **balise UET** avec le mode de consentement : `uetq.push('consent','default',{ad_storage:'denied'})`, puis passer à `granted` après le consentement, conformément à la Loi 25.
-   - Créer les objectifs suivants :
-     - Formulaire de soumission (événement `soumission_envoyee`)
-     - Clic sur le téléphone
-     - Appel de plus de 60 s, via le suivi d'appels si disponible
-   - Importer les conversions hors ligne (MSCLKID) pour les soumissions qualifiées.
+   - Créer les objectifs suivants (mêmes noms que dans `operations/tracking-setup.md`, section 5) :
+     - `lead_qualifie` (formulaire, routes A et B) : **principal**
+     - `lead_tous` et `click_tel` : secondaires
+     - Appel de 60 s et plus, via le suivi d'appels si disponible : secondaire
+   - Importer les conversions hors ligne `depot_paye` (MSCLKID) chaque semaine.
 
 ## 3. Ciblage par profil LinkedIn (ajustements d'enchères)
 
@@ -80,11 +80,12 @@ S'applique aux campagnes **Corporatif** (principal) et **Marque**. Ne s'applique
 
 ## 4. Copilot
 
-- Les annonces Microsoft peuvent s'afficher **dans les réponses de Microsoft Copilot** (Bing Chat et Edge). Ces annonces passent par les mêmes enchères CPC que les campagnes Search importées : il n'y a ni campagne ni ciblage distinct. Microsoft rapporte un CTR de +73 % et une conversion de +16 % sur Copilot (étude Microsoft, nov. 2024 à mai 2025).
-- Au Canada, la diffusion dans Copilot est encore **en pilote**. Les impressions Copilot peuvent être rares ou absentes. Aucune action n'est requise, mais :
+- Les annonces Microsoft peuvent s'afficher **dans les réponses de Microsoft Copilot** (Bing Chat et Edge). Ces annonces passent par les mêmes enchères CPC que les campagnes Search importées : il n'y a ni campagne ni ciblage distinct. Microsoft rapporte un CTR de +73 % et une conversion de +16 % sur Copilot (chiffres de Microsoft, nov. 2024 à mai 2025, non vérifiés de façon indépendante).
+- Au Canada, la diffusion dans Copilot est **active** : toutes les campagnes admissibles y sont inscrites automatiquement, sans possibilité de s'en retirer (Microsoft Learn, voir recherche/factcheck.md n° 8a). Microsoft ne fournit pas de rapport Copilot distinct. À faire :
+  - **ajouter une composante de logo** (ou accepter le logo automatique de l'entreprise) : sans logo, les annonces Search ne sont pas admissibles à Copilot ;
   - les RSA doivent avoir des titres autonomes et des liens annexes complets, car Copilot réutilise les composants d'annonce ;
   - les pages de destination doivent être indexées dans **Bing Webmaster Tools** (IndexNow), et l'entreprise inscrite dans **Bing Places**. Copilot et ChatGPT s'appuient sur l'index Bing ;
-  - surveiller dans les rapports le segment « Réseau » ou « Placement » pour isoler le trafic Copilot quand il apparaît.
+  - juger Copilot avec les résultats globaux de la campagne (leads qualifiés dans le CRM) : les segments « Réseau » ou « Placement » ne l'isolent pas de façon fiable.
 - N'activez pas « Performance Max » de Microsoft pour l'instant. À 20 $/jour, le budget est trop faible pour l'apprentissage.
 
 ## 5. Règles d'optimisation

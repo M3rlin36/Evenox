@@ -9,11 +9,11 @@
 
 | Élément | Valeur |
 |---|---|
-| URL (slug) | `/corporatif-cle-en-main/` |
+| URL (slug) | Page mère `/corporatif/` + 6 sous-pages, **les mêmes URL que les annonces** (voir campagnes/google-ads/README.md) : `/corporatif/party-des-fetes/`, `/corporatif/5-a-7/`, `/corporatif/gala/`, `/corporatif/team-building/`, `/corporatif/photobooth-360/`, `/corporatif/activation-de-marque/`. Une seule page modèle, dupliquée ; seuls le H1, le sous-titre et l'image du hero changent (voir les variantes ci-dessous) |
 | Indexation | **noindex** (page réservée aux annonces, pour ne pas concurrencer `/party-bureau-corporatif/` et `/nos-forfaits-tout-inclus/`). Dans Yoast : Avancé → « Autoriser les moteurs de recherche à afficher cette page » = Non. |
 | Gabarit Divi | Page vierge (« Blank Page ») : **sans menu principal ni pied de page complet**. Seuls liens sortants : téléphone, texto, politique de confidentialité. |
 | Balise title | `Party de bureau et événement corporatif clé en main dès 1 195 $ \| Évenox` |
-| Meta description | `Décor, jeux géants, photobooth avec préposé : un seul fournisseur, une seule facture. Rive-Nord, Laval, Montréal. Bon de commande et net 30 sur approbation.` |
+| Meta description | `Décor, jeux géants, cabine photo avec préposé : un seul fournisseur, une seule facture. Rive-Nord, Laval, Montréal. Bon de commande et net 30 sur approbation.` |
 | Langue | `fr-CA` (voir correctifs-urgents.md) |
 | Vitesse | Moins de 3 s sur mobile. Images WebP de 200 Ko maximum et chargement différé (lazy) sous la ligne de flottaison. Pas de vidéo en lecture automatique dans le haut de la page. |
 | Barre collante mobile | Trois boutons fixés au bas de l'écran : **Appeler** (`tel:+15145591893`, ou numéro de suivi d'appels) · **Texto** (`sms:+15145591893`) · **Soumission** (ancre `#soumission`) |
@@ -28,11 +28,16 @@
 | `{{TEL}}` | 514-559-1893, ou le numéro de suivi d'appels de la campagne (voir tracking-setup.md) | — |
 | `{{COURRIEL}}` | info@evenox.ca (après la migration hors Gmail) | correctifs-urgents.md |
 
-**Variantes de titre selon le groupe d'annonces** (paramètre `?v=` dans l'URL finale, remplacé par un petit script ou par un module conditionnel de Divi) :
-- `?v=fetes` → « Votre party des Fêtes clé en main, dès 1 195 $ »
-- `?v=5a7` → « Votre 5 à 7 d'équipe clé en main, dès 1 195 $ »
-- `?v=gala` → « Votre gala corporatif clé en main, dès 2 495 $ »
-- sans paramètre → titre par défaut (section 1)
+**H1 de chaque sous-page** (le reste de la page est identique) :
+- `/corporatif/party-des-fetes/` → « Votre party des Fêtes clé en main, dès 1 195 $ »
+- `/corporatif/5-a-7/` → « Votre 5 à 7 d'équipe clé en main, dès 1 195 $ »
+- `/corporatif/gala/` → « Votre gala corporatif clé en main, dès 2 495 $ »
+- `/corporatif/team-building/` → « Jeux géants et activité d'équipe livrés au bureau, dès 1 195 $ »
+- `/corporatif/photobooth-360/` → « Cabine photo 360 avec préposé, à l'image de votre entreprise »
+- `/corporatif/activation-de-marque/` → « Lancement ou activation de marque : décor, mobilier et cabine 360, un seul fournisseur »
+- `/corporatif/` → titre par défaut (section 1)
+
+Le paramètre `?v=` reste disponible pour les tests A/B de titres (champ caché `variante_hero`).
 
 ---
 
@@ -47,7 +52,7 @@ RIVE-NORD · LAVAL · MONTRÉAL — ÉVÉNEMENTS D'ENTREPRISE
 Votre party de bureau clé en main, dès 1 195 $
 
 **Sous-titre :**
-Décor, jeux géants, popcorn et photobooth avec préposé. Un seul fournisseur, un seul prix, une seule facture. Nous installons pendant les heures de bureau et nous repartons avec tout.
+Décor, jeux géants, popcorn et cabine photo avec préposé. Un seul fournisseur, un seul prix, une seule facture. Nous installons pendant les heures de bureau et nous repartons avec tout.
 
 **Trois puces de réassurance (module Blurb avec icônes) :**
 - ✓ Prix affiché, sans surprise sur la facture
@@ -82,7 +87,7 @@ Décor, jeux géants, popcorn et photobooth avec préposé. Un seul fournisseur,
 
 **H2 :** Un party réussi, sans gérer cinq fournisseurs
 
-Vous avez un budget, une date et une salle. Ce que vous n'avez pas, c'est le temps d'appeler un fournisseur pour le décor, un autre pour les jeux et un troisième pour le photobooth, puis d'attendre des rappels qui ne viennent pas.
+Vous avez un budget, une date et une salle. Ce que vous n'avez pas, c'est le temps d'appeler un fournisseur pour le décor, un autre pour les jeux et un troisième pour la cabine photo, puis d'attendre des rappels qui ne viennent pas.
 
 Chez Évenox, vous choisissez un forfait. Nous livrons, installons, animons et démontons. Vous recevez une seule facture, conforme pour votre comptabilité.
 
@@ -128,10 +133,10 @@ Chez Évenox, vous choisissez un forfait. Nous livrons, installons, animons et d
 - **Sous-titre :** Gala, remise de prix ou party de Noël, de 75 à 150 personnes
 - Inclus :
   - Tout le forfait Party de bureau
-  - Photobooth haut de gamme avec préposé, photos illimitées
+  - Cabine photo haut de gamme avec préposé, photos illimitées
   - Galerie photo livrée le lendemain
   - Facturation nette 30 jours
-  - Heures supplémentaires de photobooth en option
+  - Heures supplémentaires de cabine photo en option
 - **Bouton :** `Choisir le Gala Signature` → `#soumission?forfait=gala`
 
 **Sous les 3 colonnes (texte centré) :**
@@ -200,7 +205,7 @@ Gabarit de mise en page :
 | 1 | Vue large d'une cafétéria ou d'une salle de bureau transformée, lettres lumineuses allumées, éclairage tamisé | Party de bureau, [Ville] — 80 employés |
 | 2 | Mur floral avec un groupe de 6 à 8 collègues qui posent (autorisation de publication obtenue) | Mur floral pour la photo d'équipe |
 | 3 | Tournoi de jeux géants en action (Connect 4, pong géant), mouvement | Mini tournoi de jeux géants |
-| 4 | Photobooth avec préposé et file d'invités souriants | Photobooth haut de gamme avec préposé |
+| 4 | Cabine photo avec préposé et file d'invités souriants | Cabine photo haut de gamme avec préposé |
 | 5 | Gros plan sur la machine à popcorn avec emballage personnalisé au logo | Popcorn à votre image |
 | 6 | Moment d'étincelles froides pendant un discours (photo prise en rafale) | Étincelles froides à la remise de prix |
 | 7 | Gala : vue d'ensemble d'une salle avec lettres et tapis rouge | Gala de reconnaissance, 140 invités |
@@ -237,7 +242,7 @@ Oui, c'est notre spécialité. Nous coordonnons le quai de livraison, l'ascenseu
 La Rive-Nord (Sainte-Thérèse, Blainville, Boisbriand, Mirabel, Saint-Jérôme, Terrebonne…), Laval et Montréal. La livraison coûte 100 $ jusqu'à 10 km de notre entrepôt de Sainte-Thérèse, puis 7 $/km jusqu'à 40 km. Pour le centre-ville de Montréal, nous préparons un prix sur mesure.
 
 **6. Peut-on personnaliser les forfaits avec notre logo et nos couleurs?**
-Oui. Lettres lumineuses avec le nom de l'entreprise, emballage de popcorn et gabarit de photo à votre image, choix des jeux, ajouts (machine à barbe à papa, vidéobooth 360, heures de photobooth supplémentaires). Les forfaits sont un point de départ.
+Oui. Lettres lumineuses avec le nom de l'entreprise, emballage de popcorn et gabarit de photo à votre image, choix des jeux, ajouts (machine à barbe à papa, cabine vidéo 360, heures de cabine photo supplémentaires). Les forfaits sont un point de départ.
 
 **7. Et si un équipement brise ou si quelque chose ne fonctionne pas?**
 Tout est installé et testé avant l'arrivée de vos invités. Si un équipement brise pendant l'événement, nous le remplaçons ou nous remboursons la portion. Votre conseiller reste joignable par cellulaire pendant toute la soirée.
@@ -252,7 +257,7 @@ Le report est gratuit tant que le matériel n'est pas chargé. En cas d'annulati
 **Module Divi :** Bandeau de texte sur fond clair, centré.
 
 **Texte :**
-**Service clé en main corporatif : commande minimale de 1 000 $ avant taxes.** Cela comprend la livraison, l'installation, l'animation (selon le forfait) et le démontage, à Laval, à Montréal et sur la Rive-Nord.
+**Service clé en main corporatif : commande minimale de 1 000 $ avant taxes.** Cela comprend l'installation, l'animation (selon le forfait) et le démontage, à Laval, à Montréal et sur la Rive-Nord. **[LIVRAISON]** Ajouter « la livraison » seulement si la politique recommandée (livraison incluse dans un rayon de 40 km) est adoptée ; sinon, écrire « livraison selon la distance ».
 Vous avez seulement besoin de quelques tables, chaises ou jeux? Notre **boutique en ligne** est ouverte 24 h sur 24, et le ramassage à Sainte-Thérèse est gratuit. → `Aller à la boutique` (lien vers evenox.booqableshop.com avec `?utm_source=lp-corpo&utm_medium=referral&utm_campaign=minimum`)
 
 > Le minimum de 1 000 $ est une **décision à valider** par le propriétaire. Il vise à éliminer les petites commandes qui coûtent du temps de vente. Le forfait d'entrée (1 195 $) est au-dessus du minimum.
@@ -293,6 +298,6 @@ Vous préférez parler à quelqu'un? **{{TEL}}** (lundi au vendredi de 9 h à 18
 | « Premium » | « haut de gamme » | Recommandation de l'OQLF (on peut garder les noms de forfaits existants) |
 | « Demande de Soumision » | « Recevoir ma proposition » | Coquille et appel à l'action peu engageant |
 | « Tables cheap = événement cheap » | « Un décor à la hauteur de votre équipe » | Ton haut de gamme |
-| Mentions d'alcool (verre, bar, shooters, champagne) | « moment de toast », « coin cocktail » (sans alcool explicite) | Règles publicitaires d'OpenAI et prudence avec Meta |
+| Mentions d'alcool (verre, bar, cocktail, toast, shooters, champagne) | « moment de reconnaissance », « coin salon », « remise de prix » (aucune référence à l'alcool) | Règles publicitaires d'OpenAI (alcool interdit dans l'annonce **et** la page d'atterrissage au Canada) et prudence avec Meta |
 | Jeux gonflables pour enfants (Pat Patrouille, princesses…) | Ne pas les montrer | Brouille le positionnement corporatif |
 | Compteurs animés « 0+ » | Chiffres en texte statique | Les robots d'exploration lisent « 0+ » |

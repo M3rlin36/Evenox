@@ -34,14 +34,14 @@
 ### Attribution
 
 Clic sur 7 jours et vue sur 0 jour au départ. Les rapports sont en dernier contact.
-Comparer avec le CRM (UTM `utm_source=chatgpt&utm_medium=cpc&utm_campaign=cgpt_leads&utm_content={ad_group}`).
+Comparer avec le CRM. UTM selon la convention de `operations/tracking-setup.md` (section 7) : `utm_source=chatgpt&utm_medium=cpc&utm_campaign=chatgpt_corpo_fetes` (groupe A), `chatgpt_corpo_gala` (groupe B) ou `chatgpt_mariage` (groupe C), et `utm_content=cgpt_v1`, `cgpt_v2` ou `cgpt_v3` selon la variante.
 
 ## 2. Groupes d'annonces et indices de contexte
 
 Les indices de contexte (context hints) décrivent, en langage naturel, des conversations où l'annonce est pertinente. Ce ne sont pas des mots clés et ils ne peuvent imposer ni géographie ni exclusions. Ils sont courts, avec **un seul thème par indice**.
 
 ### Groupe A : Corporatif Fêtes / 5 à 7
-**Page de destination :** `https://evenox.ca/corporatif/party-des-fetes` (variante 3 : `/corporatif/5-a-7`). Pages à créer (TO-CREATE).
+**Page de destination :** `https://evenox.ca/corporatif/party-des-fetes` (variante 3 : `/corporatif/5-a-7`). Pages à créer (TO-CREATE), gabarit `operations/landing-corporatif.md`.
 
 1. Organiser un party des Fêtes pour les employés
 2. Idées de party de bureau pour 50 à 150 personnes
@@ -76,7 +76,7 @@ Les indices de contexte (context hints) décrivent, en langage naturel, des conv
 12. Location de lettres lumineuses géantes pour un événement d'entreprise
 
 ### Groupe C : Mariage haut de gamme
-**Page de destination :** `https://evenox.ca/mariage` (variante 3 : `/mariage/chapiteau`). Pages à créer (TO-CREATE).
+**Page de destination :** `https://evenox.ca/mariage/decoration` (variante 3 : `/mariage/chapiteau`). Pages à créer (TO-CREATE), gabarit `operations/landing-mariage.md`.
 
 1. Planifier la décoration de mon mariage
 2. Location de décor de mariage à Laval
@@ -84,13 +84,12 @@ Les indices de contexte (context hints) décrivent, en langage naturel, des conv
 4. Mariage en plein air dans les Laurentides
 5. Arche florale pour une cérémonie de mariage
 6. Lettres lumineuses géantes pour un mariage
-7. Chaises Chiavari et mobilier lounge pour une réception
+7. Chaises Chiavari et mobilier de salon pour une réception
 8. Combien coûte la location de décor pour un mariage de 120 invités
 9. Cabine photo pour un mariage
 10. Liste de fournisseurs pour un mariage au Québec
 11. Mariage clé en main sur la Rive-Nord
 12. Idées de décor de mariage chic et épuré
-13. Réception d'anniversaire de 50 ans pour adultes
 
 > **Ne pas** ajouter d'indices sur les fêtes d'enfants, les jeux gonflables, le « pas cher » ou le bricolage. Il n'existe pas de négatifs : la seule façon de filtrer est de ne pas écrire ces indices.
 
@@ -100,12 +99,12 @@ Les indices de contexte (context hints) décrivent, en langage naturel, des conv
 |---|---|---|---|---|---|
 | A | 1 | Party des Fêtes clé en main à Laval et Montréal | 47 | Mobilier, déco, cabine photo et jeux livrés et montés. Forfaits dès 1 195 $, net 30. | 84 |
 | A | 2 | Votre party de bureau réglé en un seul appel | 44 | Livraison, installation et démontage par notre équipe. Décembre se remplit : réservez tôt. | 90 |
-| A | 3 | 5 à 7 d'équipe clé en main dès 1 195 $ | 38 | Mobilier lounge et déco installés par notre équipe. Soumission en moins de 24 h. | 80 |
+| A | 3 | 5 à 7 d'équipe clé en main dès 1 195 $ | 38 | Jeux géants et lettres lumineuses installés par notre équipe. Soumission en moins de 24 h. | 90 |
 | B | 1 | Gala d'entreprise clé en main dès 2 495 $ | 41 | Décor, mobilier et cabine photo avec préposé pour 75 à 150 invités. Net 30. | 75 |
-| B | 2 | Activation de marque livrée, montée, démontée | 45 | Décor à vos couleurs, mobilier, son et cabine photo 360 brandée. Soumission en 24 h. | 84 |
-| B | 3 | Plus de 1 000 événements corporatifs réalisés | 45 | Un seul fournisseur pour votre gala ou lancement à Montréal, Laval et Rive-Nord. | 80 |
+| B | 2 | Activation de marque livrée, montée, démontée | 45 | Décor à vos couleurs, mobilier, son et cabine 360 à votre image. Soumission en 24 h. | 84 |
+| B | 3 | Plus de 1 000 événements réalisés depuis 2022 | 45 | Un seul fournisseur pour votre gala ou lancement à Montréal, Laval et Rive-Nord. | 80 |
 | C | 1 | Déco de mariage haut de gamme clé en main | 41 | Arches, lettres lumineuses, mobilier et chapiteaux livrés et montés. Décor dès 899 $. | 85 |
-| C | 2 | Votre mariage 2027 monté sans stress | 36 | Livraison, installation et démontage par notre équipe. Les samedis d'été partent vite. | 86 |
+| C | 2 | Votre mariage 2027 monté sans stress | 36 | Livraison, installation et démontage par notre équipe. Les samedis d'été et d'automne partent vite. | 99 |
 | C | 3 | Chapiteau et décor de mariage sur la Rive-Nord | 46 | Chapiteau, éclairage, chaises Chiavari et arche florale installés par notre équipe. | 83 |
 
 Le décompte des caractères provient du script de validation. `ads.csv` fait foi en cas d'écart.

@@ -212,7 +212,7 @@ Fiche Google Business : lien du site web = `https://evenox.ca/?utm_source=gbp&ut
 |---|---|---|---|
 | 1 | Nouveau | Formulaire, appel, texto ou lead Meta reçu | Texto et courriel J0 ; alerte à la personne de garde |
 | 2 | Contacté | Conversation de vive voix ou échange écrit à double sens | — |
-| 3 | Qualifié | Appel de 6 étapes fait ; budget ≥ 1 000 $ confirmé ; date libre | Tâche « Proposition aujourd'hui » |
+| 3 | Qualifié | Appel de 6 étapes fait ; budget confirmé ≥ 1 000 $ (≥ 600 $ pour un mariage ou un événement privé) ; date libre | Tâche « Proposition aujourd'hui » |
 | 4 | Proposition envoyée | 3 options envoyées | Cadence J1/J3/J5-7/J14/J30 |
 | 5 | Négociation | La personne répond, pose des questions ou demande un ajustement | — |
 | 6 | **Dépôt payé (gagné)** | Dépôt de 20 % reçu ou bon de commande signé | Ligne d'import hors ligne (Google, Microsoft), CAPI Meta et OpenAI (`order_created`) |
@@ -242,18 +242,18 @@ Validation des données : listes déroulantes pour `etape`, `route` et `raison_p
 |---|---|---|---|
 | Dépenses | Total par plateforme (Google, Meta, Microsoft, OpenAI) | Plateformes | 2 100 $/semaine |
 | Leads (tous) | Envois de formulaire valides + appels de 60 s ou plus + leads Meta | CRM | — |
-| **Leads qualifiés (LQ)** | Leads des routes A et B + appels qualifiés | CRM | 25 ou plus par semaine |
-| % qualifiés | LQ / leads (tous) | CRM | 50 % ou plus |
-| CPL | Dépenses / leads (tous) | Calcul | 40 à 90 $ (mariage), 60 à 120 $ (corporatif) |
-| **Coût par LQ** | Dépenses / LQ | Calcul | Moins de 120 $ |
+| **Leads qualifiés (LQ)** | Leads des routes A et B + appels qualifiés | CRM | 15 ou plus par semaine (≈ 60 par mois) |
+| % qualifiés | LQ / leads (tous) | CRM | 40 % ou plus |
+| CPL | Dépenses / leads (tous) | Calcul | 40 à 90 $ tous canaux confondus (repères : mariage 40 à 90 $, corporatif 60 à 120 $) |
+| **Coût par LQ** | Dépenses / LQ | Calcul | 150 $ ou moins |
 | Délai de réponse médian | Médiane de `delai_min`, routes A et B, heures d'ouverture | CRM | 5 minutes au maximum |
 | Taux de contact | LQ ayant atteint « Contacté » en moins de 24 h / LQ | CRM | 70 % ou plus |
 | Taux de proposition | Propositions envoyées / LQ | CRM | 80 % ou plus |
-| **Taux de conclusion** | Dépôts payés / propositions (cohorte du mois) | CRM | 20 à 25 % |
-| Dépôts payés | Nombre et valeur totale des commandes | CRM | 6 ou plus par semaine |
-| Panier moyen | Montant gagné / dépôts | CRM | 1 800 $ ou plus |
-| **CAC** | Dépenses / dépôts payés | Calcul | Moins de 600 $ |
-| **ROAS** | Montant gagné / dépenses (par cohorte de mois de création du lead) | Calcul | 3 ou plus |
+| **Taux de conclusion** | Dépôts payés / LQ (cohorte du mois) | CRM | 25 % ou plus |
+| Dépôts payés | Nombre et valeur totale des commandes | CRM | ≈ 15 par mois (3 à 4 par semaine) |
+| Panier moyen | Montant gagné / dépôts | CRM | 1 500 $ ou plus |
+| **CAC** | Dépenses / dépôts payés | Calcul | ≈ 600 $ ou moins |
+| **ROAS** | Montant gagné / dépenses (par cohorte de mois de création du lead) | Calcul | 2,5 ou plus (15 dépôts × 1 500 $ ÷ 9 100 $) |
 | Répartition par segment | LQ, dépôts et ROAS : corporatif / mariage / privé | CRM | Corporatif ≥ 50 % de la valeur |
 | Taux de conversion des pages | Leads / sessions par page d'atterrissage | GA4 | 5 % ou plus |
 | Abandon du formulaire | 1 − (envois / `form_start`), par étape | GA4 | Moins de 50 % |
@@ -262,9 +262,9 @@ Validation des données : listes déroulantes pour `etape`, `route` et `raison_p
 
 **Règles de décision hebdomadaires :**
 - Une campagne avec un coût par LQ supérieur à 2 fois la cible pendant 2 semaines (et au moins 300 $ dépensés) : réduire son budget de 30 % et vérifier les termes de recherche.
-- % qualifiés sous 35 % : ajouter des mots-clés négatifs (gratuit, pas cher, usagé, à vendre, emploi, DIY, enfant, anniversaire) et vérifier la mention de prix dans les annonces.
+- % qualifiés sous 35 % : ajouter des mots-clés négatifs (gratuit, pas cher, usagé, à vendre, emploi, DIY, enfant, anniversaire enfant ; ne pas exclure « anniversaire » seul, car le groupe « Événement privé » cible les anniversaires de 40, 50 et 60 ans) et vérifier la mention de prix dans les annonces.
 - Délai de réponse au-dessus de 15 minutes : problème de procédure, pas de publicité. Le corriger avant d'augmenter le budget.
-- ChatGPT Ads : arrêter après 60 jours si aucun lead qualifié pour au moins 1 500 $ dépensés.
+- ChatGPT Ads : appliquer les règles du jour 14 et du jour 30 de `campagnes/chatgpt-ads/campagne-chatgpt.md` (arrêt au jour 30, environ 900 $ dépensés, si moins de 2 leads qualifiés ou un coût par LQ supérieur à 2 fois celui de Google Search).
 
 ---
 

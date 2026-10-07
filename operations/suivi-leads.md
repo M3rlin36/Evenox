@@ -64,7 +64,7 @@ Variables : `{{PRENOM}}`, `{{DATE}}`, `{{VILLE}}`, `{{NB}}` (invités), `{{TYPE}
 > {{CONSEILLER}} · Évenox · {{TEL}}
 > *Vous recevez ce courriel parce que vous avez demandé une soumission. Pour ne plus recevoir de messages de notre part, répondez « désabonner ».*
 
-### 2.5 Route C (budget de moins de 1 000 $ : boutique) — courriel seulement, pas de texto
+### 2.5 Route C (budget de moins de 600 $, ou de moins de 1 000 $ pour un événement corporatif : boutique) — courriel seulement, pas de texto
 **Objet :** Votre projet du {{DATE}} : la façon la plus simple de réserver
 
 > Bonjour {{PRENOM}},
@@ -72,7 +72,7 @@ Variables : `{{PRENOM}}`, `{{DATE}}`, `{{VILLE}}`, `{{NB}}` (invités), `{{TYPE}
 > Merci pour votre demande! Pour un projet comme le vôtre, notre **boutique en ligne** est la façon la plus rapide et la plus économique de réserver :
 > - les prix et la disponibilité de votre date s'affichent en direct ;
 > - le ramassage à notre entrepôt de Sainte-Thérèse est gratuit, sans minimum ;
-> - la livraison est offerte dès 200 $ de location.
+> - la livraison est offerte dès 200 $ de location. **[À CONFIRMER : la page /livraison/ indique 100 $ pour les 10 premiers km, puis 7 $/km. Retirer cette ligne si la boutique n'offre pas la livraison gratuite dès 200 $.]**
 >
 > 👉 {{BOUTIQUE}}?utm_source=courriel&utm_medium=email&utm_campaign=route_c
 >
@@ -187,7 +187,7 @@ Arrêter la cadence dès que la personne répond, réserve ou demande d'arrêter
 1. **Valider :** « Je comprends, c'est un investissement. »
 2. **Clarifier :** « Quand vous dites trop cher, c'est par rapport à votre budget ou à une autre soumission? »
 3. Si c'est **le budget** : « Quel montant vous mettrait à l'aise? Je peux retirer [élément] et garder ce qui fait l'effet wow, par exemple les lettres lumineuses et le mur floral. Le 5 à 7 d'équipe à 1 195 $ garde l'essentiel. » (Mariage : Décor WOW à 899 $.)
-4. Si c'est **une autre soumission** : « Est-ce que la livraison, l'installation, le démontage et le préposé sont inclus dans l'autre prix? Chez nous, c'est un prix fixe : pas de frais d'installation à 50 $ de l'heure ni de surprise sur la facture. Voulez-vous qu'on compare ligne par ligne? »
+4. Si c'est **une autre soumission** : « Est-ce que la livraison, l'installation, le démontage et le préposé sont inclus dans l'autre prix? Chez nous, c'est un prix fixe : pas de frais d'installation à 50 $ de l'heure ni de surprise sur la facture. **[LIVRAISON : à dire seulement après la décision du propriétaire sur la livraison et l'installation, correctifs-urgents.md n° 1 ; sinon, préciser les frais de livraison selon la distance.]** Voulez-vous qu'on compare ligne par ligne? »
 5. **Ne jamais baisser le prix sans retirer quelque chose.** Une seule concession possible : un ajout offert (ex. 1 heure de photobooth supplémentaire) **si le dépôt est fait dans les 48 h**.
 
 ### « Je compare avec d'autres fournisseurs. »
@@ -196,7 +196,7 @@ Arrêter la cadence dès que la personne répond, réserve ou demande d'arrêter
 > 2. Le photobooth vient-il avec un préposé pendant toute la soirée?
 > 3. Que se passe-t-il si un équipement brise pendant l'événement?
 > 4. Pouvez-vous facturer par bon de commande? (corporatif)
-> Chez nous, la réponse est oui aux 4. Je vous les envoie par écrit? Et quand pensez-vous avoir fait votre choix? »
+> Chez nous, la réponse est oui aux 4 **[LIVRAISON : la question 1 dépend de la décision sur la livraison, correctifs-urgents.md n° 1]**. Je vous les envoie par écrit? Et quand pensez-vous avoir fait votre choix? »
 
 Ensuite, programmer une relance la veille de la date de décision annoncée.
 
@@ -216,10 +216,10 @@ Ensuite, programmer une relance la veille de la date de décision annoncée.
 **Critères de disqualification :** budget de moins de 600 $ pour un service avec installation · plus de 40 km et petit budget · date déjà prise (photobooth) · demande hors catalogue (traiteur, alcool, DJ seul) · seulement 10 chaises.
 
 **Au téléphone :**
-> « Merci de m'avoir expliqué votre projet. Honnêtement, pour [10 tables et chaises / un petit anniversaire], notre service clé en main serait trop pour vous. Vous paieriez une installation dont vous n'avez pas besoin. Notre boutique en ligne est faite exactement pour ça : prix affichés, ramassage gratuit à Sainte-Thérèse, et livraison offerte dès 200 $. Je vous texte le lien tout de suite. Et si votre projet grossit, vous avez mon numéro. »
+> « Merci de m'avoir expliqué votre projet. Honnêtement, pour [10 tables et chaises / un petit anniversaire], notre service clé en main serait trop pour vous. Vous paieriez une installation dont vous n'avez pas besoin. Notre boutique en ligne est faite exactement pour ça : prix affichés et ramassage gratuit à Sainte-Thérèse [et livraison offerte dès 200 $ : À CONFIRMER, voir 2.5]. Je vous texte le lien tout de suite. Et si votre projet grossit, vous avez mon numéro. »
 
 **Par texto :**
-> Merci {{PRENOM}}! Comme promis, la boutique : {{BOUTIQUE}}?utm_source=sms&utm_medium=disqualif. Ramassage gratuit à Sainte-Thérèse, livraison dès 200 $ de location. Bonne fête!
+> Merci {{PRENOM}}! Comme promis, la boutique : {{BOUTIQUE}}?utm_source=sms&utm_medium=disqualif. Ramassage gratuit à Sainte-Thérèse [, livraison dès 200 $ de location : À CONFIRMER]. Bonne fête!
 
 **Date non disponible :**
 > « Malheureusement, notre photobooth avec préposé est déjà réservé le {{DATE}}. Je peux vous offrir [le Décor WOW sans photobooth / une autre date]. Sinon, je vous recommande de réserver rapidement ailleurs : les dates partent vite. »

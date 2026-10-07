@@ -19,7 +19,7 @@ Si Editor ne reconnaît pas la liste partagée à l'import, créez-la dans **Bib
 
 | Campagne | Budget/jour | Enchères | Zones |
 |---|---|---|---|
-| SRCH \| Corporatif \| FR | 100 $ | Maximiser les conversions. **Passer en CPA cible après 30 conversions en 30 jours.** CPA cible de départ = CPA observé x 1,1 | Montréal, Laval, Longueuil, Terrebonne, Mirabel, MRC Thérèse-De Blainville (Sainte-Thérèse, Blainville, Boisbriand, Rosemère, Lorraine, Bois-des-Filion, Sainte-Anne-des-Plaines), MRC Deux-Montagnes (Saint-Eustache, Deux-Montagnes, Sainte-Marthe-sur-le-Lac, Pointe-Calumet, Saint-Joseph-du-Lac, Oka, Saint-Placide). Ciblage par présence |
+| SRCH \| Corporatif \| FR | 100 $ | Maximiser les conversions. **Passer en CPA cible après 30 conversions en 30 jours.** CPA cible de départ = CPA observé x 1,1 | Montréal, Laval, Longueuil, Terrebonne, Mirabel, MRC Thérèse-De Blainville (Sainte-Thérèse, Blainville, Boisbriand, Rosemère, Lorraine, Bois-des-Filion, Sainte-Anne-des-Plaines), MRC Deux-Montagnes (Saint-Eustache, Deux-Montagnes, Sainte-Marthe-sur-le-Lac, Pointe-Calumet, Saint-Joseph-du-Lac, Oka, Saint-Placide), Saint-Jérôme. Ciblage par présence |
 | SRCH \| Mariage & privé haut de gamme \| FR | 60 $ | Idem | Idem |
 | SRCH \| Marque \| FR | 10 $ | Maximiser les clics, CPC max 2,50 $ | Province de Québec |
 
@@ -27,7 +27,7 @@ Si Editor ne reconnaît pas la liste partagée à l'import, créez-la dans **Bib
 - **Ciblage par présence :** la colonne `Targeting method = Location of presence` doit l'appliquer. Vérifiez-le dans Paramètres > Lieux > Options. La valeur Google par défaut, « Présence ou intérêt », laisse passer des clics de partout.
 - **Noms de lieux :** les noms de lieux (p. ex. `Sainte-Therese,Quebec,Canada`) doivent être reconnus par Editor. Il signale les lieux non résolus à l'import. Corrigez-les avec l'outil de recherche de lieux.
 - **Calendrier recommandé :** lundi à vendredi de 7 h à 21 h, samedi de 9 h à 17 h pour Corporatif. Tous les jours de 8 h à 22 h pour Mariage. Ajustez après 4 semaines de données.
-- **Conversions principales :** formulaire de soumission envoyé, clic sur le numéro de téléphone et appel de 60 s et plus. Les conversions améliorées (Enhanced Conversions) sont requises. Importez ensuite les étapes hors ligne « soumission qualifiée » et « contrat signé », puis optimisez sur ces étapes.
+- **Conversions (voir `operations/tracking-setup.md`, section 3) :** principale = `lead_qualifie` (formulaire, routes A et B), avec conversions améliorées. Secondaires (observation) = `lead_tous`, `appel_60s` (devient principale après 30 jours si au moins 50 % des appels écoutés sont qualifiés). Phase 2 : import hors ligne de `depot_paye`. Ne pas mettre le clic sur le téléphone en conversion principale.
 
 ## Isolation du trafic (sculpting)
 
@@ -38,7 +38,8 @@ Si Editor ne reconnaît pas la liste partagée à l'import, créez-la dans **Bib
 
 ## À FAIRE AVANT LANCEMENT (bloquant)
 
-1. **Remplacer `[N]`** dans le titre « Note 4,8/5 – [N] avis Google » par le nombre réel d'avis vérifié (3 caractères max pour rester sous 30). Avant l'import, supprimez ce titre de toutes les RSA ou corrigez-le partout (rechercher-remplacer dans `rsa_ads.csv`).
+0. **Vérifier la note sur la fiche Google** (4,8/5 et 52 avis selon le site, non vérifié sur Google même ; le site affiche aussi 4,9). Si la note réelle diffère, remplacer « 4,8/5 » partout dans `outils/build_google_ads.py` (titres, descriptions, accroches), puis régénérer.
+1. **Remplacer `[N]`** dans le titre « Note 4,8/5 – [N] avis Google » par le nombre réel d'avis vérifié (3 caractères max pour rester sous 30). Corrigez-le dans `outils/build_google_ads.py` (listes `CORP_COMMON_H`, `MAR_COMMON_H` et groupe Marque), puis régénérez les CSV. Sinon, retirez ce titre avant l'import : une annonce importée avec « [N] » serait diffusée telle quelle.
 2. **Vérifier les mentions de clients** « Clients : RBC, PwC, Desjardins ». Il faut obtenir une autorisation écrite de chaque client, car l'usage de marques de tiers dans un texte d'annonce peut être contesté. Sinon, remplacez le titre par « Choisi par de grandes banques » ou « Clients corporatifs majeurs ».
 3. **Confirmer les promesses opérationnelles :**
    - « Soumission en moins de 24 h »
@@ -46,7 +47,9 @@ Si Editor ne reconnaît pas la liste partagée à l'import, créez-la dans **Bib
    - « Préposé sur place » (cabine photo et Gala)
    - Chapiteau 20x40 offert
    - « Chaises Chiavari »
-   - Plus de 1 000 événements
+   - Plus de 1 000 événements (le site affiche aussi « 500+ » : une seule valeur, voir correctifs-urgents.md n° 5)
+   - « Montage le jour même » (déco mariage) et « Plancher et éclairage en option » (lien annexe Chapiteaux)
+   - « Dates de décembre limitées » et « Été 2027 : dates limitées » : à retirer si ce n'est pas vrai au moment de la diffusion
 3b. **Prix (vérifiés par la contre-vérification) :**
    - Corporatif : 1 195 $ / 1 995 $ / 2 495 $.
    - **Mariage = forfaits déco** : 899 $ / 1 449 $ / Mariage Signature 1 899 $.
@@ -67,7 +70,7 @@ Si Editor ne reconnaît pas la liste partagée à l'import, créez-la dans **Bib
 | https://evenox.ca/corporatif/team-building | TO-CREATE |
 | https://evenox.ca/corporatif/photobooth-360 | TO-CREATE |
 | https://evenox.ca/corporatif/activation-de-marque | TO-CREATE |
-| https://evenox.ca/mariage | TO-CREATE |
+| https://evenox.ca/mariage | **EXISTE déjà** (page indexée). Utilisée par les liens annexes « Forfaits mariage ». À corriger avant le lancement : correctifs-urgents.md, n° 8 (forfaits cabine photo présentés comme « forfaits mariage », palier nommé « Premium ») |
 | https://evenox.ca/mariage/decoration | TO-CREATE |
 | https://evenox.ca/mariage/arche-lettres-lumineuses | TO-CREATE |
 | https://evenox.ca/mariage/chapiteau | TO-CREATE |
@@ -77,14 +80,15 @@ Si Editor ne reconnaît pas la liste partagée à l'import, créez-la dans **Bib
 | https://evenox.ca/soumission | TO-CREATE (formulaire autonome) |
 | https://evenox.ca/realisations | TO-CREATE (galerie de vrais montages) |
 
+   Gabarits : `operations/landing-corporatif.md` pour `/corporatif` et ses 6 sous-pages ; `operations/landing-mariage.md` pour les 5 sous-pages `/mariage/...`. `/evenement-prive`, `/soumission` et `/realisations` n'ont pas encore de gabarit : les rédiger avant l'activation. Sinon, mettre en veille le groupe « Événement privé clé en main » et retirer les liens annexes qui pointent vers ces pages.
    Chaque page doit afficher le prix « à partir de ». Elle ne doit montrer **aucun** article enfant ou gonflable bas de gamme, puisque l'objectif est de filtrer les mauvais prospects. Le formulaire doit poser au minimum ces questions : type d'événement, date, nombre d'invités, budget, entreprise ou particulier.
-5. **Loi 96 :** toutes les annonces sont en français. « Party », « 5 à 7 » et « clé en main » sont des usages admis au Québec. Le texte des annonces n'utilise ni « premium » ni « devis ». « Photobooth » apparaît seulement dans les mots clés, les URL et les chemins, là où les recherches réelles l'emploient. Les annonces disent « cabine photo ».
+5. **Loi 96 :** toutes les annonces sont en français. « Party », « 5 à 7 » et « clé en main » sont des usages admis au Québec. Le texte des annonces n'utilise ni « premium » ni « devis ». « Photobooth », « team building » et « lounge » apparaissent seulement dans les mots clés et les URL, là où les recherches réelles les emploient. Le texte visible des annonces (titres, descriptions, chemins d'affichage, composantes) dit « cabine photo », « consolidation d'équipe » ou « activité d'équipe », et « coin salon ».
 
 ## Revue des 30 premiers jours
 
 - **Chaque semaine :** relire le rapport des termes de recherche et ajouter les négatifs (bricolage, enfant, prix bas, emplois). Comptez environ 10 à 20 ajouts par semaine au début.
-- **Jour 14 :** mettre en veille les mots clés avec 0 conversion et un coût supérieur à 2 fois le CPA cible.
+- **Jour 14 :** mettre en veille les mots clés avec 0 `lead_qualifie` et plus de 300 $ dépensés (2 fois la cible de 150 $ par lead qualifié du plan).
 - **Jour 30, ou à 30 conversions :** passer au CPA cible. Si le Corporatif plafonne en part d'impressions (budget perdu > 20 %) avec un CPA sous la cible, augmenter le budget de 20 % par semaine au maximum.
 - **Après le 15 décembre :** réduire le message « Dates de décembre limitées » et basculer vers « Party des Fêtes en janvier » et les 5 à 7 de l'hiver.
 
-Script de validation (longueurs, doublons, conflits négatifs/positifs) : dans le scratchpad de la session, hors dépôt.
+Les CSV sont générés par `outils/build_google_ads.py` : modifier le script, puis le relancer, plutôt que d'éditer les CSV à la main. Validation (longueurs, mots interdits, doublons, conflits négatifs/positifs) : `python3 -I outils/validate_ads.py`, depuis la racine du dépôt.

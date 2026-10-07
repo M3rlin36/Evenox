@@ -9,11 +9,11 @@
 
 | Élément | Valeur |
 |---|---|
-| URL (slug) | `/mariage-cle-en-main/` |
-| Indexation | **noindex** (page d'annonces ; la page indexée reste `/mariage/`) |
+| URL (slug) | 5 sous-pages, **les mêmes URL que les annonces** (voir campagnes/google-ads/README.md) : `/mariage/decoration/`, `/mariage/arche-lettres-lumineuses/`, `/mariage/chapiteau/`, `/mariage/mobilier/`, `/mariage/photobooth/`. Une seule page modèle, dupliquée ; seuls le H1 et l'image du hero changent |
+| Indexation | **noindex** (pages d'annonces ; la page indexée reste `/mariage/`, qui doit être corrigée : correctifs-urgents.md, n° 8) |
 | Gabarit Divi | Page vierge, sans menu. Liens sortants : téléphone, texto, politique de confidentialité, boutique (dans le bandeau « minimum ») |
-| Balise title | `Décor de mariage clé en main dès 899 $ : lettres, mur floral, photobooth \| Évenox` |
-| Meta description | `Lettres lumineuses géantes, mur floral, étincelles froides et photobooth avec préposé : forfaits de 899 $ à 1 899 $. Rive-Nord, Laval, Montréal.` |
+| Balise title | `Décor de mariage clé en main dès 899 $ : lettres, mur floral, cabine photo \| Évenox` |
+| Meta description | `Lettres lumineuses géantes, mur floral, étincelles froides et cabine photo avec préposé : forfaits de 899 $ à 1 899 $. Rive-Nord, Laval, Montréal.` |
 | Barre collante mobile | **Appeler** · **Texto** · **Vérifier ma date** (`#soumission`) |
 
 Variables : `{{NOTE_GOOGLE}}`, `{{NB_AVIS}}`, `{{NB_EVENEMENTS}}`, `{{TEL}}`, `{{COURRIEL}}`. Elles sont définies dans landing-corporatif.md et ont les mêmes valeurs partout.
@@ -25,11 +25,14 @@ Variables : `{{NOTE_GOOGLE}}`, `{{NB_AVIS}}`, `{{NB_EVENEMENTS}}`, `{{TEL}}`, `{
 > **Politique recommandée :** « Livraison, installation et démontage inclus dans tous les forfaits de 1 195 $ et plus, dans un rayon de 40 km de Sainte-Thérèse. » Pour les forfaits sous 1 195 $ (ex. Décor WOW à 899 $), la livraison est facturée selon la distance.
 > Les textes ci-dessous suivent cette politique recommandée et sont marqués **[LIVRAISON]**. Si le propriétaire choisit autre chose, modifier seulement ces passages.
 
-**Variantes de titre** (paramètre `?v=`) :
-- `?v=photobooth` → « Photobooth avec préposé pour votre mariage, dès 599 $ »
-- `?v=deco` → « Votre salle de réception transformée, dès 899 $ »
-- `?v=chapiteau` → « Mariage extérieur : chapiteau, mobilier et décor, un seul fournisseur »
-- par défaut → titre de la section 1
+**H1 de chaque sous-page :**
+- `/mariage/decoration/` → titre de la section 1
+- `/mariage/arche-lettres-lumineuses/` → « Arche florale et lettres lumineuses géantes, installées pour vous »
+- `/mariage/chapiteau/` → « Mariage extérieur : chapiteau, mobilier et décor, un seul fournisseur »
+- `/mariage/mobilier/` → « Chaises Chiavari, tables et coins salon, placés selon votre plan »
+- `/mariage/photobooth/` → « Cabine photo avec préposé pour votre mariage, dès 599 $ »
+
+Le paramètre `?v=` reste disponible pour les tests A/B de titres (champ caché `variante_hero`).
 
 ---
 
@@ -43,12 +46,12 @@ Variables : `{{NOTE_GOOGLE}}`, `{{NB_AVIS}}`, `{{NB_EVENEMENTS}}`, `{{TEL}}`, `{
 Votre décor de mariage clé en main, dès 899 $
 
 **Sous-titre :**
-Lettres lumineuses géantes, mur floral, étincelles froides et photobooth avec préposé. Nous installons le jour J et nous repartons avec tout. Vous profitez de votre journée, nous nous occupons du reste.
+Lettres lumineuses géantes, mur floral, étincelles froides et cabine photo avec préposé. Nous installons le jour J et nous repartons avec tout. Vous profitez de votre journée, nous nous occupons du reste.
 
 **Puces :**
 - ✓ Prix affichés : vous savez à quoi vous attendre avant de nous écrire
 - ✓ Installé et testé avant l'arrivée de vos invités
-- ✓ Une seule équipe par soir pour le photobooth avec préposé : votre date est vraiment à vous
+- ✓ Une seule équipe par soir pour la cabine photo avec préposé : votre date est vraiment à vous
 
 **Bouton principal :** `Vérifier ma date` → `#soumission`
 **Lien secondaire :** `ou appelez-nous : {{TEL}}`
@@ -69,9 +72,9 @@ Lettres lumineuses géantes, mur floral, étincelles froides et photobooth avec 
 
 **H2 :** Le moment que tout le monde va filmer
 
-Vos invités se souviendront de l'entrée dans la salle : vos initiales en lettres lumineuses, le mur de fleurs, les étincelles froides de la première danse. Puis la file devant le photobooth, toute la soirée.
+Vos invités se souviendront de l'entrée dans la salle : vos initiales en lettres lumineuses, le mur de fleurs, les étincelles froides de la première danse. Puis la file devant la cabine photo, toute la soirée.
 
-Vous, vous n'aurez rien monté. Notre équipe arrive le jour J, installe et teste tout, anime le photobooth et revient chercher le matériel le lendemain.
+Vous, vous n'aurez rien monté. Notre équipe arrive le jour J, installe et teste tout, anime la cabine photo et revient chercher le matériel le lendemain.
 
 ---
 
@@ -94,10 +97,10 @@ Vous, vous n'aurez rien monté. Notre équipe arrive le jour J, installe et test
 ### Colonne 2 — Soirée Signature ★ LE PLUS POPULAIRE
 - **Badge :** Le plus populaire
 - **Prix :** 1 449 $ (valeur de 1 840 $)
-- **Sous-titre :** Le décor + le photobooth qui occupe vos invités toute la soirée
+- **Sous-titre :** Le décor + la cabine photo qui occupe vos invités toute la soirée
 - Inclus :
   - Tout le Décor WOW
-  - Photobooth haut de gamme avec préposé
+  - Cabine photo haut de gamme avec préposé
   - Photos illimitées et impressions sur place
   - Gabarit photo personnalisé (vos prénoms et la date)
   - Album numérique des meilleurs moments
@@ -111,7 +114,7 @@ Vous, vous n'aurez rien monté. Notre équipe arrive le jour J, installe et test
   - Lettres lumineuses + les initiales des mariés
   - Mur floral
   - 2 moments d'étincelles froides (entrée des mariés et première danse)
-  - Photobooth haut de gamme avec préposé, photos illimitées
+  - Cabine photo haut de gamme avec préposé, photos illimitées
   - Coordination directe avec votre salle de réception
   - Livraison incluse jusqu'à 40 km [LIVRAISON]
 - **Bouton :** `Choisir Mariage Signature` → `#soumission?forfait=mariagesignature`
@@ -123,9 +126,9 @@ Mobilier complet, chapiteau, arche de cérémonie ou plus de 150 invités? **Nou
 
 | Ajout | Prix |
 |---|---|
-| Photobooth classique seul, avec préposé | dès 599 $ |
-| Photobooth miroir seul (4 h), avec préposé | dès 999 $ |
-| Vidéobooth 360 | de 599 $ à 1 499 $ selon la durée |
+| Cabine photo classique seule, avec préposé | dès 599 $ |
+| Cabine photo miroir seule (4 h), avec préposé | dès 999 $ |
+| Cabine vidéo 360 | de 599 $ à 1 499 $ selon la durée |
 | Lettres ou chiffres lumineux supplémentaires (ex. la date) | 70 $ chacun |
 | Machines gourmandes (popcorn, barbe à papa) | dès 100 $ |
 | Chaises Chiavari blanches | 8 $/chaise (7 $ dès 100) |
@@ -142,7 +145,7 @@ Mobilier complet, chapiteau, arche de cérémonie ou plus de 150 invités? **Nou
 **H2 :** Ce que vous n'aurez pas à gérer
 
 1. **Le montage.** Livraison le jour J entre 10 h et 18 h, à l'heure confirmée la veille, et installation complète. Nous coordonnons les accès avec votre salle.
-2. **Le photobooth.** Un préposé l'anime toute la durée prévue. Vos invités n'ont qu'à sourire.
+2. **La cabine photo.** Un préposé l'anime toute la durée prévue. Vos invités n'ont qu'à sourire.
 3. **Les tests.** Tout est branché et vérifié avant l'arrivée des invités.
 4. **La reprise.** Nous revenons chercher le matériel le lendemain. Vous n'avez rien à démonter après la fête.
 5. **Les imprévus.** Si un équipement brise pendant la soirée, nous le remplaçons ou nous remboursons la portion.
@@ -188,7 +191,7 @@ Gabarit (avis réels seulement) :
 | # | Image demandée | Légende |
 |---|---|---|
 | 1 | Salle de réception complète, éclairage chaud, lettres avec les initiales | Réception à [salle], [Ville] — 140 invités |
-| 2 | Photobooth miroir, invités en action | Photobooth miroir avec préposé |
+| 2 | Cabine photo miroir, invités en action | Cabine photo miroir avec préposé |
 | 3 | Mur floral avec le couple | Mur floral pour les photos de couple |
 | 4 | Étincelles froides pendant la première danse (photo en rafale) | Première danse sous les étincelles |
 | 5 | Table d'honneur avec chaises Chiavari | Chaises Chiavari et décor de table |
@@ -208,10 +211,10 @@ Règles : photos réelles seulement, autorisation du couple (clause du contrat o
 **H2 :** Vos questions, nos réponses
 
 **1. Combien coûte le décor de mariage avec Évenox?**
-Trois forfaits à prix fixe : Décor WOW à 899 $ (lettres lumineuses, mur floral, étincelles froides), Soirée Signature à 1 449 $ (avec photobooth et préposé) et Mariage Signature à 1 899 $ (initiales des mariés, 2 moments d'étincelles, photobooth, coordination avec la salle). Les prix sont avant taxes. Le photobooth seul commence à 599 $. Pour le mobilier ou un chapiteau, nous préparons un forfait sur mesure.
+Trois forfaits à prix fixe : Décor WOW à 899 $ (lettres lumineuses, mur floral, étincelles froides), Soirée Signature à 1 449 $ (avec cabine photo et préposé) et Mariage Signature à 1 899 $ (initiales des mariés, 2 moments d'étincelles, cabine photo, coordination avec la salle). Les prix sont avant taxes. La cabine photo seule commence à 599 $. Pour le mobilier ou un chapiteau, nous préparons un forfait sur mesure.
 
 **2. Combien de temps d'avance faut-il réserver?**
-Pour un samedi de juillet à octobre, la haute saison, réservez de 6 à 12 mois d'avance. Hors saison ou en semaine, quelques mois suffisent souvent. Comme nous faisons un seul photobooth avec préposé par soir, la première demande confirmée obtient la date.
+Pour un samedi de juillet à octobre, la haute saison, réservez de 6 à 12 mois d'avance. Hors saison ou en semaine, quelques mois suffisent souvent. Comme nous offrons une seule cabine photo avec préposé par soir, la première demande confirmée obtient la date.
 
 **3. Comment fonctionne le dépôt?**
 Un dépôt de 20 % par carte de crédit bloque votre date. Le solde est payable à la réception du matériel, par carte, virement Interac, chèque ou comptant.
@@ -236,7 +239,7 @@ Oui. Nous envoyons le plan d'installation et l'horaire à votre planificatrice e
 ## 10. Commande minimale
 
 **Bandeau (fond clair, centré) :**
-**Service mariage clé en main à partir de 599 $ avant taxes** (photobooth avec préposé, installé et repris). Forfaits décor dès 899 $.
+**Forfaits décor de mariage dès 899 $ avant taxes.** Cabine photo avec préposé seule (sans décor) dès 599 $, installée et reprise.
 Vous cherchez seulement quelques tables ou chaises à ramasser vous-même? Notre **boutique en ligne** est ouverte 24 h sur 24, et le ramassage à Sainte-Thérèse est gratuit. → `Aller à la boutique` (evenox.booqableshop.com?utm_source=lp-mariage&utm_medium=referral&utm_campaign=minimum)
 
 ---
@@ -249,7 +252,7 @@ Vous cherchez seulement quelques tables ou chaises à ramasser vous-même? Notre
 Répondez à 5 questions rapides. Nous vérifions la disponibilité de votre date et nous vous revenons le jour même, par téléphone ou par courriel, à votre choix.
 
 - ✓ Sans engagement
-- ✓ Un seul photobooth avec préposé par soir : premier confirmé, premier servi
+- ✓ Une seule cabine photo avec préposé par soir : premier confirmé, premier servi
 - ✓ ★ {{NOTE_GOOGLE}}/5 — {{NB_AVIS}} avis Google
 
 **Bouton d'envoi :** `Vérifier ma date`
