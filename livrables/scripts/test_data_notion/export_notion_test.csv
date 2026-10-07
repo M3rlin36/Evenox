@@ -1,0 +1,15 @@
+﻿Client,E-mail,Téléphone,Source,Service,Budget estimé,État,Date réservation,Date événement,Created time,GCLID,GBRAID,Campagne,Score,Montant du contrat,Motif de perte,Date dernier contact
+Marie Tremblay (TEST),marie.test@example.com,(514) 555-0101,Google Ads,"Chapiteau, Tables et chaises","2 000 $ – 5 000 $",Appel fait,,"June 12, 2027","October 2, 2026 2:30 PM",Cj0KCQjwTEST0001AAAAmarieTremblayGCLID_abc,,Mariage,A,,,"October 3, 2026"
+Desjardins Corpo (TEST),evenements.test@example.com,450-555-0102,"Google Ads, Formulaire site",Chapiteau,"5 000 $ et +",Dépôt payé,"October 6, 2026 11:05 AM","November 20, 2026","September 28, 2026 9:15 AM",Cj0KCQjwTEST0002BBBBdesjardinsCorpoGCLID_xyz,,Corporatif,B,"$4,850.00",,"October 1, 2026 3:00 PM"
+Julie Gagnon (TEST),julie.test@example.com,+1 819 555 0103,Google Ads,Tables et chaises,"1 000 $ – 2 000 $","Soumission Envoyé, Réservé / Confirmé",2026/10/05,2027/05/22,2026/10/01 10:00,Cj0KCQjwTEST0003CCCCjulieGagnonGCLID_qrs,,Produits,C,,,2026/10/02
+Pierre Sans GCLID (TEST),pierre.test@example.com,514-555-0104,Google Ads,Chapiteau,,Appel fait,,,"October 4, 2026 8:00 AM",,,Corporatif,A,,,"October 5, 2026"
+Ancien Lead (TEST),ancien.test@example.com,514-555-0105,Google Ads,Chapiteau,,Appel fait,,,"June 20, 2026 1:00 PM",Cj0KCQjwTEST0005EEEEancienLeadGCLID_old,,Mariage,A,,,"October 2, 2026"
+Score D (TEST),d.test@example.com,514-555-0106,Google Ads,Tables et chaises,,❌ Perdu,,,"October 3, 2026 4:00 PM",Cj0KCQjwTEST0006FFFFscoreDGCLID_ddd,,Produits,D,,Hors zone,"October 3, 2026"
+Sophie iPhone (TEST),sophie.test@example.com,438 555 0107,Google Ads,Chapiteau,,Appel fait,,,"4 octobre 2026 14 h 30",,1t6TESTgbraid0007GGGGsophieIphone,Mariage,B,,,"5 octobre 2026"
+Marie Tremblay doublon (TEST),marie.test@example.com,(514) 555-0101,Google Ads,Chapiteau,,Nouveau Lead,,,"October 2, 2026 2:45 PM",Cj0KCQjwTEST0001AAAAmarieTremblayGCLID_abc,,Mariage,A,,,"October 4, 2026"
+Déjà importé (TEST),deja.test@example.com,514-555-0109,Google Ads,Chapiteau,,"En réflexion (dépot non payé)",,,"September 15, 2026 10:00 AM",Cj0KCQjwTEST0009IIIIdejaImporteGCLID_sss,,Corporatif,B,,,"September 20, 2026"
+Presque 90 jours (TEST),presque.test@example.com,514-555-0110,Google Ads,Chapiteau,,Soumission Envoyé,,,"July 15, 2026 9:00 AM",Cj0KCQjwTEST0010JJJJpresque90GCLID_ttt,,Corporatif,A,,,"October 1, 2026"
+GCLID invalide (TEST),invalide.test@example.com,514-555-0111,Google Ads,Chapiteau,,Appel fait,,,"October 5, 2026 9:00 AM",abc 123,,Produits,A,,,"October 5, 2026"
+Réservation future (TEST),futur.test@example.com,514-555-0112,Google Ads,Chapiteau,,Dépôt payé,"October 12, 2026",,"October 6, 2026 9:00 AM",Cj0KCQjwTEST0012LLLLfuturGCLID_uuu,,Mariage,,"2 300,00 $",,
+Contact avant clic (TEST),avant.test@example.com,514-555-0113,Google Ads,Chapiteau,,Appel fait,,,"October 6, 2026 4:00 PM",Cj0KCQjwTEST0013MMMMavantClicGCLID_vvv,,Corporatif,B,,,"October 6, 2026"
+Référence sans pub (TEST),ref.test@example.com,514-555-0114,Référence,Chapiteau,,Dépôt payé,"October 2, 2026",,"September 30, 2026 9:00 AM",,,,A,"3 100 $",,"October 1, 2026"
