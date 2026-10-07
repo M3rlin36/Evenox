@@ -158,12 +158,13 @@ Chaque changement se fait par paliers de 20 % au maximum, sur 1 à 2 semaines.
 Les URL actuelles servent au lancement :
 - Corporatif et mobilier : /nos-forfaits-tout-inclus
 - Photobooth : /location-photobooth-montreal
-- Lettres : /configurateur
+- Lettres : /lettres-lumineuses/ (son titre affiche « dès 70 $ » : à retirer, c'est contraire à ta règle de marque)
+- Mobilier mariage : /mariage/
 - Marque : l'accueil
 
 Une page dédiée réduit le coût par lead de 30 à 50 %. À créer, dans l'ordre :
 1. **Fête de Noël d'entreprise** (la plus urgente)
-2. **Lettres lumineuses 4 pi**. Aucune page n'existe ; le configurateur affiche « lettres dès 70 $ », ce qui contredit le positionnement premium.
+2. **Lettres lumineuses 4 pi** : la page /lettres-lumineuses/ existe, mais elle est à refaire, sans « dès 70 $ » et avec les forfaits.
 3. Photobooth, avec la grille de prix unique
 4. Mobilier lounge, cocktail et gala
 5. Mariage

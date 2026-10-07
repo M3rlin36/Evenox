@@ -2,8 +2,11 @@
 """Génère les fichiers d'import Google Ads Editor pour Évenox (300 $/jour).
 
 Usage : python3 -I build_google_ads.py
-Sortie : ../google-ads-editor/*.csv  (UTF-8 avec BOM, importables via
-Google Ads Editor > Compte > Importer > À partir d'un fichier)
+Sortie : ../google-ads-editor/*.csv  (UTF-16 LE avec BOM, séparateur tabulation =
+format « Unicode Text » recommandé par l'aide Google Ads Editor ; importables via
+Google Ads Editor > Compte > Importer > À partir d'un fichier). En-têtes et valeurs
+selon https://support.google.com/google-ads/editor/answer/57747 (CSV file columns).
+0_import_complet.csv regroupe tout (une ligne = une entité, voir answer/56368).
 
 Tout ce qui doit être confirmé avant lancement est dans CONFIG.
 """
@@ -29,10 +32,10 @@ AG = {g["name"]: g for g in _ns["AG"]}
 URL = {
     "home": "https://evenox.ca/",
     "corpo": "https://evenox.ca/nos-forfaits-tout-inclus",
-    "lettres": "https://evenox.ca/configurateur",
+    "lettres": "https://evenox.ca/lettres-lumineuses/",
     "photobooth": "https://evenox.ca/location-photobooth-montreal",
     "mobilier": "https://evenox.ca/nos-forfaits-tout-inclus",
-    "mariage": "https://evenox.ca/nos-forfaits-tout-inclus",
+    "mariage": "https://evenox.ca/mariage/",
     "teambuilding": "https://evenox.ca/team-building-activitecorpo",
 }
 
@@ -47,7 +50,23 @@ BUDGET = {  # $ CAD / jour — total actif = 300
 }
 PAUSED = {"S-EN | Corporate Montréal", "S-FR | Québec-Lévis (test)"}
 
-LIMITS = dict(h=30, d=90, path=15)
+LIMITS = dict(h=30, d=90, path=15, sl=25, sld=35, co=25)
+
+# Pas de colonne « Languages » : le ciblage linguistique n'existe plus en
+# Search depuis le 30 sept. 2026 (la langue de l'annonce et de la page décide).
+
+# Liens annexes : chaque lien doit mener à une page différente (politique
+# « Sitelink asset requirements »). Même ordre que SITELINKS_FR / SITELINKS_EN.
+SITELINK_URLS = [
+    "https://evenox.ca/lettres-lumineuses/",           # Lettres lumineuses 4 pi
+    URL["photobooth"],                                 # Forfaits photobooth
+    "https://evenox.ca/nos-forfaits-tout-inclus",      # Mobilier lounge et gala
+    "https://evenox.ca/team-building-activitecorpo/",  # Événements d'entreprise
+    "https://evenox.ca/mariage/",                      # Mariages
+    "https://evenox.ca/a-propos/",                     # Réalisations
+    "https://evenox.ca/contact/",                      # Demander une soumission
+    "https://evenox.ca/faq/",                          # Zones desservies (FAQ livraison)
+]
 
 # ---------------------------------------------------------------- COPIES
 def copy_from(name, lang="fr"):
@@ -287,8 +306,10 @@ def check_copy(where, c):
 
 def write(name, header, rows):
     path = os.path.join(OUT, name)
-    with open(path, "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.writer(f)
+    # UTF-16 (BOM) + tabulations : format « Unicode Text » recommandé par Google
+    # (answer/56368) et identique aux exports CSV de Google Ads Editor.
+    with open(path, "w", newline="", encoding="utf-16") as f:
+        w = csv.writer(f, delimiter="\t")
         w.writerow(header)
         w.writerows(rows)
     return path
@@ -297,14 +318,14 @@ campaigns = []
 for c, b in BUDGET.items():
     is_brand = "Marque" in c
     campaigns.append([
-        c, "Search", "Google search", f"{b:.2f}", "Daily",
+        c, "Search", "Google Search", f"{b:.2f}",
         "Maximize clicks" if is_brand else "Maximize conversions",
         "2.50" if is_brand else "",
         "Paused" if c in PAUSED else "Enabled",
     ])
-write("1_campagnes.csv",
-      ["Campaign", "Campaign Type", "Networks", "Budget", "Budget type",
-       "Bid Strategy Type", "Maximum CPC bid limit", "Campaign Status"], campaigns)
+H_CAMP = ["Campaign", "Campaign Type", "Networks", "Campaign Daily Budget",
+          "Bid Strategy Type", "Maximum CPC bid limit", "Campaign Status"]
+write("1_campagnes.csv", H_CAMP, campaigns)
 
 adgroups, keywords, ads = [], [], []
 for s in STRUCTURE:
@@ -312,7 +333,7 @@ for s in STRUCTURE:
     adgroups.append([s["campaign"], s["adgroup"], "Enabled"])
     for kw, mt in s["kw"]:
         keywords.append([s["campaign"], s["adgroup"], kw, mt, "Enabled"])
-    row = [s["campaign"], s["adgroup"], "Responsive search ad", s["url"],
+    row = [s["campaign"], s["adgroup"], s["url"],
            s["copy"]["path"][0], s["copy"]["path"][1]]
     for i in range(15):
         row += [s["copy"]["h"][i], str(s["pins"].get(i, ""))]
@@ -320,10 +341,13 @@ for s in STRUCTURE:
     row += ["Enabled"]
     ads.append(row)
 
-write("2_groupes_annonces.csv", ["Campaign", "Ad Group", "Ad Group Status"], adgroups)
-write("3_mots_cles.csv", ["Campaign", "Ad Group", "Keyword", "Criterion Type", "Status"],
-      keywords)
-hdr = ["Campaign", "Ad Group", "Ad type", "Final URL", "Path 1", "Path 2"]
+H_AG = ["Campaign", "Ad Group", "Ad Group Status"]
+H_KW = ["Campaign", "Ad Group", "Keyword", "Criterion Type", "Status"]
+write("2_groupes_annonces.csv", H_AG, adgroups)
+write("3_mots_cles.csv", H_KW, keywords)
+# Pas de colonne « Ad type » (absente de la liste officielle) : Editor reconnaît
+# l'annonce responsive aux colonnes Headline 1-15 / Description 1-4.
+hdr = ["Campaign", "Ad Group", "Final URL", "Path 1", "Path 2"]
 for i in range(1, 16):
     hdr += [f"Headline {i}", f"Headline {i} position"]
 hdr += [f"Description {i}" for i in range(1, 5)] + ["Status"]
@@ -332,36 +356,63 @@ write("4_annonces_rsa.csv", hdr, ads)
 negs = []
 for c in BUDGET:
     for k in NEG_COMPTE:
-        negs.append([c, k, "Negative Phrase"])
+        negs.append([c, k, "Campaign Negative Phrase"])
     if "Marque" not in c:
         for k in NEG_MARQUE:
-            negs.append([c, k, "Negative Phrase"])
+            negs.append([c, k, "Campaign Negative Phrase"])
     if c == "S-FR | Corporatif & Fêtes":
         for k in NEG_CORPO:
-            negs.append([c, k, "Negative Phrase"])
+            negs.append([c, k, "Campaign Negative Phrase"])
     if c == "S-FR | Produits vedettes":
         for k in NEG_PRODUITS:
-            negs.append([c, k, "Negative Phrase"])
+            negs.append([c, k, "Campaign Negative Phrase"])
     if "Québec-Lévis" not in c:
         for k in NEG_HORS_QUEBEC_VILLE:
-            negs.append([c, k, "Negative Phrase"])
-write("5_mots_cles_negatifs.csv", ["Campaign", "Keyword", "Criterion Type"], negs)
+            negs.append([c, k, "Campaign Negative Phrase"])
+# Négatifs de campagne : type « Campaign negative » + correspondance (answer/57747)
+H_NEG = ["Campaign", "Keyword", "Criterion Type"]
+write("5_mots_cles_negatifs.csv", H_NEG, negs)
 
 # Éléments (assets) : liens annexes, accroches
 sl = []
 for c in BUDGET:
     data = _ns["SITELINKS_EN"] if c.startswith("S-EN") else _ns["SITELINKS_FR"]
-    for t, d1, d2 in data:
-        sl.append([c, t, d1, d2, URL["home"]])
-write("6_liens_annexes.csv",
-      ["Campaign", "Sitelink text", "Description line 1", "Description line 2",
-       "Final URL"], sl)
+    for (t, d1, d2), u in zip(data, SITELINK_URLS):
+        if len(t) > LIMITS["sl"] or max(len(d1), len(d2)) > LIMITS["sld"]:
+            errors.append(f"{c}: lien annexe trop long : {t}")
+        sl.append([c, t, d1, d2, u])
+if len(set(SITELINK_URLS)) != len(SITELINK_URLS):
+    errors.append("Liens annexes : URL en double")
+H_SL = ["Campaign", "Link Text", "Description Line 1", "Description Line 2", "Final URL"]
+write("6_liens_annexes.csv", H_SL, sl)
 co = []
 for c in BUDGET:
     data = _ns["CALLOUTS_EN"] if c.startswith("S-EN") else _ns["CALLOUTS_FR"]
     for t in data:
+        if len(t) > LIMITS["co"]:
+            errors.append(f"{c}: accroche trop longue : {t}")
         co.append([c, t])
-write("7_accroches.csv", ["Campaign", "Callout text"], co)
+H_CO = ["Campaign", "Callout text"]
+write("7_accroches.csv", H_CO, co)
+
+# Fichier unique : chaque ligne décrit une seule entité, colonnes non pertinentes
+# vides (exemple officiel mots-clés + annonces dans un même fichier, answer/56368).
+# « Description Line 1/2 » est un alias de « Description 1/2 » (answer/57747) :
+# dans le fichier unique, les descriptions de liens annexes vont dans ces colonnes.
+ALIAS = {"Description Line 1": "Description 1", "Description Line 2": "Description 2"}
+H_SL_ALL = [ALIAS.get(x, x) for x in H_SL]
+ALL = []
+for h in (H_CAMP, H_AG, H_KW, hdr, H_NEG, H_SL_ALL, H_CO):
+    ALL += [x for x in h if x not in ALL]
+combined = []
+for h, rows in ((H_CAMP, campaigns), (H_AG, adgroups), (H_KW, keywords), (hdr, ads),
+                (H_NEG, negs), (H_SL_ALL, sl), (H_CO, co)):
+    for r in rows:
+        d = dict(zip(h, r))
+        combined.append([d.get(x, "") for x in ALL])
+write("0_import_complet.csv", ALL, combined)
+if len(set(ALL)) != len(ALL):
+    errors.append("Fichier unique : colonnes en double")
 
 # Résumé
 n_kw = len(keywords)
