@@ -9,20 +9,26 @@ C_CORP = "SRCH | Corporatif | FR"
 C_MAR = "SRCH | Mariage & privé haut de gamme | FR"
 C_BRAND = "SRCH | Marque | FR"
 
+# (Location, Location ID) : noms canoniques et Criteria ID tirés du fichier officiel
+# Google Ads geotargets-2026-08-12.csv (developers.google.com/google-ads/api/data/geotargets).
+# Editor résout le lieu par l'ID, ce qui évite les homonymes (p. ex. Montréal « City »
+# 1002604 vs « Municipality » 9196770). On prend la cible « City » quand elle existe.
 GREATER_MTL = [
-    "Montreal,Quebec,Canada", "Laval,Quebec,Canada", "Longueuil,Quebec,Canada",
-    "Terrebonne,Quebec,Canada", "Mirabel,Quebec,Canada",
+    ("Montreal,Montreal,Quebec,Canada", "1002604"), ("Laval,Quebec,Canada", "1002579"),
+    ("Longueuil,Quebec,Canada", "1002585"), ("Terrebonne,Quebec,Canada", "1002705"),
+    ("Mirabel,Mirabel,Quebec,Canada", "1002596"),
     # MRC Thérèse-De Blainville
-    "Sainte-Therese,Quebec,Canada", "Blainville,Quebec,Canada", "Boisbriand,Quebec,Canada",
-    "Rosemere,Quebec,Canada", "Lorraine,Quebec,Canada", "Bois-des-Filion,Quebec,Canada",
-    "Sainte-Anne-des-Plaines,Quebec,Canada",
+    ("Sainte-Therese,Sainte-Therese,Quebec,Canada", "1002702"), ("Blainville,Quebec,Canada", "1002504"),
+    ("Boisbriand,Boisbriand,Quebec,Canada", "1002506"), ("Rosemere,Quebec,Canada", "1002633"),
+    ("Lorraine,Quebec,Canada", "1002587"), ("Bois-des-Filion,Quebec,Canada", "1002505"),
+    ("Sainte-Anne-des-Plaines,Quebec,Canada", "9047927"),
     # MRC Deux-Montagnes
-    "Saint-Eustache,Quebec,Canada", "Deux-Montagnes,Quebec,Canada",
-    "Sainte-Marthe-sur-le-Lac,Quebec,Canada", "Pointe-Calumet,Quebec,Canada",
-    "Saint-Joseph-du-Lac,Quebec,Canada", "Oka,Quebec,Canada",
-    "Saint-Placide,Quebec,Canada",
+    ("Saint-Eustache,Quebec,Canada", "1002657"), ("Deux-Montagnes,Quebec,Canada", "1002535"),
+    ("Sainte-Marthe-sur-le-Lac,Quebec,Canada", "9047929"), ("Pointe-Calumet,Quebec,Canada", "9104446"),
+    ("Saint-Joseph-du-Lac,Quebec,Canada", "9104305"), ("Oka,Quebec,Canada", "9105116"),
+    ("Saint-Placide,Quebec,Canada", "9105232"),
     # Basses-Laurentides (< 40 km de Sainte-Thérèse, desservi selon les pages d'atterrissage)
-    "Saint-Jerome,Quebec,Canada",
+    ("Saint-Jerome,Quebec,Canada", "1002667"),
 ]
 
 CAMPAIGNS = [
@@ -33,7 +39,7 @@ CAMPAIGNS = [
          locs=GREATER_MTL,
          note="Passer en tCPA après 30 conversions sur 30 jours"),
     dict(name=C_BRAND, budget="10.00", bid="Maximize clicks",
-         locs=["Quebec,Canada"],
+         locs=[("Quebec,Canada", "20123")],
          note="Plafond CPC max 2,50 $ (Maximize clicks). Couverture Québec entier"),
 ]
 
@@ -268,80 +274,98 @@ def write(name, header, rows):
             w.writerow([r.get(h, "") for h in header])
     return path
 
+# En-têtes alignés sur l'aide Google Ads Editor (« CSV file columns », « Manage bid strategies »,
+# « Sitelinks ») et sur le format d'export d'Editor 2.x. Editor ignore la casse et les espaces
+# des en-têtes, mais pas les valeurs : garder les valeurs exactes ci-dessous.
+CAMPAIGN_HDR = ["Campaign", "Campaign Type", "Networks", "Budget", "Budget type",
+                "EU political ads", "Language targeting", "Bid Strategy Type",
+                "Maximum CPC bid limit", "Targeting method", "Exclusion method",
+                "Campaign Status", "Location", "Location ID", "Comment"]
+ADGROUP_HDR = ["Campaign", "Ad Group", "Ad Group Type", "Ad Group Status"]
+KEYWORD_HDR = ["Campaign", "Ad Group", "Keyword", "Criterion Type", "Status"]
+NEG_HDR = ["Campaign", "Keyword", "Criterion Type"]
+RSA_HDR = (["Campaign", "Ad Group", "Ad type"]
+           + [c for i in range(1, 16) for c in (f"Headline {i}", f"Headline {i} position")]
+           + [c for i in range(1, 5) for c in (f"Description {i}", f"Description {i} position")]
+           + ["Path 1", "Path 2", "Final URL", "Status"])
+
 def build():
     os.makedirs(OUT, exist_ok=True)
-    # campaigns.csv
-    hdr = ["Campaign", "Campaign Type", "Networks", "Campaign Daily Budget", "Budget type",
-           "Languages", "Bid Strategy Type", "Target CPA", "Max CPC Bid Limit", "Targeting method",
-           "Exclusion method", "Ad rotation", "Campaign Status", "Location", "Comment"]
-    rows = []
+    # campaigns.csv : une ligne « campagne », puis une ligne par lieu ciblé
+    camp_rows, loc_rows = [], []
     for c in CAMPAIGNS:
-        rows.append({"Campaign": c["name"], "Campaign Type": "Search", "Networks": "Google search",
-                     "Campaign Daily Budget": c["budget"], "Budget type": "Daily", "Languages": "fr",
-                     "Bid Strategy Type": c["bid"],
-                     "Max CPC Bid Limit": "2.50" if c["name"] == C_BRAND else "",
-                     "Targeting method": "Location of presence",
-                     "Exclusion method": "Location of presence", "Ad rotation": "Optimize",
-                     "Campaign Status": "Paused", "Comment": c["note"]})
-        for loc in c["locs"]:
-            rows.append({"Campaign": c["name"], "Location": loc})
-    write("campaigns.csv", hdr, rows)
+        camp_rows.append({"Campaign": c["name"], "Campaign Type": "Search",
+                          "Networks": "Google Search", "Budget": c["budget"], "Budget type": "Daily",
+                          "EU political ads": "Doesn't have EU political ads",
+                          "Language targeting": "fr", "Bid Strategy Type": c["bid"],
+                          "Maximum CPC bid limit": "2.50" if c["name"] == C_BRAND else "",
+                          "Targeting method": "Location of presence",
+                          "Exclusion method": "Location of presence",
+                          "Campaign Status": "Paused", "Comment": c["note"]})
+        for loc, loc_id in c["locs"]:
+            loc_rows.append({"Campaign": c["name"], "Location": loc, "Location ID": loc_id})
+    write("campaigns.csv", CAMPAIGN_HDR, camp_rows + loc_rows)
 
-    # ad groups (status) + keywords.csv
+    # ad_groups.csv + keywords.csv
     groups = AD_GROUPS + [BRAND]
-    write("ad_groups.csv", ["Campaign", "Ad Group", "Ad Group Type", "Ad Group Status"],
-          [{"Campaign": g["c"], "Ad Group": g["ag"], "Ad Group Type": "Standard",
-            "Ad Group Status": "Enabled"} for g in groups])
-    hdr = ["Campaign", "Ad Group", "Keyword", "Criterion Type", "Final URL", "Status"]
-    rows = []
+    ag_rows = [{"Campaign": g["c"], "Ad Group": g["ag"], "Ad Group Type": "Standard",
+                "Ad Group Status": "Enabled"} for g in groups]
+    write("ad_groups.csv", ADGROUP_HDR, ag_rows)
+    kw_rows = []
     for g in groups:
         for k in g["kws"]:
             for mt in ("Phrase", "Exact"):
-                rows.append({"Campaign": g["c"], "Ad Group": g["ag"], "Keyword": k,
-                             "Criterion Type": mt, "Status": "Enabled"})
-    write("keywords.csv", hdr, rows)
+                kw_rows.append({"Campaign": g["c"], "Ad Group": g["ag"], "Keyword": k,
+                                "Criterion Type": mt, "Status": "Enabled"})
+    write("keywords.csv", KEYWORD_HDR, kw_rows)
 
-    # negatives.csv (campaign-level) + negatives_shared_list.csv
-    hdr = ["Campaign", "Ad Group", "Keyword", "Criterion Type"]
-    rows = []
-    for k in CORP_NEG:
-        rows.append({"Campaign": C_CORP, "Keyword": k, "Criterion Type": "Campaign Negative Phrase"})
-    for k in MAR_NEG:
-        rows.append({"Campaign": C_MAR, "Keyword": k, "Criterion Type": "Campaign Negative Phrase"})
-    for camp in (C_CORP, C_MAR):
-        for k in BRAND_SCULPT:
-            rows.append({"Campaign": camp, "Keyword": k, "Criterion Type": "Campaign Negative Phrase"})
-    for k in BRAND_NEG:
-        rows.append({"Campaign": C_BRAND, "Keyword": k, "Criterion Type": "Campaign Negative Phrase"})
-    write("negatives.csv", hdr, rows)
+    # negatives.csv (niveau campagne) + liste partagée
+    neg_rows = []
+    for camp, kws in ((C_CORP, CORP_NEG), (C_MAR, MAR_NEG), (C_CORP, BRAND_SCULPT),
+                      (C_MAR, BRAND_SCULPT), (C_BRAND, BRAND_NEG)):
+        for k in kws:
+            neg_rows.append({"Campaign": camp, "Keyword": k,
+                             "Criterion Type": "Campaign Negative Phrase"})
+    write("negatives.csv", NEG_HDR, neg_rows)
     write("negatives_shared_list.csv", ["Shared Set Name", "Shared Set Type", "Keyword", "Criterion Type"],
           [{"Shared Set Name": SHARED_NEG_NAME, "Shared Set Type": "Negative keywords",
             "Keyword": k, "Criterion Type": "Negative Phrase"} for k in SHARED_NEG])
     write("negatives_shared_list_links.csv", ["Campaign", "Shared Set Name", "Shared Set Type"],
           [{"Campaign": c["name"], "Shared Set Name": SHARED_NEG_NAME,
             "Shared Set Type": "Negative keywords"} for c in CAMPAIGNS])
+    # Repli manuel : une ligne par terme, syntaxe expression ("...") acceptée telle quelle
+    # par Editor (Bibliothèque partagée) et par l'interface Web.
+    with open(os.path.join(OUT, "negatives_shared_list.txt"), "w", encoding="utf-8") as f:
+        f.write("".join(f'"{k}"\n' for k in SHARED_NEG))
 
     # rsa_ads.csv
-    hdr = (["Campaign", "Ad Group", "Ad type"] + [f"Headline {i}" for i in range(1, 16)]
-           + ["Headline 1 position"] + [f"Description {i}" for i in range(1, 5)]
-           + ["Path 1", "Path 2", "Final URL", "Status"])
-    rows = []
+    rsa_rows = []
     for g in AD_GROUPS:
         common_h = CORP_COMMON_H if g["c"] == C_CORP else MAR_COMMON_H
         common_d = CORP_COMMON_D if g["c"] == C_CORP else MAR_COMMON_D
         hs = g["h"] + common_h  # specific first (H1 pinned = ad group theme)
         ds = [g["d"]] + common_d
-        rows.append(rsa_row(g, hs, ds))
-    rows.append(rsa_row(BRAND, BRAND["h"], BRAND["dd"]))
-    write("rsa_ads.csv", hdr, rows)
+        rsa_rows.append(rsa_row(g, hs, ds))
+    rsa_rows.append(rsa_row(BRAND, BRAND["h"], BRAND["dd"]))
+    write("rsa_ads.csv", RSA_HDR, rsa_rows)
 
-    # assets
+    # assets (fichiers séparés : leurs colonnes « Description line 1/2 » sont des alias de
+    # « Description 1/2 » des annonces, on ne les mélange donc pas au fichier combiné)
     build_assets()
+
+    # import_editor_complet.csv : campagnes, lieux, groupes, mots clés, annonces, négatifs
+    # campagne, dans l'ordre parent -> enfant. Un seul import, une ligne = une entité.
+    combined_hdr = []
+    for h in CAMPAIGN_HDR + ADGROUP_HDR + KEYWORD_HDR + RSA_HDR + NEG_HDR:
+        if h not in combined_hdr:
+            combined_hdr.append(h)
+    write("import_editor_complet.csv", combined_hdr,
+          camp_rows + loc_rows + ag_rows + kw_rows + rsa_rows + neg_rows)
 
 def rsa_row(g, hs, ds):
     r = {"Campaign": g["c"], "Ad Group": g["ag"], "Ad type": "Responsive search ad",
          "Path 1": g["p1"], "Path 2": g["p2"], "Final URL": BASE + g["url"], "Status": "Enabled",
-         "Headline 1 position": "1"}
+         "Headline 1 position": "1"}  # H1 épinglé en position 1
     for i, h in enumerate(hs, 1):
         r[f"Headline {i}"] = h
     for i, d in enumerate(ds, 1):
@@ -405,16 +429,19 @@ def build_assets():
             co.append(r); combined.append(r)
     for camp, items in SNIPPETS.items():
         for header, vals in items:
-            r = {"Asset type": "Structured snippet", "Campaign": camp, "Header": header,
-                 "Snippet Values": ";".join(vals)}
+            r = {"Asset type": "Structured snippet", "Campaign": camp,
+                 "Structured snippet header": header,
+                 "Structured snippet values": ";".join(vals)}
             sn.append(r); combined.append(r)
+    # assets.csv : vue de référence seulement (NE PAS importer, colonnes mélangées)
     write("assets.csv", ["Asset type", "Campaign", "Link Text", "Description Line 1",
-                         "Description Line 2", "Final URL", "Callout text", "Header",
-                         "Snippet Values"], combined)
+                         "Description Line 2", "Final URL", "Callout text",
+                         "Structured snippet header", "Structured snippet values"], combined)
     write("assets_sitelinks.csv", ["Campaign", "Link Text", "Description Line 1",
                                    "Description Line 2", "Final URL"], sl)
     write("assets_callouts.csv", ["Campaign", "Callout text"], co)
-    write("assets_structured_snippets.csv", ["Campaign", "Header", "Snippet Values"], sn)
+    write("assets_structured_snippets.csv", ["Campaign", "Structured snippet header",
+                                             "Structured snippet values"], sn)
 
 if __name__ == "__main__":
     build()

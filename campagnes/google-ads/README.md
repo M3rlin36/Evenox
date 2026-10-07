@@ -1,19 +1,61 @@
 # Google Ads : campagnes Search Evenox (FR-QC)
 
-Fichiers à importer dans Google Ads Editor (Compte > Importer > À partir d'un fichier). Tous les fichiers sont en UTF-8 avec BOM.
-Toutes les campagnes sont créées **en veille (Paused)**. Il faut les relire avant de les activer.
+Fichiers générés par `outils/build_google_ads.py` pour **Google Ads Editor 2.13** (version courante, juillet 2026 ; 2.11 et plus fonctionnent aussi). Tous les CSV sont en UTF-8 avec BOM, séparateur virgule, en-têtes en anglais (Editor exige des en-têtes anglais, sans tenir compte de la casse ni des espaces).
+Toutes les campagnes sont créées **en veille (Paused)**. Les groupes, mots clés et annonces sont « Enabled », mais rien ne diffuse tant que la campagne reste en veille.
 
-| Ordre | Fichier | Contenu |
+## Fichiers
+
+| Fichier | Contenu | À importer ? |
 |---|---|---|
-| 1 | `campaigns.csv` | 3 campagnes : budget, enchères, langue `fr`, ciblage par **présence**, une ligne par lieu ciblé |
-| 2 | `ad_groups.csv` | 14 groupes d'annonces |
-| 3 | `keywords.csv` | 240 mots clés, chacun en expression (Phrase) et en exact (Exact), 14 à 18 par groupe |
-| 4 | `rsa_ads.csv` | 14 annonces RSA. Chacune a 15 titres et 4 descriptions. H1 est épinglé en position 1 (thème du groupe) |
-| 5 | `negatives.csv` | 75 négatifs au niveau campagne : enfants et gonflables, isolation corpo/mariage, isolation de la marque, Evenko |
-| 6 | `negatives_shared_list.csv` + `negatives_shared_list_links.csv` | Liste partagée « Evenox – Négatifs universels » (145 termes) et son association aux 3 campagnes |
-| 7 | `assets_sitelinks.csv`, `assets_callouts.csv`, `assets_structured_snippets.csv` | Liens annexes, accroches et extraits structurés au niveau campagne. `assets.csv` regroupe les trois pour référence |
+| `import_editor_complet.csv` | **Fichier principal.** 3 campagnes (budget, enchères, réseaux, langue `fr`, ciblage par présence, statut Paused), 41 lieux avec `Location ID`, 14 groupes, 240 lignes de mots clés (120 termes en Phrase + Exact), 14 annonces RSA (15 titres, 4 descriptions, H1 épinglé en position 1), 75 négatifs de campagne | Oui, en premier |
+| `assets_sitelinks.csv` | 16 liens annexes au niveau campagne | Oui |
+| `assets_callouts.csv` | 20 accroches au niveau campagne | Oui |
+| `assets_structured_snippets.csv` | 3 extraits structurés (en-têtes `Services` / `Types`, valeurs séparées par `;`) | Oui |
+| `negatives_shared_list.csv` + `negatives_shared_list_links.csv` | Liste partagée « Evenox – Négatifs universels » (145 termes, expression) et son association aux 3 campagnes | Essayer ; sinon repli manuel (étape 6) |
+| `negatives_shared_list.txt` | Les 145 termes de la liste partagée, un par ligne, au format expression (`"terme"`) | Repli manuel seulement |
+| `campaigns.csv`, `ad_groups.csv`, `keywords.csv`, `rsa_ads.csv`, `negatives.csv` | Le même contenu que le fichier principal, découpé par entité | Seulement si l'import du fichier principal échoue (importer dans cet ordre) |
+| `assets.csv` | Vue d'ensemble des 3 types de composantes | **Non** (référence ; colonnes mélangées) |
 
-Si Editor ne reconnaît pas la liste partagée à l'import, créez-la dans **Bibliothèque partagée > Listes de mots clés à exclure**. Collez la colonne `Keyword`, puis associez la liste aux 3 campagnes.
+Les composantes (assets) restent dans des fichiers séparés : leurs colonnes `Description line 1/2` sont des alias des colonnes `Description 1/2` des annonces, et Editor les confondrait dans un fichier combiné.
+
+## Procédure d'import (Google Ads Editor)
+
+**Avant de commencer**
+1. Ouvrir Google Ads Editor 2.13 (Aide > À propos pour voir la version ; mettre à jour si inférieure à 2.11, la colonne `EU political ads` n'existant pas avant).
+2. Sélectionner le compte Evenox, puis **Compte > Obtenir les modifications récentes** (Get recent changes) pour partir d'une copie à jour. Publier ou rejeter toute modification en attente : Editor refuse l'import s'il y en a.
+3. Corriger d'abord les points bloquants de la section « À FAIRE AVANT LANCEMENT » (notamment `[N]` dans un titre), puis relancer `python3 -I outils/build_google_ads.py` et `python3 -I outils/validate_ads.py` (0 erreur attendue).
+
+**Import**
+4. **Compte > Importer > À partir d'un fichier…** (Account > Import > From file…) et choisir `import_editor_complet.csv`.
+   - À l'écran d'aperçu, vérifier que chaque en-tête est reconnu (aucune colonne « Ignorer / non mappée »). Si une colonne n'est pas reconnue, choisir le bon en-tête dans la liste déroulante. Le seul en-tête un peu risqué est `EU political ads` : s'il n'est pas reconnu, l'ignorer et régler le champ à la main (étape 8).
+   - Cliquer **Importer**, puis **Examiner les modifications importées** et **Conserver les modifications proposées**. L'aperçu n'affiche que 100 lignes, mais tout le fichier est importé.
+5. Recommencer l'étape 4 avec `assets_sitelinks.csv`, puis `assets_callouts.csv`, puis `assets_structured_snippets.csv`.
+6. Liste de négatifs partagée : importer `negatives_shared_list.csv`, puis `negatives_shared_list_links.csv`. Si Editor ne reconnaît pas les colonnes `Shared Set Name` / `Shared Set Type` (format non documenté par Google), annuler cet import et faire le **repli manuel** :
+   - **Bibliothèque partagée > Listes de mots clés à exclure > + Ajouter**, nom : `Evenox – Négatifs universels` ;
+   - dans la liste, **Ajouter plusieurs mots clés à exclure** et coller le contenu de `negatives_shared_list.txt` (les guillemets donnent la correspondance de type expression) ;
+   - **Mots clés et ciblage > Listes de mots clés à exclure de la campagne > Ajouter**, et associer la liste aux 3 campagnes.
+
+**Vérifications après import (avant de publier)**
+7. Cliquer **Vérifier les modifications** (Check changes) et corriger toute erreur ou tout avertissement.
+8. Pour chacune des 3 campagnes, dans le panneau d'édition :
+   - Statut = **En veille** ; Type = Réseau de Recherche ; **Réseaux** : Recherche Google seulement (Partenaires du Réseau de Recherche et Réseau Display décochés) ;
+   - Budget : 100 $ / 60 $ / 10 $ par jour ; Stratégie d'enchères : Maximiser les conversions / Maximiser les conversions / Maximiser les clics avec **limite de CPC max 2,50 $** (Marque) ;
+   - Langues : français seulement ;
+   - **Options de lieux** : Ciblage = « Présence : personnes se trouvant dans vos zones ciblées », Exclusion = « Présence » ;
+   - **Annonces politiques de l'UE** : « Ne contient pas d'annonces politiques de l'UE » (le régler à la main si la colonne n'a pas été reconnue) ;
+   - Lieux : 20 lieux pour Corporatif et Mariage, Québec (province) pour Marque. Aucun lieu « non résolu » : Editor utilise la colonne `Location ID` (identifiants officiels Google, fichier geotargets du 2026-08-12).
+9. Groupes d'annonces : 14 au total (7 Corporatif, 6 Mariage, 1 Marque). Mots clés : 240 lignes, en Phrase et en Exact. Négatifs de campagne : 75, de type « Expression négative de campagne ».
+10. Annonces : 14 RSA, chacune avec 15 titres et 4 descriptions ; le titre 1 est épinglé en position 1 (icône d'épingle) ; chemins d'affichage et URL finales corrects ; force de l'annonce affichée sans erreur.
+11. Composantes : 16 liens annexes, 20 accroches, 3 extraits structurés, rattachés aux bonnes campagnes.
+12. **Publier** (Post). Puis, dans l'interface Web, refaire un contrôle rapide de l'étape 8 et des conversions (section « Conversions » plus bas).
+
+**Ce qu'Editor ne fait pas par CSV ici (à régler à la main)**
+- **Calendrier de diffusion** : non inclus dans le CSV. Le créer dans Paramètres de la campagne > Calendrier de diffusion (voir « Calendrier recommandé »).
+- **Objectifs de conversion** de la campagne (`lead_qualifie` comme principale) : à régler dans l'interface Web.
+- **Passage au CPA cible** après 30 conversions : manuel (la colonne `Comment` de chaque campagne le rappelle).
+- Liste de négatifs partagée : repli manuel ci-dessus si l'import CSV échoue.
+
+**Si l'import par fichier pose problème** : ouvrir le CSV dans un éditeur de texte (pas Excel, qui peut abîmer les accents et les « 1 195 $ »), tout copier, puis **Compte > Importer > Coller du texte** (Paste text). Si le fichier principal échoue, importer les fichiers par entité dans cet ordre : `campaigns.csv`, `ad_groups.csv`, `keywords.csv`, `rsa_ads.csv`, `negatives.csv`, puis les composantes.
 
 ## Campagnes
 
@@ -24,8 +66,8 @@ Si Editor ne reconnaît pas la liste partagée à l'import, créez-la dans **Bib
 | SRCH \| Marque \| FR | 10 $ | Maximiser les clics, CPC max 2,50 $ | Province de Québec |
 
 - **Réseaux :** Recherche Google seulement. Partenaires du Réseau de Recherche et Réseau Display désactivés.
-- **Ciblage par présence :** la colonne `Targeting method = Location of presence` doit l'appliquer. Vérifiez-le dans Paramètres > Lieux > Options. La valeur Google par défaut, « Présence ou intérêt », laisse passer des clics de partout.
-- **Noms de lieux :** les noms de lieux (p. ex. `Sainte-Therese,Quebec,Canada`) doivent être reconnus par Editor. Il signale les lieux non résolus à l'import. Corrigez-les avec l'outil de recherche de lieux.
+- **Ciblage par présence :** les colonnes `Targeting method` et `Exclusion method` = `Location of presence` l'appliquent. Vérifiez-le dans Paramètres > Lieux > Options. La valeur Google par défaut, « Présence ou intérêt », laisse passer des clics de partout.
+- **Lieux :** chaque lieu est fourni avec son nom canonique Google et son `Location ID` (Criteria ID) tirés du fichier officiel geotargets. On cible la version « City » quand Google en a deux (p. ex. Montréal 1002604 et non la « Municipality » 9196770). Pour ajouter un lieu, chercher son ID dans https://developers.google.com/google-ads/api/data/geotargets.
 - **Calendrier recommandé :** lundi à vendredi de 7 h à 21 h, samedi de 9 h à 17 h pour Corporatif. Tous les jours de 8 h à 22 h pour Mariage. Ajustez après 4 semaines de données.
 - **Conversions (voir `operations/tracking-setup.md`, section 3) :** principale = `lead_qualifie` (formulaire, routes A et B), avec conversions améliorées. Secondaires (observation) = `lead_tous`, `appel_60s` (devient principale après 30 jours si au moins 50 % des appels écoutés sont qualifiés). Phase 2 : import hors ligne de `depot_paye`. Ne pas mettre le clic sur le téléphone en conversion principale.
 

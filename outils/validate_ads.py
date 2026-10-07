@@ -93,7 +93,7 @@ for r in read(os.path.join(G, "assets_sitelinks.csv")):
 for r in read(os.path.join(G, "assets_callouts.csv")):
     chk("callout", r["Callout text"], 25, f"Callout[{r['Campaign']}]"); forbid(r["Callout text"], "Callout")
 for r in read(os.path.join(G, "assets_structured_snippets.csv")):
-    vals = r["Snippet Values"].split(";")
+    vals = (r.get("Structured snippet values") or r.get("Snippet Values") or "").split(";")
     if len(vals) < 3: errors.append(f"snippet <3 values {r}")
     for v in vals: chk("snippet value", v, 25, f"Snippet[{r['Campaign']}]")
 stats.append("Assets: sitelinks (25/35/35), callouts (25), snippets (25) checked")
