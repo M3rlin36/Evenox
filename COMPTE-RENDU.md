@@ -166,6 +166,7 @@ Mariages au Québec : ~22 700 en 2025, **54 % entre juillet et octobre** (ISQ).
 | `campagnes/chatgpt-ads/` | Campagne test : context hints, titres/descriptions, réglages, règles |
 | `operations/` | Pages d'atterrissage (corporatif, mariage, événement privé, soumission, réalisations), formulaire, suivi des leads (scripts), tracking, correctifs urgents, plan GEO, données structurées JSON-LD, fiches d'annuaires, audit de la campagne actuelle |
 | `operations/crm-kpi-evenox.xlsx` | CRM + tableau de bord : leads, dépenses, KPI par campagne, décision couper/augmenter, import des contrats vers Google |
+| `site/formulaire-evenox.html` | Formulaire qualifiant multi-étapes prêt à coller dans un module Code Divi (routes A/B/C/D, Loi 25, suivi des clics), testé 12/12 — mode d'emploi dans `site/README.md` |
 | `campagnes/google-ads/import_editor_complet.csv` | Fichier unique à importer dans Google Ads Editor 2.13 |
 | `recherche/` | Les 7 dossiers de recherche avec le journal complet des sources |
 
