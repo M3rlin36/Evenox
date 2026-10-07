@@ -12,13 +12,13 @@
    - Lire la liste des erreurs et avertissements, puis cliquer sur **Vérifier les modifications importées** et sur **Conserver les modifications proposées**.
    - Après chaque import, accepter ou refuser les modifications proposées avant d'importer le fichier suivant (le menu Importer est grisé tant que des propositions sont en attente).
 5. **Vérifier** dans Editor :
-   - 6 campagnes, dont 2 en pause : S-EN et Québec-Lévis.
-   - Budgets : 10 / 165 / 80 / 45 $ actifs, soit 300 $.
+   - 5 campagnes, **toutes en pause**. On activera Marque, Corporatif & Fêtes et Événements privés après le test du faux lead (PLAN, section 4).
+   - Budgets plafonds : 10 / 170 / 120 $ pour les 3 campagnes de lancement (300 $), en Max. clics avec CPC max. 2,50 / 4,00 / 3,00 $.
    - Les accents s'affichent correctement (é, è, à).
    - Les épinglages sont présents dans les annonces.
    - Les négatifs sont au **niveau campagne** (Mots-clés et ciblage > Mots-clés, négatifs).
 6. **Régler à la main** (PLAN, section 3) :
-   - Zones géographiques et option « Présence ».
+   - Zone : rayon de 40 km autour de Sainte-Thérèse, option « Présence ».
    - Réseau de Recherche Google seulement (décocher partenaires et Display).
    - AI Max désactivé, éléments créés automatiquement OFF.
    - Lier la fiche Google Business Profile (élément de lieu).
