@@ -51,10 +51,10 @@ Tous les prix s'affichent **avant taxes**, au format québécois : « 1 495 $ »
 
 ## 1. SEO
 
-**Titre SEO (52 caractères) :**
+**Titre SEO (46 caractères) :**
 Fête de Noël d'entreprise clé en main | Évenox
 
-**Méta-description (150 caractères) :**
+**Méta-description (147 caractères) :**
 Lettres lumineuses 4 pi, lounge et photobooth livrés et installés pour votre fête de Noël d'entreprise. Laval, Montréal, Rive-Nord. Réponse en 2 h.
 
 *(Longueurs vérifiées par script Python : voir la fin du document.)*
@@ -380,4 +380,4 @@ Votre date est dans moins de 7 jours ? Appelez-nous directement au `{{TELEPHONE}
 | Élément | Texte | Caractères | Limite |
 |---|---|---|---|
 | Titre SEO | Fête de Noël d'entreprise clé en main \| Évenox | 46 | 60 |
-| Méta-description | Lettres lumineuses 4 pi, lounge et photobooth livrés et installés pour votre fête de Noël d'entreprise. Laval, Montréal, Rive-Nord. Réponse en 2 h. | 150 | 155 |
+| Méta-description | Lettres lumineuses 4 pi, lounge et photobooth livrés et installés pour votre fête de Noël d'entreprise. Laval, Montréal, Rive-Nord. Réponse en 2 h. | 147 | 155 |

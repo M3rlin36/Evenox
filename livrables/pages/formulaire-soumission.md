@@ -19,6 +19,7 @@
 | `{{URL_POLITIQUE_CONFIDENTIALITE}}` | Politique de confidentialité en français | À publier ou mettre à jour |
 | `{{URL_BOUTIQUE}}` | Boutique en ligne pour les petites commandes et la cueillette | evenox.booqableshop.com |
 | `{{DUREE_CONSERVATION}}` | Durée de conservation des leads non convertis (Loi 25) | Suggestion : 3 ans, à valider |
+| `{{PRIX_FORFAIT_MIN}}`, `{{PRIX_FORFAIT_MAX}}`, `{{PRIX_LETTRE}}`, `{{PRIX_PACK_INITIALES}}`, `{{PRIX_PACK_NOM}}`, `{{NB_LETTRES_MAX}}` | Prix et limites affichés dans le formulaire | Définis dans les fichiers de page ; grille de prix à trancher |
 | `{{URL_PORTFOLIO}}` | Galerie ou PDF de réalisations | À fournir |
 
 ---

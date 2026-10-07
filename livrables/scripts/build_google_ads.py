@@ -22,6 +22,20 @@ os.makedirs(OUT, exist_ok=True)
 # Textes d'annonces vérifiés (agent créatif) : on réutilise la liste AG.
 _src = open(os.path.join(HERE, "adcopy_source.py"), encoding="utf-8").read()
 _src = _src.split("# ----------------------------------------------------------- render")[0]
+# GRILLE DE PRIX — si la grille confirmée diffère de celle des annonces,
+# inscrire ici "ancien texte": "nouveau texte" (FR et EN), puis relancer.
+# Ex. : "650 $": "799 $", "$650": "$799", "650 $ à 1 495 $": "799 $ à 1 499 $"
+# Les plus longs remplacements sont appliqués en premier.
+PRIX = {
+}
+
+
+def px(texte):
+    """Applique la grille PRIX à un texte."""
+    for ancien in sorted(PRIX, key=len, reverse=True):
+        texte = texte.replace(ancien, PRIX[ancien])
+    return texte
+
 _ns = {}
 exec(_src, _ns)
 AG = {g["name"]: g for g in _ns["AG"]}
@@ -283,6 +297,10 @@ NEG_HORS_QUEBEC_VILLE = ["québec", "quebec city", "lévis", "levis"]
 NEG_MARQUE = ["evenox", "évenox"]
 
 # ---------------------------------------------------------------- BUILD
+for _s in STRUCTURE:
+    _s["copy"] = dict(_s["copy"], h=[px(x) for x in _s["copy"]["h"]],
+                      d=[px(x) for x in _s["copy"]["d"]])
+
 errors = []
 
 def check_copy(where, c):
@@ -378,6 +396,7 @@ sl = []
 for c in BUDGET:
     data = _ns["SITELINKS_EN"] if c.startswith("S-EN") else _ns["SITELINKS_FR"]
     for (t, d1, d2), u in zip(data, SITELINK_URLS):
+        t, d1, d2 = px(t), px(d1), px(d2)
         if len(t) > LIMITS["sl"] or max(len(d1), len(d2)) > LIMITS["sld"]:
             errors.append(f"{c}: lien annexe trop long : {t}")
         sl.append([c, t, d1, d2, u])
