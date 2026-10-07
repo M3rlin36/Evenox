@@ -33,6 +33,7 @@ URL = {
     "photobooth": "https://evenox.ca/location-photobooth-montreal",
     "mobilier": "https://evenox.ca/nos-forfaits-tout-inclus",
     "mariage": "https://evenox.ca/nos-forfaits-tout-inclus",
+    "teambuilding": "https://evenox.ca/team-building-activitecorpo",
 }
 
 BUDGET = {  # $ CAD / jour — total actif = 300
@@ -81,6 +82,20 @@ PHOTOBOOTH_GEN = dict(
        "Livraison, installation et préposé inclus selon forfait. Soumission détaillée en 24 h.",
        "Montréal, Laval, Rive-Nord, Laurentides et Québec. Accessoire bonus offert selon forfait."],
     path=("photobooth", "forfaits"),
+)
+TEAMBUILDING = dict(
+    h=["Team building clé en main", "Activités team building",
+       "Jeux géants pour entreprise", "Animation selon forfait",
+       "Montréal, Laval, Rive-Nord", "Livraison et installation",
+       "Soumission en 24 h", "Note Google 4,8/5", "Plus de 1 000 événements",
+       "Idéal pour vos 5 à 7", "Activité d'équipe sur place",
+       "Facturation net 30", "Réservez votre date",
+       "Service premium sans tracas", "Votre équipe, mobilisée"],
+    d=["Activités team building clés en main : livraison, installation et reprise incluses.",
+       "Jeux géants, photobooth et lounge pour vos 5 à 7, fêtes de bureau et journées d'équipe.",
+       "Montréal, Laval, Rive-Nord et Laurentides. Facturation net 30 pour les entreprises.",
+       "Plus de 1 000 événements réalisés, note Google 4,8/5. Soumission détaillée en 24 h."],
+    path=("team-building", "entreprise"),
 )
 MOBILIER_MARIAGE = copy_from("Mobilier lounge/cocktail événement")
 MOBILIER_MARIAGE["h"][7] = "Lounge pour votre mariage"
@@ -137,6 +152,13 @@ STRUCTURE = [
             "location mobilier 5 à 7", "location mobilier gala",
             "location mobilier lancement de produit", "location mobilier congrès")
           + E("location mobilier événement corporatif")),
+  dict(campaign="S-FR | Corporatif & Fêtes", adgroup="Team building",
+       url=URL["teambuilding"], copy=TEAMBUILDING, pins=PIN_H1,
+       kw=P("team building montréal", "team building laval", "team building rive-nord",
+            "activité team building", "activité team building entreprise",
+            "team building entreprise", "jeux géants team building",
+            "location jeux géants corporatif", "activité 5 à 7 entreprise")
+          + E("team building montréal", "team building laval")),
   # -------------------------------------------------------- PRODUITS
   dict(campaign="S-FR | Produits vedettes", adgroup="Lettres lumineuses",
        url=URL["lettres"], copy=LETTRES_GEN, pins=PIN_H1,
@@ -149,7 +171,7 @@ STRUCTURE = [
        url=URL["photobooth"], copy=PHOTOBOOTH_GEN, pins=PIN_PRICE2,
        kw=P("location photobooth", "photobooth à louer", "location borne photo",
             "location photobooth montréal", "location photobooth laval",
-            "location photobooth rive-nord", "prix location photobooth")
+            "location photobooth rive-nord", "prix location photobooth", "photobooth")
           + E("location photobooth", "location photobooth montréal",
               "location photobooth laval")),
   dict(campaign="S-FR | Produits vedettes", adgroup="Mobilier lounge et cocktail",
@@ -230,12 +252,14 @@ NEG_COMPTE = [
   "bouncy castle", "bounce house", "costume", "déguisement", "robe", "limousine",
   "location auto", "camion", "outil", "échafaudage", "tente de camping", "camping",
   "location de salle", "salle à louer", "chaise de bureau", "photomaton",
-  "passeport", "application", "logiciel", "photographe",
+  "passeport", "application", "logiciel", "photographe", "mac", "macbook",
+  "télécharger", "download", "windows", "iphone",
   # Géo hors zone (France)
   "france", "paris", "mayenne", "laval france",
 ]
 NEG_PRODUITS = ["entreprise", "corporatif", "corporate", "employés", "party de bureau",
                 "mariage", "wedding", "noces", "gala"]       # → vers campagnes dédiées
+NEG_CORPO = ["virtuel", "virtuelle", "en ligne", "escape", "zoom", "idées gratuites"]
 NEG_HORS_QUEBEC_VILLE = ["québec", "quebec city", "lévis", "levis"]
 NEG_MARQUE = ["evenox", "évenox"]
 
@@ -311,6 +335,9 @@ for c in BUDGET:
         negs.append([c, k, "Negative Phrase"])
     if "Marque" not in c:
         for k in NEG_MARQUE:
+            negs.append([c, k, "Negative Phrase"])
+    if c == "S-FR | Corporatif & Fêtes":
+        for k in NEG_CORPO:
             negs.append([c, k, "Negative Phrase"])
     if c == "S-FR | Produits vedettes":
         for k in NEG_PRODUITS:

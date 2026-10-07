@@ -52,6 +52,17 @@ S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier gala,Phrase,Ena
 S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier lancement de produit,Phrase,Enabled
 S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier congrès,Phrase,Enabled
 S-FR | Corporatif & Fêtes,Mobilier corporatif,location mobilier événement corporatif,Exact,Enabled
+S-FR | Corporatif & Fêtes,Team building,team building montréal,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,team building laval,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,team building rive-nord,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,activité team building,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,activité team building entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,team building entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,jeux géants team building,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,location jeux géants corporatif,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,activité 5 à 7 entreprise,Phrase,Enabled
+S-FR | Corporatif & Fêtes,Team building,team building montréal,Exact,Enabled
+S-FR | Corporatif & Fêtes,Team building,team building laval,Exact,Enabled
 S-FR | Produits vedettes,Lettres lumineuses,location lettres lumineuses,Phrase,Enabled
 S-FR | Produits vedettes,Lettres lumineuses,lettres lumineuses à louer,Phrase,Enabled
 S-FR | Produits vedettes,Lettres lumineuses,location lettres géantes,Phrase,Enabled
@@ -69,6 +80,7 @@ S-FR | Produits vedettes,Photobooth,location photobooth montréal,Phrase,Enabled
 S-FR | Produits vedettes,Photobooth,location photobooth laval,Phrase,Enabled
 S-FR | Produits vedettes,Photobooth,location photobooth rive-nord,Phrase,Enabled
 S-FR | Produits vedettes,Photobooth,prix location photobooth,Phrase,Enabled
+S-FR | Produits vedettes,Photobooth,photobooth,Phrase,Enabled
 S-FR | Produits vedettes,Photobooth,location photobooth,Exact,Enabled
 S-FR | Produits vedettes,Photobooth,location photobooth montréal,Exact,Enabled
 S-FR | Produits vedettes,Photobooth,location photobooth laval,Exact,Enabled

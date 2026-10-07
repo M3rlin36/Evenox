@@ -98,6 +98,12 @@ S-FR | Marque,passeport,Negative Phrase
 S-FR | Marque,application,Negative Phrase
 S-FR | Marque,logiciel,Negative Phrase
 S-FR | Marque,photographe,Negative Phrase
+S-FR | Marque,mac,Negative Phrase
+S-FR | Marque,macbook,Negative Phrase
+S-FR | Marque,télécharger,Negative Phrase
+S-FR | Marque,download,Negative Phrase
+S-FR | Marque,windows,Negative Phrase
+S-FR | Marque,iphone,Negative Phrase
 S-FR | Marque,france,Negative Phrase
 S-FR | Marque,paris,Negative Phrase
 S-FR | Marque,mayenne,Negative Phrase
@@ -205,12 +211,24 @@ S-FR | Corporatif & Fêtes,passeport,Negative Phrase
 S-FR | Corporatif & Fêtes,application,Negative Phrase
 S-FR | Corporatif & Fêtes,logiciel,Negative Phrase
 S-FR | Corporatif & Fêtes,photographe,Negative Phrase
+S-FR | Corporatif & Fêtes,mac,Negative Phrase
+S-FR | Corporatif & Fêtes,macbook,Negative Phrase
+S-FR | Corporatif & Fêtes,télécharger,Negative Phrase
+S-FR | Corporatif & Fêtes,download,Negative Phrase
+S-FR | Corporatif & Fêtes,windows,Negative Phrase
+S-FR | Corporatif & Fêtes,iphone,Negative Phrase
 S-FR | Corporatif & Fêtes,france,Negative Phrase
 S-FR | Corporatif & Fêtes,paris,Negative Phrase
 S-FR | Corporatif & Fêtes,mayenne,Negative Phrase
 S-FR | Corporatif & Fêtes,laval france,Negative Phrase
 S-FR | Corporatif & Fêtes,evenox,Negative Phrase
 S-FR | Corporatif & Fêtes,évenox,Negative Phrase
+S-FR | Corporatif & Fêtes,virtuel,Negative Phrase
+S-FR | Corporatif & Fêtes,virtuelle,Negative Phrase
+S-FR | Corporatif & Fêtes,en ligne,Negative Phrase
+S-FR | Corporatif & Fêtes,escape,Negative Phrase
+S-FR | Corporatif & Fêtes,zoom,Negative Phrase
+S-FR | Corporatif & Fêtes,idées gratuites,Negative Phrase
 S-FR | Corporatif & Fêtes,québec,Negative Phrase
 S-FR | Corporatif & Fêtes,quebec city,Negative Phrase
 S-FR | Corporatif & Fêtes,lévis,Negative Phrase
@@ -314,6 +332,12 @@ S-FR | Produits vedettes,passeport,Negative Phrase
 S-FR | Produits vedettes,application,Negative Phrase
 S-FR | Produits vedettes,logiciel,Negative Phrase
 S-FR | Produits vedettes,photographe,Negative Phrase
+S-FR | Produits vedettes,mac,Negative Phrase
+S-FR | Produits vedettes,macbook,Negative Phrase
+S-FR | Produits vedettes,télécharger,Negative Phrase
+S-FR | Produits vedettes,download,Negative Phrase
+S-FR | Produits vedettes,windows,Negative Phrase
+S-FR | Produits vedettes,iphone,Negative Phrase
 S-FR | Produits vedettes,france,Negative Phrase
 S-FR | Produits vedettes,paris,Negative Phrase
 S-FR | Produits vedettes,mayenne,Negative Phrase
@@ -432,6 +456,12 @@ S-FR | Mariage,passeport,Negative Phrase
 S-FR | Mariage,application,Negative Phrase
 S-FR | Mariage,logiciel,Negative Phrase
 S-FR | Mariage,photographe,Negative Phrase
+S-FR | Mariage,mac,Negative Phrase
+S-FR | Mariage,macbook,Negative Phrase
+S-FR | Mariage,télécharger,Negative Phrase
+S-FR | Mariage,download,Negative Phrase
+S-FR | Mariage,windows,Negative Phrase
+S-FR | Mariage,iphone,Negative Phrase
 S-FR | Mariage,france,Negative Phrase
 S-FR | Mariage,paris,Negative Phrase
 S-FR | Mariage,mayenne,Negative Phrase
@@ -541,6 +571,12 @@ S-EN | Corporate Montréal,passeport,Negative Phrase
 S-EN | Corporate Montréal,application,Negative Phrase
 S-EN | Corporate Montréal,logiciel,Negative Phrase
 S-EN | Corporate Montréal,photographe,Negative Phrase
+S-EN | Corporate Montréal,mac,Negative Phrase
+S-EN | Corporate Montréal,macbook,Negative Phrase
+S-EN | Corporate Montréal,télécharger,Negative Phrase
+S-EN | Corporate Montréal,download,Negative Phrase
+S-EN | Corporate Montréal,windows,Negative Phrase
+S-EN | Corporate Montréal,iphone,Negative Phrase
 S-EN | Corporate Montréal,france,Negative Phrase
 S-EN | Corporate Montréal,paris,Negative Phrase
 S-EN | Corporate Montréal,mayenne,Negative Phrase
@@ -650,6 +686,12 @@ S-FR | Québec-Lévis (test),passeport,Negative Phrase
 S-FR | Québec-Lévis (test),application,Negative Phrase
 S-FR | Québec-Lévis (test),logiciel,Negative Phrase
 S-FR | Québec-Lévis (test),photographe,Negative Phrase
+S-FR | Québec-Lévis (test),mac,Negative Phrase
+S-FR | Québec-Lévis (test),macbook,Negative Phrase
+S-FR | Québec-Lévis (test),télécharger,Negative Phrase
+S-FR | Québec-Lévis (test),download,Negative Phrase
+S-FR | Québec-Lévis (test),windows,Negative Phrase
+S-FR | Québec-Lévis (test),iphone,Negative Phrase
 S-FR | Québec-Lévis (test),france,Negative Phrase
 S-FR | Québec-Lévis (test),paris,Negative Phrase
 S-FR | Québec-Lévis (test),mayenne,Negative Phrase

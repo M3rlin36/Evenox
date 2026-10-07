@@ -17,7 +17,7 @@ On lance **4 campagnes Search en français à 300 $/jour** et on en garde **3 en
 | # | Campagne | Statut | Budget/jour | Groupes d'annonces | Enchères au lancement |
 |---|---|---|---|---|---|
 | 1 | **S-FR \| Marque** | Active | 10 $ | Marque Évenox | Max. clics, CPC max. 2,50 $ |
-| 2 | **S-FR \| Corporatif & Fêtes** | Active | **165 $** | Fête de Noël d'entreprise · Lettres lumineuses corporatif · Photobooth corporatif · Mobilier corporatif | Max. conversions |
+| 2 | **S-FR \| Corporatif & Fêtes** | Active | **165 $** | Fête de Noël d'entreprise · Team building · Lettres lumineuses corporatif · Photobooth corporatif · Mobilier corporatif | Max. conversions |
 | 3 | **S-FR \| Produits vedettes** | Active | 80 $ | Lettres lumineuses · Photobooth · Mobilier lounge et cocktail | Max. conversions |
 | 4 | **S-FR \| Mariage** | Active | 45 $ | Lettres lumineuses mariage · Photobooth mariage · Mobilier lounge mariage | Max. conversions |
 | 5 | S-EN \| Corporate Montréal | **Pause** | (30 $ pris sur #2) | 4 groupes EN | Max. conversions |
@@ -26,9 +26,9 @@ On lance **4 campagnes Search en français à 300 $/jour** et on en garde **3 en
 | | **Total actif** | | **300 $** | | |
 
 **Ce qui est prêt à importer** (dossier `livrables/google-ads-editor/`) :
-- 6 campagnes, 16 groupes d'annonces, 126 mots-clés (expression et exact).
-- 16 annonces responsives (15 titres et 4 descriptions chacune).
-- 657 mots-clés négatifs, 8 liens annexes et 8 accroches par campagne.
+- 6 campagnes, 17 groupes d'annonces, 138 mots-clés (expression et exact).
+- 17 annonces responsives (15 titres et 4 descriptions chacune).
+- 699 mots-clés négatifs, 8 liens annexes et 8 accroches par campagne.
 
 Les limites de caractères et tes règles de marque (pas de %, pas de « à partir de », pas de « dès XX $ ») sont vérifiées par script. Le script vérifie aussi qu'aucun négatif ne bloque un de tes mots-clés : 0 conflit.
 
@@ -42,6 +42,19 @@ Ta grille de transport pour Québec et Lévis n'est pas fixée. Sans elle, on ne
 Le remarketing a besoin de listes d'audience bâties uniquement à partir des visiteurs qui ont consenti. La bannière Loi 25 (bloquant 2b) doit donc être en ligne depuis 2 à 3 semaines avant que la liste soit utilisable. Active Demand Gen quand la bannière est en ligne, avec la règle d'arrêt : 0 lead qualifié après 1 500 $ dépensés = on coupe.
 
 ---
+
+### Attention : le volume de recherche est petit
+D'après Google Trends, le volume pour tes services exacts est faible au Québec. Ces estimations ont une marge d'erreur de 50 à 100 % :
+- « location photobooth » : 20 à 100 recherches par mois.
+- « lettres lumineuses » : moins de 20.
+- « party de bureau » : 2 500 à 3 500 en novembre et décembre.
+
+**Search seul ne dépensera probablement pas 300 $/jour.** C'est normal : on ne force pas la dépense avec de la requête large. Voici l'ordre de redéploiement si le budget n'est pas dépensé :
+1. Le groupe Team building, environ 8 000 recherches par mois.
+2. « photobooth » en expression, avec les négatifs mac, app et télécharger.
+3. **Demand Gen**, quand la bannière Loi 25 est en ligne. C'est le principal levier pour atteindre 300 $/jour.
+
+Les vraies données de tes anciennes campagnes (avril 2025 à septembre 2026) remplaceront ces estimations dès que j'ai l'accès.
 
 ## 3. Réglages obligatoires (à faire dans l'interface après l'import)
 
