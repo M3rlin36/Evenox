@@ -29,6 +29,10 @@ os.makedirs(OUT, exist_ok=True)
 PRIX = {
 }
 
+# Montants affichés sur evenox.ca (relevé du 7 oct. 2026). Toute somme en $ dans
+# une annonce, un lien annexe ou une accroche doit figurer ici (sinon : erreur).
+PRIX_SITE = {1195, 1995, 2495, 899, 1449, 599, 799, 999, 1798, 380, 500, 240, 210}
+
 URL = {
     "home": "https://evenox.ca/",
     "forfaits": "https://evenox.ca/nos-forfaits-tout-inclus",
@@ -440,7 +444,19 @@ for _s in STRUCTURE:
     _s["copy"] = dict(c, h=[px(x) for x in c["h"]], d=[px(x) for x in c["d"]])
 
 
+MONTANT = re.compile(r"(\d{1,3}(?:[ \u00a0]\d{3})*)\s?\$(?!\d)|\$(\d{1,3}(?:,\d{3})*)")
+
+
+def check_montants(where, textes):
+    for t in textes:
+        for m in MONTANT.finditer(t):
+            v = int(re.sub(r"\D", "", m.group(1) or m.group(2)))
+            if v not in PRIX_SITE:
+                errors.append(f"{where}: montant absent du site ({v} $) : {t}")
+
+
 def check_copy(where, c):
+    check_montants(where, c["h"] + c["d"])
     if len(c["h"]) != 15 or len(set(c["h"])) != 15:
         errors.append(f"{where}: 15 titres uniques requis")
     if len(c["d"]) != 4:
@@ -539,6 +555,7 @@ for c in CAMPAGNES:
     data = SITELINKS_EN if c == C_EN else SITELINKS_FR
     for t, d1, d2, u in data:
         t, d1, d2 = px(t), px(d1), px(d2)
+        check_montants(f"{c} / lien annexe", [t, d1, d2])
         if len(t) > LIMITS["sl"] or max(len(d1), len(d2)) > LIMITS["sld"]:
             errors.append(f"{c}: lien annexe trop long : {t} / {d1} / {d2}")
         sl.append([c, t, d1, d2, u])
@@ -582,4 +599,4 @@ if lanc != 300:
 if errors:
     print("ERREURS :\n" + "\n".join(errors))
     sys.exit(1)
-print("OK : limites, règles de marque, majuscules, liens distincts, 0 conflit négatif/mot-clé")
+print("OK : limites, règles de marque, majuscules, prix = site, liens distincts, 0 conflit négatif/mot-clé")
