@@ -123,7 +123,7 @@
   /* ===================== DONNÉES ===================== */
   var IC = {
     party: '<path d="M4 20l5-13 8 8-13 5z"/><path d="M14 3v2.5M19.5 9H22M16.5 6.5l2-2M9.5 12.5l2 2"/>',
-    glass: '<path d="M7 3h10l-1.2 7.2a3.8 3.8 0 0 1-7.6 0L7 3z"/><path d="M12 14v7M8 21h8M7.6 6.5h8.8"/>',
+    glass: '<circle cx="12" cy="7" r="3"/><circle cx="5" cy="9" r="2.2"/><circle cx="19" cy="9" r="2.2"/><path d="M6.5 20v-2a5.5 5.5 0 0 1 11 0v2M1.5 20v-1.5a3.5 3.5 0 0 1 4-3.4M22.5 20v-1.5a3.5 3.5 0 0 0-4-3.4"/>',
     star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
     building: '<path d="M3 21h18M5 21V9l7-5 7 5v12M9.5 21v-5h5v5M9 11h.01M15 11h.01"/>',
     rings: '<circle cx="9" cy="14.5" r="5"/><circle cx="15" cy="14.5" r="5"/><path d="M10 5.5L12 3l2 2.5-2 2z"/>',
@@ -131,11 +131,11 @@
   };
   var TYPES = [
     { v: 'corpo_party', l: 'Party de bureau / des Fêtes', seg: 'corpo', ic: 'party' },
-    { v: 'corpo_5a7', l: '5 à 7 ou team building', seg: 'corpo', ic: 'glass' },
+    { v: 'corpo_5a7', l: '5 à 7 ou consolidation d\'équipe', seg: 'corpo', ic: 'glass' },
     { v: 'corpo_gala', l: 'Gala, remise de prix ou lancement', seg: 'corpo', ic: 'star' },
     { v: 'muni_ecole', l: 'Événement municipal ou scolaire', seg: 'corpo', ic: 'building' },
     { v: 'mariage', l: 'Mariage', seg: 'mariage', ic: 'rings' },
-    { v: 'prive', l: 'Autre événement privé : anniversaire, shower…', seg: 'prive', ic: 'gift' }
+    { v: 'prive', l: 'Autre événement privé : anniversaire, fête prénatale…', seg: 'prive', ic: 'gift' }
   ];
   var VILLES = ['Sainte-Thérèse', 'Blainville', 'Boisbriand', 'Rosemère', 'Lorraine', 'Bois-des-Filion', 'Mirabel', 'Saint-Eustache', 'Deux-Montagnes', 'Terrebonne', 'Saint-Jérôme', 'Laval', 'Montréal – centre-ville', 'Montréal – autres arrondissements', 'Longueuil / Rive-Sud', 'Autre (plus de 40 km)'];
   var HORS_ZONE = 'Autre (plus de 40 km)';
