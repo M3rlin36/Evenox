@@ -129,6 +129,22 @@ Mariages au Québec : ~22 700 en 2025, **54 % entre juillet et octobre** (ISQ).
 
 ---
 
+## 5 ter. Audit de ta campagne actuelle (données publiques, détail dans `operations/audit-campagne-actuelle.md`)
+
+- **Aucune de tes pubs n'a roulé depuis le 23 septembre 2026.** La cause (pause, budget, facturation, refus) se voit seulement dans ton compte.
+- **38 annonces historiques, aucune ne vise le corporatif.** Elles portent sur des petits articles (gonflables, génératrice, popcorn, tables et chaises), avec des rabais (EVENOX10, « prix mini », « dès 1,50 $ »), une mascotte, un gonflable de personnage Disney et une photo de fournisseur. C'est l'inverse d'un positionnement haut de gamme.
+- **4 annonces ont roulé en France** → ciblage probablement réglé sur « présence ou intérêt » (déduction).
+- **Suivi des conversions cassé :**
+  - 2 comptes Google Ads différents taggés sur le site et 2 propriétés GA4.
+  - Un seul type de conversion pour tous les formulaires.
+  - La conversion GA4 attend un événement qu'aucune page n'envoie.
+  - Pas de bannière Loi 25.
+  - Le pixel OpenAI est déjà installé, sans consentement.
+  - Le pixel de base Meta est absent.
+- **Chemin `/formulaire` en 404** dans la pub la plus récente.
+- **Verdict :** on ne répare pas, on remplace, en gardant le compte et son historique. 9 angles sont réutilisés (réécrits), 29 annonces sont coupées. Les anciennes campagnes sont mises en pause et renommées `ZZ_ANCIEN_2025`, jamais supprimées.
+- **Les pages du nouveau plan n'existent pas encore** (/corporatif, /corporatif/party-des-fetes, /corporatif/5-a-7, /evenement-prive ; /mariage/decoration redirige ailleurs). Il faut les créer avant d'importer les campagnes.
+
 ## 5 bis. Tes décisions avant le lancement (rien ne part sans elles)
 
 1. **Politique de livraison unique** (recommandé : livraison, installation et démontage inclus dans les forfaits ≥ 1 195 $, rayon 40 km). Les lignes `[LIVRAISON]` des documents en dépendent.
@@ -147,7 +163,9 @@ Mariages au Québec : ~22 700 en 2025, **54 % entre juillet et octobre** (ISQ).
 | `campagnes/microsoft-ads/` | Procédure d'import + ciblage LinkedIn |
 | `campagnes/meta-ads/` | Structure, formulaire qualifiant, 8 concepts d'annonces |
 | `campagnes/chatgpt-ads/` | Campagne test : context hints, titres/descriptions, réglages, règles |
-| `operations/` | Pages d'atterrissage, formulaire, suivi des leads (scripts), tracking, correctifs urgents, plan GEO |
+| `operations/` | Pages d'atterrissage (corporatif, mariage, événement privé, soumission, réalisations), formulaire, suivi des leads (scripts), tracking, correctifs urgents, plan GEO, données structurées JSON-LD, fiches d'annuaires, audit de la campagne actuelle |
+| `operations/crm-kpi-evenox.xlsx` | CRM + tableau de bord : leads, dépenses, KPI par campagne, décision couper/augmenter, import des contrats vers Google |
+| `campagnes/google-ads/import_editor_complet.csv` | Fichier unique à importer dans Google Ads Editor 2.13 |
 | `recherche/` | Les 7 dossiers de recherche avec le journal complet des sources |
 
 ---
