@@ -13,7 +13,7 @@
 | Indexation | **noindex** (page d'annonces ; la page indexée reste `/mariage/`) |
 | Gabarit Divi | Page vierge, sans menu. Liens sortants : téléphone, texto, politique de confidentialité, boutique (dans le bandeau « minimum ») |
 | Balise title | `Décor de mariage clé en main dès 899 $ : lettres, mur floral, photobooth \| Évenox` |
-| Meta description | `Lettres lumineuses, mur floral, photobooth miroir, éclairage d'ambiance : installé le jour J, repris le lendemain. Rive-Nord, Laval, Montréal.` |
+| Meta description | `Lettres lumineuses géantes, mur floral, étincelles froides et photobooth avec préposé : forfaits de 899 $ à 1 899 $. Rive-Nord, Laval, Montréal.` |
 | Barre collante mobile | **Appeler** · **Texto** · **Vérifier ma date** (`#soumission`) |
 
 Variables : `{{NOTE_GOOGLE}}`, `{{NB_AVIS}}`, `{{NB_EVENEMENTS}}`, `{{TEL}}`, `{{COURRIEL}}`. Elles sont définies dans landing-corporatif.md et ont les mêmes valeurs partout.
