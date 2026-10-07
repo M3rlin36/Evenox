@@ -1,6 +1,6 @@
-# Évenox — Plan Google Ads à 300 $/jour (v2)
+# Évenox — Plan Google Ads à 300 $/jour (v3)
 
-*Version 2 du 7 octobre 2026. Le plan s'appuie sur environ 1 060 sources ; une relecture critique et une vérification des prix en direct sur evenox.ca ont corrigé la v1. Les données de ton compte Google Ads ne sont pas encore intégrées : je n'ai pas encore l'accès.*
+*Version 3 du 7 octobre 2026. Le plan s'appuie sur environ 1 060 sources. Deux relectures critiques et une vérification en direct de chaque prix et de chaque promesse sur evenox.ca ont corrigé les versions précédentes. Les données de ton compte Google Ads ne sont pas encore intégrées : je n'ai pas encore l'accès.*
 
 ---
 
@@ -22,32 +22,36 @@ On les active seulement quand un faux lead apparaît dans Google Ads. Au départ
 | # | Campagne | Au lancement | Budget plafond/jour | CPC max. | Groupes d'annonces (URL) |
 |---|---|---|---|---|---|
 | 1 | **S-FR \| Marque** | À activer | 10 $ | 2,50 $ | Marque Évenox (accueil) |
-| 2 | **S-FR \| Corporatif & Fêtes** | À activer | 170 $ | 4,00 $ | Fête de Noël d'entreprise (/nos-forfaits-tout-inclus) · Team building (/team-building-activitecorpo) · Photobooth corporatif (/location-photobooth-montreal) · Lettres lumineuses corporatif (/lettres-lumineuses) |
-| 3 | **S-FR \| Événements privés** | À activer | 120 $ | 3,00 $ | Lettres lumineuses · Lettres lumineuses mariage · Photobooth · Photobooth mariage · Décor mariage |
+| 2 | **S-FR \| Corporatif & Fêtes** | À activer | 170 $ | 4,00 $ | Fête de Noël d'entreprise (/forfaits-corporatif/) · Team building (/team-building-activitecorpo/) · Photobooth corporatif (/location-photobooth-montreal/) · Lettres lumineuses corporatif (/lettres-lumineuses/) |
+| 3 | **S-FR \| Événements privés** | À activer | 120 $ | 3,00 $ | Lettres lumineuses · Lettres lumineuses mariage · Photobooth · Photobooth mariage · Vidéobooth 360 (/photobooth-360/) · Décor mariage (/forfaits-mariage/) |
 | 4 | S-EN \| Corporate Montréal | Reste en pause | 30 $ | 5,00 $ | Holiday party · Photo booth · Marquee letters |
-| 5 | S-FR \| Québec-Lévis (test) | Reste en pause | 20 $ | 3,00 $ | Corporatif Québec |
 
 **Prêt à importer** (`livrables/google-ads-editor/`, mode d'emploi dans `IMPORT-GOOGLE-ADS-EDITOR.md`) :
-- 5 campagnes, 14 groupes d'annonces et 126 mots-clés (expression et exact).
+- 4 campagnes, 14 groupes d'annonces et 122 mots-clés (expression et exact).
 - 14 annonces responsives de 15 titres et 4 descriptions chacune.
-- 661 négatifs, 8 liens annexes (chacun vers une page différente) et 8 accroches par campagne.
+- 588 négatifs.
+- 6 liens annexes et 8 accroches **propres à chaque campagne** (pas d'arguments corporatifs dans Événements privés).
+- Toutes les URL se terminent par « / » : sans la barre oblique, WordPress redirige et **efface le GCLID** (vérifié).
 
 Le script `scripts/build_google_ads.py` contrôle automatiquement :
 - les limites de caractères ;
 - les règles de marque : pas de %, ni de « à partir de », ni de « dès XX $ » ;
 - les majuscules excessives ;
+- que **chaque montant en $ existe sur le site** ;
+- la barre oblique finale de chaque URL ;
 - qu'aucun négatif ne bloque un mot-clé : **0 conflit**.
 
 ### Les prix dans les annonces (relevés sur evenox.ca le 7 octobre 2026)
 
 | Offre | Prix | Page |
 |---|---|---|
-| 5 à 7 d'équipe / Party de Bureau / Gala Signature | 1 195 $ / 1 995 $ / 2 495 $ | /nos-forfaits-tout-inclus |
-| Décor WOW / Soirée Signature (mariage et événement) | 899 $ / 1 449 $ | /nos-forfaits-tout-inclus |
+| 5 à 7 d'équipe / Party de Bureau / Gala Signature | 1 195 $ / 1 995 $ / 2 495 $ | /forfaits-corporatif/ |
+| Décor WOW / Soirée Signature / Mariage Signature (« prix complet ») | 899 $ / 1 449 $ / 1 899 $ | /forfaits-mariage/ |
+| Vidéobooth 360 Essentiel / Signature / Prestige | 799 $ / 1 099 $ / 1 499 $ | /photobooth-360/ |
 | Photobooth Essentiel 2 h / Signature 3 h / Prestige 4 h | 599 $ / 799 $ / 999 $ | /location-photobooth-montreal |
 | Duo Signature (photobooth et vidéobooth 360, 3 h) | 1 798 $ | /location-photobooth-montreal |
 | Lettres : Célébration / Signature / Love / Oui | 380 $ / 500 $ / 240 $ / 210 $ | /lettres-lumineuses |
-| Net 30 sur approbation de crédit, bon de commande | — | /faq |
+| Facturation nette 30 jours sur approbation, bon de commande | Accroches de la campagne Corporatif seulement | /faq/ |
 
 **Si un prix change sur le site**, il suffit d'inscrire l'ancien et le nouveau dans `PRIX` en haut du script, puis de le relancer. Les annonces se régénèrent en une commande.
 
@@ -55,13 +59,16 @@ Le script `scripts/build_google_ads.py` contrôle automatiquement :
 - « Québec et Lévis » ;
 - « Surclassement offert », « Accessoire bonus » et « Livraison aux forfaits » ;
 - les forfaits lounge (850 / 1 100 / 1 400 / 2 900 $), qui n'existent pas sur le site ;
-- les noms Iconic et Legend.
+- les noms Iconic et Legend ;
+- « Photobooth avec préposé » à côté du Party de Bureau (seul le Gala Signature l'inclut) ;
+- l'installation sur les lettres Love et Oui (seuls Célébration et Signature sont installés) ;
+- les mots-clés « mur floral » (à 200 $, ils ne correspondent pas à un forfait de 899 $).
 
 ### Pourquoi la campagne EN reste en pause
 L'article 58 de la Charte de la langue française exige que le français soit **nettement prédominant** dans la publicité commerciale. Une annonce 100 % anglaise au Québec est un risque : de 3 000 à 30 000 $ d'amende par infraction, chaque jour comptant comme une infraction distincte. Les pages anglaises du site sont aussi minces. Active cette campagne seulement après une validation juridique.
 
-### Pourquoi Québec-Lévis reste en pause
-Ta livraison s'arrête à 40 km de Sainte-Thérèse (FAQ). Sans grille de transport pour Québec, un lead de Québec n'est pas servable.
+### Pourquoi Québec-Lévis n'est pas dans l'import
+Ta livraison est tarifée jusqu'à 40 km de Sainte-Thérèse ; au-delà, c'est sur soumission (FAQ). Sans grille de transport pour Québec, on ne crée pas cette campagne.
 
 ---
 
@@ -90,7 +97,7 @@ Ta livraison s'arrête à 40 km de Sainte-Thérèse (FAQ). Sans grille de transp
 | 3 | **Conversion « Demande de soumission »** : GTM, envoi réussi, comptage « Une seule », principale, conversions avancées ON, champs cachés GCLID, GBRAID et WBRAID. **Test : 1 faux lead visible dans Google Ads** | Pigiste | Jours 1 à 3 |
 | 4 | **Conversion « Appels depuis les annonces »** (60 s et plus), avec un élément d'appel | Pigiste | Jour 3 |
 | 5 | **Formulaire qui filtre** : type d'événement, date, ville, invités, budget par paliers ; adresse de salle facultative ; reCAPTCHA. Voir `pages/formulaire-soumission.md` | Pigiste | Jours 2 à 4 |
-| 6 | **Retirer « dès 70 $ », « Dès 599 $ » et « À partir de »** des titres et des pages du site (/lettres-lumineuses, /location-photobooth-montreal, /mariage), ainsi que de WeddingWire | Toi | Jour 2 |
+| 6 | **Retirer « dès 70 $ », « Dès 599 $ » et « À partir de »** des titres et des pages du site (/lettres-lumineuses, /location-photobooth-montreal, /mariage, /forfaits-mariage, /forfaits-photobooth, /nos-forfaits-tout-inclus, /team-building-activitecorpo), ainsi que de WeddingWire. Harmoniser aussi la livraison : la page mariage parle de « prix complet », les autres de « livraison en sus » | Toi | Jour 2 |
 | 7 | **Réponse en moins de 2 h ouvrables** et statut noté dans Notion. Voir `SCRIPTS-LEADS.md` | Toi | Dès l'activation |
 
 **Activation visée : mercredi 14 octobre** (lundi 12 octobre, c'est l'Action de grâce). Chaque semaine de retard coûte une part de la fenêtre des fêtes d'entreprise : les recherches « party de bureau » atteignent leur sommet en novembre et décembre.
@@ -129,6 +136,7 @@ Ta livraison s'arrête à 40 km de Sainte-Thérèse (FAQ). Sans grille de transp
 | Chaque jour | Rappeler chaque lead en moins de 2 h ; statut et source dans Notion | — |
 | Lundi | Coût, clics, CPC, conversions par campagne ; part d'impressions perdue (budget et classement) | 15 min |
 | Vendredi | Exporter les leads A, B et C qui ont un GCLID, puis les importer comme « Lead qualifié » | 10 min |
+| Lundi | Vérifier que les prix du site n'ont pas changé (ce sont des « prix de lancement ») ; sinon, mettre à jour `PRIX` et régénérer | 5 min |
 | Jour 30 | Bilan : coût par lead qualifié et par contrat ; je recalcule les cibles | 1 h avec moi |
 
 ---

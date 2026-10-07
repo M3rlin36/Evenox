@@ -31,15 +31,21 @@ PRIX = {
 
 # Montants affichés sur evenox.ca (relevé du 7 oct. 2026). Toute somme en $ dans
 # une annonce, un lien annexe ou une accroche doit figurer ici (sinon : erreur).
-PRIX_SITE = {1195, 1995, 2495, 899, 1449, 599, 799, 999, 1798, 380, 500, 240, 210}
+PRIX_SITE = {1195, 1995, 2495, 899, 1449, 1899, 599, 799, 999, 1099, 1499, 1798, 380,
+             500, 240, 210}
 
+# Toujours avec la barre oblique finale : sans elle, WordPress redirige (301) et
+# efface le GCLID (vérifié avec ?gclid=TEST le 7 oct. 2026).
 URL = {
     "home": "https://evenox.ca/",
-    "forfaits": "https://evenox.ca/nos-forfaits-tout-inclus",
+    "corpo": "https://evenox.ca/forfaits-corporatif/",
+    "mariage": "https://evenox.ca/forfaits-mariage/",
     "lettres": "https://evenox.ca/lettres-lumineuses/",
-    "photobooth": "https://evenox.ca/location-photobooth-montreal",
+    "photobooth": "https://evenox.ca/location-photobooth-montreal/",
+    "photobooth360": "https://evenox.ca/photobooth-360/",
     "teambuilding": "https://evenox.ca/team-building-activitecorpo/",
-    "mariage": "https://evenox.ca/mariage/",
+    "contact": "https://evenox.ca/contact/",
+    "faq": "https://evenox.ca/faq/",
 }
 
 C_MARQUE = "S-FR | Marque"
@@ -54,7 +60,6 @@ CAMPAGNES = {
     C_CORPO: dict(budget=170, cpc="4.00", lancement=True),
     C_PRIVES: dict(budget=120, cpc="3.00", lancement=True),
     C_EN: dict(budget=30, cpc="5.00", lancement=False),   # validation Loi 96
-    C_QC: dict(budget=20, cpc="3.00", lancement=False),   # grille de transport
 }
 
 LIMITS = dict(h=30, d=90, path=15, sl=25, sld=35, co=25)
@@ -66,7 +71,7 @@ LIMITS = dict(h=30, d=90, path=15, sl=25, sld=35, co=25)
 def px(texte):
     """Applique la grille PRIX à un texte."""
     for ancien in sorted(PRIX, key=len, reverse=True):
-        texte = texte.replace(ancien, PRIX[ancien])
+        texte = re.sub(r"(?<!\d )(?<!\d)(?<!\$)" + re.escape(ancien), PRIX[ancien], texte)
     return texte
 
 
@@ -89,35 +94,35 @@ NOEL = dict(
     h=["Fête de Noël d'entreprise", "Party de Bureau 1 995 $",
        "5 à 7 d'équipe 1 195 $", "Gala Signature 2 495 $",
        "Forfaits à prix affiché", "Tout installé et ramassé",
-       "Lettres lumineuses et jeux", "Photobooth avec préposé",
-       "Net 30 sur approbation", "Décembre se réserve tôt", "Soumission en 24 h",
+       "Lettres lumineuses et jeux", "Gala Signature + photobooth",
+       "Mini tournoi de jeux géants", "Décembre se réserve tôt", "Soumission en 24 h",
        "Montréal, Laval, Rive-Nord", "Note Google 4,8/5",
-       "Bon de commande accepté", "Réservez votre date"],
+       "Montage et démontage inclus", "Réservez votre date"],
     d=["Party de Bureau 1 995 $ : lettres lumineuses, mur floral, 5 jeux géants et popcorn.",
        "5 à 7 d'équipe 1 195 $, Party de Bureau 1 995 $ ou Gala Signature 2 495 $.",
-       "Prix affiché, bon de commande et facturation net 30 sur approbation de crédit.",
-       "Installation discrète, ramassage par notre équipe. Les vendredis de décembre partent vite."],
+       "Installation, démontage et attestation d'assurance inclus dans chaque forfait.",
+       "Gala Signature : tout le Party de Bureau et un photobooth premium avec préposé."],
     path=("fetes", "entreprise"), pins={0: 1, 1: 2},
 )
 TEAMBUILDING = dict(
-    h=["Team building clé en main", "Consolidation d'équipe",
-       "Jeux géants pour entreprise", "Mini tournoi de jeux géants",
-       "Montréal, Laval, Rive-Nord", "Livraison et installation",
-       "Soumission en 24 h", "Note Google 4,8/5", "Plus de 1 000 événements",
+    h=["Team building clé en main", "Cohésion d'équipe",
+       "Jeux géants pour entreprise", "Jeux intérieurs et extérieurs",
+       "Montréal, Laval, Rive-Nord", "Jeux adaptés à l'intérieur",
+       "Jeux techno et arcade", "Activités accessibles à tous", "Participation libre",
        "Idéal pour vos 5 à 7", "Activité d'équipe sur place",
-       "Net 30 sur approbation", "Réservez votre date",
+       "Ramassage gratuit possible", "Réservez votre date",
        "Service premium sans tracas", "Votre équipe, mobilisée"],
-    d=["Activités de consolidation d'équipe clés en main : livraison, installation et reprise.",
-       "Jeux géants, lettres lumineuses et photobooth pour vos 5 à 7 et fêtes de bureau.",
-       "Montréal, Laval et Rive-Nord. Bon de commande et net 30 sur approbation de crédit.",
-       "Plus de 1 000 événements réalisés, note Google 4,8/5. Soumission détaillée en 24 h."],
+    d=["Activités de cohésion d'équipe pour vos 5 à 7, fêtes de bureau et journées d'équipe.",
+       "Jeux géants, jeux intérieurs, jeux techno et arcade : des activités pour tous.",
+       "Montréal, Laval et la Rive-Nord. Ramassage gratuit à notre entrepôt de Sainte-Thérèse.",
+       "Participation libre et activités accessibles à tous. Demandez votre soumission."],
     path=("team-building", "entreprise"), pins={0: 1},
 )
 PHOTOBOOTH_CORPO = dict(
     h=["Photobooth corporatif", "Borne photo pour entreprise",
        "Forfaits 599 $ à 999 $", "Signature 3 h : 799 $",
        "Vidéobooth 360 disponible", "Photos illimitées", "Galas, congrès, Noël",
-       "Activations de marque", "Livraison incluse 40 km", "Soumission en 24 h",
+       "Fond photo personnalisable", "Livraison incluse (40 km)", "Soumission en 24 h",
        "Montréal, Laval, Rive-Nord", "Note Google 4,8/5",
        "Plus de 1 000 événements", "Installation clé en main",
        "Réservez votre photobooth"],
@@ -130,50 +135,50 @@ PHOTOBOOTH_CORPO = dict(
 LETTRES_CORPO = dict(
     h=["Lettres lumineuses 4 pi", "Le nom de votre entreprise",
        "Votre marque en lumière", "Pour galas et lancements",
-       "Forfait Signature 500 $", "Installation sur place",
+       "Forfait Signature 500 $", "Signature : service sur place",
        "Montréal, Laval, Rive-Nord", "Événements d'entreprise",
-       "Soumission en 24 h", "Note Google 4,8/5", "Plus de 1 000 événements",
-       "Activations de marque", "Un décor qui fait parler",
-       "Net 30 sur approbation", "Réservez vos lettres 4 pi"],
+       "Réponse en 24 heures", "Note Google 4,8/5", "Mot ou nom personnalisé",
+       "Lettres de 4 pieds de haut", "Un décor qui fait parler",
+       "Prix affichés en ligne", "Réservez vos lettres 4 pi"],
     d=["Lettres lumineuses de 4 pi, livrées et installées. Forfait Signature 500 $, mot au choix.",
        "Galas, lancements, fêtes de fin d'année : le nom de votre entreprise en lumière.",
-       "Montréal, Laval et Rive-Nord. Plus de 1 000 événements réalisés, note Google 4,8/5.",
-       "Bon de commande accepté et facturation net 30 sur approbation de crédit."],
+       "Montréal, Laval et la Rive-Nord. Note de 4,8/5 sur Google. Réponse en 24 heures.",
+       "Composez votre mot en ligne et voyez le prix total avant de réserver."],
     path=("lettres", "entreprise"), pins={0: 1},
 )
 LETTRES = dict(
     h=["Location lettres lumineuses", "Lettres géantes de 4 pi",
        "Forfait Célébration 380 $", "Forfait Signature 500 $",
        "Love : 240 $ les 4 lettres", "Initiales, mots et chiffres",
-       "Installation sur place", "Montréal, Laval, Rive-Nord",
-       "Mariages et anniversaires", "Soumission en 24 h", "Note Google 4,8/5",
-       "Plus de 1 000 événements", "Prix affichés en ligne",
+       "Ramassage gratuit en boutique", "Montréal, Laval, Rive-Nord",
+       "Mariages et anniversaires", "Réponse en 24 heures", "Note Google 4,8/5",
+       "Chiffres pour anniversaires", "Prix affichés en ligne",
        "Un décor qui fait parler", "Réservez vos lettres 4 pi"],
     d=["Lettres lumineuses de 4 pi : Célébration 380 $ (3 à 4 lettres) ou Signature 500 $.",
        "Initiales, Love, Oui ou chiffres d'anniversaire : composez votre mot, voyez le prix.",
-       "Montréal, Laval et Rive-Nord. Plus de 1 000 événements réalisés, note Google 4,8/5.",
-       "Livraison, installation et reprise par notre équipe. Soumission détaillée en 24 h."],
+       "Montréal, Laval et la Rive-Nord. Note de 4,8/5 sur Google. Réponse en 24 heures.",
+       "Installées par notre équipe avec Célébration et Signature. Livraison selon la distance."],
     path=("lettres", "lumineuses"), pins={0: 1},
 )
 LETTRES_MARIAGE = dict(
     h=["Lettres lumineuses mariage", "Love : 240 $ les 4 lettres",
        "Vos initiales en lumière", "Lettres géantes de 4 pi",
-       "Forfait Signature 500 $", "Installation sur place",
+       "Forfait Signature 500 $", "Ramassage gratuit en boutique",
        "Montréal, Laval, Rive-Nord", "Un décor de mariage élégant",
-       "Soumission en 24 h", "Note Google 4,8/5", "Plus de 1 000 événements",
+       "Réponse en 24 heures", "Note Google 4,8/5", "Initiales des mariés",
        "Réservez votre date", "Photos de mariage mémorables",
-       "Livrées, montées, reprises", "Oui : 210 $ les 3 lettres"],
+       "Célébration 380 $ installé", "Oui : 210 $ les 3 lettres"],
     d=["Lettres lumineuses de 4 pi pour votre mariage : Love 240 $, Oui 210 $, mot au choix.",
        "Vos initiales ou votre nom en lumière : un décor élégant qui sublime vos photos.",
        "Les samedis d'été partent vite. Vérifiez la disponibilité de votre date dès aujourd'hui.",
-       "Livraison et installation par notre équipe à Montréal, Laval et sur la Rive-Nord."],
+       "Installation incluse avec Célébration (380 $) et Signature (500 $)."],
     path=("lettres", "mariage"), pins={0: 1},
 )
 PHOTOBOOTH = dict(
     h=["Location photobooth", "Borne photo à louer", "Forfaits 599 $ à 999 $",
        "Signature 3 h : 799 $", "Vidéobooth 360 disponible", "Photos illimitées",
        "Mariages, galas, fêtes", "Installation clé en main",
-       "Livraison incluse 40 km", "Soumission en 24 h",
+       "Livraison incluse (40 km)", "Soumission en 24 h",
        "Montréal, Laval, Rive-Nord", "Note Google 4,8/5",
        "Plus de 1 000 événements", "Duo Signature 1 798 $",
        "Réservez votre photobooth"],
@@ -186,53 +191,63 @@ PHOTOBOOTH = dict(
 PHOTOBOOTH_MARIAGE = dict(
     h=["Photobooth mariage", "Borne photo pour mariage", "Forfaits 599 $ à 999 $",
        "Signature 3 h : 799 $", "Prestige 4 h : 999 $",
-       "Souvenirs pour vos invités", "Impressions en option",
+       "Souvenirs pour vos invités", "Galerie photo incluse",
        "Installation clé en main", "Réservez votre date", "Soumission en 24 h",
        "Montréal, Laval, Rive-Nord", "Note Google 4,8/5",
        "Plus de 1 000 événements", "Album souvenir en option",
        "Vidéobooth 360 disponible"],
     d=["Photobooth Essentiel 2 h 599 $, Signature 3 h 799 $ ou Prestige 4 h 999 $.",
-       "Impressions illimitées et album souvenir en option : un souvenir pour chaque invité.",
+       "Impressions illimitées dès le Signature, album souvenir en option, galerie remise.",
        "Les samedis d'été partent vite. Vérifiez la disponibilité de votre date dès aujourd'hui.",
        "Livraison et installation incluses jusqu'à 40 km de Sainte-Thérèse. Soumission en 24 h."],
     path=("photobooth", "mariage"), pins={0: 1, 2: 2},
 )
 DECOR_MARIAGE = dict(
-    h=["Décor de mariage clé en main", "Forfaits 899 $ et 1 449 $",
-       "Soirée Signature 1 449 $", "Lettres lumineuses géantes",
-       "Mur floral pour coin photo", "Étincelles froides",
-       "Photobooth avec préposé", "Installation et coordination",
-       "Soumission en 24 h", "Montréal, Laval, Rive-Nord", "Note Google 4,8/5",
-       "Plus de 1 000 événements", "Réservez votre date",
-       "Un décor qui fait parler", "Forfaits à prix affiché"],
+    h=["Décor de mariage clé en main", "Forfaits 899 $ à 1 899 $",
+       "Soirée Signature 1 449 $", "Mariage Signature 1 899 $",
+       "Lettres lumineuses géantes", "Mur floral pour coin photo",
+       "Étincelles froides", "Photobooth avec préposé",
+       "Livrés, installés, démontés", "Soumission en 24 h",
+       "Montréal, Laval, Rive-Nord", "Prix complet, sans surprise",
+       "Réservez votre date", "Un décor qui fait parler", "Initiales des mariés"],
     d=["Décor WOW 899 $ : 5 lettres lumineuses géantes, mur floral et étincelles froides.",
        "Soirée Signature 1 449 $ : tout le Décor WOW et un photobooth premium avec préposé.",
-       "Installation et coordination du décor par notre équipe à Montréal, Laval et Rive-Nord.",
-       "Plus de 1 000 événements réalisés, note Google 4,8/5. Soumission détaillée en 24 h."],
+       "Mariage Signature 1 899 $ : notre forfait le plus complet, avec les initiales des mariés.",
+       "Prix affiché complet : livraison, installation et démontage inclus. Soumission en 24 h."],
     path=("decor", "mariage"), pins={0: 1, 1: 2},
 )
-NOEL_QC = dict(NOEL, h=[("Québec et Lévis" if x == "Montréal, Laval, Rive-Nord" else x)
-                        for x in NOEL["h"]])
+VIDEOBOOTH = dict(
+    h=["Vidéobooth 360", "Location vidéobooth 360", "Forfaits 799 $ à 1 499 $",
+       "Signature 3 h : 1 099 $", "Plateforme 360° motorisée", "Technicien dédié",
+       "Vidéos HD instantanées", "Galerie en ligne privée", "Mariages, galas, fêtes",
+       "Livraison et installation", "Montréal, Laval, Rive-Nord", "Note Google 4,8/5",
+       "Plus de 1 000 événements", "Highlight livré le lendemain", "Réservez votre date"],
+    d=["Vidéobooth 360 Essentiel 2 h 799 $, Signature 3 h 1 099 $ ou Prestige 4 h 1 499 $.",
+       "Plateforme 360° motorisée et technicien dédié : vos invités repartent avec leur vidéo.",
+       "Transport, montage et démontage complets. Galerie en ligne privée après l'événement.",
+       "Image de marque sur mesure et vidéo highlight livrée le lendemain de l'événement."],
+    path=("videobooth", "360"), pins={0: 1, 2: 2},
+)
 
 # ---------------------------------------------------------------- COPIES EN
 EN_HOLIDAY = dict(
     h=["Office Holiday Party Rentals", "Office Party Package $1,995",
        "Team 5 à 7 Package $1,195", "Gala Package $2,495",
-       "Posted prices, PO accepted", "Set up and picked up",
-       "Marquee letters and games", "Photo booth with attendant",
-       "Net 30 on credit approval", "December books up early",
+       "Posted package prices", "Set up and picked up",
+       "Marquee letters and games", "Gala adds a photo booth",
+       "Setup and teardown included", "December books up early",
        "Quote within 24 hours", "Montréal, Laval, North Shore",
        "Rated 4.8/5 on Google", "Turnkey corporate events", "Reserve your date"],
     d=["Office Party package $1,995: marquee letters, floral wall, 5 giant games, popcorn.",
        "Team 5 à 7 $1,195, Office Party $1,995 or Gala Signature $2,495, fully installed.",
-       "Posted prices, purchase orders and net 30 invoicing on credit approval.",
-       "Discreet setup and pickup by our crew. December Fridays book up fast."],
+       "Setup, teardown and insurance certificate included in every package.",
+       "Gala Signature: the full Office Party plus a premium photo booth with attendant."],
     path=("holiday", "corporate"), pins={0: 1, 1: 2},
 )
 EN_PHOTOBOOTH = dict(
     h=["Photo Booth Rental", "Corporate Photo Booth", "Packages $599 to $999",
        "Signature 3 h: $799", "360 video booth available", "Unlimited photos",
-       "Galas, launches, holidays", "Delivery included 40 km",
+       "Galas, launches, holidays", "Delivery included (40 km)",
        "Quote within 24 hours", "Montréal, Laval, North Shore",
        "Rated 4.8/5 on Google", "1,000+ events delivered", "Turnkey setup",
        "Weddings and corporate", "Book your photo booth"],
@@ -245,15 +260,15 @@ EN_PHOTOBOOTH = dict(
 EN_LETTERS = dict(
     h=["4-ft Marquee Letters", "Light-Up Letter Rental",
        "Your company name in lights", "Signature package $500",
-       "Love: $240 for 4 letters", "Installed on site",
+       "Love: $240 for 4 letters", "Signature: on-site service",
        "Montréal, Laval, North Shore", "Corporate events and galas",
        "Quote within 24 hours", "Rated 4.8/5 on Google",
-       "1,000+ events delivered", "Brand activations", "Posted prices online",
-       "Net 30 on credit approval", "Reserve your letters"],
+       "1,000+ events delivered", "4-ft tall letters", "Posted prices online",
+       "Custom word or name", "Reserve your letters"],
     d=["4-ft light-up letters, delivered and installed. Signature package $500, any word.",
        "Galas, launches, holiday parties: put your company name in lights.",
        "Montréal, Laval and North Shore. 1,000+ events delivered, rated 4.8/5 on Google.",
-       "Purchase orders accepted and net 30 invoicing on credit approval."],
+       "Type your word online and see the full price before booking."],
     path=("marquee", "corporate"), pins={0: 1},
 )
 
@@ -266,7 +281,7 @@ STRUCTURE = [
        kw=E("evenox", "évenox", "evenox location", "evenox sainte-thérèse",
             "evenox photobooth", "evenox lettres lumineuses") + P("evenox", "évenox")),
   # ------------------------------------------------------- CORPORATIF
-  dict(campaign=C_CORPO, adgroup="Fête de Noël d'entreprise", url=URL["forfaits"], copy=NOEL,
+  dict(campaign=C_CORPO, adgroup="Fête de Noël d'entreprise", url=URL["corpo"], copy=NOEL,
        kw=P("party de noël entreprise", "party de bureau", "party des fêtes entreprise",
             "fête de noël entreprise", "party de noël corporatif",
             "décoration party de bureau", "location party de bureau",
@@ -294,9 +309,8 @@ STRUCTURE = [
        copy=LETTRES_CORPO,
        kw=P("lettres lumineuses corporatif", "lettres lumineuses entreprise",
             "lettres géantes événement corporatif", "location lettres lumineuses gala",
-            "décoration gala corporatif", "décor événement corporatif",
-            "décor activation de marque", "décoration lancement de produit")
-          + E("lettres lumineuses entreprise", "décoration gala corporatif")),
+            "lettres lumineuses nom entreprise")
+          + E("lettres lumineuses entreprise")),
   # --------------------------------------------------- ÉVÉNEMENTS PRIVÉS
   dict(campaign=C_PRIVES, adgroup="Lettres lumineuses", url=URL["lettres"], copy=LETTRES,
        kw=P("location lettres lumineuses", "lettres lumineuses à louer",
@@ -314,22 +328,25 @@ STRUCTURE = [
   dict(campaign=C_PRIVES, adgroup="Photobooth", url=URL["photobooth"], copy=PHOTOBOOTH,
        kw=P("location photobooth", "photobooth à louer", "location borne photo",
             "location photobooth montréal", "location photobooth laval",
-            "location photobooth rive-nord", "prix location photobooth", "photobooth",
-            "location vidéobooth 360", "photobooth 360")
+            "location photobooth rive-nord", "prix location photobooth", "photobooth")
           + E("location photobooth", "location photobooth montréal",
               "location photobooth laval")),
+  dict(campaign=C_PRIVES, adgroup="Vidéobooth 360", url=URL["photobooth360"], copy=VIDEOBOOTH,
+       kw=P("vidéobooth 360", "videobooth 360", "location vidéobooth 360",
+            "photobooth 360", "location photobooth 360", "360 photobooth")
+          + E("vidéobooth 360", "photobooth 360")),
   dict(campaign=C_PRIVES, adgroup="Photobooth mariage", url=URL["photobooth"],
        copy=PHOTOBOOTH_MARIAGE,
        kw=P("photobooth mariage", "location photobooth mariage", "borne photo mariage",
             "location borne photo mariage", "photobooth mariage prix")
           + E("photobooth mariage", "location photobooth mariage")),
-  dict(campaign=C_PRIVES, adgroup="Décor mariage", url=URL["forfaits"], copy=DECOR_MARIAGE,
+  dict(campaign=C_PRIVES, adgroup="Décor mariage", url=URL["mariage"], copy=DECOR_MARIAGE,
        kw=P("décoration mariage clé en main", "location décoration mariage",
             "forfait décoration mariage", "décoration réception mariage",
-            "location mur floral", "location mur de fleurs", "décor mariage location")
+            "décor mariage location", "forfait mariage tout inclus")
           + E("location décoration mariage", "décoration mariage clé en main")),
   # ------------------------------------------- EN (PAUSE — Loi 96)
-  dict(campaign=C_EN, adgroup="Holiday party (EN)", url=URL["forfaits"], copy=EN_HOLIDAY,
+  dict(campaign=C_EN, adgroup="Holiday party (EN)", url=URL["corpo"], copy=EN_HOLIDAY,
        kw=P("office holiday party rentals", "corporate holiday party montreal",
             "office christmas party decor", "corporate event rentals montreal")
           + E("corporate event rentals montreal")),
@@ -339,11 +356,6 @@ STRUCTURE = [
   dict(campaign=C_EN, adgroup="Marquee letters (EN)", url=URL["lettres"], copy=EN_LETTERS,
        kw=P("marquee letter rental montreal", "light up letters rental",
             "marquee letters rental", "giant light up letters rental")),
-  # ------------------------------------- QUÉBEC-LÉVIS (PAUSE — test)
-  dict(campaign=C_QC, adgroup="Corporatif Québec", url=URL["forfaits"], copy=NOEL_QC,
-       kw=P("party de bureau québec", "party de noël entreprise québec",
-            "location photobooth québec", "location lettres lumineuses québec",
-            "party de bureau lévis")),
 ]
 
 # ---------------------------------------------------------------- NÉGATIFS
@@ -370,7 +382,8 @@ NEG_COMPTE = [
   "location auto", "camion", "outil", "échafaudage", "tente de camping", "camping",
   "location de salle", "salle à louer", "chaise de bureau", "passeport",
   "application", "app", "apps", "logiciel", "photographe", "mac", "macbook",
-  "télécharger", "download", "windows", "iphone",
+  "télécharger", "download", "windows", "iphone", "ipad", "jean coutu",
+  "photo passeport", "père noël", "rive-sud", "longueuil", "brossard",
   # Géo hors zone (France)
   "france", "paris", "mayenne", "laval france",
 ]
@@ -378,7 +391,8 @@ NEG_CORPO = ["virtuel", "virtuelle", "en ligne", "escape", "zoom", "idées", "id
              "restaurant", "restaurants", "salle", "cadeau", "cadeaux", "déductible",
              "impôt", "impôts", "menu", "hache", "karting", "cuisine", "quiz",
              "mariage", "mariages", "wedding", "noces", "anniversaire", "baby shower",
-             "enfant", "enfants"]
+             "enfant", "enfants", "jeux pour", "thème", "quoi porter", "invitation",
+             "famille", "traiteur", "dj", "quilles", "bowling", "souper", "cadeaux d'échange"]
 NEG_PRIVES = ["entreprise", "entreprises", "corporatif", "corporative", "corporate",
               "employés", "party de bureau", "party des fêtes", "fête de noël",
               "party de noël", "noël", "5 à 7", "team building", "gala", "congrès"]
@@ -391,49 +405,58 @@ NEG_HORS_ZONE = ["ville de québec", "québec city", "quebec city", "lévis", "l
 NEG_MARQUE = ["evenox", "évenox"]
 
 # ---------------------------------------------------------------- ÉLÉMENTS
-# Liens annexes : une page différente par lien (politique Google).
-SITELINKS_FR = [
-    ("Lettres lumineuses 4 pi", "Célébration 380 $", "Signature 500 $, mot au choix",
-     "https://evenox.ca/lettres-lumineuses/"),
-    ("Forfaits photobooth", "Essentiel, Signature, Prestige", "599 $, 799 $ ou 999 $",
-     URL["photobooth"]),
-    ("Forfaits corporatifs", "5 à 7, Party de Bureau, Gala", "De 1 195 $ à 2 495 $",
-     "https://evenox.ca/nos-forfaits-tout-inclus"),
-    ("Team building", "Jeux géants en mini tournoi", "Pour vos 5 à 7 et fêtes",
-     "https://evenox.ca/team-building-activitecorpo/"),
-    ("Mariages", "Lettres, photobooth, décor", "Réservez votre date",
-     "https://evenox.ca/mariage/"),
-    ("À propos d'Évenox", "Plus de 1 000 événements", "Entreprise de Sainte-Thérèse",
-     "https://evenox.ca/a-propos/"),
-    ("Demander une soumission", "Réponse rapide", "Soumission détaillée en 24 h",
-     "https://evenox.ca/contact/"),
-    ("Livraison et zones", "Montréal, Laval, Rive-Nord", "Jusqu'à 40 km de Sainte-Thérèse",
-     "https://evenox.ca/faq/"),
-]
-SITELINKS_EN = [
+# Liens annexes : une page différente par lien (politique Google), et des listes
+# propres à chaque campagne (pas d'arguments corporatifs dans Événements privés).
+SL = {
+    "lettres": ("Lettres lumineuses 4 pi", "Célébration 380 $", "Signature 500 $, mot au choix",
+                URL["lettres"]),
+    "photobooth": ("Forfaits photobooth", "Essentiel, Signature, Prestige",
+                   "599 $, 799 $ ou 999 $", URL["photobooth"]),
+    "corpo": ("Forfaits corporatifs", "5 à 7, Party de Bureau, Gala", "De 1 195 $ à 2 495 $",
+              URL["corpo"]),
+    "team": ("Team building", "Jeux géants, intérieurs, arcade", "Pour vos 5 à 7 et fêtes",
+             URL["teambuilding"]),
+    "mariage": ("Forfaits mariage", "Décor WOW, Soirée, Mariage", "De 899 $ à 1 899 $",
+                URL["mariage"]),
+    "360": ("Vidéobooth 360", "Plateforme 360° motorisée", "De 799 $ à 1 499 $",
+            URL["photobooth360"]),
+    "contact": ("Demander une soumission", "Réponse rapide", "Soumission détaillée en 24 h",
+                URL["contact"]),
+    "faq": ("Livraison et zones", "Montréal, Laval, Rive-Nord", "Questions fréquentes",
+            URL["faq"]),
+}
+SL_EN = [
     ("4-ft Marquee Letters", "Célébration package $380", "Signature $500, any word",
-     "https://evenox.ca/lettres-lumineuses/"),
+     URL["lettres"]),
     ("Photo Booth Packages", "Essential, Signature, Prestige", "$599, $799 or $999",
      URL["photobooth"]),
-    ("Corporate Packages", "5 à 7, Office Party, Gala", "From $1,195 to $2,495",
-     "https://evenox.ca/nos-forfaits-tout-inclus"),
-    ("Team Building", "Giant games mini tournament", "For team events and parties",
-     "https://evenox.ca/team-building-activitecorpo/"),
-    ("Weddings", "Letters, photo booth, decor", "Reserve your date",
-     "https://evenox.ca/mariage/"),
-    ("About Évenox", "1,000+ events delivered", "Based in Sainte-Thérèse",
-     "https://evenox.ca/a-propos/"),
-    ("Request a Quote", "Fast reply", "Detailed quote within 24 hours",
-     "https://evenox.ca/contact/"),
-    ("Delivery and Areas", "Montréal, Laval, North Shore", "Up to 40 km from Ste-Thérèse",
-     "https://evenox.ca/faq/"),
+    ("Corporate Packages", "5 à 7, Office Party, Gala", "$1,195 to $2,495", URL["corpo"]),
+    ("Team Building", "Giant, indoor and arcade games", "For team events and parties",
+     URL["teambuilding"]),
+    ("Request a Quote", "Fast reply", "Detailed quote within 24 hours", URL["contact"]),
+    ("Delivery and Areas", "Montréal, Laval, North Shore", "Frequently asked questions",
+     URL["faq"]),
 ]
-CALLOUTS_FR = ["Installation clé en main", "Soumission en 24 h", "Note Google 4,8/5",
-               "Plus de 1 000 événements", "Prix affichés en ligne",
-               "Bon de commande accepté", "Net 30 sur approbation", "Réservation en ligne"]
-CALLOUTS_EN = ["Turnkey installation", "Quote within 24 hours", "Rated 4.8/5 on Google",
-               "1,000+ events delivered", "Posted prices online", "Purchase orders accepted",
-               "Net 30 on approval", "Book online"]
+SITELINKS = {
+    C_MARQUE: [SL[k] for k in ("corpo", "mariage", "lettres", "photobooth", "360", "contact")],
+    C_CORPO: [SL[k] for k in ("corpo", "team", "lettres", "photobooth", "contact", "faq")],
+    C_PRIVES: [SL[k] for k in ("mariage", "lettres", "photobooth", "360", "contact", "faq")],
+    C_EN: SL_EN,
+}
+CALLOUTS = {
+    C_MARQUE: ["Installation clé en main", "Soumission en 24 h", "Note Google 4,8/5",
+               "Plus de 1 000 événements", "Prix affichés en ligne", "Réservation en ligne",
+               "Mariages et entreprises", "Basés à Sainte-Thérèse"],
+    C_CORPO: ["Montage, démontage inclus", "Soumission en 24 h", "Note Google 4,8/5",
+              "Plus de 1 000 événements", "Prix affichés en ligne", "Bon de commande accepté",
+              "Facture nette 30 jours", "Un seul fournisseur"],
+    C_PRIVES: ["Prix affichés en ligne", "Soumission en 24 h", "Note Google 4,8/5",
+               "Plus de 1 000 événements", "Forfaits mariage complets", "Photos illimitées",
+               "Ramassage en boutique", "Galerie photo incluse"],
+    C_EN: ["Setup and teardown", "Quote within 24 hours", "Rated 4.8/5 on Google",
+           "1,000+ events delivered", "Posted prices online", "Purchase orders accepted",
+           "One single supplier", "Based in Sainte-Thérèse"],
+}
 
 # ---------------------------------------------------------------- BUILD
 errors = []
@@ -503,6 +526,8 @@ write("1_campagnes.csv", H_CAMP, campaigns)
 adgroups, keywords, ads = [], [], []
 for s in STRUCTURE:
     check_copy(s["adgroup"], s["copy"])
+    if not s["url"].endswith("/"):
+        errors.append(f"{s['adgroup']}: URL sans barre oblique finale (GCLID perdu)")
     adgroups.append([s["campaign"], s["adgroup"], "Enabled"])
     for kw, mt in s["kw"]:
         keywords.append([s["campaign"], s["adgroup"], kw, mt, "Enabled"])
@@ -552,21 +577,30 @@ for c, ag, kw, mt, _ in keywords:
 
 sl = []
 for c in CAMPAGNES:
-    data = SITELINKS_EN if c == C_EN else SITELINKS_FR
+    data = SITELINKS[c]
+    if len({x[3] for x in data}) != len(data):
+        errors.append(f"{c}: liens annexes vers la même URL")
     for t, d1, d2, u in data:
+        if not u.endswith("/"):
+            errors.append(f"{c}: URL sans barre oblique finale (GCLID perdu) : {u}")
+        for x in (t, d1, d2):
+            if BANNED.search(x) or re.search(r"\b[A-Z]{4,}\b", x):
+                errors.append(f"{c}: règle de marque ou majuscules (lien) : {x}")
         t, d1, d2 = px(t), px(d1), px(d2)
         check_montants(f"{c} / lien annexe", [t, d1, d2])
         if len(t) > LIMITS["sl"] or max(len(d1), len(d2)) > LIMITS["sld"]:
             errors.append(f"{c}: lien annexe trop long : {t} / {d1} / {d2}")
         sl.append([c, t, d1, d2, u])
-for data in (SITELINKS_FR, SITELINKS_EN):
-    if len({x[3] for x in data}) != len(data):
-        errors.append("Liens annexes : URL en double")
 H_SL = ["Campaign", "Link Text", "Description Line 1", "Description Line 2", "Final URL"]
 write("6_liens_annexes.csv", H_SL, sl)
 co = []
 for c in CAMPAGNES:
-    for t in (CALLOUTS_EN if c == C_EN else CALLOUTS_FR):
+    if len(set(CALLOUTS[c])) != len(CALLOUTS[c]):
+        errors.append(f"{c}: accroches en double")
+    for t in CALLOUTS[c]:
+        check_montants(f"{c} / accroche", [t])
+        if BANNED.search(t) or re.search(r"\b[A-Z]{4,}\b", t):
+            errors.append(f"{c}: règle de marque ou majuscules (accroche) : {t}")
         if len(t) > LIMITS["co"]:
             errors.append(f"{c}: accroche trop longue : {t}")
         co.append([c, t])
