@@ -201,7 +201,7 @@ Coller sur la page **indexée** des forfaits corporatifs (`/forfaits-corporatif/
 ```
 
 > Vérifier les URL de chaque forfait (`/forfait-5-a-7-equipe/`, `/forfait-party-de-bureau/` relevées le 7 oct. 2026 ; l'URL exacte du Gala Signature est à copier depuis le site). Si le site affiche « popcorn », écrire la même chose dans la description (le schéma doit refléter la page) ; l'OQLF recommande « maïs soufflé ».
-> « Facturation nette 30 jours » : retirer de la description du Gala Signature si la promesse n'est pas confirmée (COMPTE-RENDU, 5 bis, point 5).
+> « Facturation nette 30 jours » : retirer de la description du Gala Signature si la promesse n'est pas confirmée (COMPTE-RENDU, 5 bis, point 5). Même règle pour les réponses FAQ « bon de commande sans dépôt, net 30 » et « nous le remplaçons ou nous remboursons la portion » (garantie de bris) plus bas : le schéma doit reprendre mot pour mot la FAQ visible, et une promesse non confirmée est retirée des deux.
 
 ---
 

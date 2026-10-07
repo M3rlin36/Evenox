@@ -120,6 +120,7 @@ Le décompte des caractères provient du script de validation. `ads.csv` fait fo
 
 ## 5. Mesure : liste de vérification pixel, CAPI et consentement (Loi 25)
 
+- [ ] **D'abord :** retirer l'ancien pixel OpenAI déjà présent dans GTM, qui se charge sans consentement (tracking-setup.md §0, point 0.1 ; correctifs-urgents.md n° 11).
 - [ ] Créer le **pixel OAIQ** dans Ads Manager et noter le `PIXEL-ID`.
 - [ ] **Consentement :** le pixel suppose **par défaut que le consentement est accordé (`true`)**, ce qui n'est pas conforme à la Loi 25. Il faut appeler `oaiq("consent", false)` **avant** `oaiq("init", ...)`, sur toutes les pages, jusqu'à l'acceptation des témoins publicitaires.
   ```html
@@ -135,11 +136,11 @@ Le décompte des caractères provient du script de validation. `ads.csv` fait fo
 - [ ] **Correspondance avancée automatique** (hachage SHA-256 dans le navigateur) : active par défaut sur les nouveaux pixels. La garder seulement après consentement ; sinon, la désactiver.
 - [ ] Événements web :
   - `page_viewed` sur toutes les pages ;
-  - `lead_created` à l'envoi du formulaire de soumission (avec `event_id` unique) ;
-  - `appointment_scheduled` à la réservation d'un appel (`/rendez-vous`).
+  - `lead_created` à l'envoi du formulaire de soumission, **routes A et B seulement** (lead qualifié, avec `event_id` unique), comme dans tracking-setup.md §6 ;
+  - `appointment_scheduled` à la réservation d'un appel (`/merci-appel/`, Calendly intégré).
 - [ ] **Conversions API** côté serveur : `POST https://bzr.openai.com/v1/events?pid=<PIXEL-ID>` avec la clé CAPI en bearer.
   - Envoyer `lead_created` (et plus tard les statuts qualifiés du CRM en événements personnalisés).
-  - Joindre courriel et téléphone hachés, IP et UA.
+  - Joindre IP et UA ; ajouter courriel et téléphone hachés **seulement si `consent_mesure` = oui** (formulaire-qualification.md §4).
   - **Déduplication** par nom d'événement + `event_id`, identiques côté pixel et côté CAPI.
   - Les événements doivent dater de moins de 7 jours, en lots de 1 000 au maximum.
 - [ ] La CAPI n'envoie que les visiteurs consentants **ou** les personnes qui ont soumis le formulaire, avec un avis de confidentialité qui mentionne le partage avec des plateformes publicitaires.
@@ -163,7 +164,7 @@ Le décompte des caractères provient du script de validation. `ads.csv` fait fo
 |---|---|
 | **ARRÊT** : moins de 2 prospects qualifiés, **ou** coût par prospect qualifié > 2 × celui de Google Search | Mettre la campagne en veille et réaffecter les 30 $/jour à Google Search Corporatif (T4) ou Meta |
 | **MAINTIEN** : coût par prospect qualifié entre 1 et 2 × celui de Google | Rester à 30 $/jour et tester une nouvelle image et 3 nouveaux titres |
-| **CROISSANCE** : coût par prospect qualifié ≤ celui de Google, au moins 5 prospects qualifiés | Passer en oCPC (bêta), augmenter le budget de 20 % par semaine jusqu'à 60 $/jour, ajouter des indices proches des meilleurs |
+| **CROISSANCE** : coût par prospect qualifié ≤ celui de Google **et** < 100 $, au moins 5 prospects qualifiés | Passer en oCPC (bêta), augmenter le budget de 20 % par semaine jusqu'à 60 $/jour, en prenant ces dollars sur la campagne au pire coût par prospect qualifié (le total reste à 300 $/jour, COMPTE-RENDU.md §4). Ajouter des indices proches des meilleurs |
 
 - Contexte saisonnier : après le 15 décembre, couper le groupe A et basculer le budget vers C (réservations de mariages 2027) et B.
 - Pas de rapport de requêtes : juger la qualité à partir du CRM et des enregistrements de session sur la page de destination.

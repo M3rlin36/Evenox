@@ -37,7 +37,7 @@ Responsables : **PROP** (Alexandre), **WEB** (webmestre), **ADJ** (adjoint(e)). 
 | 10 | **Campagne d'avis** : texto et courriel à tous les clients des 12 derniers mois (texte dans suivi-leads.md, section 8). Les clients corporatifs reçoivent le lien Google ; les couples, Google puis WeddingWire. Demander de **mentionner le type d'événement et la ville** (« party de bureau à Laval »), sans dicter le texte. | ADJ | 2 h |
 | 11 à 14 | Relance des avis à J+3. Répondre à **chaque** avis en moins de 48 h, en reprenant naturellement le service et la ville (« Merci pour votre party des Fêtes à Blainville! »). | ADJ | 30 min par jour |
 
-**Objectif d'avis à 30 jours :** Google de 52 à 80 et plus · WeddingWire de 0 à 5 et plus · Yelp de 0 à 3 et plus · Facebook de 0 à 5 et plus.
+**Objectif d'avis à 30 jours :** Google de 52 à 80 et plus · WeddingWire de 0 à 5 et plus · Yelp de 0 à 3 et plus (avis **non sollicités** : Yelp interdit d'en demander) · Facebook de 0 à 5 et plus.
 
 ---
 
@@ -127,6 +127,6 @@ Une ligne par requête, par moteur et par mois.
 | Sessions GA4 du canal « IA conversationnelle » | GA4 | | | En hausse chaque mois |
 | Leads venant de l'IA (CRM, `referrer` ou `utm_source` = chatgpt.com, perplexity, copilot) | CRM | | | 3 ou plus par mois |
 | Citations Bing AI Performance | Bing Webmaster Tools | | | En hausse |
-| Avis : Google / WeddingWire / Yelp / Facebook | Comptes | 52 / 0 / 0 / 0 | | 120 / 15 / 8 / 10 |
+| Avis : Google / WeddingWire / Yelp (non sollicités) / Facebook | Comptes | 52 / 0 / 0 / 0 | | 120 / 15 / 8 / 10 |
 
 **Quand Évenox est mal décrit** (mauvais prix, « Laval », confusion avec « Evenko », « fêtes d'enfants ») : noter la source citée par le moteur, corriger cette source en premier (annuaire, ancienne page, fiche), puis soumettre l'URL corrigée par IndexNow. Ne pas « corriger » le modèle en conversation : ça n'a aucun effet sur les réponses des autres utilisateurs.

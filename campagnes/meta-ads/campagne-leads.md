@@ -1,7 +1,8 @@
 # Meta Ads : campagne Leads Evenox (Facebook + Instagram)
 
 > Toute la copie est en français québécois, conforme à la Loi 96. Le vouvoiement s'applique partout. On dit « soumission » et « haut de gamme ».
-> Les éléments entre crochets `[N]` sont des **placeholders à remplacer** avant la mise en ligne. `[N] avis Google` désigne le nombre réel d'avis Google, à vérifier. La note « 4,8/5 » doit aussi être vérifiée sur la fiche Google (le site affiche parfois 4,9).
+> Les éléments entre crochets `[N]` sont des **placeholders à remplacer** avant la mise en ligne. **Promesses à confirmer par le propriétaire avant diffusion** (COMPTE-RENDU §5 bis, n° 3 et 5) : « facturation net 30 », « soumission en moins de 24 h », « plus de 1 000 événements » (ou 500+). Retirer de la copie toute promesse non confirmée.
+> La marque s'écrit **« Évenox »** (avec l'accent) dans toute la copie visible (correctifs-urgents.md n° 24). `[N] avis Google` désigne le nombre réel d'avis Google, à vérifier. La note « 4,8/5 » doit aussi être vérifiée sur la fiche Google (le site affiche parfois 4,9).
 > **Prix et livraison (vérifiés) :** les forfaits mariage sont des forfaits **déco** à 899 $ / 1 449 $ / 1 899 $ (Mariage Signature). Les montants de 599 $ et 999 $ sont des forfaits de **cabine photo**. Ne jamais écrire « livraison incluse » ni « installation incluse » : le site est contradictoire (la page /livraison/ indique 100 $ pour les 10 premiers km, puis 7 $/km, et 50 $/h d'installation). Il faut écrire « par notre équipe » ou « clé en main ». **Le client doit harmoniser ces informations sur le site.**
 
 ## 1. Structure
@@ -30,7 +31,7 @@ Répartition indicative (CBO) : environ 80 % pour la prospection et environ 20 %
 - **Exclusions :**
   - prospects déjà soumis (formulaire ouvert et envoyé, 180 jours) ;
   - liste CRM des clients et des prospects disqualifiés (hachés) ;
-  - employés Evenox.
+  - employés Évenox.
 - **Emplacements :** Advantage+ (automatique). Exclure Audience Network si plus de 25 % des prospects viennent de cet emplacement avec un taux de qualification faible (vérifier au jour 14).
 
 ### Ensemble B : Reciblage
@@ -68,7 +69,7 @@ Répartition indicative (CBO) : environ 80 % pour la prospection et environ 20 %
    - Anniversaire adulte (40, 50, 60 ans…) ou réception privée
    - Autre
 3. **Date prévue de l'événement** (champ date). Si la date n'est pas connue, choisir un mois approximatif.
-4. **Nombre d'invités** (choix multiples) : moins de 30 · 30 à 74 · 75 à 150 · plus de 150
+4. **Nombre d'invités** (choix multiples, mêmes fourchettes que le site) : moins de 30 · 30 à 74 · 75 à 149 · 150 et plus
 5. **Budget prévu pour la location et l'installation** (choix multiples, mêmes fourchettes que le formulaire du site, `operations/formulaire-qualification.md`)
    - Moins de 600 $
    - 600 $ à 999 $
@@ -76,30 +77,33 @@ Répartition indicative (CBO) : environ 80 % pour la prospection et environ 20 %
    - 2 500 $ à 4 999 $
    - 5 000 $ et plus
    - Je ne sais pas encore
-6. **Ville de l'événement** (choix multiples) : Montréal · Laval · Rive-Nord (Sainte-Thérèse, Blainville, Mirabel, Saint-Eustache, Terrebonne…) · Rive-Sud / Longueuil · Autre
+6. **Ville de l'événement** (choix multiples) : Montréal · Laval · Rive-Nord (Sainte-Thérèse, Blainville, Mirabel, Saint-Eustache, Terrebonne…) · Rive-Sud / Longueuil · Autre (à plus de 40 km de Sainte-Thérèse)
 7. **Nom de l'entreprise** (réponse courte, facultative). La logique conditionnelle l'affiche seulement si la réponse à Q1 est « Mon entreprise ».
 8. **Champs préremplis :** prénom, nom, courriel, téléphone. Pour les entreprises, ajouter le **courriel professionnel** et le **titre du poste**.
 
-**Avis de confidentialité (Loi 25) :** lien vers `https://evenox.ca/confidentialite` (TO-CREATE ou vérifier). Texte personnalisé : « Vos renseignements servent uniquement à préparer votre soumission. Evenox ne les vend ni ne les partage. »
-Case de consentement facultative : « J'accepte de recevoir des idées et offres d'Evenox par courriel. »
+**Avis de confidentialité (Loi 25) :** lien vers `https://evenox.ca/confidentialite` (TO-CREATE ou vérifier). Texte personnalisé : « Vos renseignements servent uniquement à préparer votre soumission. Évenox ne les vend ni ne les partage. »
+Case de consentement facultative : « J'accepte de recevoir des idées et offres d'Évenox par courriel. »
 
 **Écran de révision :** activé, puisque c'est le principe du formulaire « Intention plus élevée ».
 
 **Écran de remerciement :**
 - Titre : « Merci, votre demande est bien reçue »
-- Description : « Un conseiller Evenox vous écrit en moins de 24 h ouvrables avec une soumission adaptée. Pour aller plus vite, réservez dès maintenant un appel de 15 minutes avec notre équipe. »
-- Bouton : **« Réserver mon appel »**, vers `https://evenox.ca/rendez-vous?utm_source=meta&utm_medium=paid_social&utm_campaign=leads_formulaire`. Page TO-CREATE avec le calendrier (Calendly, HubSpot Meetings ou équivalent), en français.
+- Description : « Un conseiller Évenox vous écrit en moins de 24 h ouvrables avec une soumission adaptée. Pour aller plus vite, réservez dès maintenant un appel de 15 minutes avec notre équipe. »
+- Bouton : **« Réserver mon appel »**, vers `https://evenox.ca/merci-appel/?utm_source=meta&utm_medium=paid_social&utm_campaign=meta_formulaire_instantane`. Page TO-CREATE avec le calendrier (Calendly, HubSpot Meetings ou équivalent), en français.
 - Bouton secondaire (facultatif) : « Voir nos réalisations », vers `https://evenox.ca/realisations`
 
 **Qualification et routage côté CRM :**
 
 | Statut | Critère | Traitement |
 |---|---|---|
-| **A, chaud** | Budget de 2 500 $ et plus, **ou** entreprise avec un budget de 1 000 $ et plus (ou « Je ne sais pas encore ») | Appel en moins de 15 minutes (heures d'ouverture), comme la route A du site |
-| **B** | Privé ou mariage avec un budget de 600 $ à 2 499 $ (ou « Je ne sais pas encore ») | Soumission écrite en moins de 24 h + appel le jour même |
-| **C, filtré** | Budget de moins de 600 $, entreprise avec un budget de moins de 1 000 $, ou ville « Autre » avec un budget de moins de 2 500 $ | Courriel automatique poli qui oriente vers la boutique ; aucun appel |
+| **A, chaud** | Budget de 2 500 $ et plus, **ou** entreprise ou organisation avec un budget de 1 000 $ et plus (ou « Je ne sais pas encore »), **ou** budget « Je ne sais pas encore » avec 75 invités ou plus | Appel en moins de 15 minutes (heures d'ouverture), comme la route A du site |
+| **B** | Budget de 1 000 $ à 2 499 $ (privé ou mariage), ou privé ou mariage avec un budget de 600 $ à 999 $, ou « Je ne sais pas encore » avec moins de 75 invités | Soumission écrite en moins de 24 h + appel le jour même |
+| **C, filtré (boutique)** | Budget de moins de 600 $, ou entreprise ou organisation avec un budget de moins de 1 000 $ | Courriel automatique poli qui oriente vers la boutique ; aucun appel |
+| **D, hors zone** | Ville « Autre (à plus de 40 km) » avec un budget de moins de 2 500 $ | Courriel « hors zone » avec la boutique (ramassage) ; aucun appel |
 
-Ces règles reprennent les routes A, B et C (+ D hors zone) du formulaire du site, pour qu'un « lead qualifié » ait la même définition sur toutes les plateformes.
+Ces règles reprennent exactement les routes A, B, C et D du formulaire du site (formulaire-qualification.md §3, colonne « Route selon les règles » du CRM), pour qu'un « lead qualifié » ait la même définition sur toutes les plateformes.
+
+- **Attribution dans le CRM :** les prospects des formulaires instantanés n'ont pas d'UTM. Le scénario Make (ou l'intégration HubSpot) inscrit `utm_source=meta`, `utm_medium=paid_social` et `utm_campaign=meta_formulaire_instantane` : le préfixe `meta_` est ce qui classe le lead dans « Meta – Leads » du tableau de bord (`operations/crm-kpi-evenox.xlsx`).
 
 - Renvoyer les statuts à Meta par **Conversions API (CRM)** : `lead_qualifie` (A ou B) puis `depot_paye` (dépôt payé, avec la valeur), les mêmes noms d'étapes que dans `operations/tracking-setup.md` (section 4).
 
@@ -115,7 +119,7 @@ Ces règles reprennent les routes A, B et C (+ D hors zone) du formulaire du sit
 
 ## 4. Concepts publicitaires (8)
 
-> Les visuels doivent toujours montrer de **vrais montages Evenox** (aucune banque d'images, aucun gonflable pour enfants).
+> Les visuels doivent toujours montrer de **vrais montages Évenox** (aucune banque d'images, aucun gonflable pour enfants).
 > Formats : 9:16 pour Reels et Stories, 4:5 pour le fil. Ajouter des sous-titres français incrustés, parce que la vidéo est le plus souvent regardée sans son. Logo discret en fin de vidéo.
 
 ### Concept 1 : « Le party des Fêtes réglé » (corporatif, T4)
@@ -130,7 +134,7 @@ Ces règles reprennent les routes A, B et C (+ D hors zone) du formulaire du sit
 - **Titre :** On livre, on monte, on démonte
 - **Description :** Soumission en 24 h
 - **Bouton :** Obtenir une soumission
-- **Brief visuel :** Reel de 30 s. Chargement du camion à l'entrepôt, arrivée sur place, montage par l'équipe en chandails Evenox, plan large final. Musique entraînante libre de droits.
+- **Brief visuel :** Reel de 30 s. Chargement du camion à l'entrepôt, arrivée sur place, montage par l'équipe en chandails Évenox, plan large final. Musique entraînante libre de droits.
 
 ### Concept 3 : « Gala Signature » (corporatif haut de gamme)
 - **Texte principal :** Un gala à la hauteur de votre équipe. Notre forfait Gala Signature réunit décor haut de gamme, mobilier et cabine photo avec préposé, pour 75 à 150 invités, dès 2 495 $. Une seule soumission, un seul fournisseur.
@@ -144,7 +148,7 @@ Ces règles reprennent les routes A, B et C (+ D hors zone) du formulaire du sit
 - **Titre :** Cabine photo 360 à vos couleurs
 - **Description :** Avec préposé
 - **Bouton :** Obtenir une soumission
-- **Brief visuel :** Reel vertical tourné **depuis la plateforme 360** lors d'un vrai événement corporatif. Montrer d'abord l'habillage au logo du client (autorisation écrite du client requise ; sinon, habillage au logo Evenox). Ne jamais présenter un faux client. Obtenir l'autorisation des personnes filmées.
+- **Brief visuel :** Reel vertical tourné **depuis la plateforme 360** lors d'un vrai événement corporatif. Montrer d'abord l'habillage au logo du client (autorisation écrite du client requise ; sinon, habillage au logo Évenox). Ne jamais présenter un faux client. Obtenir l'autorisation des personnes filmées.
 
 ### Concept 5 : « Mariage clé en main » (mariage, de mi-décembre à mai)
 - **Texte principal :** Arche florale, lettres lumineuses, chaises Chiavari et éclairage d'ambiance : votre décor de mariage est livré, installé avant l'arrivée des invités, puis repris le lendemain. Forfaits déco mariage à 899 $, 1 449 $ et 1 899 $ (Mariage Signature), ou sur mesure.
@@ -161,7 +165,7 @@ Ces règles reprennent les routes A, B et C (+ D hors zone) du formulaire du sit
 - **Brief visuel :** Image statique 4:5 avec 3 courts extraits d'avis Google réels (prénom et initiale, avec autorisation) sur photo de montage floutée. Ne pas afficher de logos de clients corporatifs sans autorisation écrite.
 
 ### Concept 7 : « Un seul fournisseur, vraiment » (objection prix, reciblage)
-- **Texte principal :** Comparez avant de choisir : chez Evenox, notre équipe s'occupe de la livraison, de l'installation et du démontage. Pas de location à la pièce, pas de soirée à monter vous-même. Forfaits corporatifs de 1 195 $ à 2 495 $, déco dès 899 $.
+- **Texte principal :** Comparez avant de choisir : chez Évenox, notre équipe s'occupe de la livraison, de l'installation et du démontage. Pas de location à la pièce, pas de soirée à monter vous-même. Forfaits corporatifs de 1 195 $ à 2 495 $, déco dès 899 $.
 - **Titre :** Un seul fournisseur, clé en main
 - **Description :** Forfaits clairs, dès 899 $
 - **Bouton :** En savoir plus
@@ -169,7 +173,7 @@ Ces règles reprennent les routes A, B et C (+ D hors zone) du formulaire du sit
 
 ### Concept 8 : « Dernières dates » (urgence, à adapter selon la saison)
 - **Texte principal (T4) :** Il reste quelques vendredis et samedis en décembre pour les party de bureau. Réservez votre date dès maintenant : on s'occupe du mobilier, du décor, de la cabine photo et des jeux.
-- **Texte principal (de mi-décembre à mai) :** Les samedis de juillet à octobre 2027 se réservent dès maintenant. Bloquez votre date de mariage avec Evenox : décor, chapiteau et mobilier livrés et montés.
+- **Texte principal (de mi-décembre à mai) :** Les samedis de juillet à octobre 2027 se réservent dès maintenant. Bloquez votre date de mariage avec Évenox : décor, chapiteau et mobilier livrés et montés.
 - **Titre :** Dates de décembre limitées / Été 2027 : dates limitées
 - **Description :** Réservez votre date
 - **Bouton :** Obtenir une soumission
@@ -183,6 +187,7 @@ Ces règles reprennent les routes A, B et C (+ D hors zone) du formulaire du sit
   - doubler le poids des 2 meilleurs ;
   - si plus de 40 % des prospects sont de catégorie C, ajouter une question (« Budget ») en début de formulaire ou monter l'âge minimum.
 - **Jour 30 :**
-  - si le coût par prospect qualifié est inférieur ou égal à 1,2 fois celui de Google Search, augmenter de 20 % par semaine ;
-  - sinon, tester une variante formulaire ou page de destination (`https://evenox.ca/soumission`).
+  - règle commune (COMPTE-RENDU.md §4, tableau de bord du CRM) : si le coût par prospect qualifié est **inférieur à 100 $** et le taux de signature d'au moins 25 %, augmenter de 20 % par semaine au maximum, en prenant le budget sur la campagne au pire coût par prospect qualifié (le total reste à 300 $/jour) ;
+  - aucun prospect qualifié, ou coût par prospect qualifié supérieur à 300 $ : réduire de 30 % et tester une variante formulaire ou page de destination (`https://evenox.ca/soumission`) ;
+  - entre les deux : garder et renouveler les créatifs.
 - **Renouvellement créatif :** 2 nouveaux concepts toutes les 3 ou 4 semaines.

@@ -52,7 +52,7 @@ Les composantes (assets) restent dans des fichiers séparés : leurs colonnes `D
 **Ce qu'Editor ne fait pas par CSV ici (à régler à la main)**
 - **Calendrier de diffusion** : non inclus dans le CSV. Le créer dans Paramètres de la campagne > Calendrier de diffusion (voir « Calendrier recommandé »).
 - **Objectifs de conversion** de la campagne (`lead_qualifie` comme principale) : à régler dans l'interface Web.
-- **Passage au CPA cible** après 30 conversions : manuel (la colonne `Comment` de chaque campagne le rappelle).
+- **Passage au CPA cible** après 30 `lead_qualifie` sur 30 jours : manuel (la colonne `Comment` de chaque campagne le rappelle).
 - Liste de négatifs partagée : repli manuel ci-dessus si l'import CSV échoue.
 
 **Si l'import par fichier pose problème** : ouvrir le CSV dans un éditeur de texte (pas Excel, qui peut abîmer les accents et les « 1 195 $ »), tout copier, puis **Compte > Importer > Coller du texte** (Paste text). Si le fichier principal échoue, importer les fichiers par entité dans cet ordre : `campaigns.csv`, `ad_groups.csv`, `keywords.csv`, `rsa_ads.csv`, `negatives.csv`, puis les composantes.
@@ -66,7 +66,7 @@ Les composantes (assets) restent dans des fichiers séparés : leurs colonnes `D
 | SRCH \| Marque \| FR | 10 $ | Maximiser les clics, CPC max 2,50 $ | Province de Québec |
 
 - **Réseaux :** Recherche Google seulement. Partenaires du Réseau de Recherche et Réseau Display désactivés.
-- **Ciblage par présence :** les colonnes `Targeting method` et `Exclusion method` = `Location of presence` l'appliquent. Vérifiez-le dans Paramètres > Lieux > Options. La valeur Google par défaut, « Présence ou intérêt », laisse passer des clics de partout.
+- **Ciblage par présence :** les colonnes `Targeting method` et `Exclusion method` = `Location of presence` l'appliquent. Vérifiez-le dans Paramètres > Lieux > Options. La valeur Google par défaut, « Présence ou intérêt », laisse passer des clics de partout. C'est la cause probable des 4 anciennes annonces diffusées en France (audit-campagne-actuelle.md §5) : passer aussi les anciennes campagnes en « Présence » avant de les mettre en veille, et ne jamais choisir « Présence ou intérêt » dans une nouvelle campagne.
 - **Lieux :** chaque lieu est fourni avec son nom canonique Google et son `Location ID` (Criteria ID) tirés du fichier officiel geotargets. On cible la version « City » quand Google en a deux (p. ex. Montréal 1002604 et non la « Municipality » 9196770). Pour ajouter un lieu, chercher son ID dans https://developers.google.com/google-ads/api/data/geotargets.
 - **Calendrier recommandé :** lundi à vendredi de 7 h à 21 h, samedi de 9 h à 17 h pour Corporatif. Tous les jours de 8 h à 22 h pour Mariage. Ajustez après 4 semaines de données.
 - **Conversions (voir `operations/tracking-setup.md`, section 3) :** principale = `lead_qualifie` (formulaire, routes A et B), avec conversions améliorées. Secondaires (observation) = `lead_tous`, `appel_60s` (devient principale après 30 jours si au moins 50 % des appels écoutés sont qualifiés). Phase 2 : import hors ligne de `depot_paye`. Ne pas mettre le clic sur le téléphone en conversion principale.
@@ -122,7 +122,8 @@ Les composantes (assets) restent dans des fichiers séparés : leurs colonnes `D
 | https://evenox.ca/soumission | TO-CREATE (formulaire autonome) |
 | https://evenox.ca/realisations | TO-CREATE (galerie de vrais montages) |
 
-   Gabarits : `operations/landing-corporatif.md` pour `/corporatif` et ses 6 sous-pages ; `operations/landing-mariage.md` pour les 5 sous-pages `/mariage/...`. `/evenement-prive`, `/soumission` et `/realisations` n'ont pas encore de gabarit : les rédiger avant l'activation. Sinon, mettre en veille le groupe « Événement privé clé en main » et retirer les liens annexes qui pointent vers ces pages.
+   Gabarits : `operations/landing-corporatif.md` pour `/corporatif` et ses 6 sous-pages ; `operations/landing-mariage.md` pour les 5 sous-pages `/mariage/...` ; `operations/landing-evenement-prive.md`, `operations/landing-soumission.md` et `operations/landing-realisations.md` pour les 3 autres. Si `/evenement-prive` n'est pas publiée (décision COMPTE-RENDU §5 bis, n° 7), mettre en veille le groupe « Événement privé clé en main » et retirer le lien annexe « Fêtes privées ». Tant que `/realisations` n'a pas 3 études de cas réelles, retirer le lien annexe « Réalisations ».
+   **Redirections existantes à supprimer avant de publier (audit-campagne-actuelle.md §6c) :** aujourd'hui, `/corporatif/gala` → `/gala-corporatif/`, `/corporatif/photobooth-360` et `/mariage/photobooth` → `/photobooth-360/`, `/mariage/decoration` → `/decoration-ballon/` et `/soumission` → `/soumission-grand-evenement/` (301). Retirer ces règles dans l'extension de redirection (ou Yoast) au moment de publier chaque nouvelle page, puis vérifier que l'URL finale répond 200 (la seule redirection acceptable est l'ajout de la barre oblique finale par WordPress, p. ex. `/soumission` → `/soumission/`).
    Chaque page doit afficher le prix « à partir de ». Elle ne doit montrer **aucun** article enfant ou gonflable bas de gamme, puisque l'objectif est de filtrer les mauvais prospects. Le formulaire doit poser au minimum ces questions : type d'événement, date, nombre d'invités, budget, entreprise ou particulier.
 5. **Loi 96 :** toutes les annonces sont en français. « Party », « 5 à 7 » et « clé en main » sont des usages admis au Québec. Le texte des annonces n'utilise ni « premium » ni « devis ». « Photobooth », « team building » et « lounge » apparaissent seulement dans les mots clés et les URL, là où les recherches réelles les emploient. Le texte visible des annonces (titres, descriptions, chemins d'affichage, composantes) dit « cabine photo », « consolidation d'équipe » ou « activité d'équipe », et « coin salon ».
 
@@ -130,7 +131,9 @@ Les composantes (assets) restent dans des fichiers séparés : leurs colonnes `D
 
 - **Chaque semaine :** relire le rapport des termes de recherche et ajouter les négatifs (bricolage, enfant, prix bas, emplois). Comptez environ 10 à 20 ajouts par semaine au début.
 - **Jour 14 :** mettre en veille les mots clés avec 0 `lead_qualifie` et plus de 300 $ dépensés (2 fois la cible de 150 $ par lead qualifié du plan).
-- **Jour 30, ou à 30 conversions :** passer au CPA cible. Si le Corporatif plafonne en part d'impressions (budget perdu > 20 %) avec un CPA sous la cible, augmenter le budget de 20 % par semaine au maximum.
+- **Après 30 `lead_qualifie` sur 30 jours (pas avant) :** passer au CPA cible (CPA observé × 1,1).
+- **Augmenter :** +20 % par semaine au maximum, seulement si le coût par lead qualifié est inférieur à 100 $ et le taux de signature d'au moins 25 % (règle commune de COMPTE-RENDU.md §4 et du CRM), et si la campagne perd des impressions faute de budget (> 20 %). Le total reste à 300 $/jour : la hausse est prise sur la campagne au pire coût par lead qualifié.
+- **Réduire :** aucun lead qualifié ou coût par lead qualifié > 300 $ au jour 30 → −30 %.
 - **Après le 15 décembre :** réduire le message « Dates de décembre limitées » et basculer vers « Party des Fêtes en janvier » et les 5 à 7 de l'hiver.
 
 Les CSV sont générés par `outils/build_google_ads.py` : modifier le script, puis le relancer, plutôt que d'éditer les CSV à la main. Validation (longueurs, mots interdits, doublons, conflits négatifs/positifs) : `python3 -I outils/validate_ads.py`, depuis la racine du dépôt.

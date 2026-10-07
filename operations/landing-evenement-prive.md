@@ -141,6 +141,8 @@ Vous, vous n'aurez rien monté. Notre équipe arrive avant la fête, installe et
 | Chaises Chiavari blanches | 8 $/chaise (7 $ dès 100) |
 | Chapiteau 20' × 40' (jusqu'à 80 invités assis) | 800 $ + montage |
 
+> Prix des ajouts **[à confirmer]** par le propriétaire avant la mise en ligne (seuls les forfaits et les paliers de cabine photo ont été vérifiés sur evenox.ca, factcheck 12a–12c). Retirer toute ligne dont le prix n'est pas confirmé.
+
 ---
 
 ## 5. Ce qui est inclus, toujours
@@ -153,7 +155,7 @@ Vous, vous n'aurez rien monté. Notre équipe arrive avant la fête, installe et
 2. **La cabine photo.** Un préposé l'anime pendant toute la durée prévue. Vos invités n'ont qu'à sourire.
 3. **Les tests.** Tout est branché et vérifié avant l'arrivée des invités.
 4. **La reprise.** Nous revenons chercher le matériel. Vous n'avez rien à démonter après la fête.
-5. **Les imprévus.** Si un équipement brise pendant la soirée, nous le remplaçons ou nous remboursons la portion.
+5. **Les imprévus.** Si un équipement brise pendant la soirée, nous le remplaçons ou nous remboursons la portion. [à confirmer]
 6. **Un seul interlocuteur.** Une seule personne, de la soumission jusqu'au lendemain de la fête.
 
 ---
@@ -243,13 +245,13 @@ Nos forfaits clé en main sont pensés pour les réceptions d'adultes. Pour une 
 
 **Bandeau (fond clair, centré) :**
 **Forfaits fête privée dès 899 $ avant taxes.** Cabine photo avec préposé seule (sans décor) dès 599 $, installée et reprise.
-Vous cherchez seulement quelques tables, chaises ou jeux à ramasser vous-même? Notre **boutique en ligne** est ouverte 24 h sur 24, et le ramassage à Sainte-Thérèse est gratuit. → `Aller à la boutique` (evenox.booqableshop.com?utm_source=lp-prive&utm_medium=referral&utm_campaign=minimum)
+Vous cherchez seulement quelques tables, chaises ou jeux à ramasser vous-même? Notre **boutique en ligne** est ouverte 24 h sur 24, et le ramassage à Sainte-Thérèse est gratuit. → `Aller à la boutique` (evenox.booqableshop.com?utm_source=lp_prive&utm_medium=referral&utm_campaign=minimum)
 
 ---
 
 ## 11. Appel à l'action final + formulaire (`#soumission`)
 
-**Module Divi :** Section avec ancre `soumission`, 2 colonnes. Formulaire multi-étapes de formulaire-qualification.md, `type_evenement` = `prive` présélectionné. Routage : budget 600–999 $ ou 1 000–2 499 $ → route B (soumission en 24 h) ; moins de 600 $ → route C (boutique).
+**Module Divi :** Section avec ancre `soumission`, 2 colonnes. Formulaire multi-étapes de formulaire-qualification.md, `type_evenement` = `prive` présélectionné. Routage (formulaire-qualification.md §3) : budget 600–999 $ ou 1 000–2 499 $ → route B (soumission en 24 h) ; 2 500 $ et plus → route A (appel prioritaire) ; moins de 600 $ → route C (boutique) ; plus de 40 km avec moins de 2 500 $ → route D (hors zone).
 
 **H2 :** Votre date est-elle encore libre?
 

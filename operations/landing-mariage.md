@@ -2,6 +2,8 @@
 
 > Texte prêt à coller dans Divi, section par section. Français du Québec, vouvoiement, ton chaleureux et haut de gamme.
 > Cible : couples qui reçoivent **80 invités ou plus**, en salle, en domaine, en grange ou sous chapiteau privé, sur la Rive-Nord, à Laval, à Montréal ou dans les Basses-Laurentides. La page écarte volontairement les demandes de quelques chaises.
+> ⚠️ **Promesses à confirmer par le propriétaire avant la mise en ligne (COMPTE-RENDU §5 bis, n° 5)** — marquées [à confirmer] ci-dessous : soumission détaillée en 24 h, réponse le jour même, garantie de bris (remplacement ou remboursement de la portion). Une promesse non confirmée est retirée de la page et du schéma.
+> **Page de destination ChatGPT Ads (`/mariage/decoration/`, `/mariage/chapiteau/`) : aucune mention ni image d'alcool** (règles d'OpenAI au Canada : l'annonce **et** la page d'atterrissage).
 
 ---
 
@@ -148,7 +150,7 @@ Mobilier complet, chapiteau, arche de cérémonie ou plus de 150 invités? **Nou
 2. **La cabine photo.** Un préposé l'anime toute la durée prévue. Vos invités n'ont qu'à sourire.
 3. **Les tests.** Tout est branché et vérifié avant l'arrivée des invités.
 4. **La reprise.** Nous revenons chercher le matériel le lendemain. Vous n'avez rien à démonter après la fête.
-5. **Les imprévus.** Si un équipement brise pendant la soirée, nous le remplaçons ou nous remboursons la portion.
+5. **Les imprévus.** Si un équipement brise pendant la soirée, nous le remplaçons ou nous remboursons la portion. [à confirmer]
 6. **Un seul interlocuteur.** Une seule personne, de la soumission jusqu'au lendemain du mariage.
 
 ---
@@ -160,7 +162,7 @@ Mobilier complet, chapiteau, arche de cérémonie ou plus de 150 invités? **Nou
 1. **Vérifiez votre date (2 minutes).**
    Date, lieu, nombre d'invités et budget approximatif.
 2. **Recevez votre proposition.**
-   Appel découverte de 15 minutes ou soumission détaillée en 24 h, avec photos de mariages semblables.
+   Appel découverte de 15 minutes ou soumission détaillée en 24 h [à confirmer], avec photos de mariages semblables.
 3. **Bloquez votre date.**
    Un dépôt de 20 % réserve votre soirée. Nous nous occupons du reste, jusqu'au lendemain.
 
@@ -200,7 +202,7 @@ Gabarit (avis réels seulement) :
 | 8 | Bande d'impressions photo tenue par un invité | Impressions souvenir pour vos invités |
 | 9 | Équipe Évenox pendant l'installation le matin | Installation le matin, vous profitez |
 
-Règles : photos réelles seulement, autorisation du couple (clause du contrat ou courriel), pas d'alcool au premier plan, WebP de 200 Ko maximum.
+Règles : photos réelles seulement, autorisation du couple (clause du contrat ou courriel), aucun verre ni bouteille d'alcool visible (règles d'OpenAI), WebP de 200 Ko maximum.
 
 ---
 

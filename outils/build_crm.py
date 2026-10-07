@@ -90,8 +90,9 @@ VILLES = ["Sainte-Thérèse", "Blainville", "Boisbriand", "Rosemère", "Lorraine
 UTM_SOURCE = ["google", "bing", "meta", "chatgpt", "courriel", "sms", "gbp", "weddingwire", "yelp"]
 UTM_MEDIUM = ["cpc", "paid_social", "email", "sms", "referral", "organic_local"]
 UTM_CAMPAIGN = ["gads_corpo_fetes", "gads_corpo_5a7", "gads_mariage_deco", "gads_marque",
-                "meta_corpo_fetes", "meta_mariage_deco", "msft_corpo", "chatgpt_corpo_fetes",
-                "chatgpt_mariage"]
+                "meta_corpo_fetes", "meta_mariage_deco", "meta_formulaire_instantane",
+                "msft_corpo", "msft_mariage", "msft_marque",
+                "chatgpt_corpo_fetes", "chatgpt_corpo_gala", "chatgpt_mariage"]
 FORFAITS = ["5 à 7 (1 195 $)", "Party de bureau (1 995 $)", "Gala Signature (2 495 $)",
             "Décor WOW (899 $)", "Soirée Signature (1 449 $)", "Mariage Signature (1 899 $)",
             "Photobooth seul (dès 599 $)", "Sur mesure"]

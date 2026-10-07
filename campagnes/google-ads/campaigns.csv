@@ -1,6 +1,6 @@
 ﻿Campaign,Campaign Type,Networks,Budget,Budget type,EU political ads,Language targeting,Bid Strategy Type,Maximum CPC bid limit,Targeting method,Exclusion method,Campaign Status,Location,Location ID,Comment
-SRCH | Corporatif | FR,Search,Google Search,100.00,Daily,Doesn't have EU political ads,fr,Maximize conversions,,Location of presence,Location of presence,Paused,,,"Passer en tCPA (Target CPA) après 30 conversions sur 30 jours; tCPA initial = CPA moyen observé x 1,1"
-SRCH | Mariage & privé haut de gamme | FR,Search,Google Search,60.00,Daily,Doesn't have EU political ads,fr,Maximize conversions,,Location of presence,Location of presence,Paused,,,Passer en tCPA après 30 conversions sur 30 jours
+SRCH | Corporatif | FR,Search,Google Search,100.00,Daily,Doesn't have EU political ads,fr,Maximize conversions,,Location of presence,Location of presence,Paused,,,"Passer en tCPA (Target CPA) après 30 lead_qualifie sur 30 jours; tCPA initial = CPA moyen observé x 1,1"
+SRCH | Mariage & privé haut de gamme | FR,Search,Google Search,60.00,Daily,Doesn't have EU political ads,fr,Maximize conversions,,Location of presence,Location of presence,Paused,,,"Passer en tCPA après 30 lead_qualifie sur 30 jours; tCPA initial = CPA moyen observé x 1,1"
 SRCH | Marque | FR,Search,Google Search,10.00,Daily,Doesn't have EU political ads,fr,Maximize clicks,2.50,Location of presence,Location of presence,Paused,,,"Plafond CPC max 2,50 $ (Maximize clicks). Couverture Québec entier"
 SRCH | Corporatif | FR,,,,,,,,,,,,"Montreal,Montreal,Quebec,Canada",1002604,
 SRCH | Corporatif | FR,,,,,,,,,,,,"Laval,Quebec,Canada",1002579,

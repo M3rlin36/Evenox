@@ -2,6 +2,8 @@
 
 > Texte prêt à coller dans Divi (WordPress), section par section, avec le module Divi à utiliser.
 > Langue : français du Québec, vouvoiement. Ton : haut de gamme, concret, sans superlatifs invérifiables.
+> ⚠️ **Promesses à confirmer par le propriétaire avant la mise en ligne (COMPTE-RENDU §5 bis, n° 5)** — marquées [à confirmer] ci-dessous : rappel en moins de 15 minutes, proposition écrite en 24 h, bon de commande et net 30 **sans dépôt** sur approbation de crédit, créneau d'installation garanti hors des heures de bureau, garantie de bris (remplacement ou remboursement de la portion), « nous nous reprenons ». Une promesse non confirmée est **retirée** de la page, de la FAQ et du schéma (schema-jsonld.md), jamais publiée telle quelle.
+> **Page de destination ChatGPT Ads (OpenAI) : aucune mention ni image d'alcool** sur toute la page (annexe en fin de document).
 
 ---
 
@@ -153,9 +155,9 @@ Plus de 150 invités, plusieurs salles ou un chapiteau? **Nous bâtissons une pr
 1. **Un conseiller unique.** Une seule personne, de la soumission jusqu'au démontage. Vous avez son numéro de cellulaire.
 2. **Installation et démontage.** Notre équipe monte tout, teste tout et repart avec tout. Votre équipe ne lève pas un doigt.
 3. **Créneau adapté à votre immeuble.** Installation pendant le bureau ou après 17 h, coordination du quai de livraison et de l'ascenseur avec le gestionnaire.
-4. **Facturation conforme.** Bon de commande accepté. Net 30 jours sur approbation de crédit, sans dépôt ni carte au dossier.
-5. **Garantie de bris.** Un équipement brise pendant l'événement? Nous le remplaçons ou nous remboursons la portion.
-6. **Effet wow garanti.** Tout est monté et vérifié avant l'arrivée de vos invités. Sinon, nous nous reprenons.
+4. **Facturation conforme.** Bon de commande accepté. Net 30 jours sur approbation de crédit, sans dépôt ni carte au dossier. [à confirmer]
+5. **Garantie de bris.** Un équipement brise pendant l'événement? Nous le remplaçons ou nous remboursons la portion. [à confirmer]
+6. **Prêt avant vos invités.** Tout est monté et vérifié avant l'arrivée de vos invités. Sinon, nous nous reprenons. [à confirmer]
 
 ---
 
@@ -168,7 +170,7 @@ Plus de 150 invités, plusieurs salles ou un chapiteau? **Nous bâtissons une pr
 1. **Dites-nous l'essentiel (2 minutes).**
    Date, lieu, nombre d'invités et budget. Aucun engagement.
 2. **Recevez votre proposition.**
-   Un conseiller vous appelle en moins de 15 minutes (heures d'ouverture) ou vous réservez un appel au moment qui vous convient. Proposition écrite en 24 h, avec 3 options.
+   Un conseiller vous appelle en moins de 15 minutes (heures d'ouverture) [à confirmer] ou vous réservez un appel au moment qui vous convient. Proposition écrite en 24 h [à confirmer], avec 3 options.
 3. **Nous installons, vous profitez.**
    Votre date est bloquée sur bon de commande ou avec un dépôt de 20 %. Le jour J, nous montons, nous testons et nous repartons avec tout.
 
@@ -215,7 +217,7 @@ Gabarit de mise en page :
 Règles :
 - Photos réelles seulement, jamais d'images générées par IA ni de banque d'images.
 - Format 4:3, en WebP, 1 600 px de large au maximum.
-- Pas de bouteilles ni de verres d'alcool bien visibles (contrainte des règles publicitaires d'OpenAI et de Meta).
+- Aucune bouteille ni aucun verre d'alcool visible (règles publicitaires d'OpenAI : alcool interdit dans l'annonce et la page d'atterrissage au Canada ; prudence avec Meta).
 - Texte alternatif en français, avec le lieu (par ex. « Party de bureau clé en main à Laval, lettres lumineuses et jeux géants »).
 
 ---

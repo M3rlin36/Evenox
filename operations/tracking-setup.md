@@ -1,8 +1,26 @@
 # Mise en place du suivi — liste de contrôle (avant de dépenser le 1er dollar)
 
 > Budget publicitaire : 300 $/jour (environ 9 100 $/mois). Sans mesure des leads **qualifiés** et des **dépôts**, les algorithmes vont optimiser pour les petits leads.
-> Ordre de travail : 1) consentement → 2) GTM + GA4 → 3) Google Ads → 4) Meta → 5) Microsoft → 6) OpenAI → 7) suivi d'appels → 8) CRM et import hors ligne → 9) tableau de bord.
+> Ordre de travail : **0) nettoyage de l'existant (aujourd'hui)** → 1) consentement → 2) GTM + GA4 → 3) Google Ads → 4) Meta → 5) Microsoft → 6) OpenAI → 7) suivi d'appels → 8) CRM et import hors ligne → 9) tableau de bord.
 > Responsable suggéré : gestionnaire de publicité (ou pigiste GTM). Temps total : 2 à 3 jours de travail.
+
+---
+
+## 0. Nettoyage de l'existant — à faire EN PREMIER (constats de `audit-campagne-actuelle.md` §5 et §6a)
+
+Le site a déjà des balises, mais elles sont mal branchées. On les corrige **avant** d'installer quoi que ce soit d'autre, sinon les nouvelles balises s'ajoutent aux anciennes (doublons, données faussées, non-conformité Loi 25). Conteneur : `GTM-PP2W2TX9` (le garder, c'est la base du nouveau suivi).
+
+| # | Constat (audit) | Action | Prio. |
+|---|---|---|---|
+| 0.1 | **Le pixel OpenAI est déjà installé et se charge au `gtm.init` sans aucun consentement.** Un script maison capture aussi le courriel haché (SHA-256) dans le témoin `evx_oaiq_user`. | **Aujourd'hui, avant tout le reste :** dans GTM, mettre en pause (ou supprimer) la balise du pixel OpenAI et le script `evx_oaiq_user`, puis **Publier** le conteneur. Ne plus créer le témoin `evx_oaiq_user`. Le pixel sera réinstallé plus tard selon la section 6 (`oaiq("consent", false)` avant `init`, déclenché seulement après la bannière). Vérification : navigation privée, aucun témoin `__oppref`, `__obref` ni `evx_oaiq_user`. | **P0 – jour même** |
+| 0.2 | Consent Mode : `gtag('consent','default', denied)` **seulement pour l'UE, le R.-U. et la Suisse** ; WP Consent API présente mais `consent_type` vide et aucune bannière. Au Québec, tout part sans consentement. | Retirer le paramètre `region` de la commande par défaut actuelle (ou la remplacer) : refus par défaut **pour toutes les régions**, selon la section 1. Régler `consent_type` = `optin` dans la plateforme de consentement. | P0 |
+| 0.3 | **Deux comptes Google Ads taggés** : `AW-16529262834` (GTM, conversion « lead » `Nc-uCJjXz84cEPKR4sk9` sur `conversion_lead`) et `AW-16776285171` (extension Google for WooCommerce / Google Listings & Ads, événements e-commerce). | 1) Identifier le compte qui porte l'historique de dépenses et les campagnes (audit §8, export n° 0) : c'est le **compte principal**, le seul où l'on importe les nouvelles campagnes. 2) Si le principal est `16529262834` : dans WooCommerce → Marketing → Google, relier ce même compte ou déconnecter le compte Ads de l'extension (garder seulement le lien Merchant Center) pour que sa balise `AW-16776285171` disparaisse du site. 3) Si le principal est `16776285171` : recréer les actions de conversion de la section 3 dans ce compte et remplacer l'ID dans les balises GTM. 4) Ne jamais faire tourner des campagnes dans les deux comptes ; si les deux doivent rester, les regrouper sous un compte administrateur (MCC). 5) Ancienne conversion « lead » → **secondaire** (ne pas la supprimer). Vérification : Tag Assistant ne montre plus qu'**un seul** `AW-`. | P0 |
+| 0.4 | **Deux propriétés GA4** : `G-BCHQ23SBRF` (événement `generate_lead`) et `G-Y0K5N2WSNP` (« Achat Booqable »). | Garder **une seule** propriété (celle qui a le plus d'historique et qui est liée au compte Google Ads principal). Y envoyer aussi les achats Booqable (changer l'ID de mesure dans l'intégration GA4 de Booqable, domaines croisés de la section 2). Retirer du site la balise de l'autre propriété (extension WooCommerce, Site Kit ou code du thème) ; **ne pas supprimer** l'ancienne propriété (historique en lecture). Associer la propriété gardée au compte Google Ads principal. Vérification : Tag Assistant ne montre plus qu'**un seul** `G-`. | P0 |
+| 0.5 | **Conversion GA4 cassée** : la balise `generate_lead` attend l'événement dataLayer `lead_submit`, **qu'aucune page n'envoie** → GA4 compte probablement zéro lead. Côté Google Ads, la balise « lead » part sur `conversion_lead` pour **tout** formulaire AJAX réussi (et même un envoi n8n au statut 0), sans qualification. | **Supprimer** l'ancienne balise GA4 `generate_lead` et son déclencheur **avant** la mise en ligne du nouveau formulaire : le nouveau formulaire pousse justement `lead_submit`, et l'ancienne balise se remettrait à envoyer des doublons. Créer à la place les balises de la section 2 (`lead_tous`, `lead_qualifie`…). Mettre en pause la balise Google Ads sur `conversion_lead` dès que `lead_qualifie` et `lead_tous` sont testés. Vérifier que le formulaire « Débloquer le levier » de `/lettres-lumineuses/` ne déclenche aucune conversion. | P0 |
+| 0.6 | **Pixel Meta de base absent** : la balise GTM « Lead » ne s'exécute que si `fbq` existe, donc elle ne part jamais. Aucune conversion Meta n'est mesurée. | Supprimer la balise orpheline « Lead ». Installer le code de base du pixel par GTM (déclenché après le consentement Marketing) **une fois la Page d'entreprise et le portefeuille Business créés** (section 4, correctifs-urgents.md n° 12), puis brancher `Lead` sur `lead_qualifie`. Ne pas lancer la campagne Meta avant. | P0 (avant Meta) |
+| 0.7 | **Ciblage géographique des anciennes campagnes** : 4 annonces diffusées en France → option « Présence ou intérêt » probable. | Dans le compte principal : Paramètres de chaque campagne → Lieux → Options = **« Présence : personnes se trouvant dans vos zones ciblées »** (ciblage **et** exclusion), avant de mettre les anciennes campagnes en veille. Les nouvelles campagnes l'ont déjà (`campaigns.csv` : `Location of presence`). Même vérification dans Microsoft Ads après l'import (« Personnes dans vos zones ciblées »). | P0 |
+| 0.8 | `<html lang="fr-FR">` | `fr-CA` (correctifs-urgents.md n° 13). | P1 |
+| 0.9 | TikTok, Microsoft UET, Clarity : absents. | Rien à retirer. UET à ajouter avec Microsoft Ads (section 5). | — |
 
 ---
 
@@ -50,7 +68,8 @@ gtag('set', 'url_passthrough', true);
 
 ## 2. Google Tag Manager + GA4
 
-☐ Un seul conteneur GTM sur tout le site (retirer les codes gtag, Meta et TikTok codés en dur dans le thème ou les extensions, pour éviter les doublons).
+☐ Un seul conteneur GTM sur tout le site (`GTM-PP2W2TX9`). Retirer toute balise gtag ajoutée hors GTM par le thème ou les extensions (extension WooCommerce : voir la section 0, points 0.3 et 0.4), pour éviter les doublons.
+☐ **Une seule propriété GA4** et **un seul compte Google Ads** sur le site (section 0).
 ☐ Propriété GA4 : fuseau horaire America/Toronto, devise CAD, conservation des données 14 mois, Google Signals **désactivé** tant que la validation juridique n'est pas faite.
 ☐ Domaines croisés : `evenox.ca` + `evenox.booqableshop.com` (Admin → Flux de données → Configurer les domaines).
 ☐ Exclure le trafic interne (adresse IP de l'entrepôt et du bureau).
@@ -62,7 +81,7 @@ gtag('set', 'url_passthrough', true);
 |---|---|---|---|
 | `form_start` | Première interaction avec le formulaire | `form_id`, `page` | Non |
 | `form_step` | Chaque étape validée | `step` (1–5), `event_type` | Non |
-| `generate_lead` | Tout envoi (`lead_submit`) | `lead_route`, `event_type`, `budget_band`, `value` | Non (mesure du volume) |
+| `lead_tous` | Tout envoi (`lead_submit`, routes A, B, C, D) | `lead_route`, `event_type`, `budget_band`, `value` | Non (mesure du volume) |
 | `lead_qualifie` | `lead_submit` avec route A ou B | `lead_route`, `value`, `currency` | **Oui** |
 | `lead_prioritaire` | Route A | `value` | Oui |
 | `lead_non_qualifie` | Route C ou D | `lead_route` | Non |
@@ -90,7 +109,7 @@ gtag('set', 'url_passthrough', true);
 
 ☐ Activer les **conversions améliorées pour les leads** (Objectifs → Paramètres → Conversions améliorées → « Leads » → méthode Google Tag Manager). Les données utilisateur (courriel, téléphone) sont poussées dans le dataLayer **seulement si `consent_mesure` = oui** (voir formulaire-qualification.md).
 ☐ Activer le marquage automatique (gclid) et vérifier que le gclid survit jusqu'au formulaire (test avec `?gclid=TEST123`).
-☐ Modèle de suivi au niveau du compte : `{lpurl}?utm_source=google&utm_medium=cpc&utm_campaign={_campagne}&utm_content={creative}&utm_term={keyword}`. Définir le paramètre personnalisé `{_campagne}` par campagne (voir la section 7).
+☐ Modèle de suivi au niveau du compte : `{lpurl}?utm_source=google&utm_medium=cpc&utm_campaign={_campagne}&utm_content={creative}&utm_term={keyword}`. Définir le paramètre personnalisé `{_campagne}` au niveau du groupe d'annonces (p. ex. `gads_corpo_fetes`), ou au minimum au niveau de la campagne (`gads_corpo`, `gads_mariage`, `gads_marque`) : le CRM classe les leads par ces préfixes (voir la section 7).
 
 ### Import hors ligne des dépôts (conversions améliorées pour les leads)
 Depuis le 15 juin 2026, les téléversements par API passent par la Data Manager API. Pour Évenox, le plus simple est le **téléversement planifié depuis Google Sheets** :
@@ -115,6 +134,7 @@ Depuis le 15 juin 2026, les téléversements par API passent par la Data Manager
 - `PageView` (après consentement)
 - `Lead` = lead **qualifié seulement** (routes A et B), avec `value`, `currency: 'CAD'`, `lead_route` et **`eventID` = `event_id` du formulaire**
 - `LeadTous` (personnalisé) = tous les envois (non optimisé)
+- `LeadNonQualifie` (personnalisé) = routes C et D (non optimisé)
 - `Schedule` = appel réservé
 ☐ **CAPI** : envoyer les mêmes événements côté serveur (Make → requête HTTP vers `graph.facebook.com/v{version}/{PIXEL_ID}/events`, ou GTM serveur via Stape), avec le **même `event_id`** pour la déduplication. Envoyer `em` et `ph` hachés **seulement si `consent_mesure` = oui**. Toujours envoyer `client_ip_address`, `client_user_agent` et `fbc` (reconstitué à partir du `fbclid`) si le consentement Marketing est accordé.
 ☐ Formulaires instantanés (Meta Leads) : type « **Intention plus élevée** » (écran de vérification), avec 3 questions identiques au formulaire du site (type d'événement, nombre d'invités, budget en fourchettes), le texte des consentements et le lien vers la politique de confidentialité.
@@ -142,6 +162,8 @@ window.uetq.push('consent', 'update', { ad_storage: 'granted' });
 ---
 
 ## 6. OpenAI (ChatGPT Ads) : pixel + API Conversions
+
+**Préalable :** l'ancien pixel OpenAI chargé sans consentement a été retiré (section 0, point 0.1).
 
 **Important :** le pixel OpenAI considère le consentement comme **accordé par défaut**. Pour la Loi 25, il faut appeler `oaiq("consent", false)` **avant** `oaiq("init")`, ou ne charger le pixel qu'après l'acceptation.
 
@@ -183,7 +205,7 @@ Format : tout en minuscules, sans accents, mots séparés par `_`.
 |---|---|
 | `utm_source` | `google` · `bing` · `meta` · `chatgpt` · `courriel` · `sms` · `gbp` (fiche Google) · `weddingwire` · `yelp` |
 | `utm_medium` | `cpc` · `paid_social` · `email` · `sms` · `referral` · `organic_local` |
-| `utm_campaign` | `{plateforme}_{segment}_{theme}` → `gads_corpo_fetes`, `gads_corpo_5a7`, `gads_mariage_deco`, `gads_marque`, `meta_corpo_fetes`, `meta_mariage_deco`, `msft_corpo`, `chatgpt_corpo_fetes`, `chatgpt_mariage` |
+| `utm_campaign` | `{plateforme}_{segment}_{theme}` → `gads_corpo_fetes`, `gads_corpo_5a7`, `gads_mariage_deco`, `gads_marque`, `meta_corpo_fetes`, `meta_mariage_deco`, `meta_formulaire_instantane`, `msft_corpo`, `msft_mariage`, `msft_marque`, `chatgpt_corpo_fetes`, `chatgpt_corpo_gala`, `chatgpt_mariage`. **Le préfixe est obligatoire** (`gads_`, `meta_`, `msft_`, `chatgpt_`) : le CRM attribue la campagne à partir de lui. |
 | `utm_content` | `{format}_{angle}_{version}` → `rsa_prixfixe_v1`, `reel_avantapres_v2`, `card_dates_dec_v1` |
 | `utm_term` | `{keyword}` (Google et Microsoft) ; vide ailleurs |
 
@@ -262,6 +284,7 @@ Validation des données : listes déroulantes pour `etape`, `route` et `raison_p
 
 **Règles de décision hebdomadaires :**
 - Une campagne avec un coût par LQ supérieur à 2 fois la cible pendant 2 semaines (et au moins 300 $ dépensés) : réduire son budget de 30 % et vérifier les termes de recherche.
+- Une campagne avec un coût par LQ inférieur à 100 $ et un taux de signature d'au moins 25 % : augmenter de 20 % par semaine au maximum. Le total reste à 300 $/jour : la hausse est prise sur la campagne au pire coût par LQ (COMPTE-RENDU.md §4 ; mêmes règles dans le tableau de bord de `crm-kpi-evenox.xlsx`).
 - % qualifiés sous 35 % : ajouter des mots-clés négatifs (gratuit, pas cher, usagé, à vendre, emploi, DIY, enfant, anniversaire enfant ; ne pas exclure « anniversaire » seul, car le groupe « Événement privé » cible les anniversaires de 40, 50 et 60 ans) et vérifier la mention de prix dans les annonces.
 - Délai de réponse au-dessus de 15 minutes : problème de procédure, pas de publicité. Le corriger avant d'augmenter le budget.
 - ChatGPT Ads : appliquer les règles du jour 14 et du jour 30 de `campagnes/chatgpt-ads/campagne-chatgpt.md` (arrêt au jour 30, environ 900 $ dépensés, si moins de 2 leads qualifiés ou un coût par LQ supérieur à 2 fois celui de Google Search).

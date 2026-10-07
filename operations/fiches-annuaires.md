@@ -268,7 +268,7 @@ Entreprise de Sainte-Thérèse fondée en 2022, Évenox loue et installe l'équi
 | **LCAP** | Le texto et le courriel identifient Évenox inc. et offrent un désabonnement (ARRÊT / lien). Client ayant acheté = consentement tacite de 2 ans (suivi-leads.md, section 9). |
 | **Répondre à tous les avis** | Positifs et négatifs, en moins de 48 h, avec calme ; reprendre naturellement le service et la ville. |
 
-> ⚠️ **Correction à apporter à suivi-leads.md, section 8** : le texto actuel dit « Si tout s'est bien passé, un avis Google […] Si quelque chose n'était pas parfait, dites-le-moi directement ». Cette formulation conditionnelle peut être vue comme du filtrage d'avis. La remplacer par le modèle A ci-dessous.
+> ✓ **Déjà corrigé dans suivi-leads.md, section 8** : l'ancien texto conditionnel (« Si tout s'est bien passé, un avis Google […] Si quelque chose n'était pas parfait, dites-le-moi directement »), qui pouvait être vu comme du filtrage d'avis, a été remplacé par le modèle A ci-dessous. Ne pas le réintroduire.
 
 Lien d'avis : **[LIEN_AVIS_GOOGLE]** = fiche Google → « Demander des avis » → copier le lien court (`https://g.page/r/[ID]/review`).
 

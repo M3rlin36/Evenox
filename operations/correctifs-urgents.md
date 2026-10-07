@@ -20,7 +20,7 @@
 | 8 | Forfaits photobooth (599 $ / 999 $) présentés comme « forfaits mariage » ; durées contradictoires | P0 | PROP + WEB | 1 h | ★★ |
 | 9 | Bannière de consentement Loi 25 (`consent_type` vide) | P0 | WEB | 3 h | ★★★ |
 | 10 | Vérification de l'annonceur Google Ads au nom d'une personne | P0 | PROP | 30 min (+ délai Google) | ★★ |
-| 11 | ChatGPT Ads : pixel avec consentement refusé par défaut, « personnalisation du texte » désactivée | P0 | PUB | 30 min | ★★★ |
+| 11 | **Pixel OpenAI déjà installé sans consentement : le couper aujourd'hui** ; puis réinstaller avec consentement refusé par défaut et « personnalisation du texte » désactivée | P0 (jour même) | PUB | 30 min | ★★★ |
 | 12 | Page Facebook d'entreprise (au lieu d'un profil personnel) | P1 | PROP | 2 h | ★★★ |
 | 13 | Langue `fr-CA` (au lieu de `fr-FR`) | P1 | WEB | 15 min | ★ |
 | 14 | Schéma : aggregateRating, Review, FAQPage, Offer | P1 | WEB | 3 h | ★★ |
@@ -35,8 +35,10 @@
 | 23 | Positionnement de la boutique Booqable (jeux gonflables pour enfants en vedette) | P2 | PROP + WEB | 2 h | ★★ |
 | 24 | Distinguer « Évenox » d'« Evenko » (entité) | P2 | WEB | 1 h | ★ |
 | 25 | Délai de réservation mariage contradictoire (3 à 6 mois vs 6 à 12 mois) | P2 | WEB | 15 min | ★ |
+| 26 | Mesure : 2 comptes Google Ads et 2 propriétés GA4 sur le site, conversion GA4 cassée, pixel Meta de base absent | P0 | PUB + WEB | 3 h | ★★★ |
+| 27 | Ciblage géographique « Présence » seulement (des annonces ont été diffusées en France) | P0 | PUB | 20 min | ★★★ |
 
-**Temps total P0 : environ 13 h** (2 jours de travail répartis entre PROP, WEB et PUB).
+**Temps total P0 : environ 16 h** (2 à 3 jours de travail répartis entre PROP, WEB et PUB). **À faire en premier, le jour même : n° 11 (couper le pixel OpenAI existant).** Les n° 26 et 27 sont aussi P0 : ils sont numérotés à la fin pour ne pas changer les renvois des autres documents.
 
 ---
 
@@ -100,8 +102,8 @@ Un client qui voit « livraison incluse », puis reçoit une facture avec 240 $ 
 **À faire :** sur `/mariage/`, renommer la section « Photobooth pour votre mariage », fixer les durées et les prix d'entrée (une seule grille), et ajouter au-dessus les 3 forfaits mariage réels (899 / 1 449 / 1 899 $), le forfait du milieu marqué « le plus populaire ». Mettre à jour la FAQ, WeddingWire et la boutique.
 
 ### 9. Bannière de consentement Loi 25 — P0 · WEB · 3 h · ★★★
-**Problème :** GA4, le pixel Meta et TikTok se chargent avec la WP Consent API, mais `consent_type` est vide : on ne sait pas si les traceurs sont bloqués avant le consentement. Les amendes peuvent atteindre 25 M$ ou 4 % du chiffre d'affaires mondial, et les 300 $/jour reposent sur ces signaux.
-**À faire :** suivre tracking-setup.md, section 1 (Complianz ou CookieYes, opt-in, « Tout refuser » aussi visible que « Tout accepter », Consent Mode v2 en mode avancé). Retirer TikTok s'il n'est pas utilisé.
+**Problème (audit-campagne-actuelle.md §6a) :** aucune bannière. La WP Consent API est présente, mais `consent_type` est vide, et le refus par défaut de Consent Mode ne s'applique qu'à l'UE, au R.-U. et à la Suisse : au Québec, GA4, les 2 balises Google Ads et le pixel OpenAI partent sans consentement. (Pas de pixel TikTok sur le site ; le pixel Meta de base est absent, voir n° 26.) Les amendes peuvent atteindre 25 M$ ou 4 % du chiffre d'affaires mondial, et les 300 $/jour reposent sur ces signaux.
+**À faire :** suivre tracking-setup.md, sections 0 et 1 (Complianz ou CookieYes, opt-in, `consent_type` = `optin`, refus par défaut pour **toutes** les régions, « Tout refuser » aussi visible que « Tout accepter », Consent Mode v2 en mode avancé).
 
 ### 10. Vérification de l'annonceur Google Ads — P0 · PROP · 30 min (+ 3 à 10 jours de délai Google) · ★★
 **Problème :** les annonces affichent « Payé par Alexandre Séguin » (vérification au nom d'une personne) au lieu d'Évenox inc. Pour un acheteur corporatif qui clique sur « Mon Centre des annonces », c'est un signal de très petite entreprise, et la marque n'est pas associée aux annonces.
@@ -111,11 +113,31 @@ Un client qui voit « livraison incluse », puis reçoit une facture avec 240 $ 
 3. Si la vérification est déjà terminée sous le nom personnel, contacter le soutien Google Ads (clavardage) pour demander la mise à jour du nom affiché vers Évenox inc.
 4. Faire la même chose dans Microsoft Ads (vérification de l'annonceur) et utiliser le nom légal identique dans OpenAI Ads Manager.
 
-### 11. ChatGPT Ads : consentement et traduction automatique — P0 · PUB · 30 min · ★★★
+### 11. Pixel OpenAI et ChatGPT Ads : consentement et traduction automatique — P0 (jour même) · PUB · 30 min · ★★★
+**Problème 0 (constaté sur le site, audit §6a) :** un pixel OpenAI est **déjà installé** dans GTM. Il se charge au `gtm.init` **sans aucune condition de consentement**, et un script maison enregistre le courriel haché (SHA-256) dans le témoin `evx_oaiq_user`. C'est du profilage sans consentement (Loi 25).
+**À faire en premier, aujourd'hui :** dans GTM (`GTM-PP2W2TX9`), mettre en pause ou supprimer la balise du pixel OpenAI et le script `evx_oaiq_user`, puis publier le conteneur. Vérifier en navigation privée qu'aucun témoin `__oppref`, `__obref` ni `evx_oaiq_user` n'est créé (tracking-setup.md, section 0, point 0.1).
 **Problème 1 :** le pixel OpenAI considère le consentement comme **accordé par défaut** (témoins `__oppref` de 30 jours et `__obref` de 365 jours, correspondance avancée automatique).
-**À faire :** appeler `oaiq("consent", false)` **avant** `oaiq("init")`, et passer à `true` seulement à l'acceptation de la catégorie Marketing (voir tracking-setup.md, section 6).
+**À faire (à la réinstallation, après la bannière) :** appeler `oaiq("consent", false)` **avant** `oaiq("init")`, et passer à `true` seulement à l'acceptation de la catégorie Marketing (voir tracking-setup.md, section 6).
 **Problème 2 :** l'option de « personnalisation du texte » (variantes et **traductions** générées par l'IA, diffusées sans approbation) serait activée par défaut dans Ads Manager.
 **À faire :** la désactiver **dans chaque campagne** (Paramètres avancés). Vérifier aussi que `OAI-AdsBot` n'est pas bloqué par robots.txt ou par le pare-feu.
+
+### 26. Mesure : un seul compte Google Ads, une seule GA4, conversions réparées, pixel Meta — P0 · PUB + WEB · 3 h · ★★★
+**Problème (audit-campagne-actuelle.md §5 et §6a, constaté dans le code) :**
+- **Deux comptes Google Ads** taggés sur le site : `AW-16529262834` (GTM, conversion « lead » non qualifiée) et `AW-16776285171` (extension Google for WooCommerce). Si les campagnes tournent dans un compte et les conversions remontent dans l'autre, l'algorithme ne voit pas les leads.
+- **Deux propriétés GA4** : `G-BCHQ23SBRF` et `G-Y0K5N2WSNP`. Les données sont divisées.
+- **Conversion GA4 cassée** : la balise `generate_lead` attend l'événement `lead_submit`, qu'aucune page n'envoie. GA4 ne compte probablement aucun lead.
+- **Pixel Meta de base absent** : la balise « Lead » de GTM ne part jamais. Aucune conversion Meta n'est mesurée.
+
+**À faire (détail : tracking-setup.md, section 0, points 0.3 à 0.6) :**
+1. Choisir le **compte Google Ads principal** (celui qui a l'historique ; export n° 0 de l'audit). Relier l'extension WooCommerce à ce même compte ou en déconnecter le compte Ads. Un seul `AW-` sur le site. Ancienne conversion « lead » → secondaire.
+2. Garder **une seule propriété GA4** (y envoyer aussi les achats Booqable), retirer l'autre balise du site, ne pas supprimer l'ancienne propriété.
+3. Supprimer l'ancienne balise GA4 `generate_lead` **avant** de mettre en ligne le nouveau formulaire (sinon doublons), puis créer `lead_tous` / `lead_qualifie` (tracking-setup.md, sections 2 et 3).
+4. Installer le code de base du pixel Meta par GTM, après consentement, dès que la Page d'entreprise existe (n° 12). Ne pas lancer Meta avant.
+5. Vérification : Tag Assistant ne montre qu'un `AW-` et un `G-` ; un envoi de test route A apparaît dans GA4 (`lead_qualifie`), Google Ads et Meta.
+
+### 27. Ciblage géographique « Présence » seulement — P0 · PUB · 20 min · ★★★
+**Problème :** 4 annonces ont été diffusées en France (audit §3d). L'option « Présence ou intérêt » (valeur par défaut de Google) est probablement active : de l'argent est dépensé hors marché.
+**À faire :** dans chaque campagne du compte (anciennes et nouvelles) : Paramètres → Lieux → Options → Ciblage = **« Présence : personnes se trouvant dans vos zones ciblées »** et Exclusion = « Présence ». Les nouvelles campagnes l'ont déjà dans `campaigns.csv` (`Location of presence`) : le vérifier après l'import. Même réglage dans Microsoft Ads (« Personnes dans vos zones ciblées ») après l'import depuis Google, qui peut basculer vers « dans ou intéressées par ». Vérifier ensuite le rapport Lieux › « Correspond à » chaque semaine.
 
 ### 12. Page Facebook d'entreprise — P1 · PROP · 2 h · ★★★
 **Problème :** le schéma `sameAs` pointe vers `facebook.com/people/…`, un profil personnel. Il est impossible d'y installer correctement le pixel ou la CAPI, de lancer des formulaires instantanés au nom de l'entreprise ou d'y recueillir des avis.
@@ -189,6 +211,6 @@ Un client qui voit « livraison incluse », puis reçoit une facture avec 240 $ 
 
 | # | Statut | Date de fin | Vérifié par |
 |---|---|---|---|
-| 1 à 11 (P0) | ☐ | | |
+| 1 à 11, 26 et 27 (P0) | ☐ | | |
 | 12 à 21 (P1) | ☐ | | |
 | 22 à 25 (P2) | ☐ | | |

@@ -18,6 +18,7 @@
 | Langue | `fr-CA` |
 | Vitesse | Le formulaire doit être interactif en moins de 2,5 s sur mobile. Aucune image lourde au-dessus du formulaire. Scripts Gravity Forms / Fluent Forms chargés sur cette page seulement. |
 | Barre collante mobile | **Appeler** · **Texto** seulement (pas de bouton « Soumission » : on y est déjà) |
+| Redirection existante | Aujourd'hui, `/soumission` redirige (301) vers `/soumission-grand-evenement/` (audit-campagne-actuelle.md §6c). **Supprimer cette redirection** avant de publier la nouvelle page, puis rediriger `/soumission-grand-evenement/` vers `/soumission/`. |
 | Ancien formulaire | `/contact/` garde un lien « Demander une soumission → `/soumission/` » ; le formulaire à 6 champs de `/contact/` est remplacé par le formulaire multi-étapes (formulaire-qualification.md) ou retiré. |
 
 ### Paramètres d'URL acceptés
@@ -72,7 +73,7 @@ Le contenu des 5 étapes, les options, le micro-texte, les consentements Loi 25 
 **H2 (petit) :** Ce qui se passe ensuite
 
 1. **Vous envoyez vos réponses.** Vous recevez tout de suite un texto et un courriel de confirmation.
-2. **Un conseiller vous joint.** Pour une entreprise ou un budget de 2 500 $ et plus : appel en moins de 15 minutes pendant les heures d'ouverture [à confirmer], ou au moment que vous choisissez. Pour les autres demandes : soumission écrite en moins de 24 h.
+2. **Un conseiller vous joint.** Pour une entreprise (budget de 1 000 $ et plus) ou un budget de 2 500 $ et plus : appel en moins de 15 minutes pendant les heures d'ouverture [à confirmer], ou au moment que vous choisissez. Pour les autres demandes : soumission écrite en moins de 24 h.
 3. **Vous choisissez.** 3 options claires, un prix ferme. Votre date est bloquée par un dépôt de 20 % ou, pour les entreprises, par bon de commande.
 
 **Puces de réassurance :**
@@ -152,7 +153,7 @@ Les 4 pages de confirmation du routage sont définies dans formulaire-qualificat
 
 ## 8. Contrôle avant la mise en ligne
 
-☐ Les 3 liens annexes « Demander une soumission » ouvrent bien `/soumission/` (code 200, sans redirection).
+☐ Les 3 liens annexes « Demander une soumission » ouvrent bien `/soumission/` (code 200 ; seule redirection acceptable : l'ajout de la barre oblique finale par WordPress, `/soumission` → `/soumission/`, et plus aucune redirection vers `/soumission-grand-evenement/`).
 ☐ `?forfait=gala`, `?forfait=decorwow` et `?type=mariage` présélectionnent la bonne carte.
 ☐ 1 envoi de test par route (A, B, C, D), avec et sans consentement (formulaire-qualification.md, section 8).
 ☐ La page s'affiche sans défilement horizontal à 360 px de large ; le clavier numérique s'ouvre pour le téléphone.

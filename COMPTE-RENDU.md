@@ -8,7 +8,7 @@
 
 - **ChatGPT Ads est ouvert aux entreprises canadiennes, en libre-service, dès 25 $ CA/jour par campagne.** Ciblage possible au niveau de la province (Québec), pas de la ville.
 - **C'est un canal de test, pas un canal principal.** Clics de 4 à 9 $ CA au Canada, taux de clic ~0,7–1 % (vs ~6 % sur Google), peu de volume, et **aucune pub chez les utilisateurs Plus / Business / Enterprise** (là où sont beaucoup de décideurs corporatifs).
-- **Le vrai levier ChatGPT pour Evenox = être recommandé gratuitement** (GEO) : avis, Bing Places, Yelp, répertoires, pages claires. Aucun concurrent premium de la Rive-Nord/Laval n'y est bien positionné.
+- **Le vrai levier ChatGPT pour Evenox = être recommandé gratuitement** (GEO) : avis, Bing Places, Yelp, répertoires, pages claires. Aucun concurrent haut de gamme de la Rive-Nord/Laval n'y est bien positionné.
 - **Le budget de 300 $/jour va surtout sur Google Search (corporatif d'abord) et Meta**, avec 6 campagnes réalistes maximum.
 - **Avant de dépenser 1 $ de plus : corriger le formulaire, le suivi des conversions (Loi 25) et 3 erreurs dans tes pubs actuelles.** Sinon on paie pour des leads qu'on ne peut ni filtrer ni mesurer.
 
@@ -45,7 +45,7 @@
 ## 3. Ce que ça change concrètement pour Evenox
 
 **Ton opportunité :**
-1. **Corporatif clé en main = le créneau libre.** Diva (Laval) domine Google avec 74 annonces orientées mariage et « aucun minimum ». Personne ne vend « une facture, livraison-installation-démontage, réponse garantie » aux entreprises. Le budget médian des mariages au Québec est bas (47 % < 10 000 $ au total) → le corporatif est ton vrai segment premium.
+1. **Corporatif clé en main = le créneau libre.** Diva (Laval) domine Google avec 74 annonces orientées mariage et « aucun minimum ». Personne ne vend « une facture, livraison-installation-démontage, réponse garantie » aux entreprises. Le budget médian des mariages au Québec est bas (47 % < 10 000 $ au total) → le corporatif est ton vrai segment haut de gamme.
 2. **Les gens demandent déjà à ChatGPT** : « party des Fêtes clé en main pour 80 employés à Laval », « combien coûte un 5 à 7 corporatif », « meilleur photobooth 360 Montréal ». Être la réponse (gratuit) > payer pour être sous la réponse.
 3. **Laval / Rive-Nord est le marché le plus gagnable** dans les réponses IA (les listes « Three Best Rated » de Laval sont tenues par Abris Crystal, Diva, Glam — Evenox absent).
 
@@ -55,9 +55,9 @@
 |---|---|---|
 | Formulaire sans budget, nb d'invités, type d'événement, entreprise/particulier | Un gonflable à 200 $ et un gala à 5 000 $ arrivent pareil | Formulaire multi-étapes avec routage (voir `operations/formulaire-qualification.md`) |
 | Pub Google avec « **Learn more \|** » en anglais | Risque Loi 96 + image amateur | Retirer le texte auto, vérifier les « assets automatiques » |
-| Bouton « Demande de **Soumision** » | Crédibilité premium | Corriger la faute |
+| Bouton « Demande de **Soumision** » | Crédibilité haut de gamme | Corriger la faute |
 | Annonceur Google vérifié au nom d'Alexandre Séguin | Manque de crédibilité | Vérifier au nom de l'entreprise |
-| Courriel Gmail, Facebook profil perso | Pas premium + mauvais signal pour l'IA | Courriel @evenox.ca, Page Facebook Entreprise |
+| Courriel Gmail, Facebook profil perso | Pas haut de gamme + mauvais signal pour l'IA | Courriel @evenox.ca, Page Facebook Entreprise |
 | Livraison « incluse » sur certaines pages, « 100 $ + 7 $/km » sur d'autres | Litiges, perte de confiance | **Décision à prendre** : une seule politique (recommandé : livraison-installation-démontage incluses dans les forfaits ≥ 1 195 $, rayon 40 km) |
 | Chiffres incohérents (4,8 vs 4,9★ ; 500+ vs 1 000+ ; compteurs « 0+ ») et 2 témoignages identiques | Perte de confiance, l'IA ne cite pas les infos contradictoires | Uniformiser partout |
 | 24 pages de villes quasi identiques | Risque de pénalité Google (« doorway pages ») | Contenu unique par ville (réalisations, salles, avis locaux) |
@@ -117,7 +117,7 @@ Mariages au Québec : ~22 700 en 2025, **54 % entre juillet et octobre** (ISQ).
 
 **Semaine 0 — avant toute hausse de budget (3–5 jours)**
 1. Corriger « Learn more », « Soumision », nom de l'annonceur Google.
-2. Bannière de consentement Loi 25 + Consent Mode v2 + pixels (Google, Meta, Microsoft UET, OpenAI) conditionnés au consentement.
+2. **Le jour même : couper le pixel OpenAI déjà installé sans consentement.** Puis bannière de consentement Loi 25 + Consent Mode v2 + pixels (Google, Meta, Microsoft UET, OpenAI) conditionnés au consentement ; un seul compte Google Ads et une seule propriété GA4 sur le site ; ciblage « Présence » seulement (`operations/tracking-setup.md` §0, `correctifs-urgents.md` n° 11, 26, 27).
 3. Formulaire multi-étapes qualifiant + événement `lead_qualifie` distinct de `lead_tous` (mêmes noms dans GA4, Google Ads et Microsoft ; `Lead` chez Meta, `lead_created` chez OpenAI).
 4. Pages d'atterrissage /corporatif et /mariage (textes prêts dans `operations/`).
 5. Décider la politique de livraison unique.
@@ -151,9 +151,10 @@ Mariages au Québec : ~22 700 en 2025, **54 % entre juillet et octobre** (ISQ).
 2. **Remplacer « [N] avis Google »** dans les annonces par ton vrai nombre d'avis (sinon le texte « [N] » partirait tel quel). Confirmer la note 4,8/5 sur ta fiche Google.
 3. **Un seul chiffre d'événements** : 500+ ou 1 000+, partout.
 4. **Permission écrite de RBC, PwC, Desjardins** pour les nommer dans les pubs — sinon on retire ce titre.
-5. **Promesses à confirmer** : soumission en 24 h, rappel en 15 min, net 30, cabine vidéo 360 (599 $ ou 799 $), livraison boutique offerte dès 200 $.
+5. **Promesses à confirmer** : soumission en 24 h, rappel en 15 min, net 30 (sans dépôt pour les entreprises), garantie de bris (remplacement ou remboursement), « nous nous reprenons » si le montage n'est pas prêt, cabine vidéo 360 (599 $ ou 799 $), livraison boutique offerte dès 200 $, prix des ajouts (chaises 7 $ dès 100, chapiteau 800 $). Chacune est marquée « à confirmer » dans les pages d'atterrissage.
 6. **Pages à créer ou groupe à mettre en pause** : /evenement-prive, /soumission, /realisations.
 7. **Forfaits décor pour les 40/50 ans** : oui ou non (sinon le groupe « Événement privé » est mis en pause).
+8. **Compte Google Ads principal** (AW-16529262834 ou AW-16776285171) et propriété GA4 à garder — l'autre est débranchée du site.
 
 ## 6. Les fichiers prêts à déployer
 

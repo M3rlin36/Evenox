@@ -186,12 +186,14 @@ Dans Gravity Forms, remplir chaque champ caché avec le filtre `gform_field_valu
 |---|---|---|---|---|---|---|
 | Étape 1 affichée et première réponse | `form_start` | `form_start` | — | — | — | — |
 | Chaque étape terminée | `form_step` (`step`=1–5) | `form_step` | — | — | — | — |
-| Tout envoi valide (A, B, C, D) | `lead_tous` | `generate_lead` (paramètre `route`) | **lead_tous** (secondaire, observation seulement) | `LeadTous` (événement personnalisé, non optimisé) | `lead_tous` (objectif secondaire) | — |
-| Envoi route **A** ou **B** | `lead_qualifie` | `lead_qualifie` (événement clé) | **lead_qualifie** (principal, enchères) | `Lead` (standard, optimisé), avec `event_id` | `lead_qualifie` (objectif principal) | `lead_created` |
-| Envoi route **A** | `lead_prioritaire` | `lead_prioritaire` | (inclus dans lead_qualifie, valeur plus élevée) | paramètre `lead_route=A` | — | — |
-| Envoi route **C** ou **D** | `lead_non_qualifie` | `lead_non_qualifie` | aucun | `LeadNonQualifie` (personnalisé) | aucun | aucun |
+| Tout envoi valide (A, B, C, D) | `lead_submit` (déclencheur unique, voir le code plus bas) | `lead_tous` (paramètre `lead_route`) | **lead_tous** (secondaire, observation seulement) | `LeadTous` (événement personnalisé, non optimisé) | `lead_tous` (objectif secondaire) | — |
+| Envoi route **A** ou **B** | `lead_submit` + `lead_qualifie: true` | `lead_qualifie` (événement clé) | **lead_qualifie** (principal, enchères) | `Lead` (standard, optimisé), avec `event_id` | `lead_qualifie` (objectif principal) | `lead_created` |
+| Envoi route **A** | `lead_submit` + `lead_route: 'A'` | `lead_prioritaire` | (inclus dans lead_qualifie, valeur plus élevée) | paramètre `lead_route=A` | — | — |
+| Envoi route **C** ou **D** | `lead_submit` + `lead_qualifie: false` | `lead_non_qualifie` | aucun | `LeadNonQualifie` (personnalisé) | aucun | aucun |
 | Réservation Calendly | `appel_reserve` | `appel_reserve` | secondaire | `Schedule` | secondaire | `appointment_scheduled` |
 | Achat Booqable (boutique) | `purchase` | `purchase` (domaine croisé) | secondaire | `Purchase` (secondaire) | secondaire | `order_created` |
+
+> Les noms de la colonne GA4 sont ceux de tracking-setup.md §2 : `lead_tous` et `lead_qualifie` portent le **même nom** dans GA4, Google Ads et Microsoft. L'ancienne balise GA4 `generate_lead` (qui attendait déjà `lead_submit`) doit être **supprimée** avant la mise en ligne, sinon elle enverrait des doublons (tracking-setup.md §0, point 0.5).
 
 **Valeurs de conversion (provisoires, à recalibrer après 60 jours avec le taux de conclusion réel) :**
 - Route A : 400 $ (panier moyen visé d'environ 2 000 $ × 20 % de conclusion)

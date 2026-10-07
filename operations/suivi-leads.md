@@ -64,7 +64,7 @@ Variables : `{{PRENOM}}`, `{{DATE}}`, `{{VILLE}}`, `{{NB}}` (invités), `{{TYPE}
 > {{CONSEILLER}} · Évenox · {{TEL}}
 > *Vous recevez ce courriel parce que vous avez demandé une soumission. Pour ne plus recevoir de messages de notre part, répondez « désabonner ».*
 
-### 2.5 Route C (budget de moins de 600 $, ou de moins de 1 000 $ pour un événement corporatif : boutique) — courriel seulement, pas de texto
+### 2.5 Route C (budget de moins de 600 $, ou de moins de 1 000 $ pour un événement corporatif, municipal ou scolaire : boutique) — courriel seulement, pas de texto
 **Objet :** Votre projet du {{DATE}} : la façon la plus simple de réserver
 
 > Bonjour {{PRENOM}},
